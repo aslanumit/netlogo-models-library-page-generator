@@ -2,12 +2,13 @@ from __future__ import annotations
 
 import html
 import re
+import shutil
 from pathlib import Path
 
 import markdown
 
 ROOT_DIR = Path(__file__).resolve().parent
-SITE_DIR = ROOT_DIR / "site"
+SITE_DIR = ROOT_DIR / "public"
 MODELS_DIR = ROOT_DIR / "models"
 OUTPUT_MODELS_DIR = SITE_DIR / "models"
 
@@ -174,6 +175,7 @@ def main() -> None:
     for model_path in model_paths:
         model_rel = model_path.relative_to(MODELS_DIR)
         title = model_rel.stem
+        png_source = MODELS_DIR / model_rel.with_suffix(".png")
         info_markdown = extract_info(model_path)
         info_html = markdown.markdown(
             info_markdown,
@@ -187,6 +189,11 @@ def main() -> None:
 
         output_path = OUTPUT_MODELS_DIR / model_rel.with_suffix(".html")
         output_path.parent.mkdir(parents=True, exist_ok=True)
+
+        if png_source.exists():
+            png_output_path = OUTPUT_MODELS_DIR / model_rel.with_suffix(".png")
+            png_output_path.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(png_source, png_output_path)
 
         page_html = render_model_page(
             title,
