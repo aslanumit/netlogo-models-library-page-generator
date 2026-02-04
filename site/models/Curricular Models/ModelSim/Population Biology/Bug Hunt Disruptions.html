@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bug Hunt Disruptions</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Bug Hunt Disruptions</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/ModelSim/Population%20Biology/Bug%20Hunt%20Disruptions.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Curricular Models/ModelSim/Population Biology/Bug Hunt Disruptions.png" alt="Screenshot of Bug Hunt Disruptions" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model explores the stability of consumer producer ecosystems in response to temporary disturbances.</p>
+<h2>HOW IT WORKS</h2>
+<p>Bugs wander randomly around one of two regions (left or right). Each region is a self contained ecosystem in the world. Bugs in one region never go into the other region. As bugs reach the edge of their region, they wrap around to other side of their own region.</p>
+<p>Each step each bug loses one unit of energy and they must consume a food source (grass) to replenish their energy. When they run out of energy, they die. To allow the population to continue, each bug must have enough energy to have an offspring. When that threshold is reached, the offspring and parent split the energy amongst themselves.</p>
+<p>Different disturbances can be tested in this system, including temporary removal of grass (simulating a fire), addition of more bugs, and infection of some % of the bugs (simulating transmittable disease).</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>
+<p>Adjust the slider parameters (see below), or use the default settings.</p>
+</li>
+<li>
+<p>Press the SETUP button.</p>
+</li>
+<li>
+<p>Press the GO button to begin the model run.</p>
+</li>
+<li>
+<p>View the LEFT REGION POPULATION SIZE VS. TIME and RIGHT REGION POPULATION SIZE VS. TIME plot to watch the bug and grass populations fluctuate over time in each of the regions on the screen.</p>
+</li>
+<li>
+<p>View the BUGS IN LEFT ECOSYSTEM and BUGS IN RIGHT ECOSYSTEM monitors to keep track of the total number of new bugs that that are in each region.</p>
+</li>
+<li>
+<p>View the number of ticks the simulation has run for in the TIME monitor.</p>
+</li>
+</ol>
+<p>Initial Settings:</p>
+<p>CONSTANT-SIMULATION-LENGTH: When turned "on" the model run will automatically stop at 1000 ticks. When turned "off" the model run will continue running without automatically stopping.</p>
+<p>LEFT-BUGS-TO-ADD and RIGHT-BUGS-TO-ADD: Determine the initial size of bug population in that region and also determines how many bugs will be added to the model run when the L-ADD-MORE-BUGS or R-ADD-MORE-BUGS button is pressed.</p>
+<p>LEFT-BUGS-TO-INFECT and RIGHT-BUGS-TO-INFECT: Determine the percentage of the bug population in that region that will be instantly infected with a disease. The disease is transmitted by contact with other bugs in that region. Bugs die after a fixed time period of carrying the disease.</p>
+<p>L-START WILD FIRE and R-START WILD FIRE: start a wild fire in a patch that has grass on the left side of the region. Fire moves from burning patches to adjacent patches that have grass in that region.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Watch as the grass and bug populations fluctuate. How are increases and decreases in the sizes of each population related?</p>
+<p>Adding bugs or infecting bugs affects the size of the populations in the short term, but not in the long term. What causes this behavior?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try adjusting the parameters under various settings. How sensitive is the stability of the model to the particular parameters. Does the parameter setting affect the amount of fluctuations, the average values of bugs and grass, or does it lead to the collapse of the ecosystem (death of all the bugs)?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>In this model, all the bugs are identical to each other and follow the same rules. Try modeling variation in the bug population that would make it easier for some bugs to get food.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The visualization of fire embers uses the transparency value for the color to gradually fade out the color of the fire and let the background show through, before the embers disappear completely.</p>
+<h2>RELATED MODELS</h2>
+<p>Wolf Sheep Predation and Rabbits Weeds Grass are other examples of interacting predator/prey populations with different rules.</p>
+<p>Refer to Bug Hunt Environmental Changes and Bug Hunt Predators and Invasive Species - Two Regions for extensions of this model that include predators (birds that eat bugs) and an invasive species (another population of consumers).</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is part of the Ecology &amp; Population Biology unit of the ModelSim curriculum, sponsored by NSF grant DRL-1020101.</p>
+<p>For more information about the project and the curriculum, see the ModelSim project website: http://ccl.northwestern.edu/modelsim/.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2015).  NetLogo Bug Hunt Disruptions model.  http://ccl.northwestern.edu/netlogo/models/BugHuntDisruptions.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2015 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2015 Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

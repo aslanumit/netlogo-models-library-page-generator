@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prisoners Dilemma HubNet</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Prisoners Dilemma HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/Unverified/Prisoners%20Dilemma%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/HubNet Activities/Unverified/Prisoners Dilemma HubNet.png" alt="Screenshot of Prisoners Dilemma HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is a HubNet version of the Prisoner's Dilemma.  The Prisoner's Dilemma is a famous game-theory situation that models the costs and benefits of collaboration or treason between free agents where there is a struggle over some capital.</p>
+<p>The game has implications for a variety of social situations that involve negotiations in the absence of absolute trust between agents, such as in politics and economics. The game is a succession of interactions between agents, with each agent trying to maximize personal gains over all interactions. In this game, aggressive behavior is not necessarily the best strategy for maximizing personal gains. The rules of the game are such that agents are penalized when behaving aggressively in interacting with another aggressive agent, At each interaction between agents, each agent decides whether to 'cooperate' or 'defect.' These household terms in economics come from the following hypothetical situation.</p>
+<p>The Prisoner's Dilemma presents an interesting problem: if you and your accomplice in crime are imprisoned, then in order to minimize the overall jail time you should cooperate with your partner by remaining silent and not confessing.  However, you may choose to defect the unsaid "contract" with your partner by confessing.Let's assume you have confessed. If your partner does not confess you will go free.  If your partner confesses, you will go to jail for three years, much better than the five you would have earned had you refused to confess.  Unfortunately, your partner is in the same position.  Acting rationally in the short term, you will both be worse off. For more introductory information, please refer in the NetLogo models library to the PD BASIC model found in the PRISONER'S DILEMMA suite. Note also that in this model, the traditional year values, such as '3 years' or '5 years,' are given for modification.</p>
+<h2>HOW IT WORKS</h2>
+<p>This model allows for many students within a classroom to challenge each other over a network.  Students will keep switching partners by moving their agents around on the screen and they can switch strategies. Students compete to see who has gained the maximum points over all interactions.</p>
+<p>Moreover, this model allows students to gain a grasp of computer programming. An input box on the screen allows students to edit and author strategies. Following are the strategies that students can choose from (see the STRATEGY-CHOICE chooser in the HubNet client):</p>
+<p>Strategies:</p>
+<ul>
+<li>
+<p><strong>Random</strong> -- Randomly cooperate or defect.</p>
+</li>
+<li>
+<p><strong>Cooperate</strong> -- Always cooperate.</p>
+</li>
+<li>
+<p><strong>Defect</strong> -- Always defect.</p>
+</li>
+<li>
+<p><strong>Go-by-Majority</strong> -- Totals the number of times that partners defected against me. If the majority of the time, up to that point, the partner has defected, defect.  Otherwise, cooperate.</p>
+</li>
+<li>
+<p><strong>Tit-for-Tat</strong> -- If my opponent from the previous round cooperated with me, cooperate this round. If my opponent from the previous round defected against me, defect this round. Initially cooperate.</p>
+</li>
+<li>
+<p><strong>Suspicious-Tit-for-Tat</strong> - Same as the Tit-for-Tat strategy, except I initially defect.</p>
+</li>
+<li>
+<p><strong>Tit-for-Two-Tats</strong> -- If my opponents from the two previous rounds defected against me, defect this round. Otherwise, cooperate. Initially cooperate.</p>
+</li>
+<li>
+<p><strong>Pavlov</strong> -- If my partner from last round cooperated with me, repeat my action from last round. If my partner from last round defected against me, choose the opposite action from the one I used last round. Initially random.</p>
+</li>
+<li>
+<p><strong>Unforgiving</strong> -- Always cooperate, until an opponent defects against me. Once an opponent defected against me, always defect, against everyone.</p>
+</li>
+</ul>
+<p>Rules for the Iterated Prisoner's Dilemma</p>
+<ol>
+<li>
+<p>This game will consist of matches in which each student competes against one opponent at a time.  Students may search for partners on their own.  Once paired, students will play 10 rounds, and then separate and look for other partners.</p>
+</li>
+<li>
+<p>Each round the student and his/her partner will earn or lose points by either cooperating (C) or defecting (D) based on the rules set in their individual client. Each students' strategy is either selected (the STRATEGY-CHOICE ) or edited on the HubNet client.</p>
+</li>
+<li>
+<p>The point system is determined by the administrator, using the 4 sliders under "PAYOFF." That is, the administrator does not change the basic game but the value of the prizes and penalties.</p>
+</li>
+</ol>
+<h2>HOW TO USE IT</h2>
+<p>Buttons:</p>
+<p>SETUP: Begin playing the iterated prisoner's dilemma.
+RERUN: All players set their total back to zero, and are ready to replay
+PLAY: When students pair up, they will play a user-defined number of turns before separating
+CREATE ANDROID: Creates a computer player to compete with students</p>
+<p>Switches:</p>
+<p>ALLOW-STRATEGY-CHANGE?: If on, students will be able to change their strategies. If off, they will be locked into the last working strategy in their client until it is turned on again.</p>
+<p>Sliders:</p>
+<p>COMPUTER STRATEGY - Select the computer's strategy from the drop-down list below.</p>
+<p>Plots:</p>
+<p>STRATEGY PLOTS: Shows the total points accumulated for each given strategy.  Once a strategy is modified by a student, the results of that student's success/failure will not be plotted on this.</p>
+<p>C-D PLOT: Plots the total number of times players have cooperated, and the total number of times players have defected.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Watch the plots for the different strategies.  Is there a serious difference between tit-for-tat and suspicious-tit-fot-tat?  Does one strategy really beat out the rest?</p>
+<p>See how often students cooperate and defect.  In the long run, do students learn to switch to more trusting strategies?  Or do students all too often defect?</p>
+<h2>THINGS TO TRY</h2>
+<ol>
+<li>
+<p>Experiment with playing different strategies one against the other.  Which strategies do the best?  Which do the worst?  Why?</p>
+</li>
+<li>
+<p>Let it run for a while with hundreds of computer players to see which strategies win under these conditions.</p>
+</li>
+<li>
+<p>There is a mode in which students cannot change their strategies.  Encourage them to code their own strategies, and then make them stick to that.  Which strategy seemed to work the best?</p>
+</li>
+</ol>
+<h2>EXTENDING THE MODEL</h2>
+<p>Students know the history of their last round, but not any of the previous rounds.  Think of a way to have clients be able to store the history of previous plays, and know what their current partner has done in other rounds.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of the turtle variable <code>label</code> to display each turtle's average score in the view.</p>
+<h2>RELATED MODELS</h2>
+<p>PD Basic, PD N-Person Iterated, PD Basic Evolutionary, PD 2-Person Iterated</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2003).  NetLogo Prisoners Dilemma HubNet model.  http://ccl.northwestern.edu/netlogo/models/PrisonersDilemmaHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2003 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This activity and associated models and materials were created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2003 --></div>
+      </div>
+    </main>
+  </body>
+</html>

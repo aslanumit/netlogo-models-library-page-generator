@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PANDA BEAR HubNet</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>PANDA BEAR HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/Unverified/PANDA%20BEAR%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/HubNet Activities/Unverified/PANDA BEAR HubNet.png" alt="Screenshot of PANDA BEAR HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Perimeters and Areas by Embodied Agent Reasoning, or PANDA BEAR, is a microworld for mathematics learning that lies at the intersection of dynamic geometry environments and participatory simulation activities. In PANDA BEAR, individual students identify with and control a single vertex of a shared, group-polygon.</p>
+<p>The measures of perimeter and area of the group-polygon are foregrounded in the environment. Group-level challenges involving the perimeter and area that cannot be solved by one individual are issued by the activity leader to the students. Through the communication of ideas and strategies with each other, the students collaboratively build solutions for the challenges.</p>
+<h2>HOW TO USE IT</h2>
+<h3>Server interface</h3>
+<p>SETUP is run automatically when the activity is opened, and can be run whenever the teacher wants to clear the links comprising a group-polygon and prepare students to be formed into a different polygon when EDGIFY is pressed next. GO is the main button for allowing students to log in and move around. After the EDGIFY button has been pressed, the students will all be connected in a single group-polygon. When the students are connected, the PERIMETER and AREA monitors update automatically as students move their vertices around. The PANDA plot shows both of those measures over time as a record of the group's actions as they work towards a goal. SETUP-PLOT resets the plot to start a new challenge with the same group-polygon. To force all students' clients to exit the activity and re-enter, the teacher can press the RESET button on the HubNet Control Center.</p>
+<h3>Client interface</h3>
+<p>The client interface allows each student to control one vertex in the group-polygon. The YOU ARE A: monitor shows a description of the shape and color of the vertex the student is controlling. CHANGE APPEARANCE changes the vertex's shape and color. The LOCATED AT: monitor shows the current coordinates of the student's vertex. The HEADING: monitor shows the current heading of the student's vertex - that is, the direction in which the vertex travels if asked to move forward. The PERIMETER: and AREA: monitors show the current measures of the group-polygon. The FD (forward), BK (back), LT (right-turn), and RT (right-turn) buttons change the student's vertex's location and heading. The STEP-SIZE and TURN-AMOUNT input boxes control the amount of movement of the FD, BK, LT, and RT buttons. The GET-CENTERED button rounds the student's vertex's x and y coordinates to the nearest integer, which can be helpful for coordinating with other students.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>In a triangle, for an individual vertex, moving "between" the other two vertices minimizes the perimeter for a given area.</p>
+<p>In a triangle, when all three vertices attempt to form an isosceles triangle, an equilateral triangle is formed.</p>
+<p>Strategies that work for challenges at the triangle level often work at the square level as well.</p>
+<p>As the number of vertices is increased, the polygon that maximizes the area given a perimeter and minimizes the perimeter given an area gets closer and closer to a circle.</p>
+<h2>THINGS TO TRY</h2>
+<p>With three students (and so, three vertices), ask the students to make the area as big as possible while keeping the perimeter at or below 25.</p>
+<p>With three students (and so, three vertices), ask the students to make the perimeter as small as possible while keeping the area at or above 25.</p>
+<p>Increase the number of students in the polygon from three to four (and beyond - approaching a circle) and issue similar challenges.</p>
+<p>Modify the challenges in a patterned way. For example, with four students, doubling the allowed perimeter should quadruple the maximum area.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add vertices that the students can't control.</p>
+<p>Add different methods of movement. For example, instead of turning and going forward and backward, the students could be allowed to move in the 4 cardinal directions or with a mouse.</p>
+<p>Allow the students to give their vertex movement rules to follow over and over so that the group-polygon "dances".</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses links to form the sides of the polygon; each vertex is linked to exactly two other vertices.  The sum of the lengths of all the links is the perimeter of the polygon.</p>
+<p>The area calculation is based on information found here: http://mathworld.wolfram.com/PolygonArea.html</p>
+<h2>RELATED MODELS</h2>
+<p>PANDA BEAR Solo</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Thanks to Josh Unterman for his work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Unterman, J. and Wilensky, U. (2007).  NetLogo PANDA BEAR HubNet model.  http://ccl.northwestern.edu/netlogo/models/PANDABEARHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 Cite: Unterman, J. --></div>
+      </div>
+    </main>
+  </body>
+</html>

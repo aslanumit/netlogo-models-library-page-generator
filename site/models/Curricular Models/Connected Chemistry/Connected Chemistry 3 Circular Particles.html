@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Connected Chemistry 3 Circular Particles</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Connected Chemistry 3 Circular Particles</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Connected%20Chemistry/Connected%20Chemistry%203%20Circular%20Particles.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Connected Chemistry/Connected Chemistry 3 Circular Particles.png" alt="Screenshot of Connected Chemistry 3 Circular Particles" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model explores the relationship between particle kinetic energies during particle collisions.  This model is part of the "Connected Chemistry" curriculum  http://ccl.northwestern.edu/curriculum/ConnectedChemistry/ which explore the behavior of gases.</p>
+<p>This model is different from the other Connected Chemistry and GasLab models in that the collision calculations take into account the circular shape and size of the particles, instead of modeling the particles as dimensionless points.</p>
+<h2>HOW IT WORKS</h2>
+<p>The model determines the resulting motion of particles that collide, with no loss in their total momentum or total kinetic energy (an elastic collision).</p>
+<p>To calculate the outcome of collision, it is necessary to calculate the exact time at which the edge of one particle (represented as a circle), would touch the edge of another particle (or the walls of a container) if the particles were allowed to continue with their current headings and speeds.</p>
+<p>By performing such a calculation, one can determine when the next collision anywhere in the system would occur in time.  From this determination, the model then advances the motion of all the particles using their current headings and speeds that far in time until this next collision point is reached.  Exchange of kinetic energy and momentum between the two particles, according to conservation of kinetic energy and conservation of momentum along the collision axis (a line drawn between the centers of the two particles), is then calculated, and the particles are given new headings and speeds based on this outcome.</p>
+<h2>HOW TO USE IT</h2>
+<p>INITIAL-NUMBER determines the number of gas particles used with SETUP.  If the world is too small or the particles are too large, the SETUP procedure of the particles will stop so as to prevent overlapping particles.</p>
+<p>Choosers:
+SHOW-SPEED-AS-COLOR? allows you to visualize particle speed using a color palette.
+- The "blue-green-red" setting shows the lower half of the speeds of the starting population as blue, and the upper half as red.
+- The "violet shades" setting shows a gradient from dark violet (slow) to light violet (fast).
+- The "all green" setting shows all particles in green, regardless of speed.
+- The "custom color" setting, referenced in the Pedagogica version of this model, allows the user to modify the color of one or more particles, without having to worry that the particles will be recolored with each tick of the clock (as is the case for the other color options).</p>
+<p>Monitors:
+CLOCK - number of clock cycles that GO has run.
+PARTICLE 0 SPEED - reports the speed for one of the particles (the first particle created that has a who value of 0)
+PARTICLE 0 HEADING - reports the heading for one of the particles (the first particle created that has a who value of 0)</p>
+<p>Plots:
+KINETIC ENERGY VS TIME - plots the kinetic energy for two particles.  If the model is run with only two particles for the INITIAL-NUMBER slider, then this graph will show that kinetic energy is conserved in collisions between these two particles.
+PARTICLE 0 SPEED VS. TIME - plots the speed for one of the particles (the first particle created that has a who value of 0) over time.
+PARTICLE 0 HEADING - plots the heading for one of the particles (the first particle created that has a who value of 0) over time.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Particles never overlap or penetrate into each other or the wall as they move about.</p>
+<p>For only two particles in the world, what do you notice about the kinetic energy of the particles before and after a collision?</p>
+<p>Does kinetic energy of a particle (e.g. particle 0) change when a particle hits the wall?</p>
+<h2>THINGS TO TRY</h2>
+<p>Setting all the particles to have a very slow speed (e.g. 0.001) and one particle to have a very fast speed helps show how kinetic energy is eventually transferred to all the particles through a series of collisions and would serve as a good model for energy exchange through conduction between hot and cold gases.</p>
+<p>To see what the approximate mass of each particle is, type this in the command center:
+ask particles [set label precision mass 0]</p>
+<p>Use the speed slider (at the top of the View) to run the model in slow motion.</p>
+<p>Use the command center to set the speed of all the particles to a very low number (but not zero - e.g. 0.01) and set the speed of one particle to a very high number (e.g. 1000).  Watch how the kinetic energy of the fast particle is distributed in collisions to the other particles.</p>
+<p>Use the command center to trace the path of a particle, using pendown.</p>
+<p>How is kinetic energy represented by color when you set the SHOW-SPEED-AS-COLOR? chooser to "violet shades"?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Collisions between boxes and circles could also be explored.  Variations in size between particles could investigated or variations in the mass of some of the particle could be made to explore other factors that affect the outcome of collisions.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The global variable VIEW-UPDATE-RATE determines the minimum number of simulation clock ticks that must pass before the view is updated. This helps to smooth out the motion of the particles seen in the View. The particles should appear to have a linear rate of change in their motion when they are not colliding.  Without a minimum VIEW-UPDATE-RATE, however, this would not appear to be the case, because the model would update the graphics after every tick, and ticks vary in length, depending on how close the next projected collision is. As the tick length moved up and down, the simulation time the particles were allowed to move forward before they were redisplayed would also move up and down.  This would cause the motion of the particles to look jerky and non-linear.</p>
+<h2>RELATED MODELS</h2>
+<p>See GasLab Circular Particles
+See other Connected Chemistry models.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is part of the Connected Chemistry curriculum.  See http://ccl.northwestern.edu/curriculum/chemistry/.</p>
+<p>We would like to thank Sharona Levy and Michael Novak for their substantial contributions to this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2005).  NetLogo Connected Chemistry 3 Circular Particles model.  http://ccl.northwestern.edu/netlogo/models/ConnectedChemistry3CircularParticles.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>To cite the Connected Chemistry curriculum as a whole, please use:</p>
+<ul>
+<li>Wilensky, U., Levy, S. T., &amp; Novak, M. (2004). Connected Chemistry curriculum. http://ccl.northwestern.edu/curriculum/chemistry/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 ConChem --></div>
+      </div>
+    </main>
+  </body>
+</html>

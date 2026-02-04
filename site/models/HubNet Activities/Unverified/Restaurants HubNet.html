@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Restaurants HubNet</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Restaurants HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/Unverified/Restaurants%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/HubNet Activities/Unverified/Restaurants HubNet.png" alt="Screenshot of Restaurants HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This simulates the competition in a a single industry, in this case the restaurant industry. Each restaurant is controlled by an owner trying to maximize profit. Depending on the owners' decisions, the outcome may demonstrate the Efficient Market Theorem ("Pareto efficiency"): if all the agents within a market look out for their own best interest, it will lead to the most efficient outcome. In this case it means that if the restaurant owners try to maximize their own wealth it will also maximize the customer satisfaction.</p>
+<h2>HOW IT WORKS</h2>
+<p>Students act as restaurant owners. Each student is given one restaurant to control and starts with 2000 dollars in his/her account. There are computer-controlled consumers that move around and may choose to become customers in restaurants of their choice. Their color shows which food they like. For instance, a red client likes food that can be found in the red restaurants ('American' cuisine).</p>
+<p>Each day the customers decide to eat at a restaurant. In order to try and persuade the customers to come and eat at their restaurants, the owners (the students) have several options they can control: PRICE, QUALITY, SERVICE, and CUISINE. The PRICE slider sets the price of a meal at the restaurant. The QUALITY slider sets the quality of the meal at the restaurant. The SERVICE slider affects the quality of service and appeal of the restaurant (staff and decor quality). Finally the CUISINE determines the type of food the restaurant serves. The owners may change these variables freely during the day.</p>
+<p>The quality and service that restaurant offer as well as renting the space all come at a price to the restaurant owners. These prices per quality and per service are set on the server interface. At the end of the day the profit of each owner is calculated and added to his/her account balance and the process repeats.</p>
+<p>Initially, each participant will be feeling their way around the market place with different settings. Then as competition continues with each owner trying to maximize profits, the various restaurants proceed to establish themselves in the market place. While the owners continue to aggressively look to attract the most customers and maximize profits, the customers actually begin to benefit. This can be seen in the three plots: average profit (of restaurants), disgruntled customers, and customer satisfaction. The average profit of the restaurants will decrease as the competition heats up and, due to the competition, the number of disgruntled customers will drop and customer satisfaction will rise.</p>
+<h2>HOW TO USE IT</h2>
+<p>Quickstart Instructions: (these instructions also appear at the top of the Interface)
+Teacher: Follow these directions to run the HubNet activity.
+Press the SETUP button, then Press the INITIAL LOGIN button.</p>
+<p>Everyone: Open up a HubNet Client on your machine, input the IP Address of this computer, press ENTER, type your name, and press ENTER.</p>
+<p>Teacher: Once everyone has logged in, turn off the INITIAL LOGIN button by pressing it again.
+Have the students acquaint themselves with their interface.
+Teacher: Press GO to start the simulation.
+Each student is a restaurateur. The customers are independent computer agents.
+Following are some additional features you might want to adjust for later runs:
+NUM-CUSTOMERS determines the number of customers: set this before you run the game.
+The following conditions can be changed either before or while the game is running:
+If SHOW-RANK? is on, the students are able to see their ranking amongst all restaurateurs.
+If BANKRUPCY? is on, then students might go bankrupt.
+Use the cost sliders, QUALITY-COST, SERVICE-COST and RENT-COST to adjust costs.
+CUSTOMER-ENERGY determines the beginning energy of the customer.
+CUSTOMER-THRESHOLD determines the threshold at which a customer gets hungry.
+To create some automated restaurants set the AUTO-RESTAURANTS slider and press CREATE-AUTOMATED-RESTAURANTS.
+Teacher: To rerun the activity with the same group, un-press GO, adjust settings, press RE-RUN then GO.
+Teacher: To start the simulation over with a new group, follow our instruction set again.</p>
+<p>Buttons:
+SETUP - clears all turtles, patches and plots.  The setup button should only be pressed when beginning a new simulation with a new group of users, otherwise all the data from the old simulation will be lost.
+INITIAL LOGIN - allows users to log into the activity without having to start the simulation.
+GO - runs the simulation.
+RE-RUN - sets up the model to be ready for another run of the simulation with the same users.
+CREATE AUTOMATED RESTAURANTS - creates as many automated restaurants as the '#AUTO-RESTAURANTS' slider is set to.
+RESET INSTRUCTIONS - resets the Quickstart instruction menu to the beginning of the instructions.
+PREV - displays the previous line of the Quickstart instructions in the monitor.
+NEXT - displays the next line of the Quickstart instructions in the monitor.</p>
+<p>Sliders:
+NUMBER-CONSUMERS - the total number of consumers in the market place.
+QUALITY-COST - the cost of increasing the quality of the restaurant.
+RENT-COST - the amount of money rent costs each day.
+SERVICE-COST - the cost increase per each point spent on service.
+CUSTOMER-THRESHOLD - the energy level at which customers become hungry.
+CUSTOMER-ENERGY - the energy level at which customers start at and are restored to after eating.
+#AUTO-RESTAURANTS - the number of automated owners to create. (To create the owners press the CREATE AUTOMATED RESTAURANTS button after adjusting the slider).</p>
+<p>Switches:
+SHOW-RANK? - when on, ranks the restaurant owners by their account balance (the rank appears in the clients' monitors only).  When off, the ranks of the owners are not displayed in the clients' monitors.
+BANKRUPTCY? - when on, allows owners to go bankrupt when their account balance goes below zero.</p>
+<p>Monitors:
+AMERICAN CUISINES - the number of American cuisines in the market place.
+ASIAN CUISINES - the number of Asian cuisines in the market place.
+EUROPEAN CUISINES - the number of European cuisines in the market place.
+DAY - what day the simulation is in.</p>
+<p>Plots:
+CUSTOMER SATISFACTION - plots the maximum, minimum and average restaurant satisfaction of the customers.
+DISGRUNTLED CUSTOMERS - plots the number of consumers who cannot find a restaurant to their liking each day.
+PROFITS - plots the profits over a period of a day of all the user-controlled restaurants as well as an average (in black).
+# CUSTOMERS - plots the number of customers who attended each user-controlled restaurant over the period of a day as well as an average (in black).</p>
+<p>Client Information:
+After login is completed the Restaurants client interface will appear for each of the participants, including a restaurant color which will be displayed in the RESTAURANT COLOR monitor. Participant are each credited with 2000 in their individuals accounts balance and the starting settings PRICE, QUALITY, SERVICE and RESTAURANT TYPE are set to random variables.</p>
+<p>The client interface contains a number of monitors which contain personal information regarding the participant. ACCOUNT BALANCE states the amount of money that the participant currently has, and RANK shows the participants ranking out of all the owners based on account balance when the SHOW-RANK? switch is in the 'On' position. When the BANKRUPTCY? switch is on, the BANKRUPT monitor shows whether the restaurant is bankrupt. The PROFIT / CUSTOMER monitor shows the amount of money that is made from each additional customer that the restaurant receives for the current day. DAYS REVENUE and DAYS COST show the amount of revenue and costs accumulated during the current day. The RESTAURANT PROFITS and RESTAURANT CUSTOMERS plots show graphs of all the user controlled restaurants (these two plots mirror two of the four plots on the server interface). Finally, DAY shows the day that the simulation is currently on.</p>
+<p>The participant is able to control the restaurant by using the SERVICE, PRICE, and QUALITY sliders as well as the CUISINE choice. The participant is able to change all these settings at any time during the simulation. The SERVICE slider controls the quality of the service (waiting staff) at the restaurant. By increasing the SERVICE slider customers will perceive a better meal and a lower price for the meal, all in all increasing the restaurant's appeal. The choice of CUISINE is crucial as it determines which niche the participant enters in the market. The PRICE and QUALITY sliders set the price and the quality of the meal in the restaurant.</p>
+<p>The participants can track their own progress in the RANK monitors and aim for the greatest possible account balance.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The two things to notice in this simulation are in the two plots. As the simulation goes on there should be a downward trend of the avg. profit due to the increased competition between the restaurants, and more importantly there should be a constant increase in the average customer satisfaction value throughout the simulation. The maximum customer satisfaction should also increase along with the average value, the minimum is dependent however on how many automated owners are used. If the amount of actual participants is fairly low, below 7, and the rest are automated, then the minimum value will never rise, as some customers will be eating at the automated restaurants which don't change their variable. The increase of the average customer satisfaction is the important aspect as it is the emergent phenomena of the free market theorem.</p>
+<h2>THINGS TO TRY</h2>
+<p>Initial Settings:
+Number-Customers: 350
+Show-Rank?: on
+Bankruptcy?: off</p>
+<p>Quality-Cost: 0.20
+Rent-Cost: 100
+Service-Cost: 0.20</p>
+<p>Customer-Threshold 30
+Customer-Energy 50</p>
+<p>Initial Run:
+The first time the simulation is run with the participants, do not allow any collusion between the participants. In other words, make sure that they at least try not to reveal their variable values to their neighbors. This will make the environment more like a free market system.</p>
+<p>However you can choose to run the simulation a second time and tell the participants that they are allowed to share their personal variables with all the other participants if they would like.</p>
+<p>What differences appear between the plots in the two different simulations? How did the ability to collude with others change the results of the second simulation?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Currently, the automated restaurants do not change their product the way that real users of this simulation so. If they did, it would allow the simulation to run smoother with a lower number of actual participants. Add code so that the automated owners will change their variables when they notice their profit decrease by a significant amount.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses the create-temporary-plot-pen function to plot the the day's profit for all of the user-controlled restaurants.</p>
+<h2>RELATED MODELS</h2>
+<p>See the Social Science models in the NetLogo models library. 'Wealth Distribution,' for example, deals with similar content as this model -- the human economical behavior in a free market. Also see the HubNet activity 'Tragedy of the Commons' for a simulation of economical aggression under the conditions of limited resources.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model simulates an Economics concept associated with Vilfredo Pareto.
+See V. Pareto, Manuale d'economia politico (Milan,1906).</p>
+<p>Thanks to Ben Neidhart for his work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2004).  NetLogo Restaurants HubNet model.  http://ccl.northwestern.edu/netlogo/models/RestaurantsHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2004 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This activity and associated models and materials were created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2004 --></div>
+      </div>
+    </main>
+  </body>
+</html>

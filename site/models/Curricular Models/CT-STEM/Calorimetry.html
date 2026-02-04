@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calorimetry</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Calorimetry</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/CT-STEM/Calorimetry.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/CT-STEM/Calorimetry.png" alt="Screenshot of Calorimetry" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model explores the relationships between chemical reactions and change in temperature. It does so by simulating a calorimeter, an instrument for measuring the amount of heat produced from chemical reactions. More specifically, this model focuses on the following reactions:</p>
+<p>Ca<sub>(s)</sub> + H<sub>2</sub>O<sub>(l)</sub> → Ca(OH)<sub>2(aq)</sub> + H<sub>2(g)</sub></p>
+<p>Adding calcium to water produces calcium hydroxide. This is an exothermic reaction, meaning it gives off heat as the calcium molecules bond with the water molecules.</p>
+<p>KI<sub>(s)</sub> + H<sub>2</sub>O<sub>(l)</sub> → K<sub>(aq)</sub> + I<sub>(aq)</sub></p>
+<p>Adding potassium iodide to water breaks the KI bonds. This is an endothermic reaction, meaning it absorbs heat as the potassium iodide bonds break.</p>
+<p>This model is also built off of one in a series of GasLab models. They use the same basic rules for simulating the behavior of gases.  Each model integrates different features in order to highlight different aspects of gas behavior. This model is different from the other GasLab models in that the collision calculations take the circular shape and size of the particles into account, instead of modeling the particles as dimensionless points.</p>
+<h2>HOW IT WORKS</h2>
+<h4>Calorimetry</h4>
+<p>Initially, all the particles have the same speed but random directions. As the particles repeatedly collide, they exchange energy and head off in new directions, and the speeds are dispersed -- some particles get faster, some get slower. In order to break potassium iodide bonds or form calcium hydroxide bonds, the collision with water molecules must be correct. The model analyzes the speed of collisions and after a certain threshold, we can observe the transformations. These reactions either release or absorb heat. Changes in temperature are recorded by three sensors. Each sensor can be adjusted according to size and placement. Temperatures can be observed outside of the calorimeter, within the calorimeter, and along the walls. The rate of temperature exchanged between all three areas is also dependent on the material selected for the walls.</p>
+<h4>Particles</h4>
+<p>The model determines the resulting motion of particles that collide, with no loss in their total momentum or total kinetic energy (an elastic collision).</p>
+<p>To calculate the outcome of collision, it is necessary to calculate the exact time at which the edge of one particle (represented as a circle) would touch the edge of another particle (or the walls of a container) if the particles were allowed to continue with their current headings and speeds.</p>
+<p>By performing such a calculation, one can determine when the next collision anywhere in the system would occur in time.  From this determination, the model then advances the motion of all the particles using their current headings and speeds that far in time until this next collision point is reached.  Exchange of kinetic energy and momentum between the two particles, according to conservation of kinetic energy and conservation of momentum along the collision axis (a line drawn between the centers of the two particles), is then calculated, and the particles are given new headings and speeds based on this outcome.</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>Use the sliders to select CONTAINER-MATERIAL, OUTSIDE-TEMPERATURE, and NUMBER-OF-WATER-MOLECULES.</li>
+<li>Press SETUP. The following message should appear in the console at the bottom: "Set-up done. Follow this console for messages ..."</li>
+<li>Press RUN/PAUSE to start and stop the model. You should see the water molecules moving freely within the calorimeter.</li>
+</ol>
+<p>As the model runs:</p>
+<ol>
+<li>You can add KI and Ca molecules. Select the number of KI-TO-ADD and CA-TO-ADD before pressing ADD-KI or ADD-CA.</li>
+<li>You can place sensors outside, within, or along the walls of the calorimeter. Select the desired sensor size with the SENSOR-RADIUS slider. Then click PLACE-SENSOR. A circular sensor should follow your mouse until you click to stamp it in the desired location. Sensors that reach multiple areas will automatically be assigned the area that is covered the most (a message should appear within the console at the bottom).</li>
+<li>All sensors can be removed in any order. Click the corresponding REMOVE-SENSOR button; each is located beneath its monitor and also labeled by number.</li>
+</ol>
+<p>If you would like to pick up where you left off, feel free to use the SAVE-EXPERIMENT feature. This will save the model as a .model file. You can later use the LOAD-EXPERIMENT button to upload that saved model.</p>
+<p>Plots/Monitors:
+- The graph on the right records all three sensor readings over time
+- The observed temperatures for each sensor can also be seen in the monitors beneath the graph</p>
+<h2>THINGS TO NOTICE</h2>
+<p>How do the different calorimeter materials affect the transfer of heat/energy between the interior and exterior?</p>
+<p>One of the materials in the list is diamond. Given that it is not possible to make cups from diamond, why do you think this hypothetical material is useful to have?</p>
+<p>With particles of different sizes, you may notice some fast moving particles have lower energy than medium speed particles. How can the difference in the mass of the particles account for this?</p>
+<h2>THINGS TO TRY</h2>
+<p>To see what the approximate mass of each particle is, type this in the command center:</p>
+<pre><code>ask particles [ set label precision mass 0 ]
+</code></pre>
+<h2>CURRICULAR USE</h2>
+<p>This model is primarily designed for an "Energy in Chemical Reactions" unit hosted at ct-stem.northwestern.edu and authored by Carole Namowicz, but is also designed for other relevant units.</p>
+<h4>Goals</h4>
+<ul>
+<li>Simulating realistic molecule representation (including ions), movement, and collision.</li>
+<li>Simulating realistic energy in chemical reactions.</li>
+<li>Simulating a calorimeter by placing sensors in the model and measuring the energy change in the closed system.</li>
+<li>Simulating different calorimeter wall materials (e.g., glass, foam, aluminum)</li>
+<li>Simulating different energy sources</li>
+</ul>
+<h2>EXTENDING THE MODEL</h2>
+<p>You can try to add initial-water-temperature as an additional, adjustable variable to extend the sandbox.</p>
+<p>You can modify this model to simulate other endothermic or exothermic reactions.</p>
+<p>You can implement a bifocal extension using the Arduino or GoGo extensions. For example, you can connect three temperature sensors and place them inside, outside, and on the wall of a real-world calorimeter. You can then feed the sensor information to the model so that the virtual particles behave like the real particles inside the calorimeter.</p>
+<p>Collisions between boxes and circles could also be explored (changing particle shapes).  Variations in size between particles could be investigated or variations in the mass of some of the particle could be made to explore other factors that affect the outcome of collisions.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model includes a separate output console to help guide users as they setup, run the model, and add sensors. It does so through NetLogo's <code>output-print</code> command.</p>
+<p>The model also uses the <code>import-a</code> and <code>fetch</code> extensions to save and upload experiments.</p>
+<p>Instead of advancing one tick at a time as in most models, the tick counter takes on fractional values, using the <code>tick-advance</code> primitive.  (In the Interface tab, it is displayed as an integer, but if you make a monitor for <code>ticks</code> you'll see the exact value.)</p>
+<h2>RELATED MODELS</h2>
+<p>This model is an extension of the GasLab Circular Particles model.</p>
+<p>Look at the other GasLab models to see collisions of "point" particles, that is, the particles are assumed to have an area or volume of zero.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<ul>
+<li>Wilensky, U. (2005). NetLogo GasLab Circular Particles model. http://ccl.northwestern.edu/netlogo/models/GasLabCircularParticles. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+<li>Wilensky, U. (1997). NetLogo GasLab Gas in a Box model. http://ccl.northwestern.edu/netlogo/models/GasLabGasinaBox. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Aslan, U., Namowicz, C., Levites, L. and Wilensky, U. (2021).  NetLogo Calorimetry model.  http://ccl.northwestern.edu/netlogo/models/Calorimetry.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>This model was developed as part of the CT-STEM Project at Northwestern University and was made possible through generous support from the National Science Foundation (grants CNS-1138461, CNS-1441041, DRL-1020101, DRL-1640201 and DRL-1842374) and the Spencer Foundation (Award #201600069). Any opinions, findings, or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the funding organizations. For more information visit https://ct-stem.northwestern.edu/.</p>
+<p>Special thanks to the CT-STEM models team for preparing these models for inclusion
+in the Models Library including: Kelvin Lao, Jamie Lee, Sugat Dabholkar, Sally Wu,
+and Connor Bain.</p>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2021 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2021 CTSTEM Cite: Aslan, U., Namowicz, C., Levites, L. --></div>
+      </div>
+    </main>
+  </body>
+</html>

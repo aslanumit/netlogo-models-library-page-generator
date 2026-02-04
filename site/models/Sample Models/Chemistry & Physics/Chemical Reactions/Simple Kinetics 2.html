@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Kinetics 2</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Simple Kinetics 2</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Chemical%20Reactions/Simple%20Kinetics%202.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Chemical Reactions/Simple Kinetics 2.png" alt="Screenshot of Simple Kinetics 2" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates the properties of LeChatelier's Principle. This chemical principle states that if a system that is at equilibrium is perturbed, the system will readjust to establish a new equilibrium. For example, if you add reactants to a reversible reaction that is at equilibrium, the system will shift to generate more products and establish a new equilibrium. The principle can also be described with chemical equations.</p>
+<p>Below is a generic equation which depicts two molecules of reactant A combining to form one molecule or product B. The reaction is reversible, meaning that the one molecule of B can break down into two molecules of A.</p>
+<pre><code class="language-text">                  Kb
+        A + A &lt;=======&gt; B
+                  Ku
+</code></pre>
+<p>An example of such a reaction would be dimerization of the gas nitrous oxide:</p>
+<pre><code class="language-text">                  Kb
+        2 NO  &lt;=======&gt; N O
+            2     Ku     2 4
+</code></pre>
+<p>This reaction is an example of a complex reaction which consists of two elementary reactions.  The forward bimolecular reaction</p>
+<pre><code class="language-text">                 Kb
+        A + A --------&gt; B
+</code></pre>
+<p>is characterized by the constant Kb and the reverse unimolecular reaction</p>
+<pre><code class="language-text">              Ku
+        B ---------&gt; A + A
+</code></pre>
+<p>The equilibrium rate constant for the entire reaction (Keq) is equal to [B] / [A] ^ 2. Each of the rate constants in the equations above has units of s^-1. They are empirically derived constants that when combined with the reaction concentrations tell you how fast the reaction proceeds according to the reaction rate law. The rate law ultimately tells you how many Molar units of a molecule react per second. For the reaction above the forward rate law is RATE = Kb[A]^2 and the reverse rate law is RATE = Ku[B].</p>
+<p>Note that because we are simulating the reaction, the values of Kb and Ku in this reaction are not real-world values.  It would be necessary to use several differential equations to calculate the real values of Kb, Ku and Keq, however, several qualitative features of their relationships can be seen using this model. Reaction equilibrium is reached when a system reaches a steady-state. This is not to say that reactions have stopped occurring!  Microscopic changes in equilibrium still take place, but to our eyes and our measurements the system appears stable because the forward and reverse rates are equal.</p>
+<p>The rate at which a reaction reaches equilibrium as well as the state of the equilibrium system both depend upon the rate constants, the temperature, the concentration of reactants and products and, when a gas is involved, the volume of the container. When a system has reached equilibrium, changes to any of the variables above result in a change in the system to establish a new equilibrium. This effect is predicted using LeChatelier's Principle. We can use our model to discover the role of each variable (temperature, volume, concentration and rate constant) in LeChatelier's Principle.</p>
+<h2>HOW TO USE IT</h2>
+<p>To start off:</p>
+<p>Choose the values of Kb and Ku with appropriate sliders:
+- Kb controls the rate of the forward reaction by which two green molecules turn bimolecularly into a single red molecule.
+- Ku controls the rate of the reverse reaction, by which a red molecule turns unimolecularly into two green molecules.</p>
+<p>Having chosen appropriate values of the constants, press SETUP to clear the world and create an initial number of green molecules.  Note: we do not create red molecules initially, although this can be done in principal.</p>
+<p>Press RUN to start the simulation.</p>
+<p>Set the size of the yellow box using the EDGE-SIZE slider. (If you would like to change the size while you are running a model. Press RUN to stop the model, adjust the EDGE-SIZE slider and redraw the box using the REDRAW BOX button. Resume the reaction by pressing RUN.)</p>
+<p>After viewing the effects of several different rate constant values, use the other sliders and buttons to observe how concentration, volume, and temperature affect the equilibrium.</p>
+<p>A note on the temperature variable. Temperature changes have a unique effect on equilibrium compared with the other variables. You can observe this effect by toggling the TEMP-EFFECT button on or off and using the slider to set the temperature of the reaction in centigrade.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>You will see molecules wandering around the world and changing color.  Pay more attention to the plot of the concentrations.  Do the plots soon reach stationary concentrations?</p>
+<p>How does changing the concentrations of reactants and products in the system affect the equilibrium? Does it take more or less time to reach a stationary condition under various conditions?</p>
+<p>What is the effect of temperature on the equilibrium of the system compared to volume or concentration?  In the Procedures window, note how rate constants are calculated based on the temperature.</p>
+<p>Notice how the ratio of products to reactants changes with changes to the system. Does the ratio change much with each factor? Make a window that show the value of Keq to help you determine this.</p>
+<p>Why do the traces of each breed eventual balance around a constant average? How come this value is an average and not a constant?</p>
+<h2>THINGS TO TRY</h2>
+<p>How do the stationary concentrations depend on the values of Kb and Ku?   You can change Ku and Kb while the model is running.   See if you can predict what the stationary concentrations will be with various combinations of Kb and Ku.</p>
+<p>Without adding additional reactants or products and with the temperature effect in the off position, note that more red product molecules accumulate when the volume decreases.  Can you explain why?</p>
+<p>Observe the progress of the reaction at high and low temperatures.  Does this observed trend fit your expectations?</p>
+<p>Try adding some molecules to the system that have no "breed", as an inert gas. Does this affect the equilibrium? Why or why not?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try altering the code so that when two green molecules collide, they produce two red molecules instead of one. Likewise, alter it so that two red molecules must collide to form two green molecules. Observe the effect of volume on this system. Is the effect as you predicted?</p>
+<p>What would the effect of adding a catalyst to the system be?  Add a catalyst breed that accelerates the reaction and observe the trend.  Are you surprised?</p>
+<p>Add a monitor that measures the equilibrium constant for the system.  Is it really a constant?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Notice the use of breeds in the model.</p>
+<p>Notice how we store an agentset of patches in the <code>black-patches</code> variable.  Computing this agentset once ahead of time (at the time the box is drawn) is faster than recomputing it at every iteration.</p>
+<h2>RELATED MODELS</h2>
+<p>Simple Kinetics 1
+Simple Kinetics 3</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Thanks to Mike Stieff for his work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Stieff, M. and Wilensky, U. (2001).  NetLogo Simple Kinetics 2 model.  http://ccl.northwestern.edu/netlogo/models/SimpleKinetics2.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2001 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2001 Cite: Stieff, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

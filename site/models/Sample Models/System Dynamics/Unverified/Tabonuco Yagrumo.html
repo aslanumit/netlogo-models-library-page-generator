@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tabonuco Yagrumo</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Tabonuco Yagrumo</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/System%20Dynamics/Unverified/Tabonuco%20Yagrumo.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/System Dynamics/Unverified/Tabonuco Yagrumo.png" alt="Screenshot of Tabonuco Yagrumo" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a system dynamics model of a simple ecosystem.  Two species of trees -- tabonuco and yagrumo -- compete for space in a forest canopy.  This model illustrates the role of hurricane destruction in this ecosystem, as well as the resultant nitrogen and carbon produced by the ecosystem.</p>
+<h2>HOW IT WORKS</h2>
+<p>The relations between the tree species and the amount of space into which they can grow are defined in the System Dynamics Modeler.  The TABONUCO and YAGRUMO stocks represent the population of the two tree species.  They can only grow in the gaps of the forest canopy.  These spaces are represented by the GAPS stock.  The rate at which the trees grow or die is represented by the TABONUCO-GROWS and YAGRUMO-GROWS flows.  The flows connect to the GAPS stock to the tree stocks.  If more trees grow, there are fewer gaps in the forest.  If trees die then there are more gaps.</p>
+<p>Tabonuco trees grow slower than yagrumo trees, these rates are represented by the TABONUCO-GROWTH-RATE and YAGRUMO-GROWTH-RATE variables.  However, tabonuco trees outlive yagrumo trees.  This relationship is represented by the TABONUCO-OUTGROWS-YAGRUMO flow from the YAGRUMO stock to the TABONUCO stock.</p>
+<p>The YAGRUMO-GROWS and TABONUCO-GROWS flows are also connected to the DISTURBANCE variable.  DISTURBANCE represents the destruction of trees by hurricanes.  The HURRICANE-STRENGTH and HURRICANE-INTERVAL variables determine amount of disturbance and the number of ticks between disturbances, which can be controlled by sliders.</p>
+<p>The model also tracks the amount of carbon and nitrogen produced by the trees.  The trees produce resources via photosynthesis.  The rest of the living things in the forest use these resources.  The CARBON and NITROGEN variables calculate how much of those chemicals are produced by the trees.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press the SETUP button to initialize the model.</p>
+<p>To run the model continuously, press GO.</p>
+<p>To run the model for one time step, press STEP.</p>
+<p>Alternatively, you can run only 250 steps by pressing the
+SETUP REPEAT 250 [ GO ] button.</p>
+<p>Adjust the USER-HURRICANE-INTERVAL slider to determine how many time units occur between hurricanes.</p>
+<p>Adjust the USER-HURRICANE-STRENGTH slider to determine how many trees are destroyed by the hurricanes</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Hurricanes play an important role in the ecosystem.  The relative amount of each tree is highly sensitive to both the rate and strength of hurricanes.  Both species co-exist only within a certain range of hurricane frequency and strength.</p>
+<h2>THINGS TO TRY</h2>
+<p>Change the USER-HURRICANE-INTERVAL slider, observe what happens to the YAGRUMO population, and the productivity.  Do the same with USER-HURRICANE-STRENGTH.</p>
+<p>Use BehaviorSpace (on the Tools menu) to sweep the parameter space for the USER-HURRICANE-INTERVAL and USER-HURRICANE-STRENGTH.  An experiment that does this is included.</p>
+<p>Use the GLOBALS monitor to observe the value off stocks, constants, model time, and model dt.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add a third species of tree to the model.</p>
+<p>Model the competition for the shared GAP stock in a different manner.</p>
+<p>Vary the strength of the hurricanes, randomly, across an interval.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses the System Dynamics Modeler. This model also shows how to simulate discrete events (like hurricanes) in system dynamics.</p>
+<p>It includes a built-in BehaviorSpace experiment.</p>
+<h2>RELATED MODELS</h2>
+<p>Tabonuco Yagrumo Hybrid</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is based on the work of The Learning Partnership in the Journey to El Yunque project (PI's include Steven McGee, Jess Zimmerman, and Steven Croft). To view the original materials or to learn more about that project, visit https://web.archive.org/web/20200809170541/http://elyunque.net/.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2006).  NetLogo Tabonuco Yagrumo model.  http://ccl.northwestern.edu/netlogo/models/TabonucoYagrumo.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2006 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2006 --></div>
+      </div>
+    </main>
+  </body>
+</html>

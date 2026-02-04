@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Patch Outlines Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Patch Outlines Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Patch%20Outlines%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Patch Outlines Example.png" alt="Screenshot of Patch Outlines Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates a simple way to draw outlines around a patch or a group of patches without using pens and error-prone turtle movement code.</p>
+<p>There are two separate methods demonstrated:</p>
+<ul>
+<li>The first example uses the shape <code>"square-outline"</code> to outline a whole patch.  To draw it, a temporary turtle is created, centered on a patch with a <code>heading</code> of <code>0</code>, then the <code>stamp</code> primitive draws the turtle's shape on the patch.  After drawing the grid the temporary turtle is removed.</li>
+<li>The second example uses a <code>"patch-edge"</code> shape that only outlines one edge of a patch.  This allows drawing more complex outlines for groups of patches, but it requires adjusting the <code>heading</code> of the temporary turtle to make sure the line is drawn on the correct edge.  Similarly the decorator turtle is temporary and removed after stamping.</li>
+</ul>
+<p>There is also a third demonstration, using the patch outline shape to present a cursor turtle that can outline a patch under the mouse pointer.  This doesn't use stamp, as that would complicate the drawing code too much, so care must be taken when keeping the cursor agent around that it doesn't interfere with model code.  A breed could help with this problem.</p>
+<p>To use these methods in your models you'll need to import the special shapes using the <strong>Turtle Shapes Editor</strong> from NetLogo's <strong>Tools</strong> menu.</p>
+<p>The <code>square-outline</code> shape must use the full area of the turtle shape in order to be drawn correctly.  The full area of a turtle shape at size 1 corresponds to the size of a single patch.  Similarly the <code>patch-edge</code> shape must be along the whole edge to work.</p>
+<p>If you want to change the thickness of the lines of the outlines, you'll need to edit the shapes.</p>
+<!-- 2024 --></div>
+      </div>
+    </main>
+  </body>
+</html>

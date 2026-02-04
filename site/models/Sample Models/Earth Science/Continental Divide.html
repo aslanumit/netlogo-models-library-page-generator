@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Continental Divide</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Continental Divide</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Earth%20Science/Continental%20Divide.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Earth Science/Continental Divide.png" alt="Screenshot of Continental Divide" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates one way to locate a continental divide.  A continental divide separates a continent into two regions based on two bodies of water.  Rain in one region flows into one body of water and rain in the other region flows into the other.</p>
+<p>In the example data, the continent is North America and the two bodies of water used to calculate the divide are the Pacific and Atlantic oceans.</p>
+<h2>HOW IT WORKS</h2>
+<p>The model is initialized with an elevation map.  Then both oceans systematically rise, bit by bit.  The two floods run towards each other over the continent and eventually crash.  The continental divide is precisely where the two floods collide.</p>
+<h2>HOW TO USE IT</h2>
+<p>SETUP initializes the model.  Elevations are stored in the patches and they are colored appropriately. Also, the two floods are started off on the coasts.</p>
+<p>GO runs the model.  When the floods cannot advance any more with the given height of the water, the water level is raised a little bit.  Eventually, when the whole continent has been flooded and the continental divide has been found, the model stops automatically.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The two floods move at different rates.</p>
+<p>The first 100 meters of flood covers more land than the last 100 meters.  What about in between?</p>
+<p>Land that's flooded later isn't necessarily higher elevation. (Why?)</p>
+<h2>THINGS TO TRY</h2>
+<p>Use the speed slider to slow the model down and watch what happens in more detail.</p>
+<p>Increase the patch-size to get a better view of the action.  (Because the elevation data assumes specific dimensions, you can't change the number of patches in the model.)</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Make a slider to control how much water-height changes when the flooding at a given water-height has stopped.</p>
+<p>Make a slider for controlling how many colors from FLOODED-GROUND-COLOR-LIST get used.  With a smaller number, the flooded land's elevation is easier to see.  With a larger number, the progression of flooding is easier to see.</p>
+<p>Is there a difference if <code>neighbors</code> is used instead of <code>neighbors4</code>? Make a switch to toggle between the two options and compare them.</p>
+<p>Try the model with a more detailed dataset.</p>
+<p>Allow the user of the model to specify different bodies of water than the Atlantic and Pacific oceans.  For example, it'd be interesting to see which water flows into the Gulf of Mexico and which flows into the Atlantic.</p>
+<p>Allow the user to import maps of other parts of the world.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of turtles to represent the edges of the flood.  Instead of asking all the patches to find the ones on each edge, we only need to ask the turtles to act.  Since at any given moment only a few patches are at a flood edge, this is much faster.</p>
+<p>Note the used of <code>foreach</code> on multiple lists to initialize the elevation data in the patches.</p>
+<h2>RELATED MODELS</h2>
+<p>Grand Canyon</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model was inspired by Brian Hayes' article "Dividing the Continent" in American Scientist, Volume 88, Number 6, page 481.  An online version can be found here: https://www.jstor.org/stable/27858114</p>
+<p>Thanks to Josh Unterman for his work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2007).  NetLogo Continental Divide model.  http://ccl.northwestern.edu/netlogo/models/ContinentalDivide.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 --></div>
+      </div>
+    </main>
+  </body>
+</html>

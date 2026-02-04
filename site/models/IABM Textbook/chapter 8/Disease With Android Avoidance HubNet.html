@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Disease With Android Avoidance HubNet</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Disease With Android Avoidance HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/IABM%20Textbook/chapter%208/Disease%20With%20Android%20Avoidance%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/IABM Textbook/chapter 8/Disease With Android Avoidance HubNet.png" alt="Screenshot of Disease With Android Avoidance HubNet" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is from Chapter Eight of the book "Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo", by Uri Wilensky &amp; William Rand.</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<p>This model is in the IABM Textbook folder of the NetLogo Models Library. The model, as well as any updates to the model, can also be found on the textbook website: http://www.intro-to-abm.com/.</p>
+<h2>WHAT IS IT?</h2>
+<p>This model is a slight variant of the DISEASE-HUBNET model in the NetLogo models library. It extends that model by allowing androids to have 3 distinct behaviors.</p>
+<p>This model simulates the spread of a disease through a population.  This population can consist of either students, which are turtles controlled by individual students via the HubNet Client, or turtles that are generated and controlled by NetLogo, called androids, or both androids and students.</p>
+<p>Turtles move around, possibly catching an infection.  Healthy turtles on the same patch as sick turtles have a INFECTION-CHANCE chance of becoming ill.  A plot shows the number of sick turtles at each time tick, and if SHOW-ILL? is on, sick turtles have a red circle attached to their shape.</p>
+<p>Initially, all turtles are healthy.  A number of turtles equal to INITIAL-NUMBER-SICK become ill when the INFECT button is depressed.</p>
+<p>For further documentation, see the Participatory Simulations Guide found at http://ccl.northwestern.edu/rp/ps/index.shtml.</p>
+<h2>HOW TO USE IT</h2>
+<p>Quickstart Instructions:</p>
+<p>Teacher: Follow these directions to run the HubNet activity.
+Optional: Zoom In (see Tools in the Menu Bar)
+Optional: Change any of the settings. If you want to add androids press the CREATE ANDROIDS button.  Press the GO button.
+Everyone: Open up a HubNet client on your machine and type your user name, select this activity and press ENTER.
+Teacher: Have the students move their turtles around to acquaint themselves with the interface. Press the INFECT button to start the simulation.
+Everyone: Watch the plot of the number infected.
+Teacher: To run the activity again with the same group, stop the model by pressing the NetLogo GO button, if it is on. Change any of the settings that you would like.  Press the CURE-ALL button to keep the androids, or SETUP to clear them
+Teacher: Restart the simulation by pressing the NetLogo GO button again. Infect some turtles and continue.
+Teacher: To start the simulation over with a new group, stop the model by pressing the GO button, if it is on, have all the students log out or press the RESET button in the Control Center, and start these instructions from the beginning</p>
+<p>Buttons:</p>
+<p>SETUP - returns the model to the starting state, all student turtles are cured and androids are killed.  The plot is advanced to start a new run but it is not cleared.
+CURE-ALL - cures all turtles, androids are kept.  The plot is advanced to start a new run but it is not cleared.
+GO - runs the simulation
+CREATE ANDROIDS - adds randomly moving turtles to the simulation
+INFECT - infects INITIAL-NUMBER-SICK turtles in the simulation
+NEXT &gt;&gt;&gt; - shows the next quick start instruction
+&lt;&lt;&lt; PREVIOUS - shows the previous quick start instruction
+RESET INSTRUCTIONS - shows the first quick start instruction</p>
+<p>Sliders:</p>
+<p>NUMBER - determines how many androids are created by the CREATE ANDROIDS button
+ANDROID-DELAY - the delay time, in seconds, for android movement - the higher the number, the slower the androids move
+INITIAL-NUMBER-SICK - the number of turtles that become infected spontaneously when the INFECT button is pressed
+INFECTION-CHANCE - sets the percentage chance that every tenth of a second a healthy turtle will become sick if it is on the same patch as an infected turtle</p>
+<p>Switches:</p>
+<p>SHOW-SICK? - when on, sick turtles add to their original shape a red circle.  When off, they can move through the populace unnoticed
+SHOW-SICK-ON-CLIENTS? - when on, the clients will be told if their turtle is sick or not.</p>
+<p>Chooser:</p>
+<p>ANDROID-BEHAVIOR - has 3 values, "stay", "wander" and "avoid". When ANDROID-BEHAVIOR is "wander", the androids wander randomly. When behavior is "avoid", androids actively try to avoid sick agents. When behavior is "stay", the androids don't move.</p>
+<p>Monitors:</p>
+<p>TURTLES - the number of turtles in the simulation
+NUMBER SICK - the number of turtles that are infected</p>
+<p>Plots:</p>
+<p>NUMBER SICK - shows the number of sick turtles versus time</p>
+<p>Client Information</p>
+<p>After logging in, the client interface will appear for the students, and if GO is pressed in NetLogo they will be assigned a turtle which will be described in the YOU ARE A: monitor.  And their current location will be shown in the LOCATED AT: monitor.  If the student doesn't like their assigned shape and/or color they can hit the CHANGE APPEARANCE button at any time to change to another random appearance.</p>
+<p>The SICK? monitor will show one of three values: "true" "false" or "N/A".  "N/A" will be shown if the NetLogo SHOW-ILL-ON-CLIENTS? switch is off, otherwise "true" will be shown if your turtle is infected, or "false" will be shown if your turtle is not infected.</p>
+<p>The student controls the movement of their turtle with the UP, DOWN, LEFT, and RIGHT buttons and the STEP-SIZE slider.  Clicking any of the directional buttons will cause their turtle to move in the respective direction a distance of STEP-SIZE.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>No matter how you change the various parameters, the same basic plot shape emerges.  After using the model once with the students, ask them how they think the plot will change if you alter a parameter.  Altering the initial percentage sick and the infection chance will have different effects on the plot.</p>
+<h2>THINGS TO TRY</h2>
+<p>Use the model with the entire class to serve as an introduction to the topic.  Then have students use the NetLogo model individually, in a computer lab, to explore the effects of the various parameters.  Discuss what they find, observe, and can conclude from this model.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Currently, the turtles remain sick once they're infected.  How would the shape of the plot change if turtles eventually healed?  If, after healing, they were immune to the disease, or could still spread the disease, how would the dynamics be altered?</p>
+<h2>RELATED MODELS</h2>
+<p>Disease HubNet
+Virus</p>
+<h2>HOW TO CITE</h2>
+<p>This model is part of the textbook, “Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo.”</p>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. and Stroup, W. (1999).  NetLogo Disease With Android Avoidance HubNet model.  http://ccl.northwestern.edu/netlogo/models/DiseaseWithAndroidAvoidanceHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<p>Please cite the textbook as:</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1999 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 1999 Cite: Wilensky, U. and Stroup, W. --></div>
+      </div>
+    </main>
+  </body>
+</html>

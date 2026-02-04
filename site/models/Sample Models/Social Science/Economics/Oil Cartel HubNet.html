@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oil Cartel HubNet</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Oil Cartel HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Economics/Oil%20Cartel%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Social Science/Economics/Oil Cartel HubNet.png" alt="Screenshot of Oil Cartel HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a collaborative exploration of the economics of a market with imperfect competition. As members of a cartel, participants experience how jointly determined price and quantity decisions can be advantageous to suppliers, harmful to consumers, but also why a cartel is so difficult to sustain. In this version of Oil Cartel, cartel members face differing profit expectations, and set production and pricing strategies in an attempt to meet those expectations.  They respond to each other's behavior by altering their strategies.</p>
+<h2>HOW IT WORKS</h2>
+<p>The demand for oil is determined by the number of buyers (NUM-BUYERS) and how much oil they each desire (IDEAL-QUANTITY).  A buyer follows two rules.  One, they always buy from the seller offering the minimum price.  Two, they only buy if the minimum price available does not exceed their maximum willingness to pay (which varies across the buyers).</p>
+<p>Each HubNet Client is a member of the cartel.  The cartel currently has an agreement in place to limit overall production, resulting in one common official price, and a quota for each member. Each member of this cartel independently decides whether to abide by the agreement or to "cheat" on the agreement and try to boost profits by producing and selling beyond their quota. Furthermore, cartel members face different revenue demands ("Profit-Needed") from their home government, as they come from countries of differing levels of economic prosperity.  More specifically, each cartel member can choose from the following production and pricing strategies, which they can alter depending on the response of buyers and other cartel members:</p>
+<ol>
+<li>
+<p>"Agreement" Strategy:  Always produce and price exactly in accordance with the cartel agreement</p>
+</li>
+<li>
+<p>"Quota-Plus" Strategy: Produce a little bit more than the quota and offer the excess amount to the market for a price a little less than the agreement price.  (The additional amount produced is set by the "extra-output" slider. )</p>
+</li>
+<li>
+<p>"Quota-Minus" Strategy:  Produce a little bit less than the quota and offer it to the market at the agreement price. (The amount less is set by the "reduced-output" slider.) A member might do this in an effort to keep prices up and the cartel together.</p>
+</li>
+<li>
+<p>"Price &gt; MC" Strategy: Keep producing and offering additional output as long
+as the price you have to offer to the buyers in order to sell that unit is still higher than the cost to produce it.</p>
+</li>
+<li>
+<p>"Flood Market" Strategy:  Saturate the market with low cost oil to punish or send a warning to cheaters.</p>
+</li>
+</ol>
+<h2>HOW TO USE IT</h2>
+<p>Set the number of buyers  (NUM-BUYERS) and amount of oil each buyer demands (IDEAL-QUANTITY).  Press the INITIAL-LOGIN forever button and leave pressed until all HubNet Client log in. Ask clients to set their initial strategies, paying attention to the current agreement, current profit, as well as their own profit needed.  Once all clients have selected their initial strategies, press the RUN-MARKET button.  The overall behavior of the market can be witnessed on the View and Plots on the server, which are described below.  Each individual client's information is displayed on their own monitors, including a plot of their current profit.</p>
+<p>Buttons:</p>
+<p>INITIAL-LOGIN - Allows sellers to log in to the activity. This forever button should be turned off before beginning the simulation.</p>
+<p>RUN-MARKET - Runs the simulation. Clients will only be selling oil while the market simulation is running. Turning off this forever button will stop all market activity, although it can be resumed from the same point by clicking the button again.</p>
+<p>RESET - Resets the simulation to its initial state.</p>
+<p>UPDATE-AGREEMENT - Updates the current cartel agreement based on current buyer demand.  Only useful if IDEAL-QUANTITY changes, but the simulation is not reset.</p>
+<p>Sliders:</p>
+<p>NUM-BUYERS - Total number of buyers in the market.  Changing this value requires a reset.  It cannot be changed during the simulation.</p>
+<p>IDEAL-QUANTITY -  The amount of oil demanded by each buyer per time period.</p>
+<p>Monitors:</p>
+<p>"# Sellers" - The number of sellers participating in the activity.</p>
+<p>"Target Total Barrels" - This is the amount of total production agreed upon by the cartel. It is the total of all oil produced by suppliers that would maximize profits if the cartel behaved as a unitary monopolist, given the current buyer demand and supplier marginal cost. This quantity divided by the number of sellers is each seller's quota.</p>
+<p>"Official Price" - This is the price of the current cartel agreement. It is the price of oil that corresponds with supplying "Target Total Barrels" given the current buyer demand and supplier marginal cost.</p>
+<p>Plots:</p>
+<p>"Oil Sold at Market" - Plots the quantities of oil sold at market over time (Actual). Also on the graph are the amounts that would be supplied under perfect competition (Competitive) and under a monopoly (Agreement). Anything less than the amount of perfect competition and above or equal to the monopoly line is an improvement, and is better for the cartel than a situation with no collusion.</p>
+<p>"Average Price of Oil" - Plots the average price of oil across all transactions in the current time period (Average).  Also on the graph are plots of Official Price of the cartel agreement (Agreement) and the marginal cost of suppliers (MC). Anything above marginal cost and equal to or below the agreement line is better for the cartel than a situation with no collusion.</p>
+<p>View:</p>
+<p>The view shows all the sellers and buyers.  The sellers are represented by a colored circle or square. The buyers are the multitude of green, yellow, and red  agents in the window.  Green agents are those buyers who were able to make a purchase at the time period.  They move to the seller from which they last purchased oil. Yellow agents are buyers who did not make a purchase, but they would have if it were priced at the level of a perfectly competitive market.  They represent the inefficiency caused by the cartel behavior.  Red agents are buyers who did not purchase oil, nor would they even in a perfectly competitive market.  Price would have to be even more favorable than the perfectly competitive price for these buyers to purchase.</p>
+<p>Client Information:</p>
+<p>"You Are:" - Identifies you on the View (e.g., The White Circle)</p>
+<p>"Market News" - Information of note.</p>
+<p>"Marginal Cost" - The cost of producing one more unit.</p>
+<p>"# Suppliers" - The number of sellers who are currently in the market.</p>
+<p>"Official Price" - Price from the current cartel agreement.</p>
+<p>"Qty Sold at Official Price" -- Amount of oil sold at the agreement price.</p>
+<p>"Price of Extra Qty" - The price at which you offer the extra oil you produce if you choose not to abide by the agreement.  It is determined by the strategy selected.</p>
+<p>"Extra Qty Sold" - Amount of oil purchased by buyers at the "Price of Extra Qty"</p>
+<p>"My Quota" - Individual member quota based on cartel agreement.</p>
+<p>"Actual Qty" - The total amount sold regardless of price.</p>
+<p>"Current Profit" - The profit made by the seller last time oil was sold at market.</p>
+<p>"Profit-Needed" - The profit expected from you by your home country.</p>
+<p>"Current Profit Plot" - A plot over time of the cartel members' profit.</p>
+<p>"Strategy" - Drop box used to select one of the strategies mentioned above.</p>
+<p>"extra-output" -  Slider used to set the extra amount produced if using the "Quota-Plus" strategy.</p>
+<p>"reduced-output - Slider used to set the amount reduced from quota if using the "Quota-Minus" strategy.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The cartel can usually withstand a little bit of cheating, even if all the members indulge. If all members pursue the "Price &gt;= MC" strategy, the market quickly reaches the perfect competition equilibrium price and quantity.  Even if only one member becomes too aggressive, the market price of oil will drop, and the cartel will most likely crumble.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try changing the values of NUM-BUYERS and IDEAL-QUANTITY? Does cheating by cartel members become more or less noticeable?</p>
+<p>Can you reach an equilibrium point where everyone exceeds their Profit Needed?</p>
+<p>The "Quota-Minus" strategy seems like an unattractive one.  Can you find a situation where it is a strategy ever actually worth pursuing?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Here are some suggestions for ways to extend the model:</p>
+<ul>
+<li>
+<p>Create new strategies!  Current strategies are only a fraction of the possible ways a cartel member might behave over time.</p>
+</li>
+<li>
+<p>Give cartel members the capacity to build up reserves, which they can then use strategically. Reserves could be a function of a producer's maximum capacity, and would limit a seller's ability to "flood the market."</p>
+</li>
+</ul>
+<h2>NETLOGO FEATURES</h2>
+<p>Client specific plotting (experimental).</p>
+<h2>RELATED MODELS</h2>
+<p>Tragedy of the Commons, Gridlock, Prisoner's Dilemma HubNet</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Maroulis, S. and Wilensky, U. (2004).  NetLogo Oil Cartel HubNet model.  http://ccl.northwestern.edu/netlogo/models/OilCartelHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2004 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2004 Cite: Maroulis, S. --></div>
+      </div>
+    </main>
+  </body>
+</html>

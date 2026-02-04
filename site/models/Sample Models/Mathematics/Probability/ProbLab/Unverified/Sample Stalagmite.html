@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sample Stalagmite</title>
+    <link rel="stylesheet" href="../../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Sample Stalagmite</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/Probability/ProbLab/Unverified/Sample%20Stalagmite.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../../models/Sample Models/Mathematics/Probability/ProbLab/Unverified/Sample Stalagmite.png" alt="Screenshot of Sample Stalagmite" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>9-Block Stalagmite draws on and connects several central ideas in the study of probability, both theoretical and empirical: combinatorics, sample space, binomial distributions, and frequency distribution function.  In the related curricular material, students use crayons and paper to build the Combinations Tower.  The Combinations Tower is a giant bell-shaped histogram of all the 512 different combinations of a 3-by-3 array of squares that can each be either green or blue.</p>
+<p>In the tower, these combinations are grouped in columns according to how many green squares there are in each.  9-Block Stalagmite accompanies these curricular activities.</p>
+<p>The model generates random samples (with repetitions), counts how many green squares are in each sample, and collects these samples into columns, creating a histogram that grows up like a stalagmite.  If enough samples are taken, then the stalagmite approximates a bell curve.  When the probability in the model is set at .5, the shape of this histogram resembles the combinations tower.  If all repeating samples are removed from this histogram as it grows up, the model eventually exhausts the sample space at each run of the experiment, providing the view allows the tower to grow tall enough.</p>
+<p>This model is a part of the ProbLab curriculum.  The ProbLab Curriculum is currently under development at the CCL.  For more information about the ProbLab Curriculum please refer to http://ccl.northwestern.edu/curriculum/ProbLab/.</p>
+<h2>HOW IT WORKS</h2>
+<p>At the top of the view, a square array of "patches" (the NetLogo square agents that don't move) generates green and blue "turtles" (the NetLogo agents that move).  These turtles' colors --- whether they are green or blue --- are determined randomly according to probabilities set by the user.  For instance, an 80% chance for each turtle to be green (so 20% chance for each turtle to be blue).  Next, the model moves this turtle-sample towards the right so that it arrive in a column that matches the number of green turtles in the sample.  Lastly, the model moves the sample down along the column and stacks it on top either of the bottom of the column or a previous sample that has already been positioned there.  When the turtles stop, they mark their color onto the patches, and then they "die".  For each sample that is generated, a larger duplicate appears on the side for the user's viewing convenience.</p>
+<p>Note that for a 9-block there are 10 columns in the view.  This is because we need a column for all combinations that have 0 greens, a column for 1 green, a column for 2 green, ..., and a columns for 9 green for a total of 10 columns (9 + 1).</p>
+<h2>HOW TO USE IT</h2>
+<h3>Buttons</h3>
+<p>'Setup' - prepares the view, including erasing the coloration from a previous run of the experiment.
+'Go' - a forever button that runs the experiment according to the values you have set in the sliders.
+'Go Once' - a button that runs the experiment only once.</p>
+<h3>Sliders</h3>
+<p>'side' - determines the size of the square sample arrays.  For instance, for a value of 3, the model will create a 3-by-3 square (9 turtles).
+'probability-to-be-target-color' - determines the chance of each turtle in the sample array to be green (or any other color you have set the model to).  A value of 50 means that each turtle has an equal chance of being green or blue, a value of 80 means that each turtle has a 80% chance of being green (so each has a 20% chance of being blue).</p>
+<h3>Switches</h3>
+<p>'keep-repeats?' - when "Off," each column will have only different combinations with no repetitions; when "On," there will most probably be repetitions in at least some of the columns.  (For 2-by-2 samples, there will be very rare cases that the whole sample space will be discovered without repetitions.  For 3-by-3 samples, the cases are so rare that you probably won't ever see it!! Actually, how rare are they?..)
+'magnify?' - when "On," you get a larger version of the sample on the side.  This helps when you're working with very small patch sizes, such as when you want to have very tall columns so as to exhaust the sample space corresponding to the value of 'side,' e.g,. 512 for 'side = 3.'
+'stop-at-all-found?' - when "On," each run will end if all the different combinations have been discovered.  When "Off," the run will continue until one of the columns reaches the top.</p>
+<h3>Monitors</h3>
+<p>'#-target-color' - displays the total number of squares of target-color, e.g., 'green.'
+'#-other-color' - displays the total number of squares of other-color, e.g., 'blue.'
+'%-target-color' - displays as a percentage the proportion of target-color squares out of all colored squares.
+'combinations found' - displays the proportion of the sample space that has been revealed
+'?-blocks' shows the square of 'side.' So if 'side' is set to 3, '?-blocks' will show 9. This means that each sample of side 3 has 9 squares.</p>
+<h3>Plots</h3>
+<p>'filling-up-sample-space' - plots the total number of combinations that have been discovered as a proportion of the sample space that has been discovered.</p>
+<h3>How to use it</h3>
+<p>Set the sliders according to the values you want, press Setup, and then press Go.</p>
+<p>Note that once you have pressed Go, changing the slider values would "confuse" the model.  Instead, you should un-press Go, wait until the button jumps back up, and only then change the sliders as you wish, press Setup, and then press Go</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Setup the model in its default settings ('side' slider set to the value of 3; 'probability' slider set to the value of .5), slow down the model with the speed slider at the top left of the view, and press Go.  Note the following: the more green squares there are in the random sample the further to the right the block will move before descending down. See that at the bottom of each column there is a number.  This number tells you the type of sample that will be collected in this column.  For instance, in the column labeled '2,' samples that have exactly 2 green patches will stop moving to the right and will descend.  So, as the columns grow up, note that each sample will descend over a previous sample that has exactly as many green squares.  Overall, the columns on the right are greener than the columns on the left.  As you shift your gaze from side to side, the color density changes.</p>
+<p>Run the model over and over and watch the shape of the colorful histogram that is plotted.  Note any consistencies in the shape of this histogram.</p>
+<h2>THINGS TO TRY</h2>
+<p>Work in the 'side' = 2 setup. Set 'keep-duplicates?' to Off.  How many samples do you need to fill the entire sample space?  Does this change according to the settings of 'probability'?  If so, why might this be so? If the probability is set at 80%, does it take as many trials to fill the sample space as compared to a setting of 50%? If not, why not?</p>
+<p>Setup the model with the 'side' value at 2 and the 'probability' at 70%.  Press Setup and then Go.  (If you have previously slowed down the model, you're welcome to speed it up now.)  Note that the %-target-color tends to 70%. Also note that more sample combinations collect up in the column of 3 green patches than any other column.  So '3' is the mode.  We have found it interesting and perhaps somewhat confusing to shift between thinking about the 'mode' and thinking about the 'mean.' For instance, if you set the 'probability' to 83%, you might think that 83% of 4 is 3.32 and so the mode should still be '3.' Is it? What is going on here? So for some probability setting, the 3-column will most often get to the top before other columns. For other probability settings, the 4-column wins. Try to determine the probability ranges in which each column "rules." Hint: How many ranges should there be?</p>
+<p>Edit the view so that the y-axis value is 260 and the patch size is 1 pixel. Now, if you set up in 'side = 3,' all 512 different 9-blocks will fit in. Try this.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add monitors and/or graphs that will feature aspects of the experiments that are difficult to see in the current version.  For instance:
+- How many samples does it take for the experiment to produce an all-green sample?  How is this dependent on the various settings?
+- Are there more samples with an even number of green squares as compared to those with an odd number of green squares?
+- How symmetrical is the histogram?  How would you define "symmetry?"  How would you quantify and display its change over time?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Turtle Shapes --- The top panel of the view features a red arrow-like turtle shape.  Pressing on this button toggles between Turtles-Shape "On" and "Off."  In many NetLogo models, turtles represent specific agents ("creatures") in the situation or phenomenon that is being modeled.  So in many models the turtles have distinctive shapes (icons) that approximate or at least suggest what they are modeling.  However, this model is an example of a case where we do not want any special turtle shape.  In fact, we actually want the turtles to look like the patches --- just squares.  So we have turned the Turtle-Shapes to "Off."  Try running the model with the Turtles-Shapes "On" (you can change this while running the model) and see which mode you prefer.  The difference between these two modes will be most noticeable when you are running the model slowly and/or when the 'magnify?' switch is turned to 'On."  You could also edit the size of the turtles.  Perhaps you will discover that you prefer having the turtles be some special shape.  How might that affect the histogram?</p>
+<h2>RELATED MODELS</h2>
+<p>Some of the other ProbLab (curricular) models, including SAMPLER --- HubNet Participatory Simulation --- feature related visuals and activities.  In Stochastic Patchwork and especially in 9-Blocks you will see the same 3-by-3 array of green-or-blue squares.  In the 9-Block Stalagmite model, when 'keep-duplicates?' is set to 'Off' and the y-axis value of the view is set to 260, we get the whole sample space without any duplicates.  In the Stochastic Patchwork model and especially in 9-Blocks model, we see frequency distribution histograms.  These histograms compare in interesting ways with the shape of the combinations tower in this model.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the ProbLab curriculum. The ProbLab Curriculum is currently under development at Northwestern's Center for Connected Learning and Computer-Based Modeling. . For more information about the ProbLab Curriculum please refer to http://ccl.northwestern.edu/curriculum/ProbLab/.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Abrahamson, D. and Wilensky, U. (2004).  NetLogo Sample Stalagmite model.  http://ccl.northwestern.edu/netlogo/models/SampleStalagmite.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2004 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2004 Cite: Abrahamson, D. --></div>
+      </div>
+    </main>
+  </body>
+</html>

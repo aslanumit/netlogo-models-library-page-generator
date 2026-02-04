@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rolling Plot Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Rolling Plot Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Rolling%20Plot%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Rolling Plot Example.png" alt="Screenshot of Rolling Plot Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This shows how to make a "rolling" plot, in which only the last n time steps of data are displayed.</p>
+<h2>HOW IT WORKS</h2>
+<p>In the plot, the <code>set-plot-x-range</code> command is used to set the visible range to only the most recent 800 ticks.</p>
+<p>Note that we change the range after plotting, not before.  That's because if autoplot is on, plotting a point could change the range, after which we need to change it again.  (It is not possible to turn autoplot on for only one axis, so if we want it for the y-axis, we must live with having it on the x-axis too.)</p>
+<p>Also note that setting the x range doesn't cause old data to be discarded.  Even if the old data isn't visible on the screen, it can be revealed by changing the x range to something wider, or by exporting the plot.</p>
+<h2>RELATED MODELS</h2>
+<p>Plotting Example</p>
+<!-- 2007 --></div>
+      </div>
+    </main>
+  </body>
+</html>

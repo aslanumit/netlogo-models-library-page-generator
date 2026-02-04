@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Urban Suite - Path Dependence</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Urban Suite - Path Dependence</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Urban%20Suite/Urban%20Suite%20-%20Path%20Dependence.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Urban Suite/Urban Suite - Path Dependence.png" alt="Screenshot of Urban Suite - Path Dependence" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model explores the concept of path dependence as explained by W. Brian Arthur in his paper, "Urban Systems and Path Dependence" and several other of his papers.  Essentially firms walk around a landscape looking for a place to settle.  Several mechanisms of how they decide where to locate can be simulated, and the results examined.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each firm searches for a place to locate.  They do this by taking the quality of the current location and the number of firms already located there.  They use this to determine the probability of locating at the current location.  They then generate a random number, if this number is less than the probability they settle down in the current location.</p>
+<h2>HOW TO USE IT</h2>
+<p>INITIAL-FIRMS - Controls the number of initial firms in the model</p>
+<p>DISTRIBUTE? - Determines whether or not the initial firms are distributed to different locations</p>
+<p>SETUP - Starts the model</p>
+<p>GO - Runs the model</p>
+<p>DISTURB - Tells all of the firms to look for a new location to settle</p>
+<p>REGION-SIZE - This specifies how regional qualities influence the current location.  At 1, only the current patch's quality is taken into account, as this number is increased the quality of more and more nearby patches is taken into account.</p>
+<p>INCREASING-RETURNS - This controls the trade-off between quality and number of firms currently located.  If it is set to 1.0 then the only thing that determines whether or not a firm settles in the current location is the number of other firms there.  If it is set to 0.0 then the only thing that determines whether or not a firm settles there is the quality of the location.</p>
+<p>ATTEMPTS - This specifies the number of patches a firm will visit each turn in determining whether or not to settle down.</p>
+<p>BIRTH? - If this is set to true then new firms are created every turn.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>If INCREASING-RETURNS is set high then the quality of the winning location may not be very high.  If INCREASING-RETURNS is set low then the quality of the winning location will almost always be high.  This can be seen in the monitor.</p>
+<p>The patches are colored according to the quality of their location.  Black patches are low quality, white patches are high quality and green patches are in the middle.</p>
+<p>The size of the person shape on a patch indicates the number of firms located at that patch.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try running the model with both low and high values of INCREASING-RETURNS.  Try changing the value and then pressing DISTURB.</p>
+<p>Try different sizes of regions and see how that affects the distribution of results.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The current function to determine the probability of settling is an additive function. Try implementing a multiplicative trade-off function.</p>
+<p>In Arthur's original paper, his model had different types of firms; this implementation has only one type of firm.  Expand the model to have different firm types and different qualities that would be useful for each firm type.  In addition Arthur had different probabilities of different firm types being created.  This would also make an interesting extension.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Arthur's original model used global knowledge of the state of the world to decide where each firm would settle, here we take advantage of the fact that firms only have local information and have them wander around the landscape.</p>
+<h2>RELATED MODELS</h2>
+<p>This model is related to all of the other models in the "Urban Suite".</p>
+<p>In particular, it is demonstrating the same concept as the "Urban Suite - Positive Feedback" model, although that model focuses on demonstrating the principle of increasing returns with utmost simplicity, whereas the current model is a little richer in content.</p>
+<p>Also, the Segregation library model in NetLogo also explores how individuals decide where to locate but based on very different preferences.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is loosely based on the model presented in this paper:  Arthur, W.B. (1988), "Urban systems and historical path dependence", in Ausubel, J.H., Herman, R. (Eds), Cities and their Vital Systems: Infrastructure, Past, Present and Future, National Academy Press, Washington, DC, pp.85-97.</p>
+<p>Thanks to Bill Rand for his work on this model.</p>
+<p>The Urban Suite models were developed as part of the Procedural Modeling of Cities project, under the sponsorship of NSF ITR award 0326542, Electronic Arts &amp; Maxis.</p>
+<p>Please see the project web site ( http://ccl.northwestern.edu/cities/  ) for more information.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Rand, W. and Wilensky, U. (2007).  NetLogo Urban Suite - Path Dependence model.  http://ccl.northwestern.edu/netlogo/models/UrbanSuite-PathDependence.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 Cite: Rand, W. --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Moths</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Moths</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Moths.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Moths.png" alt="Screenshot of Moths" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates moths flying in circles around a light.  Each moth follows a set of simple rules.  None of the rules specify that the moth should seek and then circle a light.  Rather, the observed pattern arises out of the combination of the moth's random flight and the simple behavioral rules described below.</p>
+<p>Scientists have proposed several explanations for why moths are attracted to and then circle lights. For example, scientists once believed that moths navigated through the sky by orienting themselves to the moon, and that the moths' attraction to nearby, earthly light sources (such as a street lamp) arose because they mistook the terrestrial lights for the moon.  However, while this explanation may seem reasonable, it is not supported by available scientific evidence.</p>
+<h2>HOW IT WORKS</h2>
+<p>Moths exhibit two basic kinds of behavior.  When they detect a light source from a distance (as far as 200 feet away) moths tend to fly straight toward the light.  Then, when moths get close to the light, they tend to turn away from the light in order to avoid it.</p>
+<p>First, moths sense the light in their immediate vicinity and turn toward the direction where the light is greatest.</p>
+<p>Second, moths compare the light immediately ahead of them with the light at their current position.  If the ratio of 'light just ahead' to 'light here' is below a threshold value, then the moths fly forward toward the light.  If the ratio of 'light just ahead' to 'light here' is above a threshold value, then moths turns away from the light.  The threshold is determined by the moths' sensitivity to light.</p>
+<p>If the moths do not detect any light, or if there simply are no lights in the space where the moths are flying, then the moths flutter about randomly.</p>
+<p>Note that light energy is represented in this model as decreasing with the square of the distance from the light source.  This characteristic is known as a "one over r-squared relationship," and is comparable to the way electrical field strength decreases with the distance from an electrical charge and the way that gravitational field strength decreases with the distance from a massive body.</p>
+<h2>HOW TO USE IT</h2>
+<p>Click the SETUP button to create NUMBER-LIGHTS with LUMINANCE and NUMBER-MOTHS.  Click the GO button to start the simulation.</p>
+<p>NUMBER-MOTHS:  This slider determines how many lights will be created when the SETUP button is pressed.</p>
+<p>NUMBER-LIGHTS:  This slider determines how many lights will be created when the SETUP button pressed.  Note that this value only affects the model at setup.</p>
+<p>LUMINANCE:  This slider influences how bright the lights will be.  When a light is created, it is assigned a luminance of 20 plus a random value between 0 and LUMINANCE. Lights with a higher luminance can be sensed by moths from farther away.  Note that changing LUMINANCE while the model is running has no effect.</p>
+<p>SENSITIVITY:  This slider determines how sensitive the moths are to light.  When SENSITIVITY is higher, moths are able to detect a given light source from a greater distance and will turn away from the light source at a greater distance.</p>
+<p>TURN-ANGLE:  This slider determines the angle that moths turn away when they sense that the ratio of 'light ahead' to 'light here' is above their threshold value.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>When the model begins, notice how moths are attracted to the two lights.  What happens when the lights are created very close together?  What happens when the lights are created very far apart?</p>
+<p>Do all of the moths circle the same light?  When a moth begins to circle one light, does it ever change to circling the other light?  Why or why not?</p>
+<h2>THINGS TO TRY</h2>
+<p>Run the simulation without any lights.  What can you say about the moths' flight patterns?</p>
+<p>With the simulation stopped, use the following values:
+- NUMBER-LIGHTS: 1
+- LUMINANCE: 1
+- NUMBER-MOTHS: 10
+- SENSITIVITY: 1.00
+- TURN-ANGLE: 95
+Notice that, at first, some moths might fly about randomly while others are attracted to the light immediately.  Why?</p>
+<p>While the model is running increase SENSITIVITY.  What happens to the moths' flight patterns?  See if you can create conditions in which one or more of the moths can 'escape' from its state of perpetually circling the light.</p>
+<p>Vary the TURN-ANGLE.  What happens?  Why do you think the moths behave as observed with different values of TURN-ANGLE?  What value or values do you think are most realistic?</p>
+<p>It would be interesting to better understand the flight patterns of the moths in the model.  Add code to the model that allows you to track the movements of one or more moths (for example, by using the pen features).  Do you see a pattern?  Why might such a pattern appear and how can it be altered?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>This model offers only one set of rules for generating moths' circular flight around a light source.  Can you think of different ways to define the rules?</p>
+<p>Alternatively, can you imagine a way to model an earlier theory of moth behavior in which moths navigate straight lines by orienting themselves to the moon?  Do rules that allow moths to navigate according to their position relative to the moon lead to the observed circling behavior around light sources that are much, much closer than the far-away moon?</p>
+<p>More recent research shows that the problem is three dimensional in nature. Moths orient themselves so that their backs are to a salient light source.  Typically this source is above. This defines the plane in which they fly. However with human light sources they keep turning in order to stay oriented, which causes them to fly in a circle. Can you model this using NetLogo 3D?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model creates a field of light across the patches, using <code>scale-color</code> to display the value, and the moths use <code>face</code> and <code>max-one-of</code> to traverse the light field.</p>
+<h2>RELATED MODELS</h2>
+<p>Ants, Ant Lines, Fireflies, Flocking</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Adams, C.  (1989).  Why are moths attracted to bright lights?  Retrieved May 1, 2005, from https://www.straightdope.com/21342222/why-are-moths-attracted-to-bright-lights</p>
+<p>Fabian, S.T., Sondhi, Y., Allen, P.E. et al. Why flying insects gather at artificial light. Nat Commun 15, 689 (2024). https://doi.org/10.1038/s41467-024-44785-3</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2005).  NetLogo Moths model.  http://ccl.northwestern.edu/netlogo/models/Moths.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 --></div>
+      </div>
+    </main>
+  </body>
+</html>

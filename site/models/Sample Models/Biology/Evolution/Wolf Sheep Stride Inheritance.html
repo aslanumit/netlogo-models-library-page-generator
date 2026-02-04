@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wolf Sheep Stride Inheritance</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Wolf Sheep Stride Inheritance</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Evolution/Wolf%20Sheep%20Stride%20Inheritance.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Biology/Evolution/Wolf Sheep Stride Inheritance.png" alt="Screenshot of Wolf Sheep Stride Inheritance" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is a variation on the predator-prey ecosystems model <em>Wolf-Sheep Predation</em>.
+In this model, predator and prey can inherit a stride length, which describes how far forward they move in each model time step. When wolves and sheep reproduce, the children inherit the parent's stride length--though it may be mutated. By modeling this type of inheritance, the user can now see the effects of natural selection within the model.</p>
+<h2>HOW IT WORKS</h2>
+<p>This model is fundamentally very similar to Wolf-Sheep Predation. Sheep eat grass and wolves eat sheep. They also randomly wander the world. However, at initialization, wolves have a stride of INITIAL-WOLF-STRIDE and sheep have a stride of INITIAL-SHEEP-STRIDE. This  means some sheep (wolves) can go farther in a particular tick than their compatriots. Wolves and sheep wander around the world moving STRIDE-LENGTH in a random direction at each step. When wolves and sheep reproduce, they pass their stride length down to their young. However, there is a chance that the stride length will mutate, becoming slightly larger or smaller than that of its parent.</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>Adjust the slider parameters (see below), or use the default settings</li>
+<li>Press the SETUP button</li>
+<li>Press the GO button to begin the simulation</li>
+<li>Look at the monitors to see the current population sizes</li>
+<li>Look at the POPULATIONS plot to watch the populations fluctuate over time</li>
+<li>Look at the Strid Length plots to watch how the STRIDE-LENGTH for each agent fluctuates over time</li>
+</ol>
+<h3>Sliders</h3>
+<p>INITIAL-NUMBER-SHEEP: The initial size of sheep population
+INITIAL-NUMBER-WOLVES: The initial size of wolf population</p>
+<p>INITIAL-SHEEP-STRIDE: The initial STRIDE-LENGTH for sheep
+INITIAL-WOLF-STRIDE: The initial STRIDE-LENGTH for wolves</p>
+<p>WOLF-STRIDE-DRIFT and SHEEP-STRIDE-DRIFT: How much variation an offspring of a wolf or a sheep can have in its stride length compared to its parent. For example, if set to 0.4, then an offspring might have a stride length up to 0.4 less than the parent or 0.4 more than the parent. This is a way of controlling how much mutation occurs during reproduction.</p>
+<p>Half a unit of energy is deducted from each wolf and sheep at every time step. If STRIDE-LENGTH-PENALTY? is on, additional energy unit is deducted, scaled to the length of stride the animal takes (e.g., 0.5 stride deducts an additional 0.5 energy units each step). That is, there is a cost to having a longer stride.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>WOLF STRIDE HISTOGRAM and SHEEP STRIDE HISTOGRAM will show how the population distribution of different animal strides is changing.</p>
+<p>In general, sheep get faster over time and wolves get slower or move at the same speed.  Sheep get faster in part, because remaining on a square with no grass is less advantageous than moving to new locations to consume grass that is not eaten. Sheep typically converge on an average stride length close to 1. Why do you suppose it is not advantageous for sheep stride length to keep increasing far beyond 1? Make sure to run the model multiple times with different settings. The outcome is not always the same.</p>
+<p>If you turn STRIDE-LENGTH-PENALTY? off, sheep will become faster over time, but will not stay close to a stride length of 1. Instead they will become faster and faster, effectively jumping over multiple patches with each simulation step.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try adjusting the parameters under various settings. How sensitive is the stability of the model to the particular parameters?</p>
+<p>Can you find any parameters that generate a stable ecosystem where there are at least two distinct groups of sheep or wolves with different average stride lengths?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add a cone of vision for sheep and wolves that allows them to chase or run away from each other. Make this an inheritable trait.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses two breeds of turtle to represent wolves and sheep.</p>
+<h2>RELATED MODELS</h2>
+<p>Wolf Sheep Predation, Bug Hunt Speeds</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2006).  NetLogo Wolf Sheep Stride Inheritance model.  http://ccl.northwestern.edu/netlogo/models/WolfSheepStrideInheritance.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2006 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2006 Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

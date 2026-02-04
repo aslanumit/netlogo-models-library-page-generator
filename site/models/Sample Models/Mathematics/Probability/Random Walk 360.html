@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Random Walk 360</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Random Walk 360</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/Probability/Random%20Walk%20360.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Mathematics/Probability/Random Walk 360.png" alt="Screenshot of Random Walk 360" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>In this model the turtles engage in a "random walk."  Each turtle walks one step away from its current location in a different random direction at each clock tick. This movement is known as walking a 360-gon "lattice."  A lattice is a set of points on the plane (or in space) that form a grid on which turtles walk.</p>
+<p>As the simulation continues, one can expect the turtles to become more spread out.  Will they ever return home (to their point of origin at 0 0)? Observe the kinds of patterns that develop as the turtles move.</p>
+<h2>HOW TO USE IT</h2>
+<p>General Settings</p>
+<p>Use the NUM-TURTLES slider to select how many turtles will participate in the random walk.</p>
+<p>Use the STEP-SIZE slider to decide how far from its current location a turtle will move on each step.</p>
+<p>How steps are implemented: if STEP-SIZE is set to n it will add (n * cos(theta)) to its current xcor value and it will add (n * sin(theta)) to its current ycor value.  It will have moved n patch units from its current location.  (Why?)</p>
+<p>Each of the above movements would be considered a single "pace."</p>
+<h3>Distance Rings</h3>
+<p>Set DRAW-RINGS to ON to draw the x-axis, y-axis, and a set of concentric circles about the point (0 0).  This switch must be set prior to pressing SETUP.</p>
+<p>Use the RING-RADIUS slider to set the incremental distance between the distance rings.</p>
+<h3>Plots</h3>
+<p>"Average Distance"
+- measures the average distance over all turtles, from home (the origin at 0,0) to their current coordinates.</p>
+<p>"Average X-Distance"
+- measures the average distance over all turtles along the x-axis away from the origin (x = 0).</p>
+<p>"Std.Dev. of Distance"
+- measures the standard deviation of all turtles' true distance from home to their current position.  NetLogo's standard deviation primitive is used.</p>
+<p>Note that xcor and ycor values are stored in such a way that turtles are tracked even if they move outside the boundaries of the world.  These 'out of bounds' values are used to measure distances.  They are stored at turtle variable xc (for xcor) and yc (for ycor).</p>
+<p>Distances are either zero or positive.</p>
+<h3>Buttons</h3>
+<p>Press SETUP when all of the above selections have been made.  This will create the selected number of turtles at the bottom center of the world.</p>
+<p>Press GO-ONCE to make the turtles move one pace.</p>
+<p>Press GO to make the turtles move continuously.  To stop the turtles, press the GO button again.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Try starting with 500 turtles with a step size of 1.  If you want to show distance rings, try setting the radius increment to 20.</p>
+<p>Press SETUP then press GO.</p>
+<p>The turtles all start at (0,0) (home).</p>
+<p>Think about how you would define an 'average' turtle and an 'average' walk.</p>
+<p>Where would you expect an average turtle to end up at a given time?  Why?</p>
+<p>Will all turtles eventually return home?  If so, how many paces would you expect a turtle to travel before it returned to home?  Why?</p>
+<p>What kinds of calculations or measurements would you use in trying to answer these questions?</p>
+<p>Two characteristics of the plots you see are their smoothness and their slope.</p>
+<p>To think about smoothness of the plots, notice how much the lines move up and down over time.</p>
+<p>To think about slope of the plots, consider whether the plot appears to be going 'uphill' or 'downhill' and consider whether the 'hill' is steep or flat.</p>
+<p>What do you notice about the smoothness and slope of the plots?
+- Are they smooth?  Why or why not?
+- Are they steep?  Why or why not?
+- For a given plot, is its steepness the same at the far edges and at the center?  Why or why not?</p>
+<p>Does the plot have any symmetry?  Would you expect it to?  Why?</p>
+<p>Does a single line plot ever change between positive and negative slopes?  Why or why not?  If it does, what does that mean?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try to answer the following questions before running the simulations.  Record your predictions.  Compare your predicted results with the actual results.
+- What reasoning led you to correct predictions?
+- What assumptions that you made need to be revised?</p>
+<p>Try different numbers of turtles while keeping all other slider values the same.
+- What happens to the plot's smoothness and slope when the number of turtles is increased?
+- What happens to the plot's smoothness and slope when the number of turtles is decreased?
+- Does the simulation finish faster or slower than the first model?</p>
+<p>Try different numbers of steps while keeping all other slider values the same.
+- What happens to the plot's smoothness and slope when the number of steps is increased?
+- What happens to the plot's smoothness and slope when the number of turtles is decreased?
+- Does the simulation finish faster or slower than the first model?</p>
+<p>How do your answers to the above questions compare to the average values calculated for all turtles in a given simulation?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>In this simulation, turtles can only move based on integer values of heading.  Change the model so that any value of heading between 0 and 360 degrees is possible.</p>
+<p>Does this change the amount of time it would take for a turtle to return home?  How?  Why?</p>
+<p>How does this change impact answers to other questions asked above?</p>
+<p>One of the plots measures the average x-distance away from the origin over all turtles.  Obviously, it could have measured the y-distance instead.  Watch the plot under one run of the model, and then change the procedure so that it measures y-distance.  How do the plots differ?</p>
+<p>Create a new monitor called home-turtles.  Have it display the number of turtles at (or very near) home.  Create a plot to display this information.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Since NetLogo does not allow the world to be unbounded, the special code below is needed for this model to simulate the behavior, instead of stopping at the edge of the world the turtles hide themselves when they have moved outside the world.</p>
+<pre><code>set xc xc + (step-size * dx)
+set yc yc + (step-size * dy)
+; hide turtles who have moved out of the world
+ifelse patch-at (xc - xcor) (yc - ycor) = nobody
+  [ ht ]
+  [ st
+    set xcor xc
+    set ycor yc ]
+set dist sqrt (xc * xc + yc * yc)
+</code></pre>
+<p>Stamping of turtle shapes is used to draw a polar coordinate grid in the drawing layer.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo Random Walk 360 model.  http://ccl.northwestern.edu/netlogo/models/RandomWalk360.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1997 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

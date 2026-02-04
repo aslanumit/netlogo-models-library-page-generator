@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CA 1D Elementary</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>CA 1D Elementary</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Computer%20Science/Cellular%20Automata/CA%201D%20Elementary.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Computer Science/Cellular Automata/CA 1D Elementary.png" alt="Screenshot of CA 1D Elementary" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This program models one-dimensional cellular automata.  A cellular automaton (CA) is a computational machine that performs actions based on certain rules.  The automaton is divided into cells, like the square cells of a checkerboard.  Each cell can be either on or off (its "state").  The board is initialized with some cells on and some off.  At each time step (or "tick") some rules "fire" and this results in some cells turning "on" and some turning "off".</p>
+<p>There are many kinds of cellular automata. In this model, we explore one-dimensional CA -- the simplest types of CA. In this case of one-dimensional cellular automata, each cell checks the state of itself and its neighbors to the left and right, and then sets the cell below itself to either "on" or "off", depending upon the rule.  This is done in parallel and continues until the bottom of the board.</p>
+<p>This model explores all 256 possible CA rules that can be constructed by each cell checking only its immediate left and immediate right neighbor. Cellular automata can be created on any board size and dimension.</p>
+<p>This model is one of a collection of 1D CA models. It is meant for the more sophisticated user. If you are seeing CA for the first time, we suggest you check out one of the simpler CA models such as CA 1D Rule 30.</p>
+<p>In his book, "A New Kind of Science", Stephen Wolfram argues that simple computational devices such as CA lie at the heart of nature's patterns and that CAs are a better tool than mathematical equations for the purpose of scientifically describing the world.</p>
+<h2>HOW TO USE IT</h2>
+<p>Initialization &amp; Running:
+- SETUP-SINGLE initializes the model with a single cell on in the center.
+- SETUP-RANDOM initializes the model with a percentage of the cells "on." The percentage on is determined by the DENSITY slider.
+- AUTO-CONTINUE? CA automatically wraps top the top once it reaches the last row when the toggle is on
+- GO begins running the model with the currently set rule. It runs until the end of the screen.  If it is pressed again, the CA continues the current run from the top, stopping again at the end of the screen.
+- FOREGROUND &amp; BACKGROUND set the "on" and "off" cell colors respectively.
+- SHOW-RULES clears the view and gives a graphical preview of the rules.  The 8 cases are displayed across the top of the world. To run the model, you must press either SETUP-SINGLE or SETUP-RANDOM and then click GO.</p>
+<p>Rule Setup:
+There are 8 switches, the names of which correspond to cell states.  "O" means off, "I" means on. For example, the top switch is called "OOO".  (NOTE: the switch names are composed of the letters "I" and "O", not the numbers zero or one).  If this switch is set to "on", then the following rule is created: when a cell is off, its left neighbor cell is off and its right neighbor cell is off, then the cell below it will be set "on" at the next time step.  If this switch is set to 0, then the cell below it will be set to "off" at the next time step.  So, since each switch has two settings and there are eight switches, there are 256 (2^8) possible rules.  The current rule number is shown by the "RULE" slider, and it is calculated by changing a switch's name from binary to decimal and taking the sum of all the switches that are set to one.  For example, if "011" and "001" are set to "on" and all the rest are set to "off", then the rule number is 4 (011 = 3, 001 = 1, and 3 + 1 = 4)).</p>
+<p>The RULE slider can also be moved to set the current rule.  Doing so will change the current state of the switches in the same way the switches set the rule.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>What different patterns are formed by using a random setup versus a single setup?</p>
+<p>Why do some rules always end up the same, regardless of the initial setup?</p>
+<p>Are there rules that repeat a pattern indefinitely?</p>
+<p>Are there rules that produce seemingly chaotic, random results?</p>
+<p>Can all rules be classified into these above types? Are there more rule types than these?</p>
+<p>Note that the pictures generated by this model do not exactly match the pictures in Wolfram's book, "A New Kind of Science". That's because Wolfram's book computes the CA as an infinite grid while the NetLogo model "wraps" around the horizontal boundaries. To get pictures closer to the ones in the book, you may need to increase the size of the world. You can increase the size of the world up to the available memory on your computer. However, the larger the world, the longer time it will take NetLogo to compute and display the results.</p>
+<h2>THINGS TO TRY</h2>
+<p>Find some rules that converge to all cells "on" or to all cells "off".</p>
+<p>Are there any rules that conditionally converge to all cells "on" or all cells "off", depending upon the initial percentage of on/off cells?</p>
+<p>A classic automaton is used to compute various things.  Can these cellular automata be used to compute anything?  How?</p>
+<p>Experiment with the density variable and various types of rules. What are some relationships?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>What if a cell's neighborhood was five cells -- two to the left, itself, and two to the right?</p>
+<p>Classical CA use an "infinite board". The CAs shown here "wrap" around the horizontal edges of the world (sometimes known as a periodic CA or CA with periodic boundary condition). How would you implement a CA in NetLogo that comes closer to the infinite board?</p>
+<p>Try making a two-dimensional cellular automaton.  The neighborhood could be the eight cells around it, or just the cardinal cells (the cells to the right, left, above, and below).</p>
+<p>Can you develop some tools to analyze the behavior of CAs?  Compare different iterations from one continuation to the next of the same CA?  Compare different rules?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model takes advantage of a special optimization in the NetLogo compiler that makes the expression "ask patches with [px/ycor = <local variable>]" run much faster than it would otherwise.</p>
+<h2>RELATED MODELS</h2>
+<p>Life - an example of a two-dimensional cellular automaton
+CA 1D Rule 30 - the basic rule 30 model
+CA 1D Rule 30 Turtle - the basic rule 30 model implemented using turtles
+CA 1D Rule 90 - the basic rule 90 model
+CA 1D Rule 110 - the basic rule 110 model
+CA 1D Rule 250 - the basic rule 250 model
+CA 1D Totalistic - a model that shows all 2,187 possible 1D 3-color totalistic cellular automata.
+CA Stochastic- the probabalistic counterpart to this model</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Thanks to Eytan Bakshy, Geoff Hulette, and Erich Neuwirth for their help with this model.</p>
+<p>The first cellular automaton was conceived by John Von Neumann in the late 1940's for his analysis of machine reproduction under the suggestion of Stanislaw M. Ulam. It was later completed and documented by Arthur W. Burks in the 1960's. Other two-dimensional cellular automata, and particularly the game of "Life," were explored by John Conway in the 1970's. Many others have since researched CA's. In the late 1970's and 1980's Chris Langton, Tom Toffoli and Stephen Wolfram did some notable research. Wolfram classified all 256 one-dimensional two-state single-neighbor cellular automata. In his recent book, "A New Kind of Science," Wolfram presents many examples of cellular automata and argues for their fundamental importance in doing science.</p>
+<p>See also:</p>
+<p>Von Neumann, J. and Burks, A. W., Eds, 1966. Theory of Self-Reproducing Automata. University of Illinois Press, Champaign, IL.</p>
+<p>Toffoli, T. 1977. Computation and construction universality of reversible cellular automata. J. Comput. Syst. Sci. 15, 213-231.</p>
+<p>Langton, C. 1984. Self-reproduction in cellular automata. Physica D 10, 134-144</p>
+<p>Wolfram, S. 1986. Theory and Applications of Cellular Automata: Including Selected Papers 1983-1986. World Scientific Publishing Co., Inc., River Edge, NJ.</p>
+<p>Bar-Yam, Y. 1997. Dynamics of Complex Systems. Perseus Press. Reading, Ma.</p>
+<p>Wolfram, S. 2002. A New Kind of Science. Wolfram Media Inc.  Champaign, IL.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo CA 1D Elementary model.  http://ccl.northwestern.edu/netlogo/models/CA1DElementary.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1998 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

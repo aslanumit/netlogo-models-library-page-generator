@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Raindrops</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Raindrops</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Waves/Unverified/Raindrops.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Chemistry &amp; Physics/Waves/Unverified/Raindrops.png" alt="Screenshot of Raindrops" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model simulates raindrops falling on the surface of a pond and the waves they produce.</p>
+<h2>HOW IT WORKS</h2>
+<p>The greater the surface tension, the slower waves travel through the water.  This is implemented in the model as a weight coefficient on the difference in height between a turtle and its neighbors.  The resulting weighted value is added to the turtles current vertical velocity (represented by the incremental value dz) and its current position to determine its next position.  To translate the earlier statement, then, the greater the surface tension, the more a particle's neighbors can pull it towards them, thus quickening the pace of a wave through the surface.</p>
+<h2>HOW TO USE IT</h2>
+<p>SETUP initializes the model.  GO continuously propagates waves in the water while listening for drops caused by the user.  To release a drop, hold your mouse button down briefly on any point within the pond (the blue region).  That point is where the drop will land.</p>
+<p>The FRICTION slider controls the amount of force that pulls the water particles back towards ground level, dampening waves.  SURFACE-TENSION controls how much effect the neighbors of a water particle exert on it vertically.</p>
+<p>The IMPACT slider determines how much force a drop carries.  Drops with greater impact cause larger waves.</p>
+<p>The THREE-D switch allows you to view the pond either from above or from an angle set by ANGLE.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The pond is made up of a grid of turtles, each of whom, like in Wave Machine, behaves like it is connected to its neighbors by springs.  Each turtle has a vertical position and velocity, which determine how high above the sides of the pond it is or how far below, and how much that distance will change at the next time step.</p>
+<p>When drops are released they decrease the vertical velocity of the particles under them, causing them to move downwards.  As they fall, they pull down their neighbors, who at the same time pull them up. This exchange creates a wave within the pond, centered on where the drop fell.</p>
+<p>As the waves hit the walls, they are reflected back towards the middle, as the walls don't move up or down.  Friction causes the waves to eventually decline by pulling them closer to the surface level.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try creating multiple drops in the pool to see how they interact.  Do they cancel each other out or reinforce each other?</p>
+<p>Change the surface tension to see how it affects the speed of waves.  Why does water with low surface tension move so slowly?  What sort of liquids in real life is it similar to?</p>
+<p>Set friction to 100 and release some drops.  Do the waves ever dissipate?  How can the waves rise above the sides of the pond (have positive zpos's) when only downward moving forces are exerted on them?  How is a turtle's movement similar to that of a spring.  Is the friction used in this model analogous to that in a spring?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>This model doesn't take into account water pressure.  When part of the water is pushed down on the impact of a drop, the rest of the water should feel a push from beneath.  Try adding in this mechanism.</p>
+<p>The walls in this model don't affect waves at all.  Extend the model so that the walls impose friction on waves that brush against them, causing them to dampen.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>In order to create the visual impression of a wave, it is necessary for water above the sides of the pond (above water level) to appear more white, while water below to appear more blue.  This was accomplished using the <code>scale-color</code> primitive, which takes a color to assign, a variable, and a minimum and maximum value.  It works by comparing the value of the variable for each turtle to the two values, and the closer it is to the maximum, the lighter the shade of the color assigned to that turtle.</p>
+<p>Water particles that fly off the top or bottom of the world are ignored in the model, which is done by using the commands hide-turtle (ht) and show-turtles (st).  Hide turtle doesn't cause the turtle to die or change in any way, but merely stops it from being drawn.  Show turtle causes it to begin being displayed again.</p>
+<p>The model listens for raindrops using NetLogo's mouse primitives.  <code>go</code> repeatedly calls <code>mouse-down?</code> to register when the user has clicked over the pond.  When this condition reports true, it uses two reporters, <code>mouse-xcor</code> and <code>mouse-ycor</code>, to record the current coordinates of the mouse so that a drop can be released in the appropriate place.</p>
+<h2>RELATED MODELS</h2>
+<p>For another model that demonstrates how turtles behave as a surface, see Wave Machine.  In it, turtles are connected in the same manner as outlined above, but their movement is governed by the regular sinusoidal motion of part of the surface.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Raindrops model.  http://ccl.northwestern.edu/netlogo/models/Raindrops.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1998 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

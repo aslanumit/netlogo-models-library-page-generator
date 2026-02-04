@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pac-Man</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Pac-Man</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Games/Pac-Man.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Games/Pac-Man.png" alt="Screenshot of Pac-Man" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is the classic arcade game, Pac-Man.  The game involves navigating Pac-Man through a maze.  Your objective is that Pac-Man eat all of the pellets (white circles), while avoiding the ghosts that pursue him.</p>
+<p>If a ghost ever catches Pac-Man then Pac-Man is defeated.  If this occurs, the level will reset, but this will happen only if Pac-Man still has some lives remaining. (The pellets already collected on the level remain collected.)</p>
+<p>However, when Pac-Man eats a Power-Pellet (large white circle) he can turn the tide, and the ghosts will turn scared and flee from him, for with the power of the Power-Pellet, Pac-Man can eat the ghosts!  Once a ghost is eaten it will return to its base, where it is born again, immune to the Power-Pellet until Pac-Man can find a new one to consume.  Pac-Man had better do just that, because unfortunately, the power of the Power-Pellet does not last forever, and will begin to wear off over time. (You will see the ghosts start to flash back to their normal appearance during the last few seconds of the Power-Pellet's effectiveness.)</p>
+<p>Finally, occasionally a bonus (rotating star) will appear in the maze.  This bonus gives Pac-Man extra points if he eats it, but it will disappear if Pac-Man doesn't get it within a limited amount of time.</p>
+<h2>HOW TO USE IT</h2>
+<p>Monitors
+-- SCORE shows your current score.  You get points for collecting pellets, eating ghosts, and collecting bonuses.  You will get an extra life after every 35,000 points.
+-- LEVEL shows your current level.  Each level has a different map, if you complete all the maps, it will loop back to the first map and continue.
+-- LIVES shows how many extra lives you have remaining.  If you are defeated by a ghost when this is at 0, the game is over.</p>
+<p>Sliders
+-- DIFFICULTY controls the speed of the game.  Lower numbers make both the ghosts and Pac-Man move slowly, giving you more time to react as you play.</p>
+<p>Buttons
+-- NEW sets up a new game on level 1, with 3 lives, and a score of 0.
+-- PLAY begins the game.  The game will pause after each level, so you will need to hit PLAY again after each level to continue.</p>
+<p>Controls
+-- UP, DOWN, LEFT, RIGHT control the direction Pac-Man moves.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>If you go off the edge of the maze you will wrap around to the other side.</p>
+<p>Identifying Things in the Maze:
+-- Yellow Circle with a mouth:  This is Pac-Man - you.
+-- White Circles:
+               These are Pellets - Collect all of these (including the Power-Pellets) to move on to the next level.</p>
+<p>-- Large White Circles:
+         These are Power-Pellets - They allow you to eat the Ghosts for a limited ammount of time.</p>
+<p>-- Blue Squares:
+                These are the walls of the maze - Neither Pac-Man nor the Ghosts can move through the walls.</p>
+<p>-- Gray Squares:
+                These are the Ghost Gates - Only Ghosts can move through them, and if they do so after having been eaten they will be healed.</p>
+<p>-- Rotating Colored Stars:
+      These are Bonus Stars - They give you extra points when you eat them.</p>
+<p>-- Colorful Ghost with Eyes:
+    These are the active Ghosts - Watch out for them!</p>
+<p>-- Blue Ghost Shape:
+            These are the scared Ghosts - Eat them for Extra Points!</p>
+<p>-- Two Small Eyes:
+              These are the Ghosts after they've been eaten - They will not affect you, and you can't eat them again, so just ignore them, but try not to be near its base when it gets back there.</p>
+<p>Scoring System
+-- Eat a Pellet:
+       100 Points</p>
+<p>-- Eat a Power-Pellet: 500 Points
+-- Eat a Scared Ghost: 500 Points
+-- Eat a Bonus Star:   100-1000 Points (varies)</p>
+<h2>THINGS TO TRY</h2>
+<p>Beat your Highest Score.</p>
+<p>Can you write an automated program for Pac-Man that will get him safely through the maze and collect all the pellets?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Think of other power-ups or bonuses that might be fun to have and make them appear randomly in the maze.</p>
+<p>Add new enemies that behave differently from the ghosts.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model makes use of breeds, create-<breed>, every, and user-message.</p>
+<p>The "import-world" command is used to read in the different maze configurations (levels).</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2001).  NetLogo Pac-Man model.  http://ccl.northwestern.edu/netlogo/models/Pac-Man.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2001 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

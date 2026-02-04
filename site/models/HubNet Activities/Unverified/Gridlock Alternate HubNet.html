@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gridlock Alternate HubNet</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Gridlock Alternate HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/Unverified/Gridlock%20Alternate%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/HubNet Activities/Unverified/Gridlock Alternate HubNet.png" alt="Screenshot of Gridlock Alternate HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Students control traffic lights in a real-time traffic simulation.  The teacher controls overall variables, such as the speed limit and the number of cars.  This allows students to explore traffic dynamics, which can lead into many areas of study, from calculus to social studies. This alternate version of the Gridlock HubNet model allows the client to send NetLogo code to the model to be run and produce values which can then be plotted in the a client plot.</p>
+<p>Challenge the students to develop strategies to improve traffic and discuss the different ways to measure the quality of traffic.</p>
+<p>The coordinates for the traffic lights are based on the first quadrant of the Cartesian plane.  Therefore, the traffic light with the coordinates (0,0) is in the lowest row and the left-most column.  The traffic light above it has coordinates (0,1) and the traffic light to the right of it has (1,0).</p>
+<p>For further documentation, see the Participatory Simulations Guide found at http://ccl.northwestern.edu/rp/ps/index.shtml.</p>
+<p>Notice: Gridlock Alternate uses features in NetLogo that are considered experimental.  The model may stop running if a student enters a metric in the client that is incorrect, such as dividing by 0, and causes a NetLogo error.  Further, we have not yet tested this alternate version of the model in real classrooms. If you use it in a classroom, we'd like to hear how it goes; contact us at feedback@ccl.northwestern.edu.</p>
+<h2>HOW TO USE IT</h2>
+<h3>Quickstart Instructions:</h3>
+<p>Contains instructions as to how to quickly setup the model, and clients to run this activity.  The instructions can be found below and can be seen progressively in the Quick Start instructions monitor in the Interface:</p>
+<p>Teacher: Follow these directions to setup the HubNet activity.
+Optional: Zoom In (see Tools in the Menu Bar)
+Change the traffic grid (using the sliders GRID-SIZE-X and GRID-SIZE-Y) to make enough lights for everyone.
+Change any other of the settings that you would like to change.  For example, if you plan on running Gridlock in the MANUAL mode, be sure to have AUTO? set to OFF.</p>
+<p>Press the SETUP button.
+Press the LOGIN button.</p>
+<p>Everyone: Open up a HubNet Client on your machine and input the IP Address of this computer, type your user name in the user name box and press ENTER.
+Teacher: Once everyone is logged in and has a light stop the LOGIN button by pressing it again.</p>
+<p>Everyone: Whichever mode AUTO? is set for in NetLogo, you will control your intersection in a different way:
+If you have chosen MANUAL, you can change the state of your light by pressing the CHANGE LIGHT button.
+If you have chosen AUTO, you can change the phase of your light by moving the PHASE slider to a different position.
+If you wish to keep track of your own metric, input it in the metric-code input box.</p>
+<p>Teacher: Once everyone is ready, start the simulation by pressing the GO button.</p>
+<p>Teacher: You may want to view some of the plots.  Do this by changing the DISPLAY-WHICH-METRIC slider, which changes the plot displayed for everyone.
+- Choose 0 to turn off all the plots.
+- Choose 1 to see the STOPPED CARS plot.
+- Choose 2 for the AVERAGE SPEED OF CARS plot.
+- Choose 3 for the AVERAGE WAIT TIME OF CARS plot.
+- Choose 4 for all the plots.</p>
+<p>Teacher: To run the activity again with the same group, stop the model by pressing the GO button if it is on.  Change the values of the sliders and switches to the values you want for the new run.  Press the SETUP button.  Once everyone is ready, restart the simulation by pressing the GO button.</p>
+<p>Teacher: To start the simulation over with a new group, stop the model by pressing the GO button if it is on, press the RESET button in the Control Center and follow these instructions again from the beginning.</p>
+<h3>Buttons</h3>
+<p>SETUP - generates a new traffic grid based on the current GRID-SIZE-X and GRID-SIZE-Y and NUM-CARS number of cars.  This also clears all the plots.  If the size of the grid has changed the clients will be assigned to new intersections.
+GO - runs the simulation indefinitely
+LOGIN - allows users to log into the activity without running the model or collecting data
+REFRESH PLOTS - redraws the plots based on the current value of DISPLAY-WHICH-METRIC.  Useful for looking at different plots when GO is off.
+SELECT INTERSECTION TO PLOT METRIC IN CLIENT PLOT - allows you to use the mouse to click on an intersection associated with a HubNet client to plot that client's submitted metric in the CLIENT PLOT.</p>
+<h3>Sliders</h3>
+<p>SPEED-LIMIT - sets the maximum speed for the cars
+NUMBER - the number of cars in the simulation (you must press the SETUP or RE-RUN buttons to see the change)
+SIMULATION-SPEED - the speed at which the simulation runs
+TICKS-PER-CYCLE - sets the maximum value that the phase can be.  This has no effect when the model is run with AUTO? false.  Also, the phase that each user chooses is scaled to be less than or equal to this value.
+GRID-SIZE-X - sets the number of vertical roads there are (you must press the SETUP button to see the change)
+GRID-SIZE-Y - sets the number of horizontal roads there are (you must press the SETUP button to see the change)
+DISPLAY-WHICH-METRIC - determines which plot is drawn in NetLogo:
+- 0=No Plots.
+- 1=STOPPED CARS
+- 2=AVERAGE SPEED OF CARS
+- 3=AVERAGE WAIT TIME OF CARS
+- 4=All three plots.</p>
+<h3>Switches</h3>
+<p>CRASH? - toggles car crashing
+POWER? - toggles the presence of traffic lights
+AUTO? - toggles between automatic mode, where the students' lights change on a cycle, and manual in which students directly control the lights with their clients. Lights which aren't associated with clients always change on a cycle.</p>
+<h3>Plots</h3>
+<p>STOPPED CARS - displays the number of stopped cars over time
+AVERAGE SPEED OF CARS - displays the average speed of cars over time
+AVERAGE WAIT TIME OF CARS - displays the average time cars are stopped over time
+CLIENT PLOT - displays the currently selected client's submitted metric over time.  You select a client's intersection by using the SELECT INTERSECTION TO PLOT METRIC IN CLIENT PLOT button.</p>
+<h3>Client Information</h3>
+<p>After logging in, the client interface will appear for the students.  The controls for manual and automatic mode are both included, but which one works is based on the setting of the AUTO? switch in NetLogo.  In MANUAL mode, click the CHANGE LIGHT button to switch the state of the light you control.  In AUTO mode, move the PHASE slider to change the phase for your light.  The phase determines what percent of the way through the cycle to switch on.</p>
+<p>If the users wish to send a metric of their own making that measures the efficiency of the traffic to the model, they can do so with the text input interface element called METRIC-CODE.  The user should input a valid NetLogo expression that evaluates to a number.  Then if this client is selected during a run, the values of the metric will be plotted in the CLIENT PLOT.  If you don't type a valid NetLogo expression that evaluates to a number, an error message will appear in the METRIC-ERROR-MESSAGE monitor.</p>
+<p>The clients also contain the same four plots as NetLogo and will show exactly the same data as NetLogo if plot mirroring is enabled.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>When cars have stopped at a traffic light, and then they start moving again, the traffic jam will move backwards even though the cars are moving forwards.  Why is this?  Discuss in your class possible reasons for this phenomena.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try changing the speed limit for the cars.  How does this affect the overall efficiency of the traffic flow?  Are fewer cars stopping for a shorter amount of time?  Is the average speed of the cars higher or lower than before?</p>
+<p>Try changing the number of cars on the roads.  Does this affect the efficiency of the traffic flow?</p>
+<p>How about changing the speed of the simulation?  Does this affect the efficiency of the traffic flow?</p>
+<p>Using HubNet, try running this simulation with AUTO? being true and AUTO? being false.  Is it harder to make the traffic move well using one scheme or the other?  Why?</p>
+<p>Using HubNet, try running this simulation with AUTO? being true.  Try to find a way of setting the phases of the traffic lights so that the average speed of the cars is the highest.  Now try to minimize the number of stopped cars.  Now try to decrease the average wait time of the cars.  Is there any correlation between these different metrics?</p>
+<p>Try coming up with new and good ways of measuring the efficiency of the traffic flow.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Currently, the maximum speed limit (found in the SPEED-LIMIT slider) for the cars is 1.0.  This is due to the fact that the cars must look ahead the speed that they are traveling to see if there are cars ahead of them.  If there aren't, they speed up.  If there are, they slow down.  Looking ahead for a value greater than 1 is a little bit tricky.  Try implementing the correct behavior for speeds greater than 1.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses a text input interface element in the clients to allow clients to send text to the model.</p>
+<p>It also uses the experimental <code>__check-syntax</code> primitive to try to ensure a string is safe to pass to the run-result primitive.</p>
+<p>Together, these features allow the client to send NetLogo code to the model to be run and produce values which can then be plotted in the CLIENT PLOT.</p>
+<p>If the code that is executed is valid NetLogo syntax and doesn't produce any bad side-effects, such as clearing the View or having turtles die, everything should work fine.  However, there is no easy way of ensuring this currently.  As a result, code which may be unsafe to the model could be executed and may cause the model to stop unexpectedly or give a runtime error when trying to plot to the CLIENT PLOT.  We will be improving these features in future versions of NetLogo.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>
+<p>"Traffic Basic": a simple model of the movement of cars on a highway.</p>
+</li>
+<li>
+<p>"Traffic Basic Utility": a version of "Traffic Basic" including a utility function for the cars.</p>
+</li>
+<li>
+<p>"Traffic Basic Adaptive": a version of "Traffic Basic" where cars adapt their acceleration to try and maintain a smooth flow of traffic.</p>
+</li>
+<li>
+<p>"Traffic Basic Adaptive Individuals": a version of "Traffic Basic Adaptive" where each car adapts individually, instead of all cars adapting in unison.</p>
+</li>
+<li>
+<p>"Traffic 2 Lanes": a more sophisticated two-lane version of the "Traffic Basic" model.</p>
+</li>
+<li>
+<p>"Traffic Intersection": a model of cars traveling through a single intersection.</p>
+</li>
+<li>
+<p>"Traffic Grid": a model of traffic moving in a city grid, with stoplights at the intersections.</p>
+</li>
+<li>
+<p>"Traffic Grid Goal": a version of "Traffic Grid" where the cars have goals, namely to drive to and from work.</p>
+</li>
+<li>
+<p>"Gridlock HubNet": a version of "Traffic Grid" where students control traffic lights in real-time.</p>
+</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. and Stroup, W. (2002).  NetLogo Gridlock Alternate HubNet model.  http://ccl.northwestern.edu/netlogo/models/GridlockAlternateHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2002 Uri Wilensky and Walter Stroup.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This activity and associated models and materials were created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2002 Stroup --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Speakers</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Speakers</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Waves/Unverified/Speakers.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Chemistry &amp; Physics/Waves/Unverified/Speakers.png" alt="Screenshot of Speakers" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model simulates sound wave interference. There is one speaker at each end. A sinusoidal signal generator powers each speaker. The yellow line represents the sound level due to the left speaker, the cyan line represents the sound level due to the right speaker, and the red line represents the sum of the sound levels due to both speakers.</p>
+<h2>HOW IT WORKS</h2>
+<p>Sound effect is due to pressure change spatially and temporally. The waveforms are made up of three lines of turtles. Each turtle acts as it were connected to its neighboring turtles with springs. When neighboring turtles are further away, they exert a stronger force.</p>
+<p>When the left end of the sound level goes up, it "pulls up" the turtle to its right, which in turn pulls up the turtle to its right, and so on. In that way, a sound wave moves through the air.</p>
+<p>The green turtles (speakers) continue to put more energy into the air. When there is no friction in the air, the waves in the air travel without losing amplitude.</p>
+<h2>HOW TO USE IT</h2>
+<p>Click the SETUP button to set up the system. Then, click GO to turn on the speakers.</p>
+<p>The FRICTION slider controls the amount of sound damping in the air. The FREQUENCY slider controls the frequency of the signal generator. The AMPLITUDE slider controls the sound level of the speakers.</p>
+<p>There are three buttons to hide each curve and three buttons to show each curve, so that the curves can be observed individually or collectively.</p>
+<p>Set the PLOT? switch to on and click anywhere on the horizontal line in the View and you will be able to observe the sound level vs. time at the position you selected. The LISTENING-POINT monitor shows the x coordinate of the point.  A white vertical line in the View also shows it.  Click on the line to move the LISTENING-POINT to different position. The SPEAKER AMPLITUDE plot will plot the sound levels at this listening point.</p>
+<p>Set the SHOW-ONLY-RECENT-PLOT? switch to on when you want to see only how the wave has looked in the recent past. With the toggle off, you can see the waves over the whole running time of the model.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>How does the pattern of the left speaker wave and the right speaker wave change when you change the FREQUENCY slider? The AMPLITUDE slider?</p>
+<p>When two speakers are turned on, the sound level at a certain point at a certain time is the sum of the sound levels produced by the two speakers at that time.  Its pattern may be quite different from either of the speaker sound patterns.</p>
+<h2>THINGS TO TRY</h2>
+<p>Change the values on the sliders and observe what happens to the sum of the sound levels --- the red curve.</p>
+<p>Try adding friction to see what it does to the waves.</p>
+<p>Move the listening-point --- what do you observe in the plot window?</p>
+<p>Try to create a "standing wave", in which some points on the lines do not move at all, and plot one of the points to see if the sum there is zero.</p>
+<p>Try to create a flat red curve.</p>
+<p>Compare the relationship between frequency and wavelength.</p>
+<p>Find a way to measure the speed of the wave such that the relationship "speed = frequency * wavelength" is true.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Program the red turtles to find the sum of the absolute values of the two waves.</p>
+<p>Make it possible to "fix" the waves to zero at some point along the line --- as if this were a string and you put your finger on it.</p>
+<p>Make the waves "reflect" from each end instead of going on.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>In order to have three independent waves, three lines of turtles are created --- yellow, then cyan, and then red --- in order from left to right.  Special turtles are created to control the ends of these waves.  One end generates the wave (green) and the other end prevents the wave motion from wrapping (dark blue).</p>
+<p>For this project, it does not make sense for the turtles to "wrap" when they get to the top or bottom of the world. So the y-position of the turtles is kept in a new variable (YPOS-NEW), and the turtle is hidden if its y-position moves outside the boundary of the world.</p>
+<p>During each iteration of GO, each turtle looks at its neighbors and calculates a new speed and position accordingly.  The order in which this is done is not obvious, since the turtles are running in parallel.  It's important that the order in which the turtles look at their neighbors doesn't matter.  Therefore temporary variables are created, "ypos-old", and "yvel-old".   Each turtle looks at its neighbors in previous state and updates its own temporary variables "ypos-new" and "yvel-new".   Then all the turtles update their states together.</p>
+<h2>A TRUE STORY</h2>
+<p>A CCL member was asked by an undergraduate student to help her with some physics experiment problems:</p>
+<p>The experiment was about wave propagation and interference.  In the experiment, two speakers are put on a straight track one meter apart and facing each other.  The speakers are connected to a 1500 Hz sinusoidal signal generator.  The student is asked to use a microphone to measure the sound level along the track between the two speakers and write down the positions where the microphone readings are a minimum.</p>
+<p>The student is asked to explain the results and to determine if the minimum readings should be zero or not.</p>
+<p>The results of the experiment show that the average distance between two minimum readings is about one half of the wavelength. The CCL member could not explain the results and determine if the readings should be zero or not.</p>
+<p>The ROPE sample model helped him to answer the student. In the rope model, one end of the rope is fixed.  So the model setup is similar to the experiment setup except for the length and the frequency.  The CCL member and the student then worked together to modify the rope model and change the meaning of the y coordinate -- changing it from representing the absolute value of the deflection, because the microphone reading is the root mean square value of the sound level. When they ran the program, they got the experimental results and, more importantly, it became very clear to them why the minimum readings should be zero and the distance between any two minima is one half of the wavelength.</p>
+<p>Isn't it amazing that such a simple program can be so helpful?</p>
+<p>Try and repeat what the student and CCL member did and answer the physical experiment problems.</p>
+<h2>RELATED MODELS</h2>
+<p>Rope</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Speakers model.  http://ccl.northwestern.edu/netlogo/models/Speakers.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2002.</p>
+<!-- 1998 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

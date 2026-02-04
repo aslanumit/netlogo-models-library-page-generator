@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cyclic CA</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Cyclic CA</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Computer%20Science/Cellular%20Automata/Cyclic%20CA.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Computer Science/Cellular Automata/Cyclic CA.png" alt="Screenshot of Cyclic CA" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model of a family of 2D cellular automata known as cyclic cellular automata (CCA). Despite being governed by a remarkably simple local update rule, CCA exhibit rich and often surprising self-organizing behavior.</p>
+<p>A cellular automaton is a computational machine that performs actions based on certain rules. It can be thought of as a board which is divided into cells (such as square cells of a checkerboard). In CCA, there are a finite number of possible states a single cell can take represented as distinct colors arranged in a cyclic "color wheel". In this model, we explore a rich variety of cyclic cellular automata rules and the different kinds of patterns that can emerge.</p>
+<p>CCA were first discovered and studied by mathematician David Griffeath and his group as part of a broader effort to understand self-organization and pattern formation in discrete spatial systems. Their work has shown that these automata, while deceptively simple in construction, can exhibit dynamics reminiscent of excitable media such as chemical reactions, neural activity, or ecological spreading processes.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each patch is assigned a color from a set of NUM-STATES possible colors. The colors are ordered cyclically, such that color 1 progresses to 2, 2 to 3, ..., and the final color (NUM-STATES) loops back to 1, forming a cycle.</p>
+<p>At each tick, each patch checks the colors of its neighbors where neighbors are defined using either the extended Moore or von Neumann neighborhood with a configurable RADIUS (Moore neighborhood is a square and von Neumann neighborhood is a diamond). A patch will advance to the next color in the cycle only if the number of neighboring patches currently in that next color meets or exceeds a user-defined THRESHOLD. If the condition is not met, the patch retains its current color.</p>
+<p>In a more specific pseudo-code format, at each clock tick, each patch does:</p>
+<ol>
+<li>Store my initial color in the patch-variable <code>init-pos</code>.</li>
+<li>Identify the next color (stored in the local variable <code>next-pos</code>).</li>
+<li>Count the patches in the neighborhood with the next color (stored in the <code>init-pos</code> variable of the neighbor patches).</li>
+<li>If the count meets or exceeds the <code>THRESHOLD</code>, update my current color to the next color.</li>
+</ol>
+<p>These simple local interactions generate complex global patterns. When initialized with random color assignments, the system’s long-term behavior depends on the interaction between the threshold and the neighborhood size and type.</p>
+<h2>HOW TO USE IT</h2>
+<p>The SETUP button initializes the model.</p>
+<p>The GO button runs the model.</p>
+<p>Use the RADIUS slider to choose the size of the neighborhood that each cell considers.</p>
+<p>Use the THRESHOLD slider to choose the number of cells in the next state that are required to change a given cell's state.</p>
+<p>Use the NUM-STATES slider to choose the possible number of cell states.</p>
+<p>Use the NEIGHBORHOOD chooser to select the type of neighborhood.</p>
+<p>Use the PRESET-PARAMETER chooser to select a preset configuration of slider values that result in distinct patterns. Make sure that the PRESET-PARAMETER is set to "None" to be able to change the slider values yourself.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Do you notice how changing certain slider values affect the patterns? Does increasing or decreasing a given slider result in predictable changes (e.g. how the shape of the spirals change)?</p>
+<p>For example, let's focus on the THRESHOLD slider. One can observe that:</p>
+<ul>
+<li>High thresholds suppress activity, often leading to the disappearance of propagating waves.</li>
+<li>Low thresholds produce disordered, noisy patterns with little spatial coherence.</li>
+<li>Intermediate thresholds result in the spontaneous emergence of large-scale, structured patterns such as spiral waves and rotating domains. These eventually stabilize into locally periodic states, demonstrating a form of self-organization.</li>
+</ul>
+<h2>THINGS TO TRY</h2>
+<p>The simple rules of CCA can produce a vast range of very different behaviors and patterns. Some of the well studied parameter values that lead to interesting patterns can be found in the PRESET-PARAMETERS chooser.</p>
+<p>For example, if we set RADIUS = 2, THRESHOLD = 11, NUM-STATES = 3, NEIGHBORHOOD = Moore, we get a complex system with local clusters which keep moving as long as they interact with noisy areas and other clusters, eventually settling into a stable rigid pattern of large clusters.</p>
+<p>If we set RADIUS = 1, THRESHOLD = 1, NUM-STATES = 14, NEIGHBORHOOD = von Neumann, little wavelets form and smooth out the noise, which is followed by the emergence diamond-shaped spirals at a few points. Soon after, the whole grid gets covered by the spirals interacting with one another.</p>
+<p>If we set RADIUS = 1, THRESHOLD = 2, NUM-STATES = 4, NEIGHBORHOOD = Moore, we get similar diamond-shape spirals but in this case, little patches of noise tend to grow out over time until the whole grid is covered with a noisy random pattern.</p>
+<p>If we set RADIUS = 2, THRESHOLD = 10, NUM-STATES = 3, NEIGHBORHOOD = Moore, we get moving clusters that interacts with each other either repelling or forming smaller clusters.</p>
+<p>Can you come up with other slider configurations that are not listed in the PRESET-PARAMETER chooser that consistently result in interesting patterns?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>There are various ways this model can be extended.</p>
+<p>One of them would be to alter the setup procedure so that the initial conditions are not random and can follow user-specified configuration. For example, one can add a button that can allow the user to change the color of chosen cells and save those initial configurations.</p>
+<p>Another would be to introduce a different set of rules. Perhaps stochasticity can be introduced and the probability of transition to the next state could be a function of the number of neighboring patches in the next state. Can you think of other extensions to the rules? How do they change the emergent patterns?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note that in the setup procedure we assign a patch set to each patch that consists of the neighborhood of that patch. This is done for efficiency reasons. It can take a long time for each patch to compute their neighboring patches at each iteration. Saving the neighboring patch set as an attribute for each patch saves compute time with the cost of additional memory usage.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Life</li>
+<li>Rock Paper Scissors</li>
+<li>CA 1D Totalistic</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Fisch, R., Gravner, J., &amp; Griffeath, D. (1991). Cyclic cellular automata in two dimensions. In Spatial Stochastic Processes: A Festschrift in Honor of Ted Harris on his Seventieth Birthday (pp. 171-185). Boston, MA: Birkhäuser Boston.</p>
+<p>Fisch, R., Gravner, J., &amp; Griffeath, D. (1991). Threshold-range scaling of excitable cellular automata. Statistics and Computing, 1(1), 23-39.</p>
+<p>Reiter, C. A. (2010). Medley of spirals from cyclic cellular automata. Computers &amp; Graphics, 34(1), 72-76.</p>
+<p>Shalizi, Cosma R., and Kristina L. Shalizi. “Quantifying Self-Organization in Cyclic Cellular Automata.” Noise in Complex Systems and Stochastic Dynamics, edited by Lutz Schimansky-Geier et al., vol. 5114, SPIE, 2003, p. 108. Crossref, https://doi.org/10.1117/12.485805.</p>
+<p>The collection of PRESET-PARAMETER values were taken from:</p>
+<p>Wojtowicz, M. (n.d.). CA rules lexicon. MCell. https://mcell.ca/pages/rules.html</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Gurkan, C. and Wilensky, U. (2025).  NetLogo Cyclic CA model.  http://ccl.northwestern.edu/netlogo/models/CyclicCA.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2025 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2025 Cite: Gurkan, C. --></div>
+      </div>
+    </main>
+  </body>
+</html>

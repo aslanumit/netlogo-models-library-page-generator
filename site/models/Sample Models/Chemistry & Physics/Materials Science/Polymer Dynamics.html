@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Polymer Dynamics</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Polymer Dynamics</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Materials%20Science/Polymer%20Dynamics.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Materials Science/Polymer Dynamics.png" alt="Screenshot of Polymer Dynamics" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model simulates the motion of a simple polymer.  Polymers are simply long chains of identical, smaller molecules called monomers, which often have some mobility, causing many polymers to be flexible.  Many common materials and chemical substances are polymers, for example plastics and proteins.</p>
+<h2>HOW IT WORKS</h2>
+<p>The polymer is modeled using an approach involving only local interactions.</p>
+<p>Initially the monomers are colored alternating orange and blue.  Blue monomers interact only with their two neighboring orange monomers, and vice versa.</p>
+<p>Movement occurs in two alternating phases, one for the orange monomers, one for the blue.  For each monomer (of the appropriate color) a random direction to move in is chosen.  Before making the actual move we check if the move would cause the chain to either break or cross itself.  If not, the monomer moves one step in that direction.</p>
+<p>To check if a move will break the chain, we see if the moving monomer will leave a blank patch behind it.  To check if it will cross the chain, we see if the movement will cause the monomer to be next to another piece of the chain in front of it.</p>
+<h2>HOW TO USE IT</h2>
+<p>SETUP: initializes the simulation</p>
+<p>GO: starts the simulation</p>
+<p>GO ONCE: advances the simulation one step only</p>
+<h2>THINGS TO NOTICE</h2>
+<p>One interesting thing to notice is that, despite all the interactions being local, the polymer has a very realistic macroscopic movement.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try a much longer polymer.  This is done by making the world size bigger.  (You'll probably want to reduce the patch size.)</p>
+<p>Slow down the simulation, and observe the local interaction closely.</p>
+<p>Activate the 3D view, and try to follow a turtle.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Measure the distance between the two ends of the polymer and plot how it changes over time.</p>
+<p>Are other movement rules possible, without causing the chain to break or cross?</p>
+<p>Try having different mobility for different kinds of monomers.</p>
+<p>Make a preferential direction for movement, determined by a slider.</p>
+<p>Allow monomers to break apart from the polymer, in some particular situations.  Why might this happen?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>In order for the model to operate correctly on a torus, the dimensions of the world must be even, so we put the world origin in the corner.</p>
+<h2>RELATED MODELS</h2>
+<p>Although this model is not strictly a cellular automata because it uses both patches and turtles, it is similar to them:</p>
+<ul>
+<li>CA 1D Elementary - an introduction to cellular automata</li>
+<li>Life Turtle-Based - a cellular automaton implemented using turtles</li>
+</ul>
+<p>Radical Polymerization - another model about polymers</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>For a detailed treatment of this model, see Yaneer Bar-Yam, Dynamics of Complex Systems (2003), pages 496-502.  Westview Press, Boulder, CO.  The book is available online at https://necsi.edu/dynamics-of-complex-systems.</p>
+<p>See also Y. Bar-Yam, Y. Rabin, M. A. Smith, Macromolecules Rep. 25 (1992) 2985.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2005).  NetLogo Polymer Dynamics model.  http://ccl.northwestern.edu/netlogo/models/PolymerDynamics.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 --></div>
+      </div>
+    </main>
+  </body>
+</html>

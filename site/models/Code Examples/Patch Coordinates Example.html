@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Patch Coordinates Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Patch Coordinates Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Patch%20Coordinates%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Patch Coordinates Example.png" alt="Screenshot of Patch Coordinates Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>The turtle goes forward "distance-of-travel" and returns to (start-x, start-y). The green patch is the center patch upon which there is a turtle at (start-x, start-y), and the patch "distance-of-travel" away from that center will flash as the turtle passes through it.</p>
+<p>This is an illustration of the difference between a radius of 1 and the distance from patch to patch. Distance in NetLogo is measured in patches, and so "forward 1" for a turtle means for it to go forward exactly the length of one side of a patch. However, as illustrated by the pythagorean theorem, the distance across the diagonal of a patch is root 2 (around 1.414). As such, there are points and headings of a turtle within a patch from which going forward 1 will <em>not</em> result in changing the patch on which the turtle lands.</p>
+<h2>HOW IT WORKS</h2>
+<p>There is a searcher turtle that travels clockwise at distance-of-travel from the center (start-x,start-y). The searcher returns to the center each tick and goes forward distance-of-travel. distance-of-travel, start-x, and start-y are all sliders. The center turtle simply marks the center at (start-x, start-y).</p>
+<h2>HOW TO USE IT</h2>
+<p>Press setup, then press go. You can change the sliders while the model is running.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Patches are laid out in NetLogo such that they span from pxcor - 0.5 on the left to an open boundary at pxcor + 0.5. The same equation is used for pycor. That is, for patch 3 1, it's actual real range is ([-3.5,2.5), [-1.5,-0.5)). This is illustrated in the model.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try changing start-x to 0.5 and start-y to 0.5. Where is the green patch now? Now try changing start-x to -0.5 and start-y to -0.5. When the start-x = -0.5 and start-y = -0.5, the turtle is centered on patch 0 0. When the start-x = 0.5 and start-y = 0.5, the turtle is centered on patch 1 1.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>You could change the model such that there are a "halo" of turtles always distance-of-travel from the center.</p>
+<!-- 2004 --></div>
+      </div>
+    </main>
+  </body>
+</html>

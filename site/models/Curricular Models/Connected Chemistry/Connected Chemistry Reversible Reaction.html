@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Connected Chemistry Reversible Reaction</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Connected Chemistry Reversible Reaction</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Connected%20Chemistry/Connected%20Chemistry%20Reversible%20Reaction.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Connected Chemistry/Connected Chemistry Reversible Reaction.png" alt="Screenshot of Connected Chemistry Reversible Reaction" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model of reversible reactions, Le Chatelier's Principle and the Haber process (used for the manufacture of ammonia).</p>
+<p>The default settings of this model show the following exothermic (heat releasing) reaction:</p>
+<blockquote>
+<p>N<sub>2</sub> (g) + 3 H<sub>2</sub> (g)  &harr;  2 NH<sub>3</sub> (g)</p>
+</blockquote>
+<p>This is an equilibrium reaction, where specific conditions favor the forward reaction and other conditions favor the reverse reaction.</p>
+<p>Increasing the pressure causes the equilibrium position to move to the right resulting in a higher yield of ammonia since there are more gas molecules on the left hand side of the equation (4 in total) than there are on the right hand side of the equation (2). Increasing the pressure means the system adjusts to reduce the effect of the change, that is, to reduce the pressure by having fewer gas molecules.</p>
+<p>Decreasing the temperature causes the equilibrium position to move to the right resulting in a higher yield of ammonia since the reaction is exothermic (releases heat). Reducing the temperature means the system will adjust to minimize the effect of the change, that is, it will produce more heat since energy is a product of the reaction, and will therefore produce more ammonia gas as well.</p>
+<p>However, the rate of the reaction at lower temperatures is extremely slow, so a higher temperature must be used to speed up the reaction, which results in a lower yield of ammonia.</p>
+<p>Literature suggests that ideal conditions for the Haber process is at around a temperature of 500 degrees Celsius, which combines the an optimal level of two competing effects that come into play with increasing or decreasing the temperature too much:</p>
+<p>-- A high temperature increases the rate of attaining equilibrium.</p>
+<p>-- The forward reaction is exothermic; therefore a low temperature moves the equilibrium to the right giving a higher yield of ammonia.</p>
+<p>--  A medium temperature is used as a compromise to maximize the combined but canceling effects of going to too high or too low a temperature, yielding a high amount of product, but also doing so quickly.</p>
+<p>Also in the Haber process, a pressure of around 200 atm is recommended, again for the competing effects that come into ply with increasing or decreasing the pressure too much.</p>
+<p>--  A high pressure increases the rate of attaining equilibrium</p>
+<p>--  The forward reaction results in a reduction in volume, therefore a high pressure moves the equilibrium to the right giving a higher yield of ammonia.</p>
+<p>Thus, a medium pressure is used as a compromise to maximize the combined but canceling effects of going to too high or too low a pressure,  yielding a high amount of product, but also doing so quickly.</p>
+<h2>HOW IT WORKS</h2>
+<p>For a reaction to occur, nitrogen (N<sub>2</sub>) and hydrogen (H<sub>2</sub>) must have enough energy to break the atomic bonds in nitrogen and hydrogen and allow the atoms to rearrange to make NH<sub>3</sub>.  This bond breaking energy threshold is called the activation energy.</p>
+<p>This excess energy is called the DIFFERENCE-BOND-ENERGY.  When the bond energy is released the products speed up due to an increased transfer of bond-energy to kinetic energy in the chemical reaction.  When bond energy is absorbed the products slow down from the chemical reaction.</p>
+<h2>HOW TO USE IT</h2>
+<p>#-N2 determines the initial number of nitrogen (N<sub>2</sub>) molecules in the simulation.</p>
+<p>#-H2 determines the initial number of hydrogen (H<sub>2</sub>) molecules in the simulation.</p>
+<p>#-NH3 determines the initial number of ammonia (NH<sub>3</sub>) molecules in the simulation.</p>
+<p>FORWARD-REACT? controls whether the forward reaction can occur.  Similarly, REVERSE-REACT? controls whether the reverse reaction can occur.  With both turned on, an equilibrium reaction is modeled.</p>
+<p>INITIAL-WALL-POSITION changes the initial volume of the container by moving the right hand side of the wall on SETUP.</p>
+<p>MOVE WALL OUT when pressed allows the user to click at a location to move the wall to the right (from its current location, thereby increasing the volume of the container).  The simulation will stop after this occurs.  The user should press GO/STOP again to resume the model run.</p>
+<p>INSULATED-WALLS? when turned on, no energy exchange occurs with the walls.  When turned off, molecules can speed up or slow down, depending on whether the energy level of the walls is higher or lower than that of the molecules.  When turned off, this models an isothermal boundary for the system.  Insulated walls appear brown, isothermal walls appear a shade of red.</p>
+<p>WARM WALLS increases the isothermal energy level of the wall.  COOL WALLS decreases the isothermal energy level of the wall. The color of the wall reflects its energy, the darker the red wall, the colder it is; the warm, the brighter red it will be.</p>
+<p>RESET REACTION COUNTS sets the counters for number of forward reactions and number of reverse reactions to 0.  This is useful to do when you think you have reached a stable state in the system.  After resetting the reaction counts, the % FORWARD REACTIONS and % REVERSE REACTIONS should stabilize at around 50%.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Le Chatelier's Principle can be understood as competing effects between two different contributions to when and how often certain reaction occur.  Explore high and low temperatures and high and low pressures, and try to understand why the system tends to respond to "increase the pressure" when the volume is increased.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try running the model with FORWARD-REACTIONS set to "on" and REVERSE-REACTIONS set to "off".  Then try REVERSE-REACTIONS set to "on" and FORWARD-REACTIONS set to "off".</p>
+<p>Try running the model starting only with ammonia molecules. Try running the model with only hydrogen and nitrogen molecules to start with.</p>
+<p>Try to find the settings for the highest yield of ammonia.  What temperature and volume combination is optimal?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>In the Haber process in real life the inclusion of the catalyst of iron is often used.  A similar catalyst could be added here (using the same code and modeling assumption as used for the water catalyst in the iron rusting model).</p>
+<p>The model could be extended to represent a reversible reaction of A + B &harr; C + D.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Uses transparency in the color of the flashes, so that the underlying patch color of the walls can still be seen.</p>
+<p>Uses GasLab particle collision code:</p>
+<p>Wilensky, U. (1998).  NetLogo GasLab Gas in a Box model. http://ccl.northwestern.edu/netlogo/models/GasLabGasinaBox. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2012).  NetLogo Connected Chemistry Reversible Reaction model.  http://ccl.northwestern.edu/netlogo/models/ConnectedChemistryReversibleReaction.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>To cite the Connected Chemistry curriculum as a whole, please use:</p>
+<ul>
+<li>Wilensky, U., Levy, S. T., &amp; Novak, M. (2004). Connected Chemistry curriculum. http://ccl.northwestern.edu/curriculum/chemistry/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2012 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2012 ConChem Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

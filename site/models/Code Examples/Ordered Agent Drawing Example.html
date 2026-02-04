@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ordered Agent Drawing Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Ordered Agent Drawing Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Ordered%20Agent%20Drawing%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Ordered Agent Drawing Example.png" alt="Screenshot of Ordered Agent Drawing Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>In NetLogo, the rendering order for turtles is determined by breed and then by <code>who</code> number.  The order in which breeds are declared is also the order in which they are layered in the view. So breeds defined later will appear on top of breeds defined earlier.</p>
+<p>There is no way to control the rendering order for each particular agent, for example to have some people appear in front of a house and others (who are "higher up" on the map) underneath it.  Alternatives if this kind of display is needed are NetLogo 3D and the View 2.5D Extension.</p>
+<p>This model demonstrates another alternative when extra control over agent rendering order is required without NetLogo 3D or the View 2.5D Extension.  The core of the trick is simple.  We set <code>hidden?</code> to <code>true</code> for all turtles when they are created, then have a separate rendering procedure that will <code>stamp</code> the agents in whatever the appropriate order is.</p>
+<p>You can run the model, flipping the <code>use-y-order-drawing?</code> switch as it goes.  You'll see the people move on top of the houses when it's off, and they'll move more like "billboards" when on.  This is also true of the people, who are drawn in y-order and always appear "on top" when they are lower; they are not just rendered in <code>who</code> order.</p>
+<p>For this example, the <code>draw-agents-in-y-order</code> procedures draws the agents in y-coordinate order.  While this demonstration is meant to show a more "3D-ish" display of turtles as they move in the world, the same technique can be applied to any complex drawing order for agents.  For example, if there is a combination of turtle variables that should control the drawing order that is too complex to be captured by breeds, then this method would be appropriate.</p>
+<p>Note that the <code>use-y-order-drawing?</code> switch is just for demonstration purposes in this model.  In a model that uses the stamp-drawing method only, that switch and its uses in the code would not be needed.</p>
+<!-- 2024 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lattice Gas Automaton</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Lattice Gas Automaton</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Waves/Lattice%20Gas%20Automaton.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Waves/Lattice Gas Automaton.png" alt="Screenshot of Lattice Gas Automaton" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates circular wave propagation using a cellular automaton on a square grid.  The behavior of the waves approximates the Navier-Stokes equation, a well established fluid dynamics equation discovered in 1823.</p>
+<h2>HOW IT WORKS</h2>
+<p>In the model, space is divided into cells which are occupied by the gas particles.  Each particle has the same mass and absolute velocity (each particle will move only a single cell at each time step).  Space is broken up into neighborhoods of 2x2 cell squares.  Collisions occur when multiple particles are in the same square and occur instantaneously, conserving both mass and momentum.</p>
+<p>The model is implemented using a Margolus neighborhood of 2x2 cell squares in which the particles belong to two separate spacetime sublattices, propagation and collision, (sometimes referred to as "even" and "odd" lattices), which evolve independently of each other.</p>
+<p>The CA can be summarized with the following core rules:</p>
+<pre><code class="language-text">  W W  -&gt;  W W                B W  -&gt;  W W            B W  -&gt;  W B
+  W W      W W                W W      W B            W B      B W
+
+  B W  -&gt;  W B                W B  -&gt;  B B            B B  -&gt;  B B
+  B W      W B                B B      B W            B B      B B
+</code></pre>
+<p>It applies these rules to the even lattice of 2x2 squares followed by the odd lattice of 2x2 squares.  Specifically, this means that the top left patch of four applies one of the above rules, then the bottom right patch of four does the same.  To run the model in reverse, we simply switch the order of those two operations.  No patch gets changed more then twice per tick.  That means that each patch sees only one possible even rule and one possible odd rule each iteration.</p>
+<h2>HOW TO USE IT</h2>
+<p>The basic controls for the model are:
+SETUP - Sets up patches with a given percentage of particles
+DENSITY - Percentage of particles in gas
+GO - Run the model
+REVERSE - Run the model in reverse</p>
+<p>These controls let you "paint" an initial setup in the view using the mouse:
+DRAW-CIRCLE - Clicking any location in the view creates a solid circle of particles
+RADIUS - Controls the radius of the circles</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Drawing a circle in the center of the world and clicking GO creates a circular wave that travels through the lattice.  Once the wave reaches the edges of the world, it wraps around the sides and causes the wave to collide with itself. You may stop the model by clicking GO again, and reverse the system by clicking REVERSE.  The wave will now implode and eventually return to its original starting state.</p>
+<p>How does the density of the center of the wave vary over time? Why?</p>
+<p>Why does the model appear to act the same when run forwards and backwards?</p>
+<h2>THINGS TO TRY</h2>
+<p>How does the density of the gas effect the propagation of the wave?  Try running the model with various DENSITY settings. Why do certain densities impede the propagation of waves?</p>
+<p>What happens when you create multiple compressions in the gas and run the model?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Can you create obstacles that deflect the movement of particles?</p>
+<p>This particular model is known as the HPP model.  The HPP model is very limited. The FHP (Frisch, Hasslacher and Pomeau) model was invented in the mid-eighties in order to improve the accuracy of the HPP model.  The underlying rules of the FHP model are similar to that of the HPP model except that the FHP model has a symmetry-group order of six.  The hexagonal lattice allows for more advanced modeling, such as hydrodynamical simulations.  Can you write a model that emulates a hexagonal lattice in NetLogo?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>In order for the algorithm to operate correctly, the size of the lattice must be even in both dimensions.  That means there is no unique center patch.  Since there is no center patch, we chose to place the origin (0, 0) patch in the lower left corner.  (The model rules are not coordinate-based, though, so it doesn't really matter where the origin is.)</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Thanks to Ethan Bakshy for his work on this model.</p>
+<p>For more information about lattice gas automata, see:</p>
+<p>J. Hardy, Y. Pomeau &amp; O. de Pazzis, Time evolution of two-dimensional model system. I. Invariant states and time correlation functions, J. Math. Phys. 14 (1973), pp. 1746-1759.</p>
+<p>U. Frisch, B. Hasslacher &amp; Y. Pomeau, Lattice-gas automata for the Navier-Stokes equation, Phys. Rev. Lett. 56 (1986), pp. 1505-1508.</p>
+<p>T. Toffoli and N. Margolus. 1987. "Cellular Automata Machines: A New Environment for Modeling".</p>
+<p>Wolfram, S. 2002. A New Kind of Science. Wolfram Media Inc.  Champaign, IL.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2002).  NetLogo Lattice Gas Automaton model.  http://ccl.northwestern.edu/netlogo/models/LatticeGasAutomaton.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2002 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

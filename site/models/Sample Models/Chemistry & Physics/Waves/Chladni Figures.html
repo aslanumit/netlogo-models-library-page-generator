@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chladni Figures</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Chladni Figures</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Waves/Chladni%20Figures.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Waves/Chladni Figures.png" alt="Screenshot of Chladni Figures" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Chladni Figures are a visualization of how sound or vibrations travel through a material. In the most common experiment, grains of sand are placed on a thin metal plate, which is then resonated at a specific frequency. This resonance creates standing waves in the plate, which shake the grains of sand. Since the plate doesn't create any movement at the intersection of these standing waves, the grains of sand will eventually be shaken into place along these intersection lines. These lines are the patterns you see in this model!</p>
+<h2>HOW IT WORKS</h2>
+<p>Each grain of sand moves in a random direction, setting its speed based on the sum of the sines of its distances to each node (represented by the purple dots). Eventually, each grain will encounter a point where this sum is zero, since the sine function is periodic, and it will stop moving.</p>
+<h2>HOW TO USE IT</h2>
+<p><strong>num-grains</strong>: This slider controls the number of sand grains in the model. More grains will result in a smoother pattern in the view, at the cost of performance.</p>
+<p><strong>amplitude</strong>: This slider controls the amplitude of the simulated resonance, and therefore the movement speed of the grains. A higher movement speed will result in a more dynamic model where each pattern resolves more quickly, but it may result in less accurate patterns.</p>
+<p><strong>frequency</strong>: This slider controls the frequency at which the simulated material is resonated. A higher frequency will result in a denser, more complex pattern, whereas a lower frequency will result in a sparser, simpler pattern.</p>
+<p><strong>nodes</strong>: This chooser controls the number of non-resonant nodes present in the simulation. You can think of these nodes as points of contact with the metal sheet in the original experiment, held in place so no resonance can occur. In this simulation, the points are evenly spaced in a radial formation around the center of the view, resulting in more even and geometric patterns.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice how changing the <strong>amplitude</strong> slider affects how quickly the pattern appears, as well as how accurate it is. In the original experiment, this represents how vigorously the plate is vibrated, and therefore how much energy is put into each grain of sand. If you don't provide them with enough energy, they won't be able to move into place to form a pattern, and if you provide them with too much energy, they will tend to skip over the stable regions of the plate.</p>
+<p>Also notice how the <strong>frequency</strong> affects the usable <strong>amplitude</strong> values. If you increase the <strong>frequency</strong>, do you need to change the <strong>amplitude</strong> value to see a good pattern?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try changing the <strong>frequency</strong> slider while the model is running. With a suitable model speed and <strong>amplitude</strong>, you'll see the pattern morph in real time!</p>
+<p>Try changing the number of nodes and see how the patterns change.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>One way to extend the model is by moving the nodes to less regular locations, to see how it affects the resulting patterns. You could make the nodes movable by clicking and dragging to see patterns change in real time as the nodes are moved.</p>
+<p>You can also experiment with the world size and shape, to see how the patterns change or repeat farther away from the nodes.</p>
+<p>For a more advanced extension, you can try using the 2.5D View to display the speed of each turtle using the z axis.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The nodes (after the first one) are made with <code>create-ordered-nodes</code> which automatically evenly divides their headings around the circle. This makes it so we don't have to manually calculate what each of their headings should be.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>All the models in the Conic Sections folder in the Mathematics folder.</li>
+<li>Wave Machine</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Brown, I., Kelter, J. and Wilensky, U. (2025).  NetLogo Chladni Figures model.  http://ccl.northwestern.edu/netlogo/models/ChladniFigures.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2025 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2025 Cite: Brown, I., Kelter, J. --></div>
+      </div>
+    </main>
+  </body>
+</html>

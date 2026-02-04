@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rumor Mill</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Rumor Mill</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Rumor%20Mill.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Social Science/Rumor Mill.png" alt="Screenshot of Rumor Mill" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This program models the spread of a rumor.  The rumor spreads when a person who knows the rumor tells one of their neighbors.  In other words, spatial proximity is a determining factor as to how soon (and perhaps how often) a given individual will hear the rumor.</p>
+<p>The neighbors can be defined as either the four adjacent people or the eight adjacent people.  At each time step, every person who knows the rumor randomly chooses a neighbor to tell the rumor to.  The simulation keeps track of who knows the rumor, how many people know the rumor, and how many "repeated tellings" of the rumor occur.</p>
+<h2>HOW TO USE IT</h2>
+<p>EIGHT-MODE? is a switch that determines whether at each time step the rumor spreads to one of four randomly chosen neighbors, or one of eight such neighbors.</p>
+<p>As with any rumor, it has to start somewhere, with one or more individuals.  There are three ways to control the start of the rumor:</p>
+<ol>
+<li>
+<p>Single source: Press the SETUP-ONE button. This starts the rumor at one point in the center of the world.</p>
+</li>
+<li>
+<p>Random source: Press the SETUP-RANDOM button with the INIT-CLIQUE slider set greater than 0. This "seeds" the rumor randomly by choosing a percentage of the population that knows the rumor initially.  This percentage is set using the INIT-CLIQUE slider.</p>
+</li>
+<li>
+<p>Choose source with mouse: Press either SETUP-ONE or SETUP-RANDOM, then press the SPREAD-RUMOR-WITH-MOUSE button.  While this button is down, clicking the mouse button on a patch in the view will tell the rumor to that patch.</p>
+</li>
+</ol>
+<p>To run the model, you can either "step" through each time step using the STEP button or allow the model to simply run continuously using the GO button.  The model will stop when everyone in the population knows the rumor.</p>
+<p>There are three plots:</p>
+<p>RUMOR SPREAD - plots the percentage of people who know the rumor at each time step.</p>
+<p>SUCCESSIVE DIFFERENCES - plots the number of new people who are hearing the rumor at each time step.</p>
+<p>SUCCESSIVE RATIOS - plots the ratio of the number of people who have now heard the rumor compared to the number of people who had heard it before.</p>
+<p>The monitor CLIQUE% is the percentage of people that have heard the rumor.</p>
+<p>The three coloring buttons to the right of the view give you topographic maps of the world.  The COLOR: WHEN HEARD button colors the patches different shades of YELLOW according to the first time that location heard the rumor.  The COLOR: TIMES HEARD button colors the patches different shades of GREEN according to the number of times that location has heard the rumor.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The most interesting models to run are those where only a small number of individuals who initially know the rumor.  Use the SPREAD-RUMOR-WITH-MOUSE button to make an initial setup where only three or four patches know the rumor, and all of these patches are in the left half of the world.  Run your model once with "Wrap" off and then again with "Wrap" on.  notice the difference in how the rumor is spread.  Which version seems more realistic to you?</p>
+<p>Similarly, run the same model in eight-mode and then in four-mode.  Before you run the model, try to decide, will this make a difference in the spread of the rumor?  Why or why not?</p>
+<p>An interesting thing to notice about the spread of the rumor is that the "speed" with which the rumor spreads slows down as more and more people know the rumor.  Why is that? How is that related to the number of "repeated" or "wasted" tellings of the rumor?  How do the two "differences" plot windows help you to understand the dynamics of the rumor spread?</p>
+<h2>THINGS TO TRY</h2>
+<p>Change the shape of the world (by changing the wrap settings in edit World &amp; View) and see how the spread of the rumor changes in a box or a cylinder.</p>
+<p>Use SPREAD-RUMOR-WITH-MOUSE to place four "seeds" for the rumor centered in each of the four quadrants of the grid.  Notice the pattern of "repeated tellings."  Move the four "seeds" closer into the center of the grid.  How does the pattern or "repeated tellings" change?  Move the "seeds" away from the center of the grid.  How does the pattern of repeated tellings change?  How will it change if  you turn "wrap" on or off?</p>
+<p>Explore other patterns of seeding the rumor and its impact on the pattern of repeated tellings.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Here are some suggestions for ways to extend the model.</p>
+<ul>
+<li>
+<p>Introduce physical barriers into the simulation.  These spatial barriers would be obstacles around which the rumor would have to spread.  One could imagine a room where there was only a one cell entry.  How long would it take to reach the entire population in this case?  And how would that curve (the function of the number of people who know the rumor versus time) compare to the spread of the rumor when there was no such barrier?</p>
+</li>
+<li>
+<p>Assign a probability with which the rumor is told.  In the current model, each time a person meets his/her neighbor, s/he tells the neighbor the rumor.  How would the spread of the rumor change if the telling of the rumor took place only 50% of the time? or 30% of the time?</p>
+</li>
+<li>
+<p>Currently, person A might keep telling person B the rumor over and over again.  Does the rumor spread differently if no one tells the rumor to someone they've already told or someone who told them?</p>
+</li>
+<li>
+<p>Can you make a rumor model that does not spread the rumor through spatial proximity?</p>
+</li>
+</ul>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of the <code>neighbors</code> and <code>neighbors4</code> primitives to implement 8-mode and 4-mode, respectively.</p>
+<h2>RELATED MODELS</h2>
+<p>Virus, HIV</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is itself an extension of a physical experiment where spatial proximity was not a factor in the spread of the rumor.  Contact Helen M. Doerr at hmdoerr@syr.edu regarding papers in preparation.  Thanks to Dr. Doerr for inspiration for this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo Rumor Mill model.  http://ccl.northwestern.edu/netlogo/models/RumorMill.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1997 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

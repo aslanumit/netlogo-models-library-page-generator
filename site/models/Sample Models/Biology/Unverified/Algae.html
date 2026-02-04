@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Algae</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Algae</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Unverified/Algae.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Biology/Unverified/Algae.png" alt="Screenshot of Algae" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model of a simplified aquatic ecosystem consisting of a column of water containing algae, light, and nutrients.  There is more light at the top but more food at the bottom, so algae move up and down to balance their needs.</p>
+<h2>HOW IT WORKS</h2>
+<p>Algae need both light and nutrients (such as ammonia and phosphate) in order to grow. Although there is ample light near the lake surface, there are few nutrients.  On the other hand, it is dark deep in the lake, but there is a lot of ammonia and phosphate down there. Some algae can move up and down in the water column to get both light and nutrients. These algae make dense substances using the energy from light in order to make them sink, and then burn up those dense substances in the dark at the deeper parts of the water column.</p>
+<p>The algae move up and down in the water column based on how dense they are. The algae's density is something that changes continuously based on how much light they are able to get during the day. Density decreases some every turn because the algae use the dense substances to produce chemical energy. However, the algae can also use light energy to make the dense substances. The more light present, the denser they get. When they become denser than water, they move down. Deeper water gets less light, so the deeper algae goes, the less density it is able to add. When algae becomes less dense than water, it moves up towards the surface again. Also, as the seasons change, the length of the day changes, which changes how much light is present throughout the day.</p>
+<h2>HOW TO USE IT</h2>
+<p>The SETUP button prepares the ecosystem and the GO button runs the simulation.</p>
+<p>The LIGHT-SPREADINESS slider changes how much the light penetrates the water. The higher the "spreadiness," the more light can reach down into the water. If the DAY-AND-NIGHT? switch is on, the DAY-LENGTH slider changes how much of each day has sunlight. If it is off, light does not change throughout the day. If the CHANGE-DAY-LENGTH? switch is on, DAY-LENGTH changes as GO is running, simulating the changes of the seasons. If it is off, DAY-LENGTH will only change manually.</p>
+<p>The AVERAGE-HEIGHT plot shows a history of the average height of the algae over the past 24 hour period. The DAY-LENGTH plot show the history of the DAY-LENGTH slider. The ALGAE-DISTRIBUTION plot shows the current position of the algae. Lower algae appear farther to the right in the plot.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice how as the days get longer, the average height of the algae gets lower. Similarly, as the days get shorter, the average height of the algae gets higher. Also, the more the light penetrates the water, the lower the algae are on average.</p>
+<p>The color of the patches indicate the light intensity at that depth in the water column --- the more yellow, the more light is present.</p>
+<p>Sometimes the algae clumps all together and sometimes the algae forms multiple clumps.</p>
+<h2>THINGS TO TRY</h2>
+<p>To get time to pass faster, use the speed slider.</p>
+<p>Turn off DAY-AND-NIGHT? to see that the algae still go up and down when the sun is always shining.</p>
+<p>How does having lots of LIGHT-SPREADINESS and a small DAY-LENGTH compare to having little LIGHT-SPREADINESS and a big DAY-LENGTH? (It'll help to turn off CHANGE-DAY-LENGTH?.)</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Even though algae need both light and nutrients, this simple model only considers the role of light. Add a nutrient gradient in the water column. The floor could contain nutrients and the algae might contribute to the gradient when they die.</p>
+<p>When real algae are healthy, they grow new algae. Also, when they run out of food, they die. Add these rules to the model.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>In the <code>spread-light</code> procedure, the water patches grab light from the patch directly above them. Note the use of the <code>foreach</code> and <code>sort</code> primitives to ensure that the patches are asked in the desired order.</p>
+<p>In order to display all of the elements of the control strip above it, the 2D View needs to be of a certain minimum width, so world-width is larger than it needs to be. The necessary patches are stored as patch agentsets in the <code>air</code>, <code>water</code>, and <code>ground</code> global variables and the <code>setup-environment</code> procedure "gets rid" of the unnecessary patches:</p>
+<pre><code>ask patches with [pxcor != 0] [
+  set pcolor gray + 1.75
+]
+</code></pre>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is based on a preliminary model developed by Allan Konopka at the 2004 NetLogo workshop at Northwestern University.</p>
+<p>Thanks to Josh Unterman for his work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2005).  NetLogo Algae model.  http://ccl.northwestern.edu/netlogo/models/Algae.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 --></div>
+      </div>
+    </main>
+  </body>
+</html>

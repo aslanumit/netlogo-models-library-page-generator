@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tragedy of the Commons HubNet</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Tragedy of the Commons HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/Tragedy%20of%20the%20Commons%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/HubNet Activities/Tragedy of the Commons HubNet.png" alt="Screenshot of Tragedy of the Commons HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model simulates the utilization of a common resource by multiple users.  In this example, the common resource is represented by the common grazing area, used by goat farmers to feed their goats.  Depending on the actions of the participants, the outcome may demonstrate a phenomenon called the "tragedy of the commons", where a common good or resource is over-utilized.</p>
+<p>This is a counterexample to the efficient (as defined in "Pareto efficiency") market theorem.  (The efficient market theorem states that agents, looking out for their own best interest [i.e., everyone trying to increase their own wealth], leads to the most efficient social outcome [i.e., the highest quantity of milk].)</p>
+<h2>HOW IT WORKS</h2>
+<p>The students act as the farmers.  They own INIT-NUM-GOATS/FARMER when they join the simulation.</p>
+<p>The goats move around the screen for a time span of GRAZING-PERIOD to graze and feed themselves.  The amount of grass they eat is equivalent to how much milk they can produce (and ultimately, the amount of profit they produce for the farmer).</p>
+<p>After the GRAZING-PERIOD, the farmers may choose to buy more goats to increase their own wealth.</p>
+<p>Initially, the abundance of GRASS-SUPPLY of the patches can sustain the goats and their grazing and leads to increasing milk-supply and increasing revenue.  But suppose, then, that due to the farmers' own incentive to increase their own wealth and each farmer's indifference to the other farmers' decision to purchase goats, each farmer continues to buy more goats.  With the increase of the GOAT-POPULATION, GRASS-SUPPLY gradually decreases.  Ultimately, the common grazing area does not contain enough grass to sustain the overcrowding of goats, and the milk-supply as well as the farmers' revenues decline.  This is the "tragedy of the commons".</p>
+<h2>HOW TO USE IT</h2>
+<p>Quickstart Instructions:</p>
+<p>Teacher: Follow these directions to run the HubNet activity.
+Optional: Zoom In (see Tools in the Menu Bar)
+Optional: Change any of the settings.  If you do change the settings, press the SETUP button.
+Press the LOGIN button to allow people to login.
+Everyone: Open up a HubNet Client on your machine and enter your name, select this activity, and press ENTER.</p>
+<p>Teacher: Once everyone has logged in, turn off the LOGIN button by pressing it again.
+Have the students acquaint themselves with the various information available to them in the monitors, buttons, and sliders.
+Then press the GO button to start the simulation.
+Please note that you may adjust the length of time, GRAZING-PERIOD, that goats allowed to graze each day.
+For a quicker demonstration, reduce the GRASS-GROWTH-RATE slider.
+To curb buying incentives of the students, increase the COST/GOAT slider.
+Any of the above mentioned parameters - GRAZING-PERIOD, GRASS-GROWTH-RATE, and COST/GOAT - may be altered without stopping the simulation.</p>
+<p>Teacher: To run the activity again with the same group, stop the model by pressing the GO button, if it is on.
+Change any of the settings that you would like.
+Press the SETUP button.
+Restart the simulation by pressing the GO button.</p>
+<p>Teacher: To start the simulation over with a new group, stop the model by pressing the GO button if it is on, press the RESET button in the Control Center to kick out all the clients  and follow these instructions again from the beginning.</p>
+<p>Buttons:</p>
+<p>SETUP - returns all farmers, goats, and patches to initial condition and clears the plot.
+LOGIN - allows users to log into the activity without running the model or collecting data
+GO - runs the simulation</p>
+<p>Sliders:</p>
+<p>INIT-NUM-GOATS/FARMER - initial number of goats per farmer at the beginning of the simulation
+GRASS-GROWTH-RATE - amount of grass growth for each tick of the clock
+COST/GOAT - cost for a goat
+GRAZING-PERIOD - the time frame in which goats are allowed to graze each day</p>
+<p>Monitors:</p>
+<p>GRASS SUPPLY - amount of grass available to eat
+MILK SUPPLY - amount of milk produced each day
+AVG-PROFIT/DAY - amount of revenue collected from milk sale per day
+GOAT POPULATION - number of goats grazing in the common area</p>
+<p>Plots:</p>
+<p>GRASS SUPPLY - amount of grass available to graze upon over time (in days)
+MILK SUPPLY - amount of milk produced over time (in days)
+AVERAGE REVENUE - average revenue of all farmers over time (in days)
+GOAT POPULATION - number of goats on grazing field over time (in days)</p>
+<p>Client Information</p>
+<p>After logging in, the client interface will appear for the students, and if GO is pressed in NetLogo, they will be assigned a farmer which will be described by the color in the MY GOAT COLOR monitor.  The MY GOAT POPULATION monitor will display the number of goats each student owns.  Their revenue for the last day will be displayed in the CURRENT REVENUE monitor and their total assets in the TOTAL ASSETS monitor.</p>
+<p>The global Cost per Goat can be viewed in the COST PER GOAT monitor.  The performance of the society, measured by the amount of grass available for food and the amount of milk produced can be measured from the GRASS AMT and MILK AMT monitors, respectively.  The current day, a day being defined as one grazing period followed by a milking session, is displayed in the DAY monitor.</p>
+<p>The student manages his/her goat population.  During the course of each grazing period, the student must decide what action to take for the day, whether to buy or to discard some goats.  To buy or to discard goats, the student must adjust NUM-GOATS-TO-BUY slider to his/her desired quantity.  At the end of the day, the specified transaction will be executed automatically.  The transaction of the purchase will be described in the GOAT SELLER SAYS: monitor, which will inform the client of the action taken and how many goats were purchased, if any.</p>
+<p>The progress of the community's welfare as measured by the grass available for grazing, average revenue of farmers, and milk supply is plotted in the GRASS SUPPLY, AVERAGE REVENUE, and MILK SUPPLY plots (if present), which are each identical to the plot of the same name in NetLogo.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Note that if the students do not confer with each other, the tragedy of the commons arises.  The general patterns of the plots for average revenue and milk supply are similar -- the curves eventually peak and are followed by a decrease.  After the initial run, ask the students which parameters helped them to decide to purchase or not purchase goats.  Ask the students to switch objectives for the simulation; instead of maximizing total-assets, ask them to maximize milk-supply.  Also, ask the students to confer and act as cooperative unit.</p>
+<h2>THINGS TO TRY</h2>
+<p>Use the model with the entire class to serve as an introduction to the topic.  Upon running the initial set of simulations, ask the students to switch objective - instead of maximizing their own total-assets, ask them to maximize milk-supply for the entire community.  Ask the students to confer and act as a cooperative unit.  Observe and discuss the changes in AVG-REV/FARMER and MILK-SUPPLY from the initial simulation and the later simulation with altered objectives.  Continue to discuss how the "Tragedy of the Commons" can be avoided and why or why not a society would want to avoid this phenomenon.  Then, have students use the NetLogo model individually, in a computer lab, to explore the effects of the various parameters.  Discuss what they find, observe, and can conclude from this model.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Is there other information about the state of the simulation that the farmers might want access to? Do you think this would change the outcome of the simulation? From what other phenomena (e.g. prisoner's dilemma or free-rider problem) would the student's behavior to not sell the goats arise (if it arises)?</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2002).  NetLogo Tragedy of the Commons HubNet model.  http://ccl.northwestern.edu/netlogo/models/TragedyoftheCommonsHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2002 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This activity and associated models and materials were created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

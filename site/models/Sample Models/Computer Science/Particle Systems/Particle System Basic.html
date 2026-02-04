@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Particle System Basic</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Particle System Basic</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Computer%20Science/Particle%20Systems/Particle%20System%20Basic.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Computer Science/Particle Systems/Particle System Basic.png" alt="Screenshot of Particle System Basic" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Particle systems are used in computer graphics to simulate the appearance of physical phenomena that can be modeled as a collection of particles.  For example, some typical particle systems include: waterfalls, fire, smoke, explosions, snow, and meteors.</p>
+<p>This example demonstrates how to write a very simple particle system only.  For example, particles are only created at setup time.   See the other particle system models for elaborations on the basic particle system idea.</p>
+<h2>HOW IT WORKS</h2>
+<p>At each iteration of the GO routine, tiny forces steer the particle through its trajectory. Particles have a velocity in the x and y axes, a step and a force accumulator. This model uses a procedure to compute the forces (COMPUTE-FORCES) and another one to apply the forces (APPLY-FORCES). Combined, these procedures continuously move the particles over time.</p>
+<p>Below are the steps for moving each particle:</p>
+<p>1.- Initialization
+First, the force accumulators are cleared of the previously calculated forces.</p>
+<p>2.- Force Calculation
+Force calculation is trivial for this particular particle system since the sole force of the model, gravity, is represented by a constant negative number. However, force calculation in general can be harder when more complicated forces, such as springs, are involved.</p>
+<p>3.- Force Summation
+After all of the individual forces are computed, the APPLY-FORCES routine sums all of them and calculates the resulting velocity of the particle.</p>
+<p>4.- Displacement
+Finally, a new position is calculated by multiplying the velocity by STEP-SIZE and adding the displacement to the current particle location. STEP-SIZE represents the small amount of time during which the forces are applied.</p>
+<p>Notice that in this model the particles die when they reach the world boundaries.</p>
+<h2>HOW TO USE IT</h2>
+<p>To observe only one particle at a time:</p>
+<p>1.- Change the PARTICLES-NUMBER and STEP-SIZE.
+2.- Press SETUP
+3.- Press GO (Observe how the turtles move through the world.)
+5.- You can optionally change the GRAVITY-CONSTANT and observe how the behavior changes.</p>
+<p>Note that you can change the GRAVITY-CONSTANT and the STEP-SIZE while the particle is moving. For example, if the user wants the particles to fly higher he can decrease the gravity, but if he wishes the particles to stay lower he can increase the gravity pull.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The more particles you create, the slower the model runs.</p>
+<p>The greater the step size, the faster the model runs.  (What happens if you make the step size too large?)</p>
+<h2>THINGS TO TRY</h2>
+<p>Change the GRAVITY-CONSTANT slider while the particle is moving. Note how it stays floating or falls quickly depending when and how you adjust the gravity constant slider.</p>
+<h2>RELATED MODELS</h2>
+<p>Particle System Fountain
+Particle System Waterfall
+Particle System Flame</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Particle Systems
+http://www.siggraph.org/education/materials/HyperGraph/animation/particle.htm</p>
+<p>Particle Systems by Allen Martin
+http://web.cs.wpi.edu/~matt/courses/cs563/talks/psys.html</p>
+<p>William T.  Reeves, "Particle Systems - A Technique for Modeling a Class of Fuzzy Objects", Computer Graphics 17:3 pp.  359-376, 1983 (SIGGRAPH 83).
+https://dl.acm.org/doi/10.1145/357318.357320</p>
+<p>Physically based modeling Online SIGGRAPH 2001 Course Notes
+http://www.pixar.com/companyinfo/research/pbm2001/</p>
+<p>Particle Systems on Wikipedia
+https://en.wikipedia.org/wiki/Particle_system</p>
+<p>Thanks to Daniel Kornhauser for his work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Kornhauser, D. and Wilensky, U. (2007).  NetLogo Particle System Basic model.  http://ccl.northwestern.edu/netlogo/models/ParticleSystemBasic.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 Cite: Kornhauser, D. --></div>
+      </div>
+    </main>
+  </body>
+</html>

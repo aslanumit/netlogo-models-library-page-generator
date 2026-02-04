@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Memory HubNet</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Memory HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/Memory%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/HubNet Activities/Memory HubNet.png" alt="Screenshot of Memory HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a HubNet version of the classic card game Memory. The game tests players' short term memory of where they last saw an image appear. Players can test different mental strategies for remembering.</p>
+<p>A deck of cards made up of card pairs of matching images are dealt face down. Each player takes turns flipping over two cards.  If they match, the player keeps the cards and goes again.  If the two cards don't match they are put face down again.</p>
+<p>At first, the players have no information about the cards. The more cards that are turned over, the more information the players have -- if they can only remember it!</p>
+<h2>HOW IT WORKS</h2>
+<p>Buttons:
+SETUP initializes the world but does not remove any of the players
+DEAL starts a new game
+GO allows the players who have joined to play the game.  Each player plays the game in a sequential order, but all players can see the cards that other player flip over when they are face up.
+SHOW-ALL-CARDS turns over all the cards so all the faces are revealed and all the matches are visible.
+HIDE-ALL-CARDS turns all the cards face down so the matches are no longer visible.</p>
+<p>Sliders:
+PAIRS-IN-DECK determines how many shapes are used (up to 52, though you could add more if you were to resize the world and add more shapes).
+PAIR-UP-DELAY indicates how long you want the turned over cards to display before hiding them again.</p>
+<p>Monitors:
+CARDS REMAINING - the number of cards that have not yet been matched.
+CURRENT-PLAYER - the name of the player who is taking his or her turn.
+NUMBER-OF-PLAYERS - the number of people currently logged in and playing the game.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP. Ask the players to login using the HubNet client.  When everyone has successfully logged in press the GO button.  The name of the current player will appear in the CURRENT-PLAYER monitor on the server and the WHOSE TURN monitor on the clients.  Only that client will be allowed to select two cards to turn over by clicking on them with the mouse.  If the cards match the cards will be removed and that player will receive a point and another turn, if not the CURRENT-PLAYER will be incremented to the next player. The game ends when all pairs of cards are matched and removed from the board.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Try to remember where all the cards you see are located.  The game tests your ability to memorize where you last saw an image.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try different mental strategies for choosing cards and for remembering cards. You can't remember everything, so how will you choose which cards to remember?  How many can you remember perfectly?  How many can you remember well enough to at least make good guesses?</p>
+<p>Adjust the PAIR-UP-DELAY to a higher number to give players a longer or shorter time to study where the flipped up cards are located.</p>
+<p>Smaller decks are easier.  Adjust the PAIRS-IN-DECK slider to set the difficulty level.</p>
+<p>The game is most fun if it's neither too easy nor too hard.  What's the best deck size for two players?  Three players?  Four players?  Etc.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Change the shapes used or add more using the Turtle Shapes Editor.</p>
+<p>Change the number of cards in each set, have three or four cards of each shape.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The use of invisible turtles to represent players is a little unusual.  The location of these turtles in the world is irrelevant; they are used just to store information.</p>
+<p>We use the DISPLAY primitive to control what the players see when, and for how long.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2009).  NetLogo Memory HubNet model.  http://ccl.northwestern.edu/netlogo/models/MemoryHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2009 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2009 --></div>
+      </div>
+    </main>
+  </body>
+</html>

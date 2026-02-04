@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Particle System Fountain</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Particle System Fountain</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Computer%20Science/Particle%20Systems/Particle%20System%20Fountain.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Computer Science/Particle Systems/Particle System Fountain.png" alt="Screenshot of Particle System Fountain" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This particle system models a particle fountain emitting particles from the bottom of the world.</p>
+<p>In this model each particle has two main behaviors:
+- If there is room ahead it continues its trajectory.
+- If it's about to touch the edge of the world, it dies.
+Forces such as gravity, wind, and viscosity act on the particles as well.</p>
+<h2>HOW IT WORKS</h2>
+<p>A particle with an initial velocity emerges from the bottom center of world. It is subjected to the force of gravity, which slows it down and pulls it to the bottom of the world. In addition, forces of wind and viscosity are present.  The maximum number of particles and particle rate can be changed with the appropriate sliders. Finally, the step of the systems which controls the precision of the system calculations can be increased or decreased, but it will change the speed of the systems since more calculations have to be done for a more precise simulation. Below, the use of each slider, button and switch is explained.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press GO to start the particle fountain.  You can then modify the settings to change how the fountain behaves.  Note that once the maximum number of particles is reached, particles will cease to emerge until another particle leaves room by dying when it is about to touch the sides or ceiling.</p>
+<ul>
+<li>
+<p>Initial velocities: The INITIAL-VELOCITY-X and INITIAL-VELOCITY-Y sliders control the initial velocity in the x and y axes for each particle.</p>
+</li>
+<li>
+<p>INITIAL-RANGE-X: To make the particle system appear more realistic, each particle can be given a different random velocity at startup.  To set the random velocities, give INITIAL-RANGE-X a nonzero value.  Larger values will spread the fountain out more.  (Even when this switch is off, the particles will have distinct trajectories, due to their different masses.)</p>
+</li>
+<li>
+<p>Gravity: Gravity acts downwards, and is implemented by adding a negative number, the GRAVITY-CONSTANT, to the y force accumulator. Gravity is unrealistic in this system, in that its acceleration changes depending on the particle's mass. This is an important characteristic of particles systems: We can create motions that do not strictly follow real-world physical rules.</p>
+</li>
+<li>
+<p>Wind: The wind force sways the particles of the system left and right in the world by adding a WIND-CONSTANT-X force in the x-axis.</p>
+</li>
+<li>
+<p>Viscosity: The viscosity force resists the motion of a particle by exerting an opposite force proportional to the VISCOSITY-CONSTANT to the speed of the particle.  A higher VISCOSITY-CONSTANT means the particles flow easier.</p>
+</li>
+<li>
+<p>Step size: A smaller step will increase the precision of the trajectories but slow down the model computation, while a large step will decrease the precision of the trajectories but speed up the model computation.  Every iteration, the STEP-SIZE scales the velocity and change in location of the particle.</p>
+</li>
+<li>
+<p>Maximum particle number: The number of particles in the system is bounded by the MAX-NUMBER-OF-PARTICLES slider.  Once the particle count reaches the MAX-NUMBER-OF-PARTICLES limit the generation of new particles is stopped.  Note that each time a particle reaches the edge of the world it dies, hence by providing room for another particle to be created.</p>
+</li>
+<li>
+<p>Particle rate: The particle RATE sets the rate at which new particles are generated.  A rate of 0 will stop the fountain's flow.</p>
+</li>
+</ul>
+<h2>THINGS TO TRY</h2>
+<p>Move the sliders and switches to see the behaviors you get from each force.  For example, by moving all sliders but GRAVITY-CONSTANT to a neutral position, you can see how gravity acts on the particles.  After you have seen how each individual force acts  (initial velocities, viscosity, wind, gravity coefficient), combine them to see how they act together.</p>
+<p>Move the sliders in order to make the model look the most like a real water fountain.</p>
+<p>Remember that you can move the sliders while the model is running.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Hide the particles and put the pen down in the CREATE-PARTICLE procedure to see the trajectories of the particles accumulate over time.</p>
+<p>Change the position of the particle source.</p>
+<p>Change the model to make it look like another physical phenomenon, such as lava or soap bubbles.</p>
+<p>Make the particle system look like rain, snow, or another phenomenon by changing the model to emit particles from different locations at the top of the world.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>A difficulty in this example is to detect when a particle has reached the edge of the world, so it can be made to disappear.  Check the <code>apply-forces</code> procedure to see how the <code>patch-at</code> and <code>nobody</code> primitives are used to do this detection.</p>
+<h2>RELATED MODELS</h2>
+<p>Particle System Basic
+Particle System Waterfall
+Particle System Flame</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>See Particle System Basic for a list of references on particle systems.</p>
+<p>Thanks to Daniel Kornhauser for his work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Kornhauser, D. and Wilensky, U. (2007).  NetLogo Particle System Fountain model.  http://ccl.northwestern.edu/netlogo/models/ParticleSystemFountain.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 Cite: Kornhauser, D. --></div>
+      </div>
+    </main>
+  </body>
+</html>

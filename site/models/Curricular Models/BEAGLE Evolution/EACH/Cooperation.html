@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cooperation</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Cooperation</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/BEAGLE%20Evolution/EACH/Cooperation.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Curricular Models/BEAGLE Evolution/EACH/Cooperation.png" alt="Screenshot of Cooperation" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is an evolutionary biology model.  In it, agents (cows) compete for natural resources (grass).  Cows that are more successful in getting grass reproduce more often, and will thus be more evolutionarily successful.  This model includes two kinds of cows, greedy and cooperative.  It shows how these two different strategies do when competing against each other within a population that evolves over time.</p>
+<p>This model (and Altruism and Divide the Cake) are part of the EACH unit ("Evolution of Altruistic and Cooperative Habits: Learning About Complexity in Evolution").  See http://ccl.northwestern.edu/rp/each/index.shtml for more information on the EACH unit. The EACH unit is embedded within the BEAGLE (Biological Experiments in Adaptation, Genetics, Learning and Evolution) evolution curriculum. See http://ccl.northwestern.edu/rp/beagle/index.shtml.</p>
+<h2>HOW IT WORKS</h2>
+<p>Every turn, each cow looks at the patch that it is currently on, and eats a unit of grass.  The greedy cows eat the grass regardless of the length of the grass on the current patch.  The cooperative cows won't eat the grass below a certain height.  This behavior is significant because below a certain height (called the "growth threshold"), the grass grows at a far slower rate than above it.  Thus, the cooperative agents leave more food for the overall population at a cost to their individual well-being, while the greedy agents eat the grass down to the nub, regardless of the effect on the overall population.</p>
+<h2>HOW TO USE IT</h2>
+<p>GO: Starts and stops the model.</p>
+<p>SETUP: Resets the simulation according to the parameters set by the sliders.</p>
+<p>INITIAL-COWS: Sets the number of initial cows.</p>
+<p>COOPERATIVE-PROBABILITY: Sets the chance an initial cow will be of the cooperative breed</p>
+<p>STRIDE-LENGTH: This value determines the movement of the cows. Each cow will move forward a distance of STRIDE-LENGTH  each turn.  As the value is increased, the cows will move to other patches more frequently.</p>
+<p>GRASS-ENERGY: Each time a cow can eat some grass from the patch that it currently occupies, it increases its energy by the value of this slider.</p>
+<p>METABOLISM: Every time step, each cow loses the amount of energy set by this slider.  If the cows energy dips below 0, it dies.  Every cow starts with a default energy of 50, which means it can go 50 / METABOLISM turns without eating.</p>
+<p>REPRODUCTION-THRESHOLD: If a cow's energy reaches the value of this slider, it reproduces.  This value represents the food-gathering success that a cow would have to have in order to be able to reproduce.</p>
+<p>REPRODUCTION-COST: Each time a cow reproduces, it loses the amount of energy set by this slider.  This value represents the energy cost of reproduction.</p>
+<p>LOW-GROWTH-CHANCE: This value is the percentage chance that the grass below the growth threshold will grow back.  The higher this value, the less the discrepancy between the behaviors of the cooperative and greedy cows.</p>
+<p>HIGH-GROWTH-CHANCE: This value is the percentage chance that the grass above the growth threshold will grow back.  The lower this value, the less the discrepancy between the behaviors of the cooperative and greedy cows.</p>
+<p>MAX-GRASS-HEIGHT:  This value sets the highest length to which the grass can grow.</p>
+<p>LOW-HIGH-THRESHOLD:  This value sets the grass growth threshold.  At, or above this value, the grass grows back with HIGH-GROWTH-CHANCE.  Below this value, the grass grows back with LOW-GROWTH-CHANCE.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Run the model with the default settings.  Watch the different growth curves on the population plot.  Which population expands first?  Which population wins in the end?</p>
+<h2>THINGS TO TRY</h2>
+<p>Slowly decrease the STRIDE-LENGTH slider. What happens to the populations?</p>
+<p>At what value of STRIDE-LENGTH do the populations' growth rates change dramatically?  What does this indicate about the evolutionary advantages of cooperating versus being greedy?  What are the important environmental factors?</p>
+<p>Change the METABOLISM and the GRASS-ENERGY values.  How do these values affect the model?</p>
+<p>Change the LOW-GROWTH-CHANCE and the HIGH-GROWTH-CHANCE values.  How do these values affect the model?</p>
+<p>How does the LOW-HIGH-THRESHOLD value affect the growth of the populations?</p>
+<p>Can you find settings that maximize the advantage of the cooperative cows?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>This model explores only one type of cooperative behavior, namely eating the grass above the growth threshold (the LOW-HIGH-THRESHOLD value).  What other cooperative, or altruistic, behaviors could be modeled that hurt individual fitness, while helping the group overall?  What environmental conditions other than grass length could be used to affect the health of a population?</p>
+<p>This model relies primarily upon population "viscosity" (the STRIDE-LENGTH slider) to alter the behavior of the cows to allow for the success of the cooperative agents.  What other variables could have such a drastic effect on the evolutionary success of populations?</p>
+<p>Also, consider that in this model the behaviors are fixed.  What would happen if the agents learned, or changed their behavior based on food availability?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Breeds are used to represent the two different kinds of agents.  The <code>turtles</code> primitive is used to refer to both breeds together.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Altruism</li>
+<li>Divide the Cake</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model, the Altruism model and the Divide the Cake model are part of the curriculum unit "Evolution of Altruistic and Cooperative Habits: Learning About Complexity in Evolution".  See http://ccl.northwestern.edu/rp/each/index.shtml for more information. The EACH unit is embedded within the BEAGLE (Biological Experiments in Adaptation, Genetics, Learning and Evolution) evolution curriculum. See http://ccl.northwestern.edu/rp/beagle/index.shtml.</p>
+<p>Thanks to Damon Centola, Eamon McKenzie, Josh Mitteldorf, and Scott Styles.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo Cooperation model.  http://ccl.northwestern.edu/netlogo/models/Cooperation.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1997 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

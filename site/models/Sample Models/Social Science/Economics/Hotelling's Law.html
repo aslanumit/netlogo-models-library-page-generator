@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hotelling&#x27;s Law</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Hotelling&#x27;s Law</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Economics/Hotelling&#x27;s%20Law.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Social Science/Economics/Hotelling&#x27;s Law.png" alt="Screenshot of Hotelling&#x27;s Law" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is a representation of Hotelling's law (1929), which examines the optimal placement of stores and pricing of their goods in order to maximize profit. In Hotelling's original paper, the stores were confined to a single dimension.  This model replicates and extends Hotelling's law, by allowing the stores to move freely on a plane.</p>
+<p>In this model, several stores attempt to maximize their profits by moving and changing their prices.  Each consumer chooses their store of preference based on the distance to the store and the price of the goods it offers.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each consumer adds up the price and distance from each store, and then chooses to go to the store that offers the lowest sum. In the event of a tie, the consumer chooses randomly. The stores can either be constrained to one dimension, in which case all stores operate on a line, or they can be placed on a plane. Under the normal rule, each store tries to move randomly in the four cardinal directions to see if it can gain a larger market share; if not, it does not move. Then each store checks if it can earn a greater profit by increasing or decreasing the price of their goods; if not, it does not change the price. This decision is made without any knowledge of their competitors' strategies. There are two other conditions under which one can run this model: stores can either only change prices, or only move their location.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to create the stores and a visualization of their starting market share areas.
+Press GO to have the model run continuously.
+Press GO-ONCE to have the model run once.
+The NUMBER-OF-STORES slider decides how many stores are in the world.</p>
+<p>If the LAYOUT chooser is on LINE, then the stores will operate only on one dimension. If it is on PLANE, then the stores will operate in a two dimensional space.</p>
+<p>If the RULES chooser is on PRICING-ONLY, then stores can only change their price.  If it is on MOVING-ONLY, then the stores can only move.  If it is on NORMAL, all stores can change their prices and move.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>On the default settings, notice that the two stores end up in very close contact and with minimal prices. This is because each store tries to cut into their competitor's fringe consumers by moving closer and reducing their prices.</p>
+<p>Also notice how the shapes of the boundaries end up as perpendicular bisectors or hyperbolic arcs. The distance between the stores and their difference in prices determines the eccentricity of these arcs.</p>
+<p>Try increasing the store number to three or more, and notice how the store with the most area is not necessarily the most profitable.</p>
+<p>Plots show the prices, areas, and revenues of all stores.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try to see how stores behave differently when they are either prohibited from moving or changing their prices.</p>
+<p>Try increasing the number of stores. Examine how they behave differently and watch which ones are the most successful.  What patterns emerge?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>In this model, information is free, but this is not a realistic assumption. Can you think of a way to add a price when stores try to gain information?</p>
+<p>In this model, the stores always seek to increase their profits immediately instead of showing any capacity to plan. They are also incapable of predicting what the competitors might do. Making the stores more intelligent would make this model more realistic.</p>
+<p>Maybe one way to make the stores more intelligent would be to have them consider their moving and pricing options in conjunction. Right now, they consider the question "would it be good for me to move North" and "would it be good for me to increase my price" completely separately. But what if they asked "would it be good for me to move North AND increase my price"? Would it make a difference in their decision making?</p>
+<p>As of now, the consumers are very static. Is there a way to make the consumers move as well or react in some manner to the competition amongst the stores?</p>
+<p>Is there a way to include consumer limitations in their spending power or ability to travel? That is, if all stores charge too much or are too far, the consumer could refuse to go to any store.</p>
+<p>In this model, if two or more stores are identical from a consumer's point of view, the consumer will choose to go to one of those at random. If the stores are only slightly different for the consumer, is it possible to have the consumer go to either one?</p>
+<p>One can extend this model further by introducing a different layout. How would the patterns change, for example, if the layout of the world were circular? What if we just enable world wrapping?</p>
+<h2>NETLOGO FEATURES</h2>
+<ul>
+<li>
+<p>Each store can move up to four times each tick, as each store takes test steps in cardinal directions when deciding on its moving strategy. However, as this model is tick based, the user only sees one step per store.</p>
+</li>
+<li>
+<p>Notice, also, how the plot pens are dynamically created in the setup code of each plot. There has to be one pen for each store, but we don't know in advance how many there will be, so we use the <code>create-temporary-plot-pen</code> primitive to create the pens we need and assign them the right color upon setup.</p>
+</li>
+<li>
+<p>In the procedures where a store chooses a new price or location, we make use of a subtle property of the <code>sort-by</code> primitive: the fact that the order of items in the initial list is preserved in case of ties during sorting. What we do is that we put the "status quo" option at the front of the list possible moves, but shuffle all other possible moves. Because of that, when we sort the moves by potential revenues, the status quo is always preferred in case of equal revenues.</p>
+</li>
+<li>
+<p>What if want to know if all members of a list have a certain property? (This is the equivalent of the "for all" universal quantifier (∀) in predicate logic.) NetLogo doesn't have a primitive to do that directly, but we can easily write it ourselves using the <code>member?</code> and <code>map</code> primitives. The trick is to first <a href="http://ccl.northwestern.edu/netlogo/docs/dictionary.html#map">map</a> the list to the predicate we want to test. Let's say we want to test if all members of a list are zeros: <code>map [? = 0] [1 0 0]</code> will report <code>[false true true]</code>, and <code>map [? = 0] [ 0 0 0 ]</code> will report <code>[true true true]</code>. All we have to is to test the "for all" condition is to make sure that <code>false</code> is not a <a href="http://ccl.northwestern.edu/netlogo/docs/dictionary.html#member">member</a> of that new list: <code>not member? false map [? = 0] [1 0 0]</code> will report <code>false</code>, and <code>not member? false map [? = 0] [0 0 0]</code> will report <code>true</code>. We use a variant of this in the <code>new-price-task</code> reporter.</p>
+</li>
+<li>
+<p>The procedures for choosing new prices and locations do not actually perform these changes right away. Instead, they report <code>task</code>s that will be run later in the <code>go</code> procedure. Notice how we put <code>self</code> in a local variable before creating our task: this is because NetLogo tasks "capture" local variables, but not agent context. See <a href="http://ccl.northwestern.edu/netlogo/docs/programming.html#tasks">the "Tasks" section in the NetLogo Programming guide</a> for more details about this.</p>
+</li>
+</ul>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Voronoi</li>
+<li>Voronoi - Emergent</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Hotelling, Harold. (1929). "Stability in Competition." The Economic Journal 39.153: 41 -57. (Stable URL: https://www.jstor.org/stable/2224214).</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Ottino, B., Stonedahl, F. and Wilensky, U. (2009).  NetLogo Hotelling's Law model.  http://ccl.northwestern.edu/netlogo/models/Hotelling'sLaw.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2009 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2009 Cite: Ottino, B., Stonedahl, F. --></div>
+      </div>
+    </main>
+  </body>
+</html>

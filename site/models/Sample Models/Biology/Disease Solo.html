@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Disease Solo</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Disease Solo</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Disease%20Solo.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Disease Solo.png" alt="Screenshot of Disease Solo" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Disease Solo is a one-player version of the HubNet activity Disease.  It simulates the spread of a disease through a population.  One agent in the population is a person controlled by the user; the others are "androids" controlled by the computer.</p>
+<h2>HOW IT WORKS</h2>
+<p>The user controls the blue agent via the buttons and slider on the right side of the view.  The infection is started by pressing the "infect" button.</p>
+<p>Sick agents are indicated by a red circle.</p>
+<p>Androids can move using a few different simple strategies. By default they simply move randomly, however, using the AVOID? and CHASE? switches you can indicate that uninfected androids should run from infected ones or infected androids should chase uninfected ones.</p>
+<p>The person may also catch the infection.</p>
+<p>Healthy "agents" on the same patch as sick agents have an INFECTION-CHANCE chance of becoming ill.</p>
+<h2>HOW TO USE IT</h2>
+<h3>Buttons</h3>
+<p>SETUP/CLEAR - sets up the world and clears plots.
+SETUP/KEEP - sets up the world without clearing the plot; this lets you compare results from different runs.
+GO - runs the simulation.
+INFECT - infects one of the androids</p>
+<h3>Sliders</h3>
+<p>NUM-ANDROIDS - determines how many androids are created at setup
+INFECTION-CHANCE - a healthy agent's chance at every time step to become sick if it is on the same patch as an infected agent</p>
+<h3>Monitors</h3>
+<p>NUMBER SICK - the number of sick agents</p>
+<h3>Plots</h3>
+<p>NUMBER SICK - the number of sick agents versus time</p>
+<h3>Switches</h3>
+<p>AVOID? - when this switch is on each uninfected android checks all four directions to see if it can move to a patch that is safe from infected agents.
+CHASE? - when this switch is on each infected androids checks all four directions to see if it can infect another agent.</p>
+<h3>User controls</h3>
+<p>UP, DOWN, LEFT, and RIGHT - move the person around the world, STEP-SIZE determines how far the person moves each time one of the control buttons is pressed.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Think about how the plot will change if you alter a parameter.  Altering the infection chance will have different effects on the plot.</p>
+<h2>THINGS TO TRY</h2>
+<p>Do several runs of the model and record a data set for each one by using the setup/keep button. Compare the different resulting plots.</p>
+<p>What happens to the plot as you do runs with more and more androids?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Currently, the agents remain sick once they're infected.  How would the shape of the plot change if agents eventually healed?  If, after healing, they were immune to the disease, or could still spread the disease, how would the dynamics be altered?</p>
+<p>The user has a distinct advantage in this version of the model (assuming that the goal is either not to become infected, or to infect others), as the user can see the entire world and the androids can only see one patch ahead of them.  Try to even out the playing field by giving the androids a larger field of vision.</p>
+<p>Determining the first agent who is infected may impact the way disease spreads through the population.  Try changing the target of the first infection so it can be determined by the user.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>You can use the keyboard to control the person.  To activate the keyboard shortcuts for the movement button, either hide the command center or click in the white background.</p>
+<p>The plot uses temporary plot pens, rather than a fixed set of permanent plot pens, so you can use the setup/keep button to overlay as many runs as you want.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Disease (HubNet version)</li>
+<li>Virus</li>
+<li>HIV</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a one player version of the HubNet activity Disease.  In the HubNet version, multiple users can participate at once.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2005).  NetLogo Disease Solo model.  http://ccl.northwestern.edu/netlogo/models/DiseaseSolo.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 --></div>
+      </div>
+    </main>
+  </body>
+</html>

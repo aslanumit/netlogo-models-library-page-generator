@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Urban Suite - Tijuana Bordertowns</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Urban Suite - Tijuana Bordertowns</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Urban%20Suite/Urban%20Suite%20-%20Tijuana%20Bordertowns.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Urban Suite/Urban Suite - Tijuana Bordertowns.png" alt="Screenshot of Urban Suite - Tijuana Bordertowns" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model simulates various socio-economic realities of low-income residents of the City of Tijuana for the purpose of creating propositional design interventions.</p>
+<p>The Tijuana Bordertowns model allows input of migration rates and border crossing rates relative to employment and service centers in order to define population types (i.e. migrants or full-time residents). Population densities relative to block sizes are adjustable via the interface in order to steer the simulation toward specific land-uses such as urban centers or peripheral (rural) development. The rate of residential building is adjustable based upon relative community size, land value (approximate), required (per-capita) capital and the carrying capacity of (potentially) existing infrastructure.</p>
+<p>The model also simulates detailed information about each agent in the simulation. During or after the simulation is run, specific agents can be inspected to determine their current income (if any), savings (if any), living expenses, job (if any), origin (from where they migrated) and the time (in years) they have lived in Tijuana. In addition, during or after the simulation is run, patches the agents occupy can also be inspected to identify the existence of infrastructural features such as water, electricity and roads. In all cases, information about agents and patches continually changes during the simulation based upon interrelated feedback.</p>
+<h2>HOW IT WORKS</h2>
+<p>A CITYSCAPE is generated, spreading out from a city center.  Each patch is assigned a land-value, and a level of electrical, water and transportation service.  A road network is drawn, and maquiladoras are placed at the edge of the city.</p>
+<p>An initial set of migrants are created at the edge of the city on "irregular" patches, meaning those patches with a low land-value, near water and away from maquiladoras.  A second set of migrants is created in the neighboring patches.  This establishes the base population of the irregular settlements.  The migrants also have a state of original, such as Jalisco or Oaxaca.</p>
+<p>Then each migrant is assigned a living-expanses values, which is determined by the value of the land they occupy, food and other utility costs, as well as the electrical, water, and transportation.  Food and other utility costs are constant for all agents.  The electrical and water costs are determined by the patches values.  Transportation is determined by their distance to service centers (like shopping centers), the distance to the maquiladoras they work at, and the access to transportation services their patch has.</p>
+<p>With each model tick, new migrants move into patches next to existing migrants, some migrants cross the border, some migrants move into nicer locations once they have sufficient savings, and all of them participate in the economy, earning and spending money, as well as saving if possible.</p>
+<p>New migrants will enter in unoccupied spaces adjacent to migrants who came from their home state.</p>
+<p>Migrants that move will look for a patch in their area with electrical and water services, which is affordable to them.</p>
+<p>Groups of migrants form colonias.  The size of these colonias is determined by the COLONIA-SIZE slider.  The larger the value, the larger the colonia.  Colonias with sufficient density will be targeted for regularization.  New electrical, water and transportation services will be developed for them.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press CLEAR to clear the screen and prepare for the simulation</p>
+<p>Press CITYSCAPE to draw an initial city.  After it completes the city the button will de-activate.  Do not use the GO button until after CITYSCAPE has completed its process, and the button has deactivated!</p>
+<p>Press GO to run the simulation. (Only after you have run CLEAR, and let CITYSCAPE run to completion).</p>
+<p>The INSPECT button pops up agent inspectors for the migrant with the least income, one migrant with savings above 0, and a patch with migrants living on it.</p>
+<p>The ADD-NODE forever button allows you to click on a patch and create a service node, which has electrical, water, and transportation services.</p>
+<p>MIGRATION-TICKS determines how many ticks of the model between waves of immigrants.</p>
+<p>CROSSING-TICKS determined how many ticks of the model before a percentage of residents cross the border and leave the town.</p>
+<p>#-MAQUILADORAS sets the number of maquiladoras, which are created at the edge of the city when the city is created during the CITYSCAPE step.</p>
+<p>#-SERVICE-CENTERS determines the number of service centers (shown as large circles in the view) that are created when the city is created.</p>
+<p>INIT-DENSITY determines the initial number of migrants at the start of a model run.</p>
+<p>REQUIRED-CAPITAL determines how much savings a migrant must have before moving from their current location to a new location.</p>
+<p>COLONIA-SIZE determines the size of a region that can become a colonia.  A larger size means larger colonias.</p>
+<p>CARRYING-CAPACITY determines how large of an area a new node, created with the ADD-NODE button, effects.  A new node will add services to patches in that area.</p>
+<p>BUILDING-TICKS determines how many ticks of the model between building when areas are regularized</p>
+<p>The VISUAL-UPDATE chooser allows additional visualization of various aspects of the state of the model, including "elevation", "land value gradient", "colonias", "units with no water", and "units with no electricity".  If GO is running, then the view will update in real-time.  Otherwise, push the UPDATE-NOW button after choosing a new visualization mode.</p>
+<p>If the COLOR-CODE? switch is ON, then migrants will be colored on the basis of their  origin ( "oaxaca" is pink, "jalisco" is orange, "zacatecas" is blue, and "mexico" is green]).  If it is OFF, then all migrants are shown in black (or white, in "land value gradient" visualization mode).</p>
+<p>The CITY-GROWTH? switch determines whether the city continues to grow as the model progresses.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Colonias will eventually build their own infrastructure if CITY-GROWTH is on.</p>
+<p>Adding a node with the ADD-NODE button will attract migrants to that area.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try setting the MIGRATION-TICKS to a lower value, thus increasing the number of migrants.  Increate CROSSING-TICKS so that fewer people leave.</p>
+<p>Try using the ADD-NODE button to add a bunch of nodes to an area to make it attractive.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add a button that allows the creation of colonias in explicit locations.</p>
+<h2>RELATED MODELS</h2>
+<p>This model is related to all of the other models in the "Urban Suite".</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>The original version of this model was developed during the Sprawl/Swarm Class at Illinois Institute of Technology in Fall 2006 under the supervision of Sarah Dunn and Martin Felsen, by the following student: Federico Diaz De Leon.  See http://www.sprawlcity.us/ for more information about this course.</p>
+<p>Further modification and documentation was performed by members of the Center for Connected Learning and Computer-Based Modeling before releasing it as an Urban Suite model.</p>
+<p>The Urban Suite models were developed as part of the Procedural Modeling of Cities project, under the sponsorship of NSF ITR award 0326542, Electronic Arts &amp; Maxis.</p>
+<p>Please see the project web site ( http://ccl.northwestern.edu/cities/ ) for more information.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>De Leon, F.D., Felsen, M. and Wilensky, U. (2007).  NetLogo Urban Suite - Tijuana Bordertowns model.  http://ccl.northwestern.edu/netlogo/models/UrbanSuite-TijuanaBordertowns.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 Cite: De Leon, F.D., Felsen, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

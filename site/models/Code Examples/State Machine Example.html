@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>State Machine Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>State Machine Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/State%20Machine%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/State Machine Example.png" alt="Screenshot of State Machine Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This shows how to make your turtles into "state machines" using a turtle variable and the RUN command.   A state machine consists of a collection of states with a different action associated with each state.  The model itself is an alternate version of the Termites model located in the Biology section of Sample Models.</p>
+<p>Termites is an unusual model in that it uses a turtle forever button; each turtle runs its code, out of synch with all the others.  This version of the model uses an observer forever button instead.  The state machine technique is necessary in order to code this model using an observer forever button.  (For more on turtle forever buttons see the Programming Guide in the NetLogo User Manual.)</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Compare the code to the code in the main Termites model.  Which way of coding the model do you prefer...?</p>
+<p>Note that the behavior of this version of the model isn't absolutely identical to the behavior of the original model.  In this version, note that all the turtles begin white, then all turn red, then all turn back to white, and so forth.  Gradually the turtles drift out of synch with each other until the coordinated flashing no longer happens.  The main model exhibits the same effect, but in the main model, the turtles get out of synch with each other somewhat faster.  That's because the way time passes in the two models is a little different.  In this version, a turtle's "turn" consists of moving a step or changing tasks.  In the original version, a turtle's "turn" is smaller, and consists only of executing a single NetLogo command.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of the <code>task</code> primitive to create a command task to be run later with the <code>run</code> primitive.</p>
+<h2>RELATED MODELS</h2>
+<p>Termites</p>
+<!-- 2007 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Minority Game HubNet</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Minority Game HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/Minority%20Game%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/HubNet Activities/Minority Game HubNet.png" alt="Screenshot of Minority Game HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Minority Game is a simplified model of an economic market.  In each round agents choose to join one of two sides, 0 or 1. Those on the minority side at the end of a round earn a point.  This game is inspired by the "El Farol" bar problem.</p>
+<p>Each round, the live participants must choose 0 or 1. They can view their choice history for a specified number of previous turns, and may employ a finite set of strategies to make their decision. The record available to them shows which side, 0 or 1, was in the minority in previous rounds.</p>
+<p>This HubNet version of the model allows players to play against each other and a set of androids.  The androids' intelligence (and thus the difficulty of the game) can be increased through the ANDROID-MEMORY slider.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each player begins with a score of 0 and must choose a side, 0 or 1, during each round. The round ends when all the human participants have made a choice.</p>
+<p>Each computer agent begins with a score of 0 and STRATEGIES-PER-AGENT strategies. Each of these strategies is a string of 0 and 1 choices, such as [0 1 1 1 0 0 1] that together represent the agents' possible plan of action (first choose 0, next time choose 1, next time choose 1, etc.). Initially, they choose a random one of these strategies to use. If their current strategy correctly predicted whether 0 or 1 would be the minority, they add one point to their score.  Each strategy also earns virtual points according to whether it would have been correct or not.  From then on, the agents will use their strategy with the highest virtual point total to predict whether they should select 0 or 1. Thus, for each android, the "fittest" strategies survive.</p>
+<p>This strategy consists of a list of 1's and 0's that is 2^ANDROID-MEMORY long.  The choice the computer agent then makes is based off of the history of past choices.  This history is also a list of 1's and 0's that is ANDROID-MEMORY long, but it is encoded into a binary number.  The binary number is then used as an index into the strategy list to determine the choice.</p>
+<p>This means that if there are only computer agents and no human participants, once the number of computer agents, the number of strategies, and the length of the historical record are chosen, all parameters are fixed and the behavior of the system is of interest.</p>
+<h2>HOW TO USE IT</h2>
+<p>Quickstart Instructions:</p>
+<p>Teacher: Follow these directions to run the HubNet activity.</p>
+<p>Optional: Zoom In (see Zoom in the Menu Bar)
+Optional: Change any of the settings by dragging the sliders. If you did change settings, press the SETUP button.</p>
+<p>Teacher: Press the LOGIN button.</p>
+<p>Everyone: Open up a HubNet Client on your machine, enter a username, fill the server field with the server address on your teacher's HubNet Control Center, and then connect to this activity by pressing the Enter button.</p>
+<p>Teacher: When everyone is logged in, unclick the LOGIN button and press the GO button when you are ready to start.</p>
+<p>Everyone: Choose 0 or 1, when everyone has chosen the view will update to show the relative scores of all the players and androids.</p>
+<p>Teacher: To run the activity again with the same group, stop the model by unclick the GO button. Change any of the settings that you would like.
+Press the SETUP button. Then restart the simulation by pressing the GO button again.</p>
+<p>Teacher: To start the simulation over with a new group, have all the clients log out (or boot them using the KICK button in the Control Center) and press SETUP.</p>
+<p>Buttons:</p>
+<p>SETUP: Resets the simulation according to the parameters set by the sliders all logged-in clients will remain logged-in but their scores will be reset to 0
+LOGIN: Allows clients to log in but not to start playing the game.
+GO: Starts and stops the model.</p>
+<p>Sliders:</p>
+<p>NUMBER-OF-PARTICIPANTS: sets the total number of participants in the game, which includes androids and human participants, as clients log in androids will automatically turn into human players.  This is to ensure that there is always an odd number of participants in the world so there is always a true minority.
+PLAYER-MEMORY: The length of the history the players can view to help choose sides.
+ANDROID-MEMORY: Sets the length of the history which the computer agents use to predict their behavior.  One gets most interesting between 3 and 12, though there is some interesting behavior at 1 and 2.  Note that when using an ANDROID-MEMORY of 1, the
+STRATEGIES-PER-AGENT needs to be 4 or less.
+STRATEGIES-PER-AGENT: Sets the number of strategies each computer agent has in their toolbox.  Five is typically a good value.  However, this can be changed for investigative purposes using the slider, if desired.</p>
+<p>Monitors:</p>
+<p>HIGH SCORE and LOW SCORE show the maximum and minimum scores.
+HISTORY: shows the most recent minority values.  The number of values shown is determined by the PLAYER-MEMORY slider.</p>
+<p>Plots:</p>
+<p>SCORES: displays the minimum, maximum, and average scores over time
+SUCCESS RATES HISTOGRAM: a histogram of the successes per attempts for players and androids.
+NUMBER PICKING ZERO: plots the number of players and androids that picked zero during the last round
+SUCCESS RATE: displays the minimum, maximum, and average success rate over time</p>
+<p>Quickstart</p>
+<p>NEXT &gt;&gt;&gt; - shows the next quick start instruction
+&lt;&lt;&lt; PREVIOUS - shows the previous quick start instruction
+RESET INSTRUCTIONS - shows the first quick start instruction</p>
+<p>Client Interface</p>
+<p>Buttons:</p>
+<p>0: press this button if you wish to choose 0 for a particular round.
+1: press this button if you wish to choose 1 for a particular round.</p>
+<p>Monitors:</p>
+<p>YOU ARE A: displays the shape and color of your turtle in the view
+SCORE: displays how many times you have chosen a value that has been in the minority
+SUCCESS RATE: the number of times you have been in the minority divided by the number of selections you have participated in.
+LAST CHOICE: the value you chose in the last round
+HISTORY: the values that were in the minority in the most recent rounds
+CURRENT CHOICE: the value that you have chosen for this current round
+CHOSEN-SIDES?: Tells you whether or not you have chosen this round</p>
+<h2>THINGS TO NOTICE</h2>
+<p>There are two extremes possible for each turn: the size of the minority is 1 agent or (NUMBER-OF-AGENTS - 1)/2 agents (since NUMBER-OF-AGENTS is always odd).  The former would represent a "wasting of resources" while the latter represents a situation which is more "for the common good."  However, each agent acts in an inherently selfish manner, as they care only if they and they alone are in the minority.  Nevertheless, the latter situation is prevalent in the system without live players.  Does this represent unintended cooperation between agents, or merely coordination and well developed powers of prediction?</p>
+<p>The agents in the view move according to how successful they are relative to the mean success rate.  After running for about 100 time steps (at just about any parameter setting), how do the fastest and slowest agents compare?  What does this imply?</p>
+<p>Playing against others, what strategies seem to be the most effective?  What would happen if you simply chose randomly?</p>
+<p>Look at the plot "Success Rates." As the game runs, the success rates converge. Can you explain this? At the time, the graph lines in the plot "Scores" diverge. Why is that?</p>
+<h2>THINGS TO TRY</h2>
+<p>What strategy works to maximize your own score?</p>
+<p>Would you perform better against only computer agents than against humans?</p>
+<p>What strategy works better to try to reach social equity?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Maybe you could add computer agents with different strategies, or more dynamically evolutionary strategies.  Could you figure out a strategy that works the best against these computer agents?  You could code in multiple dynamic strategies that play against each other. Who would emerge victorious?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>One feature which was instrumental to this program being feasible was the <code>n-values</code> primitive.  When setting up strategies for each computer agent, they are binary numbers (stored in lists) of 2^ANDROID-MEMORY values. If this was done by starting with an empty list and using <code>fput</code> 2^ANDROID-MEMORY times, for each agent and for each strategy, during setup you would need to use <code>fput</code> N<em>S</em>(2^ANDROID-MEMORY) times.  Using <code>n-values</code> sped this up by about 2 or 3 orders of magnitude.</p>
+<p>The list primitives <code>map</code> and <code>reduce</code> were also used to simplify code.</p>
+<h2>RELATED MODELS</h2>
+<p>Prisoner's Dilemma
+Altruism
+Cooperation
+El Farol
+Restaurants</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Original implementation: Daniel B. Stouffer, for the Center for Connected Learning and Computer-Based Modeling.</p>
+<p>This model was based upon studies by Dr. Damien Challet et al.  Information can be found on the web at https://web.archive.org/web/20141010122506/http://www3.unifr.ch/econophysics/minority/papers.html</p>
+<p>Challet, D. and Zhang, Y.-C. Emergence of Cooperation and Organization in an Evolutionary Game. Physica A 246, 407 (1997).</p>
+<p>Zhang, Y.-C. Modeling Market Mechanism with Evolutionary Games. Europhys. News 29, 51 (1998).</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2004).  NetLogo Minority Game HubNet model.  http://ccl.northwestern.edu/netlogo/models/MinorityGameHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2004 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This activity and associated models and materials were created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2004 --></div>
+      </div>
+    </main>
+  </body>
+</html>

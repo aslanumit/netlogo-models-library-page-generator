@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wall Following Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Wall Following Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Wall%20Following%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Wall Following Example.png" alt="Screenshot of Wall Following Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>The turtles in this example follow walls made out of colored patches.  Some turtles try to keep the wall on their right; others keep the wall on their left.</p>
+<h2>HOW IT WORKS</h2>
+<p>Consider a turtle that wants to keep a wall on its right.  If there is no wall immediately to its right, but there is a wall behind it on the right, it must turn right in order not to lose the wall.  If there's a wall directly in front of the turtle, it keeps turning left until there's free space in front of it.  Then it can move forward.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The turtles always stay on patch centers and never move diagonally.</p>
+<p>If there isn't a wall next to a turtle when it is born, it just moves forward until it finds one.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The <code>walk</code> procedure will get stuck in an infinite loop if a turtle finds itself surrounded by walls on all four sides.  The <code>setup</code> procedure detects such turtles and kills them off, so the model won't get stuck.  How would you change <code>walk</code> not to have this problem?  (You might need to do so in a model where the walls could move and grow.)</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Turtles use the <code>patch-right-and-ahead</code> primitive to look at patches around themselves, relative to the direction the turtle is facing.</p>
+<!-- 2007 --></div>
+      </div>
+    </main>
+  </body>
+</html>

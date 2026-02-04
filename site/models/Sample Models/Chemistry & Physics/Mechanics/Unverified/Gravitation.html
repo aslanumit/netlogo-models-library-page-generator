@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gravitation</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Gravitation</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Mechanics/Unverified/Gravitation.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Chemistry &amp; Physics/Mechanics/Unverified/Gravitation.png" alt="Screenshot of Gravitation" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This project displays the common natural phenomenon expressed by the inverse-square law.  Essentially this model displays what happens when the strength of the force between two objects varies inversely with the square of the distance between these two objects.</p>
+<h2>HOW IT WORKS</h2>
+<p>In this model the formula used to guide each object's behavior is the standard formula for the Law of Gravitational Attraction:</p>
+<blockquote>
+<p>(m1 * m2 * G) / r<sup>2</sup></p>
+</blockquote>
+<p>This is a single force 'n-body' model, where we have a certain number of small particles, and one large acting mass (the mouse pointer). The force is entirely one-way: the large mass remains unaffected by the smaller particles around it.  And the smaller particles remain unaffected by each other as well.  (Note that this is purely for purposes of simulation.  In the real world, a force such as gravity acts on all bodies around it.)</p>
+<p>Gravity is the best example of such a force. You can watch the particles form elliptic orbits around the mouse pointer, or watch them slingshot around it, similar to how a comet streaks past our sun. Think of the individual objects as planets or other solar bodies, and see how they react to various masses that move or remain stationary.</p>
+<h2>HOW TO USE IT</h2>
+<p>First select the number of particles with the NUMBER slider. Then press the SETUP button to create and scatter them across the world.</p>
+<p>The MASS slider sets the value of the mass of the acting force. (Thus, it also determines at what distances the particles can safely orbit before they get sucked in by an overwhelming force.)</p>
+<p>The FADE-RATE slider controls the percent of color that the paths marked by the particles fade after each cycle.  Thus at 100% there won't be any paths as they fade immediately, and at 0% the paths won't fade at all.  With this you can see the ellipses and parabolas formed by different particles' travels.</p>
+<p>The COLORS? switch, when set to ON, assigns different colors to the particles, otherwise they will all be white.</p>
+<p>When the sliders have been set to desirable levels, press the GO button to begin the simulation. Move the mouse to where you wish it to begin, and click and hold the mouse button. This will start the particles moving. If you wish to stop the simulation (say, to change the value of MASS), release the mouse button and the particles will stop moving.  You may then change any settings you wish (except PARTICLES).  Then, to continue the simulation, simply put your mouse in the window again and click and hold. Objects in the window will only move while the mouse button is pressed down within the window.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The most important thing to observe is the behavior of the particles. Notice that, as the particles have no initial velocity of their own, a single motionless acting mass will just pull them all in. Even a very slight mass (MASS set to a small value) will pull in all the particles. (Due to limited precision beyond a certain point, the motive-force on a particle can become zero.)</p>
+<p>Move the mouse around - watch what happens if you move it quickly or slowly. Jiggle it around in a single place, or let it sit still. Observe what patterns the particles fall into. (Keep FADE-RATE low to watch this explicitly.)</p>
+<h2>THINGS TO TRY</h2>
+<p>There are a few other parameters, set in the code, that affect the behavior of the model.  The force acting upon each particle is multiplied by a constant, 'g' (another global variable).  Feel free to play with their values, set in the procedure 'setup'. (Of course, the default value of g for the model, 0.5, is much higher than the value used in Newtonian Mechanics, 6.67e-11.)</p>
+<p>Initial conditions are very important for a model such as this one. Try changing how the particles are placed during the <code>setup</code> procedure.</p>
+<p>Make sure to watch how different values of the MASS slider impact the model.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Let the particles begin with a constant velocity, or give them all a random velocity. You could add a slider that would let the user set the velocities, and thus be able to compare the effects of different speeds. Or try giving each particle a variable mass, which directly affects the strength of the acting force upon it.</p>
+<p>The model assumes the force to be an attractive force (the particles tend to be pulled towards it). However, it should be a relatively easy change to make this into a repulsive force. Try setting up the model with a repulsive force, and observe what happens.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model creates the illusion of a plane of infinite size, to better model the behavior of the particles. Notice that, with path marking you can see most of the ellipse a particle draws, even though the particle periodically shoots out of bounds. This is done through a combination of the basic turtle primitives <code>hide-turtle</code> and <code>show-turtle</code>, when a particle hits the boundary, keeping every turtle's <code>xcor</code> and <code>ycor</code> as special turtle variables <code>xc</code> and <code>yc</code>, and calculations similar to the <code>distance</code> primitive that uses <code>xc</code> and <code>yc</code> instead of <code>xcor</code> and <code>ycor</code>.</p>
+<p>When you examine the code, take note that standard turtle commands like <code>set heading</code>, <code>fd 1</code>, and so on aren't used here. Everything is done directly to the x  and y coordinates of the turtles.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Gravitation model.  http://ccl.northwestern.edu/netlogo/models/Gravitation.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2002.</p>
+<!-- 1998 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

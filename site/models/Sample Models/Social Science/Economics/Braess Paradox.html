@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Braess Paradox</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Braess Paradox</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Economics/Braess%20Paradox.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Social Science/Economics/Braess Paradox.png" alt="Screenshot of Braess Paradox" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is an agent-based model intended to demonstrate a phenomenon from game theory (a subfield of economics) called Braess' paradox. The paradoxical aspect of Braess' paradox arises when an additional route is added to a traffic network that allows for very rapid transit. When this is done the traffic pattern can be changed to one that has both worse individual and global outcomes (travel times.) In short, we can open more roads and actually make traffic worse. (Braess et al., 2005)</p>
+<p>Braess' paradox is a counter-intuitive result that arises when analyzing specific graphs through a game theoretic lens. These graphs are usually taken to be representations of traffic networks, but Braess' paradox is actually a wide-ranging phenomenon that can be applied in many contexts outside of traffic networks. For simplicity however, we will interpret and represent these graphs only as traffic networks in this model. Given a graph of a particular traffic network we can determine a stable set of strategies (routes for commuting from one point to another) that agents (autonomous commuters in this case) will prefer to adopt over all other strategies. This is called a Nash equilibrium. The strategies adopted by the commuters in the Nash equilibrium will lead to outcomes for the commuters. In this case the amount of time it takes them to reach their destination.</p>
+<h2>HOW IT WORKS</h2>
+<p>The commuters in this model come into existence at the starting node of the traffic network in the upper left corner. The commuters are represented graphically as a car or truck, but this is just for visual effect. All commuters adhere to the same behavioral rules. Some heuristic is used by the commuters to determine the path they will take through the network before it begins its journey through the traffic grid. The commuter then moves, one road square (patch) at a time, and remains in that patch for a number of ticks before moving on to the next patch. When the commuter reaches the ending node it reports the path it took through the network and also the total number of ticks it spent in transit. This information is saved by the model and used to generate a "traffic report" which new commuters can then incorporate into their heuristic to choose the route they take.</p>
+<p>Certain patches in this model are selected to represent roads. There are two types of road patches: static-cost roads and dynamic-cost roads. Static-cost roads require the car to stay in that patch for a fixed amount of time before moving on. Dynamic-cost roads require the car to stay in that patch for an amount of time that is based on the number of ticks since the last turtle occupied that patch, thus simulating congestion. There is also a switch in the model which allows a middle path of road patches of near zero cost to be opened or closed. As mentioned above when commuters reach the end of the traffic network they report their route choice and the time taken in ticks.</p>
+<p>There are three possible routes and the time reports are taken and used to determine three global variables corresponding to each route. They can be thought of as traffic reports. This information is then used by future commuters in deciding which route to take. How this information is used by the commuters depends on the active heuristic or algorithm.</p>
+<p>In this model we have included a user adjustable parameter called SMOOTHING. If SMOOTHING is set to 1, only the last reported time for a given route will be used by commuters in their decisions. Otherwise the formula for the information that the commuters have access to is a psuedo-average that weights less recent reports lower. This parameter is added so that commuters can be made to take into account information about more than just the previous commuter to complete a given route when making their decisions about which route they would prefer to take. Adjusting the SMOOTHING parameter in the model can sometimes be useful in eradicating wild oscillations in commuter route preferences.</p>
+<p><strong><em>Heuristics</em></strong></p>
+<p>What follow are descriptions of the different modes by which commuters in the model will determine the route they take through the traffic network. These modes can be set before the model is started but they can also be changed during model execution.</p>
+<ul>
+<li>
+<p><strong>Best Known with Random Deviation:</strong> When this mode is active the cars will choose the route with the lowest current average time or deviate to a random route with some probability defined by the value of the probability parameter in the model divided by one-hundred.</p>
+</li>
+<li>
+<p><strong>Empirical Analytical:</strong> In this mode the cars have knowledge of the current number of cars on the road and which routes they are taking. They use this information to analytically compute which route will be best for them to take, and then take that route.</p>
+</li>
+<li>
+<p><strong>Probabilistic Greedy:</strong> In this mode the commuters will choose routes with a probability that is proportional to the performance of the given route. Here the randomness parameter is used to determine how heavily the probability is distributed into the better routes. A randomness setting of zero will make no route more likely than any other regardless of the performance of the route. A randomness setting of one-hundred will make it overwhelmingly likely that the cars will only take the current best route.</p>
+</li>
+</ul>
+<h2>HOW TO USE IT</h2>
+<p>The SETUP button initializes the model.</p>
+<p>The GO button runs the model.</p>
+<p>The SPAWN-RATE slider determines how often new vehicles appear at the starting node. However, the road congestion is determined in proportion to the SPAWN-RATE -- so SPAWN-RATE will not affect travel time at all.</p>
+<p>The MIDDLE_ON? switch determines whether or not cars can pass down the middle road. If the MIDDLE_ON? switch is turned off all vehicles currently taking the middle road will finish their trip before the middle road is disabled.</p>
+<p>The MODE selection panel selects between the algorithms and heuristics described above for determining which route the vehicles choose.</p>
+<p>The RANDOMNESS and SMOOTHING parameters affect different algorithms and heuristics differently. They way in which they do so is also described above.</p>
+<p>The Top Route (red in the plots) starts at the top-left corner, goes to the top-right corner, and then procedes to its end at the bottom-right corner.</p>
+<p>The Bottom Route (blue in the plots) starts at the top-left corner, goes to the bottom-left corner, and then goes to the bottom-right corner where it ends.</p>
+<p>The Middle Route (when enabled; green in the plots) starts at the top-left corner and then goes to the top-right corner. Next, it takes the diagonal path to the bottom-left corner, and then goes to the bottom-right corner where it ends.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The ROUTES TAKEN plot shows a histogram of which routes the currently active vehicles are taking. (Vehicles choose their route as soon as they come into existence.)</p>
+<p>The PROBABILITIES plot shows a histogram of the probabilities with which new vehicles will choose a given route when a mode is selected that is probabilistic.</p>
+<p>The main TRAVEL TIME plot displays a variety of different information. The filled grey area is the actual amount of time (in ticks) it takes an individual vehicle to travel from the starting node to the ending node. The light blue line is a smoothed average of the travel time of all the vehicles that have traveled the network with more recent vehicles weighted more strongly. The Blue, Red, and Green lines all represent the average travel time of all vehicles to have completed the corresponding routes. The average is affected by the SMOOTHING parameter which determines how strongly weighted more recent vehicles compared to less recent vehicles.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try adjusting the SMOOTHING parameter and notice how the stability of which route vehicles take varies.</p>
+<p>To observe Braess' Paradox, try using different algorithms and heuristics and observe the average travel times when the middle route is closed and when the middle route is open.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>New algorithms for determining which routes the vehicles take could easily be added to this model. Also the traffic network could be changed or extended to have a different topology. {give an example of one such new algorithm in a sentence}}</p>
+<h2>NETLOGO FEATURES</h2>
+<p>To plot histograms of the different probabilities of routes being taken and the current routes that turtles are on, we use the <strong>plotxy</strong> primitive because there is no way to naturally histogram across different vairables.</p>
+<h2>RELATED MODELS</h2>
+<p>"Traffic Basic": a simple model of the movement of cars on a highway.</p>
+<p>"Traffic Basic Utility": a version of "Traffic Basic" including a utility function for the cars.</p>
+<p>"Traffic Basic Adaptive": a version of "Traffic Basic" where cars adapt their acceleration to try and maintain a smooth flow of traffic.</p>
+<p>"Traffic Basic Adaptive Individuals": a version of "Traffic Basic Adaptive" where each car adapts individually, instead of all cars adapting in unison.</p>
+<p>"Traffic 2 Lanes": a more sophisticated two-lane version of the "Traffic Basic" model.</p>
+<p>"Traffic Intersection": a model of cars traveling through a single intersection.</p>
+<p>"Traffic Grid Goal": a version of "Traffic Grid" where the cars have goals, namely to drive to and from work.</p>
+<p>"Gridlock HubNet": a version of "Traffic Grid" where students control traffic lights in real-time.</p>
+<p>"Gridlock Alternate HubNet": a version of "Gridlock HubNet" where students can enter NetLogo code to plot custom metrics.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Braess, D., Nagurney, A., and Wakolbinger, T.(2005). On a paradox of traffic planning.
+   <em>Transportation science, 39(4):446–450.</em></p>
+<p>Fudenberg, D. and Tirole, J.(1991). Game theory, 1991.
+   <em>Cambridge, Massachusetts, 393(12):80.</em></p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Rasmussen, L. and Wilensky, U. (2019).  NetLogo Braess Paradox model.  http://ccl.northwestern.edu/netlogo/models/BraessParadox.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2019 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2019 Cite: Rasmussen, L. --></div>
+      </div>
+    </main>
+  </body>
+</html>

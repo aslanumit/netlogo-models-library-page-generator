@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PageRank</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>PageRank</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Computer%20Science/PageRank.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Computer Science/PageRank.png" alt="Screenshot of PageRank" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>PageRank is an algorithm/metric that was developed at Stanford University by Larry Page and Sergey Brin, who went on to create the Google search engine (and company) based on this method.  PageRank is a technique for ranking the relevancy of web pages on the internet, through analysis of the hyperlink structure that links pages together.</p>
+<p>This model demonstrates two distinct (though related) agent-based methods for calculating the PageRank of interconnected web pages.  The use of an agent-based perspective attempts to provide a deeper understanding of this algorithm and the mathematics behind it.</p>
+<p>Early web search engines often focused on the content of web pages, such as matching appropriate keywords or words found in the text of the page.  PageRank, on the other hand, is interested in ranking sites based on their general usefulness in the web (apart from any specific search query or topic).  Because Google uses PageRank as one component of its immensely popular internet search engine, it is easy to mistakenly call PageRank a search algorithm.  However, it is technically a ranking algorithm, which provides importance weights for each page in a network.  However, these rankings turn out to be very useful when performing an internet search, because they can be used to help determine the order in which search results are displayed to the user.  Suppose someone searches for "emu" -- there are millions of web sites which contain the word "emu".  Therefore, it is important to figure out which of those sites are more likely to provide the user with useful information.</p>
+<h2>HOW IT WORKS</h2>
+<p>PageRank depends heavily on one basic premise about the structure of the world wide web: Web pages that are more useful to people will also be more popular, and will accordingly have more hyperlinks pointing to them from other web pages.</p>
+<p>If this is true, a very simple approach to figure out which sites are most useful/important would be to count the number of incoming links to each page, and use that as a ranking score.  However, this would be assuming that every link counts equally, which is quite wrong.  A single link from a important web site (e.g. from yahoo.com or whitehouse.gov) should count for much more than a link from some little-known page that presumably no one seems interested in.  Thus, a page is important if many (and/or important) pages link to it.  This appears to be a rather circular definition of importance, and begs the question: how can we tell which pages are important to begin with?</p>
+<p>PageRank handles this problem by initially ranking all pages as equally important, but then it repeatedly performs a process on the rank scores of the pages that will cause the importance rankings to change.  This PageRank NetLogo model presents two different ways of calculating PageRank, both of which would eventually converge to the exact same rankings being assigned to each web site, if you could let the algorithm run forever.</p>
+<h3>Method 1: The "random-surfer" approach</h3>
+<p>Imagine that you have a small army of robotic random web surfers.  All they do is surf the web, going from one page to another, by randomly clicking on hyperlink after hyperlink.  They don't actually read the web pages, and they spend the same amount of time (perhaps 1 millisecond) at each page before moving on to a new page.  Occasionally instead of following a link, they choose to jump to a new page somewhere on the internet, chosen entirely at random.  (How often they do this is based on the DAMPING-FACTOR parameter) They will also do a random jump if they reach a dead-end web page that has no outgoing links.  But otherwise they are following links, and because we assume that links are more likely to lead to more important web sites, these random surfer robots are likely to spend more time at important pages than at the unimportant ones (which will have few incoming links).  For each web page, suppose you count up the number of times that some random surfer visited that page, then divide that number by the total number of pages that all the random surfers visited.  What you have calculated is the PageRank for that web site.  (In more formal mathematical terminology, the resulting PageRanks can be viewed as the stationary distribution for a certain "Markov chain", where each page is a state, and there are transitional probabilities specified between each pair of states based on the hyperlinks between them).</p>
+<h3>Method 2:  The "diffusion" approach</h3>
+<p>In the previous approach, our primary agents were the robotic web surfers, while the web pages themselves were mostly passive agents, simply acting as counters, incrementing a number each time a robot browsed them.  In the "diffusion" approach, the web pages themselves are the central agents we are concerned with.  Each web page starts with some RANK value, which is a measure of how important it is in the network.  Initially, every page gets the same RANK value as every other page, and the sum of all the pages RANK values is 1.  Then, in each time step, every web page distributes its RANK value (importance) to those web sites that it has outgoing hyperlinks to.  Each page's new RANK value will thus be based on how much rank it receives from each of the sites that link to it, combined in a weighted average with a baseline amount of RANK value which each website gets each time step regardless of its neighbors.  (The weight of the baseline amount is determined by the DAMPING-FACTOR parameter.)  Over time, this process causes the RANK values of each page to converge to the actual PageRank values for each page.  (In more formal mathematical terminology, this method is similar to using the "power method" for finding the principal eigenvector associated with a modified adjacency matrix of the directed hyperlink graph.)</p>
+<h2>HOW TO USE IT</h2>
+<p>First, you can decide what hyperlink network you would like to calculate the PageRank algorithm for, using the NETWORK-CHOICE chooser.  Choices include two simple example networks, or a larger network that is created using a "preferential attachment" algorithm.  The preferential attachment mechanism creates networks with scale-free degree distributions, which is one characteristic found to be true of the real world wide web.  (For more information,  see the Preferential Attachment model in the Models Library).</p>
+<p>Then press SETUP to create the network.</p>
+<p>Press GO to run the model, and watch as the PageRank is calculated.  The area of each node is roughly proportional to its PageRank value, and you can see the PageRank numbers if the SHOW-PAGE-RANKS? switch is turned ON.</p>
+<p>The DAMPING-FACTOR slider controls a parameter of the PageRank algorithm that affects how much the rank values are affected purely by the link structure.  With DAMPING-FACTOR = 0, the link structure is completely damped and doesn't matter at all, and all pages will receive equal ranks regardless of who is linked to whom.  With DAMPING-FACTOR = 1, there is no damping of the effect of link structure, meaning that pages with no inbound hyperlinks will receive 0 for PageRanks.</p>
+<p>For the "random-surfer" method, the DAMPING-FACTOR controls the probability that a surfer robot will follow a link, as opposed to jumping randomly to a new page in the web.  For the "diffusion" method, the DAMPING-FACTOR controls what fraction of a page's RANK value is determined by incoming links (as opposed to being given out gratis).</p>
+<p>The CALCULATION-METHOD chooser controls whether the model will use the "random-surfer" or "diffusion" method to calculate the PageRank.</p>
+<p>If the "random-surfer" method is chosen, the NUMBER-OF-SURFERS slider can be adjusted to change the number of surfing robots that are wandering the web.  If the WATCH-SURFERS? switch is ON, then you can watch the surfer robots move around, and each time a random surfer robot follows a hyperlink, that link will be colored the same color as the random surfer that just followed it, to help you visually follow the movement of the surfers.  If the WATCH-SURFERS? switch is OFF, then you will only see the PageRank values (and node sizes) adjusting over time, because the surfers are hidden.</p>
+<p>Note: you may want to use the speed slider to slow down the model, so you can better examine what's happening.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>In the "Example 1" network, five of the pages have no inbound links, meaning that nobody else in the network links to them.  And yet, they usually still end up with a positive PageRank score.  Why is this?  Is there any scenario where they would end up with zero for their PageRank score?</p>
+<p>Which calculation method ("random-surfer" or "diffusion") converges more quickly?  Is one tick of the diffusion method comparable to one tick of the random-surfer method?</p>
+<p>Which calculation method do you think is more amenable to being extended (with the goal of developing a ranking algorithm that provides better relevancy than PageRank does)?  Why?</p>
+<p>Is there an advantage to using more than one robot at a time when using the "random-surfer" method?  Do you think this algorithm could actually be run in parallel on very large networks?  Why or why not?</p>
+<h2>THINGS TO TRY</h2>
+<p>It is fairly common for the damping factor for the PageRank algorithm to be set somewhere near 0.85.  Why do you think this is?   Why do you think the creators of the algorithm included a damping factor?  (What happens to the rankings if the damping factor is very low, or very high?)</p>
+<p>When the damping-factor is set to 1.0, for some network configurations, the "diffusion" method and the "random-surfer" methods can arrive at different resulting PageRanks, and will never converge to the same thing, regardless of how long you let them run.  Why?</p>
+<p>The two example networks (Example 1 and Example 2) are the same every time, but the "Preferential Attachment" network is randomly generated, so each time you set it up, it is very likely to be different.  How large is the PageRank of the most important page when you use the Preferential Attachment network?  How much does this fluctuate between when the network changes?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>How does PageRank work if the whole network is not connected?  What if there are 2 (or more) separate components of the network, that can never reach each other by browsing through hyperlinks?  Extend this model by designing additional network configurations for the user to try out with the NETWORK-CHOICE chooser.</p>
+<p>The random-surfer method offers an oversimplified view of how someone might surf the internet.  Given only the structural information about the network (and not any content, such as topics, keywords, etc), can you come up with any more realistic behavior for a surfer to follow?  Do you think this would produce better or worse relevancy measurements than the PageRank algorithm?</p>
+<p>There are now many people who make a living by doing "search engine optimization" (SEO), to help improve the visibility of company web sites.  While some of the methods used to improve search engine scores are completely legitimate and legal, people will sometimes engage in more ethically questionable practices (so-called "black hat SEO"), essentially trying to "game the system" and artificially increase the PageRank of their sites.  Google (and other search engines) must spend considerable effort trying to counter tactics for unfairly manipulating search results.  How might you extend this model to consider some attempts at "gaming" the PageRank algorithm (such as creating new nodes or links).  You could also measure the effectiveness of these manipulations, and consider counter-measures to prevent them.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>While NetLogo has a built-in <code>diffuse</code> primitive that can be used with patches, there is no equivalent primitive for diffusing a value through a network.  However, it is not too difficult to write with NetLogo code, but we need to be careful to make sure everything updates at the same time, so that the total sum of PageRank values across the network remains constant.  This can be accomplished by having two <code>turtles-own</code> variables <code>rank</code> and <code>new-rank</code>.  First we compute the <code>new-rank</code> for each of the pages based on the old <code>rank</code> variable, before updating the <code>rank</code> variable of all the turtles using the <code>new-rank</code> value.  (You'll also see this kind of "synchronous updating" in cellular automata models such as "Life", as well as many other models.)</p>
+<h2>RELATED MODELS</h2>
+<p>Preferential Attachment, Diffusion on a Directed Network, Link Walking Turtles Example (Code Example)</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>The network configurations given in "Example 1" (with DAMPING-FACTOR 0.85) and "Example 2" (with DAMPING-FACTOR 1.0) are the same as the examples given in the figures of https://en.wikipedia.org/wiki/PageRank (as of January 2009).</p>
+<p>See also: Page et al. (1998) "The PageRank Citation Ranking: Bringing Order to the Web." Technical report, Stanford Digital Library Technologies Project.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Stonedahl, F. and Wilensky, U. (2009).  NetLogo PageRank model.  http://ccl.northwestern.edu/netlogo/models/PageRank.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2009 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2009 Cite: Stonedahl, F. --></div>
+      </div>
+    </main>
+  </body>
+</html>

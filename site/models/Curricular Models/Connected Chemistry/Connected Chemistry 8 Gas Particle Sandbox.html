@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Connected Chemistry 8 Gas Particle Sandbox</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Connected Chemistry 8 Gas Particle Sandbox</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Connected%20Chemistry/Connected%20Chemistry%208%20Gas%20Particle%20Sandbox.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Connected Chemistry/Connected Chemistry 8 Gas Particle Sandbox.png" alt="Screenshot of Connected Chemistry 8 Gas Particle Sandbox" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model supports a drawing style interface for "sketching" up representations of new systems to explore related to gas behavior and gas particles.  This model is part of the "Connected Chemistry" curriculum http://ccl.northwestern.edu/curriculum/ConnectedChemistry/ which explores the behavior of gases.</p>
+<p>Most of the models in the Connected Chemistry curriculum use the same basic rules for simulating the behavior of gases.  Each model highlights different features of how gas behavior is related to gas particle behavior.</p>
+<p>In all of the models, gas particles are assumed to move and to collide, both with each other and with objects such as walls.</p>
+<p>In this model, particles can be added, color coded, and sped up or slowed down, by drawing with the mouse cursor in the WORLD &amp; VIEW.  Also, additional types of removable and replaceable walls can be added to the WORLD.</p>
+<p>This model enables students to draw a model of a real world system and then test that model.  A wide range of real world systems can be modeled with this simple interface (e.g. diffusion of perfume from an uncapped container, hot gas mixed with a cold gas, mixtures of gases).</p>
+<h2>HOW IT WORKS</h2>
+<p>The particles are modeled as hard balls with no internal energy except that which is due to their motion.  Collisions between particles are elastic.  Collisions with the wall are not.</p>
+<p>The exact way two particles collide is as follows:
+1. A particle moves in a straight line without changing its speed, unless it collides with another particle or bounces off the wall.
+2. Two particles "collide" if they find themselves on the same patch. In this model, two turtles are aimed so that they will collide at the origin.
+3. An angle of collision for the particles is chosen, as if they were two solid balls that hit, and this angle describes the direction of the line connecting their centers.
+4. The particles exchange momentum and energy only along this line, conforming to the conservation of momentum and energy for elastic collisions.
+5. Each particle is assigned its new speed, heading and energy.</p>
+<p>As the walls of the box are heated, the sides of the walls will change color from a deep red (cool) to a bright red, to pink to a pale pink white (hot).  The walls contain a constant heat value throughout the simulation.</p>
+<p>The exact way particles gain energy from the walls of the box is as follows:
+1. Particles check their state of energy (kinetic).
+2. They hit or bounce off the wall.
+3. They find wall energy and set their new energy to be the average of their old kinetic energy and the wall energy.
+4. They change their speed and direction after the wall hit.</p>
+<h2>HOW TO USE IT</h2>
+<p>Buttons:
+SETUP - sets up the initial conditions set on the sliders.
+GO/STOP - runs and stops the model.
+MOUSE INTERACTION - when this is set to "none - let the particles interact" the particles will move and interact with each other and the surroundings.  When set to any other value you can then click in the WORLD &amp; VIEW to paint, erase, color, or add various objects and properties.</p>
+<p>Sliders:
+INITIAL-#-PARTICLES - sets the number of gas particles in the box when the simulation starts.
+INITIAL-GAS-TEMPERATURE sets the initial temperature of the gas.</p>
+<p>Switches:
+SHOW-WALL-HITS? turn visualization of when particles hits the walls (as flashes) on or off</p>
+<p>Choosers:
+VISUALIZE-SPEED? allows you to visualize particle speeds.  For example, selecting "arrows", creates a representation of each particle velocity using a scalar arrow.  Selecting "shades" creates representation of each particle speed using a brighter (faster) or darker (slower) shade of the particle's color.</p>
+<p>MOUSE-INTERACTION  sets the type interaction the user can do with the mouse in the WORLD &amp; VIEW.  Possible settings include:
+"none - let the particles interact" - particles move about
+"draw basic wall" - adds a gray wall under the mouse cursor
+"draw red removable wall" - adds a red wall under the mouse cursor which can be alternatively removed and replaced (like a valve) using the REMOVE/REPLACE RED WALL.
+"draw green removable wall" - adds a green wall under the mouse cursor which can be alternatively removed and replaced (like a valve) using the REMOVE/REPLACE GREEN WALL.
+"big eraser" - erases all objects (except the yellow box boundary walls) under the mouse cursor.
+"slow down particles" - increase the current speed of the particles by 10%.
+"speed up particles" - reduces the current speed of the particles by 10%.
+"paint particles green" - recolors the particles under the mouse cursor green (other settings include orange and purple)
+"add green particles" - adds a couple of new particles under the mouse cursor (other settings include orange and purple)</p>
+<p>Plots:
+- 1: TEMPERATURE OF GASES VS. TIME: plots the temperature of the different gases in the model, as indicated by their color (orange particles, green particles, and purple particles)</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The mouse interaction can be used while the model is running as well as when it is stopped.</p>
+<h2>THINGS TO TRY</h2>
+<p>Create a model of how odors move throughout a room.  Why do some people smell the odor before others?  Does the layout of furniture, large objects, and walls in the room effect the movement of the odor?  How about the temperature of the air in the room?</p>
+<p>Create a model of diffusion of a perfume from a closed container.  How would you represent the different gases (the perfume and the surrounding air)?  What shape will the container be?  How will you model a removable cap or lid?</p>
+<p>Create a model of room filled with cold air and a different room filled with warm air.  How will represent these different rooms of air?  What could you add to show what happens when they mix?</p>
+<p>Create a model of heat transfer that shows what happens to the energy of one very fast moving gas particle when it hits a bunch of very slow moving gas particles.  What does this show happening to the energy of the initial gas particles?</p>
+<h2>RELATED MODELS</h2>
+<p>See GasLab Models
+See other Connected Chemistry models.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is part of the Connected Chemistry curriculum.  See http://ccl.northwestern.edu/curriculum/chemistry/.</p>
+<p>We would like to thank Sharona Levy and Michael Novak for their substantial contributions to this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2006).  NetLogo Connected Chemistry 8 Gas Particle Sandbox model.  http://ccl.northwestern.edu/netlogo/models/ConnectedChemistry8GasParticleSandbox.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>To cite the Connected Chemistry curriculum as a whole, please use:</p>
+<ul>
+<li>Wilensky, U., Levy, S. T., &amp; Novak, M. (2004). Connected Chemistry curriculum. http://ccl.northwestern.edu/curriculum/chemistry/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2006 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2006 ConChem --></div>
+      </div>
+    </main>
+  </body>
+</html>

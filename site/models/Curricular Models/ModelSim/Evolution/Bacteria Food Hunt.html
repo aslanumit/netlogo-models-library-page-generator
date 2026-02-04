@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bacteria Food Hunt</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Bacteria Food Hunt</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/ModelSim/Evolution/Bacteria%20Food%20Hunt.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Curricular Models/ModelSim/Evolution/Bacteria Food Hunt.png" alt="Screenshot of Bacteria Food Hunt" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a natural/artificial selection model that shows how counterbalancing forces of natural selection from the abiotic and biotic environment and from the distribution of resources needed for survival affect the outcomes of natural selection.</p>
+<p>In this model the population of organisms that is effected by natural selection are single celled bacteria.  These bacteria must harvest food (algae) from the environment in order to survive.</p>
+<p>When resources such as food or water are distributed differently and/or when the cost for exhibiting different trait variations (in terms of energy or food required to build, maintain, or operate the structures for this trait variation) varies, the outcomes of natural selection will change.</p>
+<p>In some environments it will be more advantageous to have physical structures that enable the organism to travel quickly (but use energy faster) and in other environments it will be more advantageous to have physical structures that enable the organism to travel slowly and use energy at a slower rate.</p>
+<h2>HOW IT WORKS</h2>
+<p>Base metabolism determines how much energy is deducted per time step in a model run for every individual bacteria.  ENERGY COST PER FLAGELLA determines how much energy is expended per flagella on each bug per step - this is a proxy for the increased amounts of kinetic required for moving faster by moving more flagella.  Though kinetic energy is a quadratic function of speed, in this model energy expenditure is a linear function of speed of movement.  More flagella result in faster movement as well as faster energy consumption.</p>
+<p>When bacteria travel over patches with algae in them, they consume a portion of the algae in that patch each time step.  When all the food the algae produced in a patch is eaten up, it takes a short while before it begins to grow back.  Only patches that have water in them (blue) will (re)grow algae.</p>
+<p>Bacteria gain energy from eating algae.  As bacteria gain energy the inside of them visually fills up (like a gas tank).  When they reach a maximum threshold energy level they can asexually reproduce (mitosis), splitting their energy in half between the parent and offspring.  As bacteria lose energy the energy level in them visually drains down.  When the bacteria energy level reaches 0 it will die.</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>Adjust the slider parameters (see below), or use the default settings.</li>
+<li>Press the SETUP button.</li>
+<li>Press the GO/PAUSE button to begin the model run.</li>
+<li>View the BACTERIA POPULATION IN LEFT REGION and BACTERIA POPULATION IN RIGHT REGION histograms to watch for shifts in the distribution of trait variations over time.</li>
+<li>View the AVG. # OF FLAGELLA graph for further evidence of changes in the populations over time.</li>
+</ol>
+<p>INITIAL-#-BACTERIA-PER-VARIATION is the number of bacteria you start with in each of the six possible variations in flagella number.  The overall population of bacteria is determined by multiplying this value by 6.</p>
+<p>ENERGY-COST-PER-FLAGELLA determines how much energy is lost for every flagella that a bacteria has, each time step.  Bacteria with 6 flagella will lose 6 times this value, whereas bacteria with one flagellum will lose 1 times this value.  This energy loss is deducted on top of a base metabolism energy loss for all bacteria each time step.</p>
+<p>VISUALIZE-VARIATION helps you apply different visualization cues to see which variation each a bacterium has.  When set to "flagella and color", the number of flagella will appear on each bacterium and these will flap/twist back and forth as the bacteria moves.  The color of the bacteria will correspond to how many flagella it has (red = 6, orange = 5, yellow = 4, green = 3, blue = 2, and violet = 1).  When set to either "flagella only" or "color only" then the other visualization cue is not shown.  When set to "none" neither of these cues is shown.</p>
+<p>TRACE-PATHS? is a visualization tool that shows the path that each bacteria travels.  This can be a useful method to determine whether different variations of bacteria tend to travel in different territories, or where they tend to die out from lack of food.</p>
+<p>AVG. # OF FLAGELLA VS. TIME shows how the average # of flagella in each region (left and right) is changing over time.  The minimum that a population can have is 1 and the maximum is 6.</p>
+<p>BACTERIA IN LEFT REGION is a histogram showing the distribution of bacteria with different numbers of flagella (and therefore different speeds) in the left region.  Color-coding of the histograms corresponds to the number of flagella that those bacteria have (red = 6, orange = 5, yellow = 4, green = 3, blue = 2, and violet = 1).  BACTERIA IN RIGHT REGION is the corresponding histogram for the bacteria in region 2.</p>
+<p>LEFT-RESOURCE-LOCATION describes the shape of how water is distributed in the environment.  Wherever water is distributed is also where algae can grow.  The effects of this chooser value will work in combination with the slider value of LEFT-RESOURCE-DISTRIBUTION.  For example, when the prior is set to "anywhere", a random number of spots (determined by the % set by LEFT-RESOURCE-DISTRIBUTION) are filled with water.  When set to "around a central point", the % LEFT-RESOURCE-DISTRIBUTION slider value determines relative size of the circle compared to the entire environment that the water is within.  When set to "horizontal strip", "vertical strip left side", or "vertical strip right side", the LEFT-RESOURCE-DISTRIBUTION slider value determines the relative width of the strip compared to the entire environment.   A corresponding RIGHT-RESOURCE-LOCATION chooser and RIGHT-RESOURCE-DISTRIBUTION slider determine the settings for the right environment.</p>
+<p>WAIT-TO-DRAG? allows the user to move and rotate a bacterium with their mouse cursor when it is set to "on".  When set to "on" and GO/STOP is depressed the user can click and drag a bacteria to any location.  If the user drags a bacterium over the edge of the boundary of a region it will die.  If the user clicks and holds down the mouse button over a bacterium, without moving the cursor, the cursor will change colors in a moment, indicating it is getting ready to turn the orientation of the bacterium.  A few moments later the bacterium will start to rotate in a clockwise turn, until the user releases the mouse button.</p>
+<p>DUPLICATE BACTERIA &gt;&gt; will remove all existing bacteria from the right region, and then copies an instance (duplicate) of every bacterium from the left region into the right region.</p>
+<p>&lt;&lt; DUPLICATE BACTERIA   will remove all existing bacteria from the left region, and then copies an instance (duplicate) of every bacterium from the right region into the left region.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The histogram for bacteria in each region tends to shift to the right (increasing average speed) with certain combinations of environmental conditions and tend to shift to the left with other combinations, and sometimes shift toward a middle range value for other combinations.</p>
+<p>Some variation between model runs in outcomes can be attributed to the random distribution of bacteria in each region.  This genetic drift affects can be reduced by using the DUPLICATE BACTERIA button between regions, to compare outcomes in two regions that have the same environmental conditions and the same distribution of bacteria in the same locations.</p>
+<p>The direction of evolutionary pressures in a region may take one direction at first, early in a model run, but then shift direction as the run progresses.  The effect can often be attributed to how the population is changing the environmental conditions.  Sometimes temporary success of one variation leads to a sudden resource collapse or bloom, which exerts an extreme counterbalancing selective pressure on the population.  This can tend to result in things like an initial tendency for a population to become faster, and the long term outcome of natural selection to be for the population to become slower (after the faster variants have been extirpated from population).</p>
+<h2>THINGS TO TRY</h2>
+<p>Compare a uniform distribution of algae to a smaller amount around a fixed point (50% of lower).  Compare a random distribution of algae (e.g. 75% distributed) to a small amount uniformly distributed on the left side of the ecosystem (e.g. 30% on the "left side of the ecosystem")</p>
+<p>Compare how changing the INITIAL-#-BACTERIA-PER-VARIATION slider influences the direction of the evolutionary outcome.</p>
+<p>Can you create two different outcomes in different regions, simply by changing the distribution of where the resource is located?  How about by changing the amount of the resource?  How about changing both?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>A sandbox version of the model could be used to give the player of the model the ability to draw the shape of the environment (walls), set region boundaries (in order to define any sub-space in the environment as a region), and modify (paint and erase) the distribution of the resources using the mouse cursor.</p>
+<h2>RELATED MODELS</h2>
+<p>Bacteria Hunt Speeds</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is part of the Evolution unit of the ModelSim curriculum, sponsored by NSF grant DRL-1020101.</p>
+<p>For more information about the project and the curriculum, see the ModelSim project website: http://ccl.northwestern.edu/modelsim/.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2015).  NetLogo Bacteria Food Hunt model.  http://ccl.northwestern.edu/netlogo/models/BacteriaFoodHunt.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2015 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2015 Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

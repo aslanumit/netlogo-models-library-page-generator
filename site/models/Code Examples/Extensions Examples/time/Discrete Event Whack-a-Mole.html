@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Discrete Event Whack-a-Mole</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Discrete Event Whack-a-Mole</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Extensions%20Examples/time/Discrete%20Event%20Whack-a-Mole.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Code Examples/Extensions Examples/time/Discrete Event Whack-a-Mole.png" alt="Screenshot of Discrete Event Whack-a-Mole" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is a very simple illustration of how to use the time extension for discrete event simulation: scheduling model actions (specific agents executing specific procedures) at future times. In this example, all events happen at integer ticks.</p>
+<p>The model simulates the "Whack-a-mole" arcade game. In that game, mechanical "moles" pop up from beneath the surface at unpredictable times and the person playing the game tries to "whack" the moles by hitting them with a hammer.</p>
+<h2>HOW IT WORKS</h2>
+<p>This model uses one "mole", a turtle that moves randomly among patches and appears and disappears at random times. The slider <code>mole-speed</code> controls how rapidly the mole moves around.</p>
+<p>The player is represented by the Observer (procedure <code>take-a-whack</code>). When the player sees a mole, it strikes one of patches near the mole, representing a person swinging rapidly and missing often. If the player hits the mole, the mole briefly turns red and then disappears. The player keeps swinging until it hits the mole or the mole moves. The monitor "Fraction of moles whacked" reports the fraction of mole appearances on which the player successfully whacked it.</p>
+<p>Each tick represents one second. When trying to whack the mole, the player swings once per tick. The time that a mole remains visible in one patch is drawn randomly from a uniform integer distribution ranging from 1 second to an upper limit determined from the  <code>mole-speed</code> slider. When the mole hides, it remains hidden for a random interval equal to 0, 1, or 2 seconds. The game stops at 120 seconds.</p>
+<h2>HOW TO USE IT</h2>
+<p>Use SETUP to initialize the model, and GO to start it. Hitting GO again will pause the simulation at the end of the current minute. The STEP button executes one tick (minute) at a time.</p>
+<p>The <code>mole-speed</code> slider controls how rapidly the mole moves among patches. Use NetLogo's speed control to slow execution down enough to see the action.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The procedures <code>hide</code> and <code>appear</code> illustrate use of the time extension's <code>schedule-event</code> primitive to cause an agent to execute a procedure or block of code at a future tick.</p>
+<p>The <code>go</code> procedure uses two statements to advance the simulation clock and execute the scheduled events. <code>tick</code> advances NetLogo's tick counter, as in any model. <code>time:go-until ticks</code> causes execution of any events scheduled for execution after the previous tick and up to the current tick. If more than one event is scheduled for the same tick, they are executed in the order they were scheduled.</p>
+<p>The procedure <code>take-a-whack</code> uses the primitive <code>clear-schedule</code> to cancel all the events scheduled for future execution. It is needed because the mole, which has already been scheduled to hide at a future time, has now been whacked and needs to hide immediately. Failing to clear the schedule would cause it to hide twice--and because each execution of <code>hide</code> schedules a future <code>appear</code>, etc., there would be a whole chain of undesired events.</p>
+<h2>RELATED MODELS</h2>
+<p>The Discrete Event Mousetrap model (in the NetLogo Models Library &gt; Code Examples &gt; Extension Examples &gt; time) also demonstrates use of the time extension for discrete event simulation. That model differs from this one in not using ticks at all: it has no <code>go</code> procedure; instead, <em>all</em> events in the Mousetrap model are scheduled ("triggered") by other events. It illustrates how to set up and start such a model.</p>
+<p>The Discrete Event Distribution Center model illustrates more of the time extensions capabilities: representing model time as real dates and times, scheduling events at non-integer times, and logging events by the time they were executed.</p>
+<h2>CREDITS</h2>
+<p>Prepared by Steve Railsback January 2022.</p>
+<!-- 2022 --></div>
+      </div>
+    </main>
+  </body>
+</html>

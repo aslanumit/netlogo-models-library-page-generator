@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bird Breeders HubNet</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Bird Breeders HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/BEAGLE%20Evolution/HubNet%20Activities/Bird%20Breeders%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Curricular Models/BEAGLE Evolution/HubNet Activities/Bird Breeders HubNet.png" alt="Screenshot of Bird Breeders HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model of a selective breeding program of birds.  In the scenario presented in the model the user assumes the role of a bird breeder, whose goal is to breed a line of  "fancy" looking birds through managing a selective breeding program with other breeders (players).</p>
+<h2>HOW IT WORKS</h2>
+<p>The birds have a simple genetic representation for five traits:  Crest color, wing color, chest color, tail color, and sex.</p>
+<p>These traits are represented with genes that have one of two possible alleles each (A or a, B or b, C or c, D or d, and W or Z, for the traits listed above).  Upper case letters represent dominant alleles and lower case represent recessive alleles?.  Therefore the three combinations AA, Aa, and aA result in expression of the trait for A (e.g. gray crest), and only aa results in the expression of the trait for a (e.g. red crest).  Males and Females are determined by whether the bird has ZZ  (male) or WZ (female) genetic information.  One trait, crest color, is sex linked.  Male birds (ZZ) display a crest on their head, while females (WZ) do not (though they still carry the genetic information for how it should be expressed if they were male).</p>
+<p><em>Here is the genotype to phenotype mapping:</em>
+Crest color:   (AA, Aa, aA) grey   or   (aa) blue
+Wing color:    (BB, Bb, bB) grey   or   (bb) purple
+Chest color:   (CC, Cc, cC) grey   or   (cc) pink
+Tail color:    (DD, Dd, dD) grey   or   (dd) red
+Sex:            ZZ   male          or    WZ female</p>
+<p>Along the edge of the WORLD &amp; VIEW are cages to store birds in.  In the middle of the WORLD &amp; VIEW are six sites to breed birds in.  In the corner of the model is a DNA sequencer that can be used to discover the genotype of a bird.  In the rest of the model are spaces with grass in them where birds or eggs can put to be released into the wild.</p>
+<h2>HOW TO USE IT</h2>
+<p>'Mirror 2D view on clients' MUST be ticked before learners connect their HubNet clients to the model. If learners connect before this is ticked, ask them to disconnect, tick the 'Mirror 2D...' box, and ask them to reconnect.</p>
+<p>There are 4 players in this selective breeding scenario.  Each player connects to the model using HubNet.  Each player starts with 3 birds of their own in six cages along the sides of the model. By click-and-dragging their birds to each of the 6 breeding locations (dark gray and light gray rectangles) in the middle of the world, players can breed new birds. In order to hatch the resulting eggs, players must click-and-drag each egg to one of their cages. The genetic makeup of the new birds will reflect the makeup of its parents.</p>
+<p><em><strong>How do you determine which birds and eggs are yours?</strong></em>
+Birds and eggs have numbers (1-4) corresponding to the player number that owns them.  You can only move birds and eggs that are your player number.</p>
+<p><em><strong>How do you breed birds?</strong></em>
+Move one male and one female bird into a breeding location.  Hearts will appear on the birds, indicating they are ready to mate.  When two birds with hearts of opposite genders are at a breeding location, they will breed and lay eggs.  After breeding, colored arrows will appear on the birds indicating that they must return to their cages before being ready to return to a new breeding site to breed again. To hatch the newly laid eggs, players must drag the eggs back to their cages. As soon as an egg is put in a player’s cage, the egg is hatched, and the player can decide to keep the bird or set it free.  Ownership of eggs is determined by the ownership of the breeding birds: If a player owns both birds, all the eggs will belong to that player, but if two birds belonging to two different learners breed, each player will own half of the eggs.</p>
+<p><em><strong>How do you get rid of extra birds or eggs?</strong></em>
+To set a bird or egg free, just click on it and drag it into the green spaces with grass shapes in them and release the mouse button.  You can only set birds free or remove eggs if you own them (they have the same player number on them as you do).</p>
+<p>If you move an egg to a breeding site and another bird is there, the egg will disappear (the bird that is there destroys it).  Likewise if you move a new non-parent bird to a mating site that has eggs in it still, the new bird will destroy the eggs that are at that nesting site as it gets ready to mate.</p>
+<p><em><strong>How can you find out the genetic information for a given bird or egg?</strong></em>
+You can drag a bird or an egg to the corner location that has a picture of a test tube rack is numbered the same as your player number.  That is your DNA sequencer.  If your team of players has any DNA sequencings left, then the bird or egg you drag to the sequencer will be labeled with the genotype of that organism.  Eggs that are dragged to the DNA sequencer also hatch upon arriving there.  There is a limit to the number of times that your team can do this (set by max-#-of-DNA-tests).</p>
+<p><em><strong>How can you tell the male birds apart from the female birds?</strong></em>
+The male birds have a crown of feather on their head, but the females do not.</p>
+<p><strong>Buttons:</strong>
+SETUP:  Press this first to assign a new batch of starting birds to the players.
+GO:     Press this second to start allowing the players to interact with the shared interface in the breeding challenge
+NEXT-INSTRUCTION:  Use this to display the next instruction about how to user the interface and mouse interactions with the birds.
+PREVIOUS-INSTRUCTION:  :  Use this to display the previous instruction about how to user the interface and mouse interactions with the birds.</p>
+<p><strong>Sliders:</strong>
+ #-OF-REQUIRED-GOAL-BIRDS sets the number of goal birds that must be accumulated in the player cages in order to successfully complete the scenario.
+MAX-#-OF-DNA-TEST sets the maximum limit of birds or eggs that can have their genotype shown when dragged to a DNA sequencing patch.</p>
+<p>**Monitors:  **
+DNA-TESTS-REMAINING indicates how many times left that you (or another player) can still drag an egg or bird to a DNA sequencer and get the genotype to appear on that agent.  MAX-#-OF-DNA-TEST sets the maximum limit.
+ #-OF-REQUIRED-GOAL-BIRDS indicates how many goal birds have been accumulated in the player cages.
+INSTRUCTION-#: displays which instruction is being displayed out of how many total instructions there are to view.
+ # OF MATINGS:  keeps track of the number of times birds were mated together
+ # OF EGGS LAID:  keeps track of the eggs laid.
+ # OF BIRDS/EGGS RELEASED:  keeps track of the number of birds or eggs you released from the world.</p>
+<p><strong>Graphs:</strong>
+NUMBER OF RECESSIVE ALLELES IN GENE POOL graphs the number of recessive alleles (a, b, c, and d) in the gene pool vs. the number of selections (the sum of the # of birds/eggs released + # of eggs hatched).
+NUMBER OF DOMINANT ALLELES IN GENE POOL graphs the number of dominant alleles (A, B, C, and D) in the gene pool vs. the number of selections (the sum of the # of birds/eggs released + # of eggs hatched).
+NUMBER OF BIRDS WITH # OF DESIRABLE VARIATIONS graphs all the phenotype frequencies in the population.  It graphs the number of birds that show 1, 2, 3, and 4 of the 4 possible desirable variations in the traits that you are breeding for.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Even though birds produce four eggs when they mate, the four eggs may or may not produce the expected probabilities of a theoretical Punnett square.  This is because the expected probabilities represent what would result after an infinite set of crosses.</p>
+<p>If additional birds occupy a nesting site, then less than four eggs will be laid, since fewer patches are available.</p>
+<h2>THINGS TO TRY</h2>
+<p>See if you can breed for the fancy bird in the least number of generations.</p>
+<p>Write down the breeding plan you followed to create a line of the fancy bird.  Create a pedigree diagram to show the series of generations and breeding events that led to the fancy bird.</p>
+<p>Track the changes in the frequency of recessive and dominant alleles.  Compare the general trends in the graph to the fluctuations that appear.  What are some things that cause the fluctuations?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The model shows one scenarios of breeding birds.  The bird shapes could be changed to show breeding of other virtual creatures (reptiles, cats, fish, etc)</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Bird Breeders uses NetLogo lists as maps to easily keep track of how genotypes relate to phenotypes.</p>
+<p>The order of how breeds are defined, determine which breed appears on top of the others in the WORLD &amp; VIEW.  Earlier defined breeds (such as grasses) are on the bottom layer.  This allows later defined breeds (such as eggs or birds) to move across and in front of them as the travel from cages to breeding sites.</p>
+<h2>RELATED MODELS</h2>
+<p>Plant Hybridization and Fish Tank Genetic Drift from the BEAGLE curricular folder.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the BEAGLE curriculum (http://ccl.northwestern.edu/rp/beagle/index.shtml)</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2011).  NetLogo Bird Breeders HubNet model.  http://ccl.northwestern.edu/netlogo/models/BirdBreedersHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2011 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2011 Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

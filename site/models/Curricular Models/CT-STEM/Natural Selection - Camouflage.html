@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Natural Selection - Camouflage</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Natural Selection - Camouflage</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/CT-STEM/Natural%20Selection%20-%20Camouflage.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/CT-STEM/Natural Selection - Camouflage.png" alt="Screenshot of Natural Selection - Camouflage" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model simulates natural selection and adaptation in populations of rock pocket mice, which are found mainly in rocky outcrops in the deserts of the southwestern United States and Mexico. This model is based on a lesson plan designed by the [Howard Hughes Medical Institute] (https://www.biointeractive.org/classroom-resources/making-fittest-natural-selection-and-adaptation).</p>
+<p>The model simulates fur coat color changes in the population of rock pocket mice due to predation. The mice that cannot camouflage themselves have a higher chance of being predated when there are predators present. Users can investigate how the population evolves because of natural selection across various environmental conditions.</p>
+<h2>HOW IT WORKS</h2>
+<p>Mice in this model can have two fur colors, dark and light. This fur color is decided by their genotypes with homozygous dominant and heterozygous genotypes resulting in dark fur color, whereas homozygous recessive results in light fur color. The fur color is determined by genes at a particular locus for which there are two alleles - <strong>A</strong> and <strong>a</strong>. <strong>A</strong> is a dominant allele, whereas <strong>a</strong> is a recessive allele.</p>
+<p>Each clock tick is a generation in this model.
+At each generation, the following happens:</p>
+<ul>
+<li>a mouse moves slightly in a random direction</li>
+<li>the mouse ages a generation</li>
+<li>it is possibly predated (if "predation?" is ON) based on the chance of predation and how well it can camouflage with the surroundings</li>
+<li>if the mouse survives predation, it finds a partner and produces 4 offspring with this partner</li>
+<li>the mouse and its partner both die</li>
+<li>if a mouse does not get to reproduce and is over 10 generations old, there is a chance that it dies from old age</li>
+</ul>
+<p>Inheritance of the fur coat color genes is modeled based on the laws of Mendelian inheritance.</p>
+<p>Each mating pair produces four children. Each child receives one of the alleles from its mother and one of its alleles from the father. Both parents die after reproduction. For simplicity, there are no overlapping generations.</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>First, set the initial population by adjusting the following sliders:
+  - INITIAL-HOMOZYGOUS-DOMINANT-MALES (<strong>AA</strong> males)
+  - INITIAL-HETEROZYGOUS-MALES (<strong>Aa</strong>or <strong>aA</strong> males)
+  - INITIAL-HOMOZYGOUS-RECESSIVE-MALES (<strong>aa</strong> males)
+  - INITIAL-HOMOZYGOUS-DOMINANT-FEMALES (<strong>AA</strong> females)
+  - INITIAL-HETEROZYGOUS-FEMALES (<strong>Aa</strong> or <strong>aA</strong> females)
+  - INITIAL-HOMOZYGOUS-RECESSIVE-FEMALES (<strong>aa</strong> females)</li>
+<li>Press the SETUP button and then select a background by pressing the SET-LIGHT-BACKGROUND, SET-DARK-BACKGROUND, or SET-MIXED-BACKGROUND button.</li>
+<li>Make sure the PREDATION? switch is in the preferred setting.</li>
+<li>Adjust the CHANCE-OF-PREDATION slider if PREDATION? is on.</li>
+<li>Press the GO-ONCE button to advance the generations once at a time. Press the GO button to watch the generations advance indefinitely until stopped.</li>
+<li>Watch the monitors and plot below the initial settings and make observations about this data.</li>
+</ol>
+<p>PREDATION? is a chooser that can be ON or OFF. If PREDATION? is ON, CHANCE-OF-PREDATION can be adjusted from 0 to 0.50.</p>
+<p>CHANCE-OF-PREDATION determines the probability of a mouse dying from predation in each generation. The predation probability reduces depending on how well a mouse camouflages, based on its fur coat color and the color of surroundings.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Observe how the changes in the population composition (i.e. homozygous dominant, heterozygous, homozygous dominant individuals) changes under different environmental conditions.</p>
+<p>How does the presence or absence of predators affect the changes in the population?</p>
+<p>Does the initial composition of the population influence its genetic composition 100 generations later?</p>
+<h2>THINGS TO TRY</h2>
+<p>Start with a completely homozygous recessive population. How does the introduction of a mutant change the population composition over time? Try this experiment with different environmental conditions.</p>
+<p>Start with a completely heterozygous population. Try out all three possible backgrounds. What is the genetic composition of the population 100 generations later for each of these scenarios?</p>
+<p>Try varying the CHANCE-OF-PREDATION under the environmental conditions that are favorable to one kind of mice. What can you infer about the "selection pressure" (in this case predation) affecting the rate of change of a population because of natural selection?</p>
+<h2>CURRICULAR USE</h2>
+<p>This model is used in CT-STEM lessons
+<a href="https://ct-stem.northwestern.edu/curriculum/preview/682/">"Natural Selection: Part 1".</a>
+and
+<a href="https://ct-stem.northwestern.edu/curriculum/preview/986/">"Natural Selection: Part 2".</a></p>
+<p>These lessons are part of the unit <a href="https://ct-stem.northwestern.edu/curriculum/preview/681/">"Evolution of Populations to Speciation (Advanced)".</a> In these lessons, students use this model to investigate the mechanism of inheritance, effects of environmental factors on a population, and how natural selection affects the genetic constitution of a population over time. Students are encouraged to ask questions and then state an answer in the form of a hypothesis. Then to test this hypothesis, students can design and conduct an experiment, collect data, and analyze the data to come to a conclusion backed with evidence to support a claim. This unit is intended to be taught to high school biology students.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try modifying the model in a way where the generations overlap.</p>
+<p>Think about how you could study other life-history traits such as the number of offspring, or longevity.</p>
+<h2>RELATED MODELS</h2>
+<p>Check out these other models in the Models Library:
+- GenEvo 2 Genetic Drift
+- GenEvo 3 Genetic Drift and Natural Selection
+- Mendelian Inheritance</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Nachman, M. W., Hoekstra, H. E., &amp; D'Agostino, S. L. (2003). The genetic basis of adaptive melanism in pocket mice. Proceedings of the National Academy of Sciences, 100(9), 5268-5273.</p>
+<p>This is a model of rock pocket mice evolution based on a lesson plan designed by the Howard Hughes Medical Institute (https://www.biointeractive.org/classroom-resources/making-fittest-natural-selection-and-adaptation).</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Dabholkar,S. and Wilensky, U. (2020).  NetLogo Natural Selection - Camouflage model.  http://ccl.northwestern.edu/netlogo/models/NaturalSelection-Camouflage.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>This model was developed as part of the CT-STEM Project at Northwestern University and was made possible through generous support from the National Science Foundation (grants CNS-1138461, CNS-1441041, DRL-1020101, DRL-1640201 and DRL-1842374) and the Spencer Foundation (Award #201600069). Any opinions, findings, or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the funding organizations. For more information visit https://ct-stem.northwestern.edu/.</p>
+<p>Special thanks to the CT-STEM models team for preparing these models for inclusion
+in the Models Library including: Kelvin Lao, Jamie Lee, Sugat Dabholkar, Sally Wu,
+and Connor Bain.</p>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2020 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2020 CTSTEM Cite: Dabholkar,S. --></div>
+      </div>
+    </main>
+  </body>
+</html>

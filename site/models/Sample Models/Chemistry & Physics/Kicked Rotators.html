@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kicked Rotators</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Kicked Rotators</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Kicked%20Rotators.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Chemistry &amp; Physics/Kicked Rotators.png" alt="Screenshot of Kicked Rotators" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model simulates a collection of <a href="https://en.wikipedia.org/wiki/Kicked_rotator">kicked rotators</a> operating simultaneously and graphs their trajectories. This graph shows a divided phase space where integrable islands of stability are surrounded by a chaotic component (aka "chaotic sea"). This is what's called the <a href="http://www.scholarpedia.org/article/Chirikov_standard_map">Chirikov standard</a> map, a tool in physics that can be used to describe many different dynamical systems from the motion of particles in accelerators to comet dynamics in solar systems.</p>
+<p>For more info on what a kicked rotator is, check out the Kicked Rotator model in the models library.</p>
+<h2>HOW IT WORKS</h2>
+<p>The model generates a number of turtles, each representing a kicked rotator with a unique starting angular position and momentum. Then, at each tick, the model 'kicks' each rotator, changing both its momentum and angular position. The turtle then 'stamps' a copy of itself onto the view with the location representing its current momentum and angular position. Each turtle repeats this process at each tick, creating an overall <a href="http://mathworld.wolfram.com/PhasePortrait.html">phase portrait</a> via a <a href="https://en.wikipedia.org/wiki/Poincare_map">Poincare return map</a>. This continues for as long as the model is run.</p>
+<p>For more info on how each individual rotator (turtle) works,  checkout the Kicked Rotator model.</p>
+<h2>HOW TO USE IT</h2>
+<p>Use the NUM-ROTATORS and KICK-STRENGTH sliders to determine the number of rotators to simulate and the kick strength. Then, SETUP will generate the necessary turtles and GO will start simulating and graphing the particle trajectory for each of the rotators.</p>
+<p>Clicking the ADD-ROTATOR button will add another rotator to the simulation. NetLogo will automatically run this rotator for the same number of ticks that your model has run.</p>
+<p>Clicking the INSPECT-ROTATOR button and then clicking any point in the view will create a kicked rotator model with the initial momentum and angular position corresponding to the point in the view you clicked. This rotator will then 'run' until the it reaches the same number of ticks that the parent model has run for.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice the circles in the middle of the phase portrait. Since angular position is graphed on the x-axis, this means that rotators with these starting conditions do not travel along the whole ring, but rather only part of the ring.</p>
+<p>At a kick strength of 0, you just get a series of parallel lines because each rotator simply travels around the entire ring at their initial momentum. Because there is no friction, they just keep going!</p>
+<p>Notice the smaller circles that aren't located in the center of the phase portrait. What do these smaller circles represent in terms of kicked rotator motion?</p>
+<p>Notice that some regions of the view are chaotic, with random looking dots. These regions are called "chaotic seas".</p>
+<h2>THINGS TO TRY</h2>
+<p>Is there a relationship between kick strength and how chaotic the phase portrait looks?</p>
+<p>Inspect a rotator that has a circular phase portrait. Now inspect one that has a more periodic phase portrait. How do behaviors of the individual rotators differ?</p>
+<p>Try and restrict the initial conditions (momentum and angular position) of each rotator to a different domain (e.g., [0, pi]). How does that affect the phase portrait?</p>
+<p>Inspect two rotators next to each other in the chaotic sea (if clicking two neighbors is hard, you can manually adjust the angular positions and momenta so the two rotators are very close. Now run each of the two rotators simultaneously. What do you notice about the trajectories of these rotators that start with nearly identical locations and velocities?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>See if you can change the model to use a different random kick strength for each pendulum.</p>
+<p>Using LevelSpace, try to add a procedure that allows you to create a child Kicked Rotator, tweak the initial conditions, and then add that rotator into the parent model.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses the LevelSpace extension to create an individual kicked rotator model (using the INSPECT-ROTATOR button) given an initial momentum and angular position. This is different than a typical LevelSpace model since the model that gets created has no effect on the 'parent model'.</p>
+<h2>RELATED MODELS</h2>
+<p>Check out the Kicked Rotator model for more info on what a kicked rotator is.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model was inspired by a model used in Dirk Brockmann's Complex Systems in Biology course at the Humboldt University of Berlin.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Brockmann, D., Bain, C. &amp; Wilensky, U. (2016).  NetLogo Kicked Rotators model.  http://ccl.northwestern.edu/netlogo/models/KickedRotators.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2016 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2016 Cite: Brockmann, D., Bain, C. & Wilensky, U. --></div>
+      </div>
+    </main>
+  </body>
+</html>

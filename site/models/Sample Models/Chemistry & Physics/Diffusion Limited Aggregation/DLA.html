@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DLA</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>DLA</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Diffusion%20Limited%20Aggregation/DLA.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Diffusion Limited Aggregation/DLA.png" alt="Screenshot of DLA" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates diffusion-limited aggregation, in which randomly moving (diffusing) particles stick together (aggregate) to form beautiful treelike branching fractal structures.  There are many patterns found in nature that resemble the patterns produced by this model: crystals, coral, fungi, lightning, and so on.</p>
+<h2>HOW IT WORKS</h2>
+<p>The model begins with an initial green "seed" in the center of the world.  Red particles move around the world randomly.  When a red particle hits a green square, it "sticks" and turns green (and a new red particle is created to keep the process going).</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to make the initial seed, then press GO to run the model.</p>
+<p>The WIGGLE-ANGLE slider controls how wiggly the paths the particles follow are.  If WIGGLE-ANGLE is 0, they move in straight lines.  If WIGGLE-ANGLE is 360, they move in a totally random direction at each time step.</p>
+<p>The MAX-PARTICLES slider controls how many red particles can exist at the same time.</p>
+<p>Both settings may be altered in the middle of a model run.</p>
+<p>The USE-WHOLE-WORLD? switch controls whether the red particles start at the edge of the world, or from just outside a circle enclosing the green area.  If the switch is on, it's easier to see what's going on, but the model runs slower, particularly when WIGGLE-ANGLE is high.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Note that the resulting structure has a branching structure, like a tree.  Why does this happen?</p>
+<p>What other phenomena in the world do the shapes remind you of?  Is this aggregation process a plausible model of how those phenomena occur?</p>
+<p>When the enclosing circle gets too near to the edge of the world, the model stops, since allowing the particles to wrap around the edges of the world would distort the shape of the aggregate.</p>
+<p>New red particles are created not at the edge of the world, but at the edge of a circle enclosing the current size of the green aggregate, instead of traveling from the edge of the world.  Also, if a red particle wanders too far outside the circle, it disappears and a new one is created.  Neither of these behaviors is essential to the model -- it is done this way just to the model runs fast.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try different settings for WIGGLE-ANGLE.  What is the effect on the appearance of the resulting aggregate?  Why?</p>
+<p>Does the MAX-PARTICLES slider make any difference?  Why or why not?</p>
+<p>Do you think the USE-WHOLE-WORLD? setting has an effect on the appearance of the resulting aggregate?  Why or why not?  Experiment and find out.  If you initially thought differently from what you found, why do you think you thought otherwise?  Can you explain why it does happen the way you found?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>What happens if you start with more than one "seed" patch?  What happens if the seed is a line instead of a point?</p>
+<p>Can you find a way to modify the code so the resulting pattern spirals out instead of radiating straight out?</p>
+<p>The rule used in this model is that a particle "sticks" if any of the eight patches surrounding it are green.  What do the resulting structures look like if you use a different rule (for example, only testing the single patch ahead, or using <code>neighbors4</code> instead of <code>neighbors</code>)?</p>
+<p>Can you compute the fractal dimension of the aggregate?</p>
+<p>If instead of using green, you gradually vary the color of deposited particles over time, you can see more vividly the accretion of "layers" over time.  (The effect is also visually pleasing.)</p>
+<p>The model will run faster if the turtles are invisible, so you may want to add a switch that hides them (using the <code>hide-turtle</code> command).</p>
+<p>Let's use the term "envelope" to describe the large "circle" created by all the green particles, with the green particle that is farthest from the center defining the radius of this envelope.  Within this envelope, what is the ratio between patches with green particles and patches that have no particles?  Or, what is the ratio between particles and patches?  Create a graph to track this ratio.  Create a histogram that accumulates the end value of this process over multiple runs.</p>
+<p>How circular is the envelope at the end of a simulation? Is it "smooth" or "bumpy"? How would you define the goodness of this circle?</p>
+<p>Let's use the term "end particles" to describe the green particles at the end of an outward reaching branch (so they are connected only to one other particle).  Create a procedure to calculate and report the average number of nodes along all the possible paths from the center to the end particles).  You can also create a histogram of these values.</p>
+<p>How many "end particles" are there over time?  It seem likely that this number should grow, but how would you expect this number to grow?  Create a graph to track the growth in the number of these "end particles."</p>
+<p>What is the ratio between "end particles" and nodes?  Does this ratio change over time?  Create a graph to track this ratio as the simulation runs.</p>
+<p>Create a procedure that allows you to click on any two green particles and have another moving particle sprout at the first green particle you clicked and then track and color the path between these two green particles. What is the longest path between any two green particles?  Is this number bound above?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of the <code>neighbors</code> and <code>distancexy</code> primitives.</p>
+<h2>RELATED MODELS</h2>
+<p>In this model, the green squares are on a grid.  For a different implementation of the same idea that does not involve a grid, see DLA Alternate.  It uses circular particles that stick to each other.</p>
+<p>DLA Alternate Linear has particles that fall straight down from the top of the world, instead of falling towards a central point.</p>
+<p>DLA Simple is a simplified (but less computationally efficient) version of this model.</p>
+<p>The various models in the "Fractals" subsection of the "Mathematics" section of the Models Library demonstrate some other ways of "growing" fractal structures.</p>
+<p>The "Percolation" model in the "Earth Science" section produces patterns resembling the patterns in this model.</p>
+<p>The "Hex Cell Aggregation" model in the "Computer Science" section uses a grid of hexagons, rather than squares, and uses a cellular automaton with a growth rule instead of moving particles.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>The concept of diffusion limited aggregation was invented by T.A. Witten and L.M. Sander in 1981.  Tamas Viczek's book "Fractal Growth Phenomena" contains a discussion, as do many other books about fractals.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo DLA model.  http://ccl.northwestern.edu/netlogo/models/DLA.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was developed at the MIT Media Lab using CM StarLogo.  See Wilensky, U. (1993). Thesis - Connected Mathematics: Building Concrete Relationships with Mathematical Knowledge. Adapted to StarLogoT, 1997, as part of the Connected Mathematics Project.  Adapted to NetLogo, 2002, as part of the Participatory Simulations Project.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2002.</p>
+<!-- 1997 2002 Wilensky --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Virus Using Discrete Event Simulator</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Virus Using Discrete Event Simulator</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Virus%20Using%20Discrete%20Event%20Simulator.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Virus Using Discrete Event Simulator.png" alt="Screenshot of Virus Using Discrete Event Simulator" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a modification of the "Virus" model in the Biology section of the Models Library to illustrate use of the time extension for "discrete event simulation", which makes the code simpler and faster (see THINGS TO NOTICE below).</p>
+<p>With the few (but important) exceptions noted below, this model does exactly what the original Virus model did and uses the same code. The model documentation is not duplicated here; instead, this tab only discusses the differences between the original Virus model and this discrete event implementation.</p>
+<h2>HOW IT WORKS</h2>
+<p>A discrete event scheduler is a convenient and efficient way of programming agents to do certain actions that don't happen every tick. In many agent-based models, the agents do the same thing every tick. But, sometimes agents take certain action only occasionally. Normally, this would require checking each tick if the right amount of time has passed and then, if it has, doing the action. In the case of the Virus model, agents get sick and then only recover after a certain number of ticks. So, they have to check each tick if that amount of time has passed. A discrete event schedule avoids this by keeping a list of events that are scheduled at different times and then running those events when the time comes. In this model, when an agent gets sick, it schedules when it will recover or die. The <code>go</code> procedure of this model uses both tick-based and discrete-event based updates. Each tick, turtles move and have a chance to infect others if they are infected and a chance to reproduce if they aren't. Then the tick counter is advanced and all events that were scheduled to happen during this tick are run with the command <code>time:go-until ticks</code>. For more information on the discrete event scheduler, see https://ccl.northwestern.edu/netlogo/docs/time.html.</p>
+<p>The differences from the original Virus model are:</p>
+<ul>
+<li>
+<p>Instead of using counter variables (<code>remaining-immunity</code>, <code>sick-time</code>) to count down how many ticks remain until a turtle becomes susceptible or recovers, this version has turtles simply schedule the future time at which those events happen. In the procedure <code>infect</code>, the newly infected turtle schedules the time at which it executes <code>recover-or-die</code>. In <code>recover-or-die</code>, the turtle schedules the time at which its immunity ends and becomes susceptible again. This scheduling eliminates the need for code to check and update the counter variables each tick.</p>
+</li>
+<li>
+<p>Instead of separate boolean variables for whether a turtle is sick or immune, turtles have one variable <code>status</code> that has values of "susceptible" (equivalent to "healthy" in the original model), "infected" (equivalent to "sick"), or "immune".</p>
+</li>
+<li>
+<p>The only important difference in model formulation is that the times it takes turtles to recover (switch from "infected" to "immune") and to lose immunity (switch from "immune" to "susceptible") vary randomly among individuals. Discrete event simulation makes this easy: in each of the <code>time:schedule-event</code> statements in <code>infect</code> and <code>recover-or-die</code>, the future time at which the switch occurs is drawn from a random-exponential distribution, using the parameters "duration" and "immunity-duration" as the mean length of infection and immunity. This individual variation in infection and immunity times can be turned off by simply deleting the primitive <code>random-exponential</code> from the <code>time:schedule-event</code> statements in <code>infect</code> and <code>recover-or-die</code>.</p>
+</li>
+<li>
+<p>Age is tracked in years instead of weeks, and birthdays are scheduled as discrete events. When each turtle is created in <code>setup-turtles</code> it schedules its next birthday (the <code>get-older</code> procedure) a random number of weeks in the future. New turtles created in <code>reproduce</code> schedule their first birthday 52 weeks after their birth. On each birthday, the turtle simply schedules another execution of <code>get-older</code> 52 weeks in the future.</p>
+</li>
+</ul>
+<h2>HOW TO USE IT</h2>
+<p>This model's interface works exactly as the original Virus model does, with one exception:</p>
+<p>The DURATION slider still controls the time it takes an infected person to either die or recover, but instead of always being equal to the slider's value, the duration of each turtle's illness is now drawn from an exponential distribution with the slider's value as its mean. As a result of the exponential distribution's characteristics, most turtles will remain ill for less time than the slider's value but a few will remain ill for much longer.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The use of discrete event simulation allows the code to be shorter and simpler. This version has 4 fewer procedures than the original: <code>get-sick</code>, <code>get-health</code>, <code>become-immune</code> are replaced by the <code>time:schedule-event</code> statements. The <code>immune?</code> reporter is made unnecessary by discrete event simulation and the <code>status</code> variable.</p>
+<p>This model also executes more rapidly than the original Virus model because it eliminates the need to check counter variables every tick. In BehaviorSpace experiments with display updates off, this version executes in 2/3 the time of the original model, even though execution time (according to the profiler extension) is dominated by interface updates and the <code>move</code> procedure. The original model spends much of its execution time in the procedures <code>immune?</code> and <code>get-older</code>, which have been removed or simplified here.</p>
+<p>The addition of individual variation in the duration of infection and immunity qualitatively changes the model's behavior. This model produces small and shorter cycles in infection than the original Virus model.</p>
+<p>The model illustrates only one function of the time extension, discrete event simulation. It does not use the time extension's ability to represent specific years, dates, days, etc.</p>
+<h2>THINGS TO TRY</h2>
+<p>In addition to the experiments suggested for the original Virus model, the effects of variability in the duration of illness and immunity can be investigated with this version. For different kinds of virus (e.g., Ebola, with short duration, high infectiousness, and low recovery; AIDS, with long duration, low infectiousness, and low recovery), compare the behavior of this model with that of the original Virus model. (Or turn off this model's random variation among turtles, as explained above.)</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The modifications suggested for the original Virus model can all be implemented for this version.</p>
+<p>Also, you can see what happens if infectiousness, or recovery time, or the duration of immunity depend on age. For example, the COVID-19 virus was originally believed much less infectious for children, and survival was lower for older adults. Modify the procedures for these processes to make the probabilities or rates depend on <code>age</code> (which is in years).</p>
+<h2>RELATED MODELS</h2>
+<p>This model illustrates only one of the time extension's capabilities, letting agents schedule actions at future times. The other time extension code example models illustrate the extension's other capabilities such as providing date and time variables, linking ticks to explicit time units, and reading and writing time-series data.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>The original Virus model was written by Uri Wilensky:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Virus model.  http://ccl.northwestern.edu/netlogo/models/Virus.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Railsback, S. and Wilensky, U. (2022).  NetLogo Virus Using Discrete Event Simulator model.  http://ccl.northwestern.edu/netlogo/models/VirusUsingDiscreteEventSimulator.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2022 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2022 Cite: Railsback, S. --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Divide The Cake</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Divide The Cake</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/BEAGLE%20Evolution/EACH/Divide%20The%20Cake.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Curricular Models/BEAGLE Evolution/EACH/Divide The Cake.png" alt="Screenshot of Divide The Cake" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is an evolutionary game-playing model. Three types of agents must divide a common resource. In the original model it's cake, but let's think of it as edible grass instead, which is green. The agents come in three types: modest, fair, and greedy. The agents move around competing for grass.  Agents need grass in order to produce offspring, so over time, the agent types that get more grass will tend to increase in number.</p>
+<p>This model (and Cooperation and Altruism) are part of the EACH unit ("Evolution of Altruistic and Cooperative Habits: Learning About Complexity in Evolution"). See http://ccl.northwestern.edu/rp/each/index.shtml for more information on the EACH unit. The EACH unit is embedded within the BEAGLE (Biological Experiments in Adaptation, Genetics, Learning and Evolution) evolution curriculum. See http://ccl.northwestern.edu/rp/beagle/index.shtml.</p>
+<h2>HOW IT WORKS</h2>
+<p>Agents randomly wander the map.</p>
+<p>When there are only two agents on a patch of grass, each of the agents tries to eat a certain amount of the grass.</p>
+<p>There are three types of agents:
+- Modest agents (brown) who try to eat one-third of the grass on a patch
+- Fair agents (red) who try to eat one-half of the grass on a patch
+- Greed agents (blue) who try to eat two-thirds of the grass on a patch</p>
+<p>If the total amount requested by both agents is greater than 100%, then both agents die.  Otherwise, each agent gets its requested share of the patch's resources.</p>
+<p>Each agent then enters a reproduction lottery based on its appetite: the greater the appetite, the greater the chance of reproduction. This factor gives a fitness advantage to the agents with a greater appetite that counteracts the disadvantage of having a greater appetite.</p>
+<p>Each turn, every patch resets to the full amount of grass.</p>
+<h2>HOW TO USE IT</h2>
+<p>SETUP: Creates the agents.</p>
+<p>GO: Starts the model running.</p>
+<p>INITIAL-NUMBER: Creates this number of turtles of all three types together.</p>
+<p>MODEST-PROPORTION, FAIR-PROPORTION, GREEDY-PROPORTION: These sliders set the proportions of the three agent types within the initial number of agents.
+Note that the actual numbers chosen for these three sliders are irrelevant--only the ratio of the three numbers counts vis-a-vis the setting of the INITIAL-NUMBER slider. For example, the ratio settings "1 1 1" will produce roughly equal numbers of each type, as will the settings "79 79 79" or what-have-you. Likewise, the setting "0 0 1" is no different from "0 0 88", etc.</p>
+<p>TRAVEL-DISTANCE: The value of this variable determines the number of steps an agent moves each turn. This value is the mobility of an agent.</p>
+<p>VISCOSITY: This variable is the difficulty of movement. It limits the general mobility of agents.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>If you run the model with the default settings (high viscosity), notice how the population of fair agents increases. Why does this happen?</p>
+<p>Also, notice how the modest and greedy populations and the modest and fair populations congregate in dynamically-stable communities but the greedy and fair populations do not seem to co-exist. Why does this happen?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try changing the population VISCOSITY value. What happens when this value is decreased?  How does this affect the survival and the grouping of the different populations?</p>
+<p>Change the starting ratios of the populations. How do these ratios affect the behavior of the model? Why should the model depend on these ratios?</p>
+<p>Change TRAVEL-DISTANCE. How does it affect the model? What is the relationship between the values of TRAVEL-DISTANCE and VISCOSITY?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>What environmental variables might affect the model? Should the grass grow back to its full length each turn?  How would changing the rejuvenation of available resources affect the model?</p>
+<p>Should the agents be informed of each other's anticipated demands prior to making their claims? If they did, then agents could bargain before asking for food, and therefore reduce their chances of death as a result of a joint demand that exceeds the available resources, e.g., 1/2 + 2/3 &gt; 1. This bargaining behavior would change the model drastically, but is an interesting way of exploring how populations may adapt their interpersonal behaviors in order to survive.  A question would then arise of whether such survival does or does not ultimately play against agents as a type, because the price of survival could be a depletion of resources in future generations.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Altruism</li>
+<li>Cooperation</li>
+<li>PD Basic</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model, the Cooperation model and the Altruism model are part of the curriculum unit "Evolution of Altruistic and Cooperative Habits: Learning About Complexity in Evolution".  See http://ccl.northwestern.edu/rp/each/index.shtml for more information. The EACH unit is embedded within the BEAGLE (Biological Experiments in Adaptation, Genetics, Learning and Evolution) evolution curriculum. See http://ccl.northwestern.edu/rp/beagle/index.shtml.</p>
+<p>This model is based on William Harms's "Divide the Cake" model, described in Brian Skyrms's book "The Evolution of the Social Contract".</p>
+<p>Thanks to Damon Centola for his implementation of this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo Divide The Cake model.  http://ccl.northwestern.edu/netlogo/models/DivideTheCake.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2002.</p>
+<!-- 1997 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

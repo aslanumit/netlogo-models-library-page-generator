@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MTG 3 Feedback Loop HubNet</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>MTG 3 Feedback Loop HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Mind%20the%20Gap/MTG%203%20Feedback%20Loop%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Mind the Gap/MTG 3 Feedback Loop HubNet.png" alt="Screenshot of MTG 3 Feedback Loop HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This HubNet model is the third model of the MTG series. Mind the Gap (MTG) is a curricular unit revolving around a series of three agent-based participatory simulations (ABPSs). The goal of the MTG curricular unit is to help high school students understand important mechanisms of wealth inequality in the U.S. through the lens of complex systems with NetLogo HubNet-based participatory activities. For more details about the unit, refer to Mind the Gap 1 Equal Opportunities HubNet Model--the first model of the MTG series.</p>
+<p>The goal of this model is to let students experience another type of strong force that shapes people’s course of life. Feedback loops, often called virtuous circles or vicious circles, are systematized or institutionalized forces. Unlike randomness, which is not biased against anyone, feedback loops are usually socially constructed, privileging certain groups of people at the cost of oppressing other groups. This model uses education as an example to let students experience that depending on the cost of education, it can become a force that is either closing or widening the gap between the rich and the poor.</p>
+<h2>HOW IT WORKS</h2>
+<p>The "land" in this model is represented by a 50 by 50 world. Each patch contains a predetermined amount of sugar (2 units of sugar). The color of the patch shows the amount of sugar it contains: the darker the yellow, the more sugar it has. Each person (or agent) has a few attributes:</p>
+<ol>
+<li>
+<p>Vision: how many patches (steps) away an agent can see; a randomly assigned number between 1 and 6.</p>
+</li>
+<li>
+<p>Endowment: how many units of sugar an agent starts with; a randomly assigned amount of sugar between 5 and 25.</p>
+</li>
+<li>
+<p>Metabolism: how many units of sugar is needed for moving one step or doing one harvest; a randomly assigned amount of sugar between 1 and 3.</p>
+</li>
+</ol>
+<p>Students have some actions they can take:</p>
+<ol>
+<li>
+<p>Move: by clicking the direction buttons or the keyboard shortcuts, students can move around. Each click moves the student by one step and burns METABOLISM amount of sugar.</p>
+</li>
+<li>
+<p>Harvest: by clicking the harvest button, students harvest all the sugar on the tile that he or she is standing on. One harvest burns METABOLISM amount of sugar.</p>
+</li>
+<li>
+<p>Go to school: by clicking this button, students "go to school". When this happens, students' avatars turn into a book, representing being at school. Going to school has benefits and costs. Every time a student finishes school, his or her earning per harvest is boosted by 130%. If the student has less than 6 vision, going to school will also expand his or her vision by 1 step. However, going to school also has monetary and opportunity costs. When education is free or less expensive, all students can afford it to improve their vision and earning. However, when education is expensive, it becomes a virtuous circle for the rich and a vicious circle for the poor. As the result, the rich become richer and the poor become poor, closely reflecting a crucial inequality issue in the real world.</p>
+</li>
+</ol>
+<p>The students also have two additional measurements visible on their screen:</p>
+<p>edu-level: edu-level shows the student's level of education (the number of schools the student attended). At the beginning of the simulation, everyone has an edu-level of 0. Each student can go to school up to 5 times.</p>
+<p>earning-coeff: earning coefficient shows the earning power of a student. the sugar a student collects at each harvest is the product of the amount of sugar on the patch times the earning coefficient minus the metabolism. Each time a student goes to school, his or her earning coefficient multiplies by 1.3 times.</p>
+<h2>HOW TO USE IT</h2>
+<p>Ideally, this model should be run twice: once with free education (tuition = 0) and once with a costly educational system (tuition &gt;= 25). Doing so allows students to experience the empowering nature of education when it is affordable, and the privileges of the rich and the struggles of the poor when education is costly. Running this model with different values for tuition gives students opportunities to compare lives under these different conditions.</p>
+<p>Before starting the model, the teacher can pose a question such as "Why are rich people rich while poor people poor in this model?". After briefly showing students the interface elements on both the students' and the teacher's interface, the teacher can start the model.</p>
+<p>Teacher's interface elements:</p>
+<p>TUITION: the sugar required for attending school once. This slider should be set before clicking the setup button.</p>
+<p>SETUP: prepares the model for run. make sure to click it after every student has joined.</p>
+<p>GO: start the model, so students can participate in the simulation.</p>
+<p>SUGAR-MEAN: the average of all students' current sugar.</p>
+<p>SHOW-WORLD: shows the underlying sugar distribution and the locations of each agent. By default, the world is hidden, because students are not supposed to know about the resource distribution. SHOW-WORLD can be used after students played the simulation. During the discussion phase, the teacher can show students what kind of world they were in.</p>
+<p>HIDE-WORLD: after showing the world, the teacher can hide the world again from the students, so the whole checkerboard turns grey and students’ avatars become invisible.</p>
+<p>Wealth distribution plot: a bar chart, in which each bar represents a student's sugar, sorted from the lowest to the highest.</p>
+<p>Lorenz curve plot: a chart that shows the cumulative percent of wealth (y axis) owned by the cumulative percentage of the population (x axis). The perfectly equal distribution is the gray diagonal line (e.g., the bottom 30% of the population owns 30% of the total wealth). The farther the red curve deviates from the diagonal line, the more unequal the wealth distribution (e.g., the bottom 30% of the population owns 1% of the total wealth). The Lorenz curve is a cumulative percentage version of the Wealth distribution plot.</p>
+<p>Gini index vs. time: Gini index is a numerical value between 0 and 1, with 0 being perfectly equal and 1 being extremely unequal, that measure the wealth inequality. The plot shows Gini index (y axis) over time (x axis)</p>
+<p>The plots automatically update based on real time aggregation of the amount of sugar that students own.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>At the individual level, pay attention to your initial conditions: What is your endowment? (how much sugar do you start with?); What is your vision (how far you can see, as measured in numbers of patches); What is your metabolism? (See THINGS TO TRY for tips of figuring out your metabolism).</p>
+<p>Pay attention to the color of the patch that you are harvesting. When you harvest it, it becomes white. But it returns to yellow soon after being harvested, indicating the sugar on that patch grew back.</p>
+<p>How does your sugar change? Pay attention to the sugar monitor on your interface.</p>
+<p>How many times do you go to school? How does going to school help with your wealth?</p>
+<p>At the aggregate level, pay attention to how different levels of tuition affect wealth inequality (pay attention to the three plots).</p>
+<h2>THINGS TO TRY</h2>
+<p>Try taking one step by clicking any of the directional buttons. How much sugar does it take to move one step? That amount is your metabolism. Try clicking the harvest button. Does your total sugar increase, decrease, or stay the same? Do you know why? (Tip: each harvest burns the same amount of sugar as moving one step).</p>
+<p>Do you want to move or not? Why? If you do want to move, do you know where to move? (Tip: what is your vision?)</p>
+<p>How rich are you in your class? Who is the richest? How did you or they become the richest? Share your experience with the whole class.</p>
+<p>Discuss how the simulation compare to the real world. Do you see any analogies? What do vision, endowment, and metabolism mean in the real world? Can you find a real-world story that maps onto your experience in the simulation?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>This model uses education as an example to let students experience feedback loops--virtuous and vicious cycles. Can you think of any other feedback loops and incorporate them in the model? Things like: taxation, investment, trade, loan, etc.?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model initializes each patch's sugar and color by using the <code>file-read</code> primitive based on the data provided in an external file.</p>
+<p>This model uses <code>hubnet-view-override</code> and <code>hubnet-send-follow</code> to create the view seen on the clients' interface. <code>hubnet-send-override</code> allows the clients see a view that is different that the host. In this model, clients only see a small part of the virtual world. <code>hubnet-send-follow</code> keeps the user at the center of the client's view and puts a halo around it. The user is always centered even when it's moving.</p>
+<p>This model also makes use of <em>anonymous procedures</em>, which allow agents to change states (E.g. from "chilling" to "broke"), in which the agents follow different rules at each tick (E.g. when an agent is in the "chilling" state, at each tick, the user's button clicks are executed. However, if the agent is in the "broke" state, the user's button clicks are ignored). Users switch between states in two ways: when in the "chilling" state, if the agent runs out of sugar, it goes into the "broke" state. Meanwhile, a timer starts to count down. When to timer goes down to zero, the agent goes out of the "broke" state and enters the "chilling" state again.</p>
+<h2>RELATED MODELS</h2>
+<p>Other models in the Mind the Gap HubNet suite include:</p>
+<ul>
+<li>Mind the Gap 1 Equal Opportunities HubNet Model</li>
+<li>Mind the Gap 2 Random Assignment HubNet Model</li>
+</ul>
+<p>The model is also related to the NetLogo SugarScape suite, including:</p>
+<ul>
+<li>Sugarscape 1 Immediate Growback</li>
+<li>Sugarscape 2 Constant Growback</li>
+<li>Sugarscape 3 Wealth Distribution</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Epstein, J. and Axtell, R. (1996). Growing Artificial Societies: Social Science from the Bottom Up. Washington, D.C.: Brookings Institution Press.</p>
+<p>Li, J. and Wilensky, U. (2009). NetLogo Sugarscape 3 Wealth Distribution model. http://ccl.northwestern.edu/netlogo/models/Sugarscape3WealthDistribution. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Guo, Y. and Wilensky, U. (2018).  NetLogo MTG 3 Feedback Loop HubNet model.  http://ccl.northwestern.edu/netlogo/models/MTG3FeedbackLoopHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<p>To cite the Mind the Gap curriculum as a whole, please use:</p>
+<ul>
+<li>Guo, Y. &amp; Wilensky, U. (2018). Mind the Gap curriculum. http://ccl.northwestern.edu/MindtheGap/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2018 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2018 MTG Cite: Guo, Y. --></div>
+      </div>
+    </main>
+  </body>
+</html>

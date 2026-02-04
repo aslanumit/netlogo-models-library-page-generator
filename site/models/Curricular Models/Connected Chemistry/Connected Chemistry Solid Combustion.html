@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Connected Chemistry Solid Combustion</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Connected Chemistry Solid Combustion</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Connected%20Chemistry/Connected%20Chemistry%20Solid%20Combustion.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Connected Chemistry/Connected Chemistry Solid Combustion.png" alt="Screenshot of Connected Chemistry Solid Combustion" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model shows the chemical kinetics of the combustion reaction for burning charcoal.</p>
+<p>The chemical reaction that charcoal undergoes in combustion releases energy (exothermic reaction) when the carbon (C) atoms that make up the charcoal react with the oxygen found in air (O2).  This reaction produces carbon dioxide CO2. This chemical reaction is represented as follows:</p>
+<p>C + O2 -&gt; CO2</p>
+<p>C and O are called the reactants and CO2 is the product of the reaction.</p>
+<p>In this model, charcoal is modeled as a block o pure solid of 100% carbon.  The surrounding gas is modeled as oxygen and nitrogen.  Nitrogen is treated as an inert gas in this model that neither reacts with the oxygen nor the carbon.  In reality, at high temperatures, molecular nitrogen and oxygen can combine to form nitric oxide.  And at high temperatures and pressures two N2 molecules can react to become N4, which is called nitrogen diamond.  Neither of these reactions are represented in this model.</p>
+<h2>HOW IT WORKS</h2>
+<p>For a reaction to occur, oxygen (O2) and carbon (C) must have enough energy to break the atomic bond in oxygen and allow the atoms to rearrange to make CO2.  This bond breaking energy threshold is called the activation energy.</p>
+<p>When both the oxygen molecule and the carbon atom have a net amount of molecular kinetic energy (thermal energy) greater than or equal to the activation energy, the reaction occurs.  This tends to occur more often at higher temperatures, where molecules have higher amounts of kinetic energy.   At higher temperatures it is more likely that any set of reactants will have enough energy to break the bonds of oxygen and causing a rearrangement of the atoms from the reactants.  This bond breakage and rearrangement converts chemical potential energy of the reactants into molecular kinetic energy of the products.  This is due to the fact that the the atomic bonds of CO2 store less potential energy than those of O2.</p>
+<p>This excess energy is called the BOND-ENERGY.  When the bond energy is increased the products heat up due to an increased transfer of bond-energy to kinetic energy in the chemical reaction.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP and then GO/STOP to run the model.</p>
+<p>SPEED UP &amp; TRACE A MOLECULE gives a speed boost to a single gas molecule and traces its path until the first collision it encounters.  This additional kinetic energy added to this molecule may be enough to cause a chain reaction that leads to the burning of the charcoal.  Pressing it also increases the temperature of the gas because temperature is a measure of the average kinetic energy of the molecules.</p>
+<p>CHARCOAL-GEOMETRY determines the shape of the cluster of carbon atoms (this is referred to as the solid matrix in the procedures).</p>
+<p>INITIAL-O2-MOLECULES determines the number of initial oxygen (O2) molecules the simulation starts with.</p>
+<p>INITIAL-N2-MOLECULES determines the number of initial oxygen (N2) molecules the simulation starts with.  (The composition of the atmosphere has approximately 78% nitrogen and 21% oxygen).</p>
+<p>INITIAL-GAS-TEMP sets the initial temperature of the gases.  Charcoal will not burn if the total kinetic energy of the carbon atom and oxygen molecule that are set to react is lower than the activation energy</p>
+<p>ENERGY-RELEASED is the amount of potential chemical energy released in the burning reaction.  This energy is converted and transferred into the kinetic energy of the products.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Why does the average speed of the molecules speed up after a few chemical reactions, continue speeding up more quickly, then start to speed up less quickly as the time progresses?</p>
+<p>How many molecules of oxygen are needed to completely react with the 6 x 6 charcoal solid?</p>
+<p>Why do different geometries of carbon atoms in the charcoal solid react more or less quickly, even if the number of carbon atoms is the same?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try Different ENERGY-RELEASED levels INITIAL-GAS-TEMP values to make the chemical reaction occur at different rates (or not at all).</p>
+<p>Compare the rate of the reaction with different charcoal solid shapes.</p>
+<p>Try adjusting the amount of oxygen to make the carbon burn faster.</p>
+<p>Try adjusting the amount of oxygen and nitrogen to give highest final gas temperature.</p>
+<p>Try adjusting the amount of oxygen to use up all the oxygen and charcoal in the reaction.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Energy is transfer to the carbon atoms in collision with gas molecules.  This energy is transferred in one discrete chunk (activation-energy).  Model the energy transfer in the solid so that different values of energy can be transferred to and from the solid in collisions.  Then add diffusion of vibrational energy through the solid (heat transfer)</p>
+<p>Change the gas to be a mixture of molecules like in the atmosphere.</p>
+<p>Add a pathway for incomplete combustion:  2C + 02  --&gt; 2CO
+    and the conditions it occurs under.</p>
+<p>Add a pathway for generating nitrous oxide:  2C + 02  --&gt; 2NO
+    and the conditions it occurs under.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Uses GasLab particle collision code.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is part of the Connected Chemistry curriculum.  See http://ccl.northwestern.edu/curriculum/chemistry/.</p>
+<p>We would like to thank Sharona Levy and Michael Novak for their substantial contributions to this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2007).  NetLogo Connected Chemistry Solid Combustion model.  http://ccl.northwestern.edu/netlogo/models/ConnectedChemistrySolidCombustion.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>To cite the Connected Chemistry curriculum as a whole, please use:</p>
+<ul>
+<li>Wilensky, U., Levy, S. T., &amp; Novak, M. (2004). Connected Chemistry curriculum. http://ccl.northwestern.edu/curriculum/chemistry/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 ConChem Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

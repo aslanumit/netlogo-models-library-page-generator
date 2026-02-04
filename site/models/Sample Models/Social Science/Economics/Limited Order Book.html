@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Limited Order Book</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Limited Order Book</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Economics/Limited%20Order%20Book.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Social Science/Economics/Limited Order Book.png" alt="Screenshot of Limited Order Book" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model aims to reproduce phenomena that emerge in modern-day cryptocurrency markets, but is general enough to model any resource traded using the concept of a limited order book. A Limited Order Book is a simple idea: it is a record of outstanding limit orders maintained by a stock exchange. A limit order is a type of order to buy or sell a security at a specific price or better. The simple act of buying and selling in this manner creates complex behaviors at the level of the exchange.</p>
+<h2>HOW IT WORKS</h2>
+<p>In this model, each trader holds some <code>cash</code>, some tokens (<code>stockpile</code>), and trades in the same limited order book. Tokens can be thought of as any tradable good, such as gold, silver, oil, stocks, or cryptocurrency such as Bitcoin or Ethereum. Each trader also holds a firm and constant <code>belief</code> in the value of tokens, which is randomly set somewhere in the interval [initial-belief / 2, initial-belief] during the initialization of the model.</p>
+<p>Time is split into multiple slices and represented as ticks. In each tick, each trader uses a pre-determined strategy to put limited orders on the market. Then, the matchmaking process starts between buyers and sellers. First, we create two empty lists to store pending orders. Then, since we assume that each trader has an equal opportunity of trading, we match each order randomly, during which:</p>
+<ol>
+<li>If it is a SELL order, we try to find if any of the unmatched BUY orders at the stated sale price or higher. If so, we will execute the order sale at the highest possible price and the two parties will exchange tokens and cash.</li>
+<li>We repeat this process until there are no remaining matching BUY orders or the selling order is completely executed (this means if you sell 100 tokens, they might not all sell to the same buyer).</li>
+<li>If the SELL order is not fully executed, we will put it into the unmatched list for selling orders, waiting for other buying orders to pick it up.</li>
+</ol>
+<p>For BUY orders, we go through the same process but with an opposite bias. In other words, we try to match BUY orders to <em>cheaper</em> prices.</p>
+<p>Consequently, the market price of the token, as well as the other information available in the market, is calculated and provided to traders in the next tick.</p>
+<p>In this fairly simplified model, we only implement two simple trading strategies.</p>
+<p>The first one is called "honest", in which the trader will always try to buy and sell tokens at a price according to his/her belief of the value of that token.</p>
+<p>The second strategy we call "cunning" and is slightly more complicated. Here, the trader will always buy with a price of either the best-selling-price or their belief (whichever is smaller) and sell with a price of either the best-buying-price or their belief (whichever is larger).</p>
+<p>Note that after the matchmaking process, both strategies will cancel unfulfilled orders and issue new ones rather than keeping the orders on the exchange.</p>
+<h2>HOW TO USE IT</h2>
+<h3>Basic Usage</h3>
+<ul>
+<li>SETUP button resets the model.</li>
+<li>GO button allows the model to continuously simulate the market.</li>
+<li>GO-ONCE button asks the model to simulate the market for 1 tick.</li>
+</ul>
+<h3>Parameters</h3>
+<p>The following parameters affect how the market works in this model.</p>
+<ul>
+<li>The TRADE-PRECISION slider sets the maximum precision for the number of tokens for each trade. For example, if you set it to 0, the minimum trade unit would be 10^0 = 1. If you set it to 1, the minimum trade unit would be 10^(-1) = 0.1. Default is 1. This models the fact that these currencies are often sold in very small units.</li>
+<li>The HONEST-TRADERS slider determines how many traders with the "honest" strategy will be spawned during the setup process.</li>
+<li>The CUNNING-TRADERS slider determines how many traders with the "cunning" strategy will be spawned during the setup process.</li>
+</ul>
+<p>The below parameters all set the maximum amount of CASH, TOKENS, and BELIEF for each agent. Each is initialized according to a random draw from a uniform distribution on the interval [amount/2, amount]:
+* The INITIAL-CASH slider sets the maximum cash each trader will receive when the model is initialized.
+* The INITIAL-TOKENS slider sets the maximum tokens each trader will receive when the model is initialized.
+* The INITIAL-BELIEF slider determines the maximum initial BELIEF of each trader.</p>
+<h3>Plots and Monitors</h3>
+<p>The plots and monitors give you a set of tools to measure the market as it transacts.</p>
+<ul>
+<li>The <strong>Trading Prices</strong> plot allows you to watch the daily trading prices.</li>
+<li>The <strong>Average Utilities Gain</strong> plot allows you to follow the <em>average utility gain</em> of traders with different strategies. Utility, in this model, is defined as the sum of cash and value of the stockpile (cash + belief * stockpile).</li>
+</ul>
+<h2>THINGS TO NOTICE</h2>
+<ul>
+<li>Notice that trading seems to stop only a few hundred ticks into running the model. Why might that be the case? How might you make trading continue longer without changing the code of the model?</li>
+<li>Notice that the sum of each traders' utilities is increasing, no matter how many honest or cunning traders are spawned. Why might this  happen? Does everyone in the market equally share the gains? Why or why not?</li>
+</ul>
+<h2>THINGS TO TRY</h2>
+<ul>
+<li><strong>Make all traders honest or cunning.</strong> How fast do traders stop trading in each of these situations?</li>
+<li><strong>Try to mix honest traders with cunning ones.</strong> What happened to the utility gains relative to each other. Why does that occur?</li>
+<li><strong>Try first giving traders lots of CASH. Then trying giving traders lots of TOKENS.</strong> How does the market behave differently across these two scenarios?</li>
+</ul>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try to create a more complicated trading strategy (there are a ton of possibilities)!</p>
+<ul>
+<li>You could try to allow traders to trade more than 1 unit of TOKENS each trade.</li>
+<li>You could also try to allow traders to change their belief in the value of the token according to some random factors or through watching the market dynamics.</li>
+</ul>
+<h2>NETLOGO FEATURES</h2>
+<p>While in many NetLogo models we want to ask turtles to do things in a random order to not introduce bias toward particular turtles, here we use <code>foreach sort-on [who] traders</code> so that the traders are deterministically called by their <code>who</code> property and always rendered in the same order.This feature enables you to dynamically introduce traders into the model and keep its visualization stable and intact.</p>
+<h2>RELATED MODELS</h2>
+<p>See the Bidding Market, simple economy, and Sugarscape models to explore more market or economy-related models.</p>
+<h2>REFERENCES</h2>
+<ol>
+<li>Baker, J. and Wilensky, U. (2017). NetLogo Bidding Market model. http://ccl.northwestern.edu/netlogo/models/BiddingMarket. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+<li>Chen, J. (2021). Cryptocurrency Trading Model. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ol>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Chen, J. and Wilensky, U. (2021).  NetLogo Limited Order Book model.  http://ccl.northwestern.edu/netlogo/models/LimitedOrderBook.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>This model was developed as part of the Spring 2021 Multi-agent Modeling course offered by Dr. Uri Wilensky at Northwestern University. For more info, visit http://ccl.northwestern.edu/courses/mam/. Special thanks to Teaching Assistants Jacob Kelter, Leif Rasmussen, and Connor Bain.</p>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2021 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2021 MAM2021 Cite: Chen, J. --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Traffic Intersection</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Traffic Intersection</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Unverified/Traffic%20Intersection.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Social Science/Unverified/Traffic Intersection.png" alt="Screenshot of Traffic Intersection" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>In this model the turtles are cars traveling through an intersection.  The user has the ability to control the frequency of cars coming from each direction, the speed of the cars, and the timing of the light at the traffic intersection.  Once the frequency and speed of cars is selected, the user should run the simulation and adjust the timing of the traffic light so as to minimize the amount of waiting time of cars traveling through the intersection.</p>
+<h2>HOW IT WORKS</h2>
+<p>The rules for each car are:</p>
+<ul>
+<li>
+<p>I can only go in the direction I started in, or stop.</p>
+</li>
+<li>
+<p>I stop for cars in front of me and red lights, and I stop for a yellow light if I'm not already on it.</p>
+</li>
+<li>
+<p>If I am moving quickly and I see that I will have to stop soon, I try to slow down enough to make sure I can stop in time, up to MAX-BRAKE.</p>
+</li>
+<li>
+<p>If I see that I have free space in front of me, I speed up towards the SPEED-LIMIT, up to MAX-ACCEL.</p>
+</li>
+<li>
+<p>If I am on the same space as another car, we crash and die.</p>
+</li>
+</ul>
+<h2>HOW TO USE IT</h2>
+<p>WAIT-TIME-OVERALL shows how many cars are waiting during the given clock tick.</p>
+<p>WAIT-TIME-EASTBOUND shows how many eastbound cars are waiting during the given clock tick.</p>
+<p>WAIT-TIME-NORTHBOUND shows how many northbound cars are waiting during the given clock tick.</p>
+<p>CLOCK shows how many ticks have elapsed.</p>
+<p>Use the FREQ-EAST slider to select how often new eastbound cars travel on the road.</p>
+<p>Use the FREQ-NORTH slider to select how often new northbound cars travel on the road.</p>
+<p>Use the SPEED-LIMIT slider to select how fast the cars will travel.</p>
+<p>Use the MAX-ACCEL slider to determine how fast the cars can accelerate.</p>
+<p>Use the MAX-BRAKE slider to determine how fast the cars can decelerate.</p>
+<p>Use the GREEN-LENGTH slider to set how long the light will remain green.</p>
+<p>Use the YELLOW-LENGTH slider to set how long the light will remain yellow.</p>
+<p>Press GO ONCE to make the cars move once.</p>
+<p>Press GO to make the cars move continuously.</p>
+<p>To stop the cars, press the GO button again.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Cars start out evenly spaced but over time, they form bunches. What kinds of patterns appear in the traffic flow?</p>
+<p>Under what conditions do the cars appear to be moving backwards?</p>
+<p>Gridlock happens when cars are unable to move because cars from the other direction are in their path.  What settings cause gridlock in this model?  What settings can be changed to end the gridlock?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try to answer the following questions before running the simulations.</p>
+<p>Record your predictions.</p>
+<p>Compare your predicted results with the actual results.</p>
+<ul>
+<li>
+<p>What reasoning led you to correct predictions?</p>
+</li>
+<li>
+<p>What assumptions that you made need to be revised?</p>
+</li>
+</ul>
+<p>Try different numbers of eastbound cars while keeping all other slider values the same.</p>
+<p>Try different numbers of northbound cars while keeping all other slider values the same.</p>
+<p>Try different values of SPEED-LIMIT while keeping all other slider values the same.</p>
+<p>Try different values of MAX-ACCEL while keeping all other slider values the same.</p>
+<p>Try different values of GREEN-LENGTH and YELLOW-LENGTH while keeping all other slider values the same.</p>
+<p>For all of the above cases, consider the following:</p>
+<ul>
+<li>
+<p>What happens to the waiting time of eastbound cars?</p>
+</li>
+<li>
+<p>What happens to the waiting time of northbound cars?</p>
+</li>
+<li>
+<p>What happens to the overall waiting time?</p>
+</li>
+<li>
+<p>What generalizations can you make about the impact of each variable on the waiting time of cars?</p>
+</li>
+<li>
+<p>What kind of relationship exists between the number of cars and the waiting time they experience?</p>
+</li>
+<li>
+<p>What kind of relationship exists between the speed of cars and the waiting time they experience?</p>
+</li>
+<li>
+<p>What kind of relationship exists between the number of ticks of green light and the waiting time cars experience?</p>
+</li>
+</ul>
+<p>Use your answers to the above questions to come up with a strategy for minimizing the waiting time of cars.</p>
+<p>What factor (or combination of factors) has the most influence over the waiting time experienced by the cars?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Find a realistic way to eliminate all crashes by only changing car behavior.</p>
+<p>Allow different light lengths for each direction in order to control wait time better.</p>
+<p>Is there a better way to measure the efficiency of an intersection than the current number of stopped cars?</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>
+<p>"Traffic Basic": a simple model of the movement of cars on a highway.</p>
+</li>
+<li>
+<p>"Traffic Basic Utility": a version of "Traffic Basic" including a utility function for the cars.</p>
+</li>
+<li>
+<p>"Traffic Basic Adaptive": a version of "Traffic Basic" where cars adapt their acceleration to try and maintain a smooth flow of traffic.</p>
+</li>
+<li>
+<p>"Traffic Basic Adaptive Individuals": a version of "Traffic Basic Adaptive" where each car adapts individually, instead of all cars adapting in unison.</p>
+</li>
+<li>
+<p>"Traffic 2 Lanes": a more sophisticated two-lane version of the "Traffic Basic" model.</p>
+</li>
+<li>
+<p>"Traffic Grid": a model of traffic moving in a city grid, with stoplights at the intersections.</p>
+</li>
+<li>
+<p>"Traffic Grid Goal": a version of "Traffic Grid" where the cars have goals, namely to drive to and from work.</p>
+</li>
+<li>
+<p>"Gridlock HubNet": a version of "Traffic Grid" where students control traffic lights in real-time.</p>
+</li>
+<li>
+<p>"Gridlock Alternate HubNet": a version of "Gridlock HubNet" where students can enter NetLogo code to plot custom metrics.</p>
+</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Traffic Intersection model.  http://ccl.northwestern.edu/netlogo/models/TrafficIntersection.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2002.</p>
+<!-- 1998 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

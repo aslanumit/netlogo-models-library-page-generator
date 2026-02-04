@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Electron Sink</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Electron Sink</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/NIELS/Electron%20Sink.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/NIELS/Electron Sink.png" alt="Screenshot of Electron Sink" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a simplified model of electrical conduction based on Drude's free electron theory. It shows how electric current in a circuit consisting of a resistive wire connected across two terminals of a battery can be represented as a process of accumulation of free-electrons inside the battery-positive.</p>
+<h2>HOW IT WORKS</h2>
+<p>This model is based on Drude's free electron theory. The wire in this model (gray patches region) is composed of atoms, which in turn are made of negatively charged electrons and positively charged nuclei. These nuceli are hidden from view in this model for simplicity, but are displayed in the subsequent NIELS models (Current in a Wire, Series Circuit and Parallel Circuit).</p>
+<p>According to the Bohr model of the atom, these electrons revolve in concentric shells around the nucleus.  However, in each atom, the electrons that are farthest away from the nucleus (i.e., the electrons that are in the outermost shell of each atom) behave as if they are free from the nuclear attraction.  These outermost electrons from each atom are called "free electrons".   These free electrons obey some rules that are specified in the "Procedures" tab in the model.  The applied voltage due to the battery imparts a constant speed to the electrons in the direction of the positive terminal. This is again a simplification  - in reality, the voltage imparts acceleration to the electrons, and this can be seen in the subsequent NIELS models.</p>
+<h2>HOW TO USE IT</h2>
+<p>This model has three variables: NUMBER-OF-ELECTRONS, SPEED-OF-ELECTRONS, and ELECTRON-SINK-CAPACITY. The first two variables control the number and the speed of electrons towards the battery positive, respectively. The battery terminals are represented as "electron-source" and "electron-sink" in the user interface of the models. The function of this variable is to stop the model once a certain number of electrons reach the battery positive, and a "monitor" displays the "time taken to fill the electron-sink". Electric current can be thought of as the how fast the electron-sink is filling up.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Note that the number of free electrons inside the wire is always constant throughout a run. Given that electrons are constantly being lost to the battery-positive, how do you think this constancy is maintained in the model?</p>
+<h2>THINGS TO TRY</h2>
+<p>For any given value of the "maximum filling capacity" of the electron-sink, find two different sets of values of the "Number" and "Speed" of electrons for which the time taken to fill the electron-sink is identical.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Can you alter the speed of electrons towards the battery-positive by creating obstacles in its way within the wire?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Electrons wrap around the world only vertically.</p>
+<h2>RELATED MODELS</h2>
+<p>Current in a Wire, Series Circuit, Parallel Circuit.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the NIELS curriculum. The NIELS curriculum has been and is currently under development at Northwestern's Center for Connected Learning and Computer-Based Modeling and the Mind, Matter and Media Lab at Vanderbilt University. For more information about the NIELS curriculum please refer to http://ccl.northwestern.edu/NIELS/.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Sengupta, P. and Wilensky, U. (2008).  NetLogo Electron Sink model.  http://ccl.northwestern.edu/netlogo/models/ElectronSink.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>To cite the NIELS curriculum as a whole, please use:</p>
+<ul>
+<li>Sengupta, P. and Wilensky, U. (2008). NetLogo NIELS curriculum. http://ccl.northwestern.edu/NIELS/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2008 Pratim Sengupta and Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>To use this model for academic or commercial research, please contact Pratim Sengupta at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#114;&#97;&#116;&#105;&#109;&#46;&#115;&#101;&#110;&#103;&#117;&#112;&#116;&#97;&#64;&#118;&#97;&#110;&#100;&#101;&#114;&#98;&#105;&#108;&#116;&#46;&#101;&#100;&#117;">&#112;&#114;&#97;&#116;&#105;&#109;&#46;&#115;&#101;&#110;&#103;&#117;&#112;&#116;&#97;&#64;&#118;&#97;&#110;&#100;&#101;&#114;&#98;&#105;&#108;&#116;&#46;&#101;&#100;&#117;</a> or Uri Wilensky at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#117;&#114;&#105;&#64;&#110;&#111;&#114;&#116;&#104;&#119;&#101;&#115;&#116;&#101;&#114;&#110;&#46;&#101;&#100;&#117;">&#117;&#114;&#105;&#64;&#110;&#111;&#114;&#116;&#104;&#119;&#101;&#115;&#116;&#101;&#114;&#110;&#46;&#101;&#100;&#117;</a> for a mutual agreement prior to usage.</p>
+<!-- 2008 NIELS Cite: Sengupta, P. --></div>
+      </div>
+    </main>
+  </body>
+</html>

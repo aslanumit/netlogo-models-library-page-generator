@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dice Stalagmite HubNet</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Dice Stalagmite HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/Dice%20Stalagmite%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/HubNet Activities/Dice Stalagmite HubNet.png" alt="Screenshot of Dice Stalagmite HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Dice Stalagmite HubNet is a Participatory Simulation Activity (PSA) in probability for exploring dependent and independent events.  Specifically, you compare the outcome distribution of a compound event, the sum of two randomly "rolled" dice, to the outcome distribution of independent events, the values of these same dice, taken one die at a time.</p>
+<p>This model is a part of the ProbLab curriculum.  The ProbLab curriculum is currently under development at the CCL.  For more information about the ProbLab Curriculum please refer to http://ccl.northwestern.edu/curriculum/ProbLab/.</p>
+<h2>HOW IT WORKS</h2>
+<p>Participants each roll their own pair of dice (preferably dice of different colors) and input the outcome, for example, "5 2", through the client interface.  Each outcome appears at the top middle of the server interface, in the form of the same two dice.  Then, this pair is duplicated, and one pair moves to the right (the pair), and the other pair moves to the left (the singles).  On each side, there is a "picture bar chart": on the right, the bar chart is for sums of dice (2 through 12) and on the left, the bar chart is for individual die values (1 through 6).  The dice have to find their columns and slide down those columns.  On the right, the dice find the column of their sum, and on the left, the dice each finds its own column of its value.  The events in each of the charts are mirrored in their respective histograms.</p>
+<p>As the dice stack up, you begin to notice different typical distributions in each bar chart.  The "singles" chart (SINGLE DICE), on the left, grows to become equally distributed.  It's never really "flat," but we can never predict in advance which column will "win."  On the other hand, the "pairs" bar chart (PAIR SUMS), on the right, always grows to the shape of a triangle -- the closer a column is to the middle of the of chart, the taller it will be, eventually.</p>
+<p>This triangle of pairs emerges as a result of the probabilities of rolling each sum with a pair of dice.  These probabilities can be found by examining the number of ways there are to roll each sum, as shown below.</p>
+<pre><code class="language-text">                           61
+                        51 52 62
+                     41 42 43 53 63
+                  31 32 33 34 44 54 64
+               21 22 23 24 25 35 45 55 65
+            11 12 13 14 15 16 26 36 46 56 66
+</code></pre>
+<p>For example, there are four ways to roll a 5 (14, 23, 32 and 41), and thus the probability of rolling a 5 is 4/36, or 1/9.</p>
+<p>A printable sheet graphically depicting all of the combinations can be found here:
+http://ccl.northwestern.edu/curriculum/ProbLab/dice-total-distrib.doc</p>
+<h2>HOW TO USE IT</h2>
+<p>Make sure all participants are connected and have their clients.  Press GO.  Participants each roll their own pair of dice and then use their interface to input the result of the roll.  It is helpful (but not absolutely important) to have dice of different colors, because then you can differentiate between, say, a "2 5" and a "5 2."  That is helpful for comparing the outcomes to the combinatorial analysis of a pair of dice.</p>
+<p>Make sure your participants understand the difference between the two charts and how the dice find their columns (independently, on the left, and as a pair, on the right).  You can use the RANDOM-ROLL button and the speed slider to show this.</p>
+<p>Once you see that the sums chart is beginning to grow its "bump" in the middle, ask the participants if they are noticing anything.  If not, keep playing until participants notice the bump.  If you have worked on the combinatorial analysis of a pair of dice, participants may realize that they are getting in the pairs chart (PAIR SUMS) the same triangular shape they got in that analysis (see the ProbLab materials for this triangular shaped combinatorial space of a pair of dice).  A useful discussion could be around why an experiment with random outcomes mirrors the shape of a chart you built through careful analysis.  Note that the combinatorial-analysis chart has no duplicates -- each combination appears only once -- whereas the experiment does have duplicates.</p>
+<p>IMPORTANT NOTE: Because there is limited space in the view, when dice are stacking up near the top of either the singles area or the pairs area, the program bumps the die columns down, so that they can keep growing.  A useful way to think about this is that you are always looking at only the top section of each dice stack.  The plots, however, keep track of all the dice that have been rolled.</p>
+<p>Buttons:
+SETUP -- reset the dice in the world but keep the logged in clients.</p>
+<p>GO -- GO needs to be running so that participants can submit their dice rolls, and so that the dice can move (e.g. from RANDOM-ROLL).</p>
+<p>RANDOM-ROLL -- creates a random pair of dice that behaves the same as though it had been input by a client.  This is useful for preparing for class, for demonstrations to the classroom, and for boosting the activity of a relatively small group of participants.</p>
+<p>AUTO-FILL -- creates random pairs in a loop.</p>
+<p>Switches:
+COLORED-DICE? -- when set to "On", the dice that are created will be color-coded (from a set of 12 different colors) based on what client "rolled" them.</p>
+<p>Monitors:
+ROLLS -- the total number of rolls performed including random rolls and rolls from clients.</p>
+<p>Plots:
+SINGLE DICE -- histogram of independent outcomes of rolling dice (each die value is a separate event).</p>
+<p>PAIR SUMS -- histogram of compound outcomes from rolling dice (each sum of a pair of dice is an event).</p>
+<p>To start the activity over with the same group of students stop the GO button by pressing it again, press the SETUP button, and press GO again.  To run the activity with a new group of students press the RESET button in the Control Center.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The more events you stack up in the charts, the more the PAIR SUMS chart will take on a triangular shape.  Eventually, the '7' column will be the tallest, and then, in descending order, the '5' and '8,' the '4' and '9,' the '3' and '10,' the '2' and '11,' and the '1' and '12.'  The chart will not necessarily be perfect, but the more input the program gets, the closer the chart will approach this shape.</p>
+<p>At the same time, the SINGLE DICE graph approaches the shape of an equal distribution.
+The SINGLE DICE is never exactly equally distributed.  If you look at the chart, you'll see that one of the columns is "beating" the other columns.  So why do we call it "equally distributed" if it's not really equal?  Well, it may depend on whether we are attending to the differences between the heights of the columns (an "additive" approach) or if we're attending to the proportions of the heights (a "multiplicative" approach).  Once you've accumulated hundreds of pairs of dice, one column may be over ten rows taller than another, but when you look at its plot, SINGLE DIE, this difference will not appear as large as it is in the bar chart of the display.</p>
+<h2>THINGS TO TRY</h2>
+<p>If you are working alone on this PSA, for instance, if you are preparing for class, press GO and then type in the Command Center: simulate 1000.  This will allow you to see how the charts will look after, say, 30 students have each input 34 rolls.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Why settle for a pair of dice?  How would the charts look for three dice?  Do you expect any difference in the shapes of the outcome distributions?  Would the SINGLE DICE graph change at all?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model animates the movement of the dice and uses the <code>display</code> command to show the intermediate states.</p>
+<h2>RELATED MODELS</h2>
+<p>See the ProbLab model Dice Stalagmite that is essentially the same activity but is designed to be used by a single person.  See the ProbLab model 9-Block Stalagmite that conveys the same ideas as this model does but uses a different stochastic object (not a pair of dice).</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Thanks to Dor Abrahamson for his work on the design of this model and the ProbLab curriculum.  Thanks to Josh Unterman for building Dice Stalagmite and to Steve Gorodetskiy for converting it to the Dice Stalagmite HubNet.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Abrahamson, D. and Wilensky, U. (2004).  NetLogo Dice Stalagmite HubNet model.  http://ccl.northwestern.edu/netlogo/models/DiceStalagmiteHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2004 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This activity and associated models and materials were created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2004 Cite: Abrahamson, D. --></div>
+      </div>
+    </main>
+  </body>
+</html>

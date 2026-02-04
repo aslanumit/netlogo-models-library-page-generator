@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GasLab Single Collision</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>GasLab Single Collision</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/GasLab/GasLab%20Single%20Collision.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/GasLab/GasLab Single Collision.png" alt="Screenshot of GasLab Single Collision" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is one in a series of GasLab models that use the same basic rules for what happens when particles run into each other. Each one has different features in order to show different aspects of the behavior of gases.</p>
+<p>This model is simplified to show the collision of only two particles, since this event is so hard to watch when there are many particles in the world: given the initial motions of two colliding particles, what can we learn about their final motions from the principles of conservation of momentum and energy?</p>
+<h2>HOW IT WORKS</h2>
+<p>The particles are modeled as hard balls with no internal energy except that which is due to their motion.  Collisions between particles are elastic.  Particles are colored according to speed --wel- blue for slow, green for medium, and red for high speeds.</p>
+<p>Coloring of the particles is with respect to one speed (10).  Particles with a speed less than 5 are blue, ones that are more than 15 are red, while all in those in-between are green.</p>
+<p>Particles behave according to the following rules:
+1. A particle moves in a straight line without changing its speed, unless it collides with another particle or bounces off the wall.  The particles are aimed to hit each other at the origin.
+2. Two particles "collide" if they find themselves on the same patch (the world is composed of a grid of small squares called patches).
+3. A random axis is chosen, as if they are two balls that hit each other and this axis is the line connecting their centers.
+4. They exchange momentum and energy along that axis, according to the conservation of momentum and energy.  This calculation is done in the center of mass system.
+5. Each turtle is assigned its new velocity, energy, and heading.
+6. If a turtle finds itself on or very close to a wall of the container, it "bounces" -- that is, reflects its direction and keeps its same speed.</p>
+<h2>HOW TO USE IT</h2>
+<p>Initial settings:
+- COLLISION-ANGLE: Sets the angle that separates the pink and blue particles before the collision.
+- REFLECTION-ANGLE: Sets the angle of the axis connecting the particles' centers when they collide with respect to the vertical axis. To calculate the outcome of the collision, the speeds of the two particles are projected onto this new axis and the new speeds and headings are computed. Other GasLab models use random values for "REFLECTION-ANGLE", but this model allows you to experiment with them one by one. This angle is called THETA in the code of the model.
+- INIT-PINK-SPEED (or BLUE): Sets the initial speed of the pink (or blue) particle.
+- PINK-MASS (or BLUE): Sets the mass of the pink (or blue) particle.</p>
+<p>Other settings:
+- SHOW-CENTER-OF-MASS?: If ON, the center of mass of the system will be shown in gray.</p>
+<p>Buttons for running the model:
+- SETUP
+- RUN-MODE: Chooses between ONE COLLISION (just one run), ALL-COLLISION-ANGLES (loops through all the collision angles with 15-degrees steps) and ALL-REFLECTION-ANGLES(loops through all the reflection angles with 15-degrees steps).
+- GO</p>
+<p>Monitors:
+- ENERGY OF PINK (or -BLUE): Shows the current energy of the pink (or blue) particle.
+- SPEED OF PINK (or -BLUE): Shows the current speed of the pink (or blue) particle.
+- AVERAGE SPEED: Shows the average of the speeds of the two particles.
+- TOTAL ENERGY: Shows the sum of the energies of the two particles.</p>
+<p>Plots:
+- SPEEDS: speed of each of the particles over time.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>With COLLISION-ANGLE = 180 (directly across from each other) and REFLECTION-ANGLE = 90, it looks as if the two particles miss each other.  What is happening?</p>
+<p>With REFLECTION-ANGLE = 45 degrees, the particles go off at right angles. Why?  Draw a picture of what is happening at the moment of collision.</p>
+<p>With REFLECTION-ANGLE = 0 degrees, the two particles reverse direction. Why?</p>
+<p>What is the motion of the center of mass?  What would you expect it to be?</p>
+<h2>THINGS TO TRY</h2>
+<p>Set the reflection-angle to zero.  Draw a picture representing the two balls as they collide, with their two faces touching.  Make the line connecting their centers be the same as theta.  Draw vectors representing their motion.</p>
+<p>While running the following situations note the paths of the two particles.  Can you make sense of what they do?  Is it what you expected?</p>
+<p>Choose a COLLISION-ANGLE and a REFLECTION-ANGLE and choose ONE-COLLISION to see one particular collision.</p>
+<p>Choose a COLLISION-ANGLE and choose ALL-REFLECTION-ANGLES to cycle through all of the angles of reflection.</p>
+<p>Choose a REFLECTION-ANGLE and choose ALL-COLLISION-ANGLES to cycle through all of the angles of collision.</p>
+<p>Have the masses of the two particles be different.</p>
+<p>Have the initial speeds of the two particles be different.</p>
+<p>Change the initial positions and headings of the two particles.  As a simple case, set one on the y-axis and the other on the x-axis, (COLLISION-ANGLE = 90) each one heading toward the origin.  The center of mass is no longer stationary. Note its path.  Is it what you would expect?</p>
+<p>If the center of mass is not stationary, the two particles often have different speeds after they collide, even when they have identical initial speeds and masses!  Why does this happen?  How can this satisfy the conservation of both energy and momentum?</p>
+<p>The fact that the velocities are not always the same after every kind of collision is essential to getting a distribution of velocities among identical particles after many collisions, which is what we observe with particles in a gas.</p>
+<p>Does this seem like a reasonable model for colliding particles? When is it reasonably valid, and when is it decidedly NOT valid?</p>
+<p>When two particles collide, should theta be picked randomly -- each theta has an equal probability --- or in some other way?  Would this change the eventual velocity distribution among many particles?</p>
+<p>After you have gotten used to observing and understanding these simple collisions, go to the "Free Gas" or "Gas in a Box" model.  Especially watch the particle whose path is traced in gray.  Does it make sense?  Can you picture each collision?</p>
+<p>Record the velocities of each particle after each collision. After you have several sets of velocities, look at the entire velocity distribution. What do you notice? Is it the Maxwell-Boltzmann distribution?</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model was developed as part of the GasLab curriculum (http://ccl.northwestern.edu/curriculum/gaslab/) and has also been incorporated into the Connected Chemistry curriculum (http://ccl.northwestern.edu/curriculum/ConnectedChemistry/)</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo GasLab Single Collision model.  http://ccl.northwestern.edu/netlogo/models/GasLabSingleCollision.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2002.</p>
+<!-- 1997 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

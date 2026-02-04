@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GasLab Gas in a Box</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>GasLab Gas in a Box</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/GasLab/GasLab%20Gas%20in%20a%20Box.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/GasLab/GasLab Gas in a Box.png" alt="Screenshot of GasLab Gas in a Box" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model simulates the behavior of gas particles in a closed box, or a container with a fixed volume.  The path of single particle is visualized by a gray colored trace of the particle's most recent positions.</p>
+<p>This model is one in a series of GasLab models. They use the same basic rules for simulating the behavior of gases.  Each model integrates different features in order to highlight different aspects of gas behavior.</p>
+<p>The basic principle of the models is that gas particles are assumed to have two elementary actions: they move and they collide --- either with other particles or with any other objects such as walls.</p>
+<p>This model is part of the Connected Mathematics "Making Sense of Complex Phenomena" Modeling Project.</p>
+<h2>HOW IT WORKS</h2>
+<p>The particles are modeled as hard balls with no internal energy except that which is due to their motion.  Collisions between particles are elastic.  Particles are colored according to speed --- blue for slow (speed less than 5), green for medium (above 5 and below 15), and red for high speeds (above 15).</p>
+<p>The basic principle of all GasLab models, including this one, is the following algorithm:</p>
+<ol>
+<li>A particle moves in a straight line without changing its speed, unless it collides with another particle or bounces off the wall.</li>
+<li>Two particles "collide" if they find themselves on the same patch.</li>
+<li>A random axis is chosen, as if they are two balls that hit each other and this axis is the line connecting their centers.</li>
+<li>They exchange momentum and energy along that axis, according to the conservation of momentum and energy.  This calculation is done in the center of mass system.</li>
+<li>Each particle is assigned its new velocity, energy, and heading.</li>
+<li>If a particle finds itself on or very close to a wall of the container, it "bounces" --- that is, reflects its direction and keeps its same speed.</li>
+</ol>
+<h2>HOW TO USE IT</h2>
+<p>Initial settings:
+- NUMBER-OF-PARTICLES: number of gas particles
+- INIT-PARTICLE-SPEED: initial speed of the particles
+- PARTICLE-MASS: mass of the particles
+- BOX-SIZE: size of the box. (percentage of the world-width)</p>
+<p>The SETUP button will set the initial conditions.
+The GO button will run the simulation.</p>
+<p>Other settings:
+- TRACE?: Traces the path of one of the particles.
+- COLLIDE?: Turns collisions between particles on and off.</p>
+<p>Monitors:
+- FAST, MEDIUM, SLOW: numbers of particles with different speeds: fast (red), medium (green), and slow (blue).
+- AVERAGE SPEED: average speed of the particles.
+- AVERAGE ENERGY: average kinetic energy of the particles.</p>
+<p>Plots:
+- SPEED COUNTS: plots the number of particles in each range of speed.
+- SPEED HISTOGRAM: speed distribution of all the particles.  The gray line is the average value, and the black line is the initial average.
+- ENERGY HISTOGRAM: distribution of energies of all the particles, calculated as  m*(v^2)/2.  The gray line is the average value, and the black line is the initial average.</p>
+<p>Initially, all the particles have the same speed but random directions. Therefore the first histogram plots of speed and energy should show only one column each.  As the particles repeatedly collide, they exchange energy and head off in new directions, and the speeds are dispersed -- some particles get faster, some get slower.  The histogram distribution changes accordingly.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>What is happening to the numbers of particles of different colors?  Does this match what's happening in the histograms?  Why are there more blue particles than red ones?</p>
+<p>Can you observe collisions and color changes as they happen?  For instance, when a red particle hits a green particle, what color do they each become?</p>
+<p>Why does the average speed (avg-speed) drop?  Does this violate conservation of energy?</p>
+<p>The particle histograms quickly converge on the classic Maxwell-Boltzmann distribution.  What's special about these curves?  Why is the shape of the energy curve not the same as the speed curve?</p>
+<p>Watch the particle whose path is traced in gray.  Does the trace resemble Brownian motion?  Can you recognize when a collision happens?  What factors affect the frequency of collisions?   What about the how much the angles in the path vary?  Can you get a particle to remain in a relatively small area as it moves, instead of traveling across the entire box?</p>
+<h2>THINGS TO TRY</h2>
+<p>Set all the particles in a region of the box to have the the same heading -- what happens?  Does this correspond to a physical possibility?</p>
+<p>Try different settings, especially the extremes.  Are the histograms different?  Does the trace pattern change?</p>
+<p>Are there other interesting quantities to keep track of?</p>
+<p>Look up or calculate the <em>real</em> number, size, mass and speed of particles in a typical gas.  When you compare those numbers to the ones in the model, are you surprised this model works as well as it does?  Try adjusting these variables in the model to better match the numbers you look up.  Does this affect the outcome of the model?  What physical phenomena might be observed if there really were a small number of big particles in the space around us?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Could you find a way to measure or express the "temperature" of this imaginary gas?  Try to construct a thermometer.</p>
+<p>What happens if there are particles of different masses?  (See GasLab Two Gas model.)</p>
+<p>What happens if the collisions are non-elastic?</p>
+<p>How does this 2-D model differ from a 3-D model?</p>
+<p>Set up only two particles to collide head-on.  This may help to show how the collision rule works.  Remember that the axis of collision is being randomly chosen each time.</p>
+<p>What if some of the particles had a "drift" tendency -- a force pulling them in one direction?  Could you develop a model of a centrifuge, or charged particles in an electric field?</p>
+<p>Find a way to monitor how often particles collide, and how far they go between collisions, on the average.  The latter is called the "mean free path".  What factors affect its value?</p>
+<p>In what ways is this idealization different from the idealization that is used to derive the Maxwell-Boltzmann distribution?  Specifically, what other code could be used to represent the two-body collisions of particles?</p>
+<p>If <em>more</em> than two particles arrive on the same patch, the current code says they don't collide.  Is this a mistake?  How does it affect the results?</p>
+<p>Is this model valid for fluids in any aspect?  How could it be made to be fluid-like?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Notice the use of the <code>histogram</code> primitive.</p>
+<p>Notice how collisions are detected by the particles and how the code guarantees that the same two particles do not collide twice.  What happens if we let the patches detect them?</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model was developed as part of the GasLab curriculum (http://ccl.northwestern.edu/curriculum/gaslab/) and has also been incorporated into the Connected Chemistry curriculum (http://ccl.northwestern.edu/curriculum/ConnectedChemistry/)</p>
+<p>Wilensky, U. (2003). Statistical mechanics for secondary school: The GasLab modeling toolkit. International Journal of Computers for Mathematical Learning, 8(1), 1-41 (special issue on agent-based modeling).</p>
+<p>Wilensky, U., Hazzard, E &amp; Froemke, R. (1999). GasLab: An Extensible Modeling Toolkit for Exploring Statistical Mechanics. Paper presented at the Seventh European Logo Conference - EUROLOGO '99, Sofia, Bulgaria</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo GasLab Gas in a Box model.  http://ccl.northwestern.edu/netlogo/models/GasLabGasinaBox.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was developed at the MIT Media Lab using CM StarLogo.  See Wilensky, U. (1993). Thesis - Connected Mathematics: Building Concrete Relationships with Mathematical Knowledge. Adapted to StarLogoT, 1997, as part of the Connected Mathematics Project.  Adapted to NetLogo, 2002, as part of the Participatory Simulations Project.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2002.</p>
+<!-- 1997 2002 Wilensky --></div>
+      </div>
+    </main>
+  </body>
+</html>

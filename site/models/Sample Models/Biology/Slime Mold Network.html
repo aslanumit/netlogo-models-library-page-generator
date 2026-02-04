@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Slime Mold Network</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Slime Mold Network</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Slime%20Mold%20Network.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Slime Mold Network.png" alt="Screenshot of Slime Mold Network" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model emulates the growth and reaction to nutritive stimuli of Physarum Polycephalum, an acellular multi-nucleate amoeba more commonly referred to as a slime-mold. Their growth is modulated by varying velocities of cytoplasmic fluid found within the reticluted tubes that they develop in order to explore their environment. When the slime-mold finds food, it releases a molecular signaling agent that dilates the tubes, increasing fluid velocity and flow to that region. The changing fluid velocities found within the network change how it grows and retracts over time.</p>
+<h2>HOW PHYSARUM POLYCEPHALUM WORKS</h2>
+<p>Physarum Polycephalum explores its environment by expanding a network of reticulated tubes. These tubes contain an actin-mytosin cytoskeleton outer layer, which periodically contracts in a peristaltic wave-motion across the network to propel cytoplasmic fluid housed inside. These tube networks provide the organism with a food transport network. (Alim).</p>
+<p>P. Polycephalum uses these basic mechanisms to demonstrate complex behavior, such as navigating mazes to find the shortest route between food sources, and using said path-finding ability to reconstruct transportation maps of different cities (Alim).</p>
+<p>Large cities typically aim to optimize public transportation routes by reducing path length between stations, saving the city money and the passengers their time. The ability to recreate these public transport maps when given the station locations, then, should be indicative of some kind of path finding ability. When food is laid out on a flat surface with the same relative positions as the public transport stations in downtown Tokyo, Physarum Polycephalum is able to construct a plasmodic network with strongest paths that are remarkably similar in shape and structure to the actual transportation maps, indicating that it has found optimized path lengths (Alim).</p>
+<h2>HOW THIS MODEL WORKS</h2>
+<p>Nucleus agents are responsible for spawning fluid agents, and act as the starting point of a plasmodic network.
+At every tick, each nucleus agent will perform the following actions in order:</p>
+<ul>
+<li>Determine the difference between the maximum number of fluid particles and the current number</li>
+<li>Calculate some integer value of fluid particles to spawn based on a proportion of the previous value</li>
+<li>Spawn that many fluid particles in its close vicinity</li>
+<li>Set the amount of fluid in their current patches to 1</li>
+</ul>
+<p>Fluid agents represent the cytoplasmic fluid found within the cytoskeletal tubes of the network. They have properties that correspond to the strength of the chemical signal that is released when they find food, as well as their current velocity.
+At every tick, each fluid agent will perform the following actions in order:</p>
+<ul>
+<li>Set the amount of fluid in their current patch to 1, or more than 1 if carrying a food signal. The extra amount is modulated by the food-signal-boost parameter.</li>
+<li>If they currently inhabit a patch that contains a wall, die</li>
+<li>If they currently inhabit a patch that contains food, they will remove some proportion of food from the current patch determined by the eat-proportion parameter, and gain a food signal value determined by the signal-lifetime parameter.</li>
+<li>If carrying a food signal, other fluid agents that occupy the same patch in this tick will receive a food signal of the same value minus one. If another fluid agent in the same patch is carrying a food signal with a higher value, they will not inherit the food signal of lower value.</li>
+<li>Determine the fluid concentrations (patch fluid value) of 3 patches in front of them. These patches are always a distance of 1 patch away, and are measured 45 degrees to the left of, directly in front of, and 45 degrees to the right of the agent.</li>
+<li>If a wall is ahead, immediately turn 180 degrees</li>
+<li>Otherwise, determine the heading with the highest fluid concentration (the max of the 3 patches measured earlier), and aim in the direction of the new heading</li>
+<li>Apply a random rotation, where the upper bound of the random rotation value is determined by the fluid-turbulence parameter</li>
+<li>Move 1 unit in the direction of the newly determined heading</li>
+<li>If carrying a food signal, the value of the signal is decremented by 1</li>
+</ul>
+<p>Patches in this model have properties corresponding to whether or not they represent a wall, as well as how much food they contain. Wall patches are represented in bright red, and patches with any non-zero amount of food are represented in bright yellow. Patches also have a property corresponding to their fluid concentration, which is represented by a black to white gradient where pure white is the highest fluid concentration.
+At every tick, each patch will perform the following actions in order:</p>
+<ul>
+<li>Diffuse some portion of its own fluid to the 8 patches immediately adjacent to itself. The total amount dispersed is less than the amount lost by the patch, such that the diffusion of fluid causes a loss in total fluid volume of the system.</li>
+<li>If occupied by a fluid agent AND contains food, remove some proportion of the food from itself determined by the eat-proportion parameter</li>
+<li>If it contains a wall, set the fluid concentration to 0, and kill any agents inside</li>
+</ul>
+<h2>SIMPLIFYING ASSUMPTIONS AND LIMITATIONS</h2>
+<p>This model begins with the nuclei agents, which essentially act as cytoplasmic fluid generators. This is to some extent true in real life as well---the nuclei of P. Polycephalum act as its 'body', and cutting off or removing branches would not kill the organism. Fluid agents are spawned from these nuclei, and will begin branching out because of the innate randomness in their movements.</p>
+<p>The model makes several simplifying assumptions in order to emulate the behavior of P. Polycephalum. First, agents are not simply representative of a single fluid particle, but rather a volume of fluid that is specified in the model parameters. When the user determines a value for the total volume of fluid that an agent can represent, under the hood they are actually changing the rate of fluid removal from the system at each location. When lower fluid volumes are allowed per agent, the fluid is removed more rapidly.</p>
+<p>Second, agents (cytoplasmic fluid) are not walled off from the outside world in the way they would be in the real slime-mold due the reticulated tubes, but the way their movement is programmed allows them to act as such. When each fluid particle is asked to move, they first determine the direction of greatest fluid concentration ahead of them within a ~90 degree cone, and then move in that direction. This allows the fluid particles to flow in directions where fluid already exists and flows strongly, which emulates the behavior of a tube that would instead physically restrict fluid movement. However, this behavior allows already existing 'tubes' to branch off far more easily than their real life counterpart, as no physical barriers exist to prevent them from doing so. Consequently, simulated P. Polycephalum in this model is far more dynamic than its real life counterpart, and will change its structure in ways that real P. Polycephalum can not, such as merging branches or circular paths.</p>
+<p>The mechanism by which agents escape existing branches to create new ones is modeled by 'fluid turbulence', which is essentially a degree of random movement that is added to the movement behavior previously described. In adding this degree of random movement, fluid particles are enabled to create new branches provided their new randomly determined heading is in a new direction. Set this value to 0 to understand why it is necessary for proper network formation. In real physarum polycephalum, the exact mechanism by which new branches are formed and how the location of their formation is determined is not precisely understood, but it's likely that similarly random mechanisms are involved to some extent. One other thing this model misses is that the degree to which branches explore new paths is modulated by the fluid velocity found within that branch, such that bigger, stronger branches (near food) will be more exploratory and resource-intensive than their non-food-finding counterparts.</p>
+<p>Real Physarum Polycephalum reacts to a nutritive stimulus by sending a signaling molecule out from the point of contact, that both strengthens the peristaltic contraction of the local wall, and induces the release of the signaling molecule elsewhere in the network, albeit at a lower rate. The result is that tubes near food sources are strengthened, and because the amount of fluid in the network is constant (or at least not nearly as dynamic as its structure), the tubes that fail to find food or that are far away from food sources are dramatically weakened or even disappear. Because the fluid in this simulation all moves in parallel rather than through a peristaltic motion, the presence of the signaling molecule must instead modulate fluid velocity directly (we can not change the strength of the peristaltic contraction if no walls exist to contract). When a fluid particle is carrying a food signaling chemical, it is also more attractive to its neighbors in determining their direction of motion. The strength of this relationship is modulated by the 'food-signal-bonus' parameter, and different values will have wildly different outcomes depending on the values of the other model parameters. Because the chemical signal carried by the fluid must weaken over time, it decrements at every tick and at every transmission to other fluid particles.</p>
+<h2>VISUALIZATION</h2>
+<p>Because of the inherent relationship between the strength of a tube and the velocity of the fluid found within, it should prove useful to visualize both of these dimensions of the network independently. The default view of the network is much closer to its real life counterpart, and will show the network's fluid concentration at each location. Be careful however---tube size does not always correlate with 'strength', or velocity.</p>
+<p>By switching on visualize-velocity?, one can directly see the velocity of fluid agents in the network via color coding. Particles moving quickly are represented in red, while particles moving slowly are represented in green, with intermediate values being represented by shades in between.</p>
+<h2>HOW TO USE IT</h2>
+<p>To begin, press the SETUP button which will initialize the world-state. This button can be pressed again at any time to reset everything in the environment. To create the environment, use the DRAW button to place P. Polycephalum nuclei, walls, and food. Four distinct setup environments exist to demonstrate different aspects of the model:</p>
+<ul>
+<li>Single-nucleus (default): A world with a single nucleus in the middle</li>
+<li>Multi-nucleate: A world with 2 nuclei on either side of a patch of food</li>
+<li>Shortest-path: A world that demonstrates the ability of P Polycephalum to select the shortest-path</li>
+<li>Clear: A completely blank world state</li>
+</ul>
+<p>The BRUSH-SIZE slider can be used to adjust the size of the brush used to paint walls and food, and the eraser can be used to clean up mistakes or precisely refine the environment. Once the environment is ready, the GO button can be pressed to run the model. The model can be paused at any time by pressing the GO button again. The DRAW function maintains full functionality while the model is being simulated.</p>
+<p>If at any time the user can't find their way back to sensible model parameters, the RESET-PARAMETERS button can be used to revert the model to default parameter values.</p>
+<p>MAX-FLUID-PARTICLES: The maximum number of fluid particles that are to be simulated at any one time. The more particles there are, the larger the networks will become. Because the environment wraps, more particles beyond a certain point will produce a more robust network, rather than a larger one.</p>
+<p>TOTAL-FLUID-VOLUME: This variable dictates the static amount of fluid any one particle is responsible for representing in a given moment. The higher this value, the more fluid is represented by a single fluid-particle. Fluid volume per particle is modulated by changing the rate at which fluid decays from each patch.</p>
+<p>DIFFUSION-PROPORTION: This value controls the strength of the definition of the reticulated tube network. The higher the value, the more rigidly each tube is defined, and the more structured the network is likely to become. One may also conceptualize this as how 'zoomed in' one is in viewing the network.</p>
+<p>FOOD-SIGNAL-BOOST: This is the mechanism currently implemented for how food motivates behavioral changes within the mold. The higher this value, the more attractive signal-carrying fluid flows are. Contact with any nutritive stimulus induces the release of a signaling molecule that spreads throughout the network, disproportionately affecting shorter tubes. Because the total fluid volume of the network is limited, diversion of fluid to these tubes causes atrophy of tubes elsewhere in the network.</p>
+<p>EAT-PROPORTION: The proportion of food that gets carried away by a fluid particle when contacted. A value of 1 means that all food present at that patch gets carried by a single fluid particle when contact is made. A value of 0 creates a permanent nutritive stimulus at the target location. This can also be conceptualized as the viscosity of the nutritive substance, where values of 1 represent a highly mobile fluid and 0 represents a solid object.</p>
+<p>Note that an EAT-PROPORTION of 0 will be appropriate most of the time, as real Physarum Polycephalum takes a very long time to absorb and digest food that it finds. The network needs time to adapt and grow properly around the stimulus, so removing it too quickly will result in little or no change. The highly dynamic nature of the network also lends itself to quickly returning to its previous structure once the nutritive stimulus is no longer present, so the effects are transient as long as the presence of the food is transient as well. Most food sources presented in the literature are also solids (grains or oats, for example).</p>
+<p>FLUID-TURBULENCE: The amount of random variance in fluid particle movement within the tubes. Lower values will lead to more rigid structures. Higher values will lead to more tube branches within the network.</p>
+<p>MOVEMENT-SPEED: Controls the maximum possible fluid velocity in the network. Lowering this value from 100% tends to make networks less complex and less reactive.</p>
+<p>SETUP: clears the model visualization, resets all patch values to baseline, kills all agents</p>
+<p>G0: runs the model</p>
+<p>DRAW: Allows the user to draw or place the element currently selected by draw-choice. This allows the user to create custom environments to test different behaviors of the model</p>
+<ul>
+<li>Wall: Places a wall while the mouse is held. The slime mold can not penetrate this wall, and actively avoids contact. Use this to constrain the movement of fluid particles and guide network formation</li>
+<li>Food: Places a food of size brush-size at the mouse location. Food induces release of the signaling molecule.</li>
+<li>Nucleus: places a single slime-mold nucleus</li>
+</ul>
+<p>BRUSH-SIZE: Controls the size of the brush used to draw walls and food</p>
+<p>ERASER: When on, switch to eraser mode. This will allow the user to erase walls and food rather than drawing them.</p>
+<p>VISUALIZE-VELOCITY?: When on, switch visualization modes to visualize the velocity of fluid particles within the network, rather than total fluid. All particles become colored according to their velocity, where red represents the highest velocity particles in the network, and green the lowest. Velocity values are normalized to the interval [0, 1]  (with the highest and lowest velocity particles representing 1 and 0, respectively), which are then mapped to a green-red color gradient.</p>
+<p>VISUALIZE-SIGNALING-MOLECULE?: When enabled, displays where in the plasmodic network food signal is being propagated. Because the signaling molecule produces signal strengths above what is normally possible, patches in which the signaling molecule is present are easy to identify by checking if they pass that threshold. All patches that exceed the threshold of what is normally possible are colored yellow in this visualization.</p>
+<p>REMOVE-SLIME-MOLD: Kills all slime mold agents. Allows the user to 'reset' while preserving the custom environment.</p>
+<p>REMOVE CYTOPLASMIC FLUID: Removes all cytoplasmic fluid (spares nuclei). Useful for preserving exact network / model setup when testing network formation from scratch with different model parameters.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice how the strength of any given tube (its size) is proportional to its velocity. Switching between visualization modes is a great way to get an intuitive understanding of this mechanism. Notice how the weaker fringes of the network will appear green, and hot spots will appear red. In the standard visualization, these velocity differences will be reflected in the size of the respective tubes.</p>
+<p>When placing nutritive stimuli (especially permanent stimuli with eat-proportion = 0), notice how the network will adapt to be significantly more developed around the area of the food source, both in the strength of the tubes surrounding the food and the number of branching paths. Use VISUALIZE-SIGNALLING-MOLECULE? to gain more precise intuitions about how this works.</p>
+<h2>THINGS TO TRY</h2>
+<p>In order to best visualize path selection mechanisms, try to create environments in which paths have varying lengths. Remember that this is a process that occurs between food stimuli, rather than between food stimuli and nuclei.</p>
+<p>One can visualize vastly different types of networks by changing the total fluid volume and diffusion proportion. Decreasing diffusion proportion will make tube edges harder, and increase the number of branching paths, while increasing it will make the network sparse.</p>
+<p>All networks are highly reactive to changes in the food-signal-boost. There exists a very precise critical interval for any given set of model parameters (specifically with regard to fluid volume / diffusion) between which the behavior of the network in response to food changes dramatically. See if you can find this interval for a given set of model parameters, and watch how path formation differs across the input space for this parameter.</p>
+<h2>EXTENSIONS</h2>
+<p>This model has fluid agents 'look ahead' only a single patch in order to determine their new heading. What would happen if this look-ahead distance was changed to 2 patches, or 3? What changes about the type of structures that are formed? Do any new patterns emerge? Does some consistent relationship exist between changes in the look ahead distance and consequent changes in network structure formation?</p>
+<p>Right now agents can only move in one of 3 directions. What happens if agents are given more precision in the determination of their heading at each tick? What if, for example, probes for fluid concentration were not placed every 45 degrees within a 90 degree cone, but every 15 degrees within a 120 degree cone? What changes about their movement patterns?</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Jones, J. (2010). Characteristics of pattern formation and evolution in approximations of physarum transport networks. Artificial Life, 16(2), 127-153. https://doi.org/10.1162/artl.2010.16.2.16202</p>
+<p>Karen Alim, Natalie Andrew, Anne Pringle, Michael P. Brenner. (2017). Mechanism of signal propagation in P. polycephalum. Proceedings of the National Academy of Sciences May 2017, 114 (20) 5136-5141; DOI: 10.1073/pnas.1618114114</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Heidacker, N. and Wilensky, U. (2021).  NetLogo Slime Mold Network model.  http://ccl.northwestern.edu/netlogo/models/SlimeMoldNetwork.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>This model was developed as part of the Spring 2021 Multi-agent Modeling course offered by Dr. Uri Wilensky at Northwestern University. For more info, visit http://ccl.northwestern.edu/courses/mam/. Special thanks to Teaching Assistants Jacob Kelter, Leif Rasmussen, and Connor Bain.</p>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2021 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2021 MAM2021 Cite: Heidacker, N. --></div>
+      </div>
+    </main>
+  </body>
+</html>

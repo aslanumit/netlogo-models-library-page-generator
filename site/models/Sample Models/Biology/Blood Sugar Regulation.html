@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blood Sugar Regulation</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Blood Sugar Regulation</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Blood%20Sugar%20Regulation.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Blood Sugar Regulation.png" alt="Screenshot of Blood Sugar Regulation" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is an agent-based model of blood glucose regulation by the liver and pancreas through the production of the hormones insulin and glucagon.</p>
+<p>This model represents cells as square patches which are either brown (liver cells) or yellow (pancreatic cells), aligning with typical textbook depictions of these organs.  These two tissues work together to regulate the levels of the signal molecules glucose (white dots), insulin (blue dots), and glucagon (red dots) in the bloodstream.  For simplicity, the model does not explicitly show blood vessels, instead representing molecule motion through diffusion.</p>
+<p>The model demonstrates how glucose homeostasis is maintained in the body through feedback loops even without direction from a central regulator.  It also demonstrates how a variety of conditions like physical activity, eating, or metabolic disorders can affect this homeostasis.  Under each of these conditions, the blood sugar level emerges from the interactions between cells and signal molecules.</p>
+<h2>HOW IT WORKS</h2>
+<p>This model uses two broad classes of agents.  The first is cells, and the second is signal molecules.</p>
+<p>Liver cells (brown squares) and pancreatic cells (yellow squares) are arranged into a body.  In response to low glucose levels, pancreatic cells produce glucagon (red dots). In response to high glucose levels, they produce insulin (blue dots).  Liver cells detect the levels of insulin and glucagon and either sequester glucose (white dots) from the bloodstream or release stored glucose depending on the balance of the hormones. Liver cells also begin with a store of glycogen within themselves which can provision the body for several days.  This system relies on feedback loops between the liver and the pancreas to regulate the level of glucose in the blood.  This creates a dynamic equilibrium which has minor fluctuations but will generally maintain a constant amount of glucose in the bloodstream.</p>
+<p>The behavior of the cells is also dependent on their sensitivity to the different signal molecules.  When the cells are not very sensitive to a particular signal, they are not very good at detecting the presence of those signal molecules.  This means it will typically take more of those signal molecules to produce a particular response from the cell.</p>
+<p>The signal molecules produced by the cells move through the world by a random walk that simulates their diffusion through the body in the bloodstream.</p>
+<p>Over time, the body's metabolism will burn through the glucose in the blood and the glycogen stored in the liver cells.  This glucose can be replenished using the <code>EAT</code> button, which simulates nutrients being absorbed by the digestive system after a meal.  This means that glucose will be added in small amounts over time, like in the real world.  Eating several meals all in a row will not add glucose any more quickly, but it will increase the amount of time over which glucose is added.  This mirrors how people take longer to digest after eating more food.</p>
+<p>The model has some unavoidable differences from the real world.  For example, real bodies will also have some blood sugar fluctuations, but the fluctuation in this model is mainly because it is has a higher grain size than a real body.  Single ticks in the model correspond to a fairly long time (about 400 seconds), meaning that adjustments in the model take much longer than they would in a real body.  Also, because there are fewer molecules in the model than there are in a body, differences of only one or two molecules can have a much larger impact in the model than they would in a body.</p>
+<h2>HOW TO USE IT</h2>
+<p>This model can be used to examine the effects of a variety of factors on glucose homeostasis.  One of the most common factors that might affect this is activity level or exercise.  You can simulate changes in this by adjusting the <code>METABOLIC-RATE</code> slider.  Another common factor that influences homeostasis is eating, which can be simulated by pressing the <code>EAT</code> button.</p>
+<p>Other interesting factors that can be simulated include metabolic disorders.  These can be simulated by adjusting the <code>GLUCOSE-SENSITIVITY</code>, <code>INSULIN-SENSITIVITY</code>, and <code>GLUCAGON-SENSITIVITY</code> sliders.</p>
+<p>This model makes it easy to explore how different factors affect the body's homeostasis and how the body responds to food.  The best way to observe these changes is by looking at the <code>SIGNAL MOLECULES</code> plot in the bottom left corner.  Anything you change will affect this plot, which shows the amount of glucose, insulin, and glucagon in the blood over time.</p>
+<h3>Buttons</h3>
+<p><code>SETUP</code>:  Initializes variables and creates the initial cells and molecules.
+<code>GO</code>:  Runs the model.
+<code>EAT</code>:  Simulates eating by adding glucose to the bloodstream over a short period.</p>
+<p><code>FOLLOW-GLUCOSE</code>:  Highlights a glucose molecule until it is consumed or sequestered.
+<code>FOLLOW-INSULIN</code>:  Highlights an insulin molecule until it is broken down.
+<code>FOLLOW-GLUCAGON</code>:  Highlights a glucagon molecule until it is broken down.</p>
+<h3>Sliders</h3>
+<p><code>METABOLIC-RATE</code>:  The number of glucose molecules consumed by the body on each tick.
+<code>GLUCOSE-SENSITIVITY</code>:  The probability that pancreatic cells will detect a glucose molecule that is present.
+<code>INSULIN-SENSITIVITY</code>:  The probability that liver cells will detect an insulin molecule that is present.
+<code>GLUCAGON-SENSITIVITY</code>:  The probability that liver cells will detect a glucagon molecule that is present.</p>
+<h3>Monitors</h3>
+<p><code>INSULIN</code>:  Shows the number of insulin molecules in the bloodstream.
+<code>GLUCAGON</code>:  Shows the number of glucagon molecules in the bloodstream.
+<code>BLOOD GLUCOSE</code>:  Shows the number of glucose molecules in the bloodstream.
+<code>STORED GLUCOSE</code>:  Shows the number of glucose molecules stored in the liver.</p>
+<h3>Plots</h3>
+<p><code>SIGNAL MOLECULES</code>:  Shows the counts of glucose, insulin, and glucagon in the bloodstream.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Look at the <code>SIGNAL MOLECULES</code> plot while the model runs.  This plot shows the amount of glucose, insulin, and glucagon in the bloodstream over time.  Do the levels of these molecules change very much over time?</p>
+<p>The monitors just above this plot show the current level of each signal molecule in the bloodstream precisely.  The rightmost monitor shows the current amount of glucose stored in the liver.  How does this glucose reserve change over time?  How is this reserve affected by the metabolic rate?  How is it affected by eating?  How does this compare with your real world experience?</p>
+<p>Eating can affect several parts of the body.  When you click the <code>EAT</code> button, do the glucose, insulin, and glucagon levels in the blood increase or decrease?  How big is this change compared to the baseline levels?  How long does it take before they return to their baseline levels?  Why do you think the levels of these molecules change in this specific way?</p>
+<p>What happens if the body goes too long without eating?</p>
+<p>Normal blood insulin levels are around 68 pmol/L and normal blood glucagon levels are around 22 pmol/L.  How does this compare to what you see in the model?  Can you explain any differences you observe?</p>
+<h2>THINGS TO TRY</h2>
+<p>The default sensitivity values are meant to mimic a healthy metabolism.  Try to model type 2 diabetes, where the body's ability to detect insulin is dramatically reduced, by changing the sensitivity sliders.  What do you notice about the baseline glucose and hormone levels?  Are they higher or lower than in a healthy metabolism?  How much higher or lower are they?  Why do you think this happens?</p>
+<p>When you eat there is a small spike in blood glucose.  How big is the spike compared to the baseline glucose level?  What changes about this spike in a diabetic metabolism as compared to a healthy metabolism?  Is the spike taller in a healthy metabolism or in a diabetic metabolism?  How long does each metabolism take to get back to a normal blood glucose level?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>In this model all pancreatic cells are identical and release both hormones, but in the body they are differentiated into several types which each release only one hormone.  Does this change the model's behavior?</p>
+<p>The sliders in this model can effectively simulate type 2 diabetes, which results from low insulin sensitivity.  How could you model type 1 diabetes, which results from insufficient production of insulin?</p>
+<p>There are many other hormones which also play a role in metabolism.  For example, GLP-1 promotes insulin release, cortisol antagonizes insulin, and somatostatin suppresses the release of several hormones including insulin and glucagon.  Does adding more signal molecules noticeably change the regulation of blood glucose?</p>
+<p>The bloodstream also carries other nutrients like amino acids or fatty acids, which are regulated and interconverted based on the concentrations of these hormones.  How do these nutrients affect the hormone and glucose levels?  How does the composition of food intake affect hormone and glucose levels?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>NetLogo buttons typically cause a procedure to occur exactly once when the button is pressed or 'forever', meaning once each tick until the button is pressed a second time.  The <code>EAT</code> button in conjunction with the <code>add-glucose</code> procedure allows a button to run a procedure once every tick for the next N ticks.</p>
+<p>This model also implements a new function <code>random-binomial</code> in the style of the NetLogo primitives <code>random-normal</code>, <code>random-poisson</code>, etc. which takes in the defining parameters <code>n</code> and <code>p</code> and outputs a binomial-distributed random number. This method of combining random number generators to define a new random number generator can be applied generally to form many distributions beyond NetLogo's built in capabilities.</p>
+<h2>RELATED MODELS</h2>
+<p>Checkout some of the other Biology models in the Models Library for similar models of other biological phenomenon.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Woods, P. and Wilensky, U. (2017).  NetLogo Blood Sugar Regulation model.  http://ccl.northwestern.edu/netlogo/models/BloodSugarRegulation.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2017 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2017 Cite: Woods, P. --></div>
+      </div>
+    </main>
+  </body>
+</html>

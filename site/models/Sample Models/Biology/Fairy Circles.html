@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fairy Circles</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Fairy Circles</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Fairy%20Circles.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Fairy Circles.png" alt="Screenshot of Fairy Circles" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is inspired by the natural phenomenon, Fairy Circles, which can be observed in the Namib Desert in Namibia. In the real world, rings of healthy grasses with barren centers form in geometric configurations across the desert plains. These rings, with life cycles of 30-40 years, have been studied by biologists for years.</p>
+<p>This model is based on the recent theory proposed by <a href="https://www.nature.com/articles/nature20801">Tarnita and colleagues in 2017</a>. Fairy circles are formed and maintained through a multi-factor process. Subterranean termites create colonies, expand, and compete when they reach a neighboring colony. These termites eat the roots of the grasses surrounding their colonies. As they create colonies and eat grasses, the soil at their colonies becomes more porous and collects water. Grasses around the colonies compete for water. The grasses closer to the colony have more consistent access to water and become healthier. With this interaction of intraspecies competition, fairy circles form and are maintained.</p>
+<h2>HOW IT WORKS</h2>
+<p>This model creates a number of termite colonies that spawn termites. At each clock tick, termites randomly wander. If they find roots, termites will collect some of the roots and reorient towards the colony. Termites with roots take a step towards their home colony at each tick. When they reach the colony, the colony gains energy and the termite will go back to wandering. Termites die when they have reached the TERMITE-LIFETIME count. If a termite runs into a termite from another colony, they will fight and one will die.</p>
+<p>Colonies create new termites as they gain energy. When the colony has reached a peak size and has enough energy, it will hatch a new colony in the world. Termite colonies die if all the termites are gone.</p>
+<p>Grasses increase their root depth as they grow. They need water to maintain their growth. Grasses get water from the moisture in the soil. If grasses do not have enough water, they shrink and die if they have no roots.</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>Set the INITIAL-NUMBER-OF-COLONIES.</li>
+<li>Press the SETUP button.</li>
+<li>Press the GO button.</li>
+<li>Remaining slider parameters (see below) can be adjusted while the model is running.</li>
+<li>Look at monitors to see the number of termites that are currently fighting or the number of grasses that have died.</li>
+<li>Look at the plots to see the distribution of root depth and soil moisture, or the number of colonies in the world.</li>
+</ol>
+<h3>Parameters</h3>
+<p>INITIAL-NUMBER-OF-COLONIES: The initial number of termite colonies.
+ENERGY-GAIN-FROM-GRASS: The amount of energy termite colonies get from grass roots.
+POPULATION-NEEDED-TO-HATCH-NEW-COLONY: The amount of termites in a colony needed to create a new colony.
+TERMITE-LIFETIME: The number of ticks a termite lives.
+TERMITE-AGGRESSION: The range that termites will see and fight termites from another colony.
+MAX-ROOT-DEPTH: The maximum depth grasses will grow.
+MAX-MOISTURE-IN-SOIL: The maximum water the soil will hold.
+RAIN-RATE: The amount of rain water hitting a patch at each tick.</p>
+<p>Notes:
+- Termites lose one unit of life at each tick.
+- In order for plants to survive and grow, they require a base amount of water plus a proportion of water based on their root depth.</p>
+<h3>Plots and Monitors</h3>
+<p>DEAD GRASSES: monitors the number of patches that have dead grasses
+COLONY COUNT: plots the number of termite colonies present
+FIGHTING TERMITES: plots the number of termites that have seen a termite from another colony.
+ROOT DEPTH DISTRIBUTION: plots the distribution of root depth across all patches
+SOIL MOISTURE DISTRIBUTION: plots the distribution of soil moisture across all patches</p>
+<h3>Visualization</h3>
+<p>In this world, termite colonies are represented as magenta circles. Each colony as an initial number of green termites, a population that increases over time. While each patch is associated with both grasses and accumulated soil moisture, patches are colored to reflect the state of grasses in the world. Brown patches are those with dead grass. Green patches are those with living grass. The shade of green reflects the size of grasses. Grasses that are lighter greed have longer roots than those that are darker green.</p>
+<p>With this representation, the focus is on the aggregate level interactions between termite colonies and grasses. As such, the termites are visualized in green to background their behavior in the model.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Can you identify when Fairy Circles emerge in the model?  Notice where dead patches emerge in the model versus where grasses stay alive. Where do you see the healthiest grasses with the longest roots? Is this related to how water is distributed across the patches?</p>
+<p>Why do some termite colonies appear better at gathering food around them? Which termite or colony related parameters affect this?</p>
+<p>Watch the patterns of termite colonies emerge.  When are new colonies successful and when do they fail?</p>
+<p>Observe the root depth of grasses in the model. Is there a relationship between soil moisture and root depth?  Observe what happens When you change the parameters related to moisture (MAX-MOISTURE-IN-SOIL, RAIN-RATE).</p>
+<p>Why do you suppose that some variations of the model might be stable while others are not?</p>
+<h2>THINGS TO TRY</h2>
+<p>Increase and decrease the RAIN-RATE in the model and observe the outcome in the model. How does rain impact the development of Fairy Circles? Vary the MAX-MOISTURE-IN-SOIL, does this change the impact of rain-rate in the world?</p>
+<p>How does the MAX-ROOT-DEPTH change the size or pattern of fairy circles? Explore this parameter within the world.</p>
+<p>Explore termite aggression in the world. How does termite aggression affect the development of Fairy Circles?</p>
+<p>Can you find parameters that cause all termite colonies to die?</p>
+<p>This model simplifies the naturally observed phenomenon through assumptions like how termites fight, grasses grow, or how/when it rains in the model. Can you look through the code tab to find and modify one of these assumptions to reflect your understanding of the system?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Can you extend the model to add in soil porosity?</p>
+<p>Can you extend the model by making the intraspecies competition a switch that could be turned on and off?</p>
+<p>Can you extend the model by adding in seasonality that affects the rain rate?</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Termites</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model was inspired by the journal article:</p>
+<p>Tarnita, C. E., Bonachela, J. A., Sheffer, E., Guyton, J. A., Coverdale, T. C., Long, R. A., &amp; Pringle, R. M. (2017). A theoretical foundation for multi-scale regular vegetation patterns. Nature, 541(7637), 398-401.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Anton, G. and Wilensky, U. (2017).  NetLogo Fairy Circles model.  http://ccl.northwestern.edu/netlogo/models/FairyCircles.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2017 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2017 Cite: Anton, G. --></div>
+      </div>
+    </main>
+  </body>
+</html>

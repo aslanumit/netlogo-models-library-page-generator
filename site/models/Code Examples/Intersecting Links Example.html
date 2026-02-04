@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Intersecting Links Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Intersecting Links Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Intersecting%20Links%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Intersecting Links Example.png" alt="Screenshot of Intersecting Links Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This code example shows how to determine if two links intersect.</p>
+<h2>HOW IT WORKS</h2>
+<p>The work is done in the procedure called <code>intersection</code>.  First the code computes the intersection point of the lines containing the segments between the two nodes of the link, then checks to see if that intersection point is actually within both segments.  (The second check is easy to do because we already know the intersection point is on the lines, so we only need to check that the point's x coordinate.)  If two segments have the same slope, no intersections are marked.</p>
+<p>Since slope is undefined for vertical lines, special case code is used if either of the segments is vertical.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The <code>intersection</code> procedure computes m and c for both segments every time it is called.  This is wasteful if we are checking every turtle against every other turtle looking for intersections.  To speed up the model, make m and c link variables instead and compute them for all segments before checking for any intersections.</p>
+<p>The math assumes that the links don't extend beyond the edges of the world.  If you need to intersect turtles which go off the edges of the world, you'll need to add extra code.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Code Examples -&gt; Intersecting Lines Example: same as this example, but for line turtles instead of links</li>
+<li>Games -&gt; Planarity: has shorter code for determining whether two line segments intersect, without bothering to compute the location of the intersection point</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>To keep the math relatively simple, the code represents lines in slope-intercept form (y=mx+c); see http://mathworld.wolfram.com/Slope.html.</p>
+<p>Thanks to Gagandeep Singh for his work on this example.</p>
+<!-- 2007 --></div>
+      </div>
+    </main>
+  </body>
+</html>

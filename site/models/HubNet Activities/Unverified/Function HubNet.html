@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Function HubNet</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Function HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/Unverified/Function%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/HubNet Activities/Unverified/Function HubNet.png" alt="Screenshot of Function HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>In this activity students can explore functions.  Each student controls one point in the function.  The activity supports several different kinds of exploration, with open ended possibilities for learning.</p>
+<p>Students can try to make their points match an equation or description supplied by a teacher or student, or they can try to find an equation that best fits where their points are.  The class should be encouraged to find unique or interesting equations that fit the criteria, to enforce the ideas of equivalence and simplification.</p>
+<h2>HOW IT WORKS</h2>
+<p>When students log in they are assigned a character in the coordinate system.  Students control the character, which is merely a point placed in the coordinate system.  The teacher can send instructions to students.</p>
+<p>Teachers can challenge students to follow a rule like, "move until your y value equals your x value". Students can explore the space, pushing the boundaries of this rule, the point (1,1) works, but so does (-1,-1) and (-0.5, -0.5).</p>
+<p>Then students can explore alternate ways to phrase the rule, the function y = x defines this space, but so does y = 3 * x - 2 * x.</p>
+<p>Teachers can test students' functions, by graphing them over the class' set of points. You can use any valid NetLogo code to define the function in terms of y = f(x). You can also define inequalities in terms of x. See the How To Use It section for examples.</p>
+<h2>HOW TO USE IT</h2>
+<p>To run the activity press the GO button. To start the activity over with the same group of students stop the GO button by pressing it again, press the SETUP button, and press GO again. To run the activity with a new group of students press the RESET button in the Control Center.</p>
+<p>Buttons:
+SETUP - clears the grid, if you have moved the x-maximum and minimum sliders the grid will automatically resize and redraw.
+GO - starts the activity so students can move their characters around the grid.
+ENTER-EQUATION - prompts you to enter an equation to graph in the form y = f(x), where any valid NetLogo code can be used in the function defining y, for example: "y = x"
+or "y = 2 * pi * sin x". You can also define inequalities in terms of x for example: "y &gt;= 3 * x + 1". You can use any math operations supported by NetLogo and you should use correct NetLogo syntax. So instead of 2x you should enter 2 * x.
+CLEAR-LAST-EQUATION - removes the last equation graphed from the list and erases it from the grid</p>
+<p>Sliders:
+Y-MAXIMUM, Y-MINIMUM, X-MAXIMUM, X-MINIMUM - define the bounds of the grid the students work in. Note that this is different than the size of the world, this allows you to use different size spaces without the world growing too large. You could also increase the size of the world to get a higher resolution.</p>
+<p>Monitors:
+MOUSE POSITION - reports the position of the mouse in the grid.</p>
+<p>Switches:
+GRID? - toggles the grid lines on and off
+REVEAL-LEGEND? - toggles the legend of equations in the lower right hand corner</p>
+<p>Students' Equations:
+Students can send equations to the teacher, they appear in the STUDENT-EQUATION monitor.  The teacher can browse through them using the "&lt;" and "&gt;" buttons.
+GRAPH-STUDENT-EQUATION - graphs the equation displayed in the STUDENT-EQUATION monitor
+EDIT-STUDENT-EQUATION - allows the teacher to change the student equation, either to correct the syntax or to give feedback to the student. The edits are sent to the student.</p>
+<p>Linear Regression:
+If LINEAR-REGRESSION? is on all other equations will be erased and a line will be interpreted, using the students as points. The SLOPE, Y-INTERCEPT, and COEFFICIENT OF CORRELATION are calculated and displayed in the corresponding monitors.</p>
+<p>Send a Rule:
+The teacher can also send a rule for students to follow by clicking the SET-RULE button and entering the "verbal" rule.  The current rule is displayed in the RULE monitor.</p>
+<p>Client Interface:
+Buttons:
+Move your character around the grid by pressing the UP, DOWN, LEFT, and RIGHT buttons which move you STEP-SIZE in the specified direction.
+CHANGE APPEARANCE - changes the way the characters looks in the view</p>
+<p>Monitors:
+RULE - the rule set by the teacher.
+YOU ARE A: - a word description of your character
+LOCATED AT: - your coordinates in the grid</p>
+<p>Input Boxes:
+MY-EQUATION - enter your equation to turn into the teacher here</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Turn the LINEAR-REGRESSION? switch to on, to see the linear regression of your set of points.</p>
+<p>The legend can be turned on and off in the bottom right hand corner of the interface.</p>
+<p>The bounds of the grid are controlled by the corresponding sliders.  (They are distinct from the maximum and minimum world coordinates; the grid coordinate system does not depend on the patch grid coordinates.)</p>
+<h2>THINGS TO TRY</h2>
+<p>Ask the students to follow a verbal rule like "make your y coordinate match your x coordinate".  Then ask students to come up with an equation that fits the rule.  Graph the different equations.  Ask students to stretch the bounds of any given equation to come up with unique solutions.</p>
+<p>Adjust the range sliders so the center of the world is not in the center of the view and graph the same equations.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Students' equations are not checked for syntax errors until the teacher attempts to graph them.  Change the code for handling student equations so that it automatically lets students know if what they have submitted does not compile.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses the runresult primitive to approximate the y value for each x value, thus, functions can use any valid NetLogo code in the function defining y.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. and Stroup, W. (1999).  NetLogo Function HubNet model.  http://ccl.northwestern.edu/netlogo/models/FunctionHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1999 Uri Wilensky and Walter Stroup.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This activity and associated models and materials were created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 1999 Stroup --></div>
+      </div>
+    </main>
+  </body>
+</html>

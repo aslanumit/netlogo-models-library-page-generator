@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Radical Polymerization</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Radical Polymerization</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Chemical%20Reactions/Radical%20Polymerization.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Chemical Reactions/Radical Polymerization.png" alt="Screenshot of Radical Polymerization" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model explains kinetics of radical polymerization.  Radical polymerization can be thought of as the process of agglomeration of small molecules (monomers) into chains (polymer chains) initiated by active particles (radicals).</p>
+<p>An example of radical polymerization would be industrial polymerization of ethylene into polyethylene (PET):</p>
+<pre><code class="language-text">n C H  --------&gt; ~C  H~
+  2 4           2n 4n
+</code></pre>
+<p>A gaseous mixture of ethylene and oxygen (used as a catalyst), is pumped through a mile-long heated pipe.  As the mixture moves along the pipe, the molecules of ethylene polymerize into chains.  At the end of the pipe, the polymer is collected and co-products with low molecular mass are recycled.</p>
+<p>Molecules of oxygen turn into bi-radicals under the influence of high temperature:</p>
+<pre><code class="language-text">O --------&gt; *O-O*
+ 2
+</code></pre>
+<p>here the asterisk denotes a free electron.  These bi-radicals react with pi-bonds in ethylene and start the process of chain growth according to the scheme:</p>
+<pre><code class="language-text"> *O-O* + C H --------&gt; *O-O-CH-CH*
+          2 4                 2  2
+
+ *O-O-CH-CH* + CH-CH --------&gt; *O-O-CH-CH-CH-CH*
+        2  2     2  2                 2  2  2  2
+</code></pre>
+<p>We can thus think of radical polymerization as interaction between (bi-) radicals and monomers.</p>
+<p>Notice that if two radicals react with each other, they will form an inert compound and end the process of forming loner chains.</p>
+<p>Let us assume that we run polymerization using AIBN as an initiator which we denote by I.  We thus have the following kinetically distinct particles in the system:</p>
+<p>(i) Initiator molecules;
+(ii) Radicals;
+(iii) Monomers;
+(iv) "Dead" chains;</p>
+<p>A radical can react with a monomer, in which case it absorbs the monomer and increases its chain-length by 1.  Alternatively, a radical can react with another radical forming a "dead" molecule which does not react with other particles.  Let us denote by R(n) radicals which have reacted n times with monomers.  Let M stand for monomers and C(k) for "dead" chains of length k.  Then schematically we can describe the reactions by the following system of equations:</p>
+<pre><code class="language-text">        I --------&gt; 2 R(1)              (initiation)
+
+        R(n) + M --------&gt; R(n+1)       (growth)
+
+     R(n) + R(m) --------&gt; C(n+m)       (termination)
+</code></pre>
+<p>In this model, there are four breeds of turtles:
+- initiators (yellow turtles);
+- monomers (green turtles);
+- radicals (red turtles);
+- polymers (blue turtles).</p>
+<p>Each turtle carries a variable, chain-length.  Initially there are 200 turtles of monomer breed with chain-length set to 1.  There is also a user-defined number (<code>Io</code>) of initiator breed with chain-length set to 0.</p>
+<p>The rules are quite simple:</p>
+<p>(i) All turtles move around randomly.
+(ii) Yellow turtles (initiators) spontaneously break up into two red turtles (radicals) with probability Ki;
+(iii) Green turtles (monomers) react with red turtles (radicals) with probability <code>Km</code>.  If there is at least one radical on the same patch as the given monomer, the monomer dies and the chain-length of the radical which "killed" it is incremented by 1;
+(iv) Red turtles (radicals) react with each other pairwise.  If there is a pair of radicals on the same patch, they annihilate each other with probability <code>Kr</code> forming a polymer chain (a blue turtle);</p>
+<h2>HOW TO USE IT</h2>
+<p>With sliders one can control the initial number of initiators (<code>Io</code>) and reaction probabilities
+- <code>Ki</code> (initiator): probability of an initiator (yellow) creating two radicals (red);
+- <code>Km</code> (monomer): probability of reaction between monomers (green) and radicals (red), forming a radical with a longer chain length;
+- <code>Kr</code> (radical): probability of two radicals (red)  reacting to form a polymer chain (blue).</p>
+<p>Select the initial number of initiators <code>Io</code> and press the "setup" button.  To start the simulation press the GO button.  You can set the probabilities <code>Ki</code>, <code>Km</code> and <code>Kr</code> before or after you do setup.  You can also modify this constants on the fly during the execution of the GO procedure.</p>
+<p>One plot shows the number of initiators, monomers, radicals, and polymers.  The distribution of chain-lengths of polymers (blue) is shown in the second plot in the form of a histogram.  Each chain is labeled with its length.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Distribution of chain-length drastically depends on the mode of initiation.  If you select low values of <code>Io</code> and <code>Ki</code>, then the life expectancy of radicals will rise leading to longer chains.  However in this case the simulation will have to run too long in order to produce a sizable amount of long-length chains.   If you start the simulation with a lot of initiator which decomposes rapidly, radicals will tend to react with themselves and form low molecular oligomers.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try to find the optimum values for which the distribution is tight and the simulation runs at a reasonable pace.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try to implement the model of industrial production of polyethylene (PET) described above.  Are you going to have "dead" chains in this model?</p>
+<p>Can you modify the model so that visible "chains" of turtles actually form, like in the Follower model?</p>
+<h2>ADDITIONAL INFORMATION</h2>
+<p>Note that in real polymerization reactions, the outcomes are affected by the position and shapes of the chains in three-dimensional space.  This aspect of the reactions is not presented in this model.</p>
+<p>Although oxygen is widely used in industry as initiator of radical polymerization, scientists prefer to use other initiators in the lab, especially when the reaction has to be performed under conditions of atmospheric pressure and room temperature.  Two of the most frequently used lab initiators are benzoyl peroxide and 2-2'-azo-bis-isobutyrylnitrile (AIBN):</p>
+<pre><code class="language-text">    C H-C(O)O-O(O)C-H C
+ 6 5             5 6
+
+            CH     CH
+        | 3    | 3
+        CH -C--N=N-C- CH
+      3 |      |    3
+        CN     CN
+</code></pre>
+<p>Peroxydes and azo-compounds are extremely unstable and tend to break up into radicals very easily if exposed to moderate heat or light.  Here is the reaction of decomposition of AIBN:</p>
+<pre><code class="language-text">            CH     CH                     CH
+        | 3    | 3                    | 3     ^
+        CH -C--N=N-C- CH  --------&gt; 2 CH -C* + N  |
+      3 |      |    3               3 |     2
+        CN     CN                     CN
+</code></pre>
+<p>This reaction is irreversible because of the escape of nitrogen.</p>
+<h2>RELATED MODELS</h2>
+<p>Simple Kinetics series, Polymer Dynamics</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Radical Polymerization model.  http://ccl.northwestern.edu/netlogo/models/RadicalPolymerization.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1998 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

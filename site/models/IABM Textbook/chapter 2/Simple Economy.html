@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Economy</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Simple Economy</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/IABM%20Textbook/chapter%202/Simple%20Economy.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/IABM Textbook/chapter 2/Simple Economy.png" alt="Screenshot of Simple Economy" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is from Chapter Two of the book "Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo", by Uri Wilensky &amp; William Rand.</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<p>This model is in the IABM Textbook folder of the NetLogo Models Library. The model, as well as any updates to the model, can also be found on the textbook website: http://www.intro-to-abm.com/.</p>
+<h2>WHAT IS IT?</h2>
+<p>This model is a very simple model of economic exchange.  It is a thought experiment of  a world where, in every time step, each person gives one dollar to one other person (at random) if they have any money to give.  If they have no money then they do not give out any money.</p>
+<h2>HOW IT WORKS</h2>
+<p>The SETUP for the model creates 500 agents, and then gives them each 100 dollars.  At each tick, they give one dollar to another agent if they can.  If they have no money then they do nothing. Each agent also moves to an x-coordinate equal to its wealth.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to setup the model, then press GO to watch the model develop.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Examine the various graphs and see how the model unfolds. Let it run for many ticks. The WEALTH DISTRIBUTION graph will change shape dramatically as time goes on. What happens to the WEALTH BY PERCENT graph over time?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try running the model for many thousands of ticks. Does the distribution stabilize? How can you measure stabilization? Keep track of some individual agents. How do they move? Track the wealth of the wealthiest and poorest turtles. How do they change?</p>
+<p>Change the number of turtles. Does this affect the results?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Change the rules so agents can go into debt. Does this affect the results?</p>
+<p>Change the basic transaction rule of the model. What happens if the turtles exchange more than one dollar? How about if they give a random amount to another agent at each tick? Change the rules so that the richer agents have a better chance of being given money. Then try using a smaller chance. Or try a rule that says they give a percentage of their money rather than just $1. How does this change the results?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>NetLogo plots have an auto scaling feature that allows a plot's x range and y range to grow automatically, but not to shrink. We do, however, want the y range of the WEALTH DISTRIBUTION histogram to shrink since we start with all 500 turtles having the same wealth (producing a single high bar in the histogram), but the distribution of wealth eventually flattens to a point where no particular bin has more than 40 turtles in it.</p>
+<p>To get NetLogo to correctly adjust the histogram's y range, we use <a href="http://ccl.northwestern.edu/netlogo/docs/dictionary.html#set-plot-y-range"><code>set-plot-y-range 0 40</code></a> in the histogram's pen update commands and let auto scaling set the maximum higher if needed.</p>
+<h2>RELATED MODELS</h2>
+<p>Wealth Distribution.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Models of this kind are described in:</p>
+<ul>
+<li>Dragulescu, A. &amp; V.M. Yakovenko, V.M. (2000).  Statistical Mechanics of Money. European Physics Journal B.</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>This model is part of the textbook, “Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo.”</p>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2011).  NetLogo Simple Economy model.  http://ccl.northwestern.edu/netlogo/models/SimpleEconomy.  Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the textbook as:</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2011 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2011 --></div>
+      </div>
+    </main>
+  </body>
+</html>

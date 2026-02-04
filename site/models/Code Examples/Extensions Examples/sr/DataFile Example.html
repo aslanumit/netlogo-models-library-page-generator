@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DataFile Example</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>DataFile Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Extensions%20Examples/sr/DataFile%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Code Examples/Extensions Examples/sr/DataFile Example.png" alt="Screenshot of DataFile Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates the use of the <code>write.table</code> and <code>read.table</code> functions in R, showing how they can be used to save and load turtle positions.</p>
+<h2>HOW IT WORKS</h2>
+<p>When writing to a file, the model creates a set of turtles and writes their positions to the specified file. When reading a file, the model loads the positions from the specified file, creating a new turtle for each position.</p>
+<h2>HOW TO USE IT</h2>
+<p>First, select your desired output file in the <code>path</code> input widget. You can type a path directly into the input field, or you can click the <code>select path</code> button to open a file chooser dialog. After selecting an output file, click the <code>create-and-write-data</code> button. To load the turtle positions back in, clear the world with <code>clear-turtles</code>, then click the <code>load-and-show-data</code> button.</p>
+<p>For a more advanced writing example, you can use the <code>write-data-with-vector-dataframe</code> button to write the value of a turtle variable to the file along with each turtle's position. Note that the additional variable cannot be loaded after writing.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try extending the <code>create-and-write-data</code> and <code>load-and-show-data</code> procedures to allow writing and loading additional turtle variables, such as <code>heading</code> or <code>color</code>. For a more advanced extension, you can also try adding a procedure to load the data created by the <code>write-data-with-vector-dataframe</code> button.</p>
+<h2>RELATED MODELS</h2>
+<p>For more examples of the Simple R Extension, see the other example models in the <code>sr</code> folder.</p>
+<!-- 2025 --></div>
+      </div>
+    </main>
+  </body>
+</html>

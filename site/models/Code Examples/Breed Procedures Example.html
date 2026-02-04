@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Breed Procedures Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Breed Procedures Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Breed%20Procedures%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Breed Procedures Example.png" alt="Screenshot of Breed Procedures Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This shows how to use the <code>run</code> command to give different breeds different definitions of the "same" procedure.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>You could accomplish the same thing with code like this:</p>
+<pre><code>  ifelse breed = dogs
+  [ dogs-speak ]
+  [ ifelse breed = cats
+    [ cats-speak ]
+    [ cows-speak ] ]
+</code></pre>
+<p>but such code is tedious to write and runs slower.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The <code>run</code> command is fast when you use it over and over again on the same strings, so using this technique won't hurt the performance of your model.</p>
+<!-- 2007 --></div>
+      </div>
+    </main>
+  </body>
+</html>

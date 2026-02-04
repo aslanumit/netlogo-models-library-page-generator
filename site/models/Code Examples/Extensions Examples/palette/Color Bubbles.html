@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Color Bubbles</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Color Bubbles</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Extensions%20Examples/palette/Color%20Bubbles.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Code Examples/Extensions Examples/palette/Color Bubbles.png" alt="Screenshot of Color Bubbles" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Color Bubbles demonstrates the capabilities of <code>palette</code> 2.0.0 by offering a visually appealing demonstration of hue, saturation, brightness, and alpha (a value between 0 and 255 that represents the opacity of the agent, 255 is solid color, 0 is invisible). Users can use the palette commands to play with the color of the circles and background.</p>
+<p>This example makes use of two groups of palette primitives:</p>
+<h3><code>set-component</code> Primitives</h3>
+<p>The set component primitive group directly changes the component of a <em>color</em> without the list manipulations (which in the previous versions of the extension were required). In this example, we use the primitives to set the components of an agent's color. The model uses these commands to change the color of turtles and patches:</p>
+<ul>
+<li><code>palette:set-hue</code> <em>number</em></li>
+<li><code>palette:set-saturation</code> <em>number</em></li>
+<li><code>palette:set-brightness</code> <em>number</em></li>
+<li><code>palette:set-alpha</code> <em>number</em></li>
+</ul>
+<h3><code>component</code> Primitives</h3>
+<p>The component primitives report a component of an agent's color. This model uses the command to increase or decrease a component by a fixed amount. The primitives used in this model which are found in buttons under the "Change Turtles" note on the right hand side of the VIEW:</p>
+<ul>
+<li><code>palette:saturation</code></li>
+<li><code>palette:brightness</code></li>
+</ul>
+<p>In the UPDATE-COLORS procedure, we use four set component primitives group to change the colors of patches and turtles. The change turtle buttons increase or decrease the named component with component primitives, as does the ALPHA slider.</p>
+<p>For more information, see the documentation for the palette extension.</p>
+<!-- 2021 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Series Circuit</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Series Circuit</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/NIELS/Series%20Circuit.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/NIELS/Series Circuit.png" alt="Screenshot of Series Circuit" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a simplified, microscopic model of electrical conduction in a series circuit with two resistors (wires). It is based on Drude's free electron theory. The primary purpose of the model is to illustrate how electric current in one wire gets to be equal to electric current in the other even when the wires have different resistances: higher number of electrons moving slowly (towards the battery positive) in one wire, and fewer electrons moving faster in the other wire.</p>
+<h2>HOW IT WORKS</h2>
+<p>The wire in this model (represented by grey patches) is composed of atoms, which in turn are made of negatively charged electrons and positively charged nuclei.  According to the Bohr model of the atom, these electrons revolve in concentric shells around the nucleus.  However, in each atom, the electrons that are farthest away from the nucleus (i.e., the electrons that are in the outermost shell of each atom) behave as if they are free from the nuclear attraction.  These outermost electrons from each atom are called "free electrons".</p>
+<p>These free electrons obey a specific set of rules that can be found in the "Procedures" tab.  These rules are as follows: The applied electric voltage due to the battery imparts a steady velocity to the electrons in the direction of the positive terminal. In addition to this drift, the electrons also collide with the atomic nuclei (represented by the blue atoms) in the wire giving rise to electrical resistance in the wire. During these collisions, electrons bounce back, scatter slightly, and then start drifting again in the direction of the battery-positive.</p>
+<p>The voltage experienced by the electrons in each wire is inversely proportional to the resistance in each wire (The mechanism of how this emerges is beyond the scope of this model). Note that for simplicity, total voltage is set to 1, and the sum of the voltages in the two wires always equals 1.</p>
+<p>Also note that the initial number of free-electrons in each wire is modeled to be inversely related to the resistance in each wire. This is because some metals with high resistance have both a higher number of atoms as well as fewer free-electrons compared to metals with low resistance. It is very important to note that this is an approximate measure of resistance, which in reality also depends on many other factors. The effects of this (and other) approximation(s) used in this model are discussed in the "THINGS TO NOTICE" section.</p>
+<h2>HOW TO USE IT</h2>
+<p>The RESISTANCE-LEFT-WIRE and RESISTANCE-RIGHT-WIRE sliders determine how many atoms are in each wire, and also, the initial number of free-electrons in each wire.</p>
+<p>The WATCH AN ELECTRON button highlights an electron and traces its path. Press STOP WATCHING to remove the highlighting.</p>
+<p>Using HIDE ATOMS, as the name suggests, you can hide the atoms from view. This does not alter the underlying rules of the model, and is intended to make it easier for you to focus only on the electrons in each wire. The atoms can be brought back to view by clicking SHOW ATOMS.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>In some cases, electric current may be very close, but not exactly equal in both the wires. Also, when you change the resistance in one wire, the relative change in current in each wire (compared to the value of current prior to changing the resistance) may be slightly different than the value expected from Ohm's Law for a series circuit with two resistors.</p>
+<p>These inconsistencies result from the following approximations used in the model: a) random placement of atoms within the wires, b) the greatly simplified measure of resistance, and c) the simplified representation of collisions between electrons and atoms. The collisions neglect the finite size of the electrons and atoms, and in addition, are not based on exact mathematical calculations of the velocities before and after the collision.</p>
+<p>These approximations were designed on order to make the underlying NetLogo code easily understandable by users without a lot of background in mathematics or programming.</p>
+<h2>THINGS TO TRY</h2>
+<ol>
+<li>
+<p>Run the model with equal values of resistance in each wire. (Press SETUP every time you change the value of resistance in either wire.) Observe the current in both the wires.  Are these values equal? What about the number of electrons in each wire?</p>
+</li>
+<li>
+<p>Increase the resistance in one of the wires.  (Press SETUP every time you change the value of resistance in either wire.) Note the current in both the wires. Is current in each wire still equal?  What about the number of electrons in each wire?</p>
+</li>
+<li>
+<p>Set different values of resistance in each wire. Press SETUP and then run the model. Press WATCH AN ELECTRON.  Using a watch (or the value of TICKS displayed in the model), and note how much time the electron takes to travel through each wire.  Repeat this observation several times. Is the average time taken by electrons to travel through each wire different? If so, why?</p>
+</li>
+<li>
+<p>How would you calculate the total current in the circuit? Is it the same as current in each wire? Or is it the sum of the two currents? What are the reasons for your answer?</p>
+</li>
+</ol>
+<h2>EXTENDING THE MODEL</h2>
+<p>Can you divide the region between the two battery terminals into three wires (segments) instead of two?</p>
+<h2>NOTE TO ADVANCED USERS</h2>
+<ol>
+<li>Resistance is represented in NIELS models in two forms. In the first form of representation, which is used in the Current in a Wire model, the resistance of a material is represented by the number of atoms per unit square area. This representation foregrounds the rate of collisions suffered by free electrons making this the central mechanism of resistance.</li>
+</ol>
+<p>In the second form of representation, which is used both in this model as well as in the Parallel Circuit model, resistance determines not only the number of atoms inside the wire, but also the number of free electrons. This is a simplified representation of the fact that some materials with higher resistances may have a fewer number of free electrons available per atom.</p>
+<ol start="2">
+<li>
+<p>Both these forms of representations operate under what is known in physics as the "independent electron approximation". That is, both these forms of representations assume that the free-electrons inside the wire do not interact with each other or influence each other's behaviors.</p>
+</li>
+<li>
+<p>It is important to note that both these representations of resistance are, at best, approximate representations of electrical resistance. For example, note that resistance of a conducting material also depends on its geometry and its temperature. This model does not address these issues, but can be modified and/or extended to do so.</p>
+</li>
+</ol>
+<p>If you are interested in further reading about the issues highlighted in this section, here are some references that you may find useful:</p>
+<p>Ashcroft, J. N. &amp; Mermin, D. (1976). Solid State Physics. Holt, Rinegart and Winston.</p>
+<p>Chabay, R.W., &amp; Sherwood, B. A. (2000). Matter &amp; Interactions II: Electric &amp; Magnetic Interactions. New York: John Wiley &amp; Sons.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Electrons wrap around the world vertically.</p>
+<h2>RELATED MODELS</h2>
+<p>Electrostatics
+Electron Sink
+Current in a Wire
+Parallel Circuit</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the NIELS curriculum. The NIELS curriculum has been and is currently under development at Northwestern's Center for Connected Learning and Computer-Based Modeling and the Mind, Matter and Media Lab at Vanderbilt University. For more information about the NIELS curriculum please refer to http://ccl.northwestern.edu/NIELS/.</p>
+<p>The visualization of this model was guided by techniques described in the paper:</p>
+<p>Kornhauser, D., Wilensky, U., &amp; Rand, W. (2009). Design guidelines for agent based model visualization. Journal of Artificial Societies and Social Simulation, JASSS, 12(2), 1.
+ http://ccl.northwestern.edu/papers/2009/Kornhauser,Wilensky&amp;Rand_DesignGuidelinesABMViz.pdf .</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Sengupta, P. and Wilensky, U. (2007).  NetLogo Series Circuit model.  http://ccl.northwestern.edu/netlogo/models/SeriesCircuit.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>To cite the NIELS curriculum as a whole, please use:</p>
+<ul>
+<li>Sengupta, P. and Wilensky, U. (2008). NetLogo NIELS curriculum. http://ccl.northwestern.edu/NIELS/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Pratim Sengupta and Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>To use this model for academic or commercial research, please contact Pratim Sengupta at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#114;&#97;&#116;&#105;&#109;&#46;&#115;&#101;&#110;&#103;&#117;&#112;&#116;&#97;&#64;&#118;&#97;&#110;&#100;&#101;&#114;&#98;&#105;&#108;&#116;&#46;&#101;&#100;&#117;">&#112;&#114;&#97;&#116;&#105;&#109;&#46;&#115;&#101;&#110;&#103;&#117;&#112;&#116;&#97;&#64;&#118;&#97;&#110;&#100;&#101;&#114;&#98;&#105;&#108;&#116;&#46;&#101;&#100;&#117;</a> or Uri Wilensky at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#117;&#114;&#105;&#64;&#110;&#111;&#114;&#116;&#104;&#119;&#101;&#115;&#116;&#101;&#114;&#110;&#46;&#101;&#100;&#117;">&#117;&#114;&#105;&#64;&#110;&#111;&#114;&#116;&#104;&#119;&#101;&#115;&#116;&#101;&#114;&#110;&#46;&#101;&#100;&#117;</a> for a mutual agreement prior to usage.</p>
+<!-- 2007 NIELS Cite: Sengupta, P. --></div>
+      </div>
+    </main>
+  </body>
+</html>

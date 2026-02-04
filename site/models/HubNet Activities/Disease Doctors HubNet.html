@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Disease Doctors HubNet</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Disease Doctors HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/Disease%20Doctors%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/HubNet Activities/Disease Doctors HubNet.png" alt="Screenshot of Disease Doctors HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is a modified version of the Disease activity which, simulates the spread of a disease through a population.  In this version the population can consist of students, which are turtles controlled by individual students via the HubNet Client, androids, infectable turtles controlled by the computer and doctors, un-infectable turtles that can heal other turtles.  Doctors do not exist in the Disease activity.</p>
+<p>For further documentation on the original Disease activity, see the Participatory Simulations Guide found at http://ccl.northwestern.edu/rp/ps/index.shtml.</p>
+<h2>HOW IT WORKS</h2>
+<p>Turtles move around, possibly catching an infection, either randomly in the case of androids and doctors or as controlled by HubNet clients.  Healthy turtles on the same patch as sick turtles have an INFECTION-CHANCE chance also becoming sick.  A plot shows the number of sick turtles at each time tick, and if SHOW-SICK? is on, sick turtles have a red circle attached to their shape. Both students and androids can become sick, doctors cannot.  If an infectable turtle is on the same patch as a doctor they are cured.</p>
+<p>Initially, all turtles are healthy.  A number of turtles equal to INITIAL-NUMBER-SICK become sick when the INFECT button is pressed.</p>
+<h2>HOW TO USE IT</h2>
+<p>Quickstart Instructions:</p>
+<p>Teacher: Follow these directions to run the HubNet activity.
+Optional: Zoom In (see Tools in the Menu Bar)
+Optional: Change any of the settings.
+Optional: Add androids and doctors.</p>
+<p>Everyone: Open up a HubNet Client on your machine and type your user name, select this activity and press ENTER.</p>
+<p>Teacher: Have the students move their turtles around to acquaint themselves with the interface.  Press the INFECT button in the NetLogo interface to start the simulation.</p>
+<p>Everyone: Watch the plot of the number infected.</p>
+<p>Teacher: To start the activity again with the same group, stop the model by pressing the GO button, if it is on.  Change any of the settings that you would like.  Press the SETUP button or the CURE-ALL button, SETUP will kill the androids and doctors, CURE-ALL will not.</p>
+<p>Teacher: Restart the simulation by pressing the GO button again.  Infect some turtles and continue.</p>
+<p>Teacher: To start the simulation over with a new group stop the model by pressing the GO button, press the RESET button in the Control Center and follow these instructions again from the beginning.</p>
+<p>Buttons:</p>
+<p>SETUP - sets all students to an uninfected state, kills all androids, and increments the run-number so the data in the plot will overlay the previous run.
+CURE-ALL - sets all turtles to an uninfected state and increments the run-number.
+GO - runs the simulation
+CREATE-ANDROIDS - adds NUM-ANDROIDS randomly moving turtles to the simulation
+CREATE-DOCTORS - adds NUM-DOCTORS turtles that can heal other turtles
+INFECT - infects INITIAL-NUMBER-SICK of the turtles in the simulation
+NEXT &gt;&gt;&gt; - shows the next quick start instruction
+&lt;&lt;&lt; PREVIOUS - shows the previous quick start instruction
+RESET INSTRUCTIONS - shows the first quick start instruction</p>
+<p>Sliders:</p>
+<p>NUM-ANDROIDS - defines how many androids are created by the CREATE-ANDROIDS button
+NUM-DOCTORS - defines how many doctors are created by the CREATE-DOCTORS button
+ANDROID-DELAY - the delay time, in seconds, for android movement - the higher the number, the slower the androids move
+DOCTOR-DELAY - the delay time, in seconds, for doctor movement - the higher the number, the slower the doctors move
+INITIAL-NUMBER-SICK - the number of turtles that become infected spontaneously when the INFECT button is pressed
+INFECTION-CHANCE - sets the percentage chance that every tenth of a second a healthy turtle will become sick if it is on the same patch as an infected turtle</p>
+<p>Switches:</p>
+<p>WANDER? - when on, the androids and doctors wander randomly.  When off, they do not move
+SHOW-SICK? - when on, sick turtles add to their original shape a red circle.  When off, they can move through the population unnoticed</p>
+<p>Monitors:</p>
+<p>INFECTABLE TURTLES - the sum of students and androids since doctors cannot be infected.
+NUMBER SICK - the number of turtles that are infected</p>
+<p>Plots:</p>
+<p>NUMBER SICK - shows the number of sick turtles versus time</p>
+<p>Client Information</p>
+<p>After logging in, the client interface will appear for the students, and if GO is pressed in NetLogo they will be assigned a turtle which will be described in the YOU ARE A: monitor.  Their current location will be shown in the LOCATED AT: monitor.  If the student doesn't like their assigned shape and/or color they can hit the CHANGE APPEARANCE button at any time to change to another random appearance.</p>
+<p>The SICK? monitor will show "true" if your turtle is infected, or "false" will be shown if your turtle is not infected.</p>
+<p>The student controls the movement of their turtle with the UP, DOWN, LEFT, and RIGHT buttons and the STEP-SIZE slider.  Clicking any of the directional buttons moves their turtle in the appropriate direction a distance of STEP-SIZE.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>If no doctors are present no matter how you change the various parameters, the same basic plot shape emerges.  After using the model once with the students, ask them how they think the plot will change if you alter a parameter and when you add doctors.  Altering the initial percentage sick and the infection chance will have different effects on the plot.</p>
+<h2>THINGS TO TRY</h2>
+<p>Use the model with the entire class to serve as an introduction to the topic.  Then have students use the NetLogo model individually, in a computer lab, to explore the effects of the various parameters.  Discuss what they find, observe, and can conclude from this model.</p>
+<p>Ask students to predict how the shape of the plot change will change when doctors are added.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try to make the androids and doctors smarter about how they move around the world.</p>
+<p>Experiment with different infection scenarios, for example once a turtle is cured it builds immunity to the disease or turtles may still carry the disease and infect others even after it has been cured.</p>
+<h2>RELATED MODELS</h2>
+<p>Disease
+Disease Solo</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2006).  NetLogo Disease Doctors HubNet model.  http://ccl.northwestern.edu/netlogo/models/DiseaseDoctorsHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2006 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2006 --></div>
+      </div>
+    </main>
+  </body>
+</html>

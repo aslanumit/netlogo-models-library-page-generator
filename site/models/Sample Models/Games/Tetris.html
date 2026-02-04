@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tetris</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Tetris</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Games/Tetris.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Games/Tetris.png" alt="Screenshot of Tetris" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is the classic puzzle game, Tetris.  The game involves falling pieces composed of four blocks in different configurations.  The object of the game is to complete horizontal rows of blocks in the well.</p>
+<p>Any time a row is completed it disappears and the blocks above it fall down.  The more rows you clear with the placement of a single piece, the more points you receive.  If you clear enough rows, you move on to the next level.  The higher the level, the more points you receive for everything, but the pieces fall faster as well, increasing the challenge.</p>
+<h2>HOW TO USE IT</h2>
+<p>Monitors:
+-- SCORE shows your current score.
+-- LINES shows the number of lines you have cleared.
+-- LEVEL shows your current level.</p>
+<p>Sliders:
+-- STARTING-LEVEL selects the beginning level for the game.  Choosing a higher level to begin allows you to get more points faster and increase the initial falling speed.  Your level will not increase until your number of lines is 10*(level+1). (i.e. starting-level=3, level will stay 3 until 40 lines are cleared.)
+-- DEBRIS-LEVEL sets how many lines of random blocks will be created at the bottom of the well at the beginning of the game.</p>
+<p>Buttons:
+-- NEW sets up a new game with the initial settings.
+-- PLAY begins the game.</p>
+<p>Controls:
+-- ROTLEFT rotates the current piece 90 degrees to the left.
+-- ROTRIGHT rotates the current piece 90 degrees the right.
+-- LEFT moves the current piece one space left.
+-- DROP causes the current piece to drop to the bottom of the well immediately.
+-- RIGHT moves the current piece one space right.
+-- DOWN moves the current piece one space down.</p>
+<p>Options (Switches)
+-- SHOW-NEXT-PIECE? toggles the option which causes the piece which will appear in the well after you place the current one to be shown in a small box to the right of the well.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>There are seven types of pieces.  These are all the shapes that can be made by four blocks stuck together.</p>
+<pre><code class="language-text">   [][]      Square-Block - good filler in flat areas,
+   [][]         hard to place in jagged areas
+
+   [][][]    L-Block - fits well into deep holes
+   []
+
+     [][]    S-Block - good filler in jagged areas,
+   [][]         hard to place in flat areas
+
+   [][][]    T-Block - good average piece, can fit
+     []         almost anywhere well
+
+   [][]      Reverse S-Block (Or Z-Block) - good
+     [][]       filler in jagged areas, hard to
+                    place in flat areas
+
+   [][][]    Reverse L-Block - fits well into
+       []       deep holes
+
+   [][][][]  I-Bar - Only piece that allows you to
+                clear 4 lines at once (aka a Tetris)
+</code></pre>
+<p>Scoring System:
+Note: Points are scored using level + 1 so that points are still scored at level 0.
+-- 1 Line  = 50<em>(level + 1) points
+-- 2 Lines = 150</em>(level + 1) points
+-- 3 Lines = 350<em>(level + 1) points
+-- 4 Lines = 1000</em>(level + 1) points (aka a Tetris)
+-- Clear the board = 2000<em>(level + 1)
+-- Every piece = 10</em>(level + 1) points</p>
+<h2>THINGS TO TRY</h2>
+<p>Beat your highest score.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add options for changing the width and depth of the well.</p>
+<p>Add the option of including pieces composed of more than four blocks, or fewer.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model makes use of turtle breeds.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2001).  NetLogo Tetris model.  http://ccl.northwestern.edu/netlogo/models/Tetris.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2001 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

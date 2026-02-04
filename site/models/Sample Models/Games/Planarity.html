@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Planarity</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Planarity</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Games/Planarity.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Games/Planarity.png" alt="Screenshot of Planarity" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a puzzle game where you try to untangle a graph. (A graph is a collection of nodes connected by lines.) Try to reposition the nodes so that no two lines cross. The more nodes, the harder it gets!</p>
+<h2>HOW IT WORKS</h2>
+<p>The game knows how to generate solvable graphs, and it also knows how to detect whether any lines intersect. The details are in the Code tab.</p>
+<h2>HOW TO USE IT</h2>
+<p>Use the STARTING-LEVEL slider to choose the initial difficulty level. If you're a beginner, start at 1. Press SETUP to set up a new board, then press GO to play. Once the GO button is pressed, you can use your mouse to drag the nodes around.</p>
+<p>Every level is solvable. One you find a solution, you will automatically be taken to the next level.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The game only gives you solvable graphs. How might the game be able to guarantee this? (One answer is in the Code tab.)</p>
+<p>Can you draw an example of an unsolvable graph on a piece of paper? How many nodes are in the smallest unsolvable graph?</p>
+<p>On early levels, you can usually untangle the nodes without too much thought. On later levels, you'll probably need to develop some conscious strategies. What strategies do you find most effective? When your friends play, do they use the same strategies you do? Use the MOVES counter to keep track of how many moves it takes you to untangle the graph.</p>
+<h2>THINGS TO TRY</h2>
+<p>See how high a level you can solve.</p>
+<p>Try to solve each level in the fewest number of MOVES.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Are there any other ways of generating solvable graphs besides the SETUP-LEVEL? Does it matter what method is used? The more links you can make, the harder the level will be, but if you make too many links, the level might not be solvable at all!</p>
+<p>Wherever two links intersect, add a small, brightly colored turtle to mark the intersection. (You'll need two breeds of turtle, one for the nodes, one for the markers. Intersecting Links Example has code for locating the intersection points.)</p>
+<p>Make it possible to select multiple nodes and move them together.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The nodes are turtles; the lines connecting them are links. The code does not make use of patches (other than to make a plain white background).</p>
+<p>NetLogo does not have a primitive which detects whether two links intersect. To do the detection, the code uses the <code>subtract-headings</code> primitive and some math.</p>
+<h2>RELATED MODELS</h2>
+<p>Intersecting Links Example -- has sample code for finding the point where two links intersect (unlike this model, which only determines whether that point exists or not)</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Thanks to Josh Unterman and Seth Tisue for their work on this model and to Jim Lyons for coding advice.</p>
+<p>Original version created by John Tantalo, from an original concept by Mary Radcliffe. Tantalo's site is here: http://planarity.net/.</p>
+<p>Solvable graphs are called "planar graphs" by mathematicians. See https://en.wikipedia.org/wiki/Planar_graph.</p>
+<p>Thanks to Connor Bain for updating this model to work in NetLogo Web in 2021.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2007).  NetLogo Planarity model.  http://ccl.northwestern.edu/netlogo/models/Planarity.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 --></div>
+      </div>
+    </main>
+  </body>
+</html>

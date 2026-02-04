@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>plotting</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>plotting</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Extensions%20Examples/sr/plotting.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Code Examples/Extensions Examples/sr/plotting.png" alt="Screenshot of plotting" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>A demo illustrating how to use the SimpleR extension and how to use it to make plots.</p>
+<p>The model is based off of the "Simple Economy" model from the default models library. The only additions made are those related to the SimpleR extension.</p>
+<h2>HOW IT WORKS</h2>
+<p>In the create-r-plot procedure, the SimpleR extension is setup, wealth values of the turtles are sent over from the NetLogo process to the R environment and a plot is constructed.</p>
+<h2>HOW TO USE IT</h2>
+<p>Run setup and use "go" to run the model for a bit. Stop the model and then specify a filename for the output image file. The resulting file will be a .png regardless of the filename specified. Hit "create R plot image" and the resulting plot image should appear in the same directory as the .nlogo file.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice how NetLogo values are passed to the extension with sr:set.</p>
+<p>Additionally, notice how we need to convert the NetLogo <em>list</em> to an R numeric vector in order to create a histogram with it.</p>
+<p>Finally, see that we can pass repeating string parameters to sr:run in order to easily supply multiple lines of R code.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try performing more data analysis on the wealth data within the R code.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Writen by James Hovet in 2022</p>
+<!-- 2025 --></div>
+      </div>
+    </main>
+  </body>
+</html>

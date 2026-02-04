@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Random Network Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Random Network Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Random%20Network%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Random Network Example.png" alt="Screenshot of Random Network Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This shows how to create two different kinds of random networks.  In an Erdos-Renyi network, each possible link is given a fixed probability of being created.  In a simple random network, a fixed number of links are created between random nodes.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>SETUP-SIMPLE-RANDOM is fast as long as the number of links is small relative to the number of nodes.  If you are making networks which are nearly fully connected, then we suggest using the following code instead:</p>
+<pre><code>  ask turtles [ create-links-with other turtles ]
+  ask n-of (count links - num-links) links [ die ]
+</code></pre>
+<p>SETUP-ERDOS-RENYI can also be written using the same idiom:</p>
+<pre><code>  ask turtles [ create-links-with other turtles ]
+  ask links with [random-float 1.0 &gt; probability] [ die ]
+</code></pre>
+<p>Compared to the code in the Code tab, this avoids the potentially confusing use of <code>self &gt; myself</code>, but runs somewhat slower, especially if the linking probability is small.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Use the <code>layout-spring</code> command, or one of the other <code>layout-*</code> commands, to give the network a visually pleasing layout.</p>
+<h2>RELATED MODELS</h2>
+<p>Network Example - how to dynamically create and destroy links
+Preferential Attachment and Small Worlds (found under Sample Models, not under Code Examples) - how to create some other kinds of networks
+Network Import Example - how to create a network based on data from a file</p>
+<h2>CREDITS AND REFERENCES</h2>
+<ul>
+<li>http://mathworld.wolfram.com/RandomGraph.html</li>
+<li>https://en.wikipedia.org/wiki/Random_graph</li>
+</ul>
+<!-- 2007 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rugby</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Rugby</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/Rugby.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Mathematics/Rugby.png" alt="Screenshot of Rugby" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>"In rugby, after a try has been scored, the scoring team has the opportunity to gain further points by 'kicking a conversion'. The kick can be taken from anywhere on an imaginary line that is perpendicular to the try line (aka the goal line) and goes through the location on the try line where the try was scored.  Where should the kick be taken from to maximize the chance of a score?"</p>
+<h2>HOW IT WORKS</h2>
+<p>Instead of trying to solve this problem with calculus or geometry, we'll take a probabilistic approach and use NetLogo turtles and patches. Essentially, we'll have a player stand on each patch along the imaginary kick line (the vertical yellow line), and kick many balls in random directions.  Players receive one 'point' for each conversion they score.  The idea is that since each kick-angle is randomly chosen, those players who score the most points must be standing in the best positions.</p>
+<p>Note that this approach is quite different from the analytic approach. In the standard mathematical solution, one is expected to equate the best chance of scoring with the maximal angle from the kick line to the goal. In the probabilistic solution, this is not assumed. It emerges as the result if the playing field is assumed to be uniform. If, however, the model is extended to include wind or grass grain or decaying kick speeds, this solution adjusts gracefully in contrast to the brittle analytic solution.</p>
+<h2>HOW TO USE IT</h2>
+<p>We use three sliders to initialize the model:
+- GOAL-SIZE determines the size of the goal.
+- GOAL-POS is the x-coordinate of the left goal-post. It is placed GOAL-POS units away from the leftmost edge of the world.
+- KICK-LINE determines the x-coordinate of the kick-line. The kick line is KICK-LINE units away from the leftmost edge of the world.</p>
+<p>The left goal-post is at <code>(goal-pos - 0.5, min-pycor - 0.5)</code>, and the right goal-post is at <code>(goal-pos + goal-size - 0.5, min-pycor - 0.5)</code>. (0.5 is the horizontal or vertical distance between the center of the patch and its edge; this is needed because the goal posts are effectively in the corners of their patches.)</p>
+<p>Note that the values of KICK-LINE, GOAL-SIZE, and GOAL-POS may need to be adjusted to fit your current world-width.</p>
+<p>Press the SETUP button to initialize the model, after you've chosen appropriate values for the sliders. You'll see one rugby ball on each patch on the try line. When you're ready to star, press the GO forever-button. This will commence the kicking; rounds will be repeated and results accumulated until you stop the GO button. Two monitors show the distance of the winning player, and the distance the analytic solution says should be the winner. Two other monitors display how many balls have been kicked and how many resulted in goals.</p>
+<p>Watch the left-hand side of the playing field as the model runs. A histogram is being plotted of total points scored from each position along the kick line. The best scores (to date) for each round are highlighted in yellow (and their distance fromm the goal-line is displayed just to their right)-- the others are drawn in blue.The patch that is theoretically calculated to have the best score is shown in magenta and its distance is also displayed alongside it to the right.</p>
+<p>In addition to the sequence of rounds described above, if you turn on the SHOW-LEVEL-CURVES? slider and press SETUP, you will see the level-curves associated with the given set of slider settings. This allows you to visualize the field of solutions for the analytic case of a uniform field. Patches are colored according to how large the goal looks from that position. Along each connected curve of the same color, the goal appears to be the same size. From straight ahead, the goal appears maximally wide.  From a shallow angle, the goal looks smaller at the same distance along the try line.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Given a particular goal-line and kick-line, what are the best positions to kick from? Change the position and size of the goal. How do the 'best positions' change in relation to the goal's position? Then change the position of the kick line, and redo the trial. How does the performance compare when the kick line is farther away? Or closer?</p>
+<p>Examine the histogram at the left side of the world. What do you notice about it? What shape does it have? What does it tell you about the best locations to kick from?</p>
+<p>How does the experimental solution compare to the analytic solution? Given enough time, will the experimental solution converge to the analytic solution? If so, how long does it take?</p>
+<h2>THINGS TO TRY</h2>
+<p>Can you generalize the results given by the model? What are the relationships between the kick-line, the goal, and the best patch to kick from?</p>
+<p>Re-read the problem description given in the first paragraph of "What Is It?" Do you think that this model adequately answers the question asked? Why or why not?  What alternative solutions could you provide?</p>
+<p>It's important to understand that this NetLogo project isn't exactly the standard method for solving problems of this sort. (A more 'classical' approach would be to use techniques from geometry or calculus.) However, there are many advantages offered by the NetLogo method. Consider the following other variables that might affect the solution to the problem: wind speed, grass height, or the size/weight/skill of the player kicking. (Such a problem that considers 'real-world' parameters such as these may quickly become intractable under classical mathematics.) Try and think of how you'd solve the 'rugby' problem in its idealized version without using NetLogo. Then try and solve it, taking into account one or more of these extra features.</p>
+<p>In general, what advantages does the NetLogo solution have over the other methods? What disadvantages does it have?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Implement some of the features descibed above under "Things To Try"- e.g. wind speed, or the size of the player to kick the conversion from a particular position.</p>
+<p>There are a variety of plots you could have 'rugby' draw in a plot. Implement plotting procedures for some or all of the following: the number of successful kicks compared to the overall kicks, the plot of both types of kicks over time, or the difference in histograms depending on the locations of the kick-line (i.e. the value of KICK-LINE) and the goal-posts (GOAL-POS and GOAL-SIZE).</p>
+<h2>NETLOGO FEATURES</h2>
+<p>We draw our histogram straight to the view, unlike most other NetLogo models where the histogram is drawn in a separate plot.</p>
+<p>In order to make the actual patch coordinate system more consistent with the conceptual coordinate system (the distances used in the model). The origin is at the bottom left corner of the world, so all coordinates are positive.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>The problem is taken from a British mathematics textbook.</p>
+<p>For a fuller discussion, see Wilensky, U. (1996). Modeling Rugby: Kick First, Generalize Later? International Journal of Computers for Mathematical Learning. Vol. 1,  No. 1. p. 124 - 131. http://ccl.northwestern.edu/papers/rugby/</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo Rugby model.  http://ccl.northwestern.edu/netlogo/models/Rugby.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was developed at the MIT Media Lab using CM StarLogo.  See Wilensky, U. (1993). Thesis - Connected Mathematics: Building Concrete Relationships with Mathematical Knowledge. Adapted to StarLogoT, 1997, as part of the Connected Mathematics Project.  Adapted to NetLogo, 2001, as part of the Participatory Simulations Project.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1997 2001 Wilensky --></div>
+      </div>
+    </main>
+  </body>
+</html>

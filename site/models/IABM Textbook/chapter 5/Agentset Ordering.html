@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agentset Ordering</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Agentset Ordering</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/IABM%20Textbook/chapter%205/Agentset%20Ordering.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/IABM Textbook/chapter 5/Agentset Ordering.png" alt="Screenshot of Agentset Ordering" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is from Chapter Five of the book "Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo", by Uri Wilensky &amp; William Rand.</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<p>This model is in the IABM Textbook folder of the NetLogo Models Library. The model, as well as any updates to the model, can also be found on the textbook website: http://www.intro-to-abm.com/.</p>
+<h2>WHAT IS IT?</h2>
+<p>NetLogo has two different kinds of agentsets: constructed agentsets, that act as a 'snapshot' of a particular set of turtles at a particular point in time, and special agentsets that always contain the most updated list of turtles.</p>
+<p>This model explores the order with which constructed agentsets follow their commands.  In particular, this model explores how an agentset constructed by collecting agents with a certain property do not automatically update even if the properties of the agents change during a run of the model. The agentset continues to consist of the agents that had that property at the time of agentset construction. In other words, even though you ASK agents that have a particular criterion to take an action, not all agents after the ASK that satisfy that criterion will necessarily take that action, since some of the agent properties may have changed during the ASK execution.</p>
+<h2>HOW IT WORKS</h2>
+<p>SETUP creates a world of 100 blue turtles with random sizes between 0.0 and 2.0.</p>
+<p>GO constructs an agentset of all turtles with size &lt; 1.0, and asks them first to ask a big turtle to decrease its size, and then to turn red.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to create the turtles.  Then press GO to run the model for one tick.
+The RED TURTLES monitor shows the number of red turtles. The SMALL TURTLES monitor shows the number of turtles with size &lt; 1.0.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The number of red turtles is not the same as the number of turtles with size less than 1.0.  Even though all the turtles with size &lt; 1.0 were asked to turn red.  Why is this?</p>
+<h2>HOW TO CITE</h2>
+<p>This model is part of the textbook, “Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo.”</p>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Rand, W., Wilensky, U. (2008).  NetLogo Agentset Ordering model.  http://ccl.northwestern.edu/netlogo/models/AgentsetOrdering.  Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the textbook as:</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2008 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2008 Cite: Rand, W., Wilensky, U. --></div>
+      </div>
+    </main>
+  </body>
+</html>

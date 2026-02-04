@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Example HubNet</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Example HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/IABM%20Textbook/chapter%208/Example%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/IABM Textbook/chapter 8/Example HubNet.png" alt="Screenshot of Example HubNet" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is from Chapter Eight of the book "Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo", by Uri Wilensky &amp; William Rand.</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<p>This model is in the IABM Textbook folder of the NetLogo Models Library. The model, as well as any updates to the model, can also be found on the textbook website: http://www.intro-to-abm.com/.</p>
+<h2>WHAT IS IT?</h2>
+<p>This model provides the basic structure of the code for a HubNet model. For this reason, the model is very simple: all that each participant can do is move their turtle around the world.</p>
+<p>This model can be used as a template to build more complex participatory simulations.</p>
+<h2>HOW IT WORKS</h2>
+<p>The model first loads HubNet. It then listens to HubNet's messages, and does one of four things: If a new users has entered, it creates a turtle for that user. If a user presses the 'forward' button, it asks the user's turtle to move forward. If a user clicks somewhere in their turtle's view of the model, it makes their turtle face that direction. And if a user leaves HubNet, it removes that turtle from the world.</p>
+<h2>HOW TO USE IT</h2>
+<p>HubNet activities are used from two different interfaces. First, there is the server interface, from where you manage the simulation for all participants involved. Second, there is the client interface, that each participant uses to control their own little part of the simulation.</p>
+<h3>Server Interface</h3>
+<p>SETUP -- This button resets the simulation and opens the HubNet Control Center, from which you can see all the connected clients. Clicking LOCAL in the Control Center will allow you to create a client on your own computer so you can test the activity from a user's point of view.</p>
+<p>LISTEN-CLIENTS -- This button runs the activity: as long as LISTEN-CLIENTS is pressed, client messages are processed and the model is updated accordingly.</p>
+<p>COLOR PATCHES -- This button gives a new random color to each patch.</p>
+<h3>Client Interface</h3>
+<p>When using the model as a client, the view follows the turtle that you are controlling, showing only the part of the world immediately surrounding it.</p>
+<p>The client interface is just as simple as the server interface:</p>
+<p>FORWARD -- This button causes your turtle to move forward by one unit.</p>
+<p>LOCATION -- This monitor shows you the (x, y) coordinates of your turtle in the world.</p>
+<p>You can also click directly on the view: this will cause your turtle to face the location that was clicked, thereby allowing you to control the direction in which the turtle is going.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>When the turtles move over a black background, it is hard for a participant to tell that their turtle <em>is</em> indeed moving, unless there is another turtle in its immediate neighborhood. This is what the COLOR PATCHES button is for: the colorful background makes the movement of the turtle apparent.</p>
+<p>The lesson here is that designing an HubNet activity requires you to take the individual agent's point of view into account in addition to the "outside observer" point of view that is commonly used in NetLogo models. In this sense, HubNet activities are very much in the spirit of <em>agent-based</em> modeling.</p>
+<p>Note that HubNet messages are always sent between clients and the HubNet server, even if the model doesn't do anything with the messages. If HubNet messages are not fetched, they will queue up for the user to deal with later, using <code>hubnet-fetch-message</code>.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Our HubNet model is very simple, but our <code>listen-clients</code> procedure is already fairly long. For a more complex model, it could be worth spending a bit of time to separate the message handling logic from the actions that actually take place when different kinds of messages are received. Stripped to its core, <code>listen-clients</code> could be something like this:</p>
+<pre><code>to listen-clients
+  while [ hubnet-message-waiting? ] [
+    hubnet-fetch-message
+    ifelse hubnet-enter-message?
+      [ add-client-turtle ]
+      [ ifelse hubnet-exit-message?
+          [ remove-client-turtle ]
+          [ handle-client-action ]
+      ]
+  ]
+end
+</code></pre>
+<p>You would then need to fill out <code>add-client-turtle</code>, <code>remove-client-turtle</code> and <code>handle-client-action</code> with the code that we moved out of the procedure. If you wanted to push the modularization even further, you could have a different procedure for each possible client actions instead of handling them all in the <code>handle-client-action</code> procedure.</p>
+<p>This kind of modularization allow you to build complex models without loosing track of the high-level logic of your code.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The main NetLogo features used here are, unsurprisingly, the HubNet related primitives that allow you to build a collaborative simulation.</p>
+<p>Notice, also, that the COLOR PATCHES button is a bit different from the others: it has a little patch icon in its upper left corner, indicating that the code associated with it (<code>set pcolor one-of base-colors</code>) applies to all patches, just like if it had been enclosed inside an "<code>ask patches</code>" block.</p>
+<h2>RELATED MODELS</h2>
+<p>This model originally based upon the Template HubNet model from the library. All the models in the HubNet Activities folder of the library more or less share the same basic structure.</p>
+<h2>HOW TO CITE</h2>
+<p>This model is part of the textbook, “Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo.”</p>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Brady, C. &amp; Wilensky, U. (2012).  NetLogo Example HubNet model.  http://ccl.northwestern.edu/netlogo/models/ExampleHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<p>Please cite the textbook as:</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2012 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2012 Cite: Brady, C. & Wilensky, U. --></div>
+      </div>
+    </main>
+  </body>
+</html>

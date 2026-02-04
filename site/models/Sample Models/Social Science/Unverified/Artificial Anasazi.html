@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Artificial Anasazi</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Artificial Anasazi</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Unverified/Artificial%20Anasazi.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Social Science/Unverified/Artificial Anasazi.png" alt="Screenshot of Artificial Anasazi" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model simulates the population dynamics in the Long house Valley in Arizona between 800 and 1400. It is based on archaeological records of occupation in Long House Valley and shows that environmental variability alone can not explain the population collapse around 1350. The model is a replication of the work of Dean et al. (see references below).</p>
+<h2>HOW IT WORKS</h2>
+<h3>Agents and the environment</h3>
+<p>Each agent represents a household of five persons. Each household makes annual decisions on where to farm and where to settle. A household has an age, and a stock of food surplus
+previous years. Each cell represents a 100 meter by 100 meter space. Each cell is within one of the different zones of land: General Valley Floor, North Valley Floor, Midvalley Floor, Arable Uplands, Uplands Non-Arable, Kinbiko Canyon or Dunes. These zones have agricultural productivity that is determined by the Palmer Drought Severity Index (PDSI).</p>
+<h3>Initialization</h3>
+<p>The initial number of households is 14. Each household is initialized by setting a household age from the uniform distribution [0, 29] and by setting the value of the corn stocks by the uniform distribution [2000, 2400].  The quality of the soil of the cells is initialized by adding a number drawn from the normal distribution with standard deviation specified by HARVEST-VARIANCE.</p>
+<h3>Process overview</h3>
+<p>Every year the following sequence of calculations is performed:</p>
+<ol>
+<li>calculate the harvest for each household</li>
+<li>if agent derives not sufficient food from harvest and storage or the age is beyond maximum age of household the agent is removed from the system</li>
+<li>calculate the estimated harvest for next year based on corn in stock and actual harvest from current year</li>
+<li>agents who expect not to derive the required amount of food next year will move to a new farm location.</li>
+<li>find a farm plot</li>
+<li>find a plot to settle nearby</li>
+<li>if a household is older than the minimum fission age, there is a probability pf, that a new household is generated. The new household will derive an endowment of a fraction of the corn stock.</li>
+<li>update water sources based on input data</li>
+<li>the household's age increases by one year</li>
+</ol>
+<h3>Design concepts</h3>
+<ul>
+<li><em>Adaptation</em>. Agents adjust the location of farming and housing if they expect that current location is not sufficient next year.</li>
+<li><em>Prediction</em>. The prediction of harvest next year is the same as the experienced harvest from this year.</li>
+<li><em>Fitness</em>. Fitness of agent is determined by the amount of harvest derived and amount of corn in storage. An agent is either considered to be "fit" or not fit. If not sufficient food is available, it is removed from the system.</li>
+<li><em>Interaction</em>. Agents do not interact directly. Indirectly they interact by occupying potential farm plot. Agents represent households. In the model, reproduction is modeled at the household level.  Based on the age of the household and the availability of food, a household may give birth to an offspring household, which is representing a daughter who leaves the house and starts a new household (immediately with 3 children that require 160 kg corn per year).  These abstraction is simplistic, but still captures the essence of reproduction and population growth.</li>
+<li><em>Stochasticity</em>.  Initial conditions of cells and agents, and the order in which agents are updated.</li>
+</ul>
+<h2>HOW TO USE IT?</h2>
+<p>If you click on SETUP the model will load the data files and initialize the model. If you click on GO the simulation will start. You can adjust a number of sliders before you click on SETUP to initialize the model for different values.
+The slider HARVEST-ADJUSTMENT is the fraction of the harvest that is kept after harvesting the corn. The rest is assumed the be lost in the harvesting process. The default value is around 60%. If you increase this number much more agents than the historical record is able to live in the valley.
+The slider HARVEST-VARIANCE is used to create variation of quality of cells and temporal variability in harvest for each cell. If you have variance of the harvest some agents are lucky one year and need to use their storage another year. If there is no variance many agents will leave the valley at once when there is a bad year.
+The slider DEATH-AGE represents the maximum number of years an agent can exists. A lower number will reduce the population size.
+The slider FERTILITY-ENDS-AGE represents the maximum age of an agent to be able to produce offspring. A lower number will reduce the population size.
+The slider FERTILITY is the annual probability an agent gets offspring. A lower probability will reduce the population size.</p>
+<p>POPULATION GRAPH: the blue line shows the historical data, while the red line the simulated population size.</p>
+<p><strong>Maps</strong>. With the MAP-VIEW chooser you can select different ways to view the landscape on the right.</p>
+<ul>
+<li>ZONES: this will show you the different land cover zones.<ul>
+<li>Black: General Valley Floor</li>
+<li>Red: North Valley Floor</li>
+<li>White: Mid and North Dunes</li>
+<li>Gray: Midvalley Floor</li>
+<li>Yellow: Non-Arable Uplands</li>
+<li>Blue: Arable Uplands</li>
+<li>Pink: Kinbiko Canyon</li>
+</ul>
+</li>
+<li>WATER SOURCES: this will show you the different surface water sources like springs. This is changing over time due to input data on retrodicted environmental history. Households will chose new locations based on being nearby water sources.</li>
+<li>YIELD: Each cell is colors on the amount of yield can be derived from the cell. The more yield the lighter the color.</li>
+<li>OCCUPANCY: yellow cells are use for agriculture, red cells for settlements</li>
+</ul>
+<p>If HISTORIC-VIEW? is on you will see the locations of settlements according to the data. The settlements are shown as houses, and the size (area of the house shape) is proportional the number of households on that location.</p>
+<h2>BSD LICENSE</h2>
+<p>Copyright 1998-2007 The Brookings Institution, NuTech Solutions,Inc., Metascape LLC, and contributors.  All rights reserved.</p>
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+<ul>
+<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
+<li>Neither the names of The Brookings Institution, NuTech Solutions,Inc. or Metascape LLC nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</li>
+</ul>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>NetLogo replication of Artificial Anasazi model by Jeffrey S. Dean, George J. Gumerman, Joshua M. Epstein, Robert Axtell, Alan C. Swedlund, Miles Parker, and Steven McCarroll</p>
+<p>This model is a lightly adapted version of the prior replication work of Marco Janssen (with help of Sean Bergin and Allen Lee) who reimplemented the Artificial Anasazi model in NetLogo (the original model was written in Ascape).</p>
+<p>The code of this complex historical model is in the process of being refined by the NetLogo team, and still differs greatly from the usual standards of the Models Library.</p>
+<p>Janssen's version of the model is available at: https://www.comses.net/codebases/2222/releases/1.1.0/. (Furthermore, this "Info tab" is adapted from the ODD model documentation that accompanies that model.)</p>
+<p>Janssen's replication is discussed further in the following academic journal paper, which curious readers are highly encouraged to examine:</p>
+<p>Janssen, Marco A. (2009). Understanding Artificial Anasazi. Journal of Artificial Societies and Social Simulation 12(4)13 <a href="http://jasss.soc.surrey.ac.uk/12/4/13.html">http://jasss.soc.surrey.ac.uk/12/4/13.html</a>.</p>
+<p>Some follow-up work on calibration and sensitivity analysis of this model is published in:</p>
+<p>Stonedahl, F., &amp; Wilensky, U. (2010). Evolutionary Robustness Checking in the Artificial Anasazi Model. Proceedings of the AAAI Fall Symposium on Complex Adaptive Systems: Resilience, Robustness, and Evolvability. November 11-13, 2010. Arlington, VA. (Available:  http://ccl.northwestern.edu/papers/2010/Stonedahl%20and%20Wilensky.pdf)</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Stonedahl, F. and Wilensky, U. (2010).  NetLogo Artificial Anasazi model.  http://ccl.northwestern.edu/netlogo/models/ArtificialAnasazi.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2010 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2010 Cite: Stonedahl, F. --></div>
+      </div>
+    </main>
+  </body>
+</html>

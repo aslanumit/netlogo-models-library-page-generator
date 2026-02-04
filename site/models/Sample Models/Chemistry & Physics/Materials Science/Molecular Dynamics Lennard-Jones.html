@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Molecular Dynamics Lennard-Jones</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Molecular Dynamics Lennard-Jones</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Materials%20Science/Molecular%20Dynamics%20Lennard-Jones.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Materials Science/Molecular Dynamics Lennard-Jones.png" alt="Screenshot of Molecular Dynamics Lennard-Jones" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model of atoms interacting. Atoms are modelled as Newtonian objects (i.e., point masses with position and velocity) which apply forces on one another and move according to Newton's laws. This is known as a "molecular dynamics model."</p>
+<p>Many properties of matter can be modelled using this technique, such as phase changes, thermal expansion, crystal structure, which can all be seen in this model. Other emergent properties of matter can be modelled using molecular dynamics with more complicated interatomic potential functions that take into account the properties of different types of atoms.</p>
+<p>This model is similar to the Monte Carlo Lennard-Jones model in the models library, in that they both model matter using the Lennard-Jones potential. However, the computational techniques are different. Molecular dynamics computes the actual trajectories of atoms. This allows you to model how the system evolves over time, but it takes longer to model a given amount of time in the real world. In contrast, Monte Carlo uses statistically weighted random jumps to update the model state. This allows for computing the equilibrium state of the system more quickly, but the path that the system takes to get there is not necessarily realistic.</p>
+<h2>HOW IT WORKS</h2>
+<p>Atoms in this model interact according to the Lennard-Jones interatomic potential. In reality, the protons and electrons in each atom interact with the electrons and protons in other atoms. The opposite charge particles (protons in one atom and electrons in the other) attract and the same-charged particles repel. At close distances, the repulsion is stronger than the attraction and atoms exert a net repulsive force on each other. At long distances the attraction is stronger than the repulsion and the atoms exert a net attractive force on each other. At a specific distance the two forces balance and the net force they exert on each other is zero. To summarize, atoms (approximately) do not interact at long distances, attract at relatively short distances, and repel if they are squeezed too close together.</p>
+<p>At each tick in the model, atoms calculate the forces they feel from all the atoms around them and sum these forces into a single net-force vector. Based on this force, they are accelerated according to F=ma (a=F/m). They then move a small distance at their current velocity.</p>
+<p>The exact algorithm used in this model to update velocity based on forces and to move based on velocity is known as the Velocity Verlet algorithm, named after the French physicist Loup Verlet. The Velocity Verlet algorithm was chosen because it conserves energy (potential + kinetic energy will stay constant in the model) and it is easier to use than the other algorithms with this property. It is important for a physical model such as this one to not violate conservation of energy.</p>
+<h2>HOW TO USE IT</h2>
+<p>When you press the SETUP button, a number of atoms are created according to the NUM-ATOMS slider. If INITIAL-ARRANGEMENT is set to "random" then the atoms will be positioned randomly. If it is set to "Hexagonal Close Packed" the atoms will start in a hexagonally close-packed structure. The initial velocities are set so that the temperature of the system equals the TEMP slider. Remember, that temperature is actually a measure of the average kinetic energy of the atoms in the system. The BOND-STRENGTH slider determines the strength of bonds (how much energy it takes to break them).</p>
+<p>If CONSTANT-TEMPERATURE? is on, then the velocities of the particles are scaled each tick to keep the average temperate equal to the TEMP slider. You can think of this as the system being in thermal equilibrium with some outside body that is at that temperature. If CONSTANT-TEMP? is off, then the temperature is allowed to change away the initial temperature. You can think of this as the system being thermally insulated, and the interactions within the system can change the temperature. Note that temperature is on an arbitrary scale.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice how the atoms move at different temperatures. Notice what configuration the atoms solidify in. What is the maximum number of neighbors an atom can have?</p>
+<p>If CONSTANT-TEMP? is off and the INITIAL-ARRANGEMENT is random, what happens to the temperature? Why is this?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try running the simulation at different temperatures and bond-strengths. At what temperatures do phase changes happen? Does it depend on the bond strength?</p>
+<p>Try starting the atoms in random vs Hexagonal Close Packed configurations. What are differences between what happens at different temperatures from these two starting conditions?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try adding plots to graph the distribution of x and y velocities. What do the graphs look like?</p>
+<p>Try coloring the atoms based on their velocity or kinetic energy to see what the distribution looks like.</p>
+<p>Try adding a second type of atom of a different size. You will need to decide how to combine their two sigmas (which models atomic radius) in the <code>calc-force</code> procedure.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Monte Carlo - Lennard-Jones</li>
+<li>The GasLab models</li>
+<li>Electrostatics</li>
+<li>Dislocation Motion and Deformation</li>
+</ul>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses the <code>dx</code> and <code>dy</code> primitives to get the x and y components of the force atoms exert on one another. This is a way of decomposing the force vector into its x and y components.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model uses the integration method known as Velocity Verlet. See the <a href="https://en.wikipedia.org/wiki/Verlet_integration#Velocity_Verlet">wikipedia entry</a> for more information</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Kelter, J. and Wilensky, U. (2022).  NetLogo Molecular Dynamics Lennard-Jones model.  http://ccl.northwestern.edu/netlogo/models/MolecularDynamicsLennard-Jones.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2022 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2022 Cite: Kelter, J. --></div>
+      </div>
+    </main>
+  </body>
+</html>

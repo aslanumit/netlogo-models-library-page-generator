@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lattice Land - Triangles Explore</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Lattice Land - Triangles Explore</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Lattice%20Land/Lattice%20Land%20-%20Triangles%20Explore.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Lattice Land/Lattice Land - Triangles Explore.png" alt="Screenshot of Lattice Land - Triangles Explore" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p><em>Lattice Land - Triangles Explore</em> is one of several models in the Lattice Land software suite. Lattice Land is an interactive MathLand, a microworld in which students can uncover advanced mathematical thinking through play, conjecture, and experimentation. It provides another entryway into geometry, investigating the geometry of a discrete lattice of points. In Lattice Land, there is no one right answer and no pre-determined pathway you must travel. However, even seemingly trivial exercises can quickly become rich explorations.</p>
+<p>A lattice is an array of dots on a plane such that there is one dot at each coordinate (x,y), where x and y are integers. Thus each dot on the lattice is one unit away from each of its four closest neighbors (one above, one below, one to the left, and one to the right). A lattice triangle is a triangle whose vertices fall on dots of the lattice.</p>
+<p>The setup of this model resembles a traditional GeoBoard with 25 pegs and 16 square units. In this exploratory triangles model, you can click and drag the vertices of a lattice triangle to explore all possible triangles within this space. You can track and explore the relationships between side lengths, perimeter, and area of triangles, as well as the space of possible and impossible lattice triangles.</p>
+<h2>HOW IT WORKS</h2>
+<p>We've implemented a lattice in NetLogo by using agents called DOTS sprouted at the center of each patch. The segments between the dots are simply edges or links. The environment then responds to click-and-drag of the mouse.</p>
+<p>In this model, the lattice is restricted to a 4 unit by 4 unit lattice. Additionally, the user can only work with the triangle, which is randomly generated at setup. This model mimics the appearance and functionality of the popular geometry manipulative GeoBoard. Students can make triangles with areas ranging from 0.5 square units to 8 square units, and every 0.5 square-unit increment in between. This will require them to create triangles which have neither base nor height parallel to the Cartesian x- or y-axis.</p>
+<p>This model uses Heron's Formula to calculate area of a triangle:</p>
+<ul>
+<li>Area = sqrt(s(s-a)(s-b)(s-c))</li>
+<li>where s is the semiperimeter (half the perimeter) of the triangle</li>
+</ul>
+<h2>HOW TO USE IT</h2>
+<p>The SETUP button creates a world with the given dimensions and size set by the sliders.</p>
+<p>Press the GO button.</p>
+<p>Click and hold any vertex of the triangle to drag the vertex to any other DOT on the lattice.  Create triangles with different areas and perimeters.</p>
+<p>Look at the three LENGTH OF SIDE monitors to track the lengths of sides S1, S2, and S3, labeled on the triangle.</p>
+<p>Press CHECK-AREA to verify area calculations.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Students should be encouraged to think about how they define a triangle. Not all possible constructions with this model are what we typically think of as triangles. For example, if all three sides of the triangle are collinear is it still a triangle? (In this example, we have a three-sided closed figure, but it forms a line segment.) How can we make more rigorous definitions of "triangle" to exclude non-triangles?</p>
+<h2>THINGS TO TRY</h2>
+<p>Consider all the ways we classify triangles. Some triangles are easy to construct (right triangles, or isosceles triangles) while others are impossible in Lattice Land. Challenge students to prove why it is impossible to construct an equilateral triangle in Lattice Land. It is helpful to use the LENGTH monitors to help determine distances when they appear to be similar.</p>
+<p>See if you can generalize some rules or formulas for the area of lattice triangles.</p>
+<ul>
+<li>What is the smallest possible area you can get on the lattice?</li>
+<li>What is the largest possible area you can get with a GeoBoard Triangle?</li>
+<li>Notice that you can produce a triangle with every possible area in between (at 0.5 square unit increments).</li>
+<li>How many different triangles can you create on the GeoBoard with the same area?</li>
+</ul>
+<h2>EXTENDING THE MODEL</h2>
+<p>This model does not report the angles within the triangle. How would you incorporate angles into the study of triangle area?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses continuous updates, rather than tick-based updates. This means that the model does not update at regular time intervals (ticks) dictated by the code. Instead, this model updates when the user performs an action. Thus, the depth of inquiry into the mathematics of Lattice Land is dictated by the user: nothing (other than the lattice) is generated until the user draws something.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Lattice Land - Triangles Dissection</li>
+<li>Lattice Land - Explore</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Pei, C. and Wilensky, U. (2017).  NetLogo Lattice Land - Triangles Explore model.  http://ccl.northwestern.edu/netlogo/models/LatticeLand-TrianglesExplore.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2017 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2017 Cite: Pei, C. --></div>
+      </div>
+    </main>
+  </body>
+</html>

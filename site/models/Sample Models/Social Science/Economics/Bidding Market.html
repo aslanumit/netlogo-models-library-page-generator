@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bidding Market</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Bidding Market</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Economics/Bidding%20Market.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Social Science/Economics/Bidding Market.png" alt="Screenshot of Bidding Market" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates a very simple bidding market, where buyers and sellers try to get the best price for goods in a competitive setting.</p>
+<h2>HOW IT WORKS</h2>
+<p>The agents in the inner ring of represent sellers, who bring some goods they want to sell to the market. The agents in the outer ring are the buyers, who bring money to the market to buy the goods.</p>
+<p>Each round (tick), the buyers move to their right (counter-clockwise) and are paired with a seller. Then each buyer checks its paired seller's asking price. If it's lower than their asking-price, they'll buy 1 item. If it's higher, they'll buy nothing. Then each seller individually decides to either raise prices or lower prices based on their buyer's behavior. The buyers also individually lower or raise their expectations based on their seller's behavior.</p>
+<p>The market will run through rounds until no buyer who wants to buy an item has money left to spend, or until all items are bought.</p>
+<h3>PURCHASE DISPLAY</h3>
+<p>If a purchase is made, the link from seller to buyer turns yellow and a little star animation will start. Otherwise, the link will be blue with no animation.  If the transactions still take place too quickly to be noticed, the speed slider can slow the model down a bit.</p>
+<p>As buyers get what they want, they get bigger and fill their maximum-buy-sized gray shadow. If they fully satisfy their demand, they'll turn dark grey.</p>
+<p>Sellers start with a size based on how many items they brought to the market.  As they sell items, they get smaller. If they sell all their items, they'll turn dark grey.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to generate a market, then the GO-ONCE button to run a single round, or the GO button to run the market until it completes.</p>
+<ul>
+<li>Initial supply and demand can be High or Low, and distributed can be even among all buyers and sellers or concentrated among a few.</li>
+<li>Behavior is set when SETUP is run and can be set to one of a few options (the description given is for buyers, but mirrored for sellers):<ul>
+<li>Normal - buyers will increase their willing to pay by a small amount if they are unable to make a purchase, otherwise they'll lower their willing-to-pay if they do manage to buy an item.</li>
+<li>Desperate - increases the amount buyers will increase thier willing-to-pay when they fail to make a purchase.</li>
+<li>Random - the behavior of each buyer will be random - some will be very desperate, others might decrease the amount they're willing-to-pay when they fail to make a purchase.</li>
+<li>Mix of all - each buyer will be set to one of the three above behaviors randomly.</li>
+</ul>
+</li>
+<li>You can also toggle whether sellers will consider full buyers or not. A full buyer is one who has already satisfied their demand. This would simulate the sellers being able to tell who is walking past their market stall without even looking at the items' prices.</li>
+</ul>
+<h2>THINGS TO NOTICE</h2>
+<p>Try slowing the tick speed down and watching a single buyer on the outside ring as it moves. See how it gets bigger when it makes a purchase and its link turns yellow, and how big it is when it turns completely dark grey (if it does).</p>
+<p>Run the model multiple times with the same settings to get an idea of what's happening to the asking and buying prices over time.</p>
+<h2>THINGS TO TRY</h2>
+<p>Play around with the different setup options to try the following:</p>
+<ul>
+<li>Can you get to 100% of both items sold and demand satisfied? If not, how close can you get?</li>
+<li>What's the longest you can get a market to run for (in number of ticks)?</li>
+<li>What's the highest average price you can get at the end of a round?</li>
+<li>Sometimes the market stops when there are buyers on the outside ring who still want to purchase things (% Demand Satisfied is not 100%) and there is still money available to spend (% Money Taken is not 100%). How this can be?</li>
+</ul>
+<h2>EXTENDING THE MODEL</h2>
+<p>It's fairly easy to add new behaviors to buyers and sellers, just adjust the chooser box with a new option, then add it in the appropriate <code>create-ordered-sellers</code> or <code>create-ordered-buyers</code> block in the setup procedure.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>In order to try to keep the Asking Price and Buying Price plots displaying relevant information, we set the <code>plot-y-range</code> manually using an update command based on the most recent average price.</p>
+<p>Behaviors for buyers and sellers are set during setup, and we use anonymous procedures stored in turtles-own variables. This allows us to very easily execute different behavior while the market is running by just using the <code>run</code> keyword with those behavior variables.</p>
+<h2>RELATED MODELS</h2>
+<p>See the Simple Economy model or Sugarscape models to explore other economic concepts.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Baker, J. and Wilensky, U. (2017).  NetLogo Bidding Market model.  http://ccl.northwestern.edu/netlogo/models/BiddingMarket.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2017 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2017 Cite: Baker, J. --></div>
+      </div>
+    </main>
+  </body>
+</html>

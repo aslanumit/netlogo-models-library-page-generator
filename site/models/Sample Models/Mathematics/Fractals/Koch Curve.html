@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Koch Curve</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Koch Curve</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/Fractals/Koch%20Curve.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Mathematics/Fractals/Koch Curve.png" alt="Screenshot of Koch Curve" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Helge von Koch was a Swedish mathematician who, in 1904, introduced what is now called the Koch curve.  This curve contains no straight lines which are smooth in the sense that we could see them as a carefully bent line.   Rather this curve has much of the complexity which we could see in a natural coastline: folds within folds within folds and so on.</p>
+<p>Koch's motivation for finding this curve was to provide another example for the discovery made by the German mathematician Karl Weierstrass, who in 1872 had precipitated a minor crisis in mathematics.  He had described a curve that could not be differentiated (did not have a tangent) at any of its points.  The ability to differentiate is central to differential calculus and for a long time it was assumed that curves have tangent lines almost everywhere.</p>
+<h2>HOW IT WORKS</h2>
+<p>Here is a simple geometric construction of the Koch curve.  Begin with a straight line.  This initial object is also called the "initiator."  Partition it into three equal parts.  Then replace the middle third by an equilateral triangle and take away its base.  This completes the basic construction step.  A reduction of this figure, made of four parts, will be used in the following stages.  It is called the "generator."  Thus, we now repeat, taking each of the resulting line segments and partitioning them into three equal parts, and so on.  The figure below illustrates this iterative process.</p>
+<pre><code class="language-text">  ________________________     Step 0: &quot;Initiator&quot;
+
+             /\
+            /  \
+           /    \
+          /      \
+  _______/        \_______     Step 1: &quot;Generator&quot;
+
+             /\
+          __/  \__
+          \      /
+          /      \
+  ___/\__/        \__/\___     Step 2
+</code></pre>
+<p>Self-similarity is built into the construction process.  Each part of the four parts in the k-th step is again a version scaled down by the factor of 3 of the entire curve in the previous (k-1)-st step.</p>
+<p>Let us now discuss the length of the Koch curve.  After the first iteration we have a curve which is made of four line segments of the same length, after the second iteration we will have each of the four segments broken into four more segments i.e. sixteen segments and so on.  After each iteration we increase the number of segments by the factor of four.  If we denote the number of segments after k-steps by S(k) then mathematically:</p>
+<blockquote>
+<p>S(k) = 4<sup>k</sup></p>
+</blockquote>
+<p>Now if the initial segment had length L the length of each of the four segments obtained after the first stage would be L/3.  After the second step the length of each of the sixteen segments is (L/3)/3 or L/9.  Denoting the length of each segment during the k-th iteration by L(k) we may write:</p>
+<blockquote>
+<p>L(k) = L / (3<sup>k</sup>)</p>
+</blockquote>
+<p>Multiplying the number of segments by the length of each segment we get the following expression for the length of the Koch curve after k steps of construction:</p>
+<blockquote>
+<p>L * (4/3)<sup>k</sup></p>
+</blockquote>
+<p>Clearly the length grows exponentially with the number of iterations so in fact the length of the entire Koch curve is infinite as is the arc length between any of its two points.  It therefore might come as a surprise that the area enclosed by the Koch curve is finite; the proof of this we leave as an exercise for the reader.</p>
+<h2>HOW TO USE IT</h2>
+<p>Reset the program by pushing the SETUP button.  This will clear the world, create the initiator and initialize the globals.  Press repeatedly on the STEP button.  Each time you press this button the construction algorithm is iterated and you will see successive approximations of the Koch curve.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>What happens to the total length of the curve as the iteration progresses?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try running the model through several iterations. Can you see how the recursive design is changing from one iteration to another? Note that each successive iteration takes longer to compute. Depending on the speed of your machine, high-numbered iterations could take a long time!</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>You can combine three copies of the Koch curve to form a closed curve called the Koch snowflake. Try to write a program that draws this curve.</p>
+<p>Can you think of other initiators and generators? Try and implement a few. Can you characterize which initiators and generators lead to "interesting shapes"?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Notice how the curves are made out of many turtles, all following the same rules.  Also, take note of the use of the <code>hatch</code> command to create all of the turtles by repeated "cloning" from a single seed turtle.</p>
+<p>The model looks like it uses links, but it doesn't.  To make circles and lines, it just uses a special turtle shape (a circle with a line sticking out of it).</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Koch Curve model.  http://ccl.northwestern.edu/netlogo/models/KochCurve.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2002.</p>
+<!-- 1998 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

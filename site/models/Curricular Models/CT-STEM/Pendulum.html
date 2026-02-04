@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pendulum</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Pendulum</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/CT-STEM/Pendulum.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/CT-STEM/Pendulum.png" alt="Screenshot of Pendulum" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is meant to help learners understand simple harmonic motion by exploring the motion of a simple pendulum and observing changes in motion-related parameters like displacement, velocity acceleration. In addition, users can observe changes in the mechanical–kinetic and potential–energy of the pendulum and how the total energy is conserved throughout the motion of the pendulum.</p>
+<p>Simple harmonic motion is a periodic motion where the restoring force on the oscillating body is directly proportional to the degree of disturbance. A good approximation of simple harmonic motion that we see around us is the motion of a simple pendulum when the angle of disturbance is small. This model shows a simple pendulum with a small release angle in simple harmonic motion. The user can change the angle of release and the length of the pendulum to observe the changes in the motion of the bob (the part at the end of the string).</p>
+<h2>HOW IT WORKS</h2>
+<p>The model represents a simple pendulum. It consists of a mass (m - also called a bob) hanging from a massless string of length (l) which is fixed at a point. The bob will be shown in simple harmonic motion where each second maps into one tick in NetLogo. When released from an initial angle the bob will swing back and forth in a periodic motion. The motion of the pendulum follows the following equations:</p>
+<p>θ(t) = θ<sub>0</sub> cos(ω * t)
+ω = sqrt(g / l)
+g = acceleration due to gravity
+l = length of the pendulum</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>Set the RELEASE-ANGLE, LENGTH-OF-PENDULUM, and MASS-OF-BOB sliders and press the SETUP button.</li>
+<li>Press the GO or GO-SLOWLY buttons to let the model run. You can also choose to press the GO-ONCE or GO-10-TICKS button to run and stop after 1 second or 10 seconds; this allows you to observe the bob's motion more closely.</li>
+<li>Observe the monitor on the right side of the VIEW to see the distance the bob is from the resting (mean) position. Observe the plot on the right side of the VIEW to see the distance graphed over time.</li>
+<li>Observe the velocity and acceleration monitors next to the distance monitor and then the velocity and acceleration plots below the distance plot.</li>
+<li>Observe the KE and PE plot below the GO ONCE and GO-10-TICKS buttons. Look at the KE, PE, and total-energy monitors below this plot.</li>
+</ol>
+<p>The motion of the simple pendulum is dependent on three different slider parameters.</p>
+<ol>
+<li>RELEASE-ANGLE: is the angle from which you release the bob. The angle is measured from the resting position which is a vertical axis. For approximation purposes, the angles are kept between (-18, 18)</li>
+<li>LENGTH-OF-PENDULUM: is the length of the string attached to the bob (from the center of the bob to the fixed pivot point).</li>
+<li>MASS-OF-BOB: is the mass of the bob attached to the string.</li>
+</ol>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice the plot to the right of the VIEW, what is the maximum and minimum of it? When does it start to repeat? The time it takes to repeat is called the <em>period</em> of the pendulum.</p>
+<p>Look at the distance from the mean position monitor, how does it change throughout the pendulum's motion. Do you notice any patterns?</p>
+<p>Notice how the velocity peaks when the distance is 0 and the acceleration peaks when the velocity is 0. Why does this happen?</p>
+<p>Does the total energy monitor ever change? If so, when does it change?</p>
+<p>Why does the pendulum never stop swinging?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try keeping the MASS-OF-BOB and the RELEASE-ANGLE constant and change the LENGTH-OF-PENDULUM. What changes do you see in the pendulum's motion?</p>
+<p>Try other combinations. What patterns do you notice?</p>
+<h2>CURRICULAR USE</h2>
+<p>This model was incorporated into the CT-STEM <a href="https://ct-stem.northwestern.edu/curriculum/preview/1014/">Simple Harmonic Motion - Simple Pendulum unit</a>, a lesson plan designed for a high school physics class. In the lesson, students experiment with a progression of three pendulum models that gradually introduce more monitored variables:</p>
+<ol>
+<li>
+<p><a href="https://ct-stem.northwestern.edu/curriculum/preview/1014/page/2/">The base model with only distance monitored</a>
+Students can observe the pendulum and its distance from the mean position over time.</p>
+</li>
+<li>
+<p><a href="https://ct-stem.northwestern.edu/curriculum/preview/1014/page/3/">Velocity and acceleration added</a>
+Students can now observe velocity and acceleration over time, in addition to the variables from the first model. They are asked to think about how one might use this model to conduct a computational experiment to find g, the acceleration due to gravity. They are also asked to compare their observations with a physical pendulum and the computational experimental setup in this model.</p>
+</li>
+<li>
+<p><a href="https://ct-stem.northwestern.edu/curriculum/preview/1014/page/5/">This model with KE and PE added</a>
+This final model includes all the features from the first two versions while adding monitors for kinetic energy, potential energy, and total energy. Students can study how the kinetic and the potential energy of a pendulum changes throughout its motion.</p>
+</li>
+</ol>
+<h2>EXTENDING THE MODEL</h2>
+<p>This is a very simple model that has a limited scope. Here are some more ideas to get you to think more and further your understanding of harmonic motion.</p>
+<p>Do we observe the same motion of a simple pendulum in the real world?</p>
+<p>What are our assumptions while designing a model of a simple pendulum?</p>
+<p>What would happen if the release angle was larger? Would there be any large changes?</p>
+<p>What would happen if the gravitational constant was changed?</p>
+<p>How will you incorporate the other factors that affect the motion of the pendulum in the real world? <a href="https://en.wikipedia.org/wiki/Harmonic_oscillator">How about adding air friction in this model?</a></p>
+<p>What would happen if we attach [another pendulum at the end of the original pendulum?] (https://en.wikipedia.org/wiki/Double_pendulum)</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses the pen tool to trace the pendulum's motion in the VIEW. The change in location of the pendulum's bob is traced with the pen tool.</p>
+<p>This model also uses a link between two turtles to show the string of the pendulum. There is a hidden turtle at a fixed location and a second turtle which shows up as the pendulum's bob. A link is created between these two turtles to represent the pendulum's string.</p>
+<h2>RELATED MODELS</h2>
+<p>To learn about more advanced features of oscillatory motion, look at the Kicked Rotator and Kicked Rotators models in the Models Library.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Dabholkar, S., Wagh, V. and Wilensky, U. (2020).  NetLogo Pendulum model.  http://ccl.northwestern.edu/netlogo/models/Pendulum.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>This model was developed as part of the CT-STEM Project at Northwestern University and was made possible through generous support from the National Science Foundation (grants CNS-1138461, CNS-1441041, DRL-1020101, DRL-1640201 and DRL-1842374) and the Spencer Foundation (Award #201600069). Any opinions, findings, or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the funding organizations. For more information visit https://ct-stem.northwestern.edu/.</p>
+<p>Special thanks to the CT-STEM models team for preparing these models for inclusion
+in the Models Library including: Kelvin Lao, Jamie Lee, Sugat Dabholkar, Sally Wu,
+and Connor Bain.</p>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2020 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2020 CTSTEM Cite: Dabholkar, S., Wagh, V. --></div>
+      </div>
+    </main>
+  </body>
+</html>

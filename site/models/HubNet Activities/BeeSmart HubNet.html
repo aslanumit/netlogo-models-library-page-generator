@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BeeSmart HubNet</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>BeeSmart HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/BeeSmart%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/HubNet Activities/BeeSmart HubNet.png" alt="Screenshot of BeeSmart HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>BeeSmart HubNet model is part of the BeeSmart Curricular Unit. It is the HubNet version of the BeeSmart Hive Finding model in NetLogo Models library. For detailed description of honeybees hive finding phenomenon, please see the info tab of the BeeSmart Hive Finding model.</p>
+<p>Unlike the BeeSmart Hive Finding model, the BeeSmart HubNet model allows students to see the phenomenon from bees’ perspective. Each student uses a HubNet client to control a bee. All the bees live in the same virtual space on the teacher’s server. In this way, students can interact with the environment and with each other, and experience the bees' physical and cognitive limitations.</p>
+<h2>HOW IT WORKS</h2>
+<p>The model contains three types of agents: students, robots, and sites.</p>
+<ul>
+<li>
+<p>Students are scouts that are controlled by students through HubNet clients. In the model, they are bee-shaped agents with yellow noses and white wing edges.</p>
+</li>
+<li>
+<p>Robots are automated scouts that follow similar rules as human players. They look exactly like the students, except that their noses are grey.</p>
+</li>
+<li>
+<p>Sites are potential targets that the swarm tries to pick. They are box-shaped agents that never move. At each setup, they are placed randomly in the view.</p>
+</li>
+</ul>
+<p>A color gradient is used in the view where the closer to the center, the darker the color. At the very center, the patches are brown, which indicates the location of the swarm.</p>
+<p>At each tick, a robot moves around randomly and sees if there is any dancing agent within one step in its 30 degrees cone of vision. If there is, the robot may follow the dance based on a probability that is proportional to the interest (the value of the <code>bee-timer</code> variable) of the dancer. If the robot decides to follow the dance, it targets the hive site advocated by the dancer and flies out to evaluate it. When arrived at a site, the robot adjusts its interest according to the quality of the site and fly back to the swarm to dance for it.</p>
+<p>Students generally follow the same routine but can make a few decisions. When the simulation starts, students need to "fly" out of the swarm using the direction buttons in order to discover new potential hive sites. When stumbling upon a site, students can go back to the swarm and press the dance button to perform dances in order to promote the hive they discovered. They can also give up a dance for a low quality site when they return to the swarm. As a bee dances, her interest declines. When the interest reaches zero, the bee stops dancing and turns gray. At this point, students can choose if they want to fly out and explore another hive or to stay in the swarm and follow other bees’ dances. They can follow other dances by clicking a nearby dancing bee. Once a dancer is clicked on, the student automatically flies out to the site the dance advocates, inspects the site, and flies back to the swarm. Then the student can decide whether to dance for the site, give up the dance, or follow another dance.</p>
+<h2>HOW TO USE IT</h2>
+<p>When the model is launched, ask clients to join. After clients have joined the model, set the number of sites and radius <em>before</em> clicking the setup button. Then click GO.</p>
+<p>SETUP initializes the model, adding hive sites into the view.</p>
+<p>GO starts the model. If clients joined after SETUP was clicked, They can only see themselves after GO is clicked.</p>
+<p>SAVE HISTORY saves the history of all students' dances to a CSV file, the name of which is specified in the FILENAME input box. When used in a classroom, the teacher can save the history as a CSV file and then use Excel to open it in order to provide students with detailed data for analyzing the phenomenon.</p>
+<p>NUMBER-OF-SITES determines how may hive sites to put in the view.</p>
+<p>NUMBER-OF-ROBOTS determines how may robots to put in the view.</p>
+<p>STUDENT-VISION-RADIUS determines how far the clients can see from their perspective.</p>
+<p>The CURRENT SITE SUPPORT plot shows a histogram of the current support. The leftmost bar shows how many dancing bees are supporting the site with the lowest quality, and the rightmost, the highest, with everything else in between.</p>
+<p>The SITE SUPPORT OVER TIME plot shows a line graph detailing the change of support over time.</p>
+<p>On the client view:</p>
+<p>MESSAGE shows suggestions when students attempt operations that are not allowed by the rules in this world.</p>
+<p>DANCE, GIVE-UP, and REVISIT are only effective when a student is in the swarm (at the center brown area). A student can dance only after she inspected a site; can only give up when the quality of the site visited is less than 50; and can revisit a site only after the bee the student controls danced at least once for the site.</p>
+<p>TARGET-QUALITY is the objective quality of the site the bee just inspected. (How bees assess the quality of a potential site is not included in this model. For more information, see Seeley 2010)</p>
+<p>INTEREST-IN-TARGET is the interest or the extent of the bee's enthusiasm towards the target.</p>
+<p>DANCE-LENGTH is the length of the current dance.</p>
+<p>BEES-RECRUITED is the number of bees recruited with the current round of dance.</p>
+<p>DANCES-MADE are rounds of dances made.</p>
+<p>TICKS is the time elapsed in the virtual world. The TICKS monitor on the clients is only updated when a student is dancing. It stops when a dance is finished, showing when the dance stopped since the model started to run</p>
+<p>SUMMARY shows the summary of the just finished dance. It contains three values: [T Q R], where T means ticks, or the time when the last round of dance finished; Q means target quality, by which the target that the bee just danced for can be identified; and R means the number of bees the dance has recruited.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>As the model runs, notice the change in the histogram. The leftmost bar represents the dances that support of the lowest quality site, while the rightmost bar represents the dances for the highest. Sites are discovered in random order, so the bars start out with random heights. However, as the process continues, the bars gradually shift to the right, showing a convergence of support to the highest quality site.</p>
+<p>The SITES SUPPORT OVER TIME plot shows this dynamic over time.</p>
+<h2>THINGS TO TRY</h2>
+<p>Play this simulation with at least 3 people. A group of 10 would be ideal because is provides enough diversity to imitate the scout bees in a beehive. Try to start with a small number of hives (around 4 to 5) but a larger vision radius (5 to 7). Talk to your partners as you play. After you are familiar with the model, reduce the vision radius and play again. You can also increase the number of hives to increase the difficulty. Finally, use a vision radius of 1 and play the model without talking to any of your partners. This way, you can experience bees' physical and cognitive limitations. After each round of play, look at the plots on the server and debrief what you and your partners did, and what happened.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The waggle dances in this model are represented by agents turning left and right. One possibility for extending the model is to use the actual waggle dance pattern (the figure-8 dance, included in the BeeSmart Hive Finding model) to make the dances more realistic and informative.</p>
+<p><code>hubnet-send-watch</code> and <code>hubnet-send-follow</code> can be used to allow students to follow a certain bee with better visual effects.</p>
+<p>Currently, the bees dance one interest unit per tick. It would be better if the dance could expand across multiple ticks to create more detailed visual effects of the dances.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses the HubNet Architecture, especially the perspective reset feature (<code>hubnet-send-follow</code>). Notice that the layers of agents are determined by the order in which their breeds are declared. Agents of breeds declared later are on top of those declared earlier.</p>
+<p>This model also uses dynamic plots. The histogram and the line graph are dynamically generated to show current and historical support of sites by counting the number of bees that support each target.</p>
+<h2>RELATED MODELS</h2>
+<p>BeeSmart Hive Finding</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Seeley, T. D. (2010). Honeybee democracy. Princeton, NJ: Princeton University Press.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Guo, Y. and Wilensky, U. (2016).  NetLogo BeeSmart HubNet model.  http://ccl.northwestern.edu/netlogo/models/BeeSmartHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2016 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2016 Cite: Guo, Y. --></div>
+      </div>
+    </main>
+  </body>
+</html>

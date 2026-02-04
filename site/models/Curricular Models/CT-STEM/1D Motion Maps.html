@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1D Motion Maps</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>1D Motion Maps</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/CT-STEM/1D%20Motion%20Maps.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/CT-STEM/1D Motion Maps.png" alt="Screenshot of 1D Motion Maps" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model draws a motion map for a car moving horizontally. Motion maps are  one-dimensional plots built off of a position line. Along this horizontal axis, we can mark the car's position at any point in time while also including arrows to record its velocity and acceleration. The direction of the arrow corresponds to the direction of the velocity or acceleration while the magnitude of the arrow represents the magnitude of the velocity. Motion maps can be used to simultaneously visualize the position, velocity, and acceleration of a moving object.</p>
+<h2>HOW IT WORKS</h2>
+<p>Given intial conditions set by the user (initial velocity, acceleration, draw interval), the car will move accordingly:</p>
+<p>current position = previous position + (velocity * time) + (1/2 * acceleration * time<sup>2</sup>)</p>
+<p>As the car moves, the model tracks and plots its position, velocity, and acceleration. Positions are stamped as red dots. Velocity is represented by blue arrows (vectors) that indicate both magnitude and direction. The greater the velocity, the longer the arrow. Following a standard line plot, motion to the left is negative while motion to the right is positive.</p>
+<p>Acceleration is denoted by either orange dots or orange arrows. Orange dots are reserved for when acceleration is zero. Similar to velocity, non-zero acceleration is represented by arrows with both magnitude and direction.</p>
+<p>The draw interval simply determines how often the model should record data in the motion map (the duration between each "stamp").</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>Use the sliders to select the initial conditions: INITIAL-VELOCITY is the starting velocity, ACCELERATION is the acceleration that will remain constant, DRAW-INTERVAL is the time between recording instances.</li>
+<li>Press SETUP to activate the initial conditions.</li>
+<li>Press GO to start the model.</li>
+<li>In addition to recording data in the motion map, this model also includes traditional, two-dimensional plots for position vs time, velocity vs time, and acceleration vs time.</li>
+</ol>
+<p>Note, when the car reaches the map's boundaries it will disappear. The model will continue to run and keep track of the car's motion, but you will not see the car on the View.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Compare the graphs of two cars moving with different initial values. How does a positive acceleration interact with a starting negative velocity? Vice versa? What patterns do you notice between the motion map and the three plots?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try setting the increments of velocity and acceleration to different values and see how the individual motions and graphs differ.</p>
+<p>Try finding the values for velocity and acceleration that make the car reach both the right and left map boundaries before stopping.</p>
+<h2>CURRICULAR USE</h2>
+<p>This model was incorporated into the CT-STEM 1-D Kinematics Motion Maps Unit, a lesson plan designed for a high school physics class. In the unit, students experiment with a progression of models that explore constant velocity (lesson 1) and constant acceleration (lesson 2):</p>
+<ol>
+<li>
+<p>The base model:
+Students observe how different initial velocities produce different motion maps.</p>
+</li>
+<li>
+<p>The base model with CODAP:
+Students use the base model again but can also observe traditional position-time and velocity-time graphs. These graphs are recorded with CODAP, an extension for data analysis.</p>
+</li>
+<li>
+<p>A NetTango model:
+Students build their own motion maps model with programming blocks.</p>
+</li>
+<li>
+<p>The base model with acceleration:
+Students can now change both the initial velocity and acceleration.</p>
+</li>
+<li>
+<p>Model 4 with CODAP:
+With both velocity and acceleration included in the motion map, students can also see traditional position-time and velocity-time graphs.</p>
+</li>
+</ol>
+<h2>EXTENDING THE MODEL</h2>
+<p>Explore changing the colors for position, velocity, and acceleration.</p>
+<p>Maybe add an additional car to see two running at the same time with different starting conditions.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Can update many cars at once with their own individual values. This model uses links to connect data from the moving red car with the velocity arrow, acceleration arrow, and position plots. NetLogo's <code>stamp</code> method helps draw copies of the linked agents when called at specific time intervals.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Free Fall Model</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>DuBrow, D., Bain, C., Schmidgall, N. and Wilensky, U. (2020).  NetLogo 1D Motion Maps model.  http://ccl.northwestern.edu/netlogo/models/1DMotionMaps.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>This model was developed as part of the CT-STEM Project at Northwestern University and was made possible through generous support from the National Science Foundation (grants CNS-1138461, CNS-1441041, DRL-1020101, DRL-1640201 and DRL-1842374) and the Spencer Foundation (Award #201600069). Any opinions, findings, or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the funding organizations. For more information visit https://ct-stem.northwestern.edu/.</p>
+<p>Special thanks to the CT-STEM models team for preparing these models for inclusion
+in the Models Library including: Kelvin Lao, Jamie Lee, Sugat Dabholkar, Sally Wu,
+and Connor Bain.</p>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2020 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2020 CTSTEM Cite: DuBrow, D., Bain, C., Schmidgall, N. --></div>
+      </div>
+    </main>
+  </body>
+</html>

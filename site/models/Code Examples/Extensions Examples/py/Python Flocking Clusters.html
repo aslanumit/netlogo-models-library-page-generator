@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Python Flocking Clusters</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Python Flocking Clusters</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Extensions%20Examples/py/Python%20Flocking%20Clusters.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Code Examples/Extensions Examples/py/Python Flocking Clusters.png" alt="Screenshot of Python Flocking Clusters" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is based on the original <strong>Flocking</strong> model that has birds follow exactly the same set of rules, from which flocks emerge. It demonstrates using a Python package, <code>scikit-learn</code>, within a NetLogo model through the <code>py</code> extension in order to cluster the birds into groups, who are given matching colors in the view.</p>
+<h2>HOW IT WORKS</h2>
+<p>In the <code>setup</code> procedure, <code>py:setup py:python</code> is used to start the Python session and <code>py:run</code> is used to let Python <code>import</code> the <code>numpy</code> and <code>scikit-learn</code> packages for use during the model run. If you do not have these packages installed, the <code>py</code> extension will show an error. Please install these packages in your Python environment before running the model.</p>
+<p>The modifications for clustering are in the <code>go</code> procedure, where <code>py:set</code> is used to pass turtle data to Python as the <code>coords</code> variable and the <code>vision</code> NetLogo variable as the <code>eps</code> variable.</p>
+<p>Then <code>py:runresult</code> is called to use the <code>dbscan()</code> Python function on the NetLogo data and the resulting cluster data is sent back to NetLogo and stored in the <code>clusters</code> variable.</p>
+<p>Finally, the <code>clusters</code> data is used to color the turtles into their groups.</p>
+<h2>RELATED MODELS</h2>
+<p>See the original <strong>Flocking</strong> model for details on how the flocking-specific code works.</p>
+<p>There is a bundle of other Python extension demo models, <code>py-demo-models.zip</code>, available on <a href="https://github.com/NetLogo/Python-Extension/releases">the Python extension site</a>.</p>
+<!-- 2019 --></div>
+      </div>
+    </main>
+  </body>
+</html>

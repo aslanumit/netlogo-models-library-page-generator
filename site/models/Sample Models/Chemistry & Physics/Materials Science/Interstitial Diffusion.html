@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interstitial Diffusion</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Interstitial Diffusion</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Materials%20Science/Interstitial%20Diffusion.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Materials Science/Interstitial Diffusion.png" alt="Screenshot of Interstitial Diffusion" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model of "interstitial" diffusion in solids. The atoms of many solids arrange themselves in an ordered structure called a lattice, and the spaces between the atoms are called "interstitial sites." Smaller atoms that are about the size of the interstitial sites can then diffuse into these sites, which will change the properties of the material. For example, steel is mostly iron with a small fraction of the interstitial sites filled by carbon atoms.</p>
+<h2>HOW IT WORKS</h2>
+<p>Large blue atoms are created on the corners of patches to form a lattice. The interstitial sites between the lattice atoms are then made up of patches. Small yellow atoms diffuse on the interstitial sites (on patches). Each tick, the diffusing atoms pick a random direction to jump to. If the neighboring interstitial site in that direction is empty, they jump to it, otherwise they stay put.</p>
+<p>The concentration profile graph shows the fraction of interstitial sites that are filled by diffusing atoms. Note, that in real materials, usually on a small fraction of interstitial sites are filled, but in this model a large number, or even all of them can be filled. The grey line shows the concentration at the beginning of the run (or right after you finished sketching a concentration profile) and the yellow line shows the current concentration profile. The x-position on the concentration profile graph lines up with x-position in the view of the atoms.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to initialize the model. The number on the INITIAL-COLUMNS-POPULATED slider determines how many columns of interstitial sites start with atoms on them. The initial concentration of diffusing atoms in these columsn is set by the INITIAL-BULK-CONCENTRATION slider.</p>
+<p>You can use the DRAW-PROFILE button to sketch a concentration profile. The interstitial sites at each x-position will be filled with a certain probability based on how high the concentration profile is that you drew.</p>
+<p>The GO button will run the model.</p>
+<p>HIDE/SHOW LATTICE ATOMS will toggle the visibility of the blue lattice atoms.</p>
+<p>CONSTANT-LEFT-SURFACE? and CONSTANT-RIGHT-SURFACE? determine if the left and right sides of the model are maintained at a constant concentration of diffusing atoms. It is common when materials scientists and engineers process materials to put them in an environment that keeps the concentration of diffusing atoms constant at the surface. For example, immersing a piece of iron in carbon powder would maintain a high surface concentration of diffusing carbon atoms. Conversely, putting the iron in a vacuum would maintain the surface concentration at zero. LEFT-SURFACE-CONCENTRATION and RIGHT-SURFACE-CONCENTRATION determine what each surface's concentration is maintained at, if that surface has a constant concentration.</p>
+<h2>THINGS TO NOTICE</h2>
+<ul>
+<li>Can you predict whether the concentration profile will move up or down at each x-position? What does this depend on?</li>
+<li>Notice how quickly or slowly the concentration profile changes at each x-position. What does this depend on?</li>
+<li>The concentration profile will tend to change in one direction, but there are random fluctuations. Why?</li>
+</ul>
+<h2>THINGS TO TRY</h2>
+<ul>
+<li>Try turning constant surface concentration off. What happens in the long run?</li>
+<li>Try setting both surfaces to different constant concentrations. What happens? Try out different combinations.</li>
+</ul>
+<h2>EXTENDING THE MODEL</h2>
+<ul>
+<li>Try making the probability of jumping to a new site dependent on temperature</li>
+<li>Try removing some of the lattice atoms and making the probability of jumping to a new site dependent on the number of lattice atoms neighboring that site</li>
+</ul>
+<h2>NETLOGO FEATURES</h2>
+<p>To get good statistics on the fraction of interstitial sites filled, this model extends really far in the y-direction. You have to scroll down to see how far the model world actually extends. This is unusual, because normally the whole model world is visible at once.</p>
+<p>This model also uses <code>mouse-down?</code>, <code>mouse-ycor</code>, and <code>mouse-xcor</code> to detect when the user is clicking the mouse and where it is to draw a concentration profile when the GO-MODE is set to "draw-profile".</p>
+<p>The Concentration Profile graph uses if statements with the number of ticks to plot the concentrations at certain points in time and not change after tha.</p>
+<h2>RELATED MODELS</h2>
+<p>Solid Diffusion
+Random Grid Walk Example</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Kelter, J. Emery, J. and Wilensky, U. (2025).  NetLogo Interstitial Diffusion model.  http://ccl.northwestern.edu/netlogo/models/InterstitialDiffusion.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2025 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2025 Cite: Kelter, J. Emery, J. --></div>
+      </div>
+    </main>
+  </body>
+</html>

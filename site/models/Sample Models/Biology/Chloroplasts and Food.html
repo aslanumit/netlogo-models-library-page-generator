@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chloroplasts and Food</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Chloroplasts and Food</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Chloroplasts%20and%20Food.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Chloroplasts and Food.png" alt="Screenshot of Chloroplasts and Food" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>The simulation shows the relationship between some of the inputs and outputs in the chloroplasts of plant cell, that can help explain how they convert water and carbon dioxide to glucose and water with the help of energy absorbed from light.</p>
+<p>This simulation is of a single plant cell. The multistep process shown occurring in a chloroplast in this simulation represents a series of more complex sub steps that form a series of chemical reactions involved in the process referred to as photosynthesis. This includes the light reactions and the Calvin cycle.</p>
+<h1>HOW IT WORKS</h1>
+<p>A chloroplast contains 3 hidden pairs of ADP/ATP molecules (6 total).  Each of these is modeled as a fixed reaction site in a chloroplast.  The state of these sites can be charged or uncharged.</p>
+<p>A chloroplast will carry out a light reaction at a pair of these hidden sites if the following are within its radius: two water and one photon.  When this happens, two oxygen molecules will be produced, the two water molecules and photon will be removed.  The latter represents absorption of the photon. When this happens the two ADP/ATP sites each gain an positively charge hydrogen ion (a proton) from the water molecule that is broken apart. Notice that these light reactions produce oxygen gas before a glucose molecule is fully formed. See https://en.wikipedia.org/wiki/Light-dependent_reactions for more information on light reactions.</p>
+<p>Gradual rearrangement of additional carbon dioxide molecules is shown occurring before a fully formed glucose molecule is produced. This represents some of the gradual rearrangement of carbon and oxygen atoms from carbon dioxide and hydrogen atoms from water that occurs in the Calvin cycle  though the intermediate arrangements of those carbon atoms at each sub step in the process is different than those shown in the simulation. See https://en.wikipedia.org/wiki/Calvin_cycle for more information on the Calvin Cycle.</p>
+<p>In this simulation ADP/ATP sites that have an electrical charge, will carry out a chemical reaction if two carbon dioxide molecules are near them. If this condition is met, the two carbon dioxide molecules will be bonded together along with protons that were at the ADP/ATP sites, and the resulting molecule is kept fixed inside the chloroplast. This can happen two more times, at the four remaining ADP/ATP sites. Each time it happens the bound carbon-chain molecule grows.  Once all this has happened at all six sites, the bound molecule will be glucose.  This glucose molecule will then be released from the chloroplast and the ADP/ATP sites in the chloroplast are ready to repeat this process.</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>Adjust the slider parameters (see below) or use the default settings.</li>
+<li>Press the SETUP/RESET button.</li>
+<li>Press the GO/PAUSE button to begin the model run.</li>
+</ol>
+<p>INITIAL-#-OF-CHLOROPLASTS - is a slider that controls the number of chloroplasts complexes (big green circles) put into the model when SETUP/RESET is pressed.</p>
+<p>INITIAL-CARBON-DIOXIDE - is a slider that controls the initial number of carbon dioxide molecules put into the model when SETUP/RESET is pressed.</p>
+<p>WATERFLOW-THROUGH-LEAF - is a slider that controls the rate at which water molecules flow into the leaf cell (from the left side of the model). Its affects can be adjusted as the model is running.</p>
+<p>INTENSITY-OF-LIGHT - is a slider that controls the rate at which photons flow into the leaf cell from the top and left side of the model. Its affects can be adjusted as the model is running.</p>
+<p>CARBON DIOXIDE MOLECULES - is a monitor that reports number of carbon dioxide molecules currently in the system (the leaf).  Additional carbon dioxide molecules do not enter the system after SETUP is pressed.</p>
+<p>OXYGEN MOLECULES - is a monitor that reports number of oxygen molecules currently in the system (the leaf).  Oxygen molecules are not released from the leaf in this system after they are produced.</p>
+<p>SUGAR MOLECULES PRODUCED - is a monitor that reports number of sugar molecules produced by the leaf.  Sugar molecules flow out of the world to the right as if they are dissolved in water, after they are produced. They are hidden from the world view when the reach the right side of the model, to represent that they flowed out of this system (to other parts of the plant)</p>
+<p>NUMBER OF MOLECULES - is a graph of total number of molecules of carbon dioxide remaining in the world, number of oxygen molecules produced (and still in the world), and the number of sugar molecules produced (which includes both those that are visible and those that were hidden when they reached the right side of the model).</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Once there is either no water molecules or only one water molecule in the system or no photons in the system the light reactions can no longer continue.</p>
+<p>Once there is either no carbon dioxide molecules or only one carbon dioxide molecule in the system, the Calvin cycle process can no longer continue.</p>
+<h2>THINGS TO TRY</h2>
+<p>Compare how the matter outputs (oxygen and glucose) are affected by changes in a single independent variable (light, carbon dioxide, water, number of chloroplasts) for a given length of simulation run.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>One could add daylight or seasonal changes in light intensity, angle, and duration.
+One could add cellular respiration into the system, which occurs continuously in plants. Coupling this with changes in light intensity, could help show the net output of the plant. One could add stomata that open and close to let additional gas molecules into or out of the system.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model includes a side panel in the world that serves as a space to provide a key for the agents in the model.  These are build with agents called side-panels.  To support more refined placement of text for these, another agent, called key-labels, which has an empty shape is used.</p>
+<p>The model also includes an agent called <code>side-panels</code>, which produces a border around the moving molecules and photon in the model.  Because it is defined after those agents, the shape it is assigned (a square), is in a graphics layer above those other agents, providing a visual blind to stack and store agents in (like sugar molecules) that we don't want to eliminate from the world, but also don't want to have wrap around and reenter the world where the user can see them.</p>
+<h2>Related Models</h2>
+<p>Simple Kinetics 1, 2 and 3
+Autumn</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Developed by Michael Novak and Bill Penuel.</p>
+<p>This version of the model is part of the OpenSciEd Middle School instructional units developed with funding from the Carnegie Corporation of New York.  http://www.openscied.org/.</p>
+<p>The original model it was developed form, was part of the iHub/nextgenstorylines High School Evolution developed with funding through grants from the National Science Foundation, the Gordon and Betty Moore Foundation, Denver Public Schools to Northwestern University and the University of Colorado Boulder.</p>
+<p>For more information about this project, see the nextgenstorylines website:
+http://www.nextgenstorylines.org/how-do-small-changes-make-big-impacts-on-ecosystems-part-2/</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M., Penuel, B. and Wilensky, U. (2016).  NetLogo Chloroplasts and Food model.  http://ccl.northwestern.edu/netlogo/models/ChloroplastsandFood.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2016 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2016 Cite: Novak, M., Penuel, B. --></div>
+      </div>
+    </main>
+  </body>
+</html>

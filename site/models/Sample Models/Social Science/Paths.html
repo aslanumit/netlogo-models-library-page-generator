@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paths</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Paths</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Paths.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Social Science/Paths.png" alt="Screenshot of Paths" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model about how paths emerge along commonly traveled routes. People tend to take routes that other travelers before them have taken, making them more popular and causing other travelers to follow those same routes. This can be used to determine an ideal set of routes between a set of points of interest without needing a central planner. Paths emerge from routes that travelers share.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each of the turtles in the model starts somewhere in the world, and is trying to get to another random location. Turtles prefer to move along the gray patches, representing established paths, if those patches are on the way to their destination. But as each turtle moves, it makes the path that it takes more popular. Once a certain route becomes popular enough, it becomes an established route (shown in gray), which attracts yet more turtles en route to their destination.</p>
+<p>On setup, each turtle chooses a destination at random. On each tick, a turtle looks to see if there is a gray patch on the way to its destination, and walks toward it if there is. If there no gray patch, it walks directly towards its destination instead. With each step, a turtle makes each patch it walks on more popular. If a turtle causes the patch to pass a certain popularity threshold, it turns gray to indicate the presence of an established route. On the other hand, if no turtle has stepped on a patch in quite a while, its popularity will decrease over time and it will eventually become green again.</p>
+<p>You can interact with this model by placing points of interest for the turtles to travel between. While "go" runs, click on a patch in the model to turn that into a point of interest. Once you have placed two or more such points, turtles will travel only between those locations. To remove a location, click it a second time.</p>
+<h2>HOW TO USE IT</h2>
+<ul>
+<li><code>popularity-decay-rate</code> controls the rate at which grass loses popularity in the absence of a turtle visiting it.</li>
+<li><code>popularity-per-step</code> controls the amount of popularity a turtle contributes to a patch of grass by visiting it.</li>
+<li><code>minimum-route-popularity</code> controls how popular a given patch must become to turn into an established route.</li>
+<li><code>walker-count</code> controls the number of turtles in the world.</li>
+<li><code>walker-vision-dist</code> controls how far from itself each turtle will look to find a patch with an established route to move it closer to its goal.</li>
+<li><code>show-popularity?</code> allows you to color more popular patches in a lighter shade of green, reflecting the fact that lots of people have walked on them, and showing the paths as they form.</li>
+</ul>
+<h2>THINGS TO TRY</h2>
+<p>Try increasing and decreasing <code>walker-vision-dist</code>? When you set it to smaller and larger values, how does the evolution of the model change?</p>
+<p><code>popularity-decay-rate</code> and <code>popularity-per-step</code> balance one another. What happens when the <code>popularity-decay-rate</code> is too high relative to <code>popularity-per-step</code>? What happens when it is too low?</p>
+<p>Can you find a way to measure whether the route network is "finished"? Does that change between runs or does it stay relatively constant? How does changing the <code>walker-count</code> affect that?</p>
+<p>How does changing the world-wrap effect the shape of the paths that the turtles make?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>See what happens if you set up specific destinations for the turtles instead of having them move at random. You might have start off by moving to a particular patch, or have each turtle move in a unique loop.</p>
+<p>Come up with a way of plotting how much of each journey a turtle spends on an established route. Try plotting that value against the distance a turtle goes out of its way on a given journey to stay on an established route. How do the two quantities relate to one another?</p>
+<p>Modify turtles to sometimes remove established routes instead of just creating them. Which route patches are best to remove? Do the resulting shapes generated by the model change?</p>
+<p>Turtles select a new patch to move toward each turn. This isn't a particularly efficient way for a turtle to move and sometimes leads to some awkward routes. Can you come up with a more realistic path-finding scheme?</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li><a href="http://ccl.northwestern.edu/cities/">CCL Cities</a> has some information on city simulation, including other models where "positive feedback" figures prominently.</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Inspired by <a href="https://sive.rs/walkways">Let pedestrians define the walkways</a>.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Grider, R. and Wilensky, U. (2015).  NetLogo Paths model.  http://ccl.northwestern.edu/netlogo/models/Paths.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2015 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2015 Cite: Grider, R. --></div>
+      </div>
+    </main>
+  </body>
+</html>

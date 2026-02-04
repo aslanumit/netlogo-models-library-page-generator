@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wolf Sheep Predation - Micro-Sims</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Wolf Sheep Predation - Micro-Sims</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Wolf%20Sheep%20Predation%20-%20Agent%20Cognition/Wolf%20Sheep%20Predation%20-%20Micro-Sims.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Biology/Wolf Sheep Predation - Agent Cognition/Wolf Sheep Predation - Micro-Sims.png" alt="Screenshot of Wolf Sheep Predation - Micro-Sims" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model extends the Wolf Sheep Predation model by giving the wolves and sheep the ability to make decisions based on predictions of the possible outcomes of their actions. To do so, they run simplified miniature versions of the Wolf Sheep Predation model that only consider their immediate surroudings using the LevelSpace extension.</p>
+<h2>HOW IT WORKS</h2>
+<p>This model consists of two component models connected using LevelSpace. The primary model is based on the standard Wolf Sheep Predation model with several modifications to improve system robustness across a variety of agent behaviors. Just as in the original model, the model consists of wolves, sheep, and ground patches, which may or may not have grass. Each step, the wolves and sheep must choose a direction to move in: left, right, or forward. If a wolf finds a sheep, it eats the sheep, gaining energy based on the energy of the sheep. If a sheep finds grass, it eats the grass, gaining some energy. If the energy of a wolf or sheep exceeds a threshold, it reproduces, giving some of its energy to its child. Each step costs the wolves and sheep one energy; if they run out of energy, they die.</p>
+<p>In order to decide which direction to move in, the wolves and sheep make use of the second model, called the cognitive model (Wolf Sheep Predation - Micro-Sims Cognitive Model.nlogox). The cognitive model uses a simplified form of the Wolf Sheep Predation rules: wolves still eat sheep and sheep still eat grass, but agents do not reproduce, nor does grass regrow. Instead, an agent in the primary model initializes the child model based on the locations of the grass and the other agents around them. It creates a represention of itself in the cognitive model based on its location and energy level. This representation is called the ego. The cognitive model will then perform multiple simulations of only a couple ticks each from that state. In those simulations, the agents all make random decisions. The cognitive model keeps track of the initial action the ego makes in each simulation and computes an expected reward for that action based on how much its energy ended up changing and whether or not it died. The agent in the primary model will then select the action that performed the best in the cognitive model.</p>
+<p>In order to measure how the cognitive model impacts agent performance, the model measures "agent efficiency". To measure wolf and sheep food seeking efficiency, this measures the ratio of how much food the species ate versus how much we would expect them to eat if positioned randomly given current population densities.To measure how well sheep escape being eaten by wolves, it computes how many sheep survive versus how many we would expect to survive. This allows us to measure the performance of agents that mostly controls for the complex population dynamics of a predator prey system. See chapter 4 of Head (2024) for a detailed discussion of the design of these metrics.</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>Adjust the slider parameters (see below), or use the default settings.</li>
+<li>Press the SETUP button.</li>
+<li>Press the GO button to begin the simulation.</li>
+<li>Look at the monitors to see the current population sizes</li>
+<li>Look at the POPULATIONS plot to watch the populations fluctuate over time</li>
+<li>Look at the SMOOTHED EFFICIENCY plot to watch how the efficiency measurements settle.</li>
+<li>Change either the wolf or sheep cognitive parameters; watch how the efficiency measurements change in response.</li>
+</ol>
+<h3>Main Parameters:</h3>
+<ul>
+<li>INITIAL-NUMBER-SHEEP: The initial size of sheep population</li>
+<li>INITIAL-NUMBER-WOLVES: The initial size of wolf population</li>
+<li>INITIAL-GRASS-DENSITY: The ratio of patches that will be initially be covered in grass</li>
+<li>GRASS-REGROWTH-TIME: How long it takes for grass to regrow once it is eaten.</li>
+<li>NEWBORN-ENERGY: The ratio of a parent's energy given to a newborn child upon - reproduction.</li>
+<li>SHEEP-GAIN-FROM-FOOD: The amount of energy sheep get for every grass patch eaten</li>
+<li>WOLF-GAIN-FROM-FOOD: The ratio of a sheep's energy the wolf gains when it eats that sheep.</li>
+<li>SHEEP-THRESHOLD: The energy level at which sheep reproduce.</li>
+<li>WOLF-THRESHOLD: The energy level at which the wolves reproduce.</li>
+<li>SHOW-MICRO-SIMS: Controls visualization of cognitive model simulations:<ul>
+<li>"none": Hide all micro-simulation visualizations (best performance)</li>
+<li>"all": Display all agents' micro-simulations - NOTE: This will significantly slow down the simulation</li>
+<li>"watched": Show only the micro-simulation for the currently watched agent (using Watch tool)</li>
+</ul>
+</li>
+</ul>
+<h3>Cognitive parameters</h3>
+<p>These parameters control the behavior of the cognitive model for the specified species; they behave equivalently for each species so are listed here only once:</p>
+<ul>
+<li><code>&lt;species&gt;-SEE-SHEEP?</code>: Whether the species will use sheep in its cognitive model.</li>
+<li><code>&lt;species&gt;-SEE-WOLVES?</code>: Whether the species will use wolves in its cognitive model.</li>
+<li><code>&lt;species&gt;-SEE-GRASS?</code>: Whether the species will use grass in its cognitive model.</li>
+<li><code>&lt;species&gt;-VISION</code>: The radius around an agent in which it will include other agents in its cognitive model.</li>
+<li><code>&lt;species&gt;-SIM-NUM</code>: The number of simulations the species will run in its cognitive model.</li>
+<li><code>&lt;species&gt;-SIM-LENGTH</code>: The number of ticks the species will run the simulations of its cognitive model for.</li>
+<li><code>&lt;species&gt;-DEATH-PENALTY</code>: How much to penalize death in the cognitive model (in units of energy lost).</li>
+</ul>
+<h3>Monitors and Plots</h3>
+<p>As in the original Wolf Sheep Predation, the POPULATION graph and associated monitors show the population dynamics of the model.</p>
+<p>The SMOOTHED EFFICIENCY graph and associated monitors show efficiency values to measure how well wolves find sheep, how well sheep find grass, and how well sheep escape wolves. Raw efficiency values vary greatly from tick to tick. For example, it is not uncommon for the wolves to not eat any sheep on a particular tick. This graph plots the moving average of these efficiencies to smooth out this variation. The SMOOTH-SINCE dropdown determines how this smoothing is done:</p>
+<ul>
+<li>LAST PARAMETER CHANGE: Displays the average efficiency since the last time parameters were changed. When parameters are changed, the moving average is reset to allow the average efficiencies for the new parameters to become evident, but also can cause a momentary jump in the graph. This setting is helpful for identifying the overall efficiency values for a certain configuration of parameters.</li>
+<li>LAST 400/200/100/50 TICKS: Displays the average efficieny over the specified number of ticks. These can be helpful for examining how efficiency responds to different temporal patterns, such as population changes or spatial distribution of agents.</li>
+<li>DISABLE SMOOTHING: Completely turns off smoothing.</li>
+</ul>
+<p>To facilitate the investigation of the impact of the parameters on the efficiencies, the graph will draw a light gray line on any tick in which parameters were changed.</p>
+<p>The EFFICIENCIES FOR ENTIRE RUN monitors show the overall efficiency values for all ticks since SETUP was last pressed.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Try running the model with species only using a single simulation of a single tick. This means the agents are picking random actions since they have nothing to compare that single simulation with. Try slowly increasing the number of simulations a species uses. Notice how efficiency dramatically increases at first and then begins to taper off. How does the number of ticks a species uses affect this? How about vision?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try running the model with and without SHEEP-SEE-WOLVES?. What happens to wolf efficiency?</p>
+<p>Run the model with SHEEP-SEE-SHEEP? and SHEEP-SEE-GRASS? enabled. Note the overall sheep efficiency. Now re-run the model with SHEEP-SEE-SHEEP? disabled. Note that overall sheep efficiency has decreased somewhat. Why would sheep being able to see other sheep improve their ability to get food?</p>
+<p>Try the above with with SHEEP-SEE-GRASS? disabled. Why would SHEEP-SEE-SHEEP? improve the sheep's ability to get food even when they can't see grass? Note that, in the cognitive model, if an agent travels that the ego has not seen, it will randomly fill it in with grass or dirt.</p>
+<p>Can you find any settings that result in one of the species going extinct?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try expanding the different actions agents can take by modifying the WOLF-ACTIONS and SHEEP-ACTIONS variables. Here are some ideas:</p>
+<ul>
+<li>Add a larger variety of turn angles.</li>
+<li>Making a eating separate action so that agents have to stand still to eat.</li>
+<li>Add a new action for reproduction. This will require modifying the cognitive model so that agents receive some incentive to reproduce.</li>
+</ul>
+<p>The cognitive model has all agents taking random actions. How might this be modified to let agents better predict the actions of other agents? One possible strategy would be to have the agents in the cognitive model use a cognitive model themselves for making decisions. However, this would likely make the model run quite slowly. Can you think of any other ideas? See chapter 7 of Head (2015) for one such idea.</p>
+<p>Having agents make decisions by running many small simulations is a very general one. Can you try adapting this technique to another model?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model highlights a powerful use case of the LevelSpace extension: having agents use agent-based models to make predictions about their actions.</p>
+<h2>RELATED MODELS</h2>
+<p>See the original Wolf Sheep Predation model for the basis of this model.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Wilensky, U. &amp; Reisman, K. (1998). Connected Science: Learning Biology through Constructing and Testing Computational Theories -- an Embodied Modeling Approach. International Journal of Complex Systems, M. 234, pp. 1 - 12. (The Wolf-Sheep-Predation model is a slightly extended version of the model described in the paper.)</p>
+<p>Wilensky, U. &amp; Reisman, K. (2006). Thinking like a Wolf, a Sheep or a Firefly: Learning Biology through Constructing and Testing Computational Theories -- an Embodied Modeling Approach. Cognition &amp; Instruction, 24(2), pp. 171-209. http://ccl.northwestern.edu/papers/wolfsheep.pdf .</p>
+<p>Wilensky, U., &amp; Rand, W. (2015). An introduction to agent-based modeling: Modeling natural, social and engineered complex systems with NetLogo. Cambridge, MA: MIT Press.</p>
+<p>Head, B. (2024) Agents Modeling Agents: The Design and Analysis of Multi-Level Agent-Based Models. PhD Thesis, Northwestern University. https://search.proquest.com/openview/0da8c22a8fa052247a5af1cdba4edaf9/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Head, B. and Wilensky, U. (2024).  NetLogo Wolf Sheep Predation - Micro-Sims model.  http://ccl.northwestern.edu/netlogo/models/WolfSheepPredation-Micro-Sims.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2024 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2024 Cite: Head, B. --></div>
+      </div>
+    </main>
+  </body>
+</html>

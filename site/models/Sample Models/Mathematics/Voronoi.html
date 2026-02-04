@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Voronoi</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Voronoi</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/Voronoi.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Mathematics/Voronoi.png" alt="Screenshot of Voronoi" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model draws a Voronoi diagram of polygons around a set of points.  These diagrams resemble many phenomena in the world including cells, forest canopies, territories of animals, fur and shell patterns, crystal growth and grain growth, cracks in dried mud and other geological phenomena, road networks, and so on.  Voronoi diagrams are useful in computer graphics, vision and path planning for robots, marketing, and other applications.</p>
+<h2>HOW IT WORKS</h2>
+<p>First the points are placed randomly.  Then the polygons are drawn according to the following rules.  Each point is enclosed inside exactly one polygon.  All of the points inside the polygon are closer to that point than they are to any of the other points.</p>
+<p>Instead of calculating the mathematically exact coordinates of the polygons, this model constructs an approximation using a grid.  Each grid cell (each "patch", in NetLogo terminology) is colored according to which point it is closest to.</p>
+<h2>HOW TO USE IT</h2>
+<p>Use the NUMBER slider to choose how many points you want, then press SETUP.  The model will place the points and draw the polygons.</p>
+<p>If you want to play with moving the points around yourself, press the GO button.  Now you can drag the points around with the mouse.  As you move a point, the model redraws the polygon.  This takes time, so it redraws them starting near the mouse and proceeding outward.  If you want to see the boundary of the updated region, turn on the SHOW-UPDATES? switch.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The line segment separating two points is exactly midway between them.</p>
+<p>How many sides do the polygons typically have?  (You may want to ignore the polygons around the edges.)</p>
+<p>Where different colors touch, there is usually a "Y".  When do you get a "T" or an "X" instead?</p>
+<h2>THINGS TO TRY</h2>
+<p>Experiment with the effect of moving the points around.  Moving the points slowly is best.  (If you move them too fast, the model will have trouble keeping up and it won't be easy to see what's going on.)</p>
+<p>Align two points so they have the exact same x coordinate or y coordinate.  Is the line between them always perfectly smooth?  (To see the effect, you may have to move the points closer or farther away from each other.  Look closely.)  Also try putting two points exactly on top of each other.  What happens?  Both effects occur because when a grid square ("patch") is equally distant from two differently colored points, NetLogo resolves the tie randomly.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Instead of placing the points completely randomly, have them move away from each other until they are roughly equidistant from each other.  This makes all the polygons roughly the same size.</p>
+<p>Edit the view and turn wrapping on in both directions, and click SETUP.  The model may seem to be working, but there is a problem.  If you turn on SHOW-UPDATES?, you can see that the update rectangle keeps going forever, continually refreshing the grid colors.  Fix the model to work with wrapping, so that update stops as soon as the whole screen has been redrawn.</p>
+<p>Instead of using the patches to display Voronoi polygons, find the boundaries by using turtles.  Create a large batch of turtles at each point (colored the same color as the point), each turtle facing a different angle.  Have the turtles walk outward from their points at a uniform rate.  Stop the turtles when they run into a turtle of a different color.</p>
+<p>Instead of using a patch-based approximation, calculate the exact positions of the sides of the polygons.  (There are numerous published algorithms for calculating this information.)  Then display the polygons using turtles with the "line" shape.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The core procedure for drawing the polygons is called <code>recolor</code>. It is only one line long! It puts the <code>min-one-of</code> and <code>distance</code> reporters to good use.</p>
+<p>The <code>mouse-down?</code>, <code>mouse-xcor</code>, and <code>mouse-ycor</code> primitives are used so the user can interact with the model.</p>
+<p>Because the number of patches is so large, it takes a while to update them all when a point moves.  So we use moving turtles to recolor the patches; the moving turtles start where the mouse is, and move outwards in a square, since near the mouse is where the user will be looking first.  See the Code tab for the details on how it works.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>MaterialSim Grain Growth</li>
+<li>Fur</li>
+<li>Honeycomb</li>
+<li>Scatter</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>For more information on Voronoi diagrams, see https://en.wikipedia.org/wiki/Voronoi.  (There are also many other sites on this topic on the web.)</p>
+<p>Thanks to John Jungck from Beloit College for inspiring this model with his talk at Northwestern University about Voronoi structures in nature.</p>
+<p>Thanks to Josh Unterman and Seth Tisue for their work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2006).  NetLogo Voronoi model.  http://ccl.northwestern.edu/netlogo/models/Voronoi.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2006 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2006 --></div>
+      </div>
+    </main>
+  </body>
+</html>

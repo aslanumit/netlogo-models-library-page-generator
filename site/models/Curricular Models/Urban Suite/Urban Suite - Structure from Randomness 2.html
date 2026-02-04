@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Urban Suite - Structure from Randomness 2</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Urban Suite - Structure from Randomness 2</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Urban%20Suite/Urban%20Suite%20-%20Structure%20from%20Randomness%202.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Urban Suite/Urban Suite - Structure from Randomness 2.png" alt="Screenshot of Urban Suite - Structure from Randomness 2" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is another model that demonstrates the concept of "structure from randomness".  In particular, it is an implementation of the model described in the book "Cities and Complexity" by Michael Batty, on pages 45-47.  For analysis and discussion beyond that provided with this model, the reader is encouraged to refer to this text.</p>
+<p>The basic idea here is showing how structured formations can easily from completely random initial data, through a simple process.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each grid cell is initialized to have a potential value of either 1 or -1, at random.</p>
+<p>Each tick of the model, the cell takes on a new potential value, which is the average of the potential values from its Von Neumann neighborhood (that is, itself and its 4 neighbors) from the previous step, plus a random number, either 1 or -1.</p>
+<p>The potential values are not displayed directly in the graphical view.  Instead, a cell is shown as white in the view when it becomes activated, which occurs when its potential value exceeds the threshold specified by the THRESHOLD slider.  Once a cell has become activated it stays activated, even though the potential value of the cell may drop down below the threshold again.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press the SETUP button to initialize the grid squares.</p>
+<p>Press the GO button to run the model.  Press the GO ONCE button to run the model just a single tick.  For a while nothing may change in the view -- this is because none of the cells have reached the threshold yet, to become activated.  Let the model run for some time, and then you will see cells start to light up.</p>
+<p>The THRESHOLD slider controls the threshold which cell's potential value must reach in order to become activated.</p>
+<p>The CELLS ABOVE THRESHOLD plot records (at each tick) the number of cells that are currently above the threshold.  Note that this is different than plotting the number of activated cells, which is a monotonically increasing function.</p>
+<p>The POTENTIAL plot shows two different things.  The maximum potential value that any cell currently has is plotted in green.  The average potential of all the cells (times a factor of 10, so that it can be seen better on the same graph) is plotted in blue.
+(These plots were designed to match the plots shown in Figure 1.11 of the Cities and Complexity Book.)</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The maximum potential shoots up quickly at first, but then slows.  However, it continues to slowly increase over time.  It is important to understand that the maximum potential that is being plotted is the largest potential found in any of the cells -- not the theoretically maximum potential, which increases linearly with the number of ticks, since it is possible (though very improbable) that all the cells could continually have 1 added to them, and never have -1.</p>
+<h2>THINGS TO TRY</h2>
+<p>Choose a medium threshold level (such as 4 or 5) and let the model run for about 1500 ticks.  The white patterns of activated cells that form have been shown definitively to be fractal in nature (by Viscek and Szalay, 1987).  Furthermore, it was shown that the fractal dimension (which gives an indication of the amount to which a fractal fills the space) varies with respect to the THRESHOLD value.  This makes sense, and you can see it visually be setting different THRESHOLD values and running the model for a fixed number of ticks.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Make it so that cells can be activated in either the positive or negative direction -- that is, if they go below -THRESHOLD, then they should become negatively activated.  Color positively activated cells blue, and negatively activated cells red.  If a cell gets activated one way, and then later is activated the other way, color that cell purple.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>When creating or adding white noise to the system, this model uses the expression "ONE-OF [1 -1]", to choose either 1 or -1 randomly.  ONE-OF is a primitive that works with either agentsets or lists.  It makes a random choice from the collection it is given.  An alternative choice would have been "(RANDOM 2) * 2 - 1", but the ONE-OF notation is easier to read.</p>
+<h2>RELATED MODELS</h2>
+<p>This model is related to all of the other models in the "Urban Suite".</p>
+<p>In particular, it is related to "Urban Suite - Structure from Randomness 1", which is another model demonstrating the same concept.</p>
+<p>It is also related to the DLA (diffusion-limited aggregation) model in the NetLogo models library, which grows fractal structures from random particle motion.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is based on pages 45-47 of the book "Cities and Complexity" by Michael Batty.</p>
+<p>Thanks to Seth Tisue and Forrest Stonedahl for their work on this model.</p>
+<p>The Urban Suite models were developed as part of the Procedural Modeling of Cities project, under the sponsorship of NSF ITR award 0326542, Electronic Arts &amp; Maxis.</p>
+<p>Please see the project web site ( http://ccl.northwestern.edu/cities/ ) for more information.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2007).  NetLogo Urban Suite - Structure from Randomness 2 model.  http://ccl.northwestern.edu/netlogo/models/UrbanSuite-StructurefromRandomness2.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 --></div>
+      </div>
+    </main>
+  </body>
+</html>

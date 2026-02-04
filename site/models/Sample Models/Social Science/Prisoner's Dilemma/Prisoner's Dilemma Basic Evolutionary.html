@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prisoner&#x27;s Dilemma Basic Evolutionary</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Prisoner&#x27;s Dilemma Basic Evolutionary</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Prisoner&#x27;s%20Dilemma/Prisoner&#x27;s%20Dilemma%20Basic%20Evolutionary.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Social Science/Prisoner&#x27;s Dilemma/Prisoner&#x27;s Dilemma Basic Evolutionary.png" alt="Screenshot of Prisoner&#x27;s Dilemma Basic Evolutionary" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>One of the most prominently studied phenomena in Game Theory is the "Prisoner's Dilemma."  The Prisoner's Dilemma, which was formulated by Melvin Drescher and Merrill Flood and named by Albert W. Tucker, is an example of a class of games called non-zero-sum games. This model explores the dynamics of agents on a grid playing iterated prisoner's dilemma with their neighbors and then adapting their strategy to match their best performing neighbor at each iteration.</p>
+<p>In zero-sum games, total benefit to all players add up to zero, or in other words, each player can only benefit at the expense of other players (e.g. chess, football, poker --- one person can only win when the opponent loses).  On the other hand, in non-zero-games, each person's benefit does not necessarily come at the expense of someone else.  In many non-zero-sum situations, a person can benefit only when others benefit as well.  Non-zero-sum situations exist where the supply of a resource is not fixed or limited in any way (e.g. knowledge, artwork, and trade).  Prisoner's Dilemma, as a non-zero-sum game, demonstrates a conflict between rational individual behavior and the benefits of cooperation in certain situations.  The classical prisoner's dilemma is as follows:</p>
+<p>Two suspects are apprehended by the police.  The police do have enough evidence to convict these two suspects.  As a result, they separate the two, visit each of them, and offer both the same deal:  "If you confess, and your accomplice remains silent, he goes to jail for 10 years and you can go free.  If you both remain silent, only minor charges can be brought upon both of you and you guys get 6 months each.  If you both confess, then each of you two gets 5 years."</p>
+<p>Each suspect may reason as follows: "Either my partner confesses or not.  If he does confess and I remain silent, I get 10 years while if I confess, I get 5 years.  So, if my partner confesses, it is best that I confess and get only 5 years than 10 years in prison.  If he didn't, then by confessing, I go free, whereby remaining silent, I get 6 months.  Thus, if he didn't confess, it is best to confess, so that I can go free.   Whether or not my partner confesses or not, it is best that I confess."</p>
+<p>In a non-iterated prisoner's dilemma, the two partners will never have to work together again.  Both partners are thinking in the above manner and decide to confess, which is called "defecting," because they each abandoned the other.  Consequently, they both receive 5 years in prison.  If neither would have confessed, they would have only gotten 6 months each.  The rational behavior paradoxically leads to a socially unbeneficial outcome.</p>
+<pre><code class="language-text">                             Payoff Matrix
+                             -------------
+                             YOUR PARTNER
+                     Cooperate            Defect
+                    -----------------------------
+       Cooperate |   (0.5, 0.5)           (0, 10)
+  YOU            |
+       Defect    |(10, 0)              (5, 5)
+
+        (x, y) = x: your score, y: your partner's score
+        Note: lower the score (number of years in prison), the better.
+</code></pre>
+<p>In an Iterated Prisoner's Dilemma where you have more than two players and multiple rounds, such as this one, the scoring is different.  In this model, it is assumed that an increase in the number of people who cooperate will increase proportionately the benefit for each cooperating player (which would be a fine assumption, for example, in the sharing of knowledge).  For those who do not cooperate, assume that their benefit is some factor (alpha) multiplied by the number of people who cooperate (that is, to continue the previous example, the non-cooperating (defecting) players take knowledge from others but do not share any knowledge themselves).  How much cooperation is incited is dependent on the factor multiple for not cooperating.  Consequently, in an iterated prisoner's dilemma with multiple players, the dynamics of the evolution in cooperation may be observed.</p>
+<pre><code class="language-text">                             Payoff Matrix
+                             -------------
+                                OPPONENT
+                     Cooperate            Defect
+                    -----------------------------
+       Cooperate |(1, 1)            (0, alpha)
+  YOU            |
+       Defect    |(alpha, 0)        (0, 0)
+
+        (x, y) = x: your score, y: your partner's score
+        Note: higher the score (amount of the benefit), the better.
+</code></pre>
+<h2>HOW TO USE IT</h2>
+<p>Decide what percentage of patches should cooperate at the initial stage of the simulation and change the INITIAL-COOPERATION slider to match what you would like.  Next, determine the DEFECTION-AWARD multiple (mentioned as alpha in the payoff matrix above) for defecting (not cooperating).  The Defection-Award multiple varies from range of 0 to 3.  Press SETUP and note that red patches (that will defect) and blue patches (cooperate) are scattered across the  .  Press GO to make the patches interact with their eight neighboring patches.  First, they count the number of neighboring patches that are cooperating.  If a patch is cooperating, then its score is number of neighboring patches that also cooperated.   If a patch is defecting, then its score is the product of the number of neighboring patches who are cooperating and the Defection-Award multiple.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each patch will either cooperate (blue) or defect (red) in the initial start of the model.  At each cycle, each patch will interact with all of its 8 neighbors to determine the score for the interaction.  Should a patch have cooperated, its score will be the number of neighbors that also cooperated.  Should a patch defect, then the score for this patch will be the product of the Defection-Award multiple and the number of neighbors that cooperated (i.e. the patch has taken advantage of the patches that cooperated).</p>
+<p>In the subsequent round, the patch will set its old-cooperate? to be the strategy it used in the previous round.  For the upcoming round, the patch will adopt the strategy of one of its neighbors that scored the highest in the previous round.</p>
+<p>If a patch is blue, then the patch cooperated in the previous and current round.
+If a patch is red, then the patch defected in the previous iteration as well as the current round.
+If a patch is green, then the patch cooperated in the previous round but defected in the current round.
+If a patch is yellow, then the patch defected in the previous round but cooperated in the current round.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice the effect the Defection-Award multiple plays in determining the number of patches that will completely cooperate (red) or completely defect (blue). At what Defection-Award multiple value will a patch be indifferent to defecting or cooperating?  At what Defection-Award multiple value will there be a dynamic change between red, blue, green, and yellow - where in the end of the model no particular color dominates all of the patches (i.e. view is not all red or all blue)?</p>
+<p>Note the Initial-Cooperation percentage.  Given that Defection-Award multiple is low (below 1), if the initial percentage of cooperating patches is high, will there be more defecting or cooperating patches eventually?  How about when the Defection-Award multiple is high?  Does the initial percentage of cooperation effect the outcome of the model, and, if so, how?</p>
+<h2>THINGS TO TRY</h2>
+<p>Increase the Defection-Award multiple by moving the "Defection-Award" slider (just increase the "Defection-Award" slider while model is running), and observe how the histogram for each color of patch changes. In particular, pay attention to the red and blue bars.  Does the number of pure cooperation or defection decrease or increase with the increase of the Defection-Award multiple?  How about with a decrease of the Defection-Award multiple? (Just increase the "Defection-Award" slider while model is running.)</p>
+<p>At each start of the model, either set the initial-cooperation percentage to be very high or very low (move the slider for "initial-cooperation"), and proportionally value the Defection-Award multiple (move the slider for "Defection-Award" in the same direction) with regards to the initial-cooperation percentage.  Which color dominates the world, when the initial-cooperation is high and the Defection-Award is high?  Which color dominates the world when initial-cooperation is low and the Defection-Award multiple is also low?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Alter the code so that the patches have a strategy to implement.  For example, instead of adopting to cooperated or defect based on the neighboring patch with the maximum score.  Instead, let each patch consider the history of cooperation or defection of it neighboring patches, and allow it to decide whether to cooperate or defect as a result.</p>
+<p>Implement these four strategies:</p>
+<ol>
+<li>Cooperate-all-the-time: regardless of neighboring patches' history, cooperate.</li>
+<li>Tit-for-Tat:  only cooperate with neighboring patches, if they have never defected.  Otherwise, defect.</li>
+<li>Tit-for-Tat-with-forgiveness: cooperate if on the previous round, the patch cooperated.  Otherwise, defect.</li>
+<li>Defect-all-the-time: regardless of neighboring patches' history, defect.</li>
+</ol>
+<p>How are the cooperating and defecting patches distributed?  Which strategy results with the highest score on average?  On what conditions will this strategy be a poor strategy to use?</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2002).  NetLogo Prisoner's Dilemma Basic Evolutionary model.  http://ccl.northwestern.edu/netlogo/models/Prisoner'sDilemmaBasicEvolutionary.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2002 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Osmotic Pressure</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Osmotic Pressure</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Unverified/Osmotic%20Pressure.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Unverified/Osmotic Pressure.png" alt="Screenshot of Osmotic Pressure" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Osmotic pressure is generally defined as the amount of pressure required to bring solvent movement across a semipermeable membrane to equilibrium. This model attempts to model an agent-based description of the movement of solution particles across a semipermeable membrane and illustrate the colligative nature of osmotic pressure.</p>
+<p>Osmotic pressure is a colligative property of a solution, meaning the number of particles matter more than the identity of the particles. Because adding pressure to the solution on one side of the membrane changes the rate at which the solvent passes through the membrane (a rate that is restricted by the presence of solute particles), osmotic pressure can be thought of as a measurement of the tendency of a solute to restrict osmosis. As a colligative property, changes in osmotic pressure are proportional to the number of solute particles, not the identity of the particles.  The colligative nature of osmotic pressure can be explored in this model by experimenting with different types and number of solute particles.</p>
+<h2>HOW IT WORKS</h2>
+<p>In this model, blue patches represent a container divided by a semipermeable membrane (the red squares) -- a physical, porous barrier separating two solutions that allows some particles to pass but not others. Blue circles represent solvent molecules (water in this model) that can pass freely through the membrane. At setup, 1000 of these solvent molecules are created and randomly distributed throughout the container.  White circles represent particles of added solute. The amount of solute defined by the sliders is placed on the appropriate side of the membrane. If a solute is an ionic compound, it breaks apart into the appropriate number of ions.  If the solute is covalent, the compound does not break apart. Solute particles cannot pass through the membrane.</p>
+<p>As the model runs, particles move through the container according to kinetic molecular theory using NetLogo code first defined in the GasLab suite of models.  All particles move in a straight line until they collide with another particle, the wall, or the membrane (only solute particles collide with the membrane). Particles collide with one another in an elastic collision. While solvent molecules (water represented by the blue circles) may pass through the membrane freely, solute particles (white circles) are restricted to the side they are created on. In addition, at each step solvent molecules have a 50% chance to "stick" to solute molecules occupying the same patch (solute particles can hold a maximum of five solvent molecules). "Stuck" molecules have a 2% chance to become unstuck at each step of the model. In this model, changes in volume for each side occur through the movement of the membrane.</p>
+<p>At each tick, the membrane moves according to the difference in the number of solvent molecules moving from left to right and those moving from right to left. As the model progresses, according to the phenomenon of osmosis, the solvent (water) shows a net movement towards the side of higher solute concentration.</p>
+<h2>HOW TO USE IT</h2>
+<h3>Initial settings</h3>
+<p><strong>SOLUTE:</strong> Choose the solute to add to the solution.  The chemical formula of the solute will be printed in the output box to the right.  Each solute will act differently in solution depending on its bonding behavior.
+<strong>SOLUTE-LEFT:</strong> This number will determine the number of solute particles added to the solution on the left side of the membrane.  Keep in mind, due to various bonding behaviors, the total number of dissolved particles may be different from this value.
+<strong>SOLUTE-RIGHT:</strong> This number will determine the number of solute particles added to the solution on the right side of the membrane.  Keep in mind, due to various bonding behaviors, the total number of dissolved particles may be different from this value.</p>
+<h3>Buttons</h3>
+<p><strong>SETUP:</strong> Sets up the model
+<strong>GO:</strong> Runs the model</p>
+<h3>Monitors</h3>
+<p><strong>WATER # LEFT:</strong> Shows the number of solvent particles on the left side of the membrane.
+<strong>WATER # RIGHT:</strong> Shows the number of solvent particles on the right side of the membrane.
+<strong>SOLUTE LEFT:</strong> Shows the number of solute particles on the left side of the membrane.
+<strong>SOLUTE RIGHT:</strong> Shows the number of solute particles on the right side of the membrane.
+<strong>STUCK LEFT:</strong> Shows the number of solvent particles currently stuck to solute particles on the left side of the membrane
+<strong>STUCK RIGHT:</strong> Shows the number of solvent particles currently stuck to solute particles on the right side of the membrane
+<strong>MEMBRANE:</strong> Shows the x-cor of the membrane. Note: The membrane moves based on the difference between the amount of particles moving across the membrane in a given direction each step.
+<strong>AVERAGE:</strong> Shows mean of the membrane location over the entire model run.</p>
+<h3>Plot</h3>
+<p><strong>WATER #:</strong> Plots the number of solvent particles on the left and right side of the membrane over time (ticks).</p>
+<h2>THINGS TO NOTICE</h2>
+<p>As the model runs, more solvent particles should end up on the side of the membrane with more solute particles. Because more solvent particles are free to move on the side with fewer solute particles, they are more likely to cross the membrane.</p>
+<p>How does the membrane movement change when adding different solutes? Is there a pattern?
+What happens when adding Sodium Chloride?  How is this different from adding Sugar?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try adding different solutes.  Can you get a change in the number of solute particles so that Sodium Chloride acts like Sugar?
+Is there a mathematical relationship between membrane movement and the number of solute particles. Will this relationship depend on the type of solute added?  Why or why not?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try making new solutes.</p>
+<p>There are at least two other common proposals for an agent-based explanations for the process of osmosis.</p>
+<ol>
+<li>Solute particles "block" solvent particles from moving across the membrane. Solvent particles will then show a net movement from a side of fewer solute particles (because there are less solute particles blocking their path) to a side with more solvent particles.</li>
+<li>Solute particles are generally larger than solvent particles (usually water). The size of the solute particles leads to frequent collisions of solvent-solute particles. On the side with more solute particles, the mean free path of solvent particles will be lower, leading to a net movement of particles from the low solute side.</li>
+</ol>
+<p>Can you model these alternate explanations?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Fixed length links are simulated by first tying particles together, then applying motion rules to only the solute particles.</p>
+<h2>RELATED MODELS</h2>
+<p>GasLab suite</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>We thank Luis Amaral for his scientific consultation.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Holbert, N. and Wilensky, U. (2012).  NetLogo Osmotic Pressure model.  http://ccl.northwestern.edu/netlogo/models/OsmoticPressure.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2012 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2012 Cite: Holbert, N. --></div>
+      </div>
+    </main>
+  </body>
+</html>

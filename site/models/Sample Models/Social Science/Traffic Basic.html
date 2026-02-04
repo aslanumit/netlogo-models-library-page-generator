@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Traffic Basic</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Traffic Basic</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Traffic%20Basic.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Social Science/Traffic Basic.png" alt="Screenshot of Traffic Basic" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model models the movement of cars on a highway. Each car follows a simple set of rules: it slows down (decelerates) if it sees a car close ahead, and speeds up (accelerates) if it doesn't see a car ahead. The model demonstrates how traffic jams can form even without any accidents, broken bridges, or overturned trucks.  No "centralized cause" is needed for a traffic jam to form.</p>
+<h2>HOW TO USE IT</h2>
+<p>Click on the SETUP button to set up the cars.</p>
+<p>Set the NUMBER-OF-CARS slider to change the number of cars on the road.</p>
+<p>Click on GO to start the cars moving.  Note that they wrap around the world as they move, so the road is like a continuous loop.</p>
+<p>The ACCELERATION slider controls the rate at which cars accelerate (speed up) when there are no cars ahead.</p>
+<p>When a car sees another car right in front, it matches that car's speed and then slows down a bit more.  How much slower it goes than the car in front of it is controlled by the DECELERATION slider.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Traffic jams can start from small "seeds."  These cars start with random positions and random speeds. If some cars are clustered together, they will move slowly, causing cars behind them to slow down, and a traffic jam forms.</p>
+<p>Even though all of the cars are moving forward, the traffic jams tend to move backwards. This behavior is common in wave phenomena: the behavior of the group is often very different from the behavior of the individuals that make up the group.</p>
+<p>The plot shows three values as the model runs:</p>
+<ul>
+<li>
+<p>the fastest speed of any car (this doesn't exceed the speed limit!)</p>
+</li>
+<li>
+<p>the slowest speed of any car</p>
+</li>
+<li>
+<p>the speed of a single car (turtle 0), painted red so it can be watched.</p>
+</li>
+</ul>
+<p>Notice not only the maximum and minimum, but also the variability -- the "jerkiness" of one vehicle.</p>
+<p>Notice that the default settings have cars decelerating much faster than they accelerate. This is typical of traffic flow models.</p>
+<p>Even though both ACCELERATION and DECELERATION are very small, the cars can achieve high speeds as these values are added or subtracted at each tick.</p>
+<h2>THINGS TO TRY</h2>
+<p>In this model there are three sliders that can affect the tendency to create traffic jams: the initial NUMBER-OF-CARS, ACCELERATION, and DECELERATION.</p>
+<p>Look for patterns in how these settings affect the traffic flow.  Which variable has the greatest effect?  Do the patterns make sense?  Do they seem to be consistent with your driving experiences?</p>
+<p>Set DECELERATION to zero.  What happens to the flow?  Gradually increase DECELERATION while the model runs.  At what point does the flow "break down"?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try other rules for speeding up and slowing down.  Is the rule presented here realistic? Are there other rules that are more accurate or represent better driving strategies?</p>
+<p>In reality, different vehicles may follow different rules. Try giving different rules or ACCELERATION/DECELERATION values to some of the cars.  Can one bad driver mess things up?</p>
+<p>The asymmetry between acceleration and deceleration is a simplified representation of different driving habits and response times. Can you explicitly encode these into the model?</p>
+<p>What could you change to minimize the chances of traffic jams forming?</p>
+<p>What could you change to make traffic jams move forward rather than backward?</p>
+<p>Make a model of two-lane traffic.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The plot shows both global values and the value for a single car, which helps one watch overall patterns and individual behavior at the same time.</p>
+<p>The <code>watch</code> command is used to make it easier to focus on the red car.</p>
+<p>The <code>speed-limit</code> and <code>speed-min</code> variables are set to constant values. Since they are the same for every car, these variables could have been defined as globals rather than turtle variables. We have specified them as turtle variables since modifications or extensions to this model might well have every car with its own speed-limit values.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>
+<p>"Traffic Basic Utility": a version of "Traffic Basic" including a utility function for the cars.</p>
+</li>
+<li>
+<p>"Traffic Basic Adaptive": a version of "Traffic Basic" where cars adapt their acceleration to try and maintain a smooth flow of traffic.</p>
+</li>
+<li>
+<p>"Traffic Basic Adaptive Individuals": a version of "Traffic Basic Adaptive" where each car adapts individually, instead of all cars adapting in unison.</p>
+</li>
+<li>
+<p>"Traffic 2 Lanes": a more sophisticated two-lane version of the "Traffic Basic" model.</p>
+</li>
+<li>
+<p>"Traffic Intersection": a model of cars traveling through a single intersection.</p>
+</li>
+<li>
+<p>"Traffic Grid": a model of traffic moving in a city grid, with stoplights at the intersections.</p>
+</li>
+<li>
+<p>"Traffic Grid Goal": a version of "Traffic Grid" where the cars have goals, namely to drive to and from work.</p>
+</li>
+<li>
+<p>"Gridlock HubNet": a version of "Traffic Grid" where students control traffic lights in real-time.</p>
+</li>
+<li>
+<p>"Gridlock Alternate HubNet": a version of "Gridlock HubNet" where students can enter NetLogo code to plot custom metrics.</p>
+</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo Traffic Basic model.  http://ccl.northwestern.edu/netlogo/models/TrafficBasic.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was developed at the MIT Media Lab using CM StarLogo.  See Resnick, M. (1994) "Turtles, Termites and Traffic Jams: Explorations in Massively Parallel Microworlds."  Cambridge, MA: MIT Press.  Adapted to StarLogoT, 1997, as part of the Connected Mathematics Project.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1997 2001 MIT --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Line of Sight Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Line of Sight Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Line%20of%20Sight%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Line of Sight Example.png" alt="Screenshot of Line of Sight Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>On a perfectly flat landscape, you can see all the way to the horizon. But if the landscape has hills, your view of some of the land in front of you may be blocked.  This code example shows how to simulate this using turtles moving over a patch landscape of varying elevation.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each patch has an elevation. Every patch that a turtle can "see" from its current location and elevation is considered to be in the turtle's "line of sight."  To show this, a colored dot is placed on the patch. The patches visible to each turtle are determined by the turtle's heading, the MAXIMUM-VISIBILITY slider (how many patches ahead each turtle can see if it is unobstructed) and the elevations of the patches in between.</p>
+<p>Each turtle looks ahead at the patches up to MAXIMUM-VISIBILITY away. If the angle from the location of the turtle to the top of the patch is greater than the angle to the last visible patch then there is a line from the turtle to the patch that does not intersect any of the other patches, thus it is in the "line of sight" of the turtle.</p>
+<p>While all six turtles show their line of sight with dots, the orange turtle's line of sight is depicted with a plot, as well. The plot shows the elevation of the MAXIMUM-VISIBILITY patches in front of the turtle, with visible patches drawn as orange bars.  (Thus if the three leftmost bars are drawn in orange, the elevations allow the orange turtle to see only three patches ahead.)</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Make each turtle able to see around it in all directions, not only the single direction in which it is facing.</p>
+<!-- 2006 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Rock Paper Scissors</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Rock%20Paper%20Scissors.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Rock Paper Scissors.png" alt="Screenshot of Rock Paper Scissors" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model explores the role of movement and space in a three species ecosystem. The system consists of three species, represented by red patches, green patches, and blue patches, which compete over space. The interactions between the species are based on the game Rock-Paper-Scissors. That is, red beats green, green beats blue, and blue beats red. Organisms compete with their neighbors, move throughout the environment, and reproduce. These interactions result in spiral patterns whose size and stability depends on the movement rate of the organisms.</p>
+<p>The model is written in an event-based fashion, to reflect the formulation of the published model. See HOW IT WORKS and EXTENDING THE MODEL.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each patch can be occupied by one of three species or can be blank. The species are represented by three colors: red, green, and blue. Each tick, the following types of events happen at defined average rates:</p>
+<ul>
+<li>Select event: Two random neighbors compete with each other. In competition, red beats green, green beats blue, and blue beats red, like in rock paper scissors. The losing patch becomes blanks.</li>
+<li>Reproduce event: Two random neighbors attempt to reproduce. If one of the neighbors is blank, it acquires the color of the other. Nothing happens if neither neighbor is blank.</li>
+<li>Swap event: Two random neighbors swap color. This represents the organisms moving.</li>
+</ul>
+<p>The exact number of, for instance, swap events that occur each tick is drawn from a <a href="https://en.wikipedia.org/wiki/Poisson_distribution">Poisson distribution</a> with mean equal to <code>(count patches) * 10 ^ swap-rate-exponent</code>. A Poisson distribution defines how many times a particular event occurs given an average rate for that event assuming that the occurrences of that event are independent. Here, the occurrences of the events are approximately independent since they're being performed by different organisms.</p>
+<p>The events occur in a random order involving random pairs of neighbors.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to initialize the model and GO to run it.</p>
+<p>SWAP-RATE-EXPONENT, REPRODUCE-RATE-EXPONENT, and SELECT-RATE-EXPONENT each control the rate at which their respective actions are performed. There will be an average of <code>count patches * 10 ^ rate-exponent</code> events each tick for each event type. This means that increasing a slider by <code>1.0</code> will result in that event type occurring 10 times more often, no matter what the other sliders are set to. The SWAP-%, REPRODUCE-%, and SELECT-% monitors indicate what percentage of events will be swap, reproduce, and select events (respectively) each tick.</p>
+<p>The POPULATIONS plot shows how much of each organism there is over time.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Running the model quickly results in a collection of interconnected spirals in which each species is chasing another species.</p>
+<p>Global population levels of each of the species oscillate over time.</p>
+<h2>THINGS TO TRY</h2>
+<ul>
+<li>What happens as you increase SWAP-RATE-EXPONENT? What happens to the shape and size of the spirals? Why does this happen?</li>
+<li>What happens as you decrease SWAP-RATE-EXPONENT?</li>
+<li>Can you find parameter settings that result in the extinction of one of the species? What happens to the other two species?</li>
+</ul>
+<h2>EXTENDING THE MODEL</h2>
+<ul>
+<li>Try generalizing the model to more than three species.</li>
+<li>The model is written in an event-based manner. Try rewriting it in a more idiomatic agent-based way.</li>
+</ul>
+<h2>NETLOGO FEATURES</h2>
+<p>The model makes heavy use of the <code>random-poisson</code> primitive. This primitive is useful when modeling events that happen at various rates. Furthermore, this model uses a technique wherein a list of events is produced and shuffled to simulate the occurrence of each event at each rate while still allowing the events to occur in arbitrary orders.</p>
+<h2>RELATED MODELS</h2>
+<p>Wolf Sheep Predation shows a simpler predator prey model.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Reichenbach, T., Mobilia, M., &amp; Frey, E. (2008). Self-organization of mobile populations in cyclic competition. Journal of Theoretical Biology, 254(2), 368–383. https://www.sciencedirect.com/science/article/pii/S0022519308002464?via%3Dihub</p>
+<p>Reichenbach, T., Mobilia, M., &amp; Frey, E. (2007). Mobility promotes and jeopardizes biodiversity in rock-paper-scissors games. Nature, 448(7157), 1046–1049. https://doi.org/10.1038/nature06095</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Head, B., Grider, R. and Wilensky, U. (2017).  NetLogo Rock Paper Scissors model.  http://ccl.northwestern.edu/netlogo/models/RockPaperScissors.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2017 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2017 Cite: Head, B., Grider, R. --></div>
+      </div>
+    </main>
+  </body>
+</html>

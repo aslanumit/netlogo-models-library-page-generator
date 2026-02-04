@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Model Visualizer and Plotter Example</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Model Visualizer and Plotter Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Extensions%20Examples/ls/Model%20Visualizer%20and%20Plotter%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Code Examples/Extensions Examples/ls/Model Visualizer and Plotter Example.png" alt="Screenshot of Model Visualizer and Plotter Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This code example shows two different ways of visualizing data from LevelSpace child models with a parent model:</p>
+<ol>
+<li>Through the use of plots and reporters</li>
+<li>Through drawing a phase diagram with turtles</li>
+</ol>
+<h2>HOW IT WORKS</h2>
+<p>The model creates the specified number of turtles who each create a Wolf Sheep Predation child model. For each GO, turtles call GO in their child model, and then move to XY coordinates that reflect the counts of wolves and sheep in their model.</p>
+<h2>HOW TO USE IT</h2>
+<p>Use NUM-MODELS to decide how many models you want. Press SETUP to create the child models, and GO to run the models and visualize them.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>All models start with the same number of wolves and sheep, and roughly the same amount of grass. Even then, we see heterogeneity in their outcomes after just a few ticks.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try to add a heat map functionality to the model. We suggest adding a patch variable that turtles add to whenever they are on a patch, and then use the <code>palette:scale</code> primitive to show the spatial distribution over time.</p>
+<p>Try to change the code so that, upon setup, all models are created with the same random seed. This will ensure that all models run in the exact same way, and all turtles will keep moving to the same places. Then create a button that sets a new random seed in each model. See how long it takes before your models are so different that you can't even tell that they were exactly the same at some point in their past.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses the LevelSpace extension to create many child models programmatically from inside NetLogo. It uses Headless models, but you can view the state of each model by using the <code>ls:show &lt;model-id&gt;</code> command. If you want to view all models at the same time, try <code>ls:show ls:models</code>. But if you have lots of models open, this may slow down your machine considerably.</p>
+<h2>RELATED MODELS</h2>
+<p>See the Parent Model Example and the Model Interactions Example.</p>
+<!-- 2016 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sunflower Biomorphs</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Sunflower Biomorphs</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Evolution/Sunflower%20Biomorphs.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Biology/Evolution/Sunflower Biomorphs.png" alt="Screenshot of Sunflower Biomorphs" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>A model of evolution where the user provides the selective pressure.  The user picks one or two flowers from a grid of randomly generated animated flowers.  The selected flowers become the "parents" of the next generation.  Over time, the user's selections cause the characteristics of the population to change.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each flower has four genes that determine its form.  For example, one flower may have bigger petals or be more colorful than another.  When the user  selects the parent or parents of the next generation, and the screen is then cleared and the flowers repopulated with genes based on the genes of their parent(s).  The user can exert selection pressure towards colorful flowers, for example, by choosing the most colorful flower(s) available.</p>
+<p>At the center of every "flower" is an invisible "spawner".  It remains in the center continuously hatching "petals" that move outward.  Each spawner holds the four variables: num-colors, step-size, size-modifier, and turn-increment.  (Since each petal needs to know how far forward to move each time and how large to grow, they have their own step-size and size-modifier that is identical to the spawner's value that spawned them.)  Each turn, each spawner hatches a new petal and turns and sets its color appropriately (based on the values for num-colors and turn-increment.)  Once the spawners have all hatched a new petal, each petal simply moves forward its step-size and adjusts its size based on the distance its traveled and its size-modifier.  If a petal moves outside the box for that flower, it dies.</p>
+<p>The user may choose between asexual (one parent) and sexual (two parents) reproduction.  The next generation is created by mutating the values of the parent(s) for the four variables.  The existing petals are then killed off, and the next generation is created.</p>
+<h2>HOW TO USE IT</h2>
+<p>Before clicking SETUP, set the ROWS and COLUMNS to the desired values.  These determine how many flowers are present in the model.</p>
+<p>Then set the mutation rate appropriately.  The higher the mutation rate, the less flowers in the next generation will resemble their parents.  If CONTROLLED-MUTATION? is on, then the model controls the mutation by varying it within the population; in this mode, mutation varies among the individuals in the population; where the amount of MUTATION increases in each individual that is to the right of the previous one (or in the next row).  Thus, flowers near the top-left of the model will tend to more closely resemble their parents than flowers in the bottom right.</p>
+<p>If asexual selection is selected (the ASEXUAL? switch is on), then every click will repopulate the flowers based on the values of the spawner nearest your click.  If sexual selection is selected, then the first click selects the first parent (and colors its background grey.)  When you click again, the two clicked spawners "mate" and populate the next generation.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try and get certain flowers patterns to emerge; for example, try to selectively breed towards a very tight spiral, a non-rotating "starfish", or a straight line.</p>
+<p>Remember a particularly pleasing flower, then clear all of the flowers, and see if you can evolve your favorite flower again.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>It might be neat to allow the user to change the number of flowers while the model is running.  For example, changing the model from a 2x2 grid to a 3x3 grid might put five new flowers into the population, all based on the previously selected parent.</p>
+<p>Change the way the parents' genes are passed on in sexual reproduction and how they are expressed.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses a breed of invisible spawners to keep track of each flower.</p>
+<h2>RELATED MODELS</h2>
+<p>Sunflower</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is loosely based on the Biomorphs discussed at length in Richard Dawkins' <em>The Blind Watchmaker</em> (1986).</p>
+<p>In Dawkins' original model, the user was presented with a series of "insects" that were drawn based on nine separate values.  For example, if insect A has a "leg-length" value of 2 and insect B has a "leg-length" value of 1, then insect A would be drawn with longer legs.  These 9 variables were thus the genotype of each insect-like creature, and the drawing based on those numbers was the phenotype.  If the user clicked on an insect (or "biomorph"), then all the insects would be erased and the chosen biomorph would be used as the basis for a new population of biomorphs.  Each variable would be mutated slightly in the new generation (representing the inheriting of a slightly higher or lower value for the genotype), and these mutated values would be used in the new population of the biomorphs.  In this manner, the new generation of  biomorphs resembled the previously chosen biomorph, with some variation.  For example, if you chose a biomorph with an exceptionally long abdomen, then, because they are all modified versions of the chosen biomorph, biomorphs in the next generation would tend to have longer abdomens than previously.</p>
+<p>In this model, "flowers" are used as the biomorphs instead of the insect-like creatures Dawkins used; furthermore, these biomorphs only vary among four variables--num-color, step-size, size-modifier, and turn-increment--and not nine.  The idea is very similar, though.  The user is presented with a number of flowers.  By clicking on a flower, the user can choose the type of flower that will populate the next generation.  If ASEXUAL? is false, the user picks two biomorphs instead of just one; the next generation will be produced by selecting one the values for each of the four genotype variables from either one of the parents.</p>
+<p>Thanks to Nate Nichols for his work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Nichols, N. and Wilensky, U. (2006).  NetLogo Sunflower Biomorphs model.  http://ccl.northwestern.edu/netlogo/models/SunflowerBiomorphs.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2006 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2006 Cite: Nichols, N. --></div>
+      </div>
+    </main>
+  </body>
+</html>

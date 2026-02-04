@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mousetraps</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Mousetraps</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/Mousetraps.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Mathematics/Mousetraps.png" alt="Screenshot of Mousetraps" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Imagine a gymnasium full of mousetraps.  On each mousetrap is a ping pong ball.  Now throw a single ping pong ball into the middle of the room. The ball lands on a trap, the trap triggers, and a second ball flies into the air.  The first ball also bounces into the air again, so now there are two balls in the air.  Each of those two balls triggers another trap, so there's four balls in the air. And so on...</p>
+<p>This experiment is a well-known metaphor for nuclear fission.  In nuclear fission, atoms of fissionable material such as uranium are the "mousetraps", and neutrons are the ping pong balls.</p>
+<h2>HOW IT WORKS</h2>
+<p>Light blue squares represent untriggered mousetraps.  Red squares represent triggered mousetraps.</p>
+<p>When a ball lands on a light blue square, the square turns red, a new ball appears, and both balls travel a random distance in a random direction.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to set up all the mousetraps and suspend a single ping pong ball over the center.  Press GO to release the ping pong ball.</p>
+<p>If you want to see the reaction progress in slow motion, use the GO ONCE button to advance a step at a time.</p>
+<p>To vary the maximum distance a ping pong ball can travel when it is released or bounces, use the MAX-DISTANCE slider.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Sometimes the reaction fizzles out almost immediately.  Why do you think that happens?</p>
+<p>Even if a sustained chain reaction occurs, not every mousetrap gets triggered.  Why?</p>
+<p>What shape is the "Traps triggered" plot?  Why do you think it's shaped that way?</p>
+<p>What shape is the "Balls in the air" plot?  Why do you think it's shaped that way?</p>
+<p>Suppose the gymnasium was infinitely large.  What would the two plots look like?  What kind of equation would produce such plots?</p>
+<h2>THINGS TO TRY</h2>
+<p>Play around with varying the MAX-DISTANCE slider.  How big does MAX-DISTANCE need to be in order to get a chain reaction every time?  Most of the time?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>There are various ways in which this model could be more physically realistic.  For example:</p>
+<ul>
+<li>
+<p>Currently both a released ball and a bouncing ball travel the same maximum distance, but in reality the mousetrap would likely send the released ball much farther.  Change the model so these different distances are controlled by two different sliders.</p>
+</li>
+<li>
+<p>Currently the balls travel to their new positions instantly --- in reality it would take time proportional to the distance traveled.  (Does it make a difference if you take into account that the balls move in a parabola through the air, not a straight line?)  Change the model to take this into account.</p>
+</li>
+</ul>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of <code>hatch</code> to cause the ping pong balls to "multiply".</p>
+<p>When a turtle tries to move off the edge of the world it cannot, it hits the wall, and lands on the same mousetrap it triggered in the last step, it dies.</p>
+<h2>RELATED MODELS</h2>
+<p>Rumor Mill is very similar to this model in mechanism and results, even though the domain is completely different (people and rumors instead of mousetraps and ping pong balls).  (What other processes in nature or society does this model resemble...?)</p>
+<p>Reactor X-Section and Reactor Top Down are two different views of nuclear fission happening inside a nuclear reactor.  They both include ways of limiting the rate of fission so the "mousetraps" don't all start triggering uncontrollably.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is based on the "Mousetrap" demo included with the Swarm agent-based modeling toolkit (<a href="http://www.swarm.org/wiki/Main_Page">http://www.swarm.org</a>). See https://web.archive.org/web/20020719084215/http://acoma.santafe.edu/projects/swarm/examples/mousetrap/.  Note that this model and that demo differ in various details.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2002).  NetLogo Mousetraps model.  http://ccl.northwestern.edu/netlogo/models/Mousetraps.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2002 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

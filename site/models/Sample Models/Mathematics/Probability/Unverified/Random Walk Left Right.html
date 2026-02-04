@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Random Walk Left Right</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Random Walk Left Right</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/Probability/Unverified/Random%20Walk%20Left%20Right.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Mathematics/Probability/Unverified/Random Walk Left Right.png" alt="Screenshot of Random Walk Left Right" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model to simulate a random walk.  In this simulation, all turtles walk to the left and forward or they walk to the right and forward.  The turtles randomly choose between either direction each time they move.</p>
+<p>The path traced out by the turtles moving in this pattern is called a lattice.</p>
+<h2>HOW IT WORKS</h2>
+<p>As the simulation continues, one can expect the turtles to become more spread out.  Observe the kinds of patterns that develop as the turtles move.</p>
+<p>Shading of turtles is representative of how many turtles share that location. Dark shades imply more turtles.  Light shades imply fewer turtles.</p>
+<p>For purposes of this simulation, "forward" will mean moving toward the top of the view, "left" will mean moving toward the left edge of the view, and "right" will mean moving toward the right edge of the view.</p>
+<h2>HOW TO USE IT</h2>
+<p>Use the NUMBER-OF-TURTLES slider to select how many turtles will participate in the random walk.</p>
+<p>Use the NUMBER-OF-STEPS slider to decide how many steps a turtle will take on each turn.</p>
+<p>How steps are implemented:
+- If NUMBER-OF-STEPS is set to 1 and a turtle is going left, it will go left one step and then go forward one step. (Imagine a turtle walking along the bottom and left edge of a 1 x 1 square.)
+- If NUMBER-OF-STEPS is set to 4 and a turtle is going left, it will go left four steps and then go forward four steps. (Imagine a turtle walking along the bottom and left edge of a 4 x 4 square.)
+- Each of the above movements would be considered a single "pace."</p>
+<p>Use the TURTLE-TRAILS? switch to have the turtles put their pens down to trace their paths and show the part of the lattice they are covering.  This switch must be set before the SETUP button is pressed.</p>
+<p>All sliders except NUMBER-OF-TURTLES may be changed during a simulation.</p>
+<p>Press the SETUP when all of the above selections have been made. This will create the selected number of turtles at the bottom center of the world.</p>
+<p>Press GO ONCE button to make the turtles move one pace.</p>
+<p>Press the GO button to make the turtles move until one of the turtles cannot complete its number of steps.  When one turtle reaches this point, all the other turtles will stop even if they can complete the step.</p>
+<p>To stop the simulation while it is running, press the GO button again.</p>
+<p>The gray bar in the middle of the world is at xcor = 0.  This is where all the turtles start.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try to answer the questions below before running the simulations.</p>
+<p>Record your predictions.  Compare your predicted results with the actual results.
+- What reasoning led you to correct predictions?
+- What assumptions that you made need to be revised?</p>
+<p>Try different numbers of turtles while keeping all other slider values the same.</p>
+<p>Try different numbers of steps while keeping all other slider values the same.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Think about how you would define an "average" turtle and an "average" walk.</p>
+<p>Where would you expect an average turtle to end up at the end of the simulation?  Why?</p>
+<p>How many paces would you expect there to be in an average walk?  Why?</p>
+<p>What kinds of calculations or measurements would you use in trying to answer these questions?</p>
+<p>How do your answers to the above questions compare to the average of the x coordinates of all the turtles?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>As the model stands, it plots two lines (right and left) over time. Another way to look at this simulation is to plot the distribution of turtles.  Create a histogram to show this type of data.</p>
+<p>The turtles will stop if they come up to an obstacle (cannot move forward or to the right/left), give the turtles the ability to think ahead and choose a different step/direction.</p>
+<p>Give the turtles the ability to walk backwards.</p>
+<p>Create a three dimensional lattice.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Since turtles in this model only move in the positive direction and they start at the bottom the origin is relocated to be at the bottom of the view also, so there are no patches with negative pycor.</p>
+<h2>RELATED MODELS</h2>
+<p>Random Walk 360, Galton Box, Binomial Rabbits</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo Random Walk Left Right model.  http://ccl.northwestern.edu/netlogo/models/RandomWalkLeftRight.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2002.</p>
+<!-- 1997 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

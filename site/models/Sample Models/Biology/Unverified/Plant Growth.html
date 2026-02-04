@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plant Growth</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Plant Growth</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Unverified/Plant%20Growth.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Biology/Unverified/Plant Growth.png" alt="Screenshot of Plant Growth" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Plants have the interesting tendency to "find" resources in their environment. It is not uncommon to see plants whose leaves and stalks have bent over time in the direction of nearby sunlight, or plants that have grown long roots directed to a nearby source of moisture. It almost seems as if these plants are actually scanning the environment around them to find stable sources of nutrients. Since plants do not have eyes, we might ask how they are able to accomplish this.</p>
+<p>This model addresses the question of how a plant is able to effectively locate resources in its environment, generally focusing growth in 'promising' areas. It is not intended to be biologically realistic.</p>
+<h2>HOW IT WORKS</h2>
+<p>The plant is composed of two kinds of cells --- light collecting (leaves), and water collecting (roots). The plant germinates with only one leaf cell and one root cell, and will grow itself by adding new cells as long as it has the nutrients to sustain itself. Nutrients (sunlight and moisture) are concentrated in randomly-determined areas of the environment, and are collected wherever a root or leaf of the plant is located. These nutrients are then circulated around the plant as 'sugar' and 'water', when, in each turn, cells exchange resources with adjacent cells. This circulation is critical, since leaf cells do not collect any water and root cells do not produce sugar, and yet both root and leaf cells each need both water and sugar --- a cell dies if it runs out of either resource. All cells of the plant use up a fixed amount of both sugar and water every turn.</p>
+<p>The main problem that confronts the plant is that in order to explore the environment it needs to grow outwards in many directions, but the roots/leaves that result from this may be bad investments. That is, they take up nutrients but do not contribute any. What rules can we introduce so that the plant will focus growth mainly in sunny or watery areas?</p>
+<p>The strategy employed here is to allow sugar to propagate down to the roots more effectively than it propagates up to other leaves, and to allow water to propagate up to the leaves more effectively than it propagates down to other roots. That is, we have intentionally privileged the traffic of nutrients both in specific directions and according to the nature of the nutrient. This tends to isolate subsections of the plant that fail to collect adequate nutrients.</p>
+<h2>HOW TO USE IT</h2>
+<p>First click the SETUP-PATCHES button to allocate moisture and light and to setup the environment. You may want to click it again if you are not satisfied with the allocation of these nutrients. To adjust how these nutrients are distributed among the patches 1) use the NUTRIENT-DENSITY slider to determine the density of loci of light/moisture, 2) the NUTRIENT-CONCENTRATION slider to determine the concentration of light/moisture at each locus.</p>
+<p>Second, click the SETUP-PLANT button to create a "seed". This can be clicked at any time to create a new plant so that it is possible to test multiple plants over the same environment.</p>
+<p>Finally, click the GO button to watch the seed develop.</p>
+<p>Very often, due to a lack of nutrients in the immediate environment of the seed, a new plant will fail. The plant (seed) begins with enough reserve nutrients to explore some of the area around it, but it will quickly die if it does not otherwise locate adequate nutrients in the environment. In this case, try creating a new plant to see if perhaps another plant will take hold (because of the use of a random function in the model, no two plants fare the same - even in an identical environment). If this does not work, then try resetting the environment, or even try increasing the concentration or density of nutrients in the environment.</p>
+<p>Also, for variety, the CACTUS? switch controls whether the plant will grow only up and down instead of in all directions.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Observe the location of nutrients within the environment before running a plant. The colors in the environment are scaled to reveal where sources of nutrients are. Squares of yellow with a dark center indicate sunny areas, squares of blue with a dark center indicate watery areas.</p>
+<p>How large do you expect a plant to grow (if at all) with the given setup?</p>
+<p>Are plants more likely to grow (i.e. not die) in cactus mode or bush mode?</p>
+<p>What happens when a cell in the middle of a branch, formerly connecting other cells to the rest of the plant, dies? Why does this happen?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try growing different plants with the same patch setup (nutrient allocation). Can you generalize about the growth of a plant in a given environment?</p>
+<p>Try growing a plant in different environments, and with different CACTUS? settings. Do you notice any limits to how large the plant can grow?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Sunlight and water are presented in this model as dots along a flat landscape. Real sunlight beams down from above though, and real water is generally present in a continuous gradient beneath the ground. Come up with an alternative scheme for representing sunlight and water in this model.</p>
+<p>In order to be able to explore a larger range of ecologies, it may be useful to add interface features (sliders) and code that allows a separate setup of sun and water resources.</p>
+<p>Currently, water resources are not depleted -- they are not even replenished, they are simply held at constant values.  You can try making the model more realistic by addressing this issue.</p>
+<p>Improve the growth rules used in this model. A simple way to explore this would be to try and improve upon the parameters in the procedures <code>share-up</code>, <code>share-down</code>, and <code>share-side</code> (which are fixed). For this, it may be useful to set these parameters as values of sliders on the Interface.  A more in depth way would be to come up with an entirely new set of sharing or growth rules, or a different strategy altogether.</p>
+<p>This model explores rules that will cause an artificial plant to grow in an "efficient" manner. Efficiency can be roughly defined here as the number of leaves in the plant that are "good investments" for the plant as opposed to those that only use up resources but do not contribute any. An alternative approach is to equate efficiency with the total amount of water and sunlight collected by a plant in a given environment. Think of a quantifiable measure ( a "metric") of efficiency for a plant and add this measure to the model. Now, use this measure in order to improve upon the growth rules of the plant? Does any one set of such rules work better than all others for all tested environments?</p>
+<p>The settings in this model allow plants to grow in two varieties (cactus and bush) by varying the rules for where a new cell can be located relative to its parent cell. Can you come up with rules that will yield alternative shapes for the plant (i.e. palm tree, ivy...)?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of the <code>diffuse</code> primitive to spread out the water and sunlight.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Plant Growth model.  http://ccl.northwestern.edu/netlogo/models/PlantGrowth.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2002.</p>
+<!-- 1998 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

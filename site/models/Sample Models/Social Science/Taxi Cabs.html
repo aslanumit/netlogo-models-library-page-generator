@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Taxi Cabs</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Taxi Cabs</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Taxi%20Cabs.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Social Science/Taxi Cabs.png" alt="Screenshot of Taxi Cabs" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>The model mimics taxi cab ridership in an urban area. Users can control ridership demand, fleet size, traffic rules, and fare calculation. The model aims to reveal insights into taxi cab profitability based on trip characteristics and demand dynamics.</p>
+<h2>HOW IT WORKS</h2>
+<p>The urban area is portrayed as a grid system, which is formed by two-lane roads and intersections. The metropolitan area consists of three regions: (1) Central Business District (in orange), (2) Commercial Zone (in blue), and (3) Residential Zone (in grey). The three regions can form nine origin-destination (OD) pairs, with six pairs of inter-regional flows and three pairs of intra-regional flows.</p>
+<p>Since taxi demands for each type of flow can be dramatically different based on the time of a day, users can control the amount of flow from regions to regions through the interface.</p>
+<p>Potential passenger(s) show up on roads controlled by users. When a vacant taxicab happens to pass by, it stops and pickups the passenger(s). The passenger(s) inform the taxicab of the destination coordinate, and the taxi turns light-purple and starts the trip. The taxi will travel from the pickup coordinate to the light-purple colored drop-off coordinate by the shortest Manhattan distance and complete the trip when it arrives at the destination coordinate.</p>
+<p>After finishing a trip, the taxi becomes vacant and searches for the next passenger(s) by traveling randomly on roads.</p>
+<h2>HOW TO USE IT</h2>
+<h3>Taxicab Demand</h3>
+<ul>
+<li>Spatial Flow and Time Interval:</li>
+<li><em>Time Interval</em>: The flow of residents in an urban area between regions can be quite different depending on the time of day. To indicate the differences in the spatial flow of taxi trips between regions throughout the day, a clock is created to keep track of the time in the world. Five distinct time intervals are implemented (1) AM Peak, (2) Midday, (3) PM Peak, (4) Evening, (5) Early Morning. A reporter shows the current time interval in the interface, and the length of each time interval can be controlled by a slider called LENGTH-OF-TIME-PERIOD.</li>
+<li><em>Spatial Flow</em>: Demand for taxicabs in city districts can be variable, and different amounts of flows can be manipulated by users through the spatial flow sliders, which control the probability (or proportion) of trips that are going from an origin to a destination during a specific time interval. For such purposes, each time interval's marginal probabilities are shown by a reporter at the bottom of each slider column to remind the users that the marginal probability should sum to 1.</li>
+</ul>
+<h3>Traffic Rules</h3>
+<ul>
+<li>Traffic Lights: the length of red/green lights can be controlled by a slider in the interface called LENGTH-OF-GREEN-LIGHT.</li>
+</ul>
+<h3>Passengers</h3>
+<ul>
+<li>Passenger waiting time is modeled by a normal distribution. The parameters of this normal distribution can be input by users in the interface through WAIT-TIME-MEAN and WAIT-TIME-SD.</li>
+</ul>
+<h3>Taxicabs</h3>
+<ul>
+<li>
+<p>Fleet size: taxicab fleet size can be controlled by a slider NUM-TAXICABS.</p>
+</li>
+<li>
+<p>Trip Fare: Trip fare is calculated based on Chicago Yellow Taxicab. Trip fare is mainly calculated by three different variables: (1) the number of passengers on-board, (2) the number of miles traveled, (3) the trip duration. These cost variables can be determined by users in the interface using FIRST-PASSENGER-COST, EACH-ADDITIONAL-PASSENGER-COST, EACH-GRID-COST, and EACH-TICK-COST.</p>
+</li>
+</ul>
+<h2>THINGS TO NOTICE</h2>
+<p>As the model runs, the trade-off between business miles and dead miles can be contrasting. The distributions of trip income, distance, and duration should be correlated, and the overall shapes of the distribution are susceptible to the changes in traffic rules and interval lengths.</p>
+<h2>THINGS TO TRY</h2>
+<p>For a clear visualization of the pickup and dropoff process, it is suggested to start with one taxicab to see how a taxicab behaves before generating multiple taxicabs.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>There are many ways to extend this model. Interesting avenues would be to use real-world data with the GIS extension, more complex searching strategies, such as using AI tools, and including rideshare systems such as Uber or Lyft in the model, to better understand the relation between taxicabs and the rideshare systems.</p>
+<p>Some other meaningful extension specific to taxicabs is to figure out how to reduce the number of dead miles -- miles traveled by taxicabs with no passengers on-board. Dead miles are costly to drivers because drivers need to internalize vehicle depreciation and gasoline price while searching for passengers. Figuring out more intelligent searching strategies such as locating the next passenger immediately after the last dropoff will be meaningful to pursue.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Each road in the model is formed by two lanes, with each lane allowing taxicabs to travel in one direction. When delivering passengers, taxicabs will make U-turns to put themselves in the right direction to start the delivery following the shortest Manhattan distance. Some workarounds can be done to avoid making the u-turns.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>"Traffic Basic": a simple model of the movement of cars on a highway.</li>
+<li>"Traffic Basic Utility": a version of "Traffic Basic" including a utility function for the cars.</li>
+<li>"Traffic 2 Lanes": a more sophisticated two-lane version of the "Traffic Basic" model.</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Dongping, Z. and Wilensky, U. (2019).  NetLogo Taxi Cabs model.  http://ccl.northwestern.edu/netlogo/models/TaxiCabs.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>This model was developed as part of the Spring 2019 Multi-agent Modeling course offered by Dr. Uri Wilensky at Northwestern University. For more info, visit http://ccl.northwestern.edu/courses/mam/. Special thanks to Teaching Assistants Sugat Dabholkar, Can Gurkan, and Connor Bain.</p>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2019 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2019 MAM2019 Cite: Dongping, Z. --></div>
+      </div>
+    </main>
+  </body>
+</html>

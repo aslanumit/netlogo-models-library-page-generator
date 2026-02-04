@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Heroes and Cowards</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Heroes and Cowards</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/IABM%20Textbook/chapter%202/Heroes%20and%20Cowards.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/IABM Textbook/chapter 2/Heroes and Cowards.png" alt="Screenshot of Heroes and Cowards" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is from Chapter Two of the book "Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo", by Uri Wilensky &amp; William Rand.</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<p>This model is in the IABM Textbook folder of the NetLogo Models Library. The model, as well as any updates to the model, can also be found on the textbook website: http://www.intro-to-abm.com/.</p>
+<h2>WHAT IS IT?</h2>
+<p>The "Heroes and Cowards" game, also called the "Friends and Enemies" game or the "Aggressors and Defenders" game dates back to the Fratelli Theater Group at the 1999 Embracing Complexity conference, or perhaps earlier.</p>
+<p>In the human version of this game, each person arbitrarily chooses someone else in the room to be their perceived friend, and someone to be their perceived enemy.  They don't tell anyone who they have chosen, but they all move to position themselves either such that a) they are between their friend and their enemy (BRAVE/DEFENDING), or b) such that they are behind their friend relative to their enemy (COWARDLY/FLEEING).</p>
+<p>This simple model demonstrates an idealized form of this game played out by computational agents.  Mostly it demonstrates how rich, complex, and surprising behavior can emerge from simple rules and interactions.</p>
+<h2>HOW IT WORKS</h2>
+<p>The rules of this model are that there are two basic personality types.  All agents in the model choose a friend and an enemy.  If their personality is BRAVE, then the agent tries to stay between their enemy and their friend, protecting their friend. If their personality is COWARDLY, then the agent tries to keep their friend between them and their enemy, hiding behind their friend.</p>
+<h2>HOW TO USE IT</h2>
+<p>Choose the NUMBER of turtles you want to examine, and choose whether the turtles should act COWARDLY, BRAVE, or MIXED.  Then press SETUP followed by GO to observe the patterns of behavior formed.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Run the model many times and observe the different patterns of behavior.
+INSPECT or WATCH some turtles so that you can see their individual behavior.</p>
+<h2>THINGS TO TRY</h2>
+<p>Can you find new cool configurations with 68 turtles? How many different type can you find? What happens when you vary the number of turtles?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>There is a bug we deliberately introduced in the SETUP of the model. Can you find it and fix it? Once you have fixed it, how does it affect the preset configurations?
+Can you find new presets?</p>
+<p>Modify the code to add more control over how many of each type of behavior there is.</p>
+<p>Change the world wrapping rules to see how that effects the results.</p>
+<p>You can create buttons that capture interesting patterns of behaviors by using the RANDOM-SEED function in NetLogo.  First set the RANDOM-SEED to different values. PRESS SETUP then GO and observe the behaviors. We created a <code>preset</code> procedure that makes it easy to create your own buttons that produce interesting behaviors. This procedure assumes a population of 68 turtles with "mixed" behaviors, but you could modify it to allow different settings. Create your own buttons that produce interesting behaviors.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>RANDOM-SEED initializes the NetLogo random number generator so that it always produces the same set of random numbers, enabling exact reproduction of model runs.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Versions of the Model are described in:</p>
+<p>Bonabeau, E., &amp; Meyer, C. (2001). Swarm intelligence. A whole new way to think about business. Harvard Business Review, 5, 107-114.</p>
+<p>Bonabeau, E., Funes, P. &amp; Orme, B.  (2003). Exploratory Design Of Swarms. 2nd International Workshop on the Mathematics and Algorithms of Social Insects. Georgia Institute of technology, Atlanta, GA.</p>
+<p>Sweeney, L. B., &amp; Meadows, D. (2010). The systems thinking playbook: Exercises to stretch and build learning and systems thinking capabilities.</p>
+<h2>HOW TO CITE</h2>
+<p>This model is part of the textbook, “Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo.”</p>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Stonedahl, F., Wilensky, U., Rand, W. (2014).  NetLogo Heroes and Cowards model.  http://ccl.northwestern.edu/netlogo/models/HeroesandCowards.  Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the textbook as:</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2014 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2014 Cite: Stonedahl, F., Wilensky, U., Rand, W. --></div>
+      </div>
+    </main>
+  </body>
+</html>

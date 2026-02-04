@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cash Flow</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Cash Flow</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Economics/Unverified/Cash%20Flow.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Social Science/Economics/Unverified/Cash Flow.png" alt="Screenshot of Cash Flow" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is a simple extension of the model "Bank Reserves". The purpose of the model is to help the user examine whether there is a relationship between the reserve ratio that banks must keep and the degree of equality in the distribution of the money that exist in the system.</p>
+<p>It models the creation of money in an economy through a private banking system. As most of the money in the economy is kept in banks but only a little of it needs to be used (i.e. in cash form) at any one time, the banks need only keep a small portion of their savings on-hand for those transactions. This portion of the total savings is known as the banks' reserves. The banks are then able to loan out the rest of their savings. The government (the user in this case) sets a reserve ratio mandating how much of the banks' holdings must be kept in reserve at a given time. One 'super-bank' is used in this model to represent all banks in an economy. As this model demonstrates, the reserve ratio is the key determiner of how much money is created in the system.</p>
+<h2>HOW IT WORKS</h2>
+<p>In each round, people (represented by turtles) interact with each other to simulate everyday economic activity. Given a randomly selected number, when a person is on the same patch as someone else it will either give the person two or five dollars, or no money at all. After this, people must then sort out the balance of their wallet with the bank. People will put a positive wallet balance in savings, or pay off a negative balance from funds already in savings. If the savings account is empty and the wallet has a negative balance, a person will take out a loan from the bank if funds are available to borrow (if bank-to-loan &gt; 0). Otherwise, the person maintains the negative balance until the next round. Lastly, if someone has money in savings and money borrowed from the bank, that person will pay off as much of the loan as possible using the savings.</p>
+<p>The number of rich people in each moment is calculated by enumerating the number of people whose savings exceed 10 dollars. The number of poor people is the number of people whose loans exceed 10 dollars. The rest of the people are considered to belong to the "middle-class".</p>
+<h2>HOW TO USE IT</h2>
+<p>The RESERVES slider sets the banking reserve ratio (the percentage of money that a bank must keep in reserve at a given time). The PEOPLE slider sets the number of people that will be created in the model when the SETUP button is pressed. The SETUP button resets the model: it redistributes the patch colors, creates PEOPLE people and initializes all stored values. The GO button starts and stops the running of the model and the plotter.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>There are numerous display windows in the interface to help the user see where money in the economy is concentrated at a given time. SAVINGS-TOTAL indicates the total amount of money currently being kept in savings (and thus, in the banking system). LOANS-TOTAL is the amount the bank has lent out. WALLETS-TOTAL gives an indication of the total amount of money kept in the peoples' wallets. This figure may be negative at times when the bank has no more money to loan (the turtle will maintain a negative wallet balance until a loan is possible). MONEY-TOTAL indicates the total-amount of money currently in the economy (SAVINGS-TOTAL + WALLETS-TOTAL). Because WALLETS-TOTAL is generally kept at 0 in this model (we are assuming that everyone deposits all they can in savings), MONEY-TOTAL and SAVINGS TOTAL tend to be the same.</p>
+<p>The three lower monitors show the number of rich, middle-class, or poor people. A person's color tells us whether he is rich (green color), middle-class (gray), or poor (red).</p>
+<p>There are four plots to help you observe the operation of the economy. Plot 1 plots the number of LOANS-TOTAL and MONEY-TOTAL as a function of time.  Plot 2 plots the number of SAVINGS-TOTAL and WALLETS-TOTAL. Plot 3 plots income distribution and is the feature that you should pay the most attention to. The green pen plots the number of rich people; the black pen plots the number of middle-class people; the red pen plots the number of poor people. Finally, the fourth plot is a histogram that depicts how wealth is distributed among the population. Wealth is distributed in ten bars. Each bar corresponds to one tenth of the range of wealth.  The gray line in the histogram represents the mean wealth value of all the turtles.</p>
+<h2>THINGS TO TRY</h2>
+<p>Vary the RESERVES rate as the model runs, and watch the effect this has on income distribution. You can either watch the three Income Distribution monitors, or the Income Distribution plot.  Set RESERVES initially to 100 and observe the Income Distribution plot. Gradually lower RESERVES and see the effect on wealth distribution. Can you see whether the two of them are positively, negatively, or not related?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try extending the model to include payments of interest in the banking system. People with money deposited in savings should be credited with interest on their account (at a certain rate) from the bank from time to time. People with money on loan should make interest payments on their account to the bank from time to time.</p>
+<p>This model has turtles interact in a very simple way to have money change hands (and create a need for loans). Try changing the model so that money moves around the system in a different way.</p>
+<h2>RELATED MODELS</h2>
+<p>Bank Reserves</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Cash Flow model.  http://ccl.northwestern.edu/netlogo/models/CashFlow.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1998 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Radical Polymerization with Chains</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Radical Polymerization with Chains</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Materials%20Science/Radical%20Polymerization%20with%20Chains.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Materials Science/Radical Polymerization with Chains.png" alt="Screenshot of Radical Polymerization with Chains" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model of free-radical polymerization which is a method of polymer formation. A polymer is a long molecule made up of many repeating units known as "mers". A monomer is a single one of these unbonded units by itself. When multiple monomers bond together, they create a polymer (many mers).</p>
+<p>Radical polymerization is initiated by free radicals, which are molecules with an unpaired valence electron, making them very reactive. These free radicals themselves have to be created by some sort of reaction that cleaves initiator molecules into two parts, at least one of which is a free radical. The free radical then bonds with a monomer and its unpaired valence electron is transferred to the mer which is then able to repeat this process with another monomer. This process continues until either a termination reaction occurs or there are no other mers present.</p>
+<h2>HOW IT WORKS</h2>
+<p>The radical polymerization is modeled involving only local interactions on a lattice. Any global interactions are used only for monitoring purposes.</p>
+<p>Radical agents (radical mers or radical initators) are the only agents that initiate interaction with other agents. During the <code>go</code> procedure, radicals are asked to interact, then all turtles are asked to move.</p>
+<p>During <code>interact</code>, the radical agent randomly chooses, if available, one monomer, radical-mer, or radical-initiator from its adjacent neighbors. It then asks this agent to bond and change its breed to reflect its new status. Then, the initiating agent changes its own breed to longer be radical.</p>
+<p>When the neighbor is asked to bond and change its breed, there are number of possibilities based on its breed:</p>
+<ul>
+<li>if it is a monomer, it bonds with the initiating agent and changes to a radical-mer.</li>
+<li>if it is a radical initiator, it bonds with the initiating agent and changes to an initiator</li>
+<li>if is a radical-mer, there are a three different possibilities:<ul>
+<li>if the initiating agent is a radical-initiator, it bonds with the initiating agent and changes to a saturated-mer</li>
+<li>if the initiating agent is a radical-mer, the outcome depends on DISPROPORTIONATION-PROB:<ul>
+<li>if disproportionation occurs, the neighbor does not bond (only case where the neighbor does not bond) and changes to a unsaturated-mer (only case where an unsaturated-mer is not a monomer).</li>
+<li>if disproportionation does not occur, then combination occurs. The neighbor bonds wtih the initiating agent and changes to a saturated-mer.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>When the initiating agent changes its own breed, if it is a radical-initiator, it changes to an initiator, and if it is a radical-mer, it changes to a saturated-mer.</p>
+<p>During move, each turtle chooses one of its neighboring eight patches, and if that patch is unoccupied and moving there would not break its bonds, it moves there.</p>
+<h2>HOW TO USE IT</h2>
+<p>Before clicking the SETUP button, you first need to determine the number of initial monomers you want created using the NUM-MONOMERS slider and the number of radical initiators using the NUM-RADICAL-INITIATORS slider.</p>
+<p>To run the model, first press the SETUP button, then press the GO button. To advance only one tick, you can press the GO ONCE button.</p>
+<p>Once the model is running, you can add additional agents using the NUM-ADD slider to determine how many agents to add, and the ADD-MONOMERS button to add monomers, or the ADD-RADICAL-INITIATORS button to add radical initiators.</p>
+<p>Additionally, regardless of whether the model is running or not, you can change the probability of disproportionation termination occurring (the alternative being combination termination) when two radical-mers interact using the DISPROPORTIONATION-PROB slider.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Many different patterns can be noticed in different aspects of the model based on different ratios between monomers and radical initiators. Such as:</p>
+<ul>
+<li>
+<p>the final number of monomers in each polymer after termination</p>
+</li>
+<li>
+<p>the distribution of the molecular weight of polymers
+(seen through the polydispersity index &amp; the distribution on the molecular weight plot)</p>
+</li>
+<li>
+<p>how fast the monomers are being added to polymer
+(seen through the shape of the curve in the number of monomers plot)</p>
+</li>
+</ul>
+<p>It is also important to note that along with the ratio between monomers and radical initiators, the concentration of agents within the world must also be considered. Even with the same ratio of each agent, different patterns can be observed based on how packed the agents are in the world.</p>
+<p>Also notice what types of agents are at the two ends of polymers and how this can change when DISPROPORTIONATION-PROB is high.</p>
+<h2>THINGS TO TRY</h2>
+<p>Slow down the model to see each interaction occurring</p>
+<p>Try adding a steady flow of either monomers or radical initiators, or both using the add buttons</p>
+<p>Try increasing the dimensions of the world. Does the behavior change at all?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Interface additions:</p>
+<ul>
+<li>
+<p>Add sliders that control the probability for each interaction so that the interactions do not occur every time</p>
+</li>
+<li>
+<p>Alternatively, a temperature slider could be added that correlates to the probability of interaction (higher temperature, more likely for agents to interact)</p>
+</li>
+<li>
+<p>Instead of the agents moving by themselves, change the code so that the user drags agents to make them interact (polymers are tied together so they move together)</p>
+</li>
+<li>
+<p>Add a switch that lets the user decide whether to add the initial monomers all at once when the model starts, or to add them in continuously at a predetermined rate</p>
+</li>
+</ul>
+<p>Changes to the move code:</p>
+<ul>
+<li>
+<p>Have each polymer as a whole randomly move or rotate, modeling a flow in the model</p>
+</li>
+<li>
+<p>Alter the breaking-chain? code to be looser, so that a link-neighbor can be further away than 1 patch without breaking the chain</p>
+</li>
+</ul>
+<p>Changes to the main ideas of the model:</p>
+<ul>
+<li>
+<p>Change the model to be a step growth model instead, so the mers are all active and bond with neighbors on two sides</p>
+</li>
+<li>
+<p>Change the initiation reaction so that the propagation starts on the side where the radical initiator comes in, resulting in the chain to be able to propagate on both sides</p>
+</li>
+<li>
+<p>Make a hexagonal grid instead of the current square grid to be more accurate to packing (see the MaterialSim Grain Growth model in the Models Library for a way to make a hexagonal lattice)</p>
+</li>
+</ul>
+<h2>NETLOGO FEATURES</h2>
+<p>Radical mers and radical initiators are the only agents that initiate in the interact code, so those two breeds are called. In order to avoid checking the breeds every time the interact code is called, a turtle-set made of radical-mers and radical-initiators was uitilized and called instead.</p>
+<p>Auto scaling does not affect a histogram's horizontal range, so when using a histogram for the molecular weight distribution plot, an update command was implemented that adjusts the x-range periodically. This, however,  was in conflict with the "set-histogram-num-bars" pen setup command that determined the number of bars, because this would not automatically update when the x-range changed. To account for this, a pen update command was added that ran "set-histogram-num-bars" in the same period as when the x-range updated.</p>
+<p>The Shape and Color Key uses unicode characters for circles and squares to display those shapes as text.</p>
+<h2>RELATED MODELS</h2>
+<p>Polymer Dynamics
+Radical Polymerization</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Huang, J., Kelter, J. and Wilensky, U. (2023).  NetLogo Radical Polymerization with Chains model.  http://ccl.northwestern.edu/netlogo/models/RadicalPolymerizationwithChains.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2023 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2023 Cite: Huang, J., Kelter, J. --></div>
+      </div>
+    </main>
+  </body>
+</html>

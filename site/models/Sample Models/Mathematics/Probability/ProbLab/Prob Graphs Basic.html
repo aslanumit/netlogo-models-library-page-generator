@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prob Graphs Basic</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Prob Graphs Basic</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/Probability/ProbLab/Prob%20Graphs%20Basic.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Mathematics/Probability/ProbLab/Prob Graphs Basic.png" alt="Screenshot of Prob Graphs Basic" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Prob Graphs Basic is a basic introduction to probability and statistics.</p>
+<p>A sample space is the collection of all possible outcomes in an experiment. An example of a sample space is the numbers "1, 2, 3, 4, 5, 6, 7."  An event is what you get when you run an experiment. For example, if I am running an experiment that randomly selects a single number out of the sample space "1, 2, 3, 4, 5, 6, 7," then an event might be "5." A sample is a collection of events that occur in an experiment. You could have a sample of size 1 that contains just 1 event, but you could have a sample of size 4 that contains 4 events, e.g., "5, 3, 3, 7."</p>
+<p>In this model, 3 graphs monitor a single experiment as it unfolds. The experiment here is finding how often the number "1" shows up when you randomly select a number within a range that you define. This range could be, for example, between 1 and 2. An example of a sample space of only two values is a coin that can be either 'heads' or 'tails.' An example of a sample space of 6 values is a die that can land on the values 1 thru 6. Through observing this simple experiment through 3 different graphs, you will learn of 3 different ways of making sense of the phenomenon.</p>
+<p>The top graph, "m/n convergence to limiting value," shows how the rate settles down to the expected- or mathematical probability. For instance, the limiting value of a coin falling on "heads" is .5 because it happens 1/2 of the time. So, the unit of analysis is a single trial and the rate is always informed by all previous trials. To explain this further, lets think of "batting average." The sample space in batting is a 'hit' or a 'no hit,' which is much the same as whether a coin falls on "heads" or on "tails" (only of course batting is not random like tossing a coin or otherwise Babe Ruth's average would have been the same as anyone's). So there are exactly 2 possible outcomes. The "batting average" keeps track, over time, of how many "hits" occurred out of all attempts to hit, known as "at bats." So the "batting average" is calculated as</p>
+<blockquote>
+<p>Hits / At-Bats  =  Batting Average</p>
+</blockquote>
+<p>For instance, using "H" for hit and "N" for no-hit, a baseball player's at-bat events may look like this, over 20 attempts:</p>
+<pre><code class="language-text">N N N H H N N N N H N H N N H H H N N H
+</code></pre>
+<p>'Hits' are called 'favored events' because when we do the statistics, what we care about, count, and calculate is all about how often 'hits' occurred out of all the at-bat events. The m/n interpretation (favored events / total events) would interpret this string of events as 8 hits / 20 at bats, .4 probability (the same as .400), or a score of 400 (out of 1000).</p>
+<p>You may be familiar with the fact that as the baseball season progresses, it is more and more difficult for an individual player to change his "average." This model may help you understand or at least simulate this phenomenon. But remember that a batter, unlike a coin or a die, is not behaving randomly. But in this model the behavior will be random. We have discussed batting only to give you context for thinking about the graph. A truer context, though, would be a coin that has 2 sides.  In fact, this model can simulate not just objects with 2 sides, but with more. You know all about dice that have 6 sides, right? If you have set the size of your sample space to 5, then the model will simulate an experiment in which a die of 5 sides is rolled over and over again.</p>
+<p>The middle graph, "Attempts-until-Success Distribution" counts how many trials it takes for the favored event to occur. For instance, if you're tossing a coin, it takes on average 2 tosses to get "heads," and if you're rolling a die it takes on average 6 rolls to get a "5." This graph is tracking the exact same experiment as the top graph; only it is "parsing" the events differently, that is, it is using a different rule to divide up the sequence of events over time. (We will continue using "N" and "H" but you can think of the coin with 2 sides or of the die with as many sides as you want.)</p>
+<pre><code class="language-text">N N N H    H    N N N N H    N H    N N H    H    H    N N H
+</code></pre>
+<p>So the unit of analysis in this interpretation of the experiment's results is the number of events leading up to and including a hit. As you see, the number of events per unit changes. In this example the string of numbers is [4; 1; 5; 2; 3; 1; 1; 3]. Note that in this string the numeral "1" appears 3 times, the numeral "2" appears 1 time, the numeral "3" appears 2 times, the numeral "4" appears 1 time, and the numeral "5" appears 1 time. The histogram of this string would peak over '1' (this peak will be of height 3), then go down to '2' (frequency of 1), etc.  Perhaps this interpretation is a bit like what a batter's fans feel -- their suspense grows over failed hits until there is a hit, they are relieved and happy, and then they start counting again. So according to the context you are in -- what you're interested in finding, how you're feeling -- the world can appear different.</p>
+<p>The bottom graph, "Successes-per-Sample distribution," takes yet another perspective on the experiment, namely a sampling perspective. The sampling perspective is used in statistics. Lets analyze the same string of events from our experiment, this time chopping it up into samples of equal size, say size 5.</p>
+<pre><code class="language-text">N N N H H   N N N N H   N H N N H   H H N N H
+</code></pre>
+<p>See that in the first sample there are 2 hits, in the second sample there is 1 hit, in the third sample there are 2 hits, and in the last sample there are 3 hits. This observation could be summed up as [2; 1; 2; 3]. A histogram of this result would show a frequency of 0 (y axis) over the 0 (x axis), because all samples had at least a single 'H.' Then over the '1' there will be a column of height 1, over the '2' there will be a column of height 2, and over the '3' there will be a column of height 1.</p>
+<p>Understanding the differences and relations between these 3 graphs will give you a strong head start in studying Probability and Statistics.</p>
+<p>This model is a part of the ProbLab curriculum. The ProbLab Curriculum is currently under development at the CCL. For more information about the ProbLab Curriculum please refer to http://ccl.northwestern.edu/curriculum/ProbLab/.</p>
+<h2>HOW IT WORKS</h2>
+<p>The model first generates a random value between 1 and sample-space-size inclusive.  The number of attempts (trials) is increased by one.  If the random value is equal to 1, then the number of successes (favored events or "hits") is also increased by one.  The number of attempts and the number of successes are interpreted in three different ways with each way shown in a graph as follows: (1) single attempt (trial) and single success; (2) trials (attempts) thru to each success; or (3) successes in each sample (fixed number of trials).  Each of the graphs comes to be associated with typical shapes.</p>
+<h2>HOW TO USE IT</h2>
+<p>Begin with the default settings. If you have changed them, then do the following: set the sample-space-size to 2 (so outcomes are either '1' or '2'), set the sample-size to '10' (so each sample will be a string of 10 events), and set the 'how-many-samples?' slider to 300 (so that the experiment will run a total of 300 samples of size 10 each, making a total of 3,000 trials). Press 'setup' to be sure all the variables are initialized, so that you will not have leftover values from a previous experiment). Press 'go.' Watch the 'event' monitor to see the number that the randomized procedure has reported. It will be either '1' or '2' because you have set the value to 2.</p>
+<p>You may want to use the speed slider above the view to slow down the simulation. As you become more comfortable with understanding what you are seeing, you can speed up the simulation by moving the slider farther right.</p>
+<p>Note how the event does not necessarily alternate between '1' and '2' according to any particular pattern.  Rather, only in the long run do you see what the constant is in the phenomenon you are observing. "In the long run" is precisely what this experiment shows. You can control how long this run will be by increasing or decreasing both the 'sample-size' and/or the 'how-many-samples?' slider.</p>
+<h3>Buttons</h3>
+<p>'setup' -- initializes all variables. Press this button to begin a new experiment.
+'go' -- begins the simulation running. You can press it again to pause the model.</p>
+<h3>Sliders</h3>
+<p>'sample-space-size' - set the size of the sample space (in integers).
+'sample-size' - set the number of trials per sample.
+'how-many-samples?'- set the number of samples you wish to run in the experiment.</p>
+<h3>Monitors</h3>
+<p>'event' -- the number that the randomized procedure has generated this trial.
+'total-successes' -- total number of favored events over all trials.
+'total-attempts' -- total number of trials.
+'rate' -- total-successes / total-attempts.
+'counter' -- shows how many trials have passed since last success (or, if you've only just set up and run the model, then it will show how many trials have passed since the model began running).
+'attempts-this-sample' -- counts how many trials there have been since the last success (or, if you've only just set up and run the model, then it will show how many trials have passed since the model began running).
+'successes-this-sample' -- counts how many successes there have been since the last success (or, if you've only just set up and run the model, then it will show how many trials have passed since the model began running).
+'samples counter' -- counts how many samples there have been since the beginning of this experiment
+'min', 'mean', 'max' -- the minimum, mean, and maximum values of the Successes-per-Sample distribution</p>
+<h3>Plots</h3>
+<p>m/n convergence to limiting value -- cumulative rate of successes (hits or favored events) per total trials.
+Attempts-until-Success Distribution -- histogram of number of trials it takes until each success.
+Successes-per-Sample Distribution -- histogram of number of successes within each sample.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>What are the characteristic shapes of each graph?</p>
+<p>Look at the 'rate' monitor. What can you say about the fluctuation of numbers? What can you say about the value it settles on? What other settings in the model can you relate to this rate value?</p>
+<p>The "Attempts-until-Success Distribution" never has values for 0, whereas the other plots sometimes do. Why is that?
+Also, what can you say about the mean of this distribution? Does this make sense to you?</p>
+<h2>THINGS TO TRY</h2>
+<p>A sample-size of 10 that is run 300 times and a sample-size of 300 that is run 10 times both produce 3000 trials, because 10 and 300 are the factors of 3000 regardless of their order in a context. Run the experiment under both combination conditions. Did this make any difference? If so, which of the three graphs did it affect and which did it not affect? Run the experiment under other pairs of combination conditions. How different do the factors have to be to cause any difference in the graphs? How does the sample-space-size play in with all this?</p>
+<p>By now you may have noticed the typically bell-shaped histogram of the Successes-per-Sample distribution.  Try to find settings that do not create this shape and analyze why this is the case.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>As a beginning, try adding monitors to show values from variables you are interested in tracking. For instance, you may want to know the minimum, mean, and maximum values of the "Attempts-until-Success Distribution." Also, you may want to change parameters of the sliders.</p>
+<p>Challenge: Add to the "Attempt-until-Success" plot a line that indicates the mean.</p>
+<p>Challenge: Think of modification that keeps the 'random' reporter, but "helps" the program have more hits. Of course, this will change completely the nature of the simulation, so you can think of what you have created, and give the program a new name.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model is unusual in that it doesn't use the view at all.  Everything that happens visually happens in the plots and monitors.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the ProbLab curriculum. The ProbLab Curriculum is currently under development at Northwestern's Center for Connected Learning and Computer-Based Modeling. . For more information about the ProbLab Curriculum please refer to http://ccl.northwestern.edu/curriculum/ProbLab/.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Abrahamson, D. and Wilensky, U. (2004).  NetLogo Prob Graphs Basic model.  http://ccl.northwestern.edu/netlogo/models/ProbGraphsBasic.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2004 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2004 Cite: Abrahamson, D. --></div>
+      </div>
+    </main>
+  </body>
+</html>

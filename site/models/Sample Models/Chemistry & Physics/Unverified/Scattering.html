@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scattering</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Scattering</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Unverified/Scattering.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Unverified/Scattering.png" alt="Screenshot of Scattering" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This project models the scattering of particles from a target that repels them.  An example of this is the scattering of alpha particles (helium nuclei) from a heavy nucleus such as gold.  This experiment, first done by Rutherford, provided important evidence that the positive charge in an atom is concentrated in a small place.</p>
+<p>In this model, the target is an immovable patch with a variable charge and a variable radius in the center of the world.  A parallel beam of particles is sent upward from the bottom of the world, and the path of each particle is traced.  Each particle is repelled from the target according to Coulomb's inverse square law, modified for a distributed nuclear charge.  The particles do not interact with each other.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each particle is given a position, a velocity, and a charge.  Every time tick, each particle calculates the force that is enacted on it by the repulsion of the central charge.  This equation is Coulomb's inverse square law.  After the force is determined, it will revise it current velocity according the equation F = M * A where M = 1.  After which, the particle's new position is found by adding its new velocity to its current position.</p>
+<h2>HOW TO USE IT</h2>
+<p>First select the number of particles with the NUMBER slider.  Set their initial velocity with the VELOCITY slider. Set the charge of the target with the CHARGE slider.  Set the radius of the target with the RADIUS slider.  Then press the SETUP button.</p>
+<p>When the sliders have been set to a desired level and SETUP has been pressed, press the GO button to begin the simulation.</p>
+<p>The TRACE? switch, if on, has each turtle mark out its position every time-tick.  In this way, you can see the arcs formed by different particles' travels.  When TRACE? is off, only one particle (turtle 0) marks out its position.</p>
+<p>The TURTLE-0-POSITION slider sets the starting x-coordinate of turtle 0.  If TURTLE-0-POSITION is 0, the particle approaches the target head-on.  If it's positive, turtle 0 starts off to the right of center, and if it's negative, turtle 0 starts off to the left of center.</p>
+<p>The SPEED of turtle 0 is displayed in a plot as well as its DISTANCE from the target.  The SCATTER-ANGLE monitor shows turtle 0's heading. (Zero is straight up, 90 is right, and so on.)</p>
+<p>If set to on, the SHOW-TARGET? switch allows you to see the target.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Each setting gives a family of paths for particles of equivalent initial velocity but different starting positions.  What is the shape of each trajectory?  Is it the same shape approaching and leaving the target?  What is the shape of the family of curves?</p>
+<p>Do any of the paths intersect?  Does it depend on the settings of the sliders?</p>
+<p>If two particles start off close to each other, will they end up close to each other?</p>
+<p>A very large nucleus represents J.J. Thompson's "plum pudding" model of the atom, in which the charge was thought to be spread out in a volume as large as the atom itself. A very small nucleus represents Rutherford's discovery, namely that the charge is concentrated in a very small nucleus, about 1/10000 the size of the atom.</p>
+<h2>THINGS TO TRY</h2>
+<p>You can study the trajectory of one particle by turning off TRACE?.  Change the TURTLE-0-POSITION slider to change the single particle's initial position.  This will allow you to study individual paths.  What happens to the particle's path when its velocity and the charge of the target are changed?  What needs to be true for particles to bounce almost straight backward?</p>
+<p>The value of the SCATTER-ANGLE monitor, averaged over millions of particles, along with the particles' speed and the charge on the nucleus, is what an experimenter would actually be able to measure.  Devise an experiment that would give information about the size of the nucleus from this information alone.</p>
+<p>If you knew the particle velocity and nuclear charge from other experiments, could you devise an experiment, using this model that would determine the size of the target?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Put in a different function for the force between the nucleus and the particles --- 1/r dependence, r dependence, or attraction instead of repulsion.  This can be done in the procedure <code>calc-force</code>.  A repulsive force will "scatter" the particles, but an attractive force will put some of them into orbits.</p>
+<p>Let the particles begin with a constant velocity, or give them all a random velocity.  Or try giving each particle a variable charge, which directly affects the strength of the acting force upon it.</p>
+<p>Try having a lattice of targets, and vary the targets' spacing.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Notice that the procedure <code>move-particle</code> is all turtle commands.</p>
+<p>When you examine the Code tab, note that standard turtle movement commands such as <code>fd 1</code> aren't used.  Instead the x-coordinates and y-coordinates of the turtles are manipulated directly.</p>
+<h2>RELATED MODELS</h2>
+<p>Gravitation also calculates an inverse-square force between particles and changes their motion accordingly.  In Gravitation, each particle looks at every other particle, whereas in Scattering, each particle interacts only with the target.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Martin Rocek made important modifications to this model. He writes, "the main point of my modifications was introducing rcore (radius); it has the effect of smoothing out the target, that is, making something more like the old 'plum-pudding' model of the atom that held sway before Rutherford's experiment. When rcore is large enough, even though the scattering of particles with impact parameters significantly bigger than rcore is essentially unchanged, no particles experience large deflections. As you make rcore smaller, the hard core is restored, and large angle scattering returns."</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Scattering model.  http://ccl.northwestern.edu/netlogo/models/Scattering.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2002.</p>
+<!-- 1998 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CA Stochastic</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>CA Stochastic</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Computer%20Science/Cellular%20Automata/CA%20Stochastic.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Computer Science/Cellular Automata/CA Stochastic.png" alt="Screenshot of CA Stochastic" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a one-dimensional stochastic cellular automaton.  (See the CA 1D Elementary model if you are unfamiliar with cellular automata.)  Unlike most cellular automata, whose behavior is deterministic, the behavior of a stochastic cellular automaton is probabilistic.  Stochastic cellular automata are models of "noisy" systems in which processes do not function exactly as expected, like most processes found in natural systems.</p>
+<p>The behavior of these cellular automata tend to be very rich and complex, often forming self-similar tree-like or chaotic behavior.  They are capable of mimicking many phenomena found in nature such as crystal growth, boiling, and turbulence.</p>
+<h2>HOW IT WORKS</h2>
+<p>At each time step, every cell in the current row evaluates the state of itself and its immediate neighbors to the right and left.  There are 8 possible on/off rule configurations for every 3-cell neighborhood, each with a certain probability of turning on the cell below it at the next time step.  The rules are applied accordingly, and the next state of the cellular automaton appears in the row directly below, creating a space vs. time view of the cellular automaton's evolution.</p>
+<h2>HOW TO USE IT</h2>
+<p>Set up:
+- SETUP RANDOM initializes the model with a percentage of the cells "on". The percentage on is determined by the DENSITY slider.
+- SETUP EXAMPLE initializes the rule settings according to the EXAMPLE slider
+- AUTO-CONTINUE? automatically wraps to the top once it reaches the last row when the switch is on
+- GO begins running the model with the currently set rule. It runs until it reaches the bottom of the world.  If GO is pressed after it has completed, it will wrap to the top and continue.
+- ON-COLOR &amp; OFF-COLOR set the "on" and "off" cell colors respectively.</p>
+<p>Rule Setup:
+There are 8 sliders, the names of which correspond to cell states.  "O" means off, "I" means on. For example, the upper-right slider is called "IIO," corresponding to the state where a cell and its left neighbor is on, and its right neighbor is off.  (NOTE: the switch names are composed of the letters "I" and "O", not the numbers zero or one, because NetLogo switches can't have numbers for names.)  If this slider is set to 70%, then the following rule is created: when a cell is on, its left neighbor cell is on and its right neighbor cell is off, then there is a 70% chance the cell below it will be set "on" at the next time step, otherwise the cell below it will be set to "off" at the next time step.</p>
+<p>Plot:
+This plot measures two types of entropy, or disorder in a system.  Cellular automata can produce patterns with varying degrees of randomness.  If a pattern is perfectly random, each subsequence occurs with an equal probability, and the entropy is 1.  The more likely certain subsequences occur, the lower the entropy.  If a pattern is perfectly ordered, then the entropy is 0.  In this plot, 4-cell subsequences ("correlation length") are used to calculate the entropy. The first type of entropy is the spatial topologic entropy, which measures how many subsequences are present.  The second type of entropy, spatial metric entropy, measures the probability that all subsequences occur with the same frequency.</p>
+<p>Plot Configuration:
+- PLOT? switches plot on or off
+- AUTO-CLEAR? if on, the plot is automatically cleared after each complete screen of cellular automata evolution</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Why is it a better idea to have a density that isn't too big or too small?</p>
+<p>What is the relationship between the cellular automata display and the entropy plot?</p>
+<p>How does the size of the black triangles affect the entropy?</p>
+<p>What kinds of configurations lead to long lived chaotic behavior?</p>
+<h2>THINGS TO TRY</h2>
+<p>You may want to set AUTO-CONTINUE? to 'on' in order to study the long-term behavior of each cellular automaton configuration.  Also, if you have a fast enough computer, you may want to increase the size of the world in order to get a better view of the "big picture."  If you turn the plot off, it will also increase the speed of your model.</p>
+<p>Change the example slider to 1, and click SETUP EXAMPLE.  Click GO and experiment with the III slider, running each configuration a couple of times:
+- What happens when III is set to 0%?
+- - Why do you think the cellular automaton always ends up in the same uniform, or "absorbing" state?
+- As you increase III, what happens to the density of the trees that are formed?
+- - Does this seem to effect the time it takes to reach an absorbing state?
+- What happens when III is set to 100%?
+- - It seems very unlikely that this configuration will reach an absorbing state, but is it possible?
+- - Why or why not?</p>
+<p>Change the example slider to 2, and click SETUP EXAMPLE.  Click GO and experiment with the IOO slider, running each configuration a couple of times:
+- Why does this configuration want to have either vertical or horizontal stripes?
+- What happens when you change IOO to 0% or 100%?
+- - Why does it always end up producing a majority of horizontal or vertical stripes?
+- How does changing the OOI slider in conjunction with the IOO slider affect the model?</p>
+<p>Change the example slider to 3, and click SETUP EXAMPLE.  Click GO and experiment with the IOO slider, running each configuration a couple of times:
+- As you change IOO, what happens to the outer shape of the cellular automaton?
+- - What happens to the shape of the triangles inside?
+- - How is the value of the IOO slider related to the spread of on cells?
+- - What should IOO be set to if you want perfectly symmetric triangles?
+- Set IOO to 100%, and experiment with the OOI slider in a similar fashion.
+- What is the relation between the IOO and OOI slider?</p>
+<p>Change the example slider to 4, and click SETUP EXAMPLE. Click GO and experiment with the IOO slider, running each configuration a couple of times:
+- As you increase IOO, what transition do you see in the structures formed by the cellular automata?
+- - Why do you think this transition, or "phase change," happens?
+- Once you get to 100%, notice that the triangles aren't very symmetric.
+- - Which slider should you move accordingly in order to make the triangles look more symmetric?
+- Now try moving both sliders together in order to find the point at which the cellular automaton makes its phase transition.</p>
+<p>Change the example slider to 5, and click SETUP EXAMPLE Experiment with the OOI and IOO sliders together.
+- What differences do you notice between the this example and the previous one?
+- Does either cellular automaton have lower phase transition point with respect to the OOI and IOO sliders?
+- - If so, what accounts for this difference?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Often times one might want to change multiple sliders in parallel, while leaving other sliders unchanged.  Try automating this process by creating additional switches and sliders.</p>
+<p>Can you measure the entropy more accurately by using subsequences greater than 4?</p>
+<p>There are many other ways to measure order in a system besides entropy, can you think of any?</p>
+<p>Can you make a stochastic cellular automata with more neighbors?  For example, the cellular automata might have two neighbors on each side.</p>
+<p>Try making a two-dimensional stochastic cellular automaton.  The neighborhood could be the eight cells around it, or just the cardinal cells (the cells to the right, left, above, and below).</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The plot-entropy procedure makes extensive use of the MAP and FILTER primitives.  First, MAP is used to convert a list containing the number of occurrences of each pattern of ON? values to a list of probabilities of each pattern occurring.  This is done by dividing each item in the first list by the total number of possible patterns.  Since both entropy calculations involve the use of a logarithm, FILTER is used to remove all elements in the list that are equal to 0 so that no errors occur.  For calculating the topological entropy, MAP is used to change all the remaining elements in the probability list to 1.  When calculating the metric entropy, MAP is used to multiply each element in the probability list by its logarithm.  Using MAP and FILTER allows these complex calculations to be done in a clean, compact manner.</p>
+<h2>RELATED MODELS</h2>
+<p>CA 1D Elementary - a widely studied deterministic equivalent to this model
+CA 1D Totalistic - a three color 1D cellular automata
+Percolation (in Earth Science) - a model demonstrating the percolation of an oil spill using probabilistic rules similar to this model
+Turbulence (in Chemistry &amp; Physics) - a continuous cellular automata that exhibits phase change behavior similar to this model
+Ising (in Chemistry &amp; Physics) - a microscopic view of a magnetic field which undergoes phase changes with respect to temperature
+DLA (in Chemistry &amp; Physics) - a growth model demonstrating how the accumulation of randomly placed particles can lead to complex structures found throughout nature</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Chate, H. &amp; Manneville, P. (1990). Criticality in cellular automata. Physica D (45), 122-135.
+Li, W., Packard, N., &amp; Langton, C. (1990). Transition Phenomena in Cellular Automata Rule Space. Physica D (45), 77-94.
+Wolfram, S. (1983). Statistical Mechanics of Cellular Automata. Rev. Mod. Phys. (55), 601.
+Wolfram, S. (2002). A New Kind of Science. Champaign, IL: Wolfram Media, Inc.</p>
+<p>Thanks to Eytan Bakshy for his work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2003).  NetLogo CA Stochastic model.  http://ccl.northwestern.edu/netlogo/models/CAStochastic.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2003 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2003 --></div>
+      </div>
+    </main>
+  </body>
+</html>

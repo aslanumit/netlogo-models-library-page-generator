@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Python Basic Example</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Python Basic Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Extensions%20Examples/py/Python%20Basic%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Code Examples/Extensions Examples/py/Python Basic Example.png" alt="Screenshot of Python Basic Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model shows how to use NetLogo's <code>py</code> extension to interact with Python. This extension allows users with Python installed on their computer to write Python code in their NetLogo model and to share data back and forth between the Python and NetLogo.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>First, the model sets up Python with the <code>py:setup</code> and <code>py:python</code> primitives. The default <code>python</code> found on the system will be used. This step is required for models using the Python extension. If you do not have Python installed on your computer, you will need to install it on your computer outside of NetLogo. Once the Python environment is setup, it's available until the model is closed.</p>
+<p>This model uses a few basic Python packages, <code>sys</code>, <code>math</code>, and <code>os</code>, to get information and do calculations that would be difficult or impossible in NetLogo. The packages are made available by using <code>py:run</code> to execute the Python <code>import</code> commands. The key to interacting with the packages is using <code>py:set</code> to set a variable value and pass data into the Python extension and <code>py:runresult</code> to get data back out of Python to use in NetLogo.</p>
+<h2>THINGS TO TRY</h2>
+<p>Check out <a href="https://docs.python.org/3.6/library/math.html">the Python <code>math</code> package documentation</a> and see if there are any other calculations it can do that NetLogo doesn't natively support and try to make them work.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>While the uses demonstrated are convenient when needed, the real power of Python is in its scientific packages, like <code>numpy</code>, <code>pandas</code>, and <code>scikit-learn</code> and more.</p>
+<h2>RELATED MODELS</h2>
+<p>There is a bundle of other Python extension demo models, <code>py-demo-models.zip</code>, available on <a href="https://github.com/NetLogo/Python-Extension/releases">the Python extension site</a>.</p>
+<!-- 2019 --></div>
+      </div>
+    </main>
+  </body>
+</html>

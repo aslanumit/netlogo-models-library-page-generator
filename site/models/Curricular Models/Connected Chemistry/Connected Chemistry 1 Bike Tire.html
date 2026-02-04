@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Connected Chemistry 1 Bike Tire</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Connected Chemistry 1 Bike Tire</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Connected%20Chemistry/Connected%20Chemistry%201%20Bike%20Tire.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Connected Chemistry/Connected Chemistry 1 Bike Tire.png" alt="Screenshot of Connected Chemistry 1 Bike Tire" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model introduces the behavior of gas particles trapped in a fixed-volume container (such as a bike tire) or free and unbounded.  This model is part of the "Connected Chemistry" curriculum http://ccl.northwestern.edu/curriculum/ConnectedChemistry/ which explore the behavior of gases.</p>
+<p>Most of the models in the Connected Chemistry curriculum use the same basic rules for simulating the behavior of gases.  Each model highlights different features of how gas behavior is related to gas particle behavior.</p>
+<p>In all of the models, gas particles are assumed to move and to collide, both with each other and with objects such as walls.</p>
+<p>In this model, the fixed volume container (represented by a box), can be drawn in different sizes and proportions. The number of particles added to the inside or the outside of the box can be changed by painting particles.  And the rules of particle interactions (do they bounce off the walls? and do they collide with each other?) can be easily turned on and off).</p>
+<p>This model helps students become acclimated to the user interface of NetLogo and evaluate modeling assumptions and representations, before they begin more analytical data analysis and mathematical modeling tasks associated with later models.</p>
+<h2>HOW IT WORKS</h2>
+<p>When the COLLIDE? switch is on, the particles are modeled as hard balls with no internal energy except that which is due to their motion.  Collisions between particles are elastic.  When the BOUNCE? switch is on, the particle will then bounce off the wall in an elastic reflection (angle of incidence equals the angle of reflection).</p>
+<p>Particles behave according to the following rules:</p>
+<ol>
+<li>A particle moves in a straight line without changing its speed, unless it collides with another particle or bounces off the wall.</li>
+<li>Two particles "collide" if COLLIDE switch is on and they find themselves on the same patch (the world is composed of a grid of small squares called patches).</li>
+<li>A random axis is chosen, as if they are two balls that hit each other and this axis is the line connecting their centers.</li>
+<li>They exchange momentum and energy along that axis, according to the conservation of momentum and energy.  This calculation is done in the center of mass system.</li>
+<li>Each turtle is assigned its new velocity, energy, and heading.</li>
+<li>If a turtle finds itself on or very close to a wall of the container, it "bounces" -- that is, reflects its direction and keeps its same speed.</li>
+</ol>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>Press the SETUP button</li>
+<li>Press the PLACE-BOX button. While the button is pressed, a yellow box will appear when you move your mouse pointer over the view.</li>
+<li>Once you are satisfied with the position of the yellow box, click on the view to place the box there.</li>
+<li>If you don't like the position of your yellow box, you can repeat steps 2 and 3 to draw a new box.</li>
+<li>Press the PLACE-PARTICLES button.  The button will remain a dark black color.</li>
+<li>Click anywhere in the view to draw in some particles.</li>
+<li>Press GO/STOP and observe what happens.</li>
+<li>Turn the COLLIDE? switch off and repeat steps 5-7 and observe the effect.</li>
+<li>Turn the BOUNCE? switch off and repeat steps 5-7 and observe the effect.</li>
+</ol>
+<p>Initial settings:</p>
+<ul>
+<li>NUMBER-OF-PARTICLES-TO-ADD: the number of gas particles in the box when the simulation starts.</li>
+</ul>
+<p>Monitors:</p>
+<ul>
+<li>CLOCK: the number of times the go procedure has been run</li>
+<li>NUMBER: the number of particles in the box</li>
+</ul>
+<h2>THINGS TO NOTICE</h2>
+<p>Can you observe collisions with the walls as they happen (you can pendown a particle or slow down the model)?  For example, do the particles change their color?  Direction?</p>
+<p>In what ways is this model a correct idealization of kinetic molecular theory (KMT)?</p>
+<p>In what ways is this model an incorrect idealization of the real world?</p>
+<h2>THINGS TO TRY</h2>
+<p>Turn the COLLIDE? switch off and repeat steps 7-9 and observe the effects.
+Turn the BOUNCE? switch off and repeat steps 7-9 and observe the effects.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Can you "puncture" the box, so that particles will escape?</p>
+<p>What would happen if the box were heated?  How would the particles behave?  How would this affect the pressure?  Add a slider and code that increases the temperature inside the box.</p>
+<p>If you could change the shape of the box, so that the volume remains the same: Does the shape of the box make a difference in the way the particles behave, or the values of pressure?</p>
+<h2>RELATED MODELS</h2>
+<p>See GasLab Models
+See other Connected Chemistry models.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is part of the Connected Chemistry curriculum.  See http://ccl.northwestern.edu/curriculum/chemistry/.</p>
+<p>We would like to thank Sharona Levy and Michael Novak for their substantial contributions to this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2004).  NetLogo Connected Chemistry 1 Bike Tire model.  http://ccl.northwestern.edu/netlogo/models/ConnectedChemistry1BikeTire.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>To cite the Connected Chemistry curriculum as a whole, please use:</p>
+<ul>
+<li>Wilensky, U., Levy, S. T., &amp; Novak, M. (2004). Connected Chemistry curriculum. http://ccl.northwestern.edu/curriculum/chemistry/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2004 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2004 ConChem --></div>
+      </div>
+    </main>
+  </body>
+</html>

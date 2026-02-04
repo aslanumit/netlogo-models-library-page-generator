@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Robby the Robot</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Robby the Robot</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Computer%20Science/Robby%20the%20Robot.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Computer Science/Robby the Robot.png" alt="Screenshot of Robby the Robot" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Robby the Robot is a virtual robot who moves around a room and picks up cans.  This model demonstrates the use of a genetic algorithm (GA) to evolve control strategies for Robby.  The GA starts with randomly generated strategies and then uses evolution to improve them.</p>
+<h2>HOW IT WORKS</h2>
+<h3>How Robby works</h3>
+<p>Robby's 10x10 square world contains randomly scattered cans. His goal is to pick up as many as he can.  At each time tick, Robby can perform one of seven actions: move in one of the four cardinal directions, move in a random direction, pick up a can, or stay put.</p>
+<p>When Robby picks up a can, he gets a reward. If he tries to pick up a can where none exists, or bumps into a wall, he is penalized.  His score at the end of a run is the sum of these rewards and penalties. The higher his score, the better he did.</p>
+<p>To decide which action to perform, Robby senses his surroundings. He can see the contents of the square he is in and the four neighboring squares.  Each square can contain a wall, a can, or neither.  That means his sensors can be in one of 3<sup>5</sup> = 243 possible combinations.</p>
+<p>A "strategy" for Robby specifies one of his seven possible actions for each of those 243 possible situations he can find himself in.</p>
+<p>(Advanced note: If you actually do the math, you'll realize that some of those 243 situations turn out to be "impossible", e.g., Robby will never actually find himself in a situation in which all cardinal directions contain walls.  This is no problem; the genetic algorithm essentially ignores the "impossible" situations since Robby never encounters them.)</p>
+<h3>How the genetic algorithm works</h3>
+<p>There are many possible variations on the basic concept of a genetic algorithm. Here is the particular variant implemented in this model.</p>
+<p>We begin with a pool of randomly generated strategies.  We load each strategy into Robby in turn, and then run that strategy in a series of randomly generated arrangements of cans ("environments").  We score Robby on how well he does in each environment. If Robby hits a wall, he loses 5 points. If he successfully picks up a can, he gains 10 points. If he tries to pick up a can, but there isn't one there, he loses 1 point.  Robby's average score across all these environments is taken as the "fitness" of that strategy.</p>
+<p>Once we have measured the fitness of the current pool of strategies, we construct the next generation of strategies.  Each new strategy has two parents.  We pick the first parent by picking 15 random candidate parents, then choose the one with the highest fitness.  We repeat this to pick the second parent. Each pair of parents creates two new children via crossover and mutation (see below).  We keep repeating this process until we have enough new children to fill up the population (settable by the POPULATION-SIZE slider).   This "generation" of new children replaces the previous generation.  We then similarly calculate the fitness of the current generation, choose parents, and create a new generation.  This process continues as long as the GO button is pressed, or is controlled by the NUMBER-OF-GENERATIONS slider when the GO-N-GENERATIONS button is pressed.</p>
+<p>To combine the strategies of two parents, we use "crossover".  We pick a random crossover point and combine the first part of the first parent's strategy with the second part of the other's parent's strategy.  For example, if the crossover point selected is 50, we use the first 50 entries of the first parent's strategy and the last 193 entries of the second parent's strategy.  (Each strategy is in a fixed order.)</p>
+<p>In addition to crossover, the children's strategies are subject to occasional random mutation (settable by the MUTATION-RATE slider), in which an action is replaced by a randomly chosen action.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to create the initial pool of random strategies.  Press GO-FOREVER to start the genetic algorithm running, or GO-N-GENERATIONS to run the genetic algorithm for a fixed number of generations (settable by the NUMBER-OF-GENERATIONS slider).</p>
+<p>In the view, you'll see the pool of strategies (represented by "person" icons). The strategies are heterogeneous. The diversity in their fitness is visualized by color and position on the x-axis.  Their color is a shade of red, scaled by their fitness. It's  lightest when the fitness is low and darkest when it's high. In addition, the fitness of a strategy determines where it is along the x-axis, with the least fit strategies on the left, and the fittest strategies on the right.</p>
+<p>Another aspect of diversity is the difference between the strategies. This difference is measured by counting the frequency of each of the 7 basic actions in the strategy (the "allele-diversity"), forming a 7 dimensional vector and then calculating the Euclidean distance between two such vectors.  One of the strategies with the highest fitness is placed in the center of the y-axis. The other strategies are placed at locations whose distance from the center along the y-axis is proportional to the difference between their strategy and the winning strategy.</p>
+<p>All of this takes a fair amount of time to show, so for long runs of the GA you'll want to move the speed slider to the right or uncheck the "view updates" checkbox to get results faster.</p>
+<p>Any time you want to pause the algorithm and see how the current best strategy behaves, press GO-FOREVER and wait for the current generation to finish.  Re-check "view updates" if you unchecked it before.  Next, press VIEW-ROBBY'S-ENVIRONMENT.  This displays the grid that Robby moves in, with a new, random distribution of cans.  Then, press STEP-THRU-BEST-STRATEGY.  Each time you press this button, Robby will use the best  strategy from the last generation to take an action in the current environment.  Keep pressing the STEP-THRU-BEST-STRATEGY button to see how the strategy works.  At any time you can press VIEW-ROBBY'S-ENVIRONMENT again to start over with a new environment of cans.  If you want to go back to the "strategy view", press the VIEW-STRATEGIES button.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Robby's performance gradually improves.  How long does it take to get to a medium or high fitness?</p>
+<p>How does Robby typically behave with a totally random strategy?  How does he behave once some evolution has taken place?</p>
+<p>Does Robby's performance eventually reach a plateau?  How does he behave with the strategies that ultimately evolve?</p>
+<p>On the way to the final plateau, were there ever any temporary plateaus?</p>
+<h2>THINGS TO TRY</h2>
+<p>Vary the settings on the POPULATION-SIZE and MUTATION-RATE sliders.  How do these affect the best fitness in the population as well as the speed of evolution?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add a slider for "crossover rate", the probability that two parents create offspring by crossover.  If they don't crossover, they simply clone themselves (and then the cloned offspring undergo possible mutation).   (You'll need to change the <code>crossover</code> procedure.)</p>
+<p>Add a slider for the tournament-size. How does varying the tournament-size affect the evolution of Robby’s strategies?</p>
+<p>Try different rules for selecting the parents of the next generation. What leads to the fastest evolution? Is there ever a tradeoff between fast evolution at the beginning and how effective the winning strategies are at the end?</p>
+<p>Try using spatial contiguity as a factor in selecting which individuals mate.</p>
+<p>Try to train Robby to perform a somewhat more difficult task.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The <code>run</code> command is key here.  A chromosome is a list of strings, where each string is a procedure name.  Calling <code>run</code> on that string runs the procedure.</p>
+<p>To represent strategies compactly, we use Unicode symbols (such as arrows).</p>
+<p>To measure the similarity between different strategies, we use the high-level list primitives <code>map</code> and <code>reduce</code>.</p>
+<h2>RELATED MODELS</h2>
+<p>Simple Genetic Algorithm</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Robby was invented by Melanie Mitchell and described in her book <em>Complexity: A Guided Tour</em> (Oxford University Press, 2009), pages 130-142.   Robby was inspired by The "Herbert" robot developed at the MIT Artificial Intelligence Lab in the 1980s.</p>
+<p>This NetLogo version of Robby is based on Mitchell's earlier versions in NetLogo and C.
+It uses code from the Simple Genetic Algorithms model (Stonedahl &amp; Wilensky, 2008) in the NetLogo Sample Models Library.</p>
+<p>Robby resembles a simpler version of Richard E. Pattis' Karel the Robot, https://en.wikipedia.org/wiki/Karel_(programming_language).</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Mitchell, M., Tisue, S. and Wilensky, U. (2012).  NetLogo Robby the Robot model.  http://ccl.northwestern.edu/netlogo/models/RobbytheRobot.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p><a href="https://creativecommons.org/publicdomain/zero/1.0/"><img alt="CC0" src="http://ccl.northwestern.edu/images/creativecommons/zero.png" /></a></p>
+<p>Public Domain: To the extent possible under law, Uri Wilensky has waived all copyright and related or neighboring rights to this model.</p>
+<!-- 2012 CC0 Cite: Mitchell, M., Tisue, S. --></div>
+      </div>
+    </main>
+  </body>
+</html>

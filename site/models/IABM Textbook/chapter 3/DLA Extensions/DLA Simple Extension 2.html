@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DLA Simple Extension 2</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>DLA Simple Extension 2</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/IABM%20Textbook/chapter%203/DLA%20Extensions/DLA%20Simple%20Extension%202.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/IABM Textbook/chapter 3/DLA Extensions/DLA Simple Extension 2.png" alt="Screenshot of DLA Simple Extension 2" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is from Chapter Three of the book "Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo", by Uri Wilensky &amp; William Rand.</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<p>This model is in the IABM Textbook folder of the NetLogo Models Library. The model, as well as any updates to the model, can also be found on the textbook website: http://www.intro-to-abm.com/.</p>
+<h2>WHAT IS IT?</h2>
+<p>Like the main DLA model, this model demonstrates diffusion-limited aggregation, in which particles moving (diffusing) in random trajectories stick together (aggregate) to form beautiful treelike branching fractal structures. There are many patterns found in nature that resemble the patterns produced by this model: crystals, coral, fungi, lightning, and so on. This model extends the DLA Simple Extension 1 model because particles are more likely to stick if there are more neighbors to the empty square.</p>
+<p>This model is a simplified version of the main DLA model. In the main model, new particles are created as existing particles aggregate. In this model, particles are only created at the beginning. The main model is more computationally efficient, but the rules that drive the phenomenon are more digestible in this model.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to make the initial seed, and NUM-PARTICLES particles, then press GO to run the model.
+The WIGGLE-ANGLE slider controls how wiggly the paths the particles follow are. If WIGGLE-ANGLE is 0, they move in straight lines. If WIGGLE-ANGLE is 360, they move in a totally random direction at each time step.
+The PROB-OF-STICKING slider controls the probability that a particle colliding with the aggregate will die there and add to the aggregate (by turning its patch green).
+If NEIGHBOR-INFLUENCE is True, the probability of a particle sticking is proportional to the number of green pacthes around it.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Note that the resulting structure has a branching structure, like a tree.  Why does this happen?</p>
+<p>What other phenomena in the world do the shapes remind you of?  Is this aggregation process a plausible model of how those phenomena occur?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try different settings for how much the turtles turn as they do their random walk (the WIGGLE-ANGLE slider).  What is the effect on the appearance of the resulting aggregate?  Why?</p>
+<p>Does it make any difference whether there are more or fewer particles?  Why or why not?</p>
+<p>How does the PROBABILITY-OF-STICKING affect the model results?</p>
+<p>How does NEIGHBOR-INFLUENCE? affect the model results?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>What happens if you start with more than one "seed" patch?  What happens if the seed is a line instead of a point?</p>
+<p>Can you find a way to modify the code so the resulting pattern spirals out instead of radiating straight out?</p>
+<p>The rule used in this model is that a particle "sticks" if any of the eight patches surrounding it are green.  What do the resulting structures look like if you use a different rule (for example, only testing the single patch ahead, or using NEIGHBORS4 instead of NEIGHBORS)?</p>
+<p>Can you compute the fractal dimension of the aggregate?</p>
+<p>If instead of using green, you gradually vary the color of deposited particles over time, you can see more vividly the accretion of "layers" over time.  (The effect is also visually pleasing.)</p>
+<p>The model will run faster if the turtles are invisible, so you may want to add a switch that hides them (using the HT command).</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of the NEIGHBORS primitive.</p>
+<h2>RELATED MODELS</h2>
+<p>The various models in the "Fractals" subsection of the "Mathematics" section of the Models Library demonstrate some other ways of "growing" fractal structures.</p>
+<p>The "Percolation" model in the "Earth Science" section produces patterns resembling the patterns in this model.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a simplified version of:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo DLA model.  http://ccl.northwestern.edu/netlogo/models/DLA.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>The concept of diffusion limited aggregation was invented by T.A. Witten and L.M. Sander in 1981.  Witten, T. &amp; Sanders, L. (1981).  Diffusion-limited aggregation, a kinetic critical phenomena. Phys. Rev. Lett. 47(19), 1400–1403 (1981).</p>
+<p>Tamas Viczek's book "Fractal Growth Phenomena" contains a discussion, as do many other books about fractals.</p>
+<h2>HOW TO CITE</h2>
+<p>This model is part of the textbook, “Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo.”</p>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U., Rand, W. (2006).  NetLogo DLA Simple Extension 2 model.  http://ccl.northwestern.edu/netlogo/models/DLASimpleExtension2.  Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the textbook as:</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2006 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2006 Cite: Wilensky, U., Rand, W. --></div>
+      </div>
+    </main>
+  </body>
+</html>

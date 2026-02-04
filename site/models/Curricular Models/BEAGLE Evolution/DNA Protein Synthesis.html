@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DNA Protein Synthesis</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>DNA Protein Synthesis</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/BEAGLE%20Evolution/DNA%20Protein%20Synthesis.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/BEAGLE Evolution/DNA Protein Synthesis.png" alt="Screenshot of DNA Protein Synthesis" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model allows you to explore the effects of deletion, substitution, and insertion mutations on a single strand of DNA and the subsequent outcomes in related protein synthesis in cells.  The model represents effects from mutations that include 1) the number of genes that are encoded in the DNA, 2) the mRNA molecules that are transcribed, and 3) the tRNA molecules that are used to transcribe the mRNA into an amino acid chain, as wells as 4) the subsequent protein that is synthesized.</p>
+<h2>HOW IT WORKS</h2>
+<p>In this model nucleotides are molecules, that when joined together, make up the structural units of DNA.  Visually this appears as single nitrogen base (represented as a colored polygon) and 1 phosphate group (represented as a yellow circle).  Only a single strand of the double stranded DNA molecule is show in this model, as the protein synthesis process starts with the doubled stranded DNA being unwound into two single strands to permit mRNA production.</p>
+<p>The nitrogen bases for DNA come in four variations: ([A]denine, [G]uanine, [T]hymine, [C]ytosine) bound to a ribose or deoxyribose backbone.</p>
+<p>The same nitrogen bases are used for mRNA and tRNA, as for DNA, except no [T]hymine is used.  Instead it is replaced with [U]racil.</p>
+<p>Genes start locations in DNA in this model don't use promoters to initiate transcription of a particular gene, like they do in reality.  Rather, the start codon (encoded by a three letter sequence of nucleotides [ATG], when read from a particular direction),  signals the start of transcription for mRNA.  In reality, ATG start condons are the first codon in mRNA that is translated by ribosome.  Therefore, in reality mRNA often contains additional non-translated nucleotides, before the start codon in mRNA and additional non-translated nucleotides after the stop codons in mRNA.</p>
+<p>In this model, however, that complexity of additional "dangling" non-transcribed mRNA has been eliminated by setting the start codon as the site for transcription of DNA to mRNA and the stop codon as the site for ending transcription of DNA to mRNA as well.</p>
+<p>In this model, transcription reading of DNA occurs from left to right.   Gene stop locations are encoded either by the first three letter sequence (either [] or [] or []) that is encountered, which is the same reading frame as the ATG sequence at the start of the gene.  Reading frames may be shifted by 0, 1, or 2 nucleotides from the start of the gene.  Stop signals have three possible three nucleotides sequences ([TAG], [TGA], or [TAA])</p>
+<p>If the first letter of the three letter sequence for stop has any multiple of 3 nucleotides between it and the last letter of the ATG marking the start, then it is in the same frame of reference and will apply as a stop signal for this gene.  If not, the stop signal is ignored.  If no stop signal is found in the DNA, the gene end will continue until end of the entire DNA strand (the far right side of the DNA in this model).</p>
+<p>In order for DNA to produce proteins for each gene, the following four steps must be followed by the user, after GO/STOP is pressed to start running the model.</p>
+<ol>
+<li>
+<p>For each gene an mRNA molecule must be transcribed.  This is done by pressing the  1-TRANSCRIBE for genes in the original strand of DNA or 6-TRANSCRIBE for the genes in the duplicated strand of DNA.  Each time this button is pressed, the next gene in the strand of DNA will be transcribed.  When the last gene is reached, then the next gene chosen to transcribe will be the first gene (reading from left to right).</p>
+</li>
+<li>
+<p>For each mRNA molecule that was transcribed in the original DNA, the 2-RELEASE button must be pressed.  For each mRNA molecule that was transcribed in the duplicated DNA, the 7-RELEASE button must be pressed.  This simulates the release of the mRNA from the nucleus into the ribosome of the cell.</p>
+</li>
+<li>
+<p>Once the mRNA has finished moving in to the ribosome, the 3-TRANSLATE button must be pressed to translate the mRNA in the original cell and the 8-TRANSLATE button must be pressed to translate the mRNA in the replicated cell.  This pairs a tRNA molecule with each set of three nucleotides in the mRNA molecule.</p>
+</li>
+<li>
+<p>Once the entire mRNA molecule has been paired with tRNA, the 4-RELEASE button must be pressed to release the amino acid chain from that attached to the tRNA chain in the original cell.  And the 9-RELEASE button must be pressed to release it in the replicated cell.  This amino-acid chain is the protein molecule before it folds up to take on its tertiary structure.</p>
+</li>
+</ol>
+<h2>HOW TO USE IT</h2>
+<p>NEXT-INSTRUCTION button moves the text in the instruction window forward one "page".</p>
+<p>PREVIOUS-INSTRUCTION button moves the text in the instruction window back one "page".</p>
+<p>INSTRUCTION # reports the "page" of text in the instruction window being displayed.  These are each of the pages of instructions that the user can page through as they run the model:</p>
+<p>Instruction 1: You will be simulating the process of protein synthesis from DNA that occurs in every cell and the effects of mutations on the proteins that are produced.</p>
+<p>Instruction 2: When you press SETUP, a single strand of an unwound DNA molecule appears. This represents the state of DNA in the cell nucleus during transcription.</p>
+<p>Instruction 3: To produce proteins, each gene in the original DNA strand must be transcribed  into an mRNA molecule.  Do this by pressing  the 1-TRANSCRIBE button.</p>
+<p>Instruction 4: For each mRNA molecule that was transcribed, press the 2-RELEASE button.  This releases the mRNA from the nucleus  into the ribosome of the cell.</p>
+<p>Instruction 5: For each mRNA molecule in the ribosome, press the 3-TRANSLATE button.  This pairs up tRNA molecules with each set of three nucleotides  in the mRNA molecule.</p>
+<p>Instruction 6: For each tRNA chain built, press the 4-RELEASE button.  This releases the amino acid chain from the rest of the tRNA chain, leaving behind the protein molecule that is produced.</p>
+<p>Instruction 7: Each time the 1-TRANSCRIBE button is pressed, the next gene in the original strand of DNA will be transcribed.  Press the 1-, 2-, 3-, 4-, buttons and repeat to translate each subsequent gene into a protein.</p>
+<p>Instruction 8: When you press the 5-REPLICATE THE ORIGINAL DNA button a copy of the original DNA will be generated for a new cell (as in mitosis or meiosis) and appear in the green.</p>
+<p>Instruction 9: The replicated DNA will have a number of random mutations, set by #-NUCLEOTIDES-AFFECTED, each mutation of the type set by MUTATION-TYPE. Press button 5-REPLICATE THE ORIGINAL DNA  again to explore possible outcomes.</p>
+<p>Instruction 10: Now repeat the same transcription, release, translation, and release process for the DNA in this new cell.  To do that, press 6-, 7-, 8-, 9- buttons.  Again repeat that sequence to cycle through each gene in this mutated DNA.</p>
+<p>Instruction 11: If you want to test the outcomes for your own DNA code, type any sequence of A, G, T, C in the USER-CREATED-CODE  box and set the INITIAL-DNA-STRING
+to “from-user-code”.  The default is set to "AAAAA", but any sequence of letters can be processed.  Strings longer than 64 letters will be trimmed to the first 64 letters and letters that are not A, G, T, or C, will be randomly replaced by one of these letters.</p>
+<p>Other Setting Information:</p>
+<p>SHOW-GENES? controls whether the start and end codons for each gene are visibly tagged in the DNA.</p>
+<p>INITIAL-DNA-STRING can be set to "from user-created-code" (see above), or to any of the following: "no genes (short strand)", "no genes (long strand)", "1 short gene", "1 long gene", "2 sequential genes", "2 nested genes", "3 sequential genes", "random (short strand)", "random (long strand)".  Both random settings are fixed length, but random code in that length of DNA.</p>
+<p>Buttons 1-4 affect the original cell's DNA.
+Button 5 affects the duplicated DNA that ends up in the new cell
+Buttons 6-9 affect the duplicated cell's DNA</p>
+<p>The 10-SHOW PRODUCTION SUMMARY button reports all the proteins that produced in both the original cell and in the duplicated cell.</p>
+<p>MUTATION-TYPE can be set to deletion, insertion or substitution.  The number of nucleotides affected is set by #-NUCLEOTIDES-AFFECTED.  So 6 substitutions will place 6 random nucleotides in place of back to back sequence of 6 original nucleotides at a random location in the DNA.  And 4 insertions will add 4 random nucleotides in sequence at a random location in the DNA.  And 3 deletions will delete 3 random nucleotides in sequence at a random location in the DNA.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Sometimes the end location for 1 gene is the same as for another gene.  This may make it hard to distinguish the numbering of each of the tags for these end locations, since when they are stacked on top of each other at the same location, their text and colors overlap.</p>
+<p>Some mutations introduce brand new genes into a strand of DNA.  Some mutations remove an entire gene in a strand of DNA.  Some only affect a few of the amino acids that used in protein synthesis.  Others affect many.  And some mutation affect the non-coding regions of DNA, resulting in no effects in the proteins produced by the cell.</p>
+<h2>THINGS TO TRY</h2>
+<p>Start with a section of DNA with no genes.  How often does a mutation result in the emergence of new gene?</p>
+<p>Start with a section of DNA with one or more genes.  How often does a mutation result in the disappearance of an old gene?</p>
+<p>Are there certain types of mutations (deletion, insertion, or substitution) that seem to affect the structure of the resulting protein more than others?</p>
+<p>Why do certain numbers of nucleotides affected (e.g. 3 and 6) seem to affect some aspects of the genes more frequently and not others?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>A representation of protein folding could be added to the model (where each neighboring amino acid affects the amount of relative change in orientation to the previous amino acid).</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The model makes use of transparency features in the color channel for the shapes of the start and stop codons in order to allow the user to see the DNA structure beneath them.</p>
+<p>The model makes use of "tag" turtles.  These breeds of turtles have no visible shape, but do have text labels displayed.  They are placed at a fine tuned position near the visible turtle it is helping provide a label for and is linked to it.</p>
+<h2>RELATED MODELS</h2>
+<p>DNA Replication Fork is the precursor model to this one.  It shows how two types of mutations (deletion and substitution) cam emerge when DNA is duplicated in mitosis or meiosis through simple unintentional copying errors.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the BEAGLE curriculum (http://ccl.northwestern.edu/rp/beagle/index.shtml)</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2012).  NetLogo DNA Protein Synthesis model.  http://ccl.northwestern.edu/netlogo/models/DNAProteinSynthesis.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2012 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2012 Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

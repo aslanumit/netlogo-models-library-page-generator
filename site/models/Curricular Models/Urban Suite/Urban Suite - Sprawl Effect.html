@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Urban Suite - Sprawl Effect</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Urban Suite - Sprawl Effect</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Urban%20Suite/Urban%20Suite%20-%20Sprawl%20Effect.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Urban Suite/Urban Suite - Sprawl Effect.png" alt="Screenshot of Urban Suite - Sprawl Effect" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates a simplified version of city growth and how it leads to urban sprawl and the problems connected with it (e.g. leapfrogging).  Since the rules by which the environment changes and the agents interact are quite simple, the strength of this model is less in attempting to realistically model urban development in detail, and more in demonstrating that certain patterns of behavior and land usage can emerge without requiring overly-complex rules.</p>
+<h2>HOW IT WORKS</h2>
+<p>At the beginning of the model, a topography of attractiveness is established (lighter grid squares are more attractive and darker grid squares are less attractive).  All development starts from a densely populated center (e.g. a city).
+The agents in the model roughly represent residential population.  This agent may be in one of two states -- either "seeker" or "house".</p>
+<p>In the "seeker" state, the agents sample the grid square that is directly ahead of them, and the grid squares that are at a specified angle (SEEKER-SEARCH-ANGLE) to the right and to the left of their current heading.  If it finds that the rightward patch is the best choice, it turns a random amount rightward.  If the leftward patch is the best choice, it turns a random amount leftward.  Otherwise it continues to move straight.  This has an approximate effect of following a gradient toward higher attractiveness, though with a significant random factor, because at most 3 patches are tested, and the seeker does not turn directly towards the patch.  Each time step (tick) the seeker moves one half of the width of a grid square.</p>
+<p>Each tick a seeker also decides whether or not to settle (become a "house") on the current grid square.  A random number is chosen between 0 and the attraction value of the patch.  If the chosen random number is greater than half of the MAX-ATTRACTION value for patches, then the seeker settles.  Every tick a seeker also faintly increases the attraction value of the grid square that it is currently over.  The assumption is that areas of activity or growth become more attractive, following the principle of positive feedback.</p>
+<p>House agents do very little.  In fact, they just stay put on the square they were settled on for the number of ticks that is specified by the WAIT-BETWEEN-SEEKING value.  While they sit there, they slowly increase the attraction of the square they are sitting on.</p>
+<p>There is one additional rule -- the attractiveness values for land do not increase forever.  Instead, too much activity on a given piece of land decreases its attractiveness.  Thus, when attractiveness of a grid square reaches the threshold of MAX-ATTRACTIVENESS, it is reset to having no attractiveness.  This abrupt change in attractiveness is admittedly not very realistic, but the idea that the attractiveness of continually re-occupied land degrades over time is not unreasonable.  Furthermore, this model could be extended to use a more sophisticated mathematical function to account for this degradation.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to prepare the model for running.  This creates a topography of attractiveness.</p>
+<p>The SMOOTHNESS-SLIDER determines how smooth this attractiveness landscape will be -- setting it at 1 permits very rough landscapes with drastic changes in attractiveness from square to square, whereas setting it at 20 causes the initial landscape to be very smooth with only very gradual changes in attractiveness.</p>
+<p>The initial attractiveness landscape is also affected by the MAX-ATTRACTION slider, since attraction values are doled out randomly from between 0 and MAX-ATTRACTION.</p>
+<p>The SETUP button also places a population of seeker agents all in the center of the world grid.  The POPULATION slider controls how many agents there are.  This number will remain fixed over the course of the model run (though the seeker agents will transform into house agents, and vice versa).</p>
+<p>Press GO to run the model.  If the model is running too quickly to observe the actions of the agents, you can move NetLogo's speed slider to the left to slow it down.  Conversely, it is possible to speed the model by moving the speed slider to the right.  The speed slider accelerates the model by reducing the display frame rate.   Because most of the CPU time for this model is spent rendering the visual display, it is quite effective to speed up the model by using the speed slider.</p>
+<p>The SEEKER-SEARCH-ANGLE slider determines the angle to each side that the seekers look when they are comparing attractiveness of nearby grid squares, and deciding which direction to turn.  The maximum turn amount is also controlled by this slider.</p>
+<p>The SEEKER-PATIENCE slider controls how long the seekers will search for high attraction squares before giving up and settling wherever they happen to be.</p>
+<p>The WAIT-BETWEEN-SEEKING slider controls how long seekers will stay a house in the location where they settle, before they turn back into a seeker again.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>After the initial sprawl and expansion, squares within the dark unattractive areas eventually grow to be attractive again, here and there.  Do you think this is realistic?  It could represent urban renewal efforts, where certain areas become more desirable to live in as a result of city planning and residential effort.  Or it might represent semi-random fluctuations in property values, employment opportunities, quality of school districts, and other factors.  On the other hand, it could be just an unintended result of the over-simplified rules used for modeling how attractiveness changes and how agents make decisions.</p>
+<h2>THINGS TO TRY</h2>
+<p>To get an idea of how a single agent acts, try setting the population size to 1, and watch the behavior.  How do the patterns that form in the world compare to when the population is reasonable large?</p>
+<p>Try setting SEEKER-PATIENCE to 0.  What happens?  Can you explain it?  Is it what you expected?  What if you set SEEKER-PATIENCE to 1?  Are the patterns that form different than if SEEKER-PATIENCE is large, such as 120?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>As noted in the "HOW IT WORKS" section above, it seems somewhat unreasonable that once a certain attractiveness threshold is reached, the attractiveness plummets all the way down to zero.  Try to modify this model so that the decrease in attractiveness happens more gradually.</p>
+<p>Right now land values of grid squares are not affected (at least directly) by the land value of neighboring squares.  If one area has become a dirty garbage dump fraught with crime, should it be possible to have highly attractive luxury condominiums right nearby?  Modify this model so that attractiveness is diffused (very slowly) between neighboring patches while the model runs.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Although breeds are often used in NetLogo models, it is less common for agents to change what breed they are during the course of the model.  One approach to this problem would be to hatch an agent of the new breed, and kill the agent of the old breed.  However, this work is unnecessary -- one can merely write "SET BREED HOUSES" or "SET BREED SEEKERS" to change the breed of an agent.</p>
+<h2>RELATED MODELS</h2>
+<p>This model is related to all of the other models in the "Urban Suite".  In particular, this model shows elements of positive feedback (the concept demonstrated in the Urban Suite - Positive Feedback model).</p>
+<p>Also, the creation of the smooth attraction topology is directly related to the model "Urban Suite - Structure from Randomness 1".</p>
+<p>Some of the patterns that form are reminiscent of Cellular Automata, or perhaps the "Vants" model.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model was based on a model originally written by William Rand and Derek Robinson as part of the Sluce Project at the University of Michigan.  For more about the original model (SOME) that was the basis for this model, please see:</p>
+<p>Brown D.G., Robinson D.T., Nassauer J.I., An L., Page S.E., Low B., Rand W., Zellner M., and R. Riolo (In Press) "Exurbia from the Bottom-Up: Agent-Based Modeling and Empirical Requirements." Geoforum.</p>
+<p>This model was then extended and expanded during the Sprawl/Swarm Class at Illinois Institute of Technology in Fall 2006 under the supervision of Sarah Dunn and Martin Felsen, by the following group of students: Christian Eichinger, Sara Martinez-Bravo, Kit Ottsen, John Wolters.  See http://www.sprawlcity.us/ for more details.</p>
+<p>Further modifications and refinements were made by members of the Center for Connected Learning and Computer-Based Modeling before releasing it as an Urban Suite model.</p>
+<p>The Urban Suite models were developed as part of the Procedural Modeling of Cities project, under the sponsorship of NSF ITR award 0326542, Electronic Arts &amp; Maxis.</p>
+<p>Please see the project web site (<a href="http://ccl.northwestern.edu/cities/">http://ccl.northwestern.edu/cities/</a>) for more information.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Felsen, M. and Wilensky, U. (2007).  NetLogo Urban Suite - Sprawl Effect model.  http://ccl.northwestern.edu/netlogo/models/UrbanSuite-SprawlEffect.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 Cite: Felsen, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

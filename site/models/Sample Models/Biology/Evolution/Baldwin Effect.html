@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Baldwin Effect</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Baldwin Effect</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Evolution/Baldwin%20Effect.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Biology/Evolution/Baldwin Effect.png" alt="Screenshot of Baldwin Effect" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>The purpose of this model is to investigate, in a quantitative manner, how learning can affect evolution. This model aims to demonstrate that "better learning" organisms, in certain environments, are more effective in expediting the evolutionary search to find good genotypes, even when the specific adaptations that are learned are not communicated to the genotype.</p>
+<p>The relationship between evolution and learning has been debated at length. The two concepts are most commonly related by what is known as the Baldwin effect. The Baldwin effect suggests that phenotypic plasticity, a more general term that includes learning, can enhance evolution. More specifically the Baldwin effect states: (1) organisms adapt to the environment individually, (2) genetic factors produce hereditary characteristics similar to the ones made available by individual adaptation, and (3) these hereditary traits are favoured by natural selection and spread in the population.</p>
+<p>Using a computational model, Hinton &amp; Nowlan (1996) influentially suggested that learning can qualitatively speed up evolution. Taking Hinton &amp; Nowlan’s study as a starting point, in addition to showing the difference between the evolution of learning and non-learning populations, this model considers three populations: two populations that learn in different ways such that one population is better at learning than the other one and one non-learning population. In other words, this model investigates to what extent the Baldwin effect might manifest itself with different learning abilities.</p>
+<h2>HOW IT WORKS</h2>
+<p>At each timestep, each agent</p>
+<ul>
+<li>tries to learn phenotypes of high fitness based on their learning rules</li>
+<li>has a chance of dying if it has a low fitness value</li>
+<li>has a chance of reproducing if they have a high fitness value.</li>
+</ul>
+<p>A genotype refers to the genetic makeup of an organism (its complete set of alleles), whereas a phenotype refers to the observable physical properties of an organism, including its behavior. Because the phenotype is determined by both an organism’s genotype and by environmental influences upon the genotype, organisms with identical genotypes can ultimately express non-identical phenotypes. In this model, each organism has a genotype (a sequence of symbols) and a phenotype associated with their modeled nervous system. In this model, each symbol in a genotype is an allele. Each allele could be one of the three following symbols: 0, 1, X. Alleles determine the connections in the organism's nervous system. Where 0 means there is no connection, 1 means there is a connection, and X means the connection value is undecided and will be set through learning. We refer to the X alleles as plastic alleles, since they don’t have a definite value (they’re “plastic” in that they are set as the model unfolds rather than at the outset). The nervous system only determines the phenotype, which relates to the reproductive fitness of the organism. In this model, we will represent a nervous system by a sequence of symbols as explained above. We will refer to these nervous systems as phenotypes, which are sequences of symbols that only consist of 0s and 1s. This means that a genotype might have plastic alleles, but a phenotype won’t. For example, if an organism has the genotype 01X1, it’s phenotype could either be 0111 or 0101 and nothing else. There is a single ideal target phenotype (set randomly) that has the optimal fitness. The reproductive fitness of the organism is modeled by a function that measures the similarity between the phenotype of the organism and the target phenotype. We call this value “fitness” and note that it is bounded between 0 and 1.</p>
+<p>The function that reports the fitness of an organism is affected by the smoothness of the fitness landscape. A fitness landscape can be regarded as a mapping between phenotypes and fitness values. A smooth fitness landscape would indicate that similar phenotypes would have similar fitness values whereas a rugged fitness landscape would indicate that similar phenotypes can have very different fitness values. For example, the phenotypes 0111 and 1111 might have fitness values of 0.5 and 0.6 respectively in a smooth fitness landscape. The same phenotypes might have fitness values of 0 and 1 respectively in a rugged fitness landscape. The smoothness is set by the user and is bounded between 0 and 1. If the smoothness is set to 0, then the fitness value of an organism is either 0 or 1. That is, if the organism's phenotype is exactly the target phenotype its fitness would be 1, otherwise it would have a fitness of 0. If the smoothness is set to 1 however, the organism’s fitness maybe any range of values between 0 and 1, depending on how similar its phenotype is to the target phenotype.</p>
+<p>There are three populations, Smart Learners, Random Learners and Non-learners. At each time step, the organisms undergo several learning trials, the number of which is determined by the user. At each trial, the random learners learn by setting all plastic alleles randomly to either 0 or 1, with equal probability. At each trial, two potential phenotypes (one previously generated and one new, randomly generated) are compared to the ideal phenotype. If the reproductive fitness of the new phenotype is lower than the phenotype from the previous time step, then the organism discards this new attempt and continues to explore randomly. However, if the new phenotype has a higher fitness than that of the previous time step, then the organism uses this setting as a point of comparison in the next trials.</p>
+<p>The smart learners learn by setting the value of plastic alleles probabilistically. That is, they have probability <em>f</em> that X will be set to the corresponding allele in the previous phenotype configuration, and probability 1-<em>f</em> that it will be set randomly with equal probability to either 0 or 1, where <em>f</em> is the fitness of the phenotype of the previous configuration. So a smart learning organism is more likely to keep the values of plastic alleles that yield a higher fitness.</p>
+<p>The number of learning trials for each organism is set by the user. None of the learned traits are passed on to the offspring, so an offspring inherits only the locked in 0's and 1's, but continues to have X's in all the same places as their parents. Reproduction is proportional to fitness and is sexual. Every child is a recombination of its parent's' genotype, taking the value of each allele randomly from one of the parents. During reproduction, each allele has a chance to randomly mutate. All three populations start with the same number of individuals determined by the user.</p>
+<h2>HOW TO USE IT</h2>
+<p>The SETUP button initializes the model.</p>
+<p>The GO button runs the model.</p>
+<p>Use the NUM-POP slider to set the initial number of organisms in each population.</p>
+<p>Use the GENE-LENGTH slider to set the length of the genotype and phenotype of each organism.</p>
+<p>Use the PLASTICITY slider to set the probability <em>p</em> that each allele in the initial genotypes is plastic. For example, if plasticity is 1, every allele will be plastic. If plasticity is 0.2, then 20% of the alleles will be plastic, and the rest will be locked in 0’s and 1’s.</p>
+<p>Use the NUM-TRIALS slider to set the number of learning trials each organism undergoes at each time step.</p>
+<p>Use the MUTATION-RATE slider to set the probability that an allele in the genotype of an offspring undergoes mutation when an offspring is produced.</p>
+<p>Use the SMOOTHNESS slider to make the fitness landscape more smooth or rugged. If the slider is set to 1, the landscape is smooth, if it is set to 0, the landscape consists of a single spike. Specifically, this slider determines the threshold that the fitness of an organism is non zero.</p>
+<p>The blue dots in the VIEW represent smart learners, the red dots represent random learners, and the grey dots represent non-learners. The vertical location of each dot indicates that organism's fitness value. The dots at the very top indicate maximum fitness. The shade of the dots indicates the number of plastic alleles that organism has. The lighter the color, the more plastic alleles that organism has. Horizontally, the organisms are placed in three bins based on their learning type. Within each bin, the horizontal placement of each organism depends on the number of correct alleles in their genotype. The higher the number of correct alleles, the more to the right an organism is placed.</p>
+<p>The plot titled Average Fitness depicts the average reproductive fitness of the organisms in three different populations as a function of time. In this model, each time step is a generation. The blue line indicates the average fitness of the smart learning population, whereas the red line and the grey line indicate the average fitness of the random learning population and the non-learning population, respectively.</p>
+<p>The plot titled Percentage of Plastic Alleles depicts the percentage of plastic alleles in the genotypes of the smart learners and random learners as a function of time steps. The blue line and the red line indicate smart learners and random learners, respectively.</p>
+<p>The plot titled Percentage of Correct Alleles depicts the percentage of locked in alleles that match with those of the target phenotype as a function of time steps. Note that this plot only counts the locked in alleles and not the plastic ones towards the number of correct alleles. The blue, red and grey lines indicate smart learners, random learners, and non-learners respectively.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Which population tends to reach a better phenotype the fastest? Which population generally reaches the highest fitness values?</p>
+<p>How are the number of plastic alleles and the number of correct alleles related?</p>
+<h2>THINGS TO TRY</h2>
+<p>How does the initial population size affect the average fitness of each population over time? Which population has a comparative advantage against the others as the gene length, plasticity, and number of learning trials change? How does smoothness affect the fitness of each population? Which populations tend to reach high fitness values when smoothness is low?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>There are various ways this model can be extended. One of them is changing how smart learners learn, or adding another population that learns differently.</p>
+<p>Adding a different method of reproduction, adding a different fitness function, or adding a way that enables the populations to interact with each other are all plausible extensions of this model. Another possibility is to model the change in environment and investigate which organisms are more adaptable.</p>
+<p>Another exciting extension of this model would be using LevelSpace such that each agent has an actual neural network to model its nervous system, and some properties of the network is passed on to the offspring, such as the connections in the network. Then each offspring determines the weights in the network by using different learning strategies.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The <code>scale-color</code> primitive is used to visualize the number of plastic alleles of each organism in smart learners and random learners. The more plastic alleles an organism has, the lighter it looks.</p>
+<p>The <code>rnd:weighted-n-of</code> primitive from the rnd extension to select organisms to reproduce probabilistically based on their fitness.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>GenDrift Sample Models</li>
+<li>GenEvo Curricular Models</li>
+<li>Echo</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Baldwin, J. (1896). A New Factor in Evolution. The American Naturalist, 30(354), 441-451. Retrieved from http://www.jstor.org/stable/2453130.</p>
+<p>Geoffrey E. Hinton and Steven J. Nowlan. 1996. How learning can guide evolution. In Adaptive individuals in evolving populations, Richard K. Belew and Melanie Mitchell (Eds.). Santa Fe Institute Studies In The Sciences Of Complexity, Vol. 26. Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA 447-454.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Gurkan, C. and Wilensky, U. (2023).  NetLogo Baldwin Effect model.  http://ccl.northwestern.edu/netlogo/models/BaldwinEffect.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2023 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2023 Cite: Gurkan, C. --></div>
+      </div>
+    </main>
+  </body>
+</html>

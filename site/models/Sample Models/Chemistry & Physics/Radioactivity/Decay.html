@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Decay</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Decay</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Radioactivity/Decay.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Radioactivity/Decay.png" alt="Screenshot of Decay" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model simulates the spontaneous decay of a collection of radioactive nuclei.  As they decay and become stable, the plot of the number that are still radioactive demonstrates the notion of "half-life".</p>
+<h2>HOW IT WORKS</h2>
+<p>At each time tick, each undecayed (light blue) nucleus has a certain chance of decaying.  When a nucleus decays, it briefly flashes bright yellow (as if giving off radiation), then turns dark blue.  Eventually, if you wait long enough, all of the nuclei will have decayed and the model will stop.</p>
+<h2>HOW TO USE IT</h2>
+<p>Set the initial number of nuclei (NUMBER-NUCLEI slider) and the likelihood of decay during each time interval (DECAY-CHANCE slider). Then push the SETUP button. Push the GO button to run the model.</p>
+<p>The number of radioactive nuclei that remain is shown in the "Radioactive Nuclei" plot.  Each time the number of nuclei is reduced by half, red and green lines appear on the plot to mark the place where each halfway mark was reached.  The "Decay Rate" plot shows the number of decays that occur during each clock tick.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>What is the shape of the decay curve (Radioactive Nuclei)?  How is this affected by the initial conditions?</p>
+<p>Why is the decay curve this shape?  Is it the same as the decay curve shown in books?</p>
+<p>The time between red lines is called the half-life.  What is its physical meaning?  Is it constant as the number of nuclei decreases?  Is it affected by the initial number of nuclei or the decay-chance?  Do you think it's a useful way to characterize a radioactive material?</p>
+<p>How long does it take for all the nuclei to decay?</p>
+<p>Watch one nucleus carefully.  When will it decay?</p>
+<p>Radioactivity depends on the number of decays per unit time (Decay Rate), because each decay event gives off radiation.  What happens to the radioactivity of this sample over time?  What is the shape of the decay rate curve?  How is it related to the shape of the decay curve?</p>
+<p>Examine the standard equation for nuclear decay:</p>
+<blockquote>
+<p>N = No (e exp -(T/tau))</p>
+</blockquote>
+<p>No is the initial number of nuclei, N is the number at a later time T, and tau is the "mean lifetime".  Compare its behavior to what you see in this model.  The corresponding equation for radiation is:</p>
+<blockquote>
+<p>R = Ro (e exp -(T/tau))</p>
+</blockquote>
+<p>Why are these two equations so similar?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try the extremes of the initial conditions: many or few nuclei, high or low decay-chance.  How does this affect the "jaggedness" of the decay rate plot?</p>
+<p>What does the plot do when very few nuclei are left?</p>
+<p>What instructions would you give each turtle be to make it behave like an unstable nucleus?  Check the code in the Code tab and see if it's what you thought it should be.</p>
+<p>Carbon-14 dating involves comparing the ratio of a stable (C-12) to an unstable (C-14) nucleus.  Explain that method in terms of this model.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>It is often the case in nature that two nuclei with different decay rates are present in the same sample.  Modify this model to have two or more types of nuclei.  What happens to the radiation curve?</p>
+<p>In this model, the nuclei don't affect their neighbors when they decay --- they just disappear. Get them to emit particles that in turn cause reactions in other nuclei.  See if you can model a chain reaction.  (See the Reactor Top Down and Reactor X-Section models.)</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Reactor Top-Down</li>
+<li>Reactor X-Section</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo Decay model.  http://ccl.northwestern.edu/netlogo/models/Decay.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1997 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

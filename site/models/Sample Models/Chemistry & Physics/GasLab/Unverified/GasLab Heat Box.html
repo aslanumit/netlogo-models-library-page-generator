@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GasLab Heat Box</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>GasLab Heat Box</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/GasLab/Unverified/GasLab%20Heat%20Box.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Chemistry &amp; Physics/GasLab/Unverified/GasLab Heat Box.png" alt="Screenshot of GasLab Heat Box" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is illustrates the relationship between temperature and pressure in a fixed volume gas container.</p>
+<p>This model is one in a series of GasLab models. They use the same basic rules for simulating the behavior of gases.  Each model integrates different features in order to highlight different aspects of gas behavior.</p>
+<p>The basic principle of the models is that gas particles are assumed to have two elementary actions: they move and they collide --- either with other particles or with any other objects such as walls.</p>
+<p>This model is part of the Connected Mathematics "Making Sense of Complex Phenomena" Modeling Project.</p>
+<h2>HOW IT WORKS</h2>
+<p>The particles are modeled as hard balls with no internal energy except that which is due to their motion.  Collisions between particles are elastic.</p>
+<ol>
+<li>A particle moves in a straight line without changing its speed, unless it collides with another particle or bounces off the wall.</li>
+<li>Two particles "collide" if they find themselves on the same patch. In this model, two turtles are aimed so that they will collide at the origin.</li>
+<li>An angle of collision for the particles is chosen, as if they were two solid balls that hit, and this angle describes the direction of the line connecting their centers.</li>
+<li>The particles exchange momentum and energy only along this line, conforming to the conservation of momentum and energy for elastic collisions.</li>
+<li>Each particle is assigned its new speed, heading and energy.</li>
+<li>If a particle finds itself on or very close to a wall of the container, it "bounces" --- that is, reflects its direction and keeps its same speed.</li>
+</ol>
+<p>As the walls of the box are heated, the sides of the walls will change color from a deep red (cool) to a bright red, to pink to a pale pink white (hot).  The walls contain a constant heat value throughout the simulation.  If ONE-SIDE? is set to ON, only the left wall will be heated, while the other three walls remain yellow.</p>
+<p>The exact way particles gain energy from the walls of the box is as follows:
+1. Particles check their state of energy.
+2. They hit or bounce off the wall.
+3. They find wall energy and recalculate their new energy.
+4. They change their speed and direction after the wall hit.</p>
+<h2>HOW TO USE IT</h2>
+<h3>Initial settings</h3>
+<ul>
+<li>NUMBER-OF-PARTICLES: number of particles within in the box</li>
+</ul>
+<h3>Buttons</h3>
+<p>The SETUP button will set these initial conditions.
+The GO button will begin the simulation.</p>
+<h3>Other Settings</h3>
+<ul>
+<li>OUTSIDE TEMPERATURE: temperature of the outside of the box and the wall of the box.</li>
+<li>ONE SIDE?: heats only the left wall if enabled.  the other walls are colored yellow, and do not affect the energy of the particles that bounce into it.</li>
+<li>COLLIDE?: Turns collisions between particles on and off.</li>
+</ul>
+<h3>Monitors</h3>
+<ul>
+<li>PRESSURE: the pressure of the gas particles in the box</li>
+<li>WALL HITS PER PARTICLE: number of times that each particle hit the walls</li>
+<li>AVERAGE SPEED: average speed of the particles.</li>
+<li>AVERAGE ENERGY: average kinetic energy of the particles.</li>
+</ul>
+<h3>Plots</h3>
+<ul>
+<li>SPEED COUNTS: plots the number of particles in each range of speed.</li>
+<li>SPEED HISTOGRAM: speed distribution of all the particles.  The gray line is the average value, and the black line is the initial average.</li>
+<li>ENERGY HISTOGRAM: distribution of energies of all the particles, calculated as m*(v^2)/2.</li>
+<li>PRESSURE VS. TIME: plots average pressure of the inside of the box over time.</li>
+<li>TEMPERATURE VS. TIME: plots particle temperature inside the box over time and wall temperature over time.</li>
+<li>WALL HITS PER PARTICLE: plots average wall hits per particle over time.</li>
+</ul>
+<h2>THINGS TO NOTICE</h2>
+<p>How does adding heat to the box walls affect the pressure?</p>
+<p>How does adding heat to the wall affect the particle behavior?</p>
+<p>How does the particle behavior or system response change with only one wall heated instead of all walls heated?</p>
+<p>Does the system reach an equilibrium temperature faster when the wall is heated or cooled the same amount in comparison to the temperature of the particles?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try to get the inside temperature to reach the outside temperature.  Is this possible?</p>
+<p>Try to increase the wall hits per particle.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Give the wall a mass and see how that affects the behavior of the model.</p>
+<p>Close off the right side of the box.  Create two valves on either side to the wall that allow the user to "spurt" particles into the chambers to see how number of particles affects pressure.</p>
+<p>Vary the width and length of the box, does this effect how fast the particle temperature changes?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Notice how the collisions are detected by the turtles and how the code guarantees the same two particles do not collide twice.  What happens if we let the patches detect them?</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model was developed as part of the GasLab curriculum (http://ccl.northwestern.edu/curriculum/gaslab/) and has also been incorporated into the Connected Chemistry curriculum (http://ccl.northwestern.edu/curriculum/ConnectedChemistry/)</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2002).  NetLogo GasLab Heat Box model.  http://ccl.northwestern.edu/netlogo/models/GasLabHeatBox.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2002 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model and associated activities and materials were created as part of the project: MODELING ACROSS THE CURRICULUM.  The project gratefully acknowledges the support of the National Science Foundation, the National Institute of Health, and the Department of Education (IERI program) -- grant number REC #0115699. Additional support was provided through the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT -- NSF (REPP &amp; ROLE programs) grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2002 MAC --></div>
+      </div>
+    </main>
+  </body>
+</html>

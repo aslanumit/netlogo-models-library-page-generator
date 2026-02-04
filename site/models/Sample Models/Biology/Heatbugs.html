@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Heatbugs</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Heatbugs</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Heatbugs.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Heatbugs.png" alt="Screenshot of Heatbugs" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Heatbugs is an abstract model of the behavior of biologically-inspired agents that attempt to maintain an optimum temperature around themselves.  It demonstrates how simple rules defining the behavior of agents can produce several different kinds of emergent behavior.</p>
+<p>Heatbugs has been used as a demonstration model for many agent-based modeling toolkits. We provide a NetLogo version to assist users in learning and comparing different toolkits.  It demonstrates coding techniques in NetLogo and may be useful as a starting point for building other models.</p>
+<p>While this NetLogo model attempts to match the Repast and Swarm versions (see "Credits" below), we haven't done a rigorous comparative analysis of the different versions, so it is possible that there are small inadvertent differences in the underlying rules and behavior.</p>
+<h2>HOW IT WORKS</h2>
+<p>The bugs move around on a grid of square "patches".  A bug may not move to a patch that already has another bug on it.</p>
+<p>Each bug radiates a small amount of heat.  Heat gradually diffuses through the world; some heat is lost to cooling.</p>
+<p>Each bug has an "ideal" temperature it wants to be.  The bigger the difference between the temperature of the patch where the bug is and the bug's ideal temperature, the more "unhappy" the bug is.  When a bug is unhappy, it moves.  If it is too hot, it moves to the coolest adjacent empty patch.  Conversely, if a bug is too cold, it moves to the warmest adjacent empty patch.  (Note that these bugs aren't smart enough to always move to the best available patch.)</p>
+<h2>HOW TO USE IT</h2>
+<p>After choosing the number of bugs to create, and setting the model variables, press the GO button to set the heatbugs into motion.</p>
+<p>BUG-COUNT: The number of bugs that will inhabit the model</p>
+<p>EVAPORATION-RATE: The percentage of the world's heat that evaporates each cycle.  A lower number means a world which cools slowly, a higher number is a world which cools quickly.</p>
+<p>DIFFUSION-RATE: How much heat a patch (a spot in the world) diffuses to its neighbors.  A higher number means that heat diffuses through the world quickly.  A lower number means that patches retain more of their heat.</p>
+<p>MIN/MAX-IDEAL-TEMP: The minimum and maximum ideal temperatures for heatbugs.  Each bug is given an ideal temperature between the min and max ideal temperature.</p>
+<p>MIN/MAX-OUTPUT-HEAT: The minimum and maximum heat that heatbugs generate each cycle.  Each bug is given a output-heat value between the min and max output heat.</p>
+<p>RANDOM-MOVE-CHANCE: The chance that a bug will make a random move even if it would prefer to stay where it is (because no more ideal patch is available).</p>
+<p>DEEP-FREEZE: This button removes all heat from the world.</p>
+<p>HEAT-UP: This button adds MAX-OUTPUT-HEAT to every patch in the world.</p>
+<p>Beneath the view are two "Color By:" buttons.  The IDEAL-TEMP button colors the bugs according to their IDEAL-TEMP value.  Bugs with higher IDEAL-TEMP values will be brighter.  The HAPPINESS button does the same, but is based upon the HAPPINESS value of each agent, with happier bugs being brighter.</p>
+<p>The WATCH-HAPPIEST and WATCH-SADDEST buttons will highlight the happiest or saddest bug at the time the button is pressed.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Depending on their ideal temperatures, some bugs will tend to clump together, while others will tend to avoid all other bugs, and others still flutter around the edges of clumps.  All of these behaviors are affected as well by the evaporation rate.</p>
+<p>The diffusion rate affects the cohesiveness of clumps.  If diffusion-rate is slow, many tiny clumps form.  Why?</p>
+<p>Most interesting behaviors occur when the number of bugs, how much heat they generate, and how quickly the world cools are balanced such that excessive heat does not build up.</p>
+<h2>THINGS TO TRY</h2>
+<p>Vary DIFFUSION-RATE.</p>
+<p>Vary EVAPORATION-RATE in relation to the output-heat range of the bugs.</p>
+<p>Use the HEAT-UP button to scramble clumped heatbugs and watch as they re-assemble into new clumps.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Randomize the amount of heat bugs generate each cycle.</p>
+<p>Allow users to introduce heat into the system with the mouse.</p>
+<h2>NETLOGO FEATURES</h2>
+<p><code>n-of</code> and <code>sprout</code> together let us initially place each bug on its own patch with a minimum of code.</p>
+<p>Notice how the code does not make any use of X and Y coordinates.  The <code>neighbors</code> and <code>move-to</code> primitives take care of sensing and motion on a toroidal grid without the need for any explicit coordinate math.</p>
+<p>The <code>diffuse</code> command is used to diffuse the heat around the patch grid.</p>
+<h2>RELATED MODELS</h2>
+<p>Slime</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Swarm version of Heatbugs -- https://web.archive.org/web/20130211011213/http://www.swarm.org/wiki/Examples_of_Swarm_applications</p>
+<p>RePast version of Heatbugs -- http://repast.sourceforge.net/repast_3/examples/</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2004).  NetLogo Heatbugs model.  http://ccl.northwestern.edu/netlogo/models/Heatbugs.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2004 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2004 --></div>
+      </div>
+    </main>
+  </body>
+</html>

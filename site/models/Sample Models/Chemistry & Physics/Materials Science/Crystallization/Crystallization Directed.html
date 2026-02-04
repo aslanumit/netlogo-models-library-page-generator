@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crystallization Directed</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Crystallization Directed</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Materials%20Science/Crystallization/Crystallization%20Directed.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Chemistry &amp; Physics/Materials Science/Crystallization/Crystallization Directed.png" alt="Screenshot of Crystallization Directed" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Some metal applications require that a metal's grains form specific patterns. To achieve this, the metal is only cooled from certain sides.  This can be done in several ways.  For example, when molds are made of metal, wires are used to heat up the mold where they want the metal to crystallize last.  For molds made of sand, pieces of metal are put where the liquid metal should crystallize first.  The inserted metal (known as a heat sink), works to quickly suck the heat out of the liquid metal.</p>
+<h2>HOW IT WORKS</h2>
+<p>This model represents the cross-section of a block of liquid metal cooling in a metal mold.  The surrounding mold quickly sucks the heat out of the liquid metal.  However, you can select some of the sides to be heated, which prevents heat from escaping out of those sides.   By selecting which sides of the metal are heated, you can control the shapes of the resulting grains.  (Note that the actual number of atoms is small compared to a real metal sample and the metal is only two-dimensional.)</p>
+<p>The information below assumes you have already read and understood the original Crystallization Basic model.</p>
+<h2>HOW TO USE IT</h2>
+<h3>Buttons</h3>
+<p>SETUP: Resets the simulation, and sets the metal to the correct size.
+GO-ONCE: Runs the simulation for one time step.
+GO: Runs the simulation continuously until either the GO button is pressed again, or all of the atoms are frozen.</p>
+<h3>Sliders</h3>
+<p>WIDTH: How many atoms wide the metal is.
+HEIGHT: How many atoms high the metal is.
+ROOM-TEMP: Varies the temperature of the room.
+INIT-METAL-TEMP: Varies the initial temperature of the metal.
+MELTING-TEMP: Varies the temperature at which the metal solidifies.</p>
+<h3>Monitors</h3>
+<p>AVE-METAL-TEMP: Monitors the average temperature of all the atoms.
+TIME: Keeps track of the time that has elapsed during each run.</p>
+<h3>Switches</h3>
+<p>HEAT-TOP?: Prevents the top side of the metal from starting to cool.
+HEAT-LEFT?: Prevents the left side of the metal from starting to cool.
+HEAT-RIGHT?: Prevents the right side of the metal from starting to cool.
+HEAT-BOTTOM?: Prevents the bottom side of the metal from starting to cool.
+HISTOGRAM?: Turns the histogram plotting on and off.  Turning off the histogram speeds up the model.</p>
+<h3>Graphs</h3>
+<p>AVERAGE METAL TEMPERATURE: Plots the average temperature of all the metal over time.
+NUMBER SOLIDIFIED: Plots how many metal atoms are below the melting temperature over time.
+TEMPERATURES:  Histograms how many atoms are in each temperature range.  (Note that the colors of the histogram match the actual colors of the atoms.)</p>
+<h2>THINGS TO TRY</h2>
+<p>Set HEAT-TOP? and HEAT-RIGHT? to On and HEAT-BOTTOM? and HEAT-LEFT? to Off. Predict which atom will be the last to solidify.  Now run the model and see if your prediction was correct.</p>
+<p>A contractor asks you to create a piece of metal for her that only has horizontal grain boundaries, and no vertical ones.  Find settings for HEAT-TOP?, HEAT-RIGHT?, HEAT-BOTTOM?, and HEAT-LEFT? that result in approximately these sorts of grain boundaries.</p>
+<p>Set HEAT-TOP? and HEAT-BOTTOM? to Off and HEAT-LEFT? and HEAT-RIGHT to On. Run the model to completion.  How do these settings affect the grain boundaries? How would these grain boundaries affect the properties of the metal?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>In this model, heating a side simply results in the room temperature having no affect on that side.  However, in real applications, heated sides still cool the metal, but at a slower rate.  Change the cool-turtles procedure so heated sides factor into how atoms are cooled.</p>
+<p>As mentioned in the above, molds made of sand use inserted pieces of metal to control which side of the metal should crystallize first.  The inserted metal (known as a heat sink), works to quickly suck the heat out of the liquid metal.  Change the model so instead of just having heated sides, there are also cooled sides that cause a faster cooling rate.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>In the setup procedure, a turtle is created on every patch within the requested dimensions.  This is achieved by asking every patch satisfying certain conditions to <code>sprout 1</code>.</p>
+<p>Note how we can draw a multi-colored histogram.  The <code>histogram</code> primitive can only draw in one color at a time, but we work around this by calling it over and over again, plotting only one bar each time, changing the pen color each time.</p>
+<h2>RELATED MODELS</h2>
+<p>Crystallization Basic
+Crystallization Moving</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Original implementation: Carrie Hobbs, for the Center for Connected Learning and Computer-Based Modeling.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2002).  NetLogo Crystallization Directed model.  http://ccl.northwestern.edu/netlogo/models/CrystallizationDirected.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2002 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

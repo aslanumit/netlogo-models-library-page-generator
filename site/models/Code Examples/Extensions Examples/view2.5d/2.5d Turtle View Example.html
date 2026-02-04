@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2.5d Turtle View Example</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>2.5d Turtle View Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Extensions%20Examples/view2.5d/2.5d%20Turtle%20View%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Code Examples/Extensions Examples/view2.5d/2.5d Turtle View Example.png" alt="Screenshot of 2.5d Turtle View Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This example demonstrates the use of the <code>view2.5d</code> extension for turtle views. The <code>view2.5d</code> extension allows properties of turtles to be visualized using their height and stem color.</p>
+<p>This example also shows how links between turtles can be visualized in three dimensions.</p>
+<p>The model opens a separate "Turtle View" window by calling:</p>
+<pre><code>  view2.5d:turtle-view window-name turtles [ the-turtle -&gt; [height] of the-turtle ]
+</code></pre>
+<p>The anonymous reporter supplied to the <code>view2.5d:turtle-view</code> primitive is used by the extension to set the height of each turtle.</p>
+<p>The anonymous reporter supplied to the <code>view2.5d:set-turtle-stem-color</code> primitive is used by the extension to set the stem color of each turtle.</p>
+<p>The method <code>view2.5d:set-turtle-stem-thickness</code> is used to set the stem color of each turtle.</p>
+<p>In the <code>go</code> procedure, we use <code>view2.5d:update-turtle-view</code> to refresh the turtle view using the current state of the model.</p>
+<p>Several extension-specific methods are used to control the three dimensional visualization of this "Turtle View":</p>
+<ul>
+<li>
+<p><code>view2.5d:set-observer-distance</code> sets the observer's distance from its "focus point."</p>
+</li>
+<li>
+<p><code>view2.5d:set-observer-heading</code> sets the heading of the observer's angular perspective.</p>
+</li>
+<li>
+<p><code>view2.5d:set-observer-pitch</code> sets the pitch of the the observer's angular perspective.</p>
+</li>
+<li>
+<p><code>view2.5d:set-observer-x-focus</code> sets the x coordinate the observer is "looking at" in the patch plane.</p>
+</li>
+<li>
+<p><code>view2.5d:set-observer-y-focus</code> sets the y coordinate the observer is "looking at" in the patch plane.</p>
+</li>
+<li>
+<p><code>view2.5d:set-z-scale</code> sets the scale of the z-axis, in this case making the turtles "taller".</p>
+</li>
+</ul>
+<p>For more information, please refer to the <code>view2.5d</code> extension documentation.</p>
+<h2>HOW IT WORKS</h2>
+<p>At each tick the height and turtle stem color are changed based on properties of the turtles within a small radius.</p>
+<p>The height is changed by the difference between a turtle's height and the average height of its near neighbors (if any). That means if a turtle is at a lower height than the average of its neighbors, its height will increase, and if a turtle's height is higher than the average of its neighbors, its height will decrease.</p>
+<p>The stem color is changed to the average stem color of its near neighbors (if any).</p>
+<p>The turtle takes on the color of its stem.</p>
+<h2>HOW TO USE IT</h2>
+<p>The model has standard SETUP and GO buttons.</p>
+<p>The NUM-TURTLES slider determines the initial number of turtles.</p>
+<p>The link related interface items take effect at the next tick.</p>
+<p>The links are visible when the SHOW-LINKS? switch is set to ON, and invisible if it is set to OFF.</p>
+<p>There is a chooser to chose the LINK-COLOR.</p>
+<p>A slider is used to set the LINK-THICKNESS. Note that the thickness appears much larger in the small 2D inset.</p>
+<h2>THINGS TO TRY</h2>
+<p>Use the NUM-TURTLES slider to explore how increasing or decreasing the number of turtles affects how quickly the height and stem color of the turtles changes.</p>
+<p>Use the switch, chooser, or slider to instantaneously change the visualization of links.</p>
+<p>In the 3D window, explore the effect of the different View Options by selecting different combinations of check boxes and switching between Link Options by using radio buttons.</p>
+<p>Note that links are shown using the 3D option by default. To programmatically start a model with links shown in 2D, add the following line</p>
+<pre><code>  view2.5d:show-links-xy-plane  window-name
+</code></pre>
+<p>after the line with the <code>view2.5d:turtle-view</code> command.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>2.5d Patch View Example</li>
+</ul>
+<!-- 2020 --></div>
+      </div>
+    </main>
+  </body>
+</html>

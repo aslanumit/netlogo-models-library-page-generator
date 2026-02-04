@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Communication-T-T Network Example</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Communication-T-T Network Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/IABM%20Textbook/chapter%205/Communication-T-T%20Network%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/IABM Textbook/chapter 5/Communication-T-T Network Example.png" alt="Screenshot of Communication-T-T Network Example" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is from Chapter Five of the book "Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo", by Uri Wilensky &amp; William Rand.</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<p>This model is in the IABM Textbook folder of the NetLogo Models Library. The model, as well as any updates to the model, can also be found on the textbook website: http://www.intro-to-abm.com/.</p>
+<h2>WHAT IS IT?</h2>
+<p>This code example is a variation on the Communication-T-T Example in the Code Examples section of the NetLogo models library. In the original code example, the turtles passed messages to nearby turtles. In this version, the turtles pass messages through a network. One turtle starts out with a message (the red turtle) and she spreads the message to other turtles she is linked with. When a turtle gets the message, it turns red.</p>
+<p>The monitor keeps track of how many turtles have the message by reporting:</p>
+<pre><code>count turtles with [ message? ]
+</code></pre>
+<p>The plot helps you visualize how this value changes through time.</p>
+<h2>HOW IT WORKS</h2>
+<p>SETUP creates 500 turtles and gives them random coordinates in the world.
+Each turtle creates links with two other turtles, to form a network. One of the turtles is given a message, and is colored red to indicate that it has the message.
+In the GO procedure, the turtles pass messages. The way this is done is that each turtle queries the turtles it is linked with. If any of them have the message then the querying turtle gets the message. All turtles that have the message are colored red.</p>
+<p>The network is formed randomly, by asking each turtle to create links with either one or two other turtles, depending on the value chosen for LINKS-PER-NODE.</p>
+<h2>HOW TO USE IT</h2>
+<p>Choose the value of LINKS-PER-NODE to characterize the network. Press SETUP to create the turtles and the network linking them and give one turtle the message. Then press GO to watch the message spread through the network.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Is the pattern of diffusion different or the same as the non-network version of this model? If it's different, can you explain why?</p>
+<p>Do you notice any difference between the pattern of transmission when LINKS-PER-NODE is 1 versus the pattern when LINKS-PER-NODE is 2?</p>
+<p>One thing you may notice is that, when LINKS-PER-NODE is 1, it sometimes happen that not all turtles get the message. Do you understand why that happens? It never happens with the non-network version of this model. Can you explain why?</p>
+<p>Finally, do you think it is possible that not all turtles get the message when LINKS-PER-NODE is 2? Could you design a BehaviorSpace experiment that would help you answer this question?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Wouldn't it be nice if you could compare the pattern of transmission with one link per node <em>directly</em> with the pattern for two links per node?</p>
+<p>An easy way of doing that would be to create two different <a href="http://ccl.northwestern.edu/netlogo/5.0/docs/programming.html#breeds">breeds</a> of turtles and modify the SETUP procedure to ask each of these breeds to create links with other turtles of the <em>same</em> breed only: one link for turtles of the first breed and two links for the second breed. This way, you would have two entirely separate networks. The code for COMMUNICATE and RECOLOR would not have to be changed at all.</p>
+<p>You could then modify the plot to have two different plot pens: one for the first breed and one for the second breed. This would allow you to compare the two patterns visually.</p>
+<p>If you want to push things a step further, how about allowing the user to compare a <em>variable</em> number of networks, each with a different number of links per node? You could not declare a separate breed for each network, because you would not know in advance how many there needs to be. The same will be true of plot pens. Can you think of any ways to solve these problems?</p>
+<p>The model currently stops when all turtles have received the message. However, sometimes the network is constructed in such a way that some turtles will never receive the message. Try to modify the code so that the model stops when this is the case.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses turtle agents and link agents to represent a network.</p>
+<p>The network is generated randomly, using the <a href="http://ccl.northwestern.edu/netlogo/docs/dictionary.html#n-of"><code>n-of</code></a> primitive, which allows you to randomly select a variable number of agents from a list or an agentset. In this case, the number of agents selected by <code>n-of</code> is given by the LINKS-PER-NODE chooser.</p>
+<p>This is not the only way to generate random networks. The Random Network model, from the same IABM chapter, shows you three other ways to do it. You can also use <a href="http://ccl.northwestern.edu/netlogo/docs/nw.html">the network extension</a> to generate networks.</p>
+<h2>RELATED MODELS</h2>
+<p>Communication T-T Example</p>
+<h2>HOW TO CITE</h2>
+<p>This model is part of the textbook, “Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo.”</p>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2004).  NetLogo Communication-T-T Network Example model.  http://ccl.northwestern.edu/netlogo/models/Communication-T-TNetworkExample.  Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the textbook as:</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2004 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2004 --></div>
+      </div>
+    </main>
+  </body>
+</html>

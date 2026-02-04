@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3D Solids</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>3D Solids</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/3D%20Solids.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Mathematics/3D Solids.png" alt="Screenshot of 3D Solids" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model creates 3D shapes out of 2D turtles by mapping turtles between cartesian and spherical three-dimensional coordinates.</p>
+<h2>HOW IT WORKS</h2>
+<p>To create the 3D shapes the program randomly generates turtles about the shell of the shape in either cartesian (x, y, z) or spherical (theta, phi, z) coordinates, depending on which is easier to accomplish but always stores the information converting when necessary in spherical coordinates.  To render the sphere in the NetLogo view, it translates the turtles from spherical to cartesian coordinates using color to simulate depth. The positions of the turtles are always stored as spherical coordinates because they are rotated on the z-axis, and the simplest way to do so is to increase theta in spherical coordinates.</p>
+<p>Converting from cartesian to spherical coordinates:</p>
+<blockquote>
+<p>x = r * cos(theta) = p * sin(phi) * cos(theta)
+y = r * sin(theta) = p * sin(phi) * sin(theta)
+z = p * cos(theta)</p>
+</blockquote>
+<p>theta:  angle of the turtle's projection on the x-y plane.
+phi:  turtles angle of incidence to the z axis.
+p: distance of the turtle from the origin.</p>
+<h2>HOW TO USE IT</h2>
+<p>Click the different setup-SHAPE buttons to generate different 3D shapes. The turtles are randomly distributed about the surface of the shape. Click the go (forever) button to run the model.</p>
+<p>GO starts rotating the model.</p>
+<p>COLOR determines the color that is used to simulate depth in generating the various shapes (uses predefined NetLogo color constants).</p>
+<p>NUM-TURTLES determines the number of turtles that are used to generate the various shapes.</p>
+<p>SHAPE-SIZE determines the overall size of the shape.  Most often it is radius or edge length.</p>
+<p>THETA-VELOCITY determines the speed at which the turtles are rotated.</p>
+<p>(Rotating turtles in the rotate-turtles procedure is implemented simply by increasing each turtle's theta variable by theta-velocity!  <em>Rotating</em> turtles (around the z-axis) is easy in spherical coordinates.  However it's far easier to <em>transpose</em> turtles in cartesian coordinates.)</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice that turtles closer (positive) on the y-axis appear lighter in shade and turtles further away (negative) appear darker in shade.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try adjusting the theta-vel or render-color slider as the model is running.  This will provide real time feedback to your adjustments.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>[EASY] Adjust the <code>setup-square</code> procedure to generate a rectangle.</p>
+<p>Create a procedure to transpose turtle coordinates.  Remember that it is easier to transpose in cartesian coordinates.</p>
+<p>Create a procedure to generate new 3D geometries.</p>
+<p>Try animating the phi variable.  Conceptually why does this not make sense?</p>
+<p>Create a procedure to rotate the geometries on a different axis.</p>
+<p>[VERY DIFFICULT] Create a procedure to view the geometries at ANY angle instead of the present three.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Notice the use of <code>scale-color</code> to show the depth of turtles and thereby simulate 3D.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo 3D Solids model.  http://ccl.northwestern.edu/netlogo/models/3DSolids.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1998 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

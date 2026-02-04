@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sound Machines</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Sound Machines</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Art/Sound%20Machines.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Art/Sound Machines.png" alt="Screenshot of Sound Machines" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model shows one way turtles can make interesting and varied sounds, or if you like, music.  It uses some simple physics to make "machines" that twist, spin, turn, twitch, and bounce.  When a part of the machine touches a wall, ceiling, or floor, it makes a sound.  The pitch of the sound depends on the location of the touch.</p>
+<p>You can start with a standard machine, or generate a random one.  You can change and build machines yourself, by changing the characteristics of each part.  You can sit back and let the machines play themselves, or you can use the mouse to move them around to control the sound yourself.</p>
+<h2>HOW IT WORKS</h2>
+<p>The machines are made up of levers.  Levers can be different sizes and are pulled down by gravity (in proportion to their size) and subject to friction.</p>
+<p>Each lever has one or two "hooks" to connect it to adjacent levers.  Each lever rather simple-mindedly tries to move and rotate to keep its hooks attached (or at least pointing towards) its neighbors' hooks.</p>
+<p>Some levers have additional constraints.  A lever can be fixed in position so it can't move.  It can also rotate, as if powered by a motor.</p>
+<p>The rules aren't perfect; for example, sometimes the levers separate.  Nonetheless, the behavior is often surprisingly realistic, and is rich enough to generate interesting motion which generates interesting sounds.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press one of the SETUP... buttons to create a machine.  If you want, change NUM-LEVERS first to get more or fewer levers.</p>
+<p>Press GO to start the machine going.  You should start hearing sounds, although if your machine never touches the wall (or ceiling or floor), you won't hear anything.</p>
+<p>You can use the mouse to select a lever by clicking on it, or to move a lever by dragging it.  The selected lever has a circle around it.</p>
+<p>Once you have selected a lever, a variety of controls on the left let you change that lever's properties.  They are not described in detail here; play with him and see for yourself what they do.</p>
+<p>Some parameters affecting the entire system are on the bottom left and the right.  F is friction, G is gravity.  There are also controls for spin.</p>
+<p>You can use the INSTRUMENT slider to pick a different musical instrument for the levers to play.</p>
+<p>If you make a machine you especially like, you can use Export World and Import World on the File menu to save it out and load it back in again.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The simple rules followed by the levers produce some quite realistic-looking behavior.</p>
+<p>Some machines don't do anything.  Other machines make simple, repetitive motions.  And others are wildly chaotic.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try all of the different SETUP buttons.</p>
+<p>Try all of the lever controls on the left.</p>
+<p>Explore the effect of the parameters on the right.</p>
+<p>See if you can make machines which are somewhat repetitive, but also somewhat unpredictable and chaotic.  Sometimes these make the most pleasing "music".</p>
+<p>Using the command center, tell the turtles to put their pens down (using the <code>pen-down</code> command, abbreviated <code>pd</code>).  This generates some pleasing patterns.  Use <code>clear-drawing</code> (abbreviated <code>cd</code>) to start a new drawing.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>There are endless possibilities for how the same basic physics engine could be used to generate sound.  The levers could:</p>
+<ul>
+<li>Play different instruments, instead of all the same one.</li>
+<li>Make percussion sounds in addition pitched sounds.</li>
+<li>Make sounds even when they don't hit the wall</li>
+<li>Make sounds that depend on their characteristics</li>
+</ul>
+<p>And so on.</p>
+<p>How "normal" and "musical" can you make the model sound?  Currently the rules of the model aren't based on scales or tonality; by choosing pitches more carefully, you might be able to produce music which is less strange, more like music composed by humans.  You could also try to produce more regular rhythms by timing sounds to coincide with a regular beat.</p>
+<p>Or, you could take the opposite approach, and see how wild, different, and unusual can you make the sounds.  Make something that doesn't sound like anything you've ever heard before!</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The model uses NetLogo's sound extension.  The sound extension is described in the Sound section of the NetLogo User Manual.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Beatbox</li>
+<li>Composer</li>
+<li>GasLab With Sound</li>
+<li>Sound Workbench</li>
+<li>Percussion Workbench</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a streamlined variant of the Machines 2005 model created and submitted to the NetLogo User Community Models repository by James Steiner.  Machines 2005 is available from http://ccl.northwestern.edu/netlogo/models/community/machines-2005.</p>
+<p>Thanks to James for creating an earlier version which was silent; Seth Tisue for first adding sound to it; and James again for his further improvements, and for releasing the model under a Creative Commons License.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Steiner, J., Tisue, S. and Wilensky, U. (2005).  NetLogo Sound Machines model.  http://ccl.northwestern.edu/netlogo/models/SoundMachines.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky. Includes code by James P. Steiner.</p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 Steiner Cite: Steiner, J., Tisue, S. --></div>
+      </div>
+    </main>
+  </body>
+</html>

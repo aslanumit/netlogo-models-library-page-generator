@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Grand Canyon</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Grand Canyon</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Earth%20Science/Grand%20Canyon.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Earth Science/Grand Canyon.png" alt="Screenshot of Grand Canyon" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model simulates rainfall on a patch of terrain on the eastern end of the Grand Canyon, approximately 6 miles (9.7 km) on each side, where Crazy Jug Canyon and Saddle Canyon meet to form Tapeats Canyon. Each patch represents an area approximately 105 feet (32 m) on each side. The model was created as an experiment in using NetLogo with My World GIS.</p>
+<p>The elevation data comes from the National Elevation Dataset available at https://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/?&amp;cid=nrcs143_021626. It was converted from an ESRI Grid into an ASCII grid file using ArcGIS, then resampled to its current resolution and rescaled to lie in the range 0-999 using My World GIS.</p>
+<h2>HOW IT WORKS</h2>
+<p>Raindrops fall in random locations or at locations selected by the user, then flow downhill.  If no nearby patch has a lower elevation, the raindrop stays where it is.  Raindrops pool until they flow over the land nearby. Some raindrops may always stay in these pools at higher ground. Others will flow out of the system at the edges.</p>
+<h2>HOW TO USE IT</h2>
+<p>When you open the model, the STARTUP procedure automatically runs and imports the data from an external file.  Press SETUP to color the patches according to their elevation, and to remove raindrops and drawings from previous runs. Press the GO button to start the simulation.  With each tick, RAIN-RATE raindrops will fall at random locations, traveling downhill across the landscape.</p>
+<p>As the simulation runs, you may click anywhere on the map to create raindrops. Manually placed raindrops are red, while those created randomly by the model are blue.  The WATCH RANDOM RAINDROP button sets the perspective to watch a randomly selected raindrop (of any type). The WATCH MY RAINDROP button watches a red raindrop, if one exists.</p>
+<p>When the DRAW? switch is turned on each raindrop marks its path in the drawing layer.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Elevations are represented by lighter and darker colors. The higher the elevation, the lighter the color used to draw that patch. Raindrops flow from high to low elevations, meaning that they flow toward darker patches.</p>
+<p>When you let the model run for a long time, you will see pools start to form at certain locations where a bit of low land is surrounded by higher land.  If you let the model run long enough, the water will eventually overflow from these dips, flowing to the rivers below.</p>
+<h2>THINGS TO TRY</h2>
+<p>Put the turtle pens down (by turning on the DRAW? switch), and see the kinds of patterns that emerge.</p>
+<p>Try to place all of the raindrops manually.  Trace the path of one drop all the way down the landscape.</p>
+<p>Find more GIS data and import different data sets.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add erosion to the model, so the raindrops pick up or deposit some amount of elevation from the patches they travel over.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>When there is no lower neighboring patch, raindrops change breed (from raindrop to waters) so they will no longer move.</p>
+<p>Elevation data is read only once, when the model is loaded, in the <code>startup</code> procedure.  The external data file (Grand Canyon data.txt) is formatted such that its contents can be assigned (with <code>file-read</code>) to a NetLogo variable.</p>
+<h2>RELATED MODELS</h2>
+<p>Erosion</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>National Elevation Dataset: https://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/?&amp;cid=nrcs143_021626
+ArcGIS: https://www.esri.com/en-us/arcgis/about-arcgis/overview
+My World GIS (archival): https://serc.carleton.edu/resources/19436.html</p>
+<p>Thanks to Eric Russell for his work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2006).  NetLogo Grand Canyon model.  http://ccl.northwestern.edu/netlogo/models/GrandCanyon.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2006 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2006 --></div>
+      </div>
+    </main>
+  </body>
+</html>

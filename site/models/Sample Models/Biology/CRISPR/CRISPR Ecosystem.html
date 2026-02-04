@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CRISPR Ecosystem</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>CRISPR Ecosystem</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/CRISPR/CRISPR%20Ecosystem.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Biology/CRISPR/CRISPR Ecosystem.png" alt="Screenshot of CRISPR Ecosystem" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model illustrates the evolutionary dynamics of populations of bacteria and viruses in the presence and absence of CRISPR systems. It can be thought of as a microscope slide with about 5 nanoliters of seawater on it, resulting in a layer about 1 bacterium thick. Viruses greatly outnumber bacteria in this environment, so bacteria must have ways to defend themselves from infection in order to survive. Many bacteria have some innate, nonspecific immunity that can help them defend against viruses, but it is not always effective.</p>
+<p>Bacteria were recently found to also employ adaptive immunity in their constant struggle against viruses. This adaptive system is called CRISPR. With it, bacteria are able keep a heritable genetic record of past infection attempts, which makes them and their descendants much more effective at fending off future infections by the same or similar viruses. This is made possible through a system that specifically recognizes the genomes of past viruses using DNA samples called <strong>spacers</strong> stored in a <strong>CRISPR array</strong> and cleaves it using a targeted protein complex.</p>
+<p>Because CRISPR systems are very effective at protecting bacteria from viruses they have encountered before, there is high selection pressure on viruses to evade them. CRISPR systems rely on tight matching between the recorded sample in the array and the invading nucleic acid, so viruses are able to avoid recognition through mutations in their genes. Once enough mutations have accumulated, the CRISPR system will no longer recognize the virus until the bacterium gets a new DNA sample. Because viral evolution happens quickly, bacteria and viruses are locked in an evolutionary arms race surrounding bacterial defense systems like CRISPR. This process of evasion and reacquisition results in very interesting coevolutionary dynamics.</p>
+<h2>HOW IT WORKS</h2>
+<p>There are two main types of agents in this model, which are bacteria (visualized as colored ovals) and viruses (visualized as small, spiky balls).</p>
+<p>Bacteria wander the world randomly, eating food (visualized as green patches) to gain energy as they move. Bacteria will die if they run out of energy, for example by going too long without encountering food, and they will divide if they accumulate enough energy. When they divide, the two daughter cells each get a copy of the parent cell's CRISPR array. Bacteria also have a small chance on each clock tick to lose a spacer from their array. Spacers in an array are acquired and lost in a 'first in, first out' order, so when bacteria lose spacers they lose the oldest ones first. In real ecosystems, this helps the bacteria focus on the most recent viral threats.</p>
+<p>Viruses also wander the world randomly. There is a small chance for them to degrade over time. When they encounter a bacterium, they have a chance to infect it. When they infect a bacterium, there are several possible outcomes. If the infection is successful, the bacterium will die and the virus will reproduce in a burst, creating many new viruses each with a chance for mutation. If the bacterium fights off the infection, either with CRISPR or its innate defenses, then the virus dies. When the bacterium defends itself successfully, there is also a small chance for it to add a spacer recognizing this virus to its CRISPR array.</p>
+<p>There are many kinds of virus in the simulation. Each kind of virus has a different DNA sequence, which is what CRISPR systems can use to try to recognize them. If the sequence of a virus is in a bacterium's CRISPR array, it will be much more likely that the bacterium will be able to fight off the infection.</p>
+<h2>HOW TO USE IT</h2>
+<p>This model can be used to investigate several aspects of CRISPR systems.  One example is to examine the effects of CRISPR on the coevolutionary dynamics and stability of the bacterial and viral populations.  Another example is to look at how CRISPR evolution changes when faced with different levels of viral diversity, viral infectivity, or spacer loss. See the <strong>What is it?</strong> section above for an explanation of spacers.</p>
+<h3>Buttons</h3>
+<h4><code>SETUP</code></h4>
+<p>Initializes variables and creates the initial bacteria and viruses.</p>
+<h4><code>GO</code></h4>
+<p>Runs the model.</p>
+<h4><code>PLOT-NEW-VIRUS</code></h4>
+<p>Resets the <code>CRISPR-VIRUS COEVOLUTION</code> plot and changes it to focus on the virus selected using the <code>PLOTTED-VIRUS</code> slider.</p>
+<h3>Sliders and Switches</h3>
+<h4><code>INITIAL-BACTERIA</code></h4>
+<p>This slider controls the number of bacteria in the initial population when the model is set up.</p>
+<h4><code>INITIAL-VIRUSES</code></h4>
+<p>This slider controls the number of viruses in the initial population when the model is set up.</p>
+<h4><code>MAX-VIRUS-TYPES</code></h4>
+<p>This slider controls the diversity of the viruses in the population.</p>
+<h4><code>INFECTION-CHANCE</code></h4>
+<p>This slider controls the probability that a virus will attempt to infect a bacterium when they are on the same patch.</p>
+<h4><code>SPACER-LOSS-CHANCE</code></h4>
+<p>This slider controls the rate at which spacers can be lost from a bacterial CRISPR array. It is the probability that a bacterium will lose a spacer on each tick.</p>
+<h4><code>CRISPR?</code></h4>
+<p>This switch controls whether or not the bacteria have functioning CRISPR systems in the model. When <code>CRISPR?</code> is on, all bacteria use CRISPR systems to fight off viral infection. When <code>CRISPR?</code> is off, bacteria must rely on innate immunity, which is often less effective.</p>
+<h4><code>PLOTTED-VIRUS</code></h4>
+<p>This slider allows the user to choose a new virus to focus on in the <code>CRISPR-VIRUS COEVOLUTION</code> plot. The plot will not switch over to the newly selected virus until the <code>PLOT-NEW-VIRUS</code> button is clicked.</p>
+<h3>Plots and Monitors</h3>
+<h4><code>MICROBE POPULATIONS</code></h4>
+<p>Plots the population sizes for bacteria and viruses over time.</p>
+<h4><code>SEQUENCE HISTOGRAM</code></h4>
+<p>Shows the absolute frequency of each virus type both in the virus population (black) and in bacterial CRISPR arrays (red).</p>
+<h4><code>VIRUS RELATIVE ABUNDANCE</code></h4>
+<p>Plots the relative abundance of each of the extant virus types as a percentage of the current total population size.</p>
+<h4><code>CRISPR-VIRUS COEVOLUTION</code></h4>
+<p>Plots the relative abundance of a single type of virus in the overall viral population and the prevalence of spacers from that viral type in the CRISPR arrays of the bacteria. This can illustrate the coevolutionary dynamics between viruses and bacteria leading to fluctuations in the prevalence of the virus over time. The virus to be plotted can be chosen using the <code>PLOT-NEW-VIRUS</code> and <code>PLOTTED-VIRUS</code> widgets.</p>
+<h4><code>ARRAY HISTOGRAM</code></h4>
+<p>Shows a histogram of the current distribution of the length of bacterial CRISPR arrays. Summary statistics are provided in the <code>AVG. ARRAY LENGTH</code> and <code>STD. DEV.</code> monitors.</p>
+<h4><code>AVG. ARRAY LENGTH</code></h4>
+<p>Shows the mean length of bacterial CRISPR arrays.</p>
+<h4><code>STD. DEV.</code></h4>
+<p>Shows the standard deviation of the lengths of bacterial CRISPR arrays.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>First, take some time to watch the agents move around and familiarize yourself with the overall patterns that emerge. When people study bacteria and viruses living in the environment, they often treat the samples as having little spatial variability, with bacteria and viruses being spread evenly throughout. Does this seem like a reasonable assumption or not? Do you see microenvironments which vary in the amount of viruses, bacteria, and food that they contain? Does this pattern stay the same over time, or does it shift?</p>
+<p>Next, look at the Microbe Populations plot. When the population stabilizes, there should be roughly two orders of magnitude between the viral and bacterial population levels. This approximates the relative population levels in seawater. Does this surprise you? Why do you think this is the case?</p>
+<p>After the populations stabilize, look at the Sequence Histogram. The black bars represent the virus population, and the red bars represent the population of spacers held in the bacteria's CRISPR arrays. How much do the histograms overlap? Is there a correlation between frequency in the population and frequency in the CRISPR arrays? Does this make sense based on what you know about the system?</p>
+<p>Next look at the Virus Relative Abundance plot. As the Sequence Histogram shows the current abundance of each virus type, this plot shows the virus types' relative abundance over time. Most of the time, most of the viruses are at relatively low abundance. Do you see a pattern across the different viruses? What tends to happen after a virus becomes more abundant?</p>
+<p>To examine this question in more detail, look at the CRISPR-Virus Coevolution plot. To make the most of this plot, use the Sequence Histogram to identify a virus that is prevalent in the population, then adjust the <code>PLOTTED-VIRUS</code> slider to match it. The virus type is the value on the x-axis of the histogram where the bar is plotted. Click the <code>PLOT-NEW-VIRUS</code> button and run the model. As the virus becomes more prevalent in the population (black line), what happens to its prevalence in CRISPR arrays (red line)? What happens to the virus when it is common in CRISPR arrays?</p>
+<p>As time goes on, bacteria begin to accumulate spacers in their CRISPR arrays. This can be seen by watching the Array Histogram and its associated summary statistic monitors change over time. Does the distribution of array lengths seem to converge to anything over time?</p>
+<h2>THINGS TO TRY</h2>
+<p>There are several interesting comparisons to make between a population with CRISPR and one without it. This is accomplished by toggling the <code>CRISPR?</code> switch. For example, when the bacteria have CRISPR systems, both the bacterial and viral populations are mostly constant. Is this the case when the <code>CRISPR?</code> switch is off? Does this surprise you? Similarly, when the bacteria have CRISPR, there are many types of virus which are mostly at fairly low abundance (see the Sequence Histogram and the Virus Relative Abundance plot). How does this change when CRISPR is not present?</p>
+<p>The viral diversity in the ecosystem also has interesting effects, which can be seen by manipulating the <code>MAX-VIRUS-TYPES</code> slider. How do the stable population levels change when there is high or low viral diversity? What about the distribution of CRISPR array lengths? Does high viral diversity result in longer or shorter of CRISPR arrays on average? Is CRISPR a more effective defense when there is high or low diversity? How would you tell?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>There are several interesting aspects of real bacterial and viral ecosystems that have been left out of this model for simplicity, but may have interesting effects. A few of these questions are listed below.</p>
+<p>CRISPR arrays in this model are transferred between bacteria through linear descent. The only way for a bacterium to have resistance to a virus is if it or one of its direct ancestors encountered that virus. Real bacteria can transfer CRISPR systems between each other using <em>horizontal gene transfer</em>, where bacteria can share copies of their genes with other bacteria that are not part of their line of descent. How would this affect coevolutionary dynamics?</p>
+<p>The current model has two settings with respect to the presence or absence of CRISPR. In one case, every bacterium has a working CRISPR system. In the other case, no bacteria have a working CRISPR system. In real ecosystems, the bacterial population is a mix of these two, where some but not all species use CRISPR. Does the presence of CRISPR in some species help protect those species without it, analogous to herd immunity in animals? If so, what is the threshold for this to be effective?</p>
+<p>Sometimes viruses are able to successfully infect bacteria even when the bacterium has an active CRISPR system that recognizes that virus. In this model, when this happens, the virus reproduces like normal. In reality, the CRISPR system may be able to cleave some of the newly produced viruses before they are released, lowering the size of the resulting viral burst. How would this affect the viral population?</p>
+<p>The viruses in this model are <em>lytic</em>, meaning when they infect a cell they reproduce until the cell dies and releases the new viral particles. While this is true for many viruses, there are also some which are <em>lysogenic</em>. These viruses can insert their DNA into the bacterium's genome. This allows them to 'reproduce' when the bacterium divides, and then revert back to the lytic process described above when their host is in poor health. After the viral DNA is inserted into the bacterial genome, CRISPR may cleave the genome, resulting in the bacterium's death, or simply suppress viral replication when the virus attempts to become lytic again. How would this capability affect the ecosystem's dynamics?</p>
+<p>This model assumes that all bacteria regulate CRISPR in the same way, which is constant over time. In reality, different bacteria will have different regulation of CRISPR and may adapt their regulatory strategies over generations. What heritable traits could be introduced to allow the bacteria more evolutionary freedom? How might each bacterium's current store of energy affect its regulation of the CRISPR system?</p>
+<p>In this model it is possible for bacteria to lose all of their spacers, but it is not possible for them to lose the CRISPR system entirely, and there is no cost to the bacteria for having a CRISPR system. In reality, there is a fitness cost associated with maintaining a working CRISPR system, both from the material cost of producing the components and the decreased ability to take up new beneficial genes through horizontal gene transfer. This provides a balance to the fitness benefit of increased viral resistance. If such a cost were introduced, what conditions would be necessary to maintain CRISPR in the population?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model makes heavy use of temporary plot pens for the <code>VIRUS RELATIVE ABUNDANCE</code> plot. This allows for plotting an arbitrary number of series on the plot and ensures that it is not necessary to know the exact number ahead of time. It also allows for changing the number of series on the plot during the run of the model.</p>
+<p>This model employs a supplementary function to improve auto scaling behavior for histograms. By default, histograms only autoscale the y-axis. The <code>update-histogram-ranges</code> function used here implements x-axis auto scaling which can increase but never decrease the range, similar to the default y-axis auto scaling. It also implements y-axis scaling which can increase or decrease the plot's range. This makes the histogram always take up most of the plot area while keeping the entire histogram visible and minimizing the number of rescaling events.</p>
+<h2>RELATED MODELS</h2>
+<p>CRISPR Ecosystem LevelSpace
+CRISPR Bacterium
+CRISPR Bacterium LevelSpace</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>For general information about CRISPR, visit https://sites.tufts.edu/crispr/ or see the review below:</p>
+<ul>
+<li>Barrangou, R. &amp; Marraffini, L. A. CRISPR-Cas Systems: Prokaryotes Upgrade to Adaptive Immunity. <em>Molecular Cell</em> <strong>54</strong>, 234–244 (2014).</li>
+</ul>
+<p>For more information about CRISPR-driven coevolution in bacteria and viruses, see the articles below:</p>
+<ul>
+<li>Iranzo, J., Lobkovsky, A. E., Wolf, Y. I. &amp; Koonin, E. V. Evolutionary Dynamics of the Prokaryotic Adaptive Immunity System CRISPR-Cas in an Explicit Ecological Context. <em>Journal of Bacteriology</em> <strong>195</strong>, 3834–3844 (2013).</li>
+<li>Paez-Espino, D. et al. CRISPR Immunity Drives Rapid Phage Genome Evolution in <em>Streptococcus thermophilus</em>. <em>mBio</em> <strong>6</strong>, e00262-15 (2015).</li>
+<li>Sun, C. L. et al. Phage mutations in response to CRISPR diversification in a bacterial population: Strong selection events as host-phage populations establish. <em>Environmental Microbiology</em> <strong>15</strong>, 463–470 (2013).</li>
+</ul>
+<p>For more information about potential extensions to the model, see the articles below:</p>
+<ul>
+<li>Bondy-Denomy, J. &amp; Davidson, A. R. To acquire or resist: the complex biological effects of CRISPR–Cas systems. <em>Trends in Microbiology</em> <strong>22</strong>, 218–225 (2014).</li>
+<li>Edgar, R. &amp; Qimron, U. The <em>Escherichia coli</em> CRISPR System Protects from λ Lysogenization, Lysogens, and Prophage Induction. <em>Journal of Bacteriology</em> <strong>192</strong>, 6291–6294 (2010).</li>
+<li>Goldberg, G. W., Jiang, W., Bikard, D. &amp; Marraffini, L. A. Conditional tolerance of temperate phages via transcription-dependent CRISPR-Cas targeting. <em>Nature</em> <strong>514</strong>, 633–637 (2014).</li>
+<li>Strotskaya, A. et al. The action of <em>Escherichia coli</em> CRISPR–Cas system on lytic bacteriophages with different lifestyles and development strategies. <em>Nucleic Acids Research</em> <strong>gkx042</strong> (2017). doi:10.1093/nar/gkx042</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Woods, P. and Wilensky, U. (2019).  NetLogo CRISPR Ecosystem model.  http://ccl.northwestern.edu/netlogo/models/CRISPREcosystem.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2019 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2019 Cite: Woods, P. --></div>
+      </div>
+    </main>
+  </body>
+</html>

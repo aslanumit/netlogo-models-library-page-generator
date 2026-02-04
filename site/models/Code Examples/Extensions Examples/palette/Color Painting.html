@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Color Painting</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Color Painting</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Extensions%20Examples/palette/Color%20Painting.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Code Examples/Extensions Examples/palette/Color Painting.png" alt="Screenshot of Color Painting" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates the use of groups of commands from version 2.0.0 of the <code>palette</code> extension. By moving their mouse the user changes the hue of background patches as well as the hue and brightness of nearby turtles. Hue, Saturation, and Brightness are referred to as "components" of the colors.</p>
+<p>This model changes the hue, saturation, and brightness of colors by using these primitive groups:</p>
+<h3><code>component-of</code> Primitives</h3>
+<p>The component of primitive group reports a particular component of an RGB/A or NL <em>color</em>. The model uses this group in the CODE tab to access sepcific components of PAINT-COLOR in the CODE. It uses these commands:</p>
+<ul>
+<li><code>palette:hue-of</code> <em>color</em></li>
+<li><code>palette:saturation-of</code> <em>color</em></li>
+<li><code>palette:brightness-of</code> <em>color</em></li>
+</ul>
+<h3><code>with-component</code> Primitives</h3>
+<p>The with component primitive group reports the <em>color</em> with the component changed to <em>number</em> while leaving the other components unchanged. This model uses the command to change the components of PAINT-COLOR in the CODE tab. It uses these commands:</p>
+<ul>
+<li><em>color</em> <code>palette:with-hue</code> <em>number</em></li>
+<li><em>color</em> <code>palette:with-saturation</code> <em>number</em></li>
+<li><em>color</em> <code>palette:with-brightness</code> <em>number</em></li>
+</ul>
+<h3><code>set-component</code> Primitives</h3>
+<p>The set component primitive group directly changes the component of a <em>color</em> without the list manipulations (which in the previous versions of the extension were required). In this example, we use the primitives to set the components of an agent's color. The model uses these commands to change the color of turtles and patches:</p>
+<ul>
+<li><code>palette:set-hue</code> <em>number</em></li>
+<li><code>palette:set-saturation</code> <em>number</em></li>
+<li><code>palette:set-brightness</code> <em>number</em></li>
+</ul>
+<p>Color Painting also makes use of NetLogo mouse primitives in the CODE tab to manage mouse input.</p>
+<p>For more information on the <code>palette</code> commands, see the <code>palette</code> extension documentation.</p>
+<!-- 2021 --></div>
+      </div>
+    </main>
+  </body>
+</html>

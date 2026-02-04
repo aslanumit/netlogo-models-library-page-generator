@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pac-Man Level Editor</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Pac-Man Level Editor</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Games/Unverified/Pac-Man%20Level%20Editor.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Games/Unverified/Pac-Man Level Editor.png" alt="Screenshot of Pac-Man Level Editor" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a level editor for the Pac-Man model.  It can be used to edit the included levels and to create new levels that can be played in the Pac-Man model.  Familiarity with the Pac-Man model will be very helpful before attempting to create or edit levels.</p>
+<h2>HOW IT WORKS</h2>
+<p>Use the various tools to construct a level for the Pac-Man model.</p>
+<h2>HOW TO USE IT</h2>
+<p>The following are for setup, loading, and saving:</p>
+<p>NEW LEVEL - Clears the level and sets it up to start making a new level from scratch.</p>
+<p>LOAD LEVEL - Prompts for a level number to load for editing.  The file opened will be the file "pacmap#.csv" (where # is the input level number), and the file must be in the Games folder in the Sample Models section of the Models Library.  (Files will not be visible in the Models Library Browser.)</p>
+<p>(With both NEW LEVEL and LOAD LEVEL, any unsaved changes to a level will be lost. You will be reminded of this and prompted to continue when using these buttons.)</p>
+<p>SAVE LEVEL - Prompts to save the current level to a file usable by the Pac-Man model.  The file will be saved in the Games folder in the Sample Models section of the Models Library with the Pac-Man model with the file name "pacmap#.csv" (where # is the currently set level number).  Saving a level with the same level number as a previously created level will overwrite the old level (it is not be possible to recover overwritten levels).</p>
+<p>SET LEVEL - Sets the current value of 'level' which determines the filename of the level when it is saved with SAVE LEVEL.</p>
+<p>LEVEL - This monitor shows the current value of level.</p>
+<p>The following are the tools for actually editing levels:</p>
+<p>USE TOOL - Allows you to use the current tool on a patch by clicking on it with the mouse.</p>
+<p>CURRENT TOOL - Shows what the currently selected tool is.</p>
+<p>WHICH-GHOST - This slider determines which Ghost will be moved by the PLACE GHOST tool.</p>
+<p>-- The following buttons set the current tool to do different actions.</p>
+<p>ERASER - This tool allows you to clear a patch of walls, gates, and pellets.</p>
+<p>DRAW WALL - This tool allows you to draw a wall (blue) on the current patch.</p>
+<p>DRAW GATE - This tool allows you to draw a gate (gray) on the current patch.</p>
+<p>PLACE PELLET - This tool allows you to place a pellet on the grid.</p>
+<p>TOGGLE POWER PELLET - This tool allows you to change a Pellet into a Power Pellet and vice versa.</p>
+<p>PLACE PAC-MAN - This tool allows you to change Pac-Man's starting position.</p>
+<p>PLACE GHOST - This tool allows you to change the starting position of the Ghost chosen by WHICH-GHOST.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>If Pac-Man goes off the edge of the maze he will wrap around to the other side.</p>
+<p>Identifying Things in the Maze:</p>
+<ul>
+<li>
+<p>Yellow Circle with a mouth:  This is Pac-Man - The protagonist.</p>
+</li>
+<li>
+<p>Small White Circles: These are Pellets - Pac-Man will have to collect all of these (including the Power-Pellets) to move on to the next level.</p>
+</li>
+<li>
+<p>Large White Circles: These are Power-Pellets - They allow Pac-Man to eat the Ghosts for a limited amount of time.</p>
+</li>
+<li>
+<p>Blue Squares: These are the walls of the maze - Neither Pac-Man nor the Ghosts can move through the walls.</p>
+</li>
+<li>
+<p>Gray Squares: These are the Ghost Gates - Only Ghosts can move through them, and if they do so after having been eaten they will be healed.</p>
+</li>
+<li>
+<p>Colorful Ghost with Eyes: These are the Ghosts - The antagonists.</p>
+</li>
+</ul>
+<h2>THINGS TO TRY</h2>
+<p>Make a maze by strategically placing gates that has corridors that only Ghosts can travel down, but Pac-Man has to circum-navigate.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The Pac-Man model suggests adding new features.  Add tools to this model to allow you to construct these new features in a level.</p>
+<p>Add the ability to have a variable number of ghosts in a level (including more than four).</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model makes use of breeds, create-<breed>, user-message, user-input, user-yes-or-no?, read-from-string, as well as the mouse primitives and import-world and export-world for loading and saving levels.</p>
+<h2>RELATED MODELS</h2>
+<p>Pac-Man</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2003).  NetLogo Pac-Man Level Editor model.  http://ccl.northwestern.edu/netlogo/models/Pac-ManLevelEditor.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2003 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2003 --></div>
+      </div>
+    </main>
+  </body>
+</html>

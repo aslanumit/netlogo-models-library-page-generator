@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mammoths</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Mammoths</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Evolution/Mammoths.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Biology/Evolution/Mammoths.png" alt="Screenshot of Mammoths" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>A prevailing theory says that Native Americans descended from prehistoric hunters who walked from northeast Asia across a land bridge, formed at the end of the Ice Age, to Alaska some 12,000 years ago. Fossil evidence shows that before their arrival, there were large mammals in the Americas. The oldest mammoth fossils date the mammoths to 11,400 years ago, a little over a thousand years after the migration. This model illustrates two theories of how these megafaunal species quickly became extinict: the hunting theory and the climate change theory.</p>
+<p>The hunting theory states that Native Americans who arrived in the "New World" were responsible for the extinction of the large mammals of the Americas such as the American lion, tiger and mammoth. This theory is advanced by Jared Diamond in his book: <em>The Third Chimpanzee</em>. The basic premise of the theory is that American large mammals evolved without human contact, so they were tame and unafraid of the migrating humans, allowing a high probability of successful hunting by the humans. This could account for the very rapid simultaneous extinction of all American large mammals at roughly the same time as the human arrival.</p>
+<p>The climate change theory states that unexpected rapid climate changes associated with <a href="https://en.wikipedia.org/wiki/Stadial">interstadial</a> warming events occurred during this period, and suggests that the metapopulation structures (e.g. habitat, food and water sources, etc.) necessary to survive such repeated and rapid climatic shifts were susceptible to human impacts.</p>
+<p>This model is highly stylized: mammoths are a stand-in for all large mammals that were affected by hunting and climate change. In reality, there were no mammoths in South America. The way climate change operates in the model (by making random patches inhospitable for mammoths) is not realistic either. Still, the model nicely illustrates how NetLogo can be used to compare the effect of two competing processes.</p>
+<h2>HOW IT WORKS</h2>
+<p>Humans enter North America from Alaska. They hunt mammoths and have a high chance of killing them. Mammoths also have a 3% chance of killing humans. Both humans and mammoths reproduce according to the MAMMOTH-BIRTH-RATE and HUMAN-BIRTH-RATE sliders.</p>
+<p>Both mammoths and humans die naturally from old age or from too much overcrowding. In addition, based on the CLIMATE-CHANGE-DECAY-CHANCE, each habitable patch has a chance of being affected by climate change. Patches that are affected by climate change turn a light green color and mammoths on these patches have a higher chance of dying naturally.</p>
+<h2>HOW TO USE IT?</h2>
+<p>The NUMBER-OF-MAMMOTHS slider sets the initial number of mammoths.</p>
+<p>The NUMBER-OF-HUMANS slider sets the initial number of human hunters.</p>
+<p>SETUP initializes the mammoths and people.</p>
+<p>GO starts and stops the simulation.</p>
+<p>The HUMAN-SPEED slider sets the distance, in patches, that a human can travel each month.</p>
+<p>The MAMMOTH-SPEED slider sets the distance, in patches, that a mammoth can travel each month.</p>
+<p>The MAMMOTH-BIRTH-RATE slider sets the likelihood of a mammoth reproducing each month.</p>
+<p>The HUMAN-BIRTH-RATE slider sets the likelihood of a human reproducing each month.</p>
+<p>The ODDS-OF-KILLING slider sets the odds that when a human encounters a mammoth, the mammoth will die.</p>
+<p>The CLIMATE-CHANGE-DECAY-CHANCE slider sets the likelihood of a green patch being affect by climate change and becoming inhospitable for mammoths.</p>
+<p>The YEARS monitor displays elapsed years in the model.</p>
+<p>The COUNT HUMANS monitor shows the current number of humans, and the COUNT MAMMOTHS monitor shows the current number of mammoths.</p>
+<p>These counts are also dynamically plotted in the POPULATION plot.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice the rate of migration of the humans. How does that affect the population of mammoths?</p>
+<p>Notice the rate of mammoth decline. How many years does it take for them to go extinct?</p>
+<h2>THINGS TO TRY</h2>
+<p>Vary the ODDS-OF-KILLING. How does that affect the mammoth population?</p>
+<p>Vary the ratio of MAMMOTH-SPEED and HUMAN-SPEED. How does that affect the mammoth population?</p>
+<p>Vary the MAMMOTH-BIRTH-RATE and HUMAN-BIRTH-RATE. How does that affect the mammoth and human populations?</p>
+<p>Vary the CLIMATE-CHANGE-DECAY-CHANCE slider. How does that affect the number of mammoth deaths due to hunting?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Make separate monitors for North and South America.</p>
+<p>What if Central America weren't so narrow?  Do you think that it, or other geographical features, could block human hunters the way this model works?</p>
+<p>How would adding islands affect the model?</p>
+<p>Make the movement of the humans and mammoths more realistic rather than random.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The model uses <code>import-a:pcolors</code> to load a map of the Americas. This shows how easy it is to model semi-realistic geographical features in NetLogo without having to resort to the <a href="https://ccl.northwestern.edu/netlogo/docs/gis.html">GIS extension</a>, which is very powerful but harder to use.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is partly based on the theory expounded by Jared Diamond in:
+Diamond, J. (1993). <em>The Third Chimpanzee</em>. Basic Books.</p>
+<p>It is also based on the work in:
+Cooper, A., Turney, C., Hughen, K., Brook, B., McDonald, H., &amp; Bradshaw, J. (2015). "Abrubt warming events drove Late Pleistocene Holartic megafaunal turnover." <em>Science</em>. American Association for the Advancement of Science.</p>
+<p>Thanks to Nicolas Payette for converting this model from StarLogoT to NetLogo.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo Mammoths model.  http://ccl.northwestern.edu/netlogo/models/Mammoths.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>Converted from StarLogoT to NetLogo, 2016.</p>
+<!-- 1997 2016 --></div>
+      </div>
+    </main>
+  </body>
+</html>

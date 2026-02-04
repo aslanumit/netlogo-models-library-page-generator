@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neighborhoods Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Neighborhoods Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Neighborhoods%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Neighborhoods Example.png" alt="Screenshot of Neighborhoods Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This code example shows how to use the basic neighborhood primitives.  These include <code>neighbors</code>, <code>neighbors4</code>, <code>in-radius</code>, and <code>at-points</code>:</p>
+<ul>
+<li>
+<p><code>neighbors</code>: reports the patches surrounding a patch or turtle both patches that share a side and those that share a corner. If the world is a torus every patch will have eight neighbors, if wrapping is not allowed in either direction the edge patches will have fewer neighbors.</p>
+</li>
+<li>
+<p><code>neighbors4</code>: reports the same patches, excluding the ones at the corners.  On a torus there will always be four neighbors.</p>
+</li>
+<li>
+<p><code>&lt;agentset&gt; in-radius &lt;number&gt;</code>: reports those agents in agentset whose distance from the caller is less than or equal to n.</p>
+</li>
+<li>
+<p><code>&lt;agentset&gt; at-points &lt;list&gt;</code>: reports those agents in agentset at the given points relative to the caller, where <code>list</code> is a list of two-number lists.</p>
+</li>
+</ul>
+<p>Although in this example, we only change the color of the reported patches, you can of course do more complicated operations, including assigning that agentset to a variable. This is particularly useful in cellular automata models.</p>
+<h2>RELATED MODELS</h2>
+<p>Moore &amp; Von Neumann Example shows how to use square (Moore) or diamond (Von Neumann) shaped neighborhoods of any size.</p>
+<p>To see <code>neighbors</code> and <code>neighbors4</code> in the sample models see Shepherds, Altruism, GenDrift P local, Ising, Crystallization models, CA models, Fire, Rumor Mill, Segregation, and Voting.</p>
+<p>To see <code>in-radius</code> in the sample models see Fireflies, Flocking, and Simple Kinetics 3.</p>
+<p>To see <code>at-points</code> in the sample models see the Crystallization models, and Wave Machine.</p>
+<!-- 2004 --></div>
+      </div>
+    </main>
+  </body>
+</html>

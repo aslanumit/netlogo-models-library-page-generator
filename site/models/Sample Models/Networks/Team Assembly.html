@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Team Assembly</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Team Assembly</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Networks/Team%20Assembly.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Networks/Team Assembly.png" alt="Screenshot of Team Assembly" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model of collaboration networks illustrates how the behavior of individuals in assembling small teams for short-term projects can give rise to a variety of large-scale network structures over time.  It is an adaptation of the team assembly model presented by Guimera, Uzzi, Spiro &amp; Amaral (2005).  The rules of the model draw upon observations of collaboration networks ranging from Broadway productions to scientific publications in psychology and astronomy.</p>
+<p>Many of the general features found in the networks of creative enterprises can be captured by the Team Assembly model with two simple parameters: the proportion of newcomers participating in a team and the propensity for past collaborators to work again with one another.</p>
+<h2>HOW IT WORKS</h2>
+<p>At each tick a new team is assembled.  Team members are either inexperienced "newcomers" — people who have not previously participated in any teams -- or are established "incumbents" — experienced people who have previously participated on a team.  Each member is chosen sequentially.  The P slider gives the probability that a new team member will be an incumbent.  If the new member is not a newcomer, then with a probability given by the Q slider, an incumbent will be chosen at random from the pool of previous collaborators of an incumbent already on the team.  Otherwise, a new member will just be randomly chosen from all incumbents.  When a team is created, all members are linked to one another.  If an agent does not participate in a new team for a prolonged period of time, the agent and her links are removed from the network.</p>
+<p>Agents in a newly assembled team are colored blue if they are newcomers and yellow if they are incumbents.  Smaller grey circles represent those that are not currently collaborating.  Links indicate members' experience at their most recent time of collaboration.  For example, blue links between agents indicate that two agents collaborated as newcomers.  Green and yellow links correspond to one-time newcomer-incumbent and incumbent-incumbent collaborations, respectively.  Finally, red links indicate that agents have collaborated with one another multiple times.</p>
+<h2>HOW TO USE IT</h2>
+<p>Click the SETUP button to start with a single team.  Click GO ONCE to assemble an additional team.  Click GO to indefinitely assemble new teams.  You may wish to use the GO ONCE button for the first few steps to get a better sense of how the parameters affect the assembly of teams.</p>
+<h3>Visualization Controls</h3>
+<ul>
+<li>LAYOUT?: controls whether or not the spring layout algorithm runs at each tick.  This procedure attempts to move the nodes around to make the structure of the network easier to see.  Switching off LAYOUT? will significantly increase the speed of the model.</li>
+</ul>
+<p>The REDO LAYOUT button lets you run the layout algorithm without assembling new teams.</p>
+<h3>Parameters</h3>
+<ul>
+<li>TEAM-SIZE: the number of agents in a newly assembled team.</li>
+<li>MAX-DOWNTIME: the number of steps an agent will remain in the world without collaborating before it retires.</li>
+<li>P: the probability an incumbent is chosen to become a member of a new team</li>
+<li>Q: the probability that the team being assembled will include a previous collaborator of an incumbent on the team, given that the team has at least one incumbent.</li>
+</ul>
+<h3>Plots</h3>
+<ul>
+<li>LINK COUNTS: plots a stacked histogram of the number of links in the collaboration network over time.  The colors correspond to collaboration ties as follows:
+-- Blue: two newcomers
+-- Green: a newcomer and an incumbent
+-- Yellow: two incumbents that have not previously collaborated with one another
+-- Red: Repeat collaborators</li>
+<li>% OF AGENTS IN THE GIANT COMPONENT: plots the percentage of agents belonging to the largest connected component network over time.</li>
+<li>AVERAGE COMPONENT SIZE: plots the average size of isolated collaboration networks as a fraction of the total number of agents</li>
+</ul>
+<p>Using the plots, one can observe important features of the network, like the distribution of link types or the connectivity of the network vary over time.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The model captures two basic features of collaboration networks that can influence or stifle innovation in creative enterprises by varying the values of P and Q.  First is the distribution of the type of the connection between collaborators, which can be seen in the LINK COUNTS plot. An overabundance of newcomer-newcomer (blue) links might indicate that a field is not taking advantage of experienced members. On the other hand, a multitude of repeat collaborations (red) and incumbent-incumbent (yellow) links may indicate a lack of diversity in ideas or experiences.</p>
+<p>Second is the overall connectivity of the collaboration network.  For example, many academic fields are said to be comprised of an "invisible college" of loosely connected academic communities.  By contrast, patent networks tend to consist of isolated clusters or chains of inventors.  You can see one measure of this on the % OF AGENTS IN THE GIANT COMPONENT plot -- the giant component being the size of the largest connected chain of collaborators.</p>
+<p>You can also see the different emergent topologies in the display.   New collaborations or synergy among teams naturally tend to the center of the display. Teams or clusters of teams with few connections to new collaborations naturally "float" to the edges of the world. Newcomers always start in the center of the world. Incumbents, which are chosen at random, may be located in any part of the screen. Thus, collaborations amongst newcomers and or distant team components tend toward the center, and disconnected clusters are repelled from the centered.</p>
+<p>Finally, note that the structure of collaboration networks in the model can change dramatically over time. Initially, only new teams are generated; the collaborative field has not existed long enough for members to retire. However, after a period of time (MAX-DOWNTIME), inactive agents begin to retire, and the number of agents becomes relatively stable -- the emergent effects of P and Q become more apparent in this equilibrium stage.  Note also that the end of the growth stage is often marked by a drop in the connectivity of the network.</p>
+<h2>THINGS TO TRY</h2>
+<p>Keeping Q fixed at 40%, how does the structure of collaboration networks vary with P?  For example, which values of P produce isolated clusters of agents?  As P increases, how do these clusters combine to form more complex structures?  Over which values of P does the transition from a disconnected network to a fully connected network occur?</p>
+<p>Set P to 40% and Q to 100%, so that all incumbents choose to work with past collaborators.  Press SETUP, then GO, and let the model run for about 100 steps after the number of agents in the network stops growing.  What happens to the connectivity of the collaboration network?  Keeping P fixed, continue to lower Q in decrements of 5-10%.</p>
+<p>Try keeping P and Q constant and varying TEAM-SIZE.  How does the global structure of the network change with larger or smaller team sizes?  Under which ranges of P and Q does this relation hold?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>What happens when the size of new teams are not constant?  Try changing the rules so that team sizes vary randomly from a distribution or increase over time.</p>
+<p>How do P and Q relate to the global clustering coefficient of the network?  You may wish to use code from the Small Worlds model in the Networks section of Sample Models.</p>
+<p>Can you modify the model so that agents are more likely to collaborate with collaborators of collaborators?</p>
+<p>Collaboration networks can alternatively be thought of as a network consisting of individuals linked to projects.  For example, one can represent a scientific journal with two types of nodes, scientists and publications.  Ties between scientists and publications represent authorship.  Thus, links between a publication multiple scientists specify co-authorship.  More generally, a collaborative project may be represented one type of node, and participants another type.  Can you modify the model to assemble teams using bipartite networks?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Though it is not used in this model, there exists a network extension for NetLogo that you can download at: https://github.com/NetLogo/NW-Extension.</p>
+<h2>RELATED MODELS</h2>
+<p>Preferential Attachment - gives a generative explanation of how general principles of attachment can give rise to a network structure common to many technological and biological systems.</p>
+<p>Giant Component - shows how critical points exist in which a network can transition from a rather disconnected topology to a fully connected topology</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is based on:
+R Guimera, B Uzzi, J Spiro, L Amaral. Team Assembly Mechanisms Determine Collaboration Network Structure and Team Performance. Science 2005, V308, N5722, p697-702 https://amaral.northwestern.edu/media/publication_pdfs/Guimera-2005-Science-308-697.pdf</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Bakshy, E. and Wilensky, U. (2007).  NetLogo Team Assembly model.  http://ccl.northwestern.edu/netlogo/models/TeamAssembly.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 Cite: Bakshy, E. --></div>
+      </div>
+    </main>
+  </body>
+</html>

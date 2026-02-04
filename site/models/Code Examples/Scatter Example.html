@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scatter Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Scatter Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Scatter%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Scatter Example.png" alt="Screenshot of Scatter Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This code example shows three ways to scatter turtles across the world.  One way scatters them evenly across the world.  The second way scatters them in a circle.  The third puts them on the center of random patches.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>With SCATTER2, the density of turtles in the center is higher than the edges.</p>
+<p>With all three scatter methods, sometimes turtles can land on the same patch.  If you want to create turtles on patch centers and restrict them to one turtle per patch, the easiest way is not to create the turtles and then move them to the patches, but directly ask the patches to create the turtles, as follows:</p>
+<pre><code>  ask n-of 300 patches [ sprout 1 ]
+</code></pre>
+<h2>RELATED MODELS</h2>
+<p>Scatter</p>
+<!-- 2004 --></div>
+      </div>
+    </main>
+  </body>
+</html>

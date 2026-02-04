@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Party</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Party</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Party.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Social Science/Party.png" alt="Screenshot of Party" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model of a cocktail party.  The men and women at the party form groups.  A party-goer becomes uncomfortable and switches groups if their current group has too many members of the opposite sex.  What types of group result?</p>
+<h2>HOW IT WORKS</h2>
+<p>The party-goers have a TOLERANCE that defines their comfort level with a group that has members of the opposite sex.  If they are in a group that has a higher percentage of people of the opposite sex than their TOLERANCE allows, then they are considered "uncomfortable", and they leave that group to find another group.  Movement continues until everyone at the party is "comfortable" with their group.</p>
+<h2>HOW TO USE IT</h2>
+<p>The NUMBER slider controls how many people are in the party, and the NUM-GROUPS slider controls how many groups form.</p>
+<p>The SETUP button forms random groups.  To advance the model one step at a time, use the GO ONCE button. The GO button keeps the model running until everybody is comfortable.</p>
+<p>The numbers in the view show the sizes of the groups.  White numbers are mixed groups and gray numbers are single-sex groups.</p>
+<p>To set the tolerance of the people for the opposite sex, use the TOLERANCE slider.  You can move the slider while the model is running.  If the TOLERANCE slider is set to 75, then each person will tolerate being in a group with less than or equal to 75% people of the opposite sex.</p>
+<p>The NUMBER HAPPY and SINGLE SEX GROUPS plots and monitors show how the party changes over time.  NUMBER HAPPY is how many party-goers are happy (that is, comfortable).  SINGLE SEX GROUPS shows the number groups containing only men or only women.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>At the end of the simulation (when everyone is happy), notice the number of single-sex groups.  Are there more than at the start?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try varying TOLERANCE.  Is there a critical tolerance at which each all groups end up being single-sex?  At different tolerance levels, does it take longer or shorter for everyone to become comfortable?</p>
+<p>See how many mixed groups (not a single-sex group) you can get.</p>
+<p>Using the GO ONCE button, experiment with different tolerances.  Watch how one unhappy person can disrupt the stability of other groups.</p>
+<p>Is it possible to have an initial grouping such that the party never reaches a stable state?  (i.e. the model never stops running)</p>
+<p>Observe real parties.  Is this model descriptive of real social settings?  What tolerance level do real people typically have?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add more attributes to the model.  Instead of male/female, try a trait that has more than two types, like race or religion.  (You might use NetLogo's breeds feature to implement that.)</p>
+<p>Allow each breed of person to have their own tolerance.</p>
+<p>Complicate the tolerance rules: For example, the tolerance could go up as long as there are at least two of one breed.</p>
+<p>Allow groups to subdivide, instead of finding new groups.</p>
+<p>Set a maximum group size, so that if there are too many people in the group, they become unhappy.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Most NetLogo models put the origin (0,0) in the center of the world, but here, we have placed the origin near the right edge of the world and most of the patches have negative X coordinates.  This simplifies the math for situating the groups.</p>
+<p>Horizontal wrapping is enabled, but vertical wrapping is disabled.  Thus, the world topology is a "vertical cylinder".</p>
+<p>Notice the use of the <code>mod</code> primitive to space out the groups evenly.  Setting up the groups in this manner allows for easy movement from group to group.</p>
+<h2>RELATED MODELS</h2>
+<p>Segregation</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is based on the work of the pioneering economist Thomas Schelling:
+Schelling, T. (1978). Micro-motives and Macro-Behavior. New York: Norton.</p>
+<p>See also:
+Resnick, M. &amp; Wilensky, U. (1998). Diving into Complexity: Developing Probabilistic Decentralized Thinking through Role-Playing Activities. Journal of Learning Sciences, Vol. 7, No. 2.  http://ccl.northwestern.edu/papers/starpeople/</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo Party model.  http://ccl.northwestern.edu/netlogo/models/Party.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1997 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

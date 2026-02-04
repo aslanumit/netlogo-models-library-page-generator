@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reactor Top Down</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Reactor Top Down</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Radioactivity/Unverified/Reactor%20Top%20Down.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Chemistry &amp; Physics/Radioactivity/Unverified/Reactor Top Down.png" alt="Screenshot of Reactor Top Down" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This project simulates a nuclear fission reaction in a nuclear power plant. In a fission reaction, free neutrons hit uranium atoms, causing each uranium atom to generate 2 or 3 neutrons and a unit of energy. The uranium atom itself splits into two smaller atoms. The newly generated neutrons, together with the neutron that caused the reaction, keep moving and continue to hit more uranium atoms, which release more neutrons, etc. This is the chain reaction that happens inside an atomic bomb.</p>
+<p>Most nuclear energy is used for peaceful purposes, however. Generated in a nuclear power plant, nuclear fission goes on in a much more controlled fashion. The casing of the reactor is made of thick plates of lead and concreate to absorb the neutrons and prevent them from escaping. The reaction is controlled by rods made of graphite, hafnium, cadmium, or boron which also absorb the free neutrons. The rods are added and removed from the reaction chamber in order to control the speed of the reaction. When control rods are added, fewer atoms of uranium are smashed, which in turn limits how much energy is released.</p>
+<p>This model simulates the process of a nuclear fission reaction inside such a plant. The reactor casing seals the core, with control rods to help control the speed of the reaction. The reactor has a built-in automatic controller, and has a set of manual controls as well.</p>
+<h2>HOW TO USE IT</h2>
+<p>The POWER-RATED slider sets the rated power (the amount of power production that you want to hold the reactor to), which is used for automatic control.</p>
+<p>The PERCENT-FUEL slider control the percent of the reactor that is filled with fuel (red patches).</p>
+<p>The SPEND-FUEL switch controls whether or not the fuel is used up when a neutron hits it. (turns brown)</p>
+<p>The ADD-RODS and REMOVE-RODS buttons work with the NUMBER slider to add or remove that number of rods (cyan turtles) from the reactor.</p>
+<p>The RELEASE NEUTRON button introduces a neutron (yellow turtle) into the reactor. It can be used at anytime before or during the reaction.</p>
+<p>Press the SETUP button to set up the reactor with no control rods and a single neutron.</p>
+<p>When MANUAL is on, use the ADD-RODS and REMOVE-RODS buttons to change the number of rods in the reactor, and thus control the speed of the reaction and the amount of power generated. If they are too few rods, too few neutrons are absorbed and the reactor will generate too much power. If they are too many, all free neutrons will be absorbed, and no power will be generated.</p>
+<p>When AUTO-REACT is on, the reactor will add and remove rods as needed (in NUMBER increments) to keep power production under control.</p>
+<p>THE POWER monitor shows the current power output.</p>
+<p>The POWER-CHANGE monitor shows the change in power over the last clock tick.</p>
+<p>Look at the POWER-PLOT plot to see the power curve.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Observe the fluctuation of the power curve. The blue line is the rated-power line and the red line is the actually generated power line.</p>
+<h2>THINGS TO TRY</h2>
+<p>There are two setups, one for manual control, one for automatic control.</p>
+<p>The manual controls are very simple.  The ADD-RODS and REMOVE-RODS buttons control how many control rods are in the reactor.</p>
+<p>The automatic controller is basically an ON and OFF controller. It is based on 1) comparison of power generated and power rated and 2) the power change. The mechanism is described in the following table:</p>
+<pre><code class="language-text">                     Power &gt; Power Rated   Power &lt; Power Rated
+                     -------------------   -------------------
+  Power Change &gt; 0:       Add Rods            Do Nothing
+
+  Power Change &lt; 0:      Do nothing           Remove Rods
+</code></pre>
+<p>The controller should be fine-tuned.</p>
+<ul>
+<li>
+<p>In Manual Mode: Use the NUMBER slider to adjust the number to add or remove according to the information given through the two monitors and the plot. You want the power curve to be as flat as possible. The height of the curve should be close to the horizontal line representing the power-rate.</p>
+</li>
+<li>
+<p>In Automatic Mode: Fine tune the controller by changing the mechanisms to get a flatter power curve and minimize the fluctuation.</p>
+</li>
+</ul>
+<p>The SPEND-FUEL? switch sets whether or not the fuel is used up after releasing neutrons. If it's on then the fuel in the reactor will quickly get used up and the model will end.  Because of the short run and the need for new fuel in order to continue the reaction, with spend-fuel? on it's best to have a lot of fuel in the reactor and a low power-rating.  If it's off then the fuel will never get used up and will react every time a neutron hits it and the model will probably never stop.  Because of the reactivity and longevity of this setting, it's best to have only a little fuel (otherwise it will react out of control) and a high power-rating, so the controller doesn't have to fill the core with control rods the entire time in order to hold to the rating.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The automatic controller used is just an on and off controller. Try using  Proportional, Integral and Differential (PID) controllers to make the reaction more smooth. You could also use some ideas of fuzzy logic (e.g. fuzzy membership) to build a fuzzy controller.</p>
+<p>Absorbing free neutrons to control the reaction process is only one of the control mechanisms and is not the most important one. The important factor in controlling the reaction is to keep the speed of a neutron lower than a certain level (to stimulate fission reaction). The speeds of free neutrons depend on the density of the steam. Higher density yields lower speed and vice-versa. This is by nature a negative feedback control mechanism. It works as follows. If generated power is high, then the steam temperature is high and the density of the steam is low, thus the speed of free neutrons is high and is less likely to stimulate fission reaction. Hence a lower generated power. Try to incorporate this process into the automatic controller.</p>
+<p>Neither setting of SPEND-FUEL? is completely realistic, with it on the fuel is used up too fast and there's hardly a reaction, with it off there is too much reacting and too many rods are needed to control the reaction.</p>
+<p>Two additional ways to deal with fuel are listed below, can you think of more?
+* have there be a certain ammount of fuel at each red patch, then it won't get used up right away, but won't go on forever either.
+* limit how often a patch can react, that way, with spend-fuel? off the neutrons won't react out of control in small areas.</p>
+<h2>RELATED MODELS</h2>
+<p>Together with the Reactor X-Section model you can get a decent representation of how a Nuclear Reactor might work in three dimensions.  These two models are variations of one another based off of the Fission model from StarLogoT.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>More so than most other NetLogo models, the plot of 'Nuclear Reactor' plays an active role in the simulation. When using the manual controller, it is quite helpful to watch the power curve, to tell when things are getting out of hand.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Reactor Top Down model.  http://ccl.northwestern.edu/netlogo/models/ReactorTopDown.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1998 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

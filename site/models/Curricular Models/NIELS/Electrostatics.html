@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Electrostatics</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Electrostatics</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/NIELS/Electrostatics.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/NIELS/Electrostatics.png" alt="Screenshot of Electrostatics" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model displays the common natural phenomenon expressed by the Coulomb's inverse-square law.  It shows what happens when the strength of the force between two charges varies inversely with the square of the distance between them.</p>
+<h2>HOW IT WORKS</h2>
+<p>In this model the formula used to guide each charge's behavior is the standard formula for Coulomb's law:</p>
+<p>F = (q1 * q2 * Permittivity) / (r^2)</p>
+<p>In this formula:
+- "F" is the force between the two charges q1 and q2.
+- "Permittivity", the constant of proportionality here, is a property of the medium in which the two charges q1 and q2 are situated.
+- "r" is the distance between the centers of the two charges.</p>
+<p>This is a single force two body model, where we have a charge q1 (the particle that is created when you press SETUP) and a proton (q2) (the blue particle that appears when you press the mouse button in the view).  If a particle is positively charged, it is colored blue. If it's negatively charged, it will be orange. The force is entirely one-way: only q1 is attracted towards (or repelled from) the proton (q2), while the proton (q2) remains unaffected.  Note that this is purely for purposes of simulation.  In the real world, Coulomb's force acts on all bodies around it.</p>
+<p>Gravity is another example of an inverse square force.  Roughly speaking, our solar system resembles a nucleus (sun) with electrons (planets) orbiting around it.</p>
+<p>For certain values of q1 (which you can control by using the CHARGE slider), you can watch q1 form elliptic orbits around the mouse pointer (q2), or watch q1 slingshot around q2, similar to how a comet streaks past our sun. The charges q1 and q2 are always set equal in magnitude to each other, although they can differ in their sign.</p>
+<h2>HOW TO USE IT</h2>
+<p>When you press the SETUP button, the charge q1 is created in a medium determined by the permittivity value from the PERMITTIVITY slider. When you click and hold down the mouse anywhere within the view, the model creates a unit of positive charge (q2) at the position of the mouse.</p>
+<p>The CHARGE slider sets the value of the charge on q1.  First, select the value of CHARGE on q1. You will see that the color of q1 reflects its charge. (For simulation ease, value of the charge on q2 is set to be the absolute value of this charge. Thus, it also determines at what distances the particles can safely orbit before they get sucked in by an overwhelming force.)</p>
+<p>The FADE-RATE slider controls how fast the paths marked by the particles fade.  At 100% there won't be any paths as they fade immediately, and at 0% the paths won't fade at all.</p>
+<p>The PERMITTIVITY slider allows you to change values of the constant of proportionality in Coulomb's law. What does this variable manipulate? The charges or the medium in which the charges are immersed?</p>
+<p>When the sliders have been set to desirable levels, press the GO button to begin the simulation.  Move the mouse to where you wish q2 to begin, and click and hold the mouse button. This will start the particles moving. If you wish to stop the simulation (say, to change the value of CHARGE), release the mouse button and the particles will stop moving. You may then change any settings you wish. Then, to continue the simulation, simply put your mouse in the window again and click and hold. Objects in the window will only move while the mouse button is pressed down within the window.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The most important thing to observe is the behavior of q1, the particle first placed in the world at SETUP.</p>
+<p>What is the initial velocity for q1?</p>
+<p>What happens as you change the value of q1 from negative to positive?</p>
+<p>As you run the model, watch the graphs on the right hand side of the world. What can you infer from the graphs about the relationship between potential energy and distance between charges? What can you say about the relationship between Coulomb's force and distance between the charges from the graphs?</p>
+<p>Move the mouse around and watch what happens if you move it quickly or slowly. Jiggle it around in a single place, or let it sit still. Observe what patterns the particles fall into. (You may keep FADE-RATE low to watch this explicitly.)</p>
+<h2>THINGS TO TRY</h2>
+<p>Run the simulation playing with different values of:
+a) charge - make sure to watch how different values of the CHARGE slider impact the model for any fixed value of permittivity.
+b) permittivity - make sure to watch how different values of the PERMITTIVITY slider impact the model for any fixed value of charge.</p>
+<p>Can you make q1 revolve around q2?  Imagine, if q1 would be an electron and q2 a proton, then you have just built a hydrogen atom...</p>
+<p>As the simulation progresses, you can take data on how
+a) Force between the two charges varies with distance between charges;
+b) Potential energy changes with distance between charges;
+c) Force depends on permittivity.</p>
+<p>In each case, take 8 to 10 data points.  Plot your results by hand or by any plotting program.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Assign a fixed position to the proton (q1), i.e., make it independent of the mouse position. Assign a variable to its magnitude.</p>
+<p>Now create another charge of the breed "centers", and assign a fixed position to it in the graphics window.  Run the model for different positions, magnitude and signs (i.e., "+"ve or "-"ve) of the new "center".</p>
+<p>Create many test-charges.  Then place the two "centers", of opposite signs and comparable magnitudes, near the two horizontal edges of the world.  Now run the model.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Gravitation</li>
+</ul>
+<h2>NETLOGO FEATURES</h2>
+<p>When a particle moves off of the edge of the world, it doesn't re-appear by wrapping onto the other side (as in most other NetLogo models). The model stops when the particle exits the world.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the NIELS curriculum. The NIELS curriculum has been and is currently under development at Northwestern's Center for Connected Learning and Computer-Based Modeling and the Mind, Matter and Media Lab at Vanderbilt University. For more information about the NIELS curriculum please refer to http://ccl.northwestern.edu/NIELS/.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Sengupta, P. and Wilensky, U. (2005).  NetLogo Electrostatics model.  http://ccl.northwestern.edu/netlogo/models/Electrostatics.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>To cite the NIELS curriculum as a whole, please use:</p>
+<ul>
+<li>Sengupta, P. and Wilensky, U. (2008). NetLogo NIELS curriculum. http://ccl.northwestern.edu/NIELS/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Pratim Sengupta and Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>To use this model for academic or commercial research, please contact Pratim Sengupta at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#114;&#97;&#116;&#105;&#109;&#46;&#115;&#101;&#110;&#103;&#117;&#112;&#116;&#97;&#64;&#118;&#97;&#110;&#100;&#101;&#114;&#98;&#105;&#108;&#116;&#46;&#101;&#100;&#117;">&#112;&#114;&#97;&#116;&#105;&#109;&#46;&#115;&#101;&#110;&#103;&#117;&#112;&#116;&#97;&#64;&#118;&#97;&#110;&#100;&#101;&#114;&#98;&#105;&#108;&#116;&#46;&#101;&#100;&#117;</a> or Uri Wilensky at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#117;&#114;&#105;&#64;&#110;&#111;&#114;&#116;&#104;&#119;&#101;&#115;&#116;&#101;&#114;&#110;&#46;&#101;&#100;&#117;">&#117;&#114;&#105;&#64;&#110;&#111;&#114;&#116;&#104;&#119;&#101;&#115;&#116;&#101;&#114;&#110;&#46;&#101;&#100;&#117;</a> for a mutual agreement prior to usage.</p>
+<!-- 2005 NIELS Cite: Sengupta, P. --></div>
+      </div>
+    </main>
+  </body>
+</html>

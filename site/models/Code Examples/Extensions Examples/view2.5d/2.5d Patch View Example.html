@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2.5d Patch View Example</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>2.5d Patch View Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Extensions%20Examples/view2.5d/2.5d%20Patch%20View%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Code Examples/Extensions Examples/view2.5d/2.5d Patch View Example.png" alt="Screenshot of 2.5d Patch View Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This example demonstrates the use of the <code>view2.5d</code> extension. It is based on the <strong>Hill Climbing Example</strong> model, which shows how to make turtles climb hills using the <code>uphill</code> command. The <code>view2.5d</code> extension allows much better visualization of the "hills" generated in the example.</p>
+<p>The model opens a separate "patch view" window by calling:</p>
+<pre><code>view2.5d:patch-view window-name [ [the-patch] -&gt; [ pcolor ] of the-patch ]
+</code></pre>
+<p>The anonymous reporter supplied to the <code>view2.5d:patch-view</code> primitive is used by the extension to set the height of each patch.</p>
+<p>At the end of the <code>setup</code> procedure, you'll see a few other customizations of this "patch view":</p>
+<ul>
+<li>
+<p><code>view2.5d:decorate-patch-view</code> tells the extension to also show the turtles in the patch view window.</p>
+</li>
+<li>
+<p><code>view2.5d:set-observer-angles</code> tells the extension to change the position (on an imaginary sphere) of the observer in the view (the two numbers are heading and pitch measured in degrees)</p>
+</li>
+<li>
+<p><code>view2.5d:set-z-scale</code> tells the extension to change the scale of the z-axis, in this case making our peaks "taller".</p>
+</li>
+</ul>
+<p>In the <code>go</code> procedure, we use <code>view2.5d:update-patch-view</code> to refresh the patch view using the current state of the model.</p>
+<p>For more information, please refer to the <code>view2.5d</code> extension documentation and checkout the 2.5d Turtle View Example model.</p>
+<!-- 2016 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Polling HubNet</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Polling HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/Polling%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/HubNet Activities/Polling HubNet.png" alt="Screenshot of Polling HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model can be used to poll data from a set of students using HubNet Clients.  The teacher can input questions to ask and then the students can input their choice in response to the question.  The collective data can then be plotted.</p>
+<p>For further documentation, see the Participatory Simulations Guide found at http://ccl.northwestern.edu/rp/ps/index.shtml.</p>
+<h2>HOW TO USE IT</h2>
+<p>Quickstart Instructions:</p>
+<p>Teacher: Follow these directions to run the HubNet activity.
+Optional: Zoom In (see Tools in the Menu Bar)
+Teacher: Open up the HubNet Control Center (see Tools in the Menu Bar).  This will show you the IP Address of this computer. Press the GO button and tell the students to login.
+Everyone: Open up a HubNet Client on your machine and input the IP Address of this computer, type your user name in the user name box and press ENTER.</p>
+<p>Teacher: If you don't want to allow students to change their mind, switch ALLOW-CHANGE? off.  If you don't want to show the current data in the plot as it's being collected, switch SHOW-PLOT? off.  You can turn it back on at any time to see the data.</p>
+<p>Teacher: Press the NEW QUESTION button to input a question for everyone to answer.
+Everyone: Once you see the question, move your CHOICE slider to the value you want to choose and press the CHOOSE button.  Once you have chosen, your choice will appear in your CURRENT CHOICE monitor, and your turtle in NetLogo will get brighter.</p>
+<p>Teacher: To input another question, press NEW QUESTION again.  The data and CURRENT QUESTION will be saved and then the question will change to your new question and everyone will be able to make their choices on the new question.  To return to a previous question, use the &lt;&lt;<PREV QUESTION and NEXT QUESTION>&gt;&gt; buttons to cycle through the questions.</p>
+<p>Teacher: To rerun the activity with the same group, press the CLEAR QUESTIONS button to erase all the questions and data.</p>
+<p>Teacher: To start the simulation over with a new group but reuse the same questions, stop the model by pressing the NetLogo GO button, if it is on, and press the CLEAR CLIENTS button.</p>
+<p>Teacher: To start the simulation over with a new group but with new questions, stop the GO button, if it is on, and press the SETUP button.</p>
+<p>Follow these instructions from the beginning.</p>
+<p>Buttons:</p>
+<p>SETUP - clears everything including logged in clients.  This should only be pressed when starting out with a new group of users since all data and questions are lost.
+GO - runs the simulation processing data from the clients.
+CLEAR CURRENT DATA - clears everyone's answers on the current question allowing them to re-choose.
+NEW QUESTION - allows you to write a new question to be asked.
+CLEAR CLIENTS - removes all the clients and clears the data, but leaves the questions intact.  This should be used to start over with a new group but with the same set of questions.
+CLEAR QUESTIONS - erase all the questions and the data associated with them.  This should be used if you want to start over with the same group or don't want clients to have to log back in.
+NEXT QUESTION&gt;&gt;&gt; - changes the current question to the next question.
+&lt;&lt;<PREV QUESTION - changes the current question to the previous question.
+RESET INSTRUCTIONS - resets the quick start instructions to the beginning.
+NEXT INSTRUCTION>&gt;&gt; - advances the quick start instructions.
+&lt;&lt;&lt;PREV INSTRUCTION - goes backwards through the quick start instructions.</p>
+<p>Switches:</p>
+<p>ALLOW-CHANGE? - controls whether clients are able to change their choices after they've chosen.  Can be changed at any time.
+SHOW-PLOT? - controls whether the data collected are shown in the plot.  Can be changed at any time.</p>
+<p>Monitors:</p>
+<p>MEAN - shows the mean of the current data (aka average)
+MEDIAN - shows the median of the current data (the central value)
+CURRENT QUESTION - shows the current question being voted on by the clients</p>
+<p>Plots:</p>
+<p>DATA - shows a histogram of all the clients' votes as well as the mean, median, and modes of the data.</p>
+<p>Client Information:</p>
+<p>CURRENT QUESTION - A monitor showing the current question to input a guess on.
+CHOICE - A slider for inputing your choice in answer to the current question.
+CHOOSE - A button which tells the server what your choice is.
+CURRENT CHOICE - Shows the value that the server currently has as your choice for the current question.  It will be blank if you have not yet made a choice for the current question.
+DATA - Identical to the plot of the same name in NetLogo.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Currently, this activity only allows numeric data to be entered by the client.  Try adding in support for yes/no or true/false answers to questions.</p>
+<p>Right now the activity allows you to clear all the questions, clear all the clients and questions, and clear the data for one question.  However, it does not allow you to clear all the data for all the questions.  Make it do so.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. and Stroup, W. (2000).  NetLogo Polling HubNet model.  http://ccl.northwestern.edu/netlogo/models/PollingHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2000 Uri Wilensky and Walter Stroup.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This activity and associated models and materials were created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2000 Stroup --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hex Cell Aggregation</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Hex Cell Aggregation</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Computer%20Science/Hex%20Cell%20Aggregation.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Computer Science/Hex Cell Aggregation.png" alt="Screenshot of Hex Cell Aggregation" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model of growth.  It takes place on a two-dimensional hexagonal grid of cells. Cells can either be alive or dead.  Various growth patterns result, depending on the exact rules governing growth.</p>
+<h2>HOW IT WORKS</h2>
+<p>SETUP arranges cells in a hexagonal grid, as in Hex Cells Example.  The edges of the grid do not wrap.</p>
+<p>Only the center cell is alive at the start.</p>
+<p>The switches determine which dead cells are eligible to become alive.  For example, if the ONE-NEIGHBOR? switch is on, dead cells that have exactly one alive neighbor are eligible for growth, and so on for the rest of the switches.</p>
+<p>Each tick, one eligible dead cell goes live.</p>
+<p>Dead cells are invisible (black).  Live cells are shown in orange or red depending on whether they have any dead neighbors.</p>
+<h2>HOW TO USE IT</h2>
+<p>SETUP places one alive cell in the middle of the grid.</p>
+<p>GO advances the growth process.</p>
+<p>X-NEIGHBORS? are switches that, when on, allow new cells to grow where they will have X alive neighbors. X ranges from one to six because the cells are on a hexagonal grid and so each cell has 6 neighbors.</p>
+<p>READ-SWITCHES makes your settings for the switches take effect. (They don't take effect right away because the model is coded in a special way in order to run faster.)</p>
+<h2>THINGS TO NOTICE</h2>
+<p>When some switches are turned off, "holes" appear in the pattern. Depending on which X-NEIGHBORS? switches are on and which are off, those holes can be different shapes. Some interesting configurations are {1, 2, 4} (ONE-NEIGHBOR?, TWO-NEIGHBORS?, AND FOUR-NEIGHBORS? on while all other switches are off), {1}, {1, 4, 5}, {1, 3, 5, 6}, and {1, 3, 4, 5, 6}.</p>
+<p>Often, as the alive cells approach the border, the overall shape resembles a circle.</p>
+<p>For different configurations of the X-NEIGHBORS? switches, the "Cell Types" plot shows very different numbers of alive, dead, and inner-edge cells when the model stops.</p>
+<h2>THINGS TO TRY</h2>
+<p>Change the size of the world. If it's much bigger, the model might run too slowly. If it's smaller, can you get different patterns?</p>
+<p>Switch off TWO-NEIGHBORS? for a run. Does the overall shape look any different? After the model has been running for a while, change the switches to not allow 1 or 2 neighbors while allowing for 3 and up. (Don't forget to press the CHANGE-SWITCHES button.) Watch it go. What happens if you then change it to allow only for 1 or 2?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Implement the model on a regular square grid using both <code>neighbors4</code> and <code>neighbors</code> instead of the <code>neighbors6</code> we used in this model. Figure out a way to measure how quickly the alive cells spread to the edge in different configurations.</p>
+<p>To better see the near-circular shape of the aggregation as the growth gets near the edge, add a check that stops the model when a cell on the edge becomes alive.</p>
+<p>Add a plot that tracks the ratio of orange to red cells.</p>
+<p>Each tick one eligible dead cell goes live.  This one-at-a-time update rule differs from many cell-based models which update all the cells at once.  (This update rule is specified in the reference in the CREDITS AND REFERENCES section.)  Change the rules so that each tick, all of the eligible dead cells go live. What different result do you observe, if any?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The code uses lists in order to make the model run faster.  The code would be considerably simpler if these lists weren't used, but it would also run much slower.  See the comments in the Code tab for details on the use of lists in this model.</p>
+<h2>RELATED MODELS</h2>
+<p>Diffusion Limited Aggregation
+Life
+Hex Cells Example</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model was inspired by Stephen Wolfram's A New Kind of Science. A very similar model is discussed here: https://www.wolframscience.com/nks/p331--the-phenomenon-of-continuity/. In the notes at the end of the book, many extensions are suggested, although none on a hexagonal grid.</p>
+<p>Thanks to Josh Unterman and Seth Tisue for their work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2007).  NetLogo Hex Cell Aggregation model.  http://ccl.northwestern.edu/netlogo/models/HexCellAggregation.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 --></div>
+      </div>
+    </main>
+  </body>
+</html>

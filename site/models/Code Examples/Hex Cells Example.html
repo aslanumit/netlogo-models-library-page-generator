@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hex Cells Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Hex Cells Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Hex%20Cells%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Hex Cells Example.png" alt="Screenshot of Hex Cells Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This demonstrates how to make a model that uses a hexagonal grid of cells.</p>
+<p>The cellular automaton rules used produce a snowflake-like pattern.</p>
+<h2>HOW IT WORKS</h2>
+<p>Since patches are square, we must represent the cells as turtles instead.</p>
+<p>Each patch sprouts a "cell" turtle.  Turtles on even patch columns are offset down by half a patch.  (Since the south boundary of a patch is part of the patch, this does not move the turtle to a different patch.)</p>
+<p>The resulting lattice has the correct structure, but distances and angles are distorted. So the hexagons aren't actually regular, but it doesn't matter as long as you don't try to use primitives such as <code>distance</code> and <code>towards</code>.</p>
+<p>Also, you must use the <code>hex-neighbors</code> variable instead of the built-in <code>neighbors</code> and <code>neighbors4</code> reporters.</p>
+<h2>RELATED MODELS</h2>
+<p>This example is for stationary cells.  Hex Turtles Example shows how to make turtles that move along a hexagonal lattice.  (It would also be possible to combine both techniques in a single model.)</p>
+<p>Link Lattice Example and Lattice-Walking Turtles Example demonstrate another approach to making a hexagonal lattice, using links instead of just patches.</p>
+<!-- 2004 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Free Fall</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Free Fall</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/CT-STEM/Free%20Fall.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/CT-STEM/Free Fall.png" alt="Screenshot of Free Fall" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>The model is designed for users to observe changes in motion (displacement, velocity and acceleration) of an object in free fall. Users can also observe changes in the mechanical energy of the object as it falls. The model also allows users to explore the conservation of mechanical energy. Finally, the users can also change the mass of the object and observe the resulting changes in the motion and mechanical energy of the object.</p>
+<h2>HOW IT WORKS</h2>
+<p>The model is initialized with a ball on the top of the view. The mass of the ball can be varied by a user with the MASS-OF-BALL slider below the SETUP button. The user can observe the motion of this model step by step, where each step is one second long (this maps into one <code>tick</code> in NetLogo). The ball’s motion is shown throughout its descent back onto the Earth, represented by the green patches at the bottom of the view. The ball’s position is traced at each second by a red dot in the View. The distance covered in a step by the ball is shown below the slider for the mass of the ball. The ball's distance, velocity, acceleration, kinetic energy, and potential energy at each second are recorded on the plots surrounding the view.</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>Set the mass of a ball using the MASS-OF-BALL slider and press the SETUP button.</li>
+<li>Press the PROCEED FOR ONE STEP button to advance the ball by one second downward.</li>
+<li>Look at the monitors to see the distance covered in one second and the current values of kinetic and potential energy.</li>
+<li>Look at the graphs to observe the changes in motion and energy of the ball over time.</li>
+<li>Continue to press the PROCEED FOR ONE STEP button until the ball hits the Earth. (The model will stop once the next second of the ball's descent is below the surface of the Earth.)</li>
+</ol>
+<p>MASS-OF-BALL is a slider that ranges from 1-10. This number can be changed at any time during the free fall of the ball.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Observe the trace of the ball as it free falls, are there any patterns?</p>
+<p>Pay attention to the slopes of the Distance, Velocity, and Acceleration graphs. How do they change over time?</p>
+<p>Notice how the distance covered in a step is increasing exponentially. How is this related to the Distance vs Time graph?</p>
+<p>Watch the relationship between KE and PE as you proceed through the model. Pay attention to the KE + PE monitor throughout the descent.</p>
+<h2>THINGS TO TRY</h2>
+<p>How do the KE and PE change when you change the mass of the ball? What about the motion of the ball?</p>
+<p>As you press the PROCEED FOR ONE STEP button, change the mass of the ball and then continue. What has changed as a result? How do the distance, velocity, and acceleration graphs look now?</p>
+<h2>CURRICULAR USES</h2>
+<p>Students can explore this computational model of a ball in free fall to
+- make observations regarding changes in its motion and energy to learn about conservation of mechanical energy.
+- relate position, velocity, and acceleration.
+- be introduced to some basics of computational thinking.
+- to learn how to use multiple computational representations (graphs, numbers and visualization of the trace of the free falling object).</p>
+<p>This model is used by the lesson entitled <a href="https://ct-stem.northwestern.edu/curriculum/preview/1011/">"Conservation of mechanical energy during free fall".</a> This lesson goes over changes in motion (displacement, velocity, and acceleration) and the conservation of mechanical energy during the free fall of an object.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>This is a very simple model that is easy to extend. Here are some ideas on things to implement in the model:</p>
+<ul>
+<li>
+<p>Can you modify the starting height for the ball and observe what changes as a result of it?</p>
+</li>
+<li>
+<p>Try changing the gravitational constant in the CODE tab, for example change it to the gravity of Jupiter which is 24.79 m/s<sup>2</sup>. What happens as a result of the different gravitational constant?</p>
+</li>
+<li>
+<p>What happens if the acceleration is not constant? Can you make the acceleration depend on the velocity or time?</p>
+</li>
+<li>
+<p>This model does not consider air resistance. How might you implement this into the model and how would it affect the motion and energy of the ball?</p>
+</li>
+<li>
+<p>Could you change the model to show an object falling through other substances such as water?</p>
+</li>
+</ul>
+<h2>NETLOGO FEATURES</h2>
+<p>We use the <code>stamp</code> primitive to trace the motion of the ball in the View. At each tick, the ball stamps an image of itself on the View, which provides the user an easy to read representation of the ball over time.</p>
+<h2>RELATED MODELS</h2>
+<p>Look at the Random Balls model in the Models Library.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Dabholkar, S., Sant, S. and Wilensky, U. (2020).  NetLogo Free Fall model.  http://ccl.northwestern.edu/netlogo/models/FreeFall.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>This model was developed as part of the CT-STEM Project at Northwestern University and was made possible through generous support from the National Science Foundation (grants CNS-1138461, CNS-1441041, DRL-1020101, DRL-1640201 and DRL-1842374) and the Spencer Foundation (Award #201600069). Any opinions, findings, or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the funding organizations. For more information visit https://ct-stem.northwestern.edu/.</p>
+<p>Special thanks to the CT-STEM models team for preparing these models for inclusion
+in the Models Library including: Kelvin Lao, Jamie Lee, Sugat Dabholkar, Sally Wu,
+and Connor Bain.</p>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2020 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2020 CTSTEM Cite: Dabholkar, S., Sant, S. --></div>
+      </div>
+    </main>
+  </body>
+</html>

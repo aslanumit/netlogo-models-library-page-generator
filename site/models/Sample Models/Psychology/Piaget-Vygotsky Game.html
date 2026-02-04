@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Piaget-Vygotsky Game</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Piaget-Vygotsky Game</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Psychology/Piaget-Vygotsky%20Game.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Psychology/Piaget-Vygotsky Game.png" alt="Screenshot of Piaget-Vygotsky Game" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is designed as a "thought experiment" to shed light on the ongoing debate between two theories of learning, constructivism and social constructivism. In it, agents "learn" through playing a game either as individuals, social interactors, or both.</p>
+<p>This model of "learning through playing" was created with the following objectives:</p>
+<ol>
+<li>
+<p>to demonstrate the viability of agent-based modeling (ABM) for examining socio/developmental-psychological phenomena;</p>
+</li>
+<li>
+<p>to illustrate the potential of ABM as a platform enabling discourse and collaboration between psychologists with different theoretical commitments;</p>
+</li>
+<li>
+<p>to visualize the complementarity of Piagetian and Vygotskiian explanations of how people learn.</p>
+</li>
+</ol>
+<h2>HOW IT WORKS</h2>
+<p>The design problem for this model-based thought experiment was to create a single environment in which we could simulate both “Piagetian” and “Vygotskiian” learning.</p>
+<p>We chose to model a game in which contestants all stand behind a line and each throws a marble, trying to land it as close as possible to a target line some "yards" away (30 NetLogo patches): Players stand in a row. They each roll a marble at a target line. Some players undershoot the line, some overshoot it. Players collect their marbles, adjust the force of their roll, and, on a subsequent trial, improve on their first trial—they have “learned” as individuals.</p>
+<p>To show the difference between the “Piagetian” and “Vygotskiian” perspectives, we focus on the differential emphases they put on the contribution of the social milieu to individual learning.</p>
+<p>We simulated four learning strategies:</p>
+<ul>
+<li>
+<p><strong>“Random”</strong>: a control condition, in which players’ achievement does not inform their performance on subsequent attempts, unless they are exactly on target.</p>
+</li>
+<li>
+<p><strong>“Piagetian”</strong>: players learn only from their own past attempts.</p>
+</li>
+<li>
+<p><strong>“Vygotskiian”</strong>: players learn only by watching other players nearby, not from their own attempts.</p>
+</li>
+<li>
+<p><strong>“Piagetian–Vygotskiian”</strong>: players learn from both their own and a neighbor’s performance.</p>
+</li>
+</ul>
+<h2>HOW TO USE IT</h2>
+<p>To run this simulation, press SETUP and then GO. To execute the simulation one attempt at a time, press GO ONCE.</p>
+<p>The NUMBER-OF-PLAYERS slider controls how many players there are in the game.</p>
+<p>You can change the number of attemps that each player makes in a simulation run using the ATTEMPTS-PER-RUN slider.</p>
+<p>To run the simulation under a particular learning mode (Random/Piagetian/Vygotskiian/Piagetian-Vygotskiian), use the STRATEGY chooser and select the strategy from its drop-down menu. Make sure the switch RANDOMIZE-STRATEGY-EACH-RUN? is set to "Off."</p>
+<p>Adjust the value of the ZPD slider to set the maximum difference between a player's score and its selected neighbor's score that still allows the player to learn from that neighbor (applies under the Vygotskiian and Piagetian-Vygotskiian strategies).</p>
+<p>Adjust the value of the MOVE-ERROR slider to set the level of "noise" in the players' perception and execution.</p>
+<p>Adjust the value of the #-VYGOTSKIIAN-NEIGHBORS slider to set the number of neighbors that players see under the Vygotskiian and Piagetian-Vygotskiian strategy.</p>
+<p>If the TRAILS? switch is "On", each player will leave a colored trail behind when they make an attempt, making it easier to see where they end up.</p>
+<p>Set the switch RANDOMIZE-STRATEGY-EACH-RUN? to "On" in order to view multiple runs under the different conditions. This is helpful for comparing between different experimental outcomes. Note that the target line, in the middle of the view, changes color to reflect the condition you are running the simulation under -- these are the same colors as in the graph and histogram.</p>
+<p>If the STOP-AFTER-EACH-RUN? switch is set to "On", the simulation will stop after ATTEMPTS-PER-RUN attempts have been made.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Note that the learning process involves “feedback loops.” That is, a player’s learning—the individual “output” of a single attempt—constitutes “input” for the subsequent attempt. In the “Piagetian” condition, this is a player-specific internal loop, and in the “Vygotskiian” condition one person’s output may be another person’s input on a subsequent attempt, and so on.</p>
+<p>Note also that over the course of a “Piagetian–Vygotskiian” run of the simulation, players might learn on one attempt from their own performance and on another from the performance of a neighbor. Both sources of information are simultaneously available for each player to act upon.</p>
+<h2>THINGS TO TRY</h2>
+<p>The combined “Piagetian–Vygotskiian” strategy tends to be the best one, but whether the Piagetian learning is greater than the Vygotskiian learning or vice versa depends on combinations of the settings of the parameters #-VYGOTSKIIAN-NEIGHBORS, ZPD, and MOVE-ERROR. Try to find some settings under which Piagetian works better and some settings under which Vygotskiian works better. Can you explain where the difference comes from?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try to implement a modified version of the “Vygotskiian” strategy, where the better performing players modify their next move to be within the ZPD of a less well performing neighbor, making a play that is worse than they know how to make, in order to help the less well performing player learn to play better.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a modernized version of the model presented in:</p>
+<ul>
+<li>Abrahamson, D., &amp; Wilensky, U. (2005). "Piaget? Vygotsky? I'm game!: Agent-based modeling for psychology research". Paper presented at the annual meeting of the Jean Piaget Society. https://ccl.northwestern.edu/papers/Abrahamson_Wilensky_JPS20.pdf</li>
+</ul>
+<p>The original model is available at:
+http://ccl.sesp.northwestern.edu/research/conferences/JPS2005/JPS2005.nlogo</p>
+<p>For more about the additions suggested in EXTENDING THE MODEL, see:</p>
+<ul>
+<li>Abrahamson, D., Wilensky, U. &amp; Levin, J. (2007) "Agent-Based Modeling as a Bridge Between Cognitive and Social Perspectives on Learning". Paper presented at the annual meeting of the American Educational Research Association, Chicago, IL. http://ccl.northwestern.edu/2007/abr-wil-levin-aera2007.pdf</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Abrahamson, D. and Wilensky, U. (2005).  NetLogo Piaget-Vygotsky Game model.  http://ccl.northwestern.edu/netlogo/models/Piaget-VygotskyGame.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 Cite: Abrahamson, D. --></div>
+      </div>
+    </main>
+  </body>
+</html>

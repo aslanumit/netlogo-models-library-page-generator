@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Habitat Preference Behavior</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Habitat Preference Behavior</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/CT-STEM/Habitat%20Preference%20Behavior.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/CT-STEM/Habitat Preference Behavior.png" alt="Screenshot of Habitat Preference Behavior" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model recreates a rollypolly experiment with two chambers in conditions decided by the user. The two possible conditions are moist or dry. Users can also set which condition rollypollies prefer. The rollypollies start in the middle and move towards their preferred chambers when the experiment starts.</p>
+<h2>HOW IT WORKS</h2>
+<p>The user selects conditions for each of the chambers using the two choosers and the preferred conditions for the rollypollies. The rollypollies will move around randomly each second (which maps to one tick in NetLogo). The only exception to this is when rollypollies are in their preferred environment. When this happens they will only move randomly half the time.</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>Select the number of rollypollies in the experiment using the NUMBER-OF-ROLLYPOLLIES slider.</li>
+<li>Select the condition for chamber 1 and chamber 2 using the CONDITION-IN-CHAMBER1 and CONDITION-IN-CHAMBER2 choosers. Also type in which condition should be the preferred condition in the PREFERRED-CONDITIONS input.</li>
+<li>Press the SETUP button.</li>
+<li>Press the GO button and observe the plots on the right.</li>
+<li>It is possible to update chamber conditions and preferred conditions in the middle of the experiment. If you choose to update the chamber conditions use the CONDITION-IN-CHAMBER1 and CONDITION-IN-CHAMBER2 choosers. If you choose to update the preferred conditions use the PREFERRED-CONDITIONS input box.</li>
+<li>Use the RECORD DATA button to see how the rollypollies are distributed between the two chambers. Each click corresponds with one data instance at the current time point.</li>
+</ol>
+<p>NUMBER-OF-ROLLYPOLLIES is a slider that ranges from 0-50. It controls the number of rollypollies in the model.</p>
+<p>CONDITION-IN-CHAMBER1 and CONDITION-IN-CHAMBER2 are choosers that control the condition of the chambers. The two options are dry or moist.</p>
+<p>PREFERRED-CONDITIONS is an input box that sets the preferred condition. The user must type in <code>dry</code> or <code>moist</code> for it to be effective.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Does changing the number of rollypollies in the chambers affect anything?</p>
+<p>Is there a difference between the rollypollies preferring dry conditions or moist conditions?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try changing the preferred condition in the middle of the experiment. What happens as a result of this? Hint: Use the plots to help you.</p>
+<p>Try changing the chamber conditions in the middle of the experiment. What happens as a result of this?</p>
+<h2>CURRICULAR USE</h2>
+<p>This model was incorporated into an Animal Behavior Experimental Lab which was designed for high school Advanced Placement (AP) Biology students. Within the lab, these students simulated agent-level interactions to model their prior hands-on lab experiments. This lab aims to have students develop an understanding of experimental design, data collection, and data analysis by conducting a laboratory experiment and using a computational model to study the behavior of pillbugs, also called 'roly-polies' (Armadillidium vulgare).</p>
+<p>The <a href="https://ct-stem.northwestern.edu/curriculum/preview/1523/">associated unit</a> contains several iterations of this rollypolly model:</p>
+<ul>
+<li>
+<p><a href="https://ct-stem.northwestern.edu/curriculum/preview/1529/page/3/">The basic model</a> is used in Lesson 4 Page 3
+Students use the model to make observations and conduct experiments regarding habitat preference behavior of rollypollies. This model does not include the data recording features. It still displays the graph and monitor for rollypollies in each chamber but lacks the Rollypolly Distribution graph.</p>
+</li>
+<li>
+<p><a href="https://ct-stem.northwestern.edu/curriculum/preview/1529/page/1/">An introductory model with suggested time intervals</a> is used in Lesson 4 Page 1
+Students are asked to record data after different time intervals and across different numbers of rollypollies. They are expected to learn about the nuances of experimental design (large sample size, multiple trials, etc.). This model is similar to the basic model in that it still displays the graph and monitor for rollypollies in each chamber but lacks the Rollypolly Distribution graph. Instead, this model includes two buttons which allow for the model to advance 5 seconds (ticks) or 30 seconds along with the usual continuous GO button. This allows for the user to see the rollypollies movement more clearly and makes it easier to manually record data after different time intervals and across different numbers of rollypollies.</p>
+</li>
+<li>
+<p><a href="https://ct-stem.northwestern.edu/curriculum/preview/1525/page/1/">The model extended with CODAP, a data science tool</a> is used in Lesson 5 Page 1
+Students use a computationally enhanced data collection method to record and analyze data using CODAP, a computational tool for data visualization and analysis. This model also displays the graph and monitor for rollypollies in each chamber but lacks the Rollypolly Distribution graph. This model also keeps the RUN-FOR-30-TICKS button from the introductory model but gets rid of the RUN-FOR-5-TICKS button. The biggest difference of this model is the integration with CODAP which is used to allow for users to easily record data and analyze data.</p>
+</li>
+<li>
+<p><a href="https://ct-stem.northwestern.edu/curriculum/preview/1525/page/2/">The model extended with CODAP and experiment features</a> is used in Lesson 5 Page 2
+Students use a computationally enhanced data collection method to record and analyze data using CODAP, a computational tool for data visualization and analysis. This model is similar to the model extended with CODAP but there are two extra features used to make running an experiment easier. There are two extra sliders, NUMBER-OF-READINGS (0-100) and NUMBER-OF-TICKS-BETWEEN-READINGS (0-50), and one extra button RUN-A-TRIAL. These extra features allow for the model to automatically run the model and record the data to quickly perform an experiment.</p>
+</li>
+<li>
+<p><a href="https://ct-stem.northwestern.edu/curriculum/preview/1530/page/1/">A NetTango version that allows students to code with programming blocks</a> is used in Lesson 6 Page 1
+Students use a block-based coding environment, NetTango, to code habitat preference behavior. This model is completely different from the previous models in that this is a NetTango model which has the goal of teaching students how to program the model behavior using blocks. There is only a SETUP and GO button with an initially blank NetLogo code tab. Users replicate the previous models by using the blocks provided to add code to the model.</p>
+</li>
+</ul>
+<h2>EXTENDING THE MODEL</h2>
+<p>This is a very simple model that is easy to extend. Here are some ideas on things to implement in the model:</p>
+<ul>
+<li>Try changing the percentage of the time the rollypollies don't move when they are in their preferred conditions.</li>
+<li>Try implementing a new condition such as <code>wet</code>.</li>
+<li>Try adding a new chamber into the VIEW.</li>
+</ul>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses the INPUT widget of NetLogo to allow user set the PREFERRED-CONDITION by rollypollies, in effect, allowing the user to edit the code of the model without having to search through the CODE tab.</p>
+<h2>RELATED MODELS</h2>
+<p>Checkout the Bug Hunt Speeds in the Models Library.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Dabholkar, S., Granito, T. and Wilensky, U. (2020).  NetLogo Habitat Preference Behavior model.  http://ccl.northwestern.edu/netlogo/models/HabitatPreferenceBehavior.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>This model was developed as part of the CT-STEM Project at Northwestern University and was made possible through generous support from the National Science Foundation (grants CNS-1138461, CNS-1441041, DRL-1020101, DRL-1640201 and DRL-1842374) and the Spencer Foundation (Award #201600069). Any opinions, findings, or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the funding organizations. For more information visit https://ct-stem.northwestern.edu/.</p>
+<p>Special thanks to the CT-STEM models team for preparing these models for inclusion
+in the Models Library including: Kelvin Lao, Jamie Lee, Sugat Dabholkar, Sally Wu,
+and Connor Bain.</p>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2020 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2020 CTSTEM Cite: Dabholkar, S., Granito, T. --></div>
+      </div>
+    </main>
+  </body>
+</html>

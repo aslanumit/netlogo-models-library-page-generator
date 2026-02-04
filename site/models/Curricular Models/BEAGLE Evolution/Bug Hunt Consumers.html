@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bug Hunt Consumers</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Bug Hunt Consumers</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/BEAGLE%20Evolution/Bug%20Hunt%20Consumers.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/BEAGLE Evolution/Bug Hunt Consumers.png" alt="Screenshot of Bug Hunt Consumers" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model explores the stability of consumer producer ecosystems and how temporary disturbances and more sustained environmental changes affect the stability of the population and the ecosystem.</p>
+<h2>HOW IT WORKS</h2>
+<p>Bugs wander randomly around the landscape.  Each step each bug loses one unit of energy and they must consume a food source (grass) to replenish their energy. When they run out of energy, they die. To allow the population to continue, each bug must have enough energy to have an offspring.  When that threshold is reached, the offspring and parent split the energy amongst themselves.  Grass grows at a fixed rate, and when it is eaten, a fixed amount of grass energy is deducted from the patch (square) where the grass was eaten.</p>
+<p>Different disturbances can be tested in this system, including temporary removal of grass (simulating a fire) and removal of some of the bugs (simulating disease).</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>Adjust the slider parameters (see below), or use the default settings.</li>
+<li>Press the SETUP button.</li>
+<li>Press the GO button to begin the model run.</li>
+<li>View the POPULATION SIZE VS. TIME plot to watch the bug and grass populations fluctuate over time</li>
+<li>View the DISTRIBUTION OF BUG VALUES plot to watch how variation in energy levels, ages, or reproduction within in population changes over time.</li>
+<li>View the BUGS DIED and BUGS BORN monitors to keep track of the total number of new bugs that have been born since the model run started and the number of bugs that have died.</li>
+</ol>
+<p>Initial Settings:</p>
+<p>CONSTANT-SIMULATION-LENGTH:  When turned "on" the model run will automatically stop at 1000 ticks.  When turned "off" the model run will continue without automatically stopping.</p>
+<p>AMOUNT-OF-GRASSLAND: The percentage of patches in the world &amp; view that produce grass.</p>
+<p>INITIAL-NUMBER-BUGS: The initial size of bug population.</p>
+<p>AMOUNT-OF-FOOD-BUGS-EAT:  Sets the amount of energy that a bugs gains from eating grass at a patch as well as the amount of energy deducted from that grass.</p>
+<p>GRASS-TO-BURN-DOWN:  Sets the % of grassland patches that will have all their grass immediately removed when the BURN THE DOWN GRASS button is pressed. These patches will grow back grass with time.</p>
+<p>BUGS-TO-REMOVE:  Sets the % of existing bug population that will be removed when the REMOVE BUGS button is pressed.</p>
+<p>GRAPH-VALUES-FOR:  Sets the x-axis values of the bugs that are graphed in the DISTRIBUTION OF BUG VALUES histogram.  Options include "energy of the bugs", "age of the bugs", and "# of offspring of bugs".</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Watch as the grass and bug populations fluctuate.  How are increases and decreases in the sizes of each population related?</p>
+<p>Pressing REMOVE BUGS or BURN THE GRASS DOWN affects the size of the populations in the short term, but not in the long term. What causes this behavior?</p>
+<p>Different AMOUNT-OF-GRASSLAND values affect the carrying capacity (average values) for both the bugs and grass.  Why?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try adjusting the parameters under various settings. How sensitive is the stability of the model to the particular parameters.  Does the parameter setting affect the amount of fluctuations, the average values of bugs and grass, or does it lead to the collapse of the ecosystem (death of all the bugs)?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>In this model, all the bugs are identical to each other and follow the same rules. Try modeling variation in the bug population that would make it easier for some bugs to get food.</p>
+<p>Try extending the model by introducing a predator that eats the bugs, or a competing population that also eats grass.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The visualization of fire embers uses the transparency value for the color to gradually fade out the color of the fire and let the background show through, before the embers disappear completely.</p>
+<h2>RELATED MODELS</h2>
+<p>Wolf Sheep Predation and Rabbits Weeds Grass are other examples of interacting predator/prey populations with different rules.</p>
+<p>Refer to Bug Hunt Predators for extensions of this model that include predators (birds that eat bugs) and an invasive species (another population of consumers).</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the BEAGLE curriculum (http://ccl.northwestern.edu/rp/beagle/index.shtml)</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2011).  NetLogo Bug Hunt Consumers model.  http://ccl.northwestern.edu/netlogo/models/BugHuntConsumers.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2011 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2011 Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

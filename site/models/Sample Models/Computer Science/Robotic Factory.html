@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Robotic Factory</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Robotic Factory</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Computer%20Science/Robotic%20Factory.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Computer Science/Robotic Factory.png" alt="Screenshot of Robotic Factory" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates a resilient robot factory that runs autonomously, based on the principles of self-organization so prevalent in nature. In the model, a garment factory is completely automated but attached to an unpredictable external world (suppliers). The robots carry products from one machine to the next, and then out to the van to be whisked away. Nature has long experience with persisting in an interconnected world. If only humans could self organize as efficiently and resiliently as bees or ants do. We need more resilient human systems that borrow from nature, such as this model.</p>
+<h3>The Factory, an Emergent or Sequential Process?</h3>
+<p>In order to reimagine resilient human systems, we need to redesign many systems from sequential systems, prevalent in the industrial age, to emergent processes, which are so prevalent in nature. For Chi et al. (2012) processes, can be categorized in two ways – sequential or emergent. Sequential processes can be subdivided into a sequence of events, like an assembly line where the metal is rolled, pressed, stamped, and smoothed before being turned into cans and filled with tomato sauce. This is a process with multiple agents: the machines, their operators, and a manager. It makes sense to speak of sequential processes resulting from a single agent’s actions. For example, we could say the manager increased efficiency of the assembly process by increasing the speed of the conveyor belt. Even though all the agents participated in the process, we can focus on the goal setting manager’s actions to account for the change. As a result, Chi et al. say one can give special controlling status to the agent that caused the change in a sequential process. This means if someone thinks of a process as sequential, they tend to interpret interactions at the agent level as done in order to reach the goal of the higher level (See Wilensky &amp; Resnick, 1999). For the assembly line, this can make sense. The causal mechanism that leads to the result comes from the summing of the assembly line’s outcomes directed by the manager. But, for emergent systems, such as ant colonies, this can lead to false assumptions (like that the queen ant gives direction to all the other ants). Many people confuse this control when thinking about emergent processes, what Wilensky &amp; Resnick call Levels Confusion.</p>
+<p>Emergent processes, like ants searching for food, marching in orderly paths, or getting stuck in a doorway are different. These processes result from each ant taking actions, some of them random, where the result emerges from the repetition of the action, but no agent is in control. These processes are encountered in school standards such as osmosis and diffusion, electrical current and buoyancy.</p>
+<p>This model configures a factory to be an emergent, as opposed to a sequential process, providing a novel design of a factory floor. This model is emergent because instead of operating on the processes of the factory, we set key properties that establish the emergent pattern of the model: the energy cycle. In other words, the efficiencies result from operating on the emergent, instead of operational, parameters. This is an example of humans designing an emergent system to meet business needs.</p>
+<h2>HOW IT WORKS</h2>
+<p>The model initializes with 2 cutters, 2 stitchers, 2 finishers (one lux, one standard), a storage room, and a loading dock and places them in the correct place in the factory. Finally, it creates some robots, initializes all of these with starting parameters, and then all the robots are sent to the loading dock.</p>
+<p>Every tick, machines process various garments by moving them through the factory. If the robots are carrying garments, then they spend more energy to move. There are two quality levels of garment "luxurious" and "standard". Each order is either "luxurious" or "standard". Both finishers can produce ‘standard’ garments but only Finisher 1 can produce the "luxurious" version. Finisher 1 takes 7 simulation cycles to complete the garment, whilst Finisher 2 takes 4 cycles. This creates a manufacturing bottleneck that induces the need for more resistant robot behavior.</p>
+<p>We ask the robots to check their destination against a list of options. They then move towards their destination. When they arrive they drop off supply to that machine. If the machine where the robot arrives has some product (it processes some supply), we pick it up and set our destination to the next machine.</p>
+<p>The robots return to the robot room when they run low on power. There, they recharge at a rate of 5 units per tick.</p>
+<p>Every so often, a new order comes in which sends materials to the loading dock, either lux, or standard. This creates a supply side bottleneck in the manufacturing. Occasionally there is a shift change. With a 3% probability (a random percentage), if the loading dock is low on supplies, we add between 1 and 10 new supplies. We also create orders on 3% of ticks. This is used for routing orders to the Finishers.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP and then GO. Examine the graphs, and watch the robots move through the factory.</p>
+<p>The MAKE-TRAILS? switch asks Robots to trace their routes on the ground so we can inspect how they travel.</p>
+<p>SHOW-AGENT-NAME? shows names of the different agents in the View.</p>
+<p>The NUMBER-OF-ROBOTS slider sets how many robots are in the factory at the start.</p>
+<p>The FULL-CHARGE slider sets what a full battery is in the model. The higher the value the longer robots go between charges, but also, the longer it takes them to charge up.</p>
+<p>Sometimes, to keep a factory moving, a robot needs to go just when needed, even if not fully charged. The JUST-IN-TIME-ROBOT-SUPPLY sets the amount of energy a robot needs to have at the charging station to be selected to meet critical factory needs. The lower it is, the more robots will be available to meet the needs, but they also won't last very long due to their low charge. Tweak this to balance the factory.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Even though the robots move to semi-random locations after charging, and there is no central controller tracking all the robots locations/allocating orders, the robots do a good job of moving the process through the system with internal bottlenecks.</p>
+<p>Note how the external factor of the delivery of new material can slow or stop production.</p>
+<p>Also notice the percent of time idle. Note when this goes up or down across various bottlenecks or model parameters.</p>
+<h2>THINGS TO TRY</h2>
+<p>Does increasing the number of robots increase or decrease idleness?</p>
+<p>Can you think of a way to reduce idleness in the factory?</p>
+<p>Try changing the JUST-IN-TIME-ROBOT-SUPPLY slider up and down. How does it impact the idleness graph?</p>
+<p>Try setting the FULL-CHARGE to the max. How does it impact the idleness graph?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Does reorganizing the machines change idleness? How else could you improve efficiency? Improve resilience? What happens if one of the machines occasionally breaks? For instance:</p>
+<p>Implement shifts, so that robots recharge at two different times.</p>
+<p>Make delivery of new sheets more random, to simulate extreme supply shortages.</p>
+<p>Right now there is a production bottleneck at the finishers. Add additional bottlenecks in the machine processing.</p>
+<p>Right now, robots have to go back to the charging room to recharge. Try adding recharging robots that can bring the charge to the worker robots.</p>
+<p>The machines are in a particular arrangement, optimize for idleness or productivity by rearranging the machines.</p>
+<p>Currently, robots can always make it back to the robot room to recharge, because they can go into negative energy. This may not be the most realistic model. Change the model so that robots can get stranded if they do not leave for the robot room in time by editing the return-home function.</p>
+<p>Python: right now, the robots don't learn, which makes them like a conveyor belt. Using the python extension, implement some learning into the model.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The variadic ifelse statement is used to implement the state machine (variadic means it can take a variable number of arguments, in this case, multiple conditionals). This makes the model a good demonstration of the procedure.</p>
+<h2>RELATED MODELS</h2>
+<p>This model builds on Ant Adaptation (Martin &amp; Wilensky, 2019), which is based on Hölldobler and Wilson's The Ants (1990).</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Hölldobler, B., &amp; Wilson, E. O. (1990). The Ants. Belknap (Harvard University Press), Cambridge, MA.</p>
+<p>Chi, M. T. H., Roscoe, R. D., Slotta, J. D., Roy, M., &amp; Chase, C. C. (2012). Misconceived causal explanations for emergent processes. Cognitive Science, 36(1), 1-61. doi:doi:10.1111/j.1551-6709.2011.01207</p>
+<p>Wilensky , U., &amp; Resnick, M. (1999). Thinking in levels: A dynamic systems approach to making sense of the world. Journal of Science Education and Technology, 8(1), 3-19.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Martin, K. and Wilensky, U. (2021).  NetLogo Robotic Factory model.  http://ccl.northwestern.edu/netlogo/models/RoboticFactory.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2021 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2021 Cite: Martin, K. --></div>
+      </div>
+    </main>
+  </body>
+</html>

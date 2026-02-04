@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ask-Concurrent Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Ask-Concurrent Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Ask-Concurrent%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Ask-Concurrent Example.png" alt="Screenshot of Ask-Concurrent Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This example demonstrates the difference between the <code>ask</code> and <code>ask-concurrent</code> commands.</p>
+<p>Note: using <code>ask-concurrent</code> is not recommended. It is only there for backward compatibility.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to make some turtles.</p>
+<p>Then press either of the two buttons that ask the turtles to go forward 5 steps.  (Don't leave them both pressed at once.)</p>
+<p>At the normal speed, the turtles may move so fast you won't see how the buttons are different.  If needed, use the speed slider to slow down the model until you can watch the turtles move one at a time.</p>
+<p>The GO button uses <code>ask-concurrent</code> in a slightly more elaborate way.  It shows turtles acting currently even though each turtle is running a <code>while</code> loop, not just a simple <code>fd</code> command.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>How do the turtles move with <code>ask turtles [ fd 5 ]</code> ?</p>
+<p>How do they move with <code>ask-concurrent</code> instead of <code>ask</code>?</p>
+<p>For details on <code>ask-concurrent</code>, read the Ask-Concurrent section of the Programming Guide in the NetLogo User Manual.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The view update mode is set to "continuous" so you can see the agents move one at a time by moving the slider towards "slower".</p>
+<!-- 2007 --></div>
+      </div>
+    </main>
+  </body>
+</html>

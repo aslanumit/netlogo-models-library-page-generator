@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Look Ahead Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Look Ahead Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Look%20Ahead%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Look Ahead Example.png" alt="Screenshot of Look Ahead Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This code example shows how to have turtles look ahead before they move.  By looking ahead, a turtle can determine what is in front of it and take a particular action.  Looking ahead is most appropriate in situations where the turtle is not supposed to go "on top of" certain agents.  This can be extremely useful for something like barriers or walls, which the turtle shouldn't move through.</p>
+<p>In this example, four turtles are placed in a world with a checkerboard-like pattern of blue barriers on which they are not allowed to step.  Before the turtles step forward they always check ahead to see if they are about to move into a wall using the patch-ahead primitives.  <code>patch-ahead n</code> reports the patch that the turtle would be on if it were to move forward <code>n</code> steps (e.g., by executing <code>fd n</code>). In this example, we want turtles to always move one step at a time, so we always use <code>patch-ahead 1</code>.</p>
+<p>In addition to simulating barriers, this technique can also be used to test whether a turtle is near something important, such as food or another turtle.</p>
+<p>Note that the code in this model only prevents the turtle from landing on a blue patch. It doesn't prevent the turtle from:</p>
+<ul>
+<li>following a path which crosses a blue patch</li>
+<li>visually touching a blue patch</li>
+</ul>
+<p>The turtles may cross a blue patch because in NetLogo the <code>fd 1</code> command is equivalent to <code>jump 1</code> -- in other words, the turtle simply disappears from its old location and reappears in its new location, rather than moving continuously.  You could add more code to the model to ensure that the turtle's path never crossed a blue patch, but the math for that gets a bit complicated.</p>
+<p>The turtles may visually touch a blue patch because to NetLogo, the turtles are really just their center points.  We represent the turtle visually with a certain size and shape, but to NetLogo, the turtle is a point with no extent, and that point is always on one and only one patch.  Again, you could add "collision detection" code to the model to ensure that the center point never came within a certain distance of any patch, but the math for that would get complicated.  This kind of "collision detection" is not built in to NetLogo.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Next Patch Example</li>
+<li>One Turtle Per Patch Example</li>
+</ul>
+<p>To see this in use in real models see Ants, Slime, Gas Chromatography, Simple Kinetics, GasLab and Connected Chemistry models, various games, and Wealth Distribution.</p>
+<!-- 2004 --></div>
+      </div>
+    </main>
+  </body>
+</html>

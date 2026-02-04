@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Current in a Semiconductor</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Current in a Semiconductor</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Materials%20Science/Current%20in%20a%20Semiconductor.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Materials Science/Current in a Semiconductor.png" alt="Screenshot of Current in a Semiconductor" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model shows a simplified microscopic process of electrical conduction inside of a semiconductor connected across a voltage. The model is based on an adaptation of Drude's free electron theory to semiconductors and shows how electrical current emerges from the collective movement of many electrons and holes (missing electrons from bonds) in a semiconductor.</p>
+<p>The model also shows how the current depends on the number of available charge carriers. The number of "extrinsic" charge carriers is determined by "doping," adding impurities to the semiconductor that have either extra or fewer valence electrons than the main semiconducting element. The number of "intrinsic" charge carriers is determined by temperature. The higher the temperature is, the more likely it is for an electron to be excited into the conduction band, resulting in two charge carriers: a free electron and hole left behind in the valence band.</p>
+<p>Furthermore, the model shows how current depends on the scattering probability of charge carriers, the probability of electrons and holes recombining when they encounter one another and, of course, the applied voltage.</p>
+<h2>HOW IT WORKS</h2>
+<h3>General overview</h3>
+<p>The model is basically a molecular dynamics simulation of electrons and holes moving freely under the influence of an externally applied voltage. Charge carriers only respond to the external voltage. All charge carrier interactions are ignored except that electrons and holes have a probability of recombining (and therefore annihilating) when they meet. The <strong>current</strong> monitor shows the average current with the currently set parameters of band-gap, voltage, and temperature. If any of these are changed, the current resets. So, you can adjust these parameters in the middle of a simulation to see what happens. The <strong>current vs time</strong> plot shows how current changes with time and the <strong># holes and free electrons</strong> plots shows how the number of holes and free electrons change over time.</p>
+<h3>The specific steps the model follows</h3>
+<p>The steps for each time step in the model are:</p>
+<ol>
+<li><strong>generate electron-hole pairs</strong>: Each patch generates an electron-hole pair with probability based on the band-gap and temperature according to exp(- band-gap / temperature).</li>
+<li><strong>charge carriers calculate force and velocity</strong>: all the charge carriers calculate the force they feel. In this model that is simply due to the applied voltage. Then they calculate their new velocity by updating based on the force they feel.</li>
+<li><strong>charge carriers move</strong>: all charge carriers have a probability of scattering. This resets their velocity to random direction with speed based on temperature. Then all charge carriers move based on their current velocity. If a charge-carrier crosses the left or right boundary, it updates the <em>charge-flow</em> variable for calculating current. In this model, another charge carrier re-enters the system on the other side to retain charge-balance.</li>
+<li><strong>electrons and holes annihilate</strong>: Any electrons and holes on the same patch annihilate each other.</li>
+</ol>
+<h2>HOW TO USE IT</h2>
+<h3>Running the Model</h3>
+<p>Press the <strong>setup</strong> button to initialize the model. Then press <strong>go</strong> to watch it run.</p>
+<h3>What each element of the interface does.</h3>
+<p>The <strong>doping</strong> slider determines how many extrinsic charge carriers there are. A positive doping means there are excess holes. This corresponds to doping the semiconductor (e.g. Si) with an element with fewer valence electrons (e.g. Ga). A negative doping means there are excess electrons. This corresponds to doping the semiconductor with an element with more valence electrons (e.g. Sb). <em>Note</em>: this must be set prior to clicking the setup button.</p>
+<p>The <strong>temperature</strong> slider sets the temperature (in arbitrary units). Temperature affects the initial speed of charge carriers and their speed after a scattering event. It also determines how likely it is for an intrinsic electron-hole pair to form.</p>
+<p>The <strong>band-gap</strong> slider determines the band-gap between the valence and conduction bands for the semi-conductor. In the model, this determines how easy it is for an electron-hole pair to form.</p>
+<p>The <strong>scatter-prob</strong> monitor displays the probability of each charge carrier scattering. It is determined by temperature.</p>
+<p>The <strong>voltage</strong> slider determines the voltage applied across the semiconductor. Positive is defined left to right (positive charges will be pushed to the right if the voltage is positive).</p>
+<p>The <strong>watch an electron</strong> and <strong>watch a hole</strong> buttons highlight a single charge carrier (chosen randomly) of that type and traces its trajectory. The <strong>stop watching</strong> button resets the perspective and erases any drawn trajectories.</p>
+<p>The <strong>visualize-pair-generation?</strong> determines whether electron-hole pairs are visualized when they are generating by creating a temperorary link between them.</p>
+<p>The <strong>restore-initial-settings</strong> button resets all the parameters to defaults.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Watch some electrons and holes and see that they move in opposite directions. This is because they have opposite charges. An electron has negative charge and hole has positive charge.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try using the "watch an electron" and "watch a hole" buttons under different conditions. If the charge carrier annihilates, the "watching" will automatically stop. If most charge carriers annihilate before reaching the end of the circuit, why is current still produced?</p>
+<p>Try changing each of the sliders and seeing how it affects the number of holes and free electrons and the current.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>In reality, holes move more slowly than electrons. This can be modeled by giving them a larger mass than electrons. Currently, the model assumes mass = 1 for both types of charge carriers. Try giving the charge carriers different masses (you will need to change the <code>accelerate-and-scatter</code> procedure).</p>
+<p>In real semiconductors, even extrinisic charge carriers need a little bit of energy to dissociate from their host atoms. At very low temperatures, they don't have enough energy to escape the attraction to their host atom and "freeze out" occurs, i.e., the material stops conducting. Try extending the model so that "freeze out" can happen in this model.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses a <code>charge-carriers</code> reporter which uses the <code>turtle-set</code> primitive to construct a set of both electrons and holes so they can be asked to do things together.</p>
+<p>The # free electrons and # holes monitors have notes placed in their upper right corners with the unicode black square character ■ (U+25A0) colored to match the lines in the plot instead of using the legend on the plot.</p>
+<h2>RELATED MODELS</h2>
+<p>Current in a Wire</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Kelter, J. and Wilensky, U. (2023).  NetLogo Current in a Semiconductor model.  http://ccl.northwestern.edu/netlogo/models/CurrentinaSemiconductor.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2023 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2023 Cite: Kelter, J. --></div>
+      </div>
+    </main>
+  </body>
+</html>

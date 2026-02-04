@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bug Hunt Coevolution</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Bug Hunt Coevolution</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/BEAGLE%20Evolution/Bug%20Hunt%20Coevolution.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/BEAGLE Evolution/Bug Hunt Coevolution.png" alt="Screenshot of Bug Hunt Coevolution" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a natural/artificial selection model that shows the interrelationship between natural selection forces in predator and prey that results from coevolution.</p>
+<p>The model shows how genetic variability affects evolutionary processes and outcomes for the speed and sight of predators and prey.  The model demonstrates many different series of reciprocal changes between a predator (birds) and prey (bugs) which each act as an agent of natural selection for each other, particularly related to the successive adaptation of the bird for pursuing its prey and the bugs for fleeing its prey.</p>
+<p>By also adjusting the 1) initial values for speed and vision in predators (birds) and prey (bugs) and the size and shape of the world 2) the rate at which offspring in the population of birds and bugs incur mutations in genetics, various evolutionary outcomes will emerge from the coevolution of the birds and bugs (slow moving bugs vs. fast moving bugs, optimally sighted bugs, etc...).</p>
+<h2>HOW IT WORKS</h2>
+<p>Predator (bird) and prey (bug) populations coevolve as the selective pressures they exert on one another favor different attributes in vision and speed over time.</p>
+<p>Press SETUP to create a population of bugs, determined by the six times the INITIAL-BUGS-EACH-SPEED slider.  The bugs that are created are randomly distributed around the world and assigned a speed.</p>
+<p>When you press GO the bugs begin to move at their designated speeds.  As they move around any birds on the screen will try to eat as many bugs as they can by running into them.</p>
+<p>The six different speeds that a bug might move at are distributed amongst six different sub-populations of the bugs.  These speeds are genetically inherited.  The bugs also have a sight value.  This sight value is the distance within which the bug can see birds in their cone of vision (120 degrees arc) AND for which they respond to the presence of the bird, by turning around to head in the opposite direction.  These vision values are genetically inherited.  With each bug eaten (by a bird), a new bug is randomly chosen from the population to reproduce one offspring.  This bug's new speed is copied from the parent and then randomly changed up or down by a small amount (determined by the BUG-SPEED-MUTATION slider) and the bug's new vision is copied from the parent and then randomly changed up or down by a small amount (determined by the BUG-VISION-MUTATION slider). The creation of this new offspring keeps the overall population of the bugs constant.</p>
+<p>The number of birds that are in the world is determined by the INITIAL-BIRDS slider.  The birds have an initial speed (INITIAL-BIRD-SPEED) and initial vision (INITIAL-BIRD-VISION) values.  The birds respond to bugs in their vision cone by turning toward the bug they select using the specified BUG-PURSUIT-STRATEGY.  The speed and vision of the birds, like the bugs, is genetically inherited.  Variation is offspring speed and vision is controlled by BIRD-SPEED-MUTATION and BIRD-VISION-MUTATION.  An update to the bird population occurs after a fixed number of bugs is eaten by the total population.  At this point the bird who has eaten the least number of bugs since the last bird population update is removed (representing death from starvation), and a new bird is copied from an existing individual in the population (representing a new birth).  The creation of this new offspring keeps the overall population of the birds constant.</p>
+<p>Initially there are equal numbers of each sub-population of bug (e.g. ten bugs at each of the 6 speeds).  This is the only inherited attribute that has a distribution of different values.  The other attributes (vision for bugs and birds, and speed for birds) has only a single starting value for all of the members of the population.</p>
+<p>Over time, however, as bugs are eaten and new bugs are born and birds die and new birds are born, the distribution of the vision and speed for both birds and bugs will change as shown in the histograms.  In some scenarios you might see the speed distribution move to the left, representing that more slow individuals are surviving.  In other scenarios you may see the vision histogram shift to the right, representing that more far sighted individuals are surviving.  In some scenarios you will see the histogram shift toward some intermediate value and then remain relatively stable with a maximum number of individuals having that value in the histogram.  Comparing the proportions of individuals with different values for vision and speed in the histograms to the average values of these attributes for the population, will help you make important links between how the population is evolving and how the individuals are being selected for or against, and how proportions of traits in the population are changing over time.</p>
+<p>In addition to the automated predators (the birds), you may also assume the role of an additional predator amongst a population of bugs.  To join in the pursuit of bugs as another bird simply use your mouse in the WORLD &amp; VIEW to click on bugs and eat them as they move.  As they move around, try to eat as many bugs as fast as you can by clicking on them.  Alternatively, you may hold the mouse button down and move the mouse pointer over the bugs.</p>
+<h2>HOW TO USE IT</h2>
+<p>INITIAL-BUGS-EACH-SPEED is the number of bugs you start with in each of the six sub-populations.  The overall population of bugs is determined by multiplying this value by 6.</p>
+<p>INITIAL-BIRDS is the number of birds that you start with.</p>
+<p>INITIAL-BIRD-SPEED is the speed that each bird starts with.</p>
+<p>INITIAL-BIRD-VISION and INITIAL-BUG-VISION is the radius the vision cones that the birds and bugs initially start with.</p>
+<p>BIRD-VISION-MUTATION, BIRD-SPEED-MUTATION, BUG-VISION-MUTATION, BUG-SPEED-MUTATION are each sliders that control the amount of maximum possible random mutation (up or down) in the value of the speed or vision that occur in the offspring.</p>
+<p>SHOW-VISION-CONE? switch helps you visualize the vision detection and response cone of the birds and bugs.</p>
+<p>BUG-FLEE-STRATEGY sets which predator the bug will turn away from - "nearest" or "any".
+BIRD-PURSUIT-STRATEGY sets which bug the bird will turn toward - "nearest" or "lock on one" (which means the bird keeps following the same bug until it is either outside its vision cone or it catches it.  "None" will cause the bugs or birds not react at all to nearby prey or predators.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The SPEED-OF-BUGS histogram tends to shift right if you assume the role of chasing easy prey and the average speed of the bugs increases over time.</p>
+<p>The SPEED-OF-BUGS histogram tends to shift left if you assume the role of waiting for prey come to you and the average speed of the bugs decreases over time.  (The same effect is achieved with moving the mouse around the view randomly)</p>
+<h2>THINGS TO TRY</h2>
+<p>Set the model up with INITIAL-BUGS-EACH-SPEED set to one and INITIAL-BIRDS to 0.  Slow the model down and watch where new bugs come from when you eat (by clicking the mouse on) a bug.  You should see a new bug hatch from one of the five remaining and it should be moving at the same speed as its parent.</p>
+<p>Chase bugs around trying to catch the bug nearest you at any one time by holding the mouse button down and moving the cursor around the view after the nearest bug.</p>
+<p>Try using the model with just you as the predator and INITIAL-BIRDS set to 0.  Watch how the bugs evolve over time in response to just you as a predator.</p>
+<p>Then, watch how the bugs evolve in response to automated birds.</p>
+<p>In each of these scenarios, use the "follow nearest" strategy setting in the choosers unless specified and set INITIAL-BIRDS to 10.</p>
+<p>If you start with stationary birds (INITIAL-BIRD-SPEED 0) and the BIRD-SPEED-MUTATION slider to 0 and do not permit bug sight to evolve (BUG-VISION-MUTATION 0), but all other mutation sliders to .5 you will notice that over time that the bugs will evolve into very slow movers and bird sight will not change in a preferred direction.</p>
+<p>If you start with moving birds (e.g. INITIAL-BIRD-SPEED 2) and no-sight birds and bugs (INITIAL-BUG-VISION 0 and INITIAL-BIRD-VISION 0), and do not permit bug sight to evolve (BUG-VISION-MUTATION 0) notice that the again, evolve into very slow movers at first, and then a bit later far seeing birds evolve.</p>
+<p>If you start with moving birds and bugs with no sight, but allow the sights of both to mutate (but not speed), both birds and bugs will co-evolve their sight to a higher mid-level optimal value for sight in bugs and maximum sight in birds.</p>
+<p>If you fix the vision of birds and bugs to 2 and also start with fast birds (10), the spread between the speed of bird and bugs will result in rapid evolution to slow moving bugs and then prevent any further evolution of speed OR vision of the bugs to higher levels.</p>
+<p>If you fix the vision of birds and bugs to 2 and the start with a bird speed of 4 , but allow both bug and bird speed to evolve, this will result in coevolution toward maximum speed for both.</p>
+<p>If you fix the vision fix the vision of both birds and bugs to 2 and start with a bird speed of 4 and allow everything to evolve, you will get speed co-evolution toward maximum, a short term evolution of short-sighted bugs at first, and then a turn around in direction of evolution toward a higher optimal mid-level of sight.</p>
+<p>If you change the strategy of the predator to "lock-on-one" and repeat the previous experiment, the vision of the bugs evolves to a different optimal mid-level of sight than before (lower in value e.g. 3.5 vs. 5).  There will be a slower response in the speed maximization of birds and bugs, and little selective pressure on the vision of the birds (can be a wide range of values).</p>
+<p>If you repeat the last scenario but change the size and shape of the world, (e.g. a narrow rectangle), you will get a different optimal level for bug and bird sight.  And you may get some other emergent behavior in the overall population of the bugs.  For example world dimension of 4 x 16 will yield very low vision bugs and high vision birds and the emergence of a type of "herding" or "flocking" pattern in the population of bugs.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Include inheritance of bugs' and predators' avoidance and pursuit strategies.</p>
+<p>Include a primary producer (plants) that bugs need to eat to survive.  Include energy as a way to model when bugs and predators die or reproduce (see WOLF SHEEP PREDATION model in models library).  Give the plants reproducible characteristics.</p>
+<p>Include territory boundaries to create geographically isolated sections of the world (like islands and mountain ranges) to see if subpopulations evolve in each region (see GENE DRIFT T INTERACT models in the models library).</p>
+<h2>RELATED MODELS</h2>
+<p>All BEAGLE Evolution models.  In particular:  Bug Hunt Speeds, Bug Hunt Camouflage, Wolf Sheep Predation, and GENE DRIFT T INTERACT</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the BEAGLE curriculum (http://ccl.northwestern.edu/rp/beagle/index.shtml)</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2007).  NetLogo Bug Hunt Coevolution model.  http://ccl.northwestern.edu/netlogo/models/BugHuntCoevolution.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

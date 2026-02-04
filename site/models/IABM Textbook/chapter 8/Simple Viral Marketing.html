@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Viral Marketing</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Simple Viral Marketing</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/IABM%20Textbook/chapter%208/Simple%20Viral%20Marketing.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/IABM Textbook/chapter 8/Simple Viral Marketing.png" alt="Screenshot of Simple Viral Marketing" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is from Chapter Eight of the book "Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo", by Uri Wilensky &amp; William Rand.</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<p>This model is in the IABM Textbook folder of the NetLogo Models Library. The model, as well as any updates to the model, can also be found on the textbook website: http://www.intro-to-abm.com/.</p>
+<h2>WHAT IS IT?</h2>
+<p>This model is a simple experiment that allows researchers to examine how to best seed a network to maximize the adoption rate of a product by using viral marketing.</p>
+<p>Its purpose is to allow you to explore the relationship between different centrality measures, and different network types, and see if the interactions between them make for faster or slower spread of the product.</p>
+<h2>HOW IT WORKS</h2>
+<p>When the model is set up, 500 turtles are created and connected in a network of the type selected (preferential attachment or a random network). A number of turtles are seeded with the product at time 0. At each tick, each turtle has a small chance of adopting the product on their own (1%), and a larger chance of adopting the product if any of their friends have adopted the product (0.5 * the ratio of neighbors who have adopted to the number of all neighbors).</p>
+<p>The model stops when the whole market is saturated.</p>
+<h2>HOW TO USE IT</h2>
+<p>Start by selecting a type of network. Then choose how many turtles are initially seeded and by what centrality measure these turtles are selected.</p>
+<p>When you click SETUP, the network will be generated, and when you click GO, nodes will start infecting their neighbors.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try to set up different kinds of networks, and select the initially seeded turtles by different centrality measures. Are there particular measures that might result in a faster spread in particular types of networks, but not in others? Why do you think that is?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The model was inspired by the Local Viral Marketing Problem (Stonedahl, Rand &amp; Wilensky 2010) of an adoption network. Currently the model simply measures how fast a virus spreads on a network, but does not take into account how fast it is spread to each individual node which is one way to calculate the net present value (NPV) of a strategy. If the model were to fully implement the NPV of a model, the value of each infected node would depend on at what time it was infected.</p>
+<p>Further, the model currently allows for only two different network types and four centrality measures. These could be extended as well.</p>
+<p>Finally, the model only allows users to choose one centrality measure by which to initially infect turtles. Ideally it would be possible to set a number of infected turtles, and choose proportions of centrality measures to infect these turtles.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Stonedahl, Forrest, William Rand, and Uri Wilensky (2010), "Evolving Viral Marketing Strategies," Genetic and Evolutionary Computation Conference (GECCO), July 7-11, Portland, OR, USA</p>
+<p>Rand, William M. and Rust, Roland T., Agent-Based Modeling in Marketing: Guidelines for Rigor (June 10, 2011). International Journal of Research in Marketing, 2011; Robert H. Smith School Research Paper No. RHS 06-132. Available at SSRN: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1818543</p>
+<p>This model is a simplified model based on another model by Arthur Hjorth (arthur.hjorth@u.northwestern.edu).</p>
+<h2>HOW TO CITE</h2>
+<p>This model is part of the textbook, “Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo.”</p>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Rand, W. &amp; Wilensky, U. (2012).  NetLogo Simple Viral Marketing model.  http://ccl.northwestern.edu/netlogo/models/SimpleViralMarketing.  Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the textbook as:</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2012 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2012 Cite: Rand, W. & Wilensky, U. --></div>
+      </div>
+    </main>
+  </body>
+</html>

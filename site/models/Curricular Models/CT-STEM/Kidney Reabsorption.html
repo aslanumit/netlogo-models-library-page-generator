@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kidney Reabsorption</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Kidney Reabsorption</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/CT-STEM/Kidney%20Reabsorption.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/CT-STEM/Kidney Reabsorption.png" alt="Screenshot of Kidney Reabsorption" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model of absorption of a solute and a solvent at the wall of a tube. It illustrates selective reabsorption that happens in the kidney which is a vital part of kidney function. Reabsorption is a process by which the nephron removes water and solutes from the tubular fluid (pre-urine) and returns them to the circulating blood. This model can be used to understand differential reabsorption that happens in the different parts of the nephron in a kidney, specifically in the [Loop of Henle] (https://en.wikipedia.org/wiki/Loop_of_Henle).</p>
+<p>The wall of the descending Loop of Henle has a high permeability to water making the chance of absorption of water high. The wall of the ascending Loop of Henle is impermeable to water but permeable to ions. Another important aspect of nephology that is modeled here is the dimensions of the tubes of a nephron (a functional unit of the kidney). An adult kidney has 1 to 1.5 million nephrons. Instead of having a small number of large nephrons, a kidney has a large number of small nephrons which significantly enhances its capacity to filter fluid. Users can change the diameter of the tube to investigate the effect of lumen size on the process of reabsorption.</p>
+<h2>HOW IT WORKS</h2>
+<p>The motion of each molecule (salt/water) is independent and random in the model. Note that this is restricted randomization meaning molecules start towards the top and follow a general downward trajectory. The black patches are the lumen and the brown patches denote the lumen wall. In the model if a molecule (water or salt) is at the wall, it gets absorbed based on the set CHANCE-OF-ABSORPTION. The chance of absorption can be set differently for water and salt. This allows users to model different parts of the Loop of Henle. The world (lumen) when resized, affects the probability of a molecule to come in proximity of the wall.</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>Adjust the slider parameters – NUMBER-OF-SALT-MOLECULES, CHANCE-OF-SALT-ABSORPTION, NUMBER-OF-WATER-MOLECULES, and CHANCE-OF-WATER-ABSORPTION.</li>
+<li>Adjust the DIAMETER-OF-TUBE.</li>
+<li>Press the SETUP button.</li>
+<li>Press the GO button to begin the model run.</li>
+<li>View the output of WATER MOLECULES ABSORBED, WATER MOLECULES UNABSORBED, SALT MOLECULES ABSORBED, and SALT MOLECULES UNABSORBED.</li>
+<li>View the trend of % ABSORBED of salt (grey) and water (blue) in the right panel.</li>
+</ol>
+<p>The NUMBER-OF-WATER-MOLECULES is the number of water molecules that have entered into the lumen of the nephron after passing through the glomerulus filtration. This normally depends on the consumption/production of the molecules and the body’s ability to retain it in the system.
+CHANCE-OF-WATER-ABSORPTION is the chance of a water molecule to get reabsorbed when it comes in contact with the lumen wall.
+WATER MOLECULES ABSORBED is the number of water molecules reabsorbed in the body through the exchange pumps so far.
+WATER MOLECULES UNABSORBED is the number of molecules not (yet) reabsorbed in the body and will eventually be discarded out as urine.
+SALT MOLECULES ABSORBED is the number of salt molecules reabsorbed in the body through the exchange pumps. Note, there are specific pumps for each ion which work on concentration gradients for the exchange. However, those are not modeled here.
+SALT MOLECULES UNABSORBED is the number of molecules not (yet) reabsorbed in the body and will eventually be discarded out as urine.
+DIAMETER-OF-TUBE is the diameter of the lumen of a section of a nephron.
+PERCENTAGE ABSORPTION is the percentage of salt/water molecules absorbed with reference to the total intake.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The number of absorbed and unabsorbed molecules (salt/water) will tend to change every time you run the model even with the same values for the number of molecules (salt/water), chances of absorption (salt/water), and diameter of the tube. This is because the chances of a molecule (salt/water) being received on a pump will depend on its probability of coming in the proximity of the pump (brown patch) and the concentration gradient.</p>
+<p>The motion of each molecule is independent and random.</p>
+<h2>THINGS TO TRY</h2>
+<p>Compare how changing the CHANCE-OF-ABSORPTION (salt/water) has an effect on the MOLECULES ABSORBED (salt/water) and MOLECULES UNABSORBED (salt/water) for the same value of NUMBER-OF MOLECULES (salt/water). Is there any difference between water and salt molecules when you start with the exact same values?</p>
+<p>How can you set the values of the parameters such that you are modeling the reabsorption behavior of the descending or the ascending Loop of Henle?</p>
+<p>Try changing the DIAMETER-OF-TUBE. How do the numbers of molecules absorbed change?</p>
+<p>What do you infer from the observed graphical values? Are there any correlation trends?</p>
+<h2>CURRICULAR USE</h2>
+<p>This model was incorporated into the CT-STEM lesson, <a href="https://ct-stem.northwestern.edu/curriculum/preview/1012/">Excretory System: Reabsorption</a>, a lesson plan designed for a high school biology class. In the lesson, students experiment with a progression of three absorption models that gradually introduce more features. The three models are:</p>
+<ol>
+<li>
+<p><a href="https://ct-stem.northwestern.edu/curriculum/preview/1012/page/3/">A basic model of absorption</a> is used on Page 3.
+This basic model only asks students to vary the number of molecules and chance of absorption and observe the effect on molecules absorbed. This is intended to introduce students to model and allow them to understand the core mechanics of the system before introducing more elements to it.</p>
+</li>
+<li>
+<p><a href="https://ct-stem.northwestern.edu/curriculum/preview/1012/page/4/">A model of selective reabsorption</a> is used on Page 4.
+In this model, students can now observe two different molecules (water and salt) and modify their chance of absorption. Students are intended to change the parameters to model the reabsorption behavior of descending and ascending loops of Henle.</p>
+</li>
+<li>
+<p><a href="https://ct-stem.northwestern.edu/curriculum/preview/1012/page/5/">This model with variable lumen size</a> is used on Page 5
+This model is the closest to the Excretory Reabsorption model in the model library. It is the most complex model and has the most features. All features from previous models are kept but now students are also able to change the size of the tube and observe how this affects the number of absorbed molecules.</p>
+</li>
+</ol>
+<h2>EXTENDING THE MODEL</h2>
+<p>How can you extend the model to incorporate reabsorption of other solutes such as glucose or amino acids that happen in the other parts of the kidney? Can you make vertical parts of the tube such that different parts have different reabsorption properties?</p>
+<p>Can you think of a possible parameter about the lumen other than the diameter that when changed, can affect the working of this model?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses the NetLogo's RESIZE-WORLD method to change the lumen width for the corresponding patch grid.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Take a look at the first two models in the related CT-STEM unit (see the CURRICULAR USE section)</li>
+<li>For another model that simulates falling particles, check out the DLA Alternate Linear model in the Models Library</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is designed for the Excretion unit for class XI CBSE or Freshmen Biology.</p>
+<p>Reference books used: “All in One Biology” for CBSE Class XI.</p>
+<p>For more information about the countercurrent exchange for Urine formation:</p>
+<ul>
+<li>Bruce M. Koeppen MD, Ph.D., Bruce A. Stanton Ph.D., in Renal Physiology (Fifth Edition), 2013.</li>
+<li>https://www.khanacademy.org/test-prep/mcat/organ-systems/the-renal-system/a/renal-physiology-counter-current-multiplication</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Dabholkar, S. and Wilensky, U. (2020).  NetLogo Kidney Reabsorption model.  http://ccl.northwestern.edu/netlogo/models/KidneyReabsorption.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>This model was developed as part of the CT-STEM Project at Northwestern University and was made possible through generous support from the National Science Foundation (grants CNS-1138461, CNS-1441041, DRL-1020101, DRL-1640201 and DRL-1842374) and the Spencer Foundation (Award #201600069). Any opinions, findings, or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the funding organizations. For more information visit https://ct-stem.northwestern.edu/.</p>
+<p>Special thanks to the CT-STEM models team for preparing these models for inclusion
+in the Models Library including: Kelvin Lao, Jamie Lee, Sugat Dabholkar, Sally Wu,
+and Connor Bain.</p>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2020 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2020 CTSTEM Cite: Dabholkar, S. --></div>
+      </div>
+    </main>
+  </body>
+</html>

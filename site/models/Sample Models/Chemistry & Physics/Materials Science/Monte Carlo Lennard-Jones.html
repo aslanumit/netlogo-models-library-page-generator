@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Monte Carlo Lennard-Jones</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Monte Carlo Lennard-Jones</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Materials%20Science/Monte%20Carlo%20Lennard-Jones.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Materials Science/Monte Carlo Lennard-Jones.png" alt="Screenshot of Monte Carlo Lennard-Jones" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Matter usually exists in one of three phases: solid, liquid or gas. We often think of matter as a continuous bulk substance that mysteriously changes between these phases as temperature changes (and as pressure changes). We all know that when you heat up ice, it turns to water, and when you heat water further it turns to vapor. But why does this happen? To answer this question we must go down to the atomic level, and examine how atoms interact.</p>
+<p>To emphasize how fundamental atomic theory is, Richard Feynman (one of the greatest physicists ever) offered a thought experiment. "If, in some cataclysm, all of scientific knowledge were to be destroyed, and only one sentence passed on to the next generation," he said he would pass on this sentence: <strong><em>"all things are made of atoms—little particles that move around in perpetual motion, attracting each other when they are a little distance apart, but repelling upon being squeezed into one another."</em></strong></p>
+<p>We will consider the interactions of neutral atoms. To model their interactions with one another we use a mathematical function proposed by Sir John Edward Lennard-Jones in 1924. This function captures the fact that atoms attract each other when they are a small distance apart and repel each other when they are very close together. By modeling many atoms behaving according to the Lennard-Jones potential, we can see how the bulk behavior of matter at different temperatures emerges from the interactions between discrete atoms. The details of the Lennard-Jones function are discussed in the next section.</p>
+<h2>HOW IT WORKS</h2>
+<p>There are two basic principles to keep in mind for this model:</p>
+<ol>
+<li>Each atom tries to minimize its energy. The energy of an atom depends solely on its distance from other atoms, and is computed via the Lennard-Jones potential.</li>
+<li>Atoms sustain thermal kicks which can increase their energy. Basically, the higher the temperature, the more likely an atom is to get "kicked uphill" into a higher energy position.</li>
+</ol>
+<p>These two principles are discussed briefly in the next two sections.</p>
+<p>In addition to the basic principles, it is important to understand the method used in this model. The model does not compute the exact force on each atom and move the atom precisely according to that force (that would a be a <em>Molecular Dynamics</em> simulation). Instead, the model uses what is called a <em>Monte Carlo</em> algorithm. Atoms move a random amount and then either accept or reject the move based on the both temperature and on how much the energy changed. This method provides results that are statistically the same as a molecular dynamics simulation, but the exact dynamics (i.e. exactly where atoms move from one tick to the next) will be different. The Monte Carlo method is advantageous because it is much faster to compute than exact molecular dynamics. There are also classes of problems which can only be approached with this type of statistical method.</p>
+<h3>The Lennard-Jones Potential (principle 1)</h3>
+<p>The Lennard-Jones potential tells you the energy of an atom, given its distance from another atom. To calculate the total energy of an atom, simply sum the Lennard-Jones potential from all the other atoms it is interacting with.</p>
+<p>The potential is: V=4ϵ[(σ/r)^12−(σ/r)^6]. Where V is the intermolecular potential between two atoms or molecules, ϵ is depth of the potential well, σ is the distance at which the potential is zero (visualized as the diameter of the atoms), and r is the center-to-center distance of separation between both particles. This is an approximation; the potential function of a real atom depends on its electronic structure and will differ somewhat from the Lennard-Jones potential.</p>
+<p>Atoms that are too close will be strongly pushed away from one another, and atoms that are far apart will be gently attracted. Make sure to check out the <strong>THINGS TO TRY</strong> section to explore the Lennard-Jones potential more in depth.</p>
+<h3>The Effect of Temperature (principle 2)</h3>
+<p>In addition to the Lennard-Jones potential, it is crucial to understand the effect of temperature. Even though each atom tries to minimize its energy, there is a chance that it will move to a higher energy position on each tick. The higher the temperature is, the more likely it is for an atom to move to a higher energy. The probability that an atom will stay in a new higher energy position is exp( -ΔV / T). Where ΔV is the change in energy from the old to the new position and T is the temperature. The greater ΔV is, the less likely the atom is to accept the higher energy position. The greater T is, the more likely the atom is to accept the higher energy position. Make sure to try graphing exp( -ΔV / T) as is suggested in the <strong>THINGS TO TRY</strong> section.</p>
+<p>Here is an analogy to explain why higher temperature makes an atom more likely to move to a higher energy state. Imagine a surface that has hills and valleys. Now you throw a ball onto the surface. It will roll around for a while and eventually settle into one of the valleys. The ball minimizes its potential energy by moving downhill. However, while the ball is rolling around, it might move uphill from one moment to the next even though this increases its potential energy. This is because it has kinetic energy that gets traded for potential energy as it moves uphill. Now imagine that instead of just throwing the ball onto the surface, you keep kicking it around. The faster you kick it, the more likely it is to move uphill, i.e. to accept a position with a higher potential energy. This is the same thing happening in our system. Another way of thinking of the temperature of the system is the average kinetic energy of the atoms. The greater the temperature, the more likely the atoms are to move "uphill" (accept a higher energy state).</p>
+<h3>The steps the model follows</h3>
+<p>The steps for each tick in the model are:</p>
+<ol>
+<li>Choose a random atom.</li>
+<li>Ask that atom to calculate its present energy. The atom does this by summing up the Lennard-Jones potentials with all the atoms within CUTOFF-DISTANCE of itself (in nature all atoms interact with all others, but beyond a certain distance the effect is so negligible we can ignore it).</li>
+<li>The atom then moves a random distance. It moves in both the x and y directions a distance less than or equal to its diameter.</li>
+<li>The atom calculates its energy in the new tentative position.</li>
+<li>Finally, the atom "decides" whether to stay in the new tentative position.
+5a) The atom compares its new tentative energy with the old energy. If the new energy is lower, it remains in the new position.
+5b) If the new energy is higher, it still may stay in the new position. The probability of staying in the new position, even if the new energy is higher, depends on the Temperature. The higher the Temperature, the more likely the atom is to accept a new, higher energy position.</li>
+<li>Repeat steps 1-5 N times. N is the number of atoms. This means that on average each atom attempts one move each tick, but on any given tick some atoms may attempt multiple moves, and some may not attempt any. This way each tick can be thought of as a single unit of time in which all atoms move. If only one atom moved per tick, it would take N ticks before a single time unit has passed.</li>
+</ol>
+<p>The <em>T</em> slider controls the temperature. The higher the temperature the more likely an atom is to maintain a new position that is actually a higher energy configuration.</p>
+<p>Note that the number of atoms is very small compared to most real systems. Also, most real systems are three-dimensional, while this model is 2D.</p>
+<p>To learn more about the Lennard-Jones potential see:</p>
+<ul>
+<li>http://chemwiki.ucdavis.edu/Physical_Chemistry/Physical_Properties_of_Matter/Atomic_and_Molecular_Properties/Intermolecular_Forces/Specific_Interactions/Lennard-Jones_Potential</li>
+<li>https://en.wikipedia.org/wiki/Lennard-Jones_potential</li>
+</ul>
+<h2>HOW TO USE IT</h2>
+<h3>1) Simulation starting point</h3>
+<p><strong>number of atoms</strong>: You can change the number of atoms by adjusting the <strong>num-atoms</strong> slider.</p>
+<p><strong>density</strong>: You can adjust the density by adjusting the <strong>density</strong> slider. This will not effect the number of atoms. It will change their size to change the density. Density is calculated as a number density (number per unit area) as opposed to area density (the summed area of all atoms per total area).</p>
+<p><strong>initial configuration</strong>: You can choose the initial configuration of the atoms. They can either start randomly distributed, or in a low energy hexagonally close packed (HCP) structure.</p>
+<h3>2) Run the model</h3>
+<p><strong>temperature</strong>: Set an initial temperature before running the model. You can change the temperature during the run as well. (note the units for temperature do not reflect units we are accustomed to in every day life).</p>
+<p>You can run the model one step at a time with the <strong>go once</strong> button. This will go through steps 1-6 above once. Or, you can have the model run continuously with the <strong>go</strong> button.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>At high temperatures the atoms move around the environment randomly. At low temperatures, the atoms cluster together, i.e. they solidify. Notice that they naturally form a hexagonally close packed structure (each atom wants to have 6 neighbors). This is not coded into the model anywhere. This is simply the lowest energy configuration due to the Lennard-Jones potential. Atoms tend towards it naturally as they try to minimize their energy.</p>
+<h2>THINGS TO TRY</h2>
+<h3>Things to try in the model</h3>
+<ol>
+<li>See if you can estimate the temperature ranges at which the atoms are a solid, liquid and gas. In a solid, the atoms will each have 6 neighbors and will move slowly. In a liquid atoms will also tend to have 6 neighbors, but not as evenly spaced, and they will move more quickly (liquid will be difficult to estimate in 2-D). In a gas, the atoms will move around randomly and will not keep neighbors for long! (Note that these temperatures are different than they would be in 3-D).</li>
+<li>Try starting the model in the two different configuration options. Then try moving the temperature up and down. See what happens. If you don't start with the HCP structure, are you ever able to get it by adjusting the temperature? Why or why not?</li>
+<li>Figure out what the lowest energy per particle state is. Why is the lowest energy per particle the value that it is?</li>
+<li>Trying running the model with very few atoms (on the order of 6-10) and then with a lot of atoms (several hundred). Does the temperature at which the atoms become a gas from a solid change depending on how many there are? Why or why not?</li>
+</ol>
+<h3>Things to try outside the model to explore the Lennard-Jones potential</h3>
+<ol>
+<li>Graph the Lennard-Jones potential V vs. r with different constant values of ϵ and σ. See how these constants change the shape of the potential. (probably do this outside of Netlogo).</li>
+<li>Try solving for the minimum energy distance in terms of σ. (if you need a hint on how to do this see the <strong>HINTS</strong> section at the bottom).</li>
+<li>Find the Lennard-Jones force from the potential. Graph the force along with the potential. Where does the force equal zero? (if you need a hint on how to do this see the <strong>HINTS</strong> section at the bottom).</li>
+<li>Try graphing the probability that an atom will accept a position with higher energy as a function of the energy change: P = exp( -ΔV / T). See how changing T changes the probability distribution.</li>
+</ol>
+<h2>EXTENDING THE MODEL</h2>
+<ol>
+<li>Add a slider to vary the potential well depth EPS (ϵ). See how the temperature ranges at which the atoms are stable as a solid changes as you vary EPS.</li>
+<li>Try adding a second type of atom that has a different potential well depth (a different ϵ) when interacting with other atoms of its same type and with atoms of the different type. (ϵ1q could be for type 1 atoms interacting with themselves, ϵ22 could be for type 2 atoms interacting with themselves, and ϵ12 could be for atoms of type 1 and 2 interacting with each other).</li>
+<li>Try adding sliders for ϵ11, ϵ22 and ϵ12. See what different types of behavior you can get by varying the potential well depths.</li>
+<li>Try making the different atom types be different sizes as well (different σ). There will need to be σ11, σ22 and σ12 (which is (σ11 + σ22) / 2).</li>
+</ol>
+<h2>HINTS</h2>
+<p>Hint on solving for the minimum energy: take the derivative of the Lennard-Jones potential and set it equal to zero.</p>
+<p>Hint on solving for the force: The force a particle experiences is the negative of the of the derivative of the potential (F = - dV/dr).</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Molecular Dynamics Lennard-Jones</li>
+<li>Membrane Formation</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Lennard-Jones, J. (1925). On the Forces between Atoms and Ions. Proceedings of the Royal Society of London. Series A, Containing Papers of a Mathematical and Physical Character, Vol. 109, No. 752 (Dec. 1, 1925), pp. 584-597.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Kelter, J., Luijten, E. and Wilensky, U. (2015).  NetLogo Monte Carlo Lennard-Jones model.  http://ccl.northwestern.edu/netlogo/models/MonteCarloLennard-Jones.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2015 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2015 Cite: Kelter, J., Luijten, E. --></div>
+      </div>
+    </main>
+  </body>
+</html>

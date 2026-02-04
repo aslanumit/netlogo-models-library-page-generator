@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prisoner&#x27;s Dilemma N-Person Iterated</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Prisoner&#x27;s Dilemma N-Person Iterated</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Prisoner&#x27;s%20Dilemma/Prisoner&#x27;s%20Dilemma%20N-Person%20Iterated.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Social Science/Prisoner&#x27;s Dilemma/Prisoner&#x27;s Dilemma N-Person Iterated.png" alt="Screenshot of Prisoner&#x27;s Dilemma N-Person Iterated" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is a multiplayer version of the iterated prisoner's dilemma. It is intended to explore the strategic implications that emerge when the world consists entirely of prisoner's dilemma like interactions. If you are unfamiliar with the basic concepts of the prisoner's dilemma or the iterated prisoner's dilemma, please refer to the PD BASIC and PD TWO PERSON ITERATED models found in the PRISONER'S DILEMMA suite.</p>
+<h2>HOW IT WORKS</h2>
+<p>The PD TWO PERSON ITERATED model demonstrates an interesting concept: When interacting with someone over time in a prisoner's dilemma scenario, it is possible to tune your strategy to do well with theirs. Each possible strategy has unique strengths and weaknesses that appear through the course of the game. For instance, always defect does best of any against the random strategy, but poorly against itself. Tit-for-tat does poorly with the random strategy, but well with itself.</p>
+<p>This makes it difficult to determine a single "best" strategy. One such approach to doing this is to create a world with multiple agents playing a variety of strategies in repeated prisoner's dilemma situations. This model does just that. The turtles with different strategies wander around randomly until they find another turtle to play with. (Note that each turtle remembers their last interaction with each other turtle. While some strategies don't make use of this information, other strategies do.)</p>
+<p>Payoffs</p>
+<p>When two turtles interact, they display their respective payoffs as labels.</p>
+<p>Each turtle's payoff for each round will determined as follows:</p>
+<pre><code class="language-text">             | Partner's Action
+  Turtle's   |
+   Action    |   C       D
+ ------------|-----------------
+       C     |   3       0
+ ------------|-----------------
+       D     |   5       1
+ ------------|-----------------
+  (C = Cooperate, D = Defect)
+</code></pre>
+<p>(Note: This way of determining payoff is the opposite of how it was done in the PD BASIC model. In PD BASIC, you were awarded something bad- jail time. In this model, something good is awarded- money.)</p>
+<h2>HOW TO USE IT</h2>
+<h3>Buttons</h3>
+<p>SETUP: Setup the world to begin playing the multi-person iterated prisoner's dilemma. The number of turtles and their strategies are determined by the slider values.</p>
+<p>GO: Have the turtles walk around the world and interact.</p>
+<p>GO ONCE: Same as GO except the turtles only take one step.</p>
+<h3>Sliders</h3>
+<p>N-STRATEGY: Multiple sliders exist with the prefix N- then a strategy name (e.g., n-cooperate). Each of these determines how many turtles will be created that use the STRATEGY. Strategy descriptions are found below:</p>
+<h3>Strategies</h3>
+<p>RANDOM - randomly cooperate or defect</p>
+<p>COOPERATE - always cooperate</p>
+<p>DEFECT - always defect</p>
+<p>TIT-FOR-TAT - If an opponent cooperates on this interaction cooperate on the next interaction with them. If an opponent defects on this interaction, defect on the next interaction with them. Initially cooperate.</p>
+<p>UNFORGIVING - Cooperate until an opponent defects once, then always defect in each interaction with them.</p>
+<p>UNKNOWN - This strategy is included to help you try your own strategies. It currently defaults to Tit-for-Tat.</p>
+<h3>Plots</h3>
+<p>AVERAGE-PAYOFF - The average payoff of each strategy in an interaction vs. the number of iterations. This is a good indicator of how well a strategy is doing relative to the maximum possible average of 5 points per interaction.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Set all the number of player for each strategy to be equal in distribution.  For which strategy does the average-payoff seem to be highest?  Do you think this strategy is always the best to use or will there be situations where other strategy will yield a higher average-payoff?</p>
+<p>Set the number of n-cooperate to be high, n-defects to be equivalent to that of n-cooperate, and all other players to be 0.  Which strategy will yield the higher average-payoff?</p>
+<p>Set the number of n-tit-for-tat to be high, n-defects to be equivalent to that of n-tit-for-tat, and all other playerst to be 0.  Which strategy will yield the higher average-payoff?  What do you notice about the average-payoff for tit-for-tat players and defect players as the iterations increase?  Why do you suppose this change occurs?</p>
+<p>Set the number n-tit-for-tat to be equal to the number of n-cooperate.  Set all other players to be 0.  Which strategy will yield the higher average-payoff?  Why do you suppose that one strategy will lead to higher or equal payoff?</p>
+<h2>THINGS TO TRY</h2>
+<ol>
+<li>
+<p>Observe the results of running the model with a variety of populations and population sizes. For example, can you get cooperate's average payoff to be higher than defect's? Can you get Tit-for-Tat's average payoff higher than cooperate's? What do these experiments suggest about an optimal strategy?</p>
+</li>
+<li>
+<p>Currently the UNKNOWN strategy defaults to TIT-FOR-TAT. Modify the UNKOWN and UNKNOWN-HISTORY-UPDATE procedures to execute a strategy of your own creation. Test it in a variety of populations.  Analyze its strengths and weaknesses. Keep trying to improve it.</p>
+</li>
+<li>
+<p>Relate your observations from this model to real life events. Where might you find yourself in a similar situation? How might the knowledge obtained from the model influence your actions in such a situation? Why?</p>
+</li>
+</ol>
+<h2>EXTENDING THE MODEL</h2>
+<p>Relative payoff table - Create a table which displays the average payoff of each strategy when interacting with each of the other strategies.</p>
+<p>Complex strategies using lists of lists - The strategies defined here are relatively simple, some would even say naive.  Create a strategy that uses the PARTNER-HISTORY variable to store a list of history information pertaining to past interactions with each turtle.</p>
+<p>Evolution - Create a version of this model that rewards successful strategies by allowing them to reproduce and punishes unsuccessful strategies by allowing them to die off.</p>
+<p>Noise - Add noise that changes the action perceived from a partner with some probability, causing misperception.</p>
+<p>Spatial Relations - Allow turtles to choose not to interact with a partner.  Allow turtles to choose to stay with a partner.</p>
+<p>Environmental resources - include an environmental (patch) resource and incorporate it into the interactions.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of the <code>to-report</code> keyword in the <code>calc-score</code> procedure to report a number.</p>
+<p>Note the use of lists and turtle ID's to keep a running history of interactions in the <code>partner-history</code> turtle variable.</p>
+<p>Note how agentsets that will be used repeatedly are stored when created and reused to increase speed.</p>
+<h2>RELATED MODELS</h2>
+<p>PD Basic, PD Two Person Iterated, PD Basic Evolutionary</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2002).  NetLogo Prisoner's Dilemma N-Person Iterated model.  http://ccl.northwestern.edu/netlogo/models/Prisoner'sDilemmaN-PersonIterated.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2002 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

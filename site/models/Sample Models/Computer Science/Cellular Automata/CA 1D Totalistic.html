@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CA 1D Totalistic</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>CA 1D Totalistic</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Computer%20Science/Cellular%20Automata/CA%201D%20Totalistic.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Computer Science/Cellular Automata/CA 1D Totalistic.png" alt="Screenshot of CA 1D Totalistic" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This program is a one-dimensional three-color totalistic cellular automata. In a totalistic CA, the value of the next cell state is determined by the sum of the current cell and its neighbors, not by the values of each individual neighbor. The model allows you to explore all 2,187 3-color totalistic configurations.</p>
+<p>This model is intended for the more sophisticated users who are already familiar with basic 1D CA's. If you are exploring CA for the first time, we suggest you first look at one of the simpler CA models such as CA 1D Rule 30.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each cell may have one of three colors with the value 0, 1, or 2.  The next state of a cell is determined by taking the sum value of the center, right, and left cell, yielding seven possible sums, 0-6, represented as the state-transition sliders sum-0 through sum-6.  Each of these seven possible states maps on to one of the 3 colors which can be set using the state-transition sliders.</p>
+<h2>HOW TO USE IT</h2>
+<p>SETUP SINGLE: Sets up a single color-two cell centered in the top row
+SETUP RANDOM: Sets up cells of random colors across the top row based on the following settings:
+- one-two-proportion: the proportion between color-one and color-two
+- density: what percentage of the top row should be filled randomly with color-one and color-two
+AUTO-CONTINUE?: Automatically continue the CA from the top once it reaches the bottom row
+GO: Run the CA.  If GO is clicked again after a run, the run continues from the top
+CODE: Decimal representation of the seven base three configurations of the totalistic CA
+SWITCHES: The rules for the CA.  Examples:
+- sum-0: all color-zero
+- sum-1: two color-zero and one color-one
+- sum-2: two color-one and one color-zero, OR two color-zero and one color-two
+- sum-6: all color-two
+COLORS: Set the three colors used in the CA</p>
+<h2>THINGS TO NOTICE</h2>
+<p>How does the complexity of the three-color totalistic CA differ from the two-color CA?  (see the CA 1D Elementary model)</p>
+<p>Do most configurations lead to constantly repeating patterns, nesting, or randomness? What does this tell you about the nature of complexity?</p>
+<h2>THINGS TO TRY</h2>
+<p>CAs often have a great deal of symmetry.  Can you find any rules that don't exhibit such qualities?  Why do you think that may be?</p>
+<p>Try starting different configurations under a set of initial random conditions.  How does this effect the behavior of the CA?</p>
+<p>How does the density of the initial random condition relate to the behavior of the CA?</p>
+<p>Does the proportion between the first and second color make a difference when starting from a random condition?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try having the CA use more than three colors.</p>
+<p>What if the CA didn't just look at its immediate neighbors, but also its second neighbors?</p>
+<p>Try making a two-dimensional cellular automaton.  The neighborhood could be the eight cells around it, or just the cardinal cells (the cells to the right, left, above, and below).</p>
+<h2>RELATED MODELS</h2>
+<p>Life - an example of a two-dimensional cellular automaton
+CA 1D Rule 30 - the basic rule 30 model
+CA 1D Rule 30 Turtle - the basic rule 30 model implemented using turtles
+CA 1D Rule 90 - the basic rule 90 model
+CA 1D Rule 250 - the basic rule 250 model
+CA 1D Elementary - a simple one-dimensional 2-state cellular automata model
+CA Continuous - a totalistic continuous-valued cellular automata with thousands of states</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Thanks to Eytan Bakshy for his help with this model.</p>
+<p>The first cellular automaton was conceived by John Von Neumann in the late 1940's for his analysis of machine reproduction under the suggestion of Stanislaw M. Ulam. It was later completed and documented by Arthur W. Burks in the 1960's. Other two-dimensional cellular automata, and particularly the game of "Life," were explored by John Conway in the 1970's. Many others have since researched CA's. In the late 1970's and 1980's Chris Langton, Tom Toffoli and Stephen Wolfram did some notable research. Wolfram classified all 256 one-dimensional two-state single-neighbor cellular automata. In his recent book, "A New Kind of Science," Wolfram presents many examples of cellular automata and argues for their fundamental importance in doing science.</p>
+<p>See also:</p>
+<p>Von Neumann, J. and Burks, A. W., Eds, 1966. Theory of Self-Reproducing Automata. University of Illinois Press, Champaign, IL.</p>
+<p>Toffoli, T. 1977. Computation and construction universality of reversible cellular automata. J. Comput. Syst. Sci. 15, 213-231.</p>
+<p>Langton, C. 1984. Self-reproduction in cellular automata. Physica D 10, 134-144</p>
+<p>Wolfram, S. 1986. Theory and Applications of Cellular Automata: Including Selected Papers 1983-1986. World Scientific Publishing Co., Inc., River Edge, NJ.</p>
+<p>Bar-Yam, Y. 1997. Dynamics of Complex Systems. Perseus Press. Reading, Ma.</p>
+<p>Wolfram, S. 2002. A New Kind of Science. Wolfram Media Inc.  Champaign, IL.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2002).  NetLogo CA 1D Totalistic model.  http://ccl.northwestern.edu/netlogo/models/CA1DTotalistic.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2002 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

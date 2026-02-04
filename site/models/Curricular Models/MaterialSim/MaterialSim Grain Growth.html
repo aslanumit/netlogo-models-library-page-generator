@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MaterialSim Grain Growth</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>MaterialSim Grain Growth</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/MaterialSim/MaterialSim%20Grain%20Growth.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/MaterialSim/MaterialSim Grain Growth.png" alt="Screenshot of MaterialSim Grain Growth" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Most materials are not continuous arrangements of atoms. Rather, they are composed of thousands or millions of microscopic crystals, known as grains.  This model shows how the configuration and sizes of these grains change over time.  Grain size is a very important characteristic for evaluating the mechanical properties of materials; it is exhaustively studied in metallurgy and materials science.</p>
+<p>Usually this kind of study is made by careful analysis and comparison of pictures taken in microscopes, sometimes with the help of image analysis software.  Recently, as the processing power of computers has increased, a new and promising approach has been made possible: computer simulation of grain growth.</p>
+<p>Anderson, Srolovitz et al. proposed the most widely known and employed theory for computer modeling and simulation of grain growth, using the Monte Carlo method. Instead of considering the grains as spheres, and being obliged to make numerous geometrical approximations, Anderson proposed that the computer would simulate the behavior of each individual atom in the system. Each atom would follow a very simple rule: it will always try to have, in its immediate neighborhood, as many atoms as possible with the same orientation as it. It will do so by randomly (hence Monte Carlo) re-orienting itself and seeing if it is more stable than it was before. If it is, it will stay in its new orientation, and if not, it will revert back to its previous orientation.</p>
+<p>This model is part of the MaterialSim (Blikstein &amp; Wilensky, 2004) curricular package. To learn more about MaterialSim, see http://ccl.northwestern.edu/rp/materialsim/index.shtml.</p>
+<h2>HOW IT WORKS</h2>
+<p>The basic algorithm of the simulation is simple: each atom continuously tries to be as stable as possible.  Its stability is based on the number of neighbors with similar orientations: the more similar neighbors, the more stable it is. If it has only few similar neighbors, it will try to relocate to a more stable position.  The steps for each tick in the model are:</p>
+<ol>
+<li>Choose a random atom.</li>
+<li>Ask that atom to calculate its present energy (based on its stability).  The atom does this by counting how many similar neighbors it has.</li>
+<li>The atom then chooses at random one of its neighbors, and orients itself in the same direction as that neighbor.</li>
+<li>The same atom then calculates its energy, based on this new, tentative orientation.</li>
+<li>Finally the atom compares the energy levels in each of the two states: the lowest value "wins", i.e., the more similar neighbors, the more stable the atom is.</li>
+<li>Repeat steps 1-6.</li>
+</ol>
+<p>The <strong>annealing-temperature</strong> slider controls the probability of maintaining a reorientation that yields less stability.  The <strong>percent-element2</strong> slider defines the percentage of second-phase particles to be created when the user setups the simulation.  Those particles are not movable and are not subject to grain growth. Atoms with element2-particles as neighbors will see them as dissimilar.</p>
+<p>Note that the actual number of atoms is small compared to a real metal sample.  Also, real materials are three-dimensional, while this model is 2D.</p>
+<h2>HOW TO USE IT</h2>
+<h3>(1) Simulation starting point.</h3>
+<p><strong>starting-point</strong>: You can start from a random arrangement or a picture from a microscope.  File formats accepted are: <code>.jpg</code>, <code>.png</code>, <code>.bmp</code>, and <code>.gif</code>. The image will be automatically resized to fit into the world, but maintaining its original aspect ratio. Note that the image MUST HAVE THE SAME ASPECT RATIO AS THE WORLD. In other words, if the world is square, the image should be square as well. Prior to importing the image, it is recommended to clean it up using an image editing software (increase contrast, remove noise).  Try to experiment various combinations of values for the view's size and the patch size to get the best results</p>
+<p><strong>percent-element2</strong>: You can also determine if you want a certain percentage of a second element, sometimes called grain refiner.</p>
+<p><strong>setup</strong>: Sets up the model as indicated.</p>
+<h3>(2) Change the shape of atoms.</h3>
+<p>Different shapes might help visualize the atomic planes, or the proportion of different types of grains.</p>
+<p><strong>atom-shape</strong>: Choose which shape you want.</p>
+<p><strong>apply-shape</strong>: Re-draws all the atoms with the shape you chose.</p>
+<h3>(3) Draw/edit grains (optional)</h3>
+<p>You can use this to "draw" new grain structures, or edit the grains at any point during the simulation.</p>
+<p><strong>draw</strong>: When this button is pressed down, you can change the color (orientation) of atoms in the model.</p>
+<p><strong>brush-size</strong>: This determines how many atoms’ orientation you change at a time.</p>
+<p><strong>erase-all</strong>:  This changes the orientation of all atoms.</p>
+<p><strong>draw-color</strong>: Here you can change the color (and orientation) that that you change atoms to, when you draw on them.</p>
+<h3>(4) Run Model.</h3>
+<p>You can choose to have the model keep repeating the steps (as described above) or to run just one tick. Running just one tick will allow you to see more clearly what happens over time.</p>
+<p><strong>annealing-temperature</strong>: changes the probability of non-favorable orientation flips to happen.  A 10% value, for instance, means that 10% of non-favorable flips will be maintained.  This mimics the effect of higher temperatures.</p>
+<h3>Grain size plot and calculations</h3>
+<p><strong>ticks-per-measurement </strong>: to increase the model's speed, the user can choose not to calculate grain size at every time step.  If grain size is calculated at every ten time units (20, 30, 40 etc.), the performance is slightly increased.  This only affects the plot and the monitors, but not the actual simulation.</p>
+<p><strong>measure grains now</strong>: if the user feels there is too much time between each grain measurement, and wants to calculate it immediately, this button can be used.</p>
+<h3>Plots and monitors</h3>
+<p><strong>Grain Size (log-log)</strong>: Grain size vs. time, in a log-log scale.  Under normal conditions (<strong>annealing-temperature</strong> = 0 and <strong>percent-element2</strong> = 0), this plot should be a straight line with an angular coefficient of approximately 0.5.</p>
+<p><strong>Grain Size</strong>: grain size</p>
+<p><strong>Log Time</strong>: log of ticks in the simulation so far</p>
+<p><strong>Log Grain Size</strong>: Log of the grain size</p>
+<p><strong>growth-exponent</strong>: the angular coefficient of the <strong>Grain Size (log-log)</strong> plot.  This number should approach 0.5 with <strong>annealing-temperature</strong> = 0 and <strong>percent-element2</strong> = 0.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>When you setup with a random orientation and run the simulation, notice that the speed of growth decreases with time.  Toward the end of the simulation, you might see just two or three grains that fight with each other for along time.  One will eventually prevail, but this logarithmic decrease of speed is an important characteristic of grain growth.  That is why the **Grain Size (log-log) plot is a straight line in a "log-log" scale.
+Notice also that if you draw two grains, one concave and one convex, their boundary will tend to be a straight line, if you let the simulation run long enough.  Every curved boundary is unstable because many atoms at its interface will have more different than equal neighbors.</p>
+<h2>THINGS TO TRY</h2>
+<p>Increase the value of the <strong>annealing-temperature</strong> slider. What happens to the <strong>Grain Size (log-log)</strong> plot, and to the boundaries' shapes?</p>
+<p>Try to increase the <strong>percent-element2</strong> slider to 5%.  Then choose “random arrangement” and click <strong>setup</strong>, and <strong>go</strong>. What happens to grain growth? Now try several values (1, 3, 5, 7, 9%), for instance.  What happens with the final grain size? What about the <strong>Grain Size (log-log) plot and the </strong>Growth Exponent**?</p>
+<p>One advanced use of this model would be to get a digital picture of a real metallic sample, reduce noise and increase contrast with image editing programs, and load into this model using the <strong>Import Image</strong> feature in the starting-point chooser.  Don't forget to update the width and height of the view's size to accommodate the picture, and also to change the patch size in order to be able to see the whole sample.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>This model assumes that the misorientation between two grains has no effect on their growth rates.  Two grains with a very similar crystallographic orientation have the same growth rate as grains whose orientations differ by a lot.  Try to take the angular misorientation into consideration.</p>
+<p>When we insert second-phase particles, all of them have the same size.  Try to create a slider that changes the size of these particles.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Rather than containing all of the code that updates variables used for plotting, the <strong>Grain Size (log-log)</strong> plot calls a procedure that does this. The reason is that there is quite a lot of code, and it would be difficult to work with inside the plot. Notice also that this code updates the global variables shown in the monitors to the right of the plot.</p>
+<p>The model uses a hexagonal grid as opposed to the usual, square one. It also uses different shapes for different visualization purposes. Finally, it uses the <code>import-pcolors</code> primitive for image import.</p>
+<h2>RELATED MODELS</h2>
+<p>Crystallization Basic
+Crystallization Directed
+Crystallization Moving</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is part of the MaterialSim (Blikstein &amp; Wilensky, 2004) curricular package. To learn more about MaterialSim, see http://ccl.northwestern.edu/rp/materialsim/index.shtml.</p>
+<p>Two papers describing the use of this model in education are:
+Blikstein, P. &amp; Wilensky, U. (2005) Less is More: Agent-Based Simulation as a Powerful Learning Tool in Materials Science.  The IV International Conference on Autonomous Agents and Multiagent Systems. Utrecht, Netherlands.</p>
+<p>Blikstein, P. &amp; Wilensky, U. (2004) MaterialSim: An agent-based simulation toolkit for Materials Science learning. (PDF, 1.5 MB) Proceedings of the International Conference on Engineering Education. Gainesville, Florida.</p>
+<p>The core algorithm of the model was developed at the University of Sao Paulo and published in:  Blikstein, P. and Tschiptschin, A. P. Monte Carlo simulation of grain growth (II). Materials Research, Sao Carlos, 2 (3), p. 133-138, jul. 1999.</p>
+<p>Available for download at: https://www.scielo.br/j/mr/a/78pTMnZ8Kb6Pw6XTTw3SJ8g/?lang=en. See also http://www.pmt.usp.br/paulob/montecarlo/ for more information (in Portuguese).</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Blikstein, P. and Wilensky, U. (2005).  NetLogo MaterialSim Grain Growth model.  http://ccl.northwestern.edu/netlogo/models/MaterialSimGrainGrowth.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 Cite: Blikstein, P. --></div>
+      </div>
+    </main>
+  </body>
+</html>

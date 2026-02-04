@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bacteria Hunt Speeds</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Bacteria Hunt Speeds</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/ModelSim/Evolution/Bacteria%20Hunt%20Speeds.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Curricular Models/ModelSim/Evolution/Bacteria Hunt Speeds.png" alt="Screenshot of Bacteria Hunt Speeds" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a natural/artificial selection model that shows the result of two competing forces from natural selection related to the speed of a prey.</p>
+<p>Which force dominates the outcome from natural selection depends on the behavior of the predator(s).</p>
+<p>One force is that predators that chase prey, tend to catch slower moving prey more often, thereby selecting for removing prey that are slower, leaving behind faster prey to have offspring. This leads to progressively faster prey in the population over time.</p>
+<p>Another force is that predators who wait for their prey without moving, tend to catch prey that are moving faster more often, because these prey run into them more frequently than the slow moving prey. In this manner, they thereby select for removing prey that are faster, leaving behind slow prey to have offspring. This leads to progressively slower prey in the population over time.</p>
+<p>A player can intentionally cause bacteria to become faster over time, simply by trying to chase after them, clicking (eating) any bacteria that player can catch. And they can unintentionally cause bacteria to become slower over time, simply by waiting for bacteria to come to them and clicking (eating) any bacteria that travel under where that player is situated.</p>
+<h2>HOW IT WORKS</h2>
+<p>You assume the role of a predator (such as a nematode) amongst a population of single celled bacteria. To begin your pursuit of bacteria as a predator, press SETUP to create a population of bacteria, determined by six times the INITIAL-BACTERIA-PER-VARIATION slider. These bacteria that are created are randomly distributed around the world and assigned a variation (the number of flagella they posses [1 through 6])</p>
+<p>When you press GO the bacteria begin to move at speed proportional to the number of flagella they posses. As they move around, try to eat as many bacteria as fast as you can by clicking on them. Alternatively, you may hold the mouse button down and move the predator over the bacteria.</p>
+<p>The six different variations in the population are initially equally distributed amongst six sub-populations of the bacteria. With each bacteria you catch, a new bacteria is randomly chosen from the population to produce one offspring. Flagella number is an inherited trait. The offspring that is chosen, therefore, is an exact duplicate of the parent (in its number of flagella as well in its location in the world). The creation of new offspring keeps the overall population of the bacteria constant.</p>
+<p>Initially, there are equal numbers of each sub-population of bacteria (e.g. five bacteria with each variation). With each new bacteria you eat, the distribution of the bacteria will tend to change, as shown in the # OF BACTERIA FOR EACH VARIATION histogram. In the histogram, you might see the distribution shift to the left (showing that more bacteria with less flagella are surviving [these are the slower ones]) or to the right (showing that more bacteria with more flagella are surviving [these are the faster ones]). Sometimes all the bacteria with a given variation will be wiped out completely. At this point, no other bacteria of this speed can be created in the population.</p>
+<p>Bacteria turn around (to face in the opposite direction) when they detect your mouse cursor (as a predator) in their detection cone (an arc of 120 degrees that has a range of 2 units). They are not able to detect you when your mouse cursor has turned gray (after a couple seconds of inactivity).</p>
+<p>Bacteria can detect the predator only in this arc in front of them, and so will not react to the mouse cursor when caught or chased from behind.</p>
+<h2>HOW TO USE IT</h2>
+<p>INITIAL-BACTERIA-PER-VARIATION is the number of bacteria you start with in each of the six possible variations in flagella number. The overall population of bacteria is determined by multiplying this value by 6.</p>
+<p>VISUALIZE-VARIATION helps you apply different visualization cues to see which variation each a bacterium has. These are the options you can set this chooser to:</p>
+<ul>
+<li>
+<p><strong>flagella only</strong> - shows the different number of flagella that each bacterium has as "wiggling" hair-like appendages on the bacterium.</p>
+</li>
+<li>
+<p><strong>as color</strong> - shows 6 distinct colors for the 6 different trait variations (number of flagella) a bacterium might have (red = 6, orange = 5, yellow = 4, green = 3, blue = 2, and violet = 1).</p>
+</li>
+<li>
+<p><strong>flagella and color</strong> - shows both of the above at the same time.</p>
+</li>
+<li>
+<p><strong># flagella as label</strong> - shows a number as a label, corresponding to the number of flagella the bacterium has. But the actual flagella themselves are invisible and each bacterium is colored gray.</p>
+</li>
+<li>
+<p><strong>none</strong> - each bacteria is colored gray, with no flagella visible, nor any label shown. The bacteria still travel at different speeds based on the number of flagella they have, regardless of whether they are visible or not.</p>
+</li>
+</ul>
+<p>Some of these visualization settings are designed to remove elements that may distract the person running the mode (who is also playing the role of the predator), from unintentionally attending to one visualization cue over another and selecting bacteria based on certain visualization cues (e.g. purposely going after the red ones).</p>
+<p># OF BACTERIA EACH VARIATION is a histogram showing the distribution of bacteria with different number of flagella (which also corresponds to the relative speed of movement).</p>
+<p>AVG. # OF FLAGELLA PER BACTERIA is a bivariate graph of the average number of flagella per bacteria in the population over time. This tends to increase when bacteria are chased after by the player mouse and this tends to decrease when</p>
+<p># ALIVE is a monitor showing the total number of bacteria currently in the world.</p>
+<p># CAUGHT is a monitor showing the total number of bacteria caught.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The # OF BACTERIA EACH VARIATION histogram tends to shift to the right (corresponding to an increasing average speed in the population) if you assume the role of chasing easy prey.</p>
+<p>The # OF BACTERIA EACH VARIATION histogram tends to shift to the left (corresponding to an decreasing average speed in the population) if you assume the role of waiting for prey come to you. The same effect can also be achieved by moving the predator around the world randomly.</p>
+<h2>THINGS TO TRY</h2>
+<p>Setup the model up with INITIAL-BACTERIA-PER-VARIATION set to 1. Slow the model down and watch where new bacteria come from when you eat a bacteria. You should see a new bacteria hatch from one of the five remaining and it should be moving at the same speed as its parent.</p>
+<p>Setup the model with more initial bacteria. Chase bacteria around trying to catch the bacteria nearest you at any one time by holding the mouse button down and moving the predator around the view after the nearest bacteria.</p>
+<p>Setup and run the model again. This time wait in one location for the bacteria to come to you by placing the predator in one location and holding down the mouse button. All bacteria that run into you will be eaten.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>A HubNet version of the model with adjustable starting populations of bacteria would help show what happens when two or more competitors assume similar vs. different hunting strategies on the same population at the same time.</p>
+<h2>RELATED MODELS</h2>
+<p>Bug Hunters Camouflage
+Bacteria Food Hunt
+Previous versions of this model were referred to as Bug Hunt Speeds</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is part of the Evolution unit of the ModelSim curriculum, sponsored by NSF grant DRL-1020101.</p>
+<p>For more information about the project and the curriculum, see the ModelSim project website: http://ccl.northwestern.edu/modelsim/.</p>
+<p>Inspired by EvoDots software: http://faculty.washington.edu/herronjc/SoftwareFolder/EvoDots.html/</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2015).  NetLogo Bacteria Hunt Speeds model.  http://ccl.northwestern.edu/netlogo/models/BacteriaHuntSpeeds.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2015 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2015 Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

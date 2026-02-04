@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weak Acid</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Weak Acid</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Chemical%20Reactions/Acids%20and%20Bases/Weak%20Acid.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Chemistry &amp; Physics/Chemical Reactions/Acids and Bases/Weak Acid.png" alt="Screenshot of Weak Acid" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates the differences in the calculation of pH when evaluating a weak acid in solution. It is best viewed as the second model in the ACID-BASE package.</p>
+<h2>HOW IT WORKS</h2>
+<p>Unlike a strong acid, a weak acid has a very low Ka (or acid dissociation constant). Consequently, very little of the acid is dissociated into hydronium ions and conjugate base as seen in the following reaction.</p>
+<blockquote>
+<p>H-A + H<sub>2</sub>O &lt;———(1%)———&gt; H<sub>3</sub>O<sup>+</sup> + A<sup>-</sup></p>
+</blockquote>
+<p>Because so little hydronium ion is present, the pH of the solution cannot be calculated directly from the initial concentration of acid. Though the equation for calculating the pH is identical to that for a strong base,</p>
+<blockquote>
+<p>pH = - log [H<sub>3</sub>O<sup>+</sup>]</p>
+</blockquote>
+<p>we must first calculate the amount of hydronium ion present in the solution. This amount is dependent on the Ka of the acid. Each acid has a unique Ka, which indicates the probability that an acid molecule will react with a water molecule to form a hydronium ion and an anion. The anion in such a reaction is known as the conjugate base of the original acid. Though the term conjugate base may seem strange, it makes sense if you look at the chemical equation above. There A- is the conjugate base of H-A because it can take a proton from the hydronium ion to generate the original acid.</p>
+<p>This model models the composition of a weakly acidic solution and allows the user to observe how altering the species in solution affects the pH. In the model, the dissociation constant Ka, is much higher than the real Ka for an acid. In fact, the model uses the following formula to convert he real-world Ka into a simulated Ka for the model:</p>
+<blockquote>
+<p>Ka for MODEL = 11 - pKa (pKa = - log (real-world Ka)</p>
+</blockquote>
+<h2>HOW TO USE IT</h2>
+<p>Decide how much acid should be present at the start of the simulation with the VOL-ACID slider and press SETUP. Turtles will distribute randomly across the world. BLUE turtles represent water molecules, GREEN turtles represent hydronium ions, YELLOW turtles are acid molecules, and finally ORANGE turtles are conjugate base molecules. A set amount of water molecules is added each time to the solution. In this model we are using the Ka of acetic, which means that approximately 1% of the original acid molecules are dissociated into 1 conjugate base molecule and 1 hydronium molecule.</p>
+<p>Press GO. The turtles will move randomly across the world and the pH of the solution will by plotted over time on the pH Curve and displayed in the pH monitor.</p>
+<p>Observe the effect of adding RED base molecules to the solution by setting the volume of base with the VOL-BASE (mL) slider and pressing ADD-BASE.</p>
+<p>At any time while go is depressed, RECORD-PH can be pressed to plot the pH versus the amount of base added on the Titration Curve.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Observe how the pH curve changes over time with the addition of base. How is this curve different from that seen in the strong acid model? Plot a titration curve and compare it with a strong acid.</p>
+<p>Does the value of VOL-BASE affect the titration curve in any way? Is this different from the relationship between strong acids and strong bases?</p>
+<p>Why are the base molecules not reacting with the water molecules? Does it matter?</p>
+<h2>THINGS TO TRY</h2>
+<p>Notice that the pH of the solution seems to be an average rather than a constant. Can you explain this?</p>
+<p>Start the model with various amounts of acid. How does this affect the titration curve? Is there any difference in the endpoint of the reaction?</p>
+<p>Keep adding base until the pH rises to about 10. Notice the breeds of turtles present. How does the pH depend on the molecules present?</p>
+<p>Notice that in our models acid molecules react with base molecules based on the value of Ka. Make a slider so that you can alter this value. Observe how the system changes with regard to this variable. Is your pH between 0-14?</p>
+<p>Note that we have established a constant for Ka in the procedures window. You must remove that constant when you replace it with a slider of the same name.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Notice that the code requires hydroxide molecules to first react with hydronium molecules on a patch before they react with acid molecules. This is because hydroxide and hydronium react much more rapidly than hydroxide does with a weak acid. Reverse the code and observe the effect on the system.</p>
+<p>Alter the code so that base turtles only react with hydronium molecules. What effect is observed? What additional changes do you need to make so that the pH continues to rise with the addition of base?</p>
+<p>Increase the dissociation percentage so that more hydronium ions are generated at setup. What does this do to the pH? Can you predict what the Ka of a strong acid might be?</p>
+<p>Try using the various pKa values listed below to determine the endpoint of each weak acid.</p>
+<table border>
+<tr><th>weak acid<th>Ka<th>pKa<th>Ka for model
+<tr><td>HCN<td>1.26 x 10<sup>-9</sup><td>9.1<td>1.9
+<tr><td>HOAc<td>1.8 x 10<sup>-5</sup><td>4.8<td>6.2
+<tr><td>H<sub>2</sub>CO<sub>3</sub><td>3.16 x 10<sup>-7</sup><td>6.5<td>4.5
+<tr><td>HCO<sub>2</sub>H<td>2.0 x 10<sup>-4</sup><td>3.7<td>7.3
+</table>
+
+<h2>NETLOGO FEATURES</h2>
+<p>Notice the large number of breeds used in this model. Because of the complex interactions between molecules in a weakly acidic solution, it is necessary to separate turtles according to their identity. This allows each breed of turtle to follow unique instructions, which allows the model to simulate the complexity of molecular interactions.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Thanks to Mike Stieff for his work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Stieff, M. and Wilensky, U. (2001).  NetLogo Weak Acid model.  http://ccl.northwestern.edu/netlogo/models/WeakAcid.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2001 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2001 Cite: Stieff, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

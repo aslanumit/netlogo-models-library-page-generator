@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Many Regions Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Many Regions Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Many%20Regions%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Many Regions Example.png" alt="Screenshot of Many Regions Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This example shows how to divide the world in a variable number of regions and keep turtles confined to the region they start in.</p>
+<h2>HOW IT WORKS</h2>
+<p>The world is separated in regions divided by vertical lines. When a turtle reaches the left or right boundary of a region, it crosses to the other side, thereby always staying in the same region.</p>
+<h2>HOW TO USE IT</h2>
+<p>Choose the NUMBER-OF-REGIONS and the NUMBER-OF-TURTLES-PER-REGION that you want, click SETUP, and then GO.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>You can <a href="http://ccl.northwestern.edu/netlogo/docs/dictionary.html#watch"><code>watch</code></a> one of the turtles and see it jumping to the other edge of the region when it reaches its boundary. Running the model at slower speed makes this easier to see.</p>
+<h2>THINGS TO TRY</h2>
+<p>The NUMBER-OF-REGIONS slider is currently capped at a maximum of 32 regions. This number creates narrow regions: only one patch wide! There is still enough room for all of them, however. What do you think would happen if you increased the maximum to a bigger number? Try it. Does the model still work? Why?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>When a turtle reaches the left or right boundary of a region, they "wrap" to the other side. That's not the only possible behavior: they could also just stop there.</p>
+<p>The current model only allows vertical regions. Changing to use horizontal regions instead should be fairly easy, but how about a making "grid" of regions, where you would specify a number of rows and a number of columns?</p>
+<p>Look at the Bug Hunt models in the library: they use a special breed of turtles called "dividers", with a custom turtle shape, to cover the region divisions and make the wrapping animation appear smoother. You can try to do the same here.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model makes use of the variadic versions of <a href="http://ccl.northwestern.edu/netlogo/docs/dictionary.html#foreach"><code>foreach</code></a> and <a href="http://ccl.northwestern.edu/netlogo/docs/dictionary.html#map"><code>map</code></a>, which allow these primitives to be used with multiple lists at the same time.</p>
+<p>The <code>map</code> primitive is used in the <code>region-definitions</code> procedure to loop through two copies of the divisions list at once, thereby scanning through "pairs" of divisions.</p>
+<p>The <code>foreach</code> primitive is used in various places to loop through regions and their indices (generated with <a href="http://ccl.northwestern.edu/netlogo/docs/dictionary.html#n-values"><code>n-values</code></a>). This advantageously replaces a <code>while</code> loop, as it is both shorter and less error-prone.</p>
+<h2>RELATED MODELS</h2>
+<p>The Bug Hunt models in the ModelSim folder of the library use a version of this code to separate the bugs in two distinct regions.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This example was developed by Nicolas Payette, inspired by Michael Novak's work on various ModelSim models.</p>
+<!-- 2015 --></div>
+      </div>
+    </main>
+  </body>
+</html>

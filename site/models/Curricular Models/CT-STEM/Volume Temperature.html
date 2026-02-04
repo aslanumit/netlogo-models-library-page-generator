@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Volume Temperature</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Volume Temperature</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/CT-STEM/Volume%20Temperature.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/CT-STEM/Volume Temperature.png" alt="Screenshot of Volume Temperature" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model enables students to investigate representations of syringe-like systems, exploring concepts related to gas particles and gas behavior.</p>
+<p>This model is adapted from the Particulate Nature of Matter (PNoM) Curricular Unit and used in the <a href="https://ct-stem.northwestern.edu/curriculum/preview/2620/pem_code/56S6DY3ERPUAFH8XWDRS/">Kinetic Molecular Theory CT-STEM unit</a>. In the unit, students explore kinetic molecular theory and gas laws. They practice the skill of modeling microscopic gas particle interactions to explain the macroscopic behavior of gases. At the end of the unit, students describe the motion of gas particles and predict how changing one or more variables will impact the gaseous system.</p>
+<p>In all of the PnoM models, gas particles are assumed to move and collide, both with each other and with other objects such as walls.</p>
+<p>In this model, students investigate how different temperatures correspond with varying volumes in the syringe as its plunger moves up and down.</p>
+<h2>HOW IT WORKS</h2>
+<h3>Particles</h3>
+<p>The particles are modeled as hard balls with no internal energy except that which is due to their motion. Collisions between particles are elastic. The total kinetic energy of the two particles after the encounter is equal to their total kinetic energy before the encounter. Collisions with the wall are not. When a particle hits the wall, it bounces off the wall but does not loose any energy to the wall. It does not gain any energy from the wall, either. The plunger moves according to the total force applied on it by the particles at an instance.</p>
+<p>The exact way two particles collide is as follows:
+1. A particle moves in a straight line without changing its speed, unless it collides with another particle or bounces off the wall.
+2. Two particles "collide" if they find themselves on the same patch. In this model, two turtles are aimed so that they will collide at the origin.
+3. An angle of collision for the particles is chosen, as if they were two solid balls that hit, and this angle describes the direction of the line connecting their centers.
+4. The particles exchange momentum and energy only along this line, conforming to the conservation of momentum and energy for elastic collisions.
+5. Each particle is assigned its new speed, heading and energy.</p>
+<h3>Syringe</h3>
+<p>A syringe typically consists of a primary tube or barrel with a plunger and piston to expand and contract the volume. In this model, the piston moves up as particles collide beneath it.</p>
+<h2>HOW TO USE IT</h2>
+<h3>Buttons</h3>
+<p>SETUP - sets up the initial conditions set on the sliders.
+GO/STOP - runs and stops the model.
+RESET TEMPERATURE - resets the gas temperature to 23 degrees
+GAS-TEMPERATURE slider - adjusts the gas temperature with a visual cue in the colored bar (blue to red)</p>
+<h3>Choosers</h3>
+<p>VISUALIZE-PARTICLE-SPEED? allows you to visualize particle speeds. For example, selecting "arrows" creates a representation of each particle velocity using a scalar arrow.  Selecting "shades" creates a representation of each particle speed using a brighter (faster) or darker (slower) shade of the particle's color.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Transparency is used to model flashes of where pressure was transferred to the wall by fading away the color of the flash at locations where a particle hit the wall.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try visualizing the particle speeds as temperature rises. Observe how the length of the scalar "arrows" change.</p>
+<p>Try quickly changing the temperataure and observe how the volume graph changes.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add a slider that allows users to change the initial number of particles.</p>
+<p>Add slider that changes the mass of the mass of the plunger.</p>
+<p>Allow users to add gas particles outside the syringe as well.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The model uses <code>set color</code> with a list of three RBG values to gradually change the color of the heat source as a user adjusts the temperature slider.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>GasLab Models</li>
+<li>Connected Chemistry models.</li>
+<li>This model is found on <a href="https://ct-stem.northwestern.edu/curriculum/preview/2624/page/2/pem_code/56S6DY3ERPUAFH8XWDRS/">page 2 in lesson 4</a> of the KMT unit.</li>
+<li>A copy of the model integrated with the CODAP data visualization tool is found in the same lesson on <a href="https://ct-stem.northwestern.edu/curriculum/preview/2624/page/3/pem_code/56S6DY3ERPUAFH8XWDRS/">page 4</a></li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M., Brady, C., Holbert, N., Soylu, F. and Wilensky, U. (2010).  NetLogo Volume Temperature model.  http://ccl.northwestern.edu/netlogo/models/VolumeTemperature.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>To cite the Particulate Nature of Matter curriculum as a whole, please use:</p>
+<ul>
+<li>Novak, M., Brady, C., Holbert, N., Soylu, F. and Wilensky, U. (2010). Particulate Nature of Matter curriculum.  http://ccl.northwestern.edu/curriculum/pnom/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.
+Thanks to Umit Aslan and Mitchell Estberg for updating these models for inclusion the in Models Library.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2010 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2010 PNoM Cite: Novak, M., Brady, C., Holbert, N., Soylu, F. --></div>
+      </div>
+    </main>
+  </body>
+</html>

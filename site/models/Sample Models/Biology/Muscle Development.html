@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Muscle Development</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Muscle Development</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Muscle%20Development.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Muscle Development.png" alt="Screenshot of Muscle Development" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is an exercise physiology model.  It is intended to help you understand the factors involved in generating the appropriate hormonal balance to develop muscle from weight lifting.  These factors include:</p>
+<p>Frequency: How often you lift weights must be managed appropriately in order to see gains in muscle mass.  If you lift too frequently, you will not have time to recover and then rebuild stronger muscles.  If you fail to lift frequently enough, there will not be enough stimuli to elicit long term gains in muscle.</p>
+<p>Sleep: The body performs most of its recovery while sleeping.  If you don't get enough sleep, you will not be providing enough opportunity for recovery, so you will find it difficult to gain muscle.</p>
+<p>Intensity: How hard you work in the weight room affects how effective you are at recruiting all of your muscle fibers.  The greater the number of fibers recruited, the greater the growth stimulus, assuming appropriate recovery is provided for.</p>
+<p>Genetic: The ratio of slow twitch to fast twitch muscle fibers plays a large role in how much muscle an individual is capable of developing.  Someone with a majority of fibers that exhibit slow twitch characteristics will have high endurance, but the potential to develop only moderate muscle mass.  An individual with a majority of fibers with fast twitch characteristics will have the potential to develop considerable muscle mass, but low endurance.</p>
+<p>Diet: A poor diet can prevent muscle growth.  In this model we assume perfect diet.</p>
+<p>All five of these factors must be understood and put into balance with one another in order to achieve optimal muscular development.  The appropriate combination is highly dependent on the individual and their current, unique state.  It will change over time.</p>
+<h2>HOW IT WORKS</h2>
+<p>Ultimately, the effects of resistance training occur as a result of the hormonal responses it elicits from the body.  The hormones essential to muscle development can be separated into two broad classes: catabolic hormones and anabolic hormones.  Catabolic hormones break down the muscle fiber to prepare it to be rebuilt stronger by the anabolic hormones.  Note: catabolic hormones play a vital role, as muscle fibers must be broken down before they can be built back up.</p>
+<p>This model attempts to simulate these effects with a cross sectional portrayal of a muscle at the level of the muscle fibers.  When the observer activates a muscle fiber through resistance training, the fiber releases a chemical signal that results in a surge of hormones at the location of the fiber.  These hormones affect the fiber development as mentioned above and will dissipate over time.</p>
+<p>The circles represent muscle fibers.  The background they appear against may be thought of as the cellular fluid that contains the anabolic and catabolic hormones.  The brighter the green, the more anabolic (muscle building) the environment.  The brighter the yellow, the more catabolic (muscle destroying) the environment.</p>
+<h2>HOW TO USE IT</h2>
+<p>Buttons:
+SETUP: Sets up the model
+GO: Runs the model</p>
+<p>Switches:
+LIFT?: Decides whether or not the person is actively weight lifting</p>
+<p>Sliders:
+INTENSITY: How hard the lifter is working.  The greater the intensity, the greater the number of muscle fibers that will be fatigued each workout session.
+HOURS-OF-SLEEP: The amount of sleep a person gets affects how quickly the body breaks down the hormones.</p>
+<p>DAYS-BETWEEN-WORKOUTS: The frequency of the workouts effects how much time the body has to recover and then over-compensate from the last workout
+%-SLOW-TWITCH-FIBERS: How likely each fiber is to possess slow twitch characteristics.</p>
+<p>Plots:
+MUSCLE DEVELOPMENT VS. TIME: The sum of all fiber sizes over time
+HORMONES VS. TIME: The average hormone content near each fiber</p>
+<h2>THINGS TO TRY</h2>
+<p>Steps one through three should be run with %-SLOW-TWITCH slider set to 50.</p>
+<ol>
+<li>
+<p>Run the model at its default settings.  What eventually happens to the amount of muscle mass?  Why?</p>
+</li>
+<li>
+<p>Overtraining occurs when the body is not allowed to recover completely from the last exercise session before being trained again.  This causes stagnation of muscular development, and in extreme cases, muscle loss.  What types of conditions can lead to overtraining?  What is the best way to recover from overtraining?  What steps can be taken to avoid it?</p>
+</li>
+<li>
+<p>Many undertake weight training in an effort to build the maximum amount of muscle they are capable of.  Find the best method for achieving this.  How must it vary over time?  Why is it important to take one's current level of condition into consideration when choosing a resistance training program?</p>
+</li>
+<li>
+<p>An issue rarely addressed in conventional training is that of genetic ability.  A major factor affecting this is the proportion of slow twitch vs. fast twitch muscle fibers a person possesses.  Slow twitch fibers provide for greater endurance, fast twitch greater strength and size.</p>
+</li>
+</ol>
+<p>Attempt to obtain maximal muscular development with the %-SLOW-TWITCH slider set at 90% and then 10%. How do the results one can obtain vary with genetic ability?  Training methods?  What does this suggest about the average person following the routines of genetically gifted professional bodybuilders?</p>
+<h2>EXTENDING THE MODEL</h2>
+<ol>
+<li>
+<p>In order to ensure you have achieved maximum muscular development, add a pen named "max-muscle" to the "Muscle Development" plot.  Now modify the DO-PLOTTING procedure to use the "max-muscle" pen to plot the sum of the MAX-SIZE value of all the muscle fibers.</p>
+</li>
+<li>
+<p>Nutritional quality can have a major influence on the results obtained from training.  Modify the model to allow for this influence.  Add a NUTRIENT variable to the MUSCLE-FIBER breed.  Add a NUTRITIONAL-QUALITY slider to the model.  Now modify the GO procedure to call a OBTAIN-NUTRITION function that releases nutrients into the patches.  Finally, alter the GROW procedure to use the available nutrients when adding size to a muscle fiber.</p>
+</li>
+<li>
+<p>Real life creates many inconsistencies in the average person's strength training program.  Add a variance function to the model that randomly generates nights of less sleep and extra rest days between workouts to reflect these inconsistencies.  Add a switch to allow the user to turn this variance on or off.  Add a slider to allow the user to adjust the level of variance.  What effect do these inconsistencies have on muscular development?</p>
+</li>
+</ol>
+<h2>THINGS TO NOTICE</h2>
+<p>The human body is an incredibly complex system.  In order to simulate the piece of it in which we are interested, assumptions have been made about the behavior of other pieces.  This can be seen in the hard-coding of various parameters, such as the hormone limits and the maximum muscle fiber sizes.  These assumptions allow us to focus upon gaining an understanding of the overall process of muscle development without becoming burdened with excessive information.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of the <code>repeat</code> primitive and %-SLOW-TWITCH-FIBERS variable in the <code>new-muscle-fibers</code> procedure to generate a normal distribution of the maximum muscle fiber sizes centered at a median influenced by the %-SLOW-TWITCH-FIBERS value.</p>
+<p>Note the use of the <code>log</code> primitive in the procedures which regulate hormonal release and balance.  This allows us to more closely mimic the natural tendency for each additional unit of a biological component to illicit less of an adaptive change from the system than the one before it.</p>
+<p>Note the use of the <code>rgb</code> primitive in the <code>regulate-hormones</code> procedure to color patches based on hormone quantities and provide a smooth visual transition from an anabolic to a catabolic state.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Original implementation: Scott Styles, for the Center for Connected Learning and Computer-Based Modeling.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2002).  NetLogo Muscle Development model.  http://ccl.northwestern.edu/netlogo/models/MuscleDevelopment.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2002 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

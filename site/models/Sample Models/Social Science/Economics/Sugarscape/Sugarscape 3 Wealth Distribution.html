@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sugarscape 3 Wealth Distribution</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Sugarscape 3 Wealth Distribution</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Economics/Sugarscape/Sugarscape%203%20Wealth%20Distribution.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Social Science/Economics/Sugarscape/Sugarscape 3 Wealth Distribution.png" alt="Screenshot of Sugarscape 3 Wealth Distribution" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This third model in the NetLogo Sugarscape suite implements Epstein &amp; Axtell's Sugarscape Wealth Distribution model, as described in chapter 2 of their book Growing Artificial Societies: Social Science from the Bottom Up. It provides a ground-up simulation of inequality in wealth. Only a minority of the population have above average wealth, while most agents have wealth near the same level as the initial endowment.</p>
+<p>The inequity of the resulting distribution can be described graphically by the Lorenz curve and quantitatively by the Gini coefficient.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each patch contains some sugar, the maximum amount of which is predetermined. At each tick, each patch regains one unit of sugar, until it reaches the maximum amount.
+The amount of sugar a patch currently contains is indicated by its color; the darker the yellow, the more sugar.</p>
+<p>At setup, agents are placed at random within the world. Each agent can only see a certain distance horizontally and vertically. At each tick, each agent will move to the nearest unoccupied location within their vision range with the most sugar, and collect all the sugar there.  If its current location has as much or more sugar than any unoccupied location it can see, it will stay put.</p>
+<p>Agents also use (and thus lose) a certain amount of sugar each tick, based on their metabolism rates. If an agent runs out of sugar, it dies.</p>
+<p>Each agent also has a maximum age, which is assigned randomly from the range 60 to 100 ticks.  When the agent reaches an age beyond its maximum age, it dies.</p>
+<p>Whenever an agent dies (either from starvation or old age), a new randomly initialized agent is created somewhere in the world; hence, in this model the global population count stays constant.</p>
+<h2>HOW TO USE IT</h2>
+<p>The INITIAL-POPULATION slider sets how many agents are in the world.</p>
+<p>The MINIMUM-SUGAR-ENDOWMENT and MAXIMUM-SUGAR-ENDOWMENT sliders set the initial amount of sugar ("wealth") each agent has when it hatches. The actual value is randomly chosen from the given range.</p>
+<p>Press SETUP to populate the world with agents and import the sugar map data. GO will run the simulation continuously, while GO ONCE will run one tick.</p>
+<p>The VISUALIZATION chooser gives different visualization options and may be changed while the GO button is pressed. When NO-VISUALIZATION is selected all the agents will be red. When COLOR-AGENTS-BY-VISION is selected the agents with the longest vision will be darkest and, similarly, when COLOR-AGENTS-BY-METABOLISM is selected the agents with the lowest metabolism will be darkest.</p>
+<p>The WEALTH-DISTRIBUTION histogram on the right shows the distribution of wealth.</p>
+<p>The LORENZ CURVE plot shows what percent of the wealth is held by what percent of the population, and the the GINI-INDEX V. TIME plot shows a measure of the inequity of the distribution over time.  A GINI-INDEX of 0 equates to everyone having the exact same amount of wealth (collected sugar), and a GINI-INDEX of 1 equates to the most skewed wealth distribution possible, where a single person has all the sugar, and no one else has any.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>After running the model for a while, the wealth distribution histogram shows that there are many more agents with low wealth than agents with high wealth.</p>
+<p>Some agents will have less than the minimum initial wealth (MINIMUM-SUGAR-ENDOWMENT), if the minimum initial wealth was greater than 0.</p>
+<h2>THINGS TO TRY</h2>
+<p>How does the initial population affect the wealth distribution? How long does it take for the skewed distribution to emerge?</p>
+<p>How is the wealth distribution affected when you change the initial endowments of wealth?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>All of the Sugarscape models create the world by using <code>file-read</code> to import data from an external file, <code>sugar-map.txt</code>. This file defines both the initial and the maximum sugar value for each patch in the world.</p>
+<p>Since agents cannot see diagonally we cannot use <code>in-radius</code> to find the patches in the agents' vision.  Instead, we use <code>at-points</code>.</p>
+<h2>RELATED MODELS</h2>
+<p>Other models in the NetLogo Sugarscape suite include:</p>
+<ul>
+<li>Sugarscape 1 Immediate Growback</li>
+<li>Sugarscape 2 Constant Growback</li>
+</ul>
+<p>For more explanation of the Lorenz curve and the Gini index, see the Info tab of the Wealth Distribution model.  (That model is also based on Epstein and Axtell's Sugarscape model, but more loosely.)</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Epstein, J. and Axtell, R. (1996). Growing Artificial Societies: Social Science from the Bottom Up.  Washington, D.C.: Brookings Institution Press.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Li, J. and Wilensky, U. (2009).  NetLogo Sugarscape 3 Wealth Distribution model.  http://ccl.northwestern.edu/netlogo/models/Sugarscape3WealthDistribution.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2009 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2009 Cite: Li, J. --></div>
+      </div>
+    </main>
+  </body>
+</html>

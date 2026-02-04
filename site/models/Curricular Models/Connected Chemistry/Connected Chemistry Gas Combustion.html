@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Connected Chemistry Gas Combustion</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Connected Chemistry Gas Combustion</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Connected%20Chemistry/Connected%20Chemistry%20Gas%20Combustion.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Connected Chemistry/Connected Chemistry Gas Combustion.png" alt="Screenshot of Connected Chemistry Gas Combustion" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model shows the chemical kinetics of the combustion reaction of hydrogen and oxygen gas, which is generally used in rocket engines.</p>
+<p>The chemical reaction that hydrogen and oxygen gas undergoes to produce water vapor is called an exothermic reaction. The hydrogen (H<sub>2</sub>) reacts with the oxygen found in air (O<sub>2</sub>), to produce water vapor (H<sub>2</sub>O). This chemical reaction is represented as follows:</p>
+<p>2H<sub>2</sub> + O<sub>2</sub> -&gt; 2H<sub>2</sub>O</p>
+<p>H<sub>2</sub> and O<sub>2</sub> are called the reactants and (H<sub>2</sub>O) is the product of the reaction.  Note that two hydrogen molecules and one oxygen molecule are consumed in this reaction to make two water vapor molecules.</p>
+<h2>HOW IT WORKS</h2>
+<p>For a reaction to occur, oxygen (O<sub>2</sub>) and hydrogen (H<sub>2</sub>) must have enough energy to break the atomic bonds in oxygen and hydrogen and allow the atoms to rearrange to make (H<sub>2</sub>O).  This bond breaking energy threshold is called the ACTIVATION-ENERGY.</p>
+<p>When a chemical reaction occurs then, the chemical potential energy stored in the atomic configurations of the reactants is transformed into kinetic energy as a new configuration of atoms (the products) is created.  This excess energy released in the reaction is called the BOND-ENERGY-RELEASED.  When the bond energy released is increased the products will have greater thermal energy, due to their increased kinetic molecular energy that came from the bond energy released through the chemical reaction.</p>
+<p>If BOND-ENERGY-RELEASED was set to a negative number it would model an endothermic reaction will be modeled.  This is one in which the thermal energy of the products is less than the thermal energy of the reactants due to molecular kinetic energy being converted into chemical potential energy in the chemical reaction.</p>
+<p>For reactions that require lots of activation-energy, some reactions will not occur at low temperatures, or will occur more slowly at lower temperatures.</p>
+<p>The autoignition point for hydrogen gas under normal pressure and presence of oxygen gas is 536C (709K).  https://en.wikipedia.org/wiki/Autoignition_temperature</p>
+<p>The container wall is modeled as having a fixed pressure limit.  Once that pressure limit is reached the container breaks open (explodes).  The exploding container is shown simply as particles of the container flying apart and outward at a constant rate.</p>
+<p>The phenomena of a container walls failing when hydrogen and oxygen ignite can be seen in a balloon filled with hydrogen and oxygen gas that is lit with a match as well as many historical examples in space rockets.  Some alternate energy automobiles and other transportation vehicles also use this reaction to power the piston displacement in their internal combustion engines, since it produces no carbon dioxide in the products and therefore does not contribute that green house gas to the environment through its emissions</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to set up the simulation. Press GO to run the simulation.</p>
+<p>INITIAL-OXYGEN-MOLECULES sets the initial number of oxygen (O<sub>2</sub>) molecules.
+INITIAL-HYDROGEN-MOLECULES sets the initial number of hydrogen (H<sub>2</sub>) molecules.
+INITIAL-GAS-TEMPERATURE sets the temperature of the gas container.
+ACTIVATION-ENERGY is the energy threshold for breaking the atomic bonds in oxygen and hydrogen molecules.
+BOND-ENERGY-RELEASED is thermal energy (kinetic molecular energy) that the product molecules gain after releasing the chemical potential energy in reactants.
+PRESSURE-LIMIT-CONTAINER determines the level of pressure that will cause the walls of the gas container to break or explode.
+SPEED-UP-AND-TRACE-ONE-MOLECULE selects one of the hydrogen molecules at random and increases its speed by a factor of 10 times its current speed.
+HIGHLIGHT-PRODUCT? helps make the water molecules that are produced easier to see when it is set to "on", as it draw each water molecule with a yellow ring drawn around it.
+SHOW-WALL-HITS? helps visualize where particles hit the wall (and therefore where contributions to the pressure of the gas occur and are measured).</p>
+<h2>THINGS TO NOTICE</h2>
+<p>At low initial gas temperatures, the two gases do not react.  One fast moving molecule however can trigger a reaction, which releases energy, which in turn, triggers more reactions, etc., showing the cascading effects of bond energy released in chemical reactions to help sustain a rapid combustion of these fuels.</p>
+<p>Notice the shape of the curves for number of molecules.  Why do they exhibit the shape they do?  What does that say about the rate of the reaction and why would the rate change the way it does?</p>
+<p>If the container breaks and molecules escape the system, pressure will no longer be graphed and the molecules will no longer be counted in the graphs of number of molecules once they reach the edge of the WORLD &amp; VIEW.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try Different BOND-ENERGY-RELEASED, ACTIVATION-ENERGY, and PRESSURE-LIMIT-CONTAINER levels to make the chemical reaction occur at different rates, or not at all.</p>
+<p>Compare rates of reactions and how long it takes the container to fail by reaching its pressure limit, for different initial gas temperatures.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add a pendown feature to trace the paths of the products to see if there are any patterns in how the chemical reaction propagates energy for new chemical reactions throughout the system.</p>
+<p>Add two "injection ports" into the container, one adds an adjustable rate of inflow of oxygen molecules, the other adds an adjustable rate of inflow of hydrogen molecules (see GasLab models for examples of how to do this).  Place an exhaust port on the container where molecules can escape.  Measure the percent of product escaping at the exhaust port and the temperature of the gas at the exhaust port.  This could serve as a useful model for combustion in some types of liquid fuel rockets that use hydrogen and oxygen gas and could help show how adjusting flow rate and container geometry can influence the efficiency of combustion (and how complete that combustion is).</p>
+<p>Add a moving piston wall to model the behavior of a piston in a hydrogen fueled automobile engine.</p>
+<p>Replace the hydrogen fuel with other common fuels (such as hydrocarbons) and model the production of water and carbon dioxide and carbon monoxide from the combustion of those reactants.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Uses GasLab particle collision code.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is part of the Connected Chemistry curriculum.  See http://ccl.northwestern.edu/curriculum/chemistry/.</p>
+<p>We would like to thank Sharona Levy and Michael Novak for their substantial contributions to this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2007).  NetLogo Connected Chemistry Gas Combustion model.  http://ccl.northwestern.edu/netlogo/models/ConnectedChemistryGasCombustion.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>To cite the Connected Chemistry curriculum as a whole, please use:</p>
+<ul>
+<li>Wilensky, U., Levy, S. T., &amp; Novak, M. (2004). Connected Chemistry curriculum. http://ccl.northwestern.edu/curriculum/chemistry/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 ConChem Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

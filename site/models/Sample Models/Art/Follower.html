@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Follower</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Follower</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Art/Follower.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Art/Follower.png" alt="Screenshot of Follower" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>In Follower, turtles attempt to "connect" with other turtles, forming long chains according to a small set of simple rules.</p>
+<h2>HOW IT WORKS</h2>
+<p>A turtle can follow only one other turtle, and similarly it can only be followed by one other turtle. This means there are four turtle states, each represented by a different color:</p>
+<ul>
+<li>Magenta: Unattached</li>
+<li>Green: Following another turtle (a "tail")</li>
+<li>Yellow: Being followed by another turtle (a "head")</li>
+<li>Blue: Following and being followed by other turtles (a "body" segment)</li>
+</ul>
+<p>Turtles are created in the magenta (unattached) state. At each turn, each turtle checks a random patch in a square donut shape around itself. If it finds a turtle there who is not already being followed, it will "latch on" and start following the movements of that turtle. An unattached turtle (one that has not yet "latched on" to another turtle) will move randomly.</p>
+<h2>HOW TO USE IT</h2>
+<p>SETUP: Clears the world and creates the number of turtles specified in the POPULATION slider. All the turtles are created in an unattached state (magenta).</p>
+<p>GO: Runs the simulation.</p>
+<p>POPULATION: Specifies the number of turtles created in SETUP.</p>
+<p>NEAR-RADIUS: The inner radius of the square donut turtles search in.</p>
+<p>FAR-RADIUS: The outer radius of the square donut turtles search in.</p>
+<p>WAVER: The amount of randomness in the movement of non-following turtles.</p>
+<p>There is also a plot called "Turtle Count" that displays, over time, the number of turtles in each state.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Each of the sliders has a different effect on the simulation.</p>
+<p>Notice that the when the number of turtles is high, chains tend to form very quickly. This is because there are more turtles and therefore more chances for each turtle to attach on each turn.</p>
+<p>Varying the size of the donut tends to affect how the turtles start to attach, but in the long run doesn't have a big effect on the simulation outcome. Donut size is most interesting at very small values, which causes the turtles to attach into very small loops. Also, very large thick donuts (big FAR-RADIUS, small NEAR-RADIUS) looks interesting with a large number of turtles.</p>
+<p>The amount of movement randomness (set by WAVER) can also change the simulation outcome. Very high values for WAVER result in small loops being formed because the turtles are continuously moving over themselves, increasing the chances of connecting the head of the chain to its tail.</p>
+<p>The simulation, under any parameters, moves towards forming loops. Loops may be formed by wrapping around the world, but in almost all cases if the simulation is left running long enough you will get many small loops or one big loop. It is possible that a chain will never connect to itself if the WAVER slider is set to zero, but otherwise the simulation should proceed towards loops.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try making the waver setting very high. Notice how the turtles clump up into little clusters. This is because they are moving over themselves frequently, which increases the chances of attaching to their tail. This makes sense if the donut allows the turtles to check close to themselves, but if it does not (NEAR-RADIUS is big) then the same thing still happens. Why is this the case?</p>
+<p>Notice that we are plotting all four possible turtle states, but only three appear on the plot. Do you know why?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try implementing different rules for how turtles follow each other. For instance, interesting results can be seen if you turn off world wrapping. Or, what if two turtles are allowed to have the same leader?</p>
+<p>You might also try giving the turtles a certain probability of breaking apart again. See how this affects the patterns they make.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of the <code>towards</code> primitive to make the turtles follow each other.</p>
+<p>Note also that we are careful to ensure that we never have two turtles following the same leader.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Follower model.  http://ccl.northwestern.edu/netlogo/models/Follower.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1998 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

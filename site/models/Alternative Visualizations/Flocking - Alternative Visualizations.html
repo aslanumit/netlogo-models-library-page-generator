@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flocking - Alternative Visualizations</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Flocking - Alternative Visualizations</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Alternative%20Visualizations/Flocking%20-%20Alternative%20Visualizations.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Alternative Visualizations/Flocking - Alternative Visualizations.png" alt="Screenshot of Flocking - Alternative Visualizations" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is an alternate visualization of the Flocking model from the Biology section of the NetLogo Models Library. It uses visualization techniques as recommended in the paper:</p>
+<ul>
+<li>Kornhauser, D., Wilensky, U., &amp; Rand, W. (2009). Design guidelines for agent based model visualization. Journal of Artificial Societies and Social Simulation (JASSS), 12(2), 1. http://ccl.northwestern.edu/papers/2009/Kornhauser,Wilensky&amp;Rand_DesignGuidelinesABMViz.pdf.</li>
+</ul>
+<h2>WHAT IS IT?</h2>
+<p>This model is a version of the NetLogo Flocking model that adds visualizations.
+The Flocking model is an attempt to mimic the flocking of birds.  (The resulting motion also resembles schools of fish.)  The flocks that appear in this model are not created or led in any way by special leader birds.  Rather, each bird (aka boid) is following exactly the same set of rules, from which flocks emerge.</p>
+<p>The birds follow three rules: "alignment", "separation", and "cohesion".  "Alignment" means that a bird tends to turn so that it is moving in the same direction that nearby birds are moving.  "Separation" means that a bird will turn to avoid another bird which gets too close.  "Cohesion" means that a bird will move towards other nearby birds (unless another bird is too close).  When two birds are too close, the "separation" rule overrides the other two, which are deactivated until the minimum separation is achieved.</p>
+<p>The three rules affect only the bird's heading.  Each bird always moves forward at the same constant speed.</p>
+<p>This version creates 4 different visualizations of the model, depending on which question about the model you are trying to answer.</p>
+<h2>HOW TO USE IT</h2>
+<p>First, determine the number of birds you want in the simulation and set the POPULATION slider to that value.  Press SETUP to create the birds, and press GO to have them start flying around.</p>
+<p>The default settings for the sliders will produce reasonably good flocking behavior.  However, you can play with them to get variations:</p>
+<p>Three TURN-ANGLE sliders control the maximum angle a bird can turn as a result of each rule.</p>
+<p>VISION is the distance that each bird can see 360 degrees around it.</p>
+<p>STEP is the distance a bird moves at each tick.</p>
+<p>VISUALIZATION
+Each visualization is designed to highlight the answers to specific questions.
+QUESTION has 5 values. Each value results in a different visualization that helps answer the corresponding question.
+Value of 0 = "NONE". This gives the same behavior as the standard flocking model.
+Value of 1 = "Are the boids aligned". Boids with the same direction have the same color. Clusters with the same heading can be easily distinguished.
+Value of 2 = "Are the boids in separation or cohesion mode?". This colors the boids red when they are separating and green when they are cohering.
+Value of 3 = "Do all of the boids end up following the same leader?". Each flock gets a different color.
+Value of 4 = "Are the boids aligned? Are the boids in separation or cohesion mode?". Boids with the same direction have the same color. Boids in separation mode have the default shape, Boids in cohesion mode have a "line" shape.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Central to the model is the observation that flocks form without a leader.</p>
+<p>There are no random numbers used in this model, except to position the birds initially.  The fluid, lifelike behavior of the birds is produced entirely by deterministic rules.</p>
+<p>Also, notice that each flock is dynamic.  A flock, once together, is not guaranteed to keep all of its members.  Why do you think this is?</p>
+<p>After running the model for a while, all of the birds have approximately the same heading.  Why?</p>
+<p>Sometimes a bird breaks away from its flock.  How does this happen?  You may need to slow down the model or run it step by step in order to observe this phenomenon.</p>
+<h2>THINGS TO TRY</h2>
+<p>Play with the sliders to see if you can get tighter flocks, looser flocks, fewer flocks, more flocks, more or less splitting and joining of flocks, more or less rearranging of birds within flocks, etc.</p>
+<p>You can turn off a rule entirely by setting that rule's angle slider to zero.  Is one rule by itself enough to produce at least some flocking?  What about two rules?  What's missing from the resulting behavior when you leave out each rule?</p>
+<p>Will running the model for a long time produce a static flock?  Or will the birds never settle down to an unchanging formation?  Remember, there are no random numbers used in this model.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Currently the birds can "see" all around them.  What happens if birds can only see in front of them?  The <code>in-cone</code> primitive can be used for this.</p>
+<p>Is there some way to get V-shaped flocks, like migrating geese?</p>
+<p>What happens if you put walls around the edges of the world that the birds can't fly into?</p>
+<p>Can you get the birds to fly around obstacles in the middle of the world?</p>
+<p>What would happen if you gave the birds different velocities?  For example, you could make birds that are not near other birds fly faster to catch up to the flock.  Or, you could simulate the diminished air resistance that birds experience when flying together by making them fly faster when in a group.</p>
+<p>Are there other interesting ways you can make the birds different from each other?  There could be random variation in the population, or you could have distinct "species" of bird.</p>
+<p>Can you add a value to the QUESTION chooser and develop a corresponding visualization that helps answer the question?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Notice the need for the <code>subtract-headings</code> primitive and special procedure for averaging groups of headings.  Just subtracting the numbers, or averaging the numbers, doesn't give you the results you'd expect, because of the discontinuity where headings wrap back to 0 once they reach 360.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Moths</li>
+<li>Flocking Vee Formation</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is inspired by the Boids simulation invented by Craig Reynolds.  The algorithm we use here is roughly similar to the original Boids algorithm, but it is not the same.  The exact details of the algorithm tend not to matter very much -- as long as you have alignment, separation, and cohesion, you will usually get flocking behavior resembling that produced by Reynolds' original model.  Information on Boids is available at https://web.archive.org/web/20210818090425/http://www.red3d.com/cwr/boids/.</p>
+<p>To refer to this model in academic publications, please use:  Wilensky, U. (1998).  NetLogo Flocking model.  http://ccl.northwestern.edu/netlogo/models/Flocking.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</p>
+<p>In other publications, please use:  Copyright 1998 Uri Wilensky.  All rights reserved.  See http://ccl.northwestern.edu/netlogo/models/Flocking for terms of use.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Flocking - Alternative Visualizations model.  http://ccl.northwestern.edu/netlogo/models/Flocking-AlternativeVisualizations.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 1998 --></div>
+      </div>
+    </main>
+  </body>
+</html>

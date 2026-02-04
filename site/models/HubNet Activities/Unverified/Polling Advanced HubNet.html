@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Polling Advanced HubNet</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Polling Advanced HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/Unverified/Polling%20Advanced%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/HubNet Activities/Unverified/Polling Advanced HubNet.png" alt="Screenshot of Polling Advanced HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model can be used to poll data from a set of students using HubNet Clients.  The teacher can input questions to ask and then the students can input their numerical choice (from 0 to 50) in response to the question.  The collective data can then be plotted.</p>
+<h2>HOW TO USE IT</h2>
+<p>The simplest way to use this tool is to hit the GO button (to allow students to place their votes) and use the NEW QUESTION button repeatedly to input questions.  With the default settings, students will respond at their own pace, and their responses will be histogrammed in the plot.  The teacher can use the &lt;&lt;&lt; and &gt;&gt;&gt; buttons to move among the questions and see the students' responses.</p>
+<p>However, this activity has many features that can be useful in preparing for discussion, inciting discussion, and later analyzing discussions.</p>
+<p>Preparation:
+The teacher can load this model before class and prepare questions for loading in class.  By scrolling the window to the right-most screen, the teacher can use the Preparation features.  The teacher can create questions that use the HubNet Client (New Poller Question).  After entering a set of questions and editing them as necessary (using the Edit Question button) the teacher can save those questions in a web-ready HTML file (using the PREPARATIONS FINISHED button).  Then, in class, the teacher can load the questions using the LOAD QUESTIONS button to load the questions either from the local harddrive.</p>
+<p>If the teacher makes a mistake while typing a question, he can correct it using the EDIT QUESTION button.  He can insert a question before the current one, re-type the current question, or delete a question.  (These can all be done in class, on the fly, as well)</p>
+<p>Inciting Discussion:
+In the default settings, students can move through questions at their own pace, they can change their answers as often as they want, and the class results are histogrammed on the teacher's computer in real time.  What if the teacher wants students to make their decisions without seeing what their classmates have chosen?  The teacher can turn off SHOW-DATA?.  The teacher can show the average response to several questions side-by-side by changing PLOT-MODE to "Average."  If the teacher wants to call everyone's attention to a particular question, he can turn on LOCK-STEP?.  If the teacher wants students to place a vote and stick to it, he can turn off ALLOW-CHANGE?.</p>
+<p>The ability for students to give anonymous responses can help fuel discussions.  Teachers should feel free to allow students to log in with fake names, or turn off SEE-NAMES?  When students see that others share their opinions, they tend to be more willing to discuss the reasoning behind their views, and avoid the classic problems of "I don't want to seem stupid" or "I don't want to seem smart."</p>
+<p>In addition to the plot, turtle positions can be used to present information about students' responses.  By setting the TURTLE-DISPLAY chooser to "Sit" or "Wander", the teacher can have the turtles sort left and right according to if they've voted or not.  "Line Up" causes the turtles to duplicate a histogram of their choices.  "Word Sort" will cause the turtles to sort left / right and up /down according to the presence of a string in their responses (so, for example, all of the students who included the word "gravity" would move to the top half of the view, and all the students who included the word "air resistance" would move to the right, if the teacher chose those words for the sorting).</p>
+<p>While students are voting, the teacher can have the model automatically save their data, allowing for later analysis or use in discussion.  When the teacher turns on AUTO-SAVE?,  prompts help him pick the directory and file name for the saved data.</p>
+<p>Analyzing Discussion:
+After a discussion has occurred, the teacher can load the class data from different times in the discussion and view the responses.  The teacher can also export the data in a format that can be conveniently opened in any spreadsheet.  Just LOAD "world data" to revisit the students' responses in the tool, and use "save RESPONSES to SPREADSHEET" to save interesting data to a spreadsheet readable format.
+Widgets:</p>
+<p>Screen 1 (left)
+SETUP - clears everything including logged in clients.  This should only be pressed when starting out with a new group of users since all data and questions are lost.  Presents the load questions menu
+LOAD QUESTIONS - presents a menu of options for loading questions
+GO - processes data from the clients.  THIS MUST BE ON to receive responses or use the interface.
+ADD QUESTION - adds a new HubNet Client question
+SAVE - presents a menu of options for saving questions and student responses</p>
+<p>Number - shows the current question number (starts at 0)
+Current Question - shows the current question being voted on by the clients
+&lt;&lt;&lt; - changes the current question to the previous question</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>changes the current question to the next question.
+allow-change? - controls whether clients are able to change their choices after they've chosen.  Can be changed at any time.
+lock-step? - controls whether clients are forced to view only the question the teacher is currently viewing.  Can be changed at any time.</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>show-data? - controls whether the data collected are shown in the plot window.  Can be changed at any time
+plot-mode - controls whether a histogram of current responses is shown, or a plot showing the average to several questions</p>
+<p>see-names? - controls whether the turtle shows the corresponding user ID.  Can be changed at any time
+turtle-display - controls how the turtles position themselves.  With "sit" and "wander," turtles who have voted move to the right half of the screen.  With "line up," the turtles line up according to the number value of their responses (and turtles who haven't voted or who have a string response move to the far left).  With "word sort," turtles are sorted up / down and right / left according to the presence of a substring in their string response (turtles who've not voted or who have a numerical response gather in the middle)
+Who Is It? - shows the user id of the turtle under the mouse
+Sort-Up - shows the word used to sort turtles up / down
+^ CHANGE ^ - changes the sort-up value
+Sort-Right - shows the word used to sort turtles right / left
+^ CHANGE ^ - changes the sort-right value</p>
+<p>Screen 2 (middle)
+auto-save? - determines whether autosave is on or off
+auto-save-every - determines how often the model autosaves, based on the number of votes cast between saves
+auto-save directory - the directory in which autosave files are written
+auto-save base name - the base name for autosave files.  The time is added to this name.</p>
+<p>Save ALL - save all of the current information - questions, student responses, interface settings.  This is the format used by auto-save
+Load ALL - load an ALL file
+Save RESPONSES as SPREADSHEEET - saves student questions and responses in a spreadsheet compatible format
+Save INDIVIDUAL responses - creates a web page for each student with the questions and that individual's responses</p>
+<p>Screen 3 (right)
+SETUP - clears everything including logged in clients.  This should only be pressed when starting out with a new group of users since all data and questions are lost.  Presents the load questions menu
+Number - shows the current question number (starts at 0)
+Current Question - shows the current question
+Type - shows the type of the current questions (Poller, Web Text, Likert, or Web Number)
+&lt;&lt;&lt; - changes the current question to the previous question</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>changes the current question to the next question.
+Edit Question - calls a menu of options for editing the current question.  REPLACE replaces the current question, DELETE deletes it, and INSERT inserts a new question
+Clear Questions - clears all of the questions
+New Poller Question - adds a new HubNet Client question</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2>EXTENDING THE MODEL</h2>
+<p>There are many more ways the turtles could be used to convey information.  Change the model so they set their shape according to type of response they have to the current question.  Or have the turtles adjust their size according to how many responses they have.  There could also be a turtle-display mode where they sit according to their responses to two questions.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. and Stroup, W. (2002).  NetLogo Polling Advanced HubNet model.  http://ccl.northwestern.edu/netlogo/models/PollingAdvancedHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2002 Uri Wilensky and Walter Stroup.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This activity and associated models and materials were created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2002 Stroup --></div>
+      </div>
+    </main>
+  </body>
+</html>

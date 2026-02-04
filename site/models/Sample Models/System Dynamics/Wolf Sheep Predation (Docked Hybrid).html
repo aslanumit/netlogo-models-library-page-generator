@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wolf Sheep Predation (Docked Hybrid)</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Wolf Sheep Predation (Docked Hybrid)</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/System%20Dynamics/Wolf%20Sheep%20Predation%20(Docked%20Hybrid).nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/System Dynamics/Wolf Sheep Predation (Docked Hybrid).png" alt="Screenshot of Wolf Sheep Predation (Docked Hybrid)" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model explores the relationship between two different models of predator-prey ecosystems: an agent-based model and a aggregate model.  Each of the models can be run separately, or docked side-by-side for comparison.</p>
+<p>In the agent model, wolves and sheep wander randomly around the landscape, while the wolves look for sheep to prey on. Each step costs the wolves energy, and they must eat sheep in order to replenish their energy - when they run out of energy they die. To allow the population to continue, each wolf or sheep has a fixed probability of reproducing at each time step.</p>
+<p>The aggregate model is a System Dynamics model of the relationship between populations our wolves and sheep.  It is based on a version of the famous Lotka-Volterra model of interactions between two species in an ecosystem.</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>Adjust the slider parameters (see below), or use the default settings.</li>
+<li>Press the SETUP-COMPARISON button.</li>
+<li>Press the COMPARE button to begin the simulation.</li>
+<li>View the POPULATIONS and AGENT-POPULATIONS plots to watch the populations fluctuate over time</li>
+</ol>
+<p>Parameters shared between agent and aggregate models:
+- INITIAL-NUMBER-SHEEP: The initial size of sheep population
+- INITIAL-NUMBER-WOLVES: The initial size of wolf population
+- SHEEP-REPRODUCE: The probability of a sheep reproducing at each time step</p>
+<p>Parameters for agent model:
+- SHEEP-MAX-INITIAL-ENERGY: At setup time, sheep are given an energy between 1 and this value
+- WOLF-GAIN-FROM-FOOD: The amount of energy wolves get for every sheep eaten
+- WOLF-REPRODUCE: The probability of a wolf reproducing at each time step</p>
+<p>Parameters for aggregate model:
+- WOLVES-DEATH-RATE: The rate at which wolves die.
+- PREDATION-RATE: The rate at which wolves eat sheep.
+- PREDATOR-EFFICIENCY: The efficiency of the wolves in extracting energy to reproduce from the prey they eat.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Why do you suppose that some variations of the model might be stable while others are not?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try adjusting the parameters under various settings. How sensitive is the stability of the model to the particular parameters?</p>
+<p>Notice that under stable settings, the populations tend to fluctuate at a predictable pace. Can you find any parameters that will speed this up or slow it down?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>There are a number ways to alter the model so that it will be stable with only wolves and sheep (no grass). Some will require new elements to be coded in or existing behaviors to be changed. Can you develop such a version?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of the System Dynamics Modeler to create the aggregate model.</p>
+<h2>RELATED MODELS</h2>
+<p>Look at the Wolf Sheep Predation model for an example of an agent model which can produce a stable model of predator-prey ecosystems.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<ul>
+<li>Lotka, A.J. (1956) Elements of Mathematical Biology.  New York: Dover.</li>
+<li>Wilensky, U. &amp; Reisman, K. (1999). Connected Science: Learning Biology through Constructing and Testing Computational Theories -- an Embodied Modeling Approach. International Journal of Complex Systems, M. 234, pp. 1 - 12. (This model is a slightly extended version of the model described in the paper.)</li>
+<li>Wilensky, U. &amp; Reisman, K. (in press). Thinking like a Wolf, a Sheep or a Firefly: Learning Biology through Constructing and Testing Computational Theories -- an Embodied Modeling Approach. Cognition &amp; Instruction.</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2005).  NetLogo Wolf Sheep Predation (Docked Hybrid) model.  http://ccl.northwestern.edu/netlogo/models/WolfSheepPredation(DockedHybrid).  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sampler Solo</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Sampler Solo</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/ProbLab/Sampler%20Solo.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/ProbLab/Sampler Solo.png" alt="Screenshot of Sampler Solo" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>SAMPLER Solo is part of the ProbLab curricular models, in which students engage in probability-and-statistics activities as individuals and as a classroom.  SAMPLER stands for Statistics as Multi-Participant Learning-Environment Resource.  It is called "multi-participant", because there is a HubNet version of this model, which was created before the solo version was built.</p>
+<p>In both versions, users take samples from a giant grid consisting of tiny squares that are revealed as either green or blue, and then the users guess the greenness of the grid on the basis of these samples. The suggested activities are designed to create opportunities for learners to discover and discuss several basic notions of statistics, such as mean, distribution, and margin of error.</p>
+<p>In SAMPLER Solo, a teacher can prepare to run the HubNet version by getting to know the environment and encountering features that simulate the classroom functioning of the model.  Or a student could work on the model on her own, in class or at home, whether to prepare for participating in the classroom version - becoming an expert sampler! - or as a follow-up activity.  Or one could work on the model regardless of the classroom context.</p>
+<h2>PEDAGOGICAL NOTE</h2>
+<p>In SAMPLER, statistics is presented as a task of making inferences about a population under conditions of uncertainty due to limited resources. For example, if you wanted to know what percentage of students in your city speak a language other than English, how would you go about it? Would it be enough to measure the distribution of this variable in your own classroom? If so, then how sure could you be that your conclusions hold for a school in another neighborhood? Are there certain groups of people that it would make more sense to use as a sample? For instance, would it make sense to stand outside a movie house that is showing a French film with no subtitles and ask each patron whether they speak a second language? Is this a representative sample? Should we look at certain parts of town? Would all parts of town be the same? Oh, and by the way, what is an average (a mean)? A variable? A value? What does it mean to measure a distribution of a variable within a population?</p>
+<p>Many students experience difficulty understanding statistics--not only in middle and high school, but also in college and beyond.  Yet, we all share certain natural capabilities that could be thought of as naive statistics. These capabilities are related to proportional judgments that we cast in our everyday life. We make proportional judgments when we need to decide how to maximize the utility of our actions on the basis of our cumulative experience of how events were distributed For instance, when we come to a new place we may say, "People in this town are very nice." How did we decide that? Or, "Don't buy fruit there--it's often overripe." How did we infer that? Or, "To get to school, take Main street--it's the fastest route in the morning; but drive back through High street, I find that's faster in the afternoon."</p>
+<h2>HOW IT WORKS</h2>
+<p>The View features a "population" of 10,000 tiny squares that are each either green or blue, like a giant matrix of coins that are each either heads or tail.  The model can be set to select a random value for the proportion of green and blue in the population, so that the user does not know this value.  Moreover, these colors are not initially shown - the squares are grey - so that we cannot initially use proportional judgment to guess the proportion of green in the population.  Yet we can reveal the hidden color by "sampling", that is, by clicking on the View.  When you click on a square, not only do you reveal that particular square, but also its surrounding squares, so that the overall shape of the sample is a larger square. The total number of tiny squares revealed in this sample will be determined by the current value set in a slider called "sample-block-side". For example, if the slider is set at 3, taking a sample will expose a total of 9 squares (3-by-3), with the clicked square in the center. On the basis of the revealed colors, you can make a calculated guesses as to the percentage of green squares within the entire population. You can then reveal the population to find out this unknown value.</p>
+<p>A special feature of this model is that it includes an element that simulates what it looks like to use the HubNet version of this model. In the classroom PSA, all students input their guesses for green, and these collective guesses are plotted as a histogram. In the solo model it's only you guessing, and so the model creates histograms that are meant to demonstrate distributions of guesses that a classroom might produce. These demo distributions are based on what we saw in classes where we researched SAMPLER.</p>
+<h2>HOW TO USE IT</h2>
+<p>SETUP -- initializes all variables
+RERUN - creates a new population
+REVEAL POP - all tiny squares reveal their color
+SAMPLE - enables sampling by clicking on the View
+SIMULATE CLASSROOM HISTOGRAM - creates in the graphics window STUDENT GUESSES a histogram similar to what you would see if you were working as part of a large group.
+CLEAR HISTOGRAM - returns the histogram to its initial blank state.
+CLUSTER-GUESSES? - use this slider to control the size of the bins in the histogram. This can be helpful to see the distribution of guesses in the simulated classroom collective guesses.
+RANDOM-RERUN? - When Off, the Rerun will create a population with a greenness proportion set in the %-TARGET-COLOR slider. When On, the model will assign a random value for the greenness, irrespective of the slider value (and it will send that slider to 0).
+ABNORMALITY - determines the "clumpiness" of the green and blue squares in the population. When set at 0, there is typically no clumpiness (the distribution is normal). The higher the value, the larger the clusters of green (the distribution is "abnormal").
+ORGANIZE? - if at Off, then when you reveal the population, each square will show its true color. However, when On, the green and blue squares relocate, as through there were a green magnet on the left and a blue one on the right. This results in a contour running vertically down the View. Note: the contour is always a straight line, because it rounds up to the nearest line.
+SAMPLE-BLOCK-SIDE - determines the size of the sample, for example the value 3 will give a 3-by-3 sample for a total of 9 exposed squares.
+KEEP-SAMPLES? - When set to Off, each time you take a sample, the previous sample becomes dark grey again. When set to On, the next sample you take, and all subsequent samples, will remain revealed.
+GRID? - When set to On, the View will feature a grid. The grid is helpful to interpret a sample in cases of extreme green or blue, because it enables you to count the number of squares.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>When you press REVEAL POP and Organize? Is On, the green and blue colors "move" to the left and the right of the screen, respectively, forming a contour line. The location of this contour line is comparable to two other elements on the interface: the contour line falls directly below the slider handle above it and directly above the mean line of the histogram. The reason we can compare these three features directly is because the 0 and 'whole' (100%) of each of these features are aligned. That is, the sliders, graphics window, and plot have all been placed carefully so as to subtend each other precisely.</p>
+<h2>THINGS TO TRY</h2>
+<p>Set RANDOM-RERUN? to ON, press RERUN, and now take some samples. What is the minimal number of samples you need in order to feel you have a reasonable sense of the overall greenness in the population?</p>
+<p>Try setting the ABNORMALITY slider to different values and press RERUN over and over for the same percentage green, for instance 50%. Can you think of situations in the world where a certain attribute is distributed in a population in a way that corresponds to a high value of ABNORMALITY? What do we mean when we speak of a 'uniform distribution' within a population? For instance, is a distribution of ABNORMALITY = 0 uniform? Or must there be strict order, for instance stripes of target-color, in order for you to feel that the distribution is uniform? Also, is there a difference between your sense of uniformity whether you're looking at the whole population or just at certain parts of it? If you threw a handful of pebbles onto a square area, would you say they fell 'uniformly'? What kinds of patterns are natural, and what kinds of patterns would you think of as coincidental?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Change the procedure that separates green an blue, so that same green and blue squares remain when you reveal the population.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The abnormality distribution feature does not take much code to write, but is effective. Look at the code and try to understand it.</p>
+<h2>RELATED MODELS</h2>
+<p>See the HubNet SAMPLER model.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the ProbLab curriculum  Thanks to Dor Abrahamson for his design of ProbLab.  The ProbLab curriculum is currently under development at Northwestern's Center for Connected Learning and Computer-Based Modeling and at the Graduate School of Education at University of California, Berkeley. For more information about the ProbLab curriculum please refer to http://ccl.northwestern.edu/curriculum/ProbLab/.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Abrahamson, D. and Wilensky, U. (2009).  NetLogo Sampler Solo model.  http://ccl.northwestern.edu/netlogo/models/SamplerSolo.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2009 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2009 Cite: Abrahamson, D. --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Histo Blocks</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Histo Blocks</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/ProbLab/Histo%20Blocks.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/ProbLab/Histo Blocks.png" alt="Screenshot of Histo Blocks" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is a part of the ProbLab curriculum.  The ProbLab Curriculum is currently under development at the Embodied Design Research Laboratory (EDRL), University of California, Berkeley.  For more information about the ProbLab Curriculum please refer to http://ccl.northwestern.edu/curriculum/ProbLab/.</p>
+<p>Histo-Blocks is a model for exploring the binomial function.  The random generator is a "4-Block," a 2-by-2 matrix, in which each of the four squares independently can be either green or blue.  The 4-Block is thus just like four coins that each can land either on heads or tails, only that here you can easily adjust the collective chance of these four independent singleton events.  For instance, you could adjust the model so that it will behave like four coins that each has a .6 chance of landing on heads.  The model shows connections between the random generator's sample space, probabilities of its singleton events, its expected outcome distribution, and the binomial function.</p>
+<p>(This model is on theoretical probability only -- not empirical probability -- so there is no simulated experiment here.)</p>
+<h2>HOW IT WORKS</h2>
+<p>The View displays the 16 unique elemental events of the green/blue 4-Block, arranged in five columns by the number of green squares in each permutation (0 through 4).  Labels on each of the singleton green squares show the current p value, and labels on the blue blocks show the complementary (1 - p) value.  The p value can be changed using a slider that is below the View.  When you click and hold the mouse button over a column in the View, three monitors to the left of the View display information: the number of blocks in that column (n-choose-k), the compound probability of each of the blocks in that column (the product of the probabilities of the four independent singleton events), and the product of these two latter components. This product -- the number of blocks in a column multiplied by the probability of each block in the column -- represents the chance of randomly getting any one of the blocks in that column, when you operate the random generator (that is, the chance of getting the combination regardless of the particular permutation). For example, the chance of getting any 4-Block with exactly 1 green is the same as the chance of getting exactly one heads when you toss four coins.</p>
+<p>The plot shows a special histogram, in which each column is partitioned equally into as many parts as there are blocks in its corresponding View column, below. For example, the "2" column in the histogram in partitioned into 6 equal segments, because there are 6 unique 4-blocks that have two green squares in the block.  Whereas the blocks are equal in height within the columns, they differ in height between columns (for p values other than .5).  The relative heights index the compound probability.  So the histogram blocks -- the "histo-blocks" -- feature both factors at play in the binomial function: the n-choose-k coefficients are represented by the number of blocks in the column, and p^k * (1 - p)^(n - k) is represented by these blocks' individual heights.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press on SETUP, then GO.  Now, grab the slider and change the p value.</p>
+<p>Buttons:
+SETUP builds the "combinations tower" in the View.
+GO enables the functioning of clicking on the screen and of the slider.</p>
+<p>Switch:
+PLOT-INDIVIDUAL-BLOCKS? toggles between having or not having the histogram partitioned.
+AUTO-ADJUST-Y-AXIS? when set to 'On,' the histogram will keep adjusting for new p values so that the tallest column reaches to the top. When off, the max y value is 1.</p>
+<p>Sliders:
+P sets the p value.</p>
+<p>Monitors:
+When you click and hold down the mouse button over a given column in the view, the NUMBER OF ITEMS IN THIS COLUMN, PROBABILITY OF EACH ITEM IN THIS COLUMN, and N-CHOOSE K * COMPOUND P monitors update to provide information about that column.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Note the probability values appearing in little labels on the squares.  Also note the shape of the histogram.  Both the labels and histogram change with p.</p>
+<h2>THINGS TO TRY</h2>
+<p>Set the p value (on the slider) to .6.  Looking at the plot, what is special about this p value?  Can you find other p values that give this same effect?  With p set to .6, click anywhere on the middle column (2-green column).  Observe the monitors.  Now, with the mouse still down, drag the mouse one column to the right.  What happened in the monitors?</p>
+<p>Set the auto-adjust-y-axis? to 'Off,' and slide the p value.  Look at the histogram as you do this.  What is happening to the histogram? -- What is changing?;  What is not changing?  What does this mean, in terms of the probabilities?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add empirical functions to the model: create another histogram that shows actual outcomes of a simulated probability experiment with a 4-block (a sample of 4 independent events that each take on one of two possible values).  Place this new histogram on the interface such that it will readily compare to the histo-block histogram.  You can partition this histogram, too, according to sub-groups in the outcomes.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses a special procedure in order to partition the histogram columns.</p>
+<h2>RELATED MODELS</h2>
+<p>Several of ProbLab's models are related to Histo Blocks, notably Sample Stalagmite.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Thanks to Dor Abrahamson for his work on the design of this model and the ProbLab curriculum. Thank you to Josh Unterman for his talent and work on producing this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Abrahamson, D. and Wilensky, U. (2009).  NetLogo Histo Blocks model.  http://ccl.northwestern.edu/netlogo/models/HistoBlocks.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2009 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2009 Cite: Abrahamson, D. --></div>
+      </div>
+    </main>
+  </body>
+</html>

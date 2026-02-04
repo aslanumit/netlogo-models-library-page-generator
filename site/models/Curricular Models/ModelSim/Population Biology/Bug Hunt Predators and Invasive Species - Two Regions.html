@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bug Hunt Predators and Invasive Species - Two Regions</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Bug Hunt Predators and Invasive Species - Two Regions</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/ModelSim/Population%20Biology/Bug%20Hunt%20Predators%20and%20Invasive%20Species%20-%20Two%20Regions.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Curricular Models/ModelSim/Population Biology/Bug Hunt Predators and Invasive Species - Two Regions.png" alt="Screenshot of Bug Hunt Predators and Invasive Species - Two Regions" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model explores the stability of consumer producer ecosystems when different  initial populations of predator, prey, and producers are initialized into the model and when different numbers of invasive species are added to the model run.</p>
+<h2>HOW IT WORKS</h2>
+<p>Bugs wander randomly around one of two regions (left or right).  Each region is a self contained ecosystem  in the world.  Bugs in one region never go into the other region.    As bugs reach the edge of their region, they wrap around to other side of their own region.</p>
+<p>Each step (tick), each bug loses one unit of energy and they must consume a food source (grass) to replenish their energy. When they run out of energy, they die. To allow the population to continue, each bug must have enough energy to have an offspring.  When that threshold is reached for an individual bug, it has an offspring. The offspring and parent split the energy amongst themselves.
+Different amounts of grassland can be assigned to each region using the sliders. Grass is eaten when a bug moves over that patch. When this happens a fixed amount of grass energy is deducted from the patch (square) where the grass was eaten. Within each region, grass regrows at a fixed rate.</p>
+<p>Birds wander randomly around one of two regions (left or right), following similar movement, energy loss, and reproduction rules as the bugs. Birds eat bugs, and not grass.</p>
+<p>An invasive species can be introduced into either ecosystem in the model. Individuals of the invasive species wander randomly around the regions in which they are introduced. Their movement, energy loss, and reproduction rules are the same as the bugs. They also eat grass.</p>
+<h2>HOW TO USE IT</h2>
+<ol>
+<li>Adjust the slider parameters (see below), or use the default settings.</li>
+<li>Press the SETUP button.</li>
+<li>Press the GO button to begin the model run.</li>
+<li>View the LEFT REGION POPULATION SIZE VS. TIME and RIGHT REGION POPULATION SIZE VS. TIME plot to watch the bug and grass populations fluctuate over time in each of the regions on the screen.</li>
+<li>View the number of ticks the simulation has run for in the TIME monitor.</li>
+</ol>
+<p>Monitors for BUGS, BIRDS, and INVADERS will report for both the left and right region, depending on where the monitors are located (the left side of the interface or the right).</p>
+<p>Initial Settings:</p>
+<p>CONSTANT-SIMULATION-LENGTH:  When turned "on" the model run will automatically stop at 1000 ticks.  When turned "off" the model run will continue running without automatically stopping.</p>
+<p>LEFT-INITIAL-BIRDS and RIGHT-INITIAL-BIRDS:  Determines the initial size of the bird population in that region.</p>
+<p>FOOD-LEFT-BUGS-EAT and FOOD-RIGHT-BUGS-EAT:  Sets the amount of energy that bugs in that region gain from eating grass at a patch as well as the amount of energy deducted from that grass patch.</p>
+<p>LEFT-INITIAL-BUGS and RIGHT-INITIAL-BUGS:  Determines the initial size of the bug population in that region.</p>
+<p>LEFT-REGION-%-OF-GRASSLAND and RIGHT-REGION-%-OF-GRASSLAND: The percentage of patches in the world &amp; view that produce grass in that region.  The grass patches that don't produce grass will show "gray" rocks/gravel.</p>
+<p>FOOD-LEFT-INVADERS-EAT and FOOD-RIGHT-INVADERS-EAT:  Sets the amount of energy that all invaders in that region gain from eating grass at a patch as well as the amount of energy deducted from that grass.</p>
+<p>LEFT-INVADERS-TO-ADD and RIGHT-INVADERS-TO-ADD:  Determines the size of invader population to add to that region, when the corresponding LAUNCH INVASION button is pressed.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Watch as the grass, bug, bird, and invader populations fluctuate.  How are increases and decreases in the sizes of each population related?</p>
+<p>Different % of grassland values affect the carrying capacity (average values) for both the bugs, grass, birds, and invasive. Why?</p>
+<p>Different food consumption values (FOOD-LEFT-BUGS-EAT and FOOD-RIGHT-BUGS-EAT and
+FOOD-LEFT-INVADERS-EAT and FOOD-RIGHT-INVADERS-EAT) may lead to different levels of stability as well as whether one population (bugs vs. invaders) outcompetes the other.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try adjusting the parameters under various settings. How sensitive is the stability of the model to the particular parameters? Does the parameter setting affect the amount of fluctuations, the carrying capacity of bugs, grass, invaders, or birds, or does it lead to the collapse of one population in the ecosystem?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The two regions in this model are represented by shapes that add another "wall" that surround the region.</p>
+<h2>RELATED MODELS</h2>
+<p>Refer to Bug Hunt Disruptions and Bug Hunt Environmental Changes for extensions of this model that include temporary disturbances such as fire and disease.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is part of the Ecology &amp; Population Biology unit of the ModelSim curriculum, sponsored by NSF grant DRL-1020101.</p>
+<p>For more information about the project and the curriculum, see the ModelSim project website: http://ccl.northwestern.edu/modelsim/.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2015).  NetLogo Bug Hunt Predators and Invasive Species - Two Regions model.  http://ccl.northwestern.edu/netlogo/models/BugHuntPredatorsandInvasiveSpecies-TwoRegions.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2015 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2015 Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

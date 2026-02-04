@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simulated Annealing</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Simulated Annealing</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Computer%20Science/Unverified/Simulated%20Annealing.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Computer Science/Unverified/Simulated Annealing.png" alt="Screenshot of Simulated Annealing" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Simulated annealing is an optimization technique inspired by the natural annealing process used in metallurgy, whereby a material is carefully heated or cooled to create larger and more uniform crystalline structures.  In simulated annealing, a minimum value of some global "energy" function is sought.  This model attempts to find a minimal energy state of a simple function on a black and white image.</p>
+<h2>HOW IT WORKS</h2>
+<p>In this model, the energy function takes a black and white image as an input.  The energy is defined locally for each pixel (square patch) of a the image, and the "global energy" function is the sum of the energy from all of the individual pixels.  Energy is minimized by having each pixel be the same as the pixels above and below it, but different from pixels to the left and right of it.  The initial image has exactly 50% black and 50% white pixels, assigned randomly.  An optimal (lowest energy) configuration is a series of alternating vertical black and white lines.</p>
+<p>The optimization works as follows.  The system has a "temperature", which controls how much change is allowed to happen.  Small changes (swapping adjacent pixel values) in the image are considered, and either accepted or rejected.  Changes that result in a lower energy level are always accepted (changes that result in no change of energy level will also always be accepted if the ACCEPT-EQUAL-CHANGES? switch is turned on). Changes that result in a higher energy level are only accepted with some probability, which is proportional to the "temperature" of the system.  The temperature of the system decreases over time, according to some cooling schedule, which means that initially changes that increase global energy will often be accepted, but as time goes on they will be accepted less and less frequently.  This is similar to cooling a material slowly in natural annealing, to allow the molecules to settle into nice crystalline patterns.  Eventually the temperature approaches zero, at which point the simulated annealing method is equivalent to a random mutation hill-climber search, where only beneficial changes are accepted.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to initialize the model.  The image will be half black and half white pixels, and the system temperature is set at 1.00.</p>
+<p>Press GO to run simulated annealing on the image.</p>
+<p>Adjust the COOLING-RATE slider to change how quickly the temperature drops.
+The current temperature is shown in the TEMPERATURE monitor.</p>
+<p>The SWAP-RADIUS slider controls how far apart a pixel can be from another pixel to consider a swap with it.</p>
+<p>If the ACCEPT-EQUAL-CHANGES? switch is ON, then the system will always accept a pixel swap that yields no change in global energy.  If it is OFF, then equal-energy swaps are treated the same as swaps that increase the global energy, and only accepted probabilistically based on the system temperature.</p>
+<p>The GLOBAL ENERGY monitor and plot show how the energy of the system decreases over time, through the simulated annealing process.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>With the default settings (SWAP-RADIUS = 1, ACCEPT-EQUAL-CHANGES? = OFF), slower cooling rates lead to more optimal low-energy image configurations (on average).</p>
+<h2>THINGS TO TRY</h2>
+<p>If you turn ACCEPT-EQUAL-CHANGES? to ON, does slow cooling still work better than fast cooling?</p>
+<p>Try varying the SWAP-RADIUS.  Does this help the system to reach more optimal configurations?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Currently, the probability of accepting a change that decreases the total system energy is always 1, and the probability of accepting a change that increases the total system energy is based purely on the "temperature" of the system.  In neither case does the amount by which the energy has changed (for better or worse) figure into the probability.  Try extending the model to make more "sophisticated" acceptance decision criteria.</p>
+<p>Simulated annealing can be used on a wide variety of optimization problems.  Experiment with using this technique on different "energy/cost" function, or even entirely different problems.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses the <code>patch-set</code> primitive to define a small set of patches that are affected by a pixel swap.  This is useful for efficiently computing the change in energy resulting from the swap (as opposed to computing the energy for all of the patches).</p>
+<h2>RELATED MODELS</h2>
+<p>Particle Swarm Optimization, Simple Genetic Algorithm, Crystallization Basic, Ising</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Original papers describing a simulated annealing
+S. Kirkpatrick and C. D. Gelatt and M. P. Vecchi, Optimization by Simulated Annealing, Science, Vol 220, Number 4598, pages 671-680, 1983.
+V. Cerny, A thermodynamical approach to the traveling salesman problem: an efficient simulation algorithm. Journal of Optimization Theory and Applications, 45:41-51, 1985</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Stonedahl, F. and Wilensky, U. (2009).  NetLogo Simulated Annealing model.  http://ccl.northwestern.edu/netlogo/models/SimulatedAnnealing.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2009 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2009 Cite: Stonedahl, F. --></div>
+      </div>
+    </main>
+  </body>
+</html>

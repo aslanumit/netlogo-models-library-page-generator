@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>4 Block Two Stalagmites</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>4 Block Two Stalagmites</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/ProbLab/4%20Block%20Two%20Stalagmites.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/ProbLab/4 Block Two Stalagmites.png" alt="Screenshot of 4 Block Two Stalagmites" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is designed to help students understand the "shape" of the binomial distribution as resulting from how the elemental events are pooled into aggregate events. The model simulates a probability experiment that involves taking samples consisting of four independent binomial events that are each like a coin. Actual experimental outcomes from running this simulation are shown simultaneously in two representations.</p>
+<p>Both representations are stacked dot plots of the samples themselves ("stalagmites"), and each of these has a corresponding histogram to its side. There are two stalagmites, because one stalagmite stacks the samples according to their particular configuration (permutation), whereas the other stalagmite stacks them by pooling together unique configurations with similar numbers of singleton events of the same value (combinations). The user is to appreciate relations between the two pairs by noting that they are transformations of each other.</p>
+<h2>PEDAGOGICAL NOTE</h2>
+<p>If you toss four coins, what is the chance of getting exactly three heads? To figure out the answer with precision, we need to know all the possible compound events in this experiment, that is, all the unique configurations of four coin states -- whether each is heads (H) or tails (T). To make sense of the list, below, imagine that you have tagged the coins with little identifiers, such as "A", "B", "C", and "D", and you always list the state of these four coins according to the order "ABCD".</p>
+<pre><code class="language-text">HHHH
+HHHT
+HHTH
+HTHH
+THHH
+HHTT
+HTHT
+HTTH
+THTH
+TTHH
+THHT
+TTTH
+TTHT
+THTT
+HTTT
+TTTT
+</code></pre>
+<p>Assuming fair coins, all the sixteen compound events, above, are equally likely (equiprobable).  But we could pool them indiscriminately into their five sets so as to form five aggregates that are heteroprobable:</p>
+<pre><code class="language-text">4H0T
+3H1T
+2H2T
+1H3T
+0H4T
+</code></pre>
+<p>The likelihood of the four coins landing as each of these five aggregate events are related as 1:4:6:4:1, reflecting the number of unique compounds events in each.  And yet, most aggregate representations, such as histograms, do not make explicit this relation between the two different ways of parsing the sample space -- as sixteen equiprobable elemental events or as five heteroprobable aggregate events.  Consequently, students are liable to miss out on opportunities to make sense of the conventional aggregate representation</p>
+<p>This model is a part of the ProbLab curriculum.  The ProbLab Curriculum is currently under development at the CCL.  For more information about the ProbLab Curriculum please refer to http://ccl.northwestern.edu/curriculum/ProbLab/.</p>
+<h2>HOW IT WORKS</h2>
+<p>When you press GO, a sample of four tiny squares, which each can be either green or blue in accord with the probability setting, is "born" at the top of the View, between the two stalagmite sets.  This compound sample is then "cloned", with one clone traveling left to the 16-columned stalagmite set, and the other clone traveling right toward the 5-columned stalagmite set.  For each set, the model computes the appropriate chute for that compound event, in accord with its unique spatial configuration of green and blue squares (for the left-hand set) or only the number of green squares in the compound (in the right-hand set).  (See the section above, "PEDAGOGICAL NOTE", for examples of two such sets, for the case of four coins.)  As the sample accumulate in their respective columns, in each of the two stalagmite sets, it gradually becomes apparent that the sets have different "destinies".  For example, for a P = .5 setting, the left-hand set is converging on a flat distribution, whereas the right-hand set takes on the characteristic binomial shape.  The two histograms that flank the View offer the conventional representations of these two simultaneous parsings of the experiment.</p>
+<h2>HOW TO USE IT</h2>
+<p>Buttons:
+SETUP prepares the view, including erasing the coloration from a previous run of the experiment.
+GO continually runs experiments according to the values you have set in the sliders.
+GO ONCE runs only one experiment.
+GO-ORG runs experiments while grouping samples in each chute by the particular combination each 4-block exhibits.
+DISORGANIZE-RESULTS groups results in each chute by combination.
+ORGANIZE-RESULTS ungroups results so that the blocks show up in each chute according to the order they appeared.</p>
+<p>Sliders:
+PROBABILITY-TO-BE-TARGET-COLOR determines the chance of each square (turtle) in the sample compound event to be green.  A value of 50 means that each turtle has an equal chance of being green or blue, a value of 80 means that each turtle has a 80% chance of being green (and a 20% chance of being blue).</p>
+<p>Switches:
+STOP-AT-TOP? determines whether experiments will continue to be run once the samples in any given column reach the top of the View frame.</p>
+<p>Plots:
+INDIVIDUAL 4-BLOCKS plots in sixteen columns the number of times each one of the sixteen elemental compound events has been sampled.
+CATEGORIZED 4-BLOCKS plots in five columns the number of times each of the five aggregated compound events has been sampled (0green-4blue, 1green-3blue, 2green-2blue, 3green-1blue, 4green-0blue).</p>
+<p>Set the sliders according to the values you want, press SETUP, and then press GO.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The histograms that flank the View each correspond with the stalagmite set closest to them. Both the histogram and the stalagmite set on the left each has 16 columns, whereas the histogram and the stalagmite set on the right each has 5 columns.</p>
+<h2>THINGS TO TRY</h2>
+<p>Slow the model down considerably and now press Setup and then Go. Look up at the top of the View between the two stalagmite sets. Locate the four-squared sample that sprouts there and follow as it is cloned into samples that travel left and right and then fall down their appropriate chute.</p>
+<p>Using the default switch and slider settings, press Setup and then Go. Look closely at the stalagmite on the right-hand side of the View. Note what happens when one of the columns reaches the top. Because there is no more room for this column to grow, all the other columns fall down a row. Eventually, only one or two columns (according to the probability settings and the number of samples you have taken), will remain visible.</p>
+<p>Set the probability slider at .5 and press Go. What are you noticing about the shape of each of the two histograms?</p>
+<p>Set KEEP-REPEATS? to Off, STOP-AT-ALL-FOUND? to On, and STOP-AT-TOP? to Off. Try to guess what you will get in each of the stalagmite sets, and then press Go.</p>
+<h2>RELATED MODELS</h2>
+<p>Some of the other ProbLab (curricular) models, including SAMPLER -- HubNet Participatory Simulation -- feature related visuals and activities.  In Stochastic Patchwork and especially in 9-Blocks you will see the same 3-by-3 array of green-or-blue squares.  In the 9-Block Stalagmite model, when 'keep-duplicates?' is set to 'Off' and the y-axis value of the view is set to 260, we get the whole sample space without any duplicates.  In the Stochastic Patchwork model and especially in 9-Blocks model, we see frequency distribution histograms.  These histograms compare in interesting ways with the shape of the combinations tower in this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Abrahamson, D. and Wilensky, U. (2009).  NetLogo 4 Block Two Stalagmites model.  http://ccl.northwestern.edu/netlogo/models/4BlockTwoStalagmites.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2009 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2009 Cite: Abrahamson, D. --></div>
+      </div>
+    </main>
+  </body>
+</html>

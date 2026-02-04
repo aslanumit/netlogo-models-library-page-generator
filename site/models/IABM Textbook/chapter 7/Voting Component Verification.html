@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Voting Component Verification</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Voting Component Verification</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/IABM%20Textbook/chapter%207/Voting%20Component%20Verification.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/IABM Textbook/chapter 7/Voting Component Verification.png" alt="Screenshot of Voting Component Verification" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is from Chapter Seven of the book "Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo", by Uri Wilensky &amp; William Rand.</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<p>This model is in the IABM Textbook folder of the NetLogo Models Library. The model, as well as any updates to the model, can also be found on the textbook website: http://www.intro-to-abm.com/.</p>
+<h2>UPDATES TO THE MODEL SINCE TEXTBOOK PUBLICATION</h2>
+<p>The code for the <code>go</code> procedure of this model has been improved since the textbook's publication: it now stops the simulation if no votes have changed in the last tick.</p>
+<h2>WHAT IS IT?</h2>
+<p>This model is a simple cellular automaton that simulates voting distribution by having each patch take a "vote" of its eight surrounding neighbors, then perhaps change its own vote according to the outcome. The component verification extension adds the CHECK-SETUP procedure which examines whether or not the initial conditions of the model exceed the expected initial conditions.</p>
+<h2>HOW TO USE IT</h2>
+<p>Click the SETUP button to create an approximately equal but random distribution of blue and green patches.  Click GO to run the simulation.</p>
+<p>When both switches are off, the central patch changes its color to match the majority vote, but if there is a 4-4 tie, then it does not change.</p>
+<p>If the CHANGE-VOTE-IF-TIED? switch is on, then in the case of a tie, the central patch will always change its vote.</p>
+<p>If the AWARD-CLOSE-CALLS-TO-LOSER? switch is on, then if the result is 5-3, the central patch votes with the losing side instead of the winning side.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Does the model ever generate the warning that is written in the CHECK-SETUP routine?</p>
+<h2>THINGS TO TRY</h2>
+<p>Change the conditions for the CHECK-SETUP routine so it generates the warning message occasionally.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try other voting rules.</p>
+<p>Start with a nonrandom green-and-blue pattern. For example, one could make half of the world blue and half green.</p>
+<p>Can you enhance the model to incorporate multiple colors and multiple votes?  One might interpret shades of color to represent the degree of a patch's opinion about an issue: strongly against, against, neutral, etc.  Each patch could have more than two choices and weighted votes: blue patches' vote could count twice, etc.</p>
+<h2>RELATED MODELS</h2>
+<p>This is a slight variant of the Voting model in the Social Sciences section of the NetLogo models library.</p>
+<p>Another related model is Ising in the Chemistry and Physics section of the NetLogo models library. Although it's a physics model, the rules are very similar.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is described in Rudy Rucker's "Artificial Life Lab", published in 1993 by Waite Group Press.</p>
+<h2>HOW TO CITE</h2>
+<p>This model is part of the textbook, “Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo.”</p>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2008).  NetLogo Voting Component Verification model.  http://ccl.northwestern.edu/netlogo/models/VotingComponentVerification.  Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the textbook as:</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2008 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2008 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Repressilator 1D</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Repressilator 1D</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Repressilator%201D.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Repressilator 1D.png" alt="Screenshot of Repressilator 1D" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a NetLogo model of one of the first notable constructs in synthetic biology: an oscillatory network of transcriptional regulators called a <strong>repressilator</strong>. Three sets of components (DNA, mRNA and proteins called transcription factors) each follow a simple set of rules, resulting in a signal being turned on and off.</p>
+<p>For more information see <a href="https://en.wikipedia.org/wiki/Repressilator">Wikipedia Repressilator</a></p>
+<p>The repressilator was a proof of concept that artificial biological constructs could behave reliably enough to mimic the behavior of electrical circuits. Although the repressilator did not have a practical application it helped lead the way toward more practical goals, such as biological circuits that could count and turn on or off after a fixed period of time. The hope is that such components can contribute to drug delivery, nano-construction, and other fields.</p>
+<p>The repressilator has three genes, each of which produces a messenger RNA (mRNA) that produces a protein called a transcription factor (TF). What makes the system interesting is that the proteins can inhibit one of the other genes, and that they do so in a non-transitive way, analogous to the outcomes in the game Rock, Paper, Scissors - none of the actors dominates the other two.</p>
+<h2>HOW IT WORKS</h2>
+<p>Call the three genes Gene 0, Gene 1 and Gene 2. The genes are DNA that includes a binding site to which an appropriate transcription factor can attach, and a coding section that gives the sequence of the mRNA. The corresponding mRNAs are mRNA 0, mRNA 1 and mRNA 2. The mRNAs produce corresponding transcription factors (TFs): TF 0, TF 1 and TF 2. The TFs inhibit genes from producing mRNA as follows:</p>
+<ul>
+<li>TF 0 inhibits Gene 1</li>
+<li>TF 1 inhibits Gene 2</li>
+<li>TF 2 inhibits Gene 0.</li>
+</ul>
+<p>The inhibition can happen only if the TF is in the patch of the gene it inhibits, and even then binding has only a certain probability of succeeding. Biologically this corresponds to a transcription factor being near enough to the binding site of a gene's DNA to bind to it. Other events, such as whether an mRNA or a TF will decay (become non-functional and be broken down for "parts") or which gene a TF will move to are also governed by random factors.</p>
+<p>From the perspective of the different types of agents, the rules for one tick are as follows (the process is cyclical):</p>
+<ul>
+<li>I am a TF,<ul>
+<li>If I am bound, I become unbound with some probability</li>
+<li>I decay with some probability</li>
+</ul>
+</li>
+<li>I am an mRNA, I decay with some probability</li>
+<li>I am coding DNA (a gene), is a TF bound to me?<ul>
+<li>If yes, do nothing</li>
+<li>If no, I produce TFs-per-mRNA mRNAs (on average)</li>
+</ul>
+</li>
+<li>I am an mRNA, I produce a set number of TFs (on average)</li>
+<li>I am a TF,<ul>
+<li>If I am on the patch of an unbound gene I can inhibit, I bind to the gene with some probability<ul>
+<li>If synergy is enabled and I am accompanied by TFs of my kind my probability of binding can increase.</li>
+</ul>
+</li>
+<li>If I am not bound, I move with equal probability to one of the patches (including my current patch)</li>
+</ul>
+</li>
+</ul>
+<h3>The Signal</h3>
+<p>The description above left out one element of the system - the signal. The signal represents the state of the system visible to the outside world.</p>
+<p>The biological repressilator consists of tiny loops of DNA inside of <em>E. coli</em> bacteria, which are themselves invisible to the naked eye. The bacteria are visible through a microscope, but the DNA is not. The visible output of the system is the glow of a fluorescent green protein as filmed through a microscope. The DNA encoding this protein is on a separate loop of DNA, although, in this NetLogo model, it is visualized in the lower right corner of the view.</p>
+<p>A few rule updates are needed to add the behavior of the signal to the system:</p>
+<ul>
+<li>
+<p>I am the signal, is a TF bound to me?</p>
+<ul>
+<li>If yes, I become invisible with some probability</li>
+<li>If no, I am visible</li>
+</ul>
+</li>
+<li>
+<p>I am an unbound TF 0 and the signal is unbound</p>
+<ul>
+<li>I bind to the signal with some probability</li>
+</ul>
+</li>
+</ul>
+<h2>HOW TO USE IT</h2>
+<p>This model is visually complex, but easy to start using. Push the SETUP button to create three patches, each of which contains a gene. The rightmost patch also contains the signal. Push the GO button, and the action starts.</p>
+<h3>The View</h3>
+<p>The model world consists of three patches along the x axis, with wrapping. It represents a system consisting of a piece of circular DNA with three genes, as well as associated  mRNA and TFs plus the signal. The model is one dimensional. The layout within each patch uses the vertical dimension for visualization of important agents in the model.</p>
+<h4>The mRNA</h4>
+<p>mRNAs are shown at the top of the view. The model does not represent the physical processes by which mRNAs are created by transcription from DNA, or translated into proteins such as TFs. See the <em>DNA Protein Synthesis</em> and <em>GenEvo 1 Genetic Switch</em> models for an illustration of these processes.</p>
+<h4>The Genes</h4>
+<p>The DNA for each gene appears near the bottom of the view. It has two binding sites, one of which can become occupied by a TF. The DNA also has a visual indicator of the coding sequence. The gene number is visible below the DNA. When the binding site is occupied, a label "OFF" become visible.</p>
+<h4>The Transcription Factors (TFs)</h4>
+<p>The TF area is located below the mRNA area. Each TF has a color that is a bit darker than the color of the patch containing the gene that coded for it. Each TF is located in the patch of the gene it is near, and with which it can potentially interact. Orientation and position are used to visually distinguish individual TFs of each type, but this does not reflect differences in access to the binding site.</p>
+<h4>The DNA</h4>
+<p>Each patch shows a portion of the DNA associated with it. The DNA appears near the bottom of the view. It has two binding sites, one of which can become occupied by a TF. When the binding site is occupied, the gene cannot produce mRNA and an "OFF" label becomes visible. The DNA also has a visual representation of the sequence of bases A, C, G and T coding for the mRNA. The gene number is visible below the DNA.</p>
+<h4>The Signal</h4>
+<p>The signal is the state of the system visible to the world. It is visualized in the lower right corner of the right-most patch. Conceptually it is physically separate from the rest of the DNA. The signal is on by default. It has a TF binding site. When a TF is bound, the signal will decay and become "OFF".</p>
+<h3>Monitors</h3>
+<p>The three mRNA COUNTS Monitors beneath the view show the number of mRNAs of each type.</p>
+<h3>Plots</h3>
+<p>The <em>Recent TF Counts</em> Plot shows the number of TFs of each type over the last 500 ticks.
+This can help give insight into the relationship between the TFs. When the number of one type of TF decreases, what happens to the other ones? How regular are the maxima and the minima of each colored line. The patterns are an emergent behavior of the TF populations, they are not build directly into a TF agent's rules.</p>
+<p>The <em>Recent Signal Pattern</em> Plot indicates whether the signal was on or off during each of the last 100 ticks.</p>
+<p>The <em>Time_Between_On_Signals</em> Plot shows the length of each time stretch during which the signal is off.</p>
+<p>The <em>Duration_Of_On_Signals</em> Plot shows the length of each time stretch during which the signal is on.</p>
+<h3>The Sliders</h3>
+<p>The sliders represent physical characteristics of the biological components in the model.</p>
+<h4>Decay Sliders</h4>
+<p>Each decay slider gives the probability per tick that the corresponding entity will decay. A decay rate of 0 means the entity will exist forever. A decay rate of 1 means the entity will live for only one tick. Experiment with the extremes, as well as rates in between. Note that the performance of the system will degrade if the total number of TFs and mRNAs becomes too large.</p>
+<p><strong>MRNA-DECAY-PROB</strong>: The probability per tick that an individual mRNA will die.
+<strong>TF-DECAY-PROB</strong>: The probability per tick that an individual TF will die.
+<strong>SIGNAL-DECAY-PROB</strong>: The probability per tick that the an unbound ON signal will turn off.</p>
+<h4>Binding Sliders</h4>
+<p>Each binding slider gives the probability per tick that a TF will will bind to an accessible target (DNA binding-site or the signal). A binding rate of 0 means the entity will never bind. A binding rate of 1 means the entity will always bind an accessible target.</p>
+<p><strong>TF-BIND-PROB</strong>: The probability per tick that an individual TF will attach to the DNA binding site if it is in the patch of a gene it inhibits.
+<strong>SIGNAL-TF-BIND-PROB</strong>: The probability per tick that an individual signal-inhibiting TF (TF 2) will bind to the signal if it is in the signal's patch.</p>
+<h4>Unbinding Sliders</h4>
+<p>Each unbinding slider gives the probability per tick that a bound TF will will unbind from its target. A unbinding rate of 0 means the entity will never unbind. A unbinding rate of 1 means the entity will always unbind from its target after one tick.</p>
+<p><strong>TF-UNBIND-PROB</strong>: The probability per tick that an individual DNA-bound TF will unbind.
+<strong>SIGNAL-TF-UNBIND-PROB</strong>: The probability per tick that an individual signal-bound TF will unbind.</p>
+<h4>Input Widgets</h4>
+<p><strong>INITIAL-TF0</strong>, <strong>INITIAL-TF1</strong>, <strong>INITIAL-TF2</strong>: These control the initial number of TFs for each of the three types.
+<strong>N-TFs-PER-mRNA</strong>: The number of TFs that an mRNA will produce per tick on average.
+<strong>MAX-TF-SYNERGY</strong>: In biology TFs competing for a target can cooperate, increasing the probability that one of them will bind, a phenomenon called synergy. This variable sets a limit beyond which additional TFs do not affect binding probability. If MAX-TF-SYNERGY is 1 there is no synergy. The result of synergy depends on the binding probability  TF-BIND-PROB or SIGNAL-TF-BIND-PROB.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>You might begin by getting an overall impression of the action in the view. The most prominent agents are the transcription factors (TFs). With each tick some are born and some die. Some stay in the same patch, and others relocate. Some may bind to a gene or the signal, and some may unbind. Each TF's behavior is guided by the rules given in HOW IT WORKS, but its specific action at any moment depends on probabilistic outcomes - it is stochastic.</p>
+<p>Do you notice any patterns in the overall numbers of the TFs of each color? For example what happens when there is a build-up of turquoise TFs? Does a particular color of TF decrease in numbers next?</p>
+<p>What connection can you observe between the number of mRNAs of each type and the number of corresponding TFs?</p>
+<h2>THINGS TO TRY</h2>
+<p>By default, the simulation starts with no TFs. What happens if you start with TFs of one kind only? Do the other TFs eventually reach comparable levels?</p>
+<p>BehaviorSpace can be used to systematically explore the effect of the variables. Which variables change the behavior most dramatically? Which variables increase or decrease the the interval between times the signal is on? Which variables increase the number of mRNAs or TFs? Can you find any states in which the signal is always on or always off?</p>
+<h2>WHY ONE DIMENSIONAL?</h2>
+<p>There are advantages and disadvantages to having a one-dimensional model.</p>
+<p>The main idea behind making the model one dimensional is to place the emphasis on how parameters such as binding and unbinding rates, synergy between TFs, and rate of mRNA production affect the rise and fall of different TF populations, and the intervals during which the signal is on and off. A potential disadvantage is that a two-dimensional model could be more realistic in a way that makes a difference.</p>
+<p>The goal of a two-dimensional model would be that one could simulate the diffusion of TFs throughout the space. Synergy and binding could then be based on distance of TFs from the binding site. A potential problem with this type of modeling is that the time scale of the nano-movements is incredibly smaller than time scale of degradation of TFs and mRNAs. For example, TFs could wind up largely degrading before ever binding to a target.</p>
+<h2>EXTENDING THE MODEL</h2>
+<ul>
+<li>Allow each of the three types of TF to have its own decay, binding and unbinding properties.</li>
+<li>Allow each of the three types of mRNA to have its own decay and TF production properties.</li>
+<li>Make the model two-dimensional - with patches in the y direction as well. The locations of the mRNA and TFs would then be physically meaningful. How would you handle the signal?</li>
+<li>Display the age distribution of the TFs (collectively or by type.) Each TF has a TF-age property which equals the number of ticks for which it has existed. What is the shape of this distribution?</li>
+<li>Instead of using a decay rate - a fixed probability of decay occurring in a fixed time period, one can characterize decay in terms of a half life - the time it takes for half of the items to die or transform. For example, Plutonium-239 has a half-life of 24,110 years. Convert decay rates to half-lives. Does this help you think about the effect of changing decay rates? What about other rates? The action of medicinal drugs is typically characterized by a half-life.</li>
+</ul>
+<h2>NETLOGO FEATURES</h2>
+<p>An unusual feature of this model is that there is only one dimension of patches. The two-dimensional layout of each patch is computed using the patch's coordinate range , as well as information about the size of each breed of turtle. The x coordinates of <code>patch i 0</code> range from <code>i - 0.5</code> to <code>i + 0.5</code>  and y coordinates range from -0.5 to 0.5. The circularity of the topology is maintained through the use of the mod function. Since there are three patches, the patch to the right of <code>patch i 0</code> is <code>patch ((i + 1) mod 3) 0</code>. For example, the right-most patch is <code>patch 2 0</code>. The patch to its right is <code>patch (3 mod 3) 0</code>, which is <code>patch 0 0</code>, the left-most patch.</p>
+<p>To control the placement of labels, this model makes use extra turtles called banners. ( See the Label Position Example model) NetLogo right justifies the position of a label in the lower right corner of the turtle’s bounding box. A banner is a turtle of size zero that carries the desired label. The x and y coordinates of the banner must be appropriately calculated relative to the size and position of the turtle that is actually being labeled.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>DNA Protein Synthesis</li>
+<li>GenEvo 1 - Genetic Switch</li>
+<li>Label Position Example</li>
+<li>Rock Paper Scissors</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Elowitz, M. B., &amp; Leibler, S. (2000). A synthetic oscillatory network of transcriptional regulators. Nature, 403(6767), 335–338. 10.1038/35002125.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Brandes, A. and Wilensky, U. (2020).  NetLogo Repressilator 1D model.  http://ccl.northwestern.edu/netlogo/models/Repressilator1D.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2020 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2020 Cite: Brandes, A. --></div>
+      </div>
+    </main>
+  </body>
+</html>

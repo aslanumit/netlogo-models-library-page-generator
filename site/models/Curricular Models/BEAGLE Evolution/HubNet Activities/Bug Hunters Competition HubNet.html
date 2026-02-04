@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bug Hunters Competition HubNet</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Bug Hunters Competition HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/BEAGLE%20Evolution/HubNet%20Activities/Bug%20Hunters%20Competition%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Curricular Models/BEAGLE Evolution/HubNet Activities/Bug Hunters Competition HubNet.png" alt="Screenshot of Bug Hunters Competition HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model shows how competition emerges between individuals in the same population.  In a consumer / producer ecosystem, competition for shared resources emerges whenever there is a limited sappy of those resources.  Such competition may be intentional or unintentional, but similar outcomes result in either case - some individuals outcompete others for those shared resources.</p>
+<p>Even when individuals are identical, differences in where and when shared resources in the ecosystem are available will lead to variation in competitive advantages for some individuals over time (some individuals happen to be closer to those resources than other individuals).  This variation in competitive advantage, will enable some individuals to survive while others die.</p>
+<p>The degree of competition in an ecosystem depends on the number of individuals in the ecosystem and the amount of resources available per individual. A very small number of individuals may generate very little or no competition (individuals may have all the resources that they need).  However, many individuals will generate intensive competition for resources, such that very few resources are available for each individual and many individuals will die for lack of adequate resources.</p>
+<h2>HOW IT WORKS</h2>
+<p>In this model, you can have two kinds of bugs; bugs controlled by players using HubNet or automated bugs.</p>
+<p>Each HubNet player assumes the role of a consumer.  When the HubNet simulation is started after pressing GO, players should try to eat as much grass as they can. A bug controlled by a player may be turned left or right by clicking on a destination  in the client view of the World.  As the controlled bug moves across a green patch, some of the "grass" at the spot is automatically eaten.  Grass grows at a fixed rate, and when it is eaten, a fixed amount of grass energy is deducted from the patch (square) where the grass was eaten and a fixed amount of time must pass before new grass grows back at that spot.</p>
+<p>In addition, automated bugs can be included in the model. They wander around the world randomly, eating grass.</p>
+<p>When bugs-lose-energy? is on, bugs lose energy at each step and they must eat grass to replenish their energy. When they run out of energy, they die. Automated bugs can be set to reproduce automatically when they have enough energy to have an offspring. In such a case, the offspring and parent split the energy amongst themselves.</p>
+<h2>HOW TO USE IT</h2>
+<p>Make sure you select Mirror 2D view on clients in the HubNet Control Center. Once all the players have joined the simulation through hubnet, press SETUP. To run the activity, press GO.</p>
+<p>To start the activity over with the same group of players, stop the model by pressing the GO button again, press the SETUP button, and press GO again.  To run the activity with a new group of players press the RESET button in the Control Center.</p>
+<p>The controls included in this model are:</p>
+<p>AMOUNT-GRASSLAND: The percentage of patches in the World &amp; View that produce grass.</p>
+<p>INITIAL-NUMBER-AUTOMATED-BUGS: The initial size of bug population that is not controlled by a player.</p>
+<p>SPROUT-DELAY-TIME:  Controls how long before "eaten" grass starts sprouting and growing back.  Increase this value for large numbers of players to make the competition more difficult (and when there are no automated bugs in the ecosystem).  Decrease this value for small numbers of players and when there are lots of automated bugs in the ecosystem.</p>
+<p>LENGTH-COMPETITION:  Determines how long the competition will last. The unit of length is ticks.</p>
+<p>INCLUDE-CLIENTS-AS-BUGS?:  When "On", all HubNet connected clients will be given an individual bug to control that is assigned to their client when SETUP is pressed. When this is "Off", the model will run only on your local machine.</p>
+<p>AUTOMATED-BUGS-WANDER?:  When "On", automated bugs will turn a random amount left or right (between 30 and -30 degrees from its current heading) each tick.  When "off" the automated bugs will move in a straight line.</p>
+<p>AUTOMATED-BUGS-LOSE-ENERGY?: When "On", bugs lose one unit of energy for each tick.</p>
+<p>AUTOMATED-BUGS-REPRODUCE?:  When "On", automated bugs will reproduce one offspring when they reach a set threshold of energy. The parent bug's energy will be split between the parent and the offspring. The count of offspring is kept track of in the monitor "# OFFSPRING".</p>
+<p>PLAYER-VISION:  Used to set the radius shown when hubnet-send-follow is applied for sending a client view update for each player showing a radius sized Moore neighborhood around the bug the player is controlling.</p>
+<p>SHOW-LABELS-AS:  when set to "player name" will show a player name label next to each bug controlled by a client.  When set to "energy levels" will show the amount of energy on the label next to each bug (controlled by clients and automated bugs).  When set to   "energy ranges" will show the range of energy values and the energy value of all bugs in this format "[min, max]: this bug".  When set to "player energy:name" will show the player energy for their bug followed by a colon and then their user name, for only the bugs controlled by clients.</p>
+<p>The plots in the model are:</p>
+<p>ENERGY LEVELS OF BUGS:  Shows a histogram of bugs and their respective energy levels.</p>
+<p>POPULATION SIZE:  Shows the size of the bug population size over time.</p>
+<p>X-INTERVAL:  reports whatever the x-interval is for 20 bars in the historgram range.  It is being reported for use in the classroom BEAGLE activity where students build a histogram using the same x-interval as the NetLogo ENERGY LEVELS OF BUGS graph.</p>
+<p>Note: Grass squares grow back (become darker green) over time and accumulate more stored energy (food) as they become darker.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The histogram of ENERGY LEVELS OF BUGS will show that some bugs are more successful at gaining more energy from plants than others.  The histogram will show this when the bugs are intentionally being controlled by players, when they are being randomly controlled by the computer, and any combination of both.</p>
+<p>When BUGS-LOSE-ENERGY is set to "off", the histogram will keep drifting further to the right then when it is set to "on".</p>
+<p>For large populations of participants or large populations of automated bugs, the histogram for ENERGY LEVELS OF BUGS will tend to approximate a bell shaped curve.  When both participants and automated bugs are present, two histograms tend to form showing a bi-modal bell-shaped distribution, where the intentionally competing participants tend to be in the right shifted bell-shaped distribution and the automated bugs tend to be in the left shifted bell-shaped distribution.</p>
+<h2>THINGS TO TRY</h2>
+<p>If you adjust the PLAYER-VISION, does changing the radius of vision for each player effect their ability to compete?  Does the shape of the histogram change for the competition?</p>
+<p>If you adjust the AMOUNT-OF-GRASSLAND, does less grassland affect the shape of the histogram change for the competition?</p>
+<p>How does LENGTH-OF-COMPETITION affect the spread of the distribution in the histogram?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The model could be extended for some player to control predators and others to control consumers.  Alternately, some players could control consumers on one team (one type of color of bugs) and some players could control consumers on another team (another type of color of bugs).  Such a competition between teams may still tend to result in similar shaped and similar shifted histograms for energy level distributions for each team of bugs.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Each player gets a different view, attached to their own player turtle, which is in turn attached to a bug they are steering.  These customized views for following a turtle are sent to each client using the hubnet-send-follow command.</p>
+<h2>RELATED MODELS</h2>
+<p>Look the Wolf Sheep Predation model, Bug Hunt Consumers model, Bug Hunt Predation and Bug Hunt Invasive Species model.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the BEAGLE curriculum (http://ccl.northwestern.edu/rp/beagle/index.shtml)</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2011).  NetLogo Bug Hunters Competition HubNet model.  http://ccl.northwestern.edu/netlogo/models/BugHuntersCompetitionHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2011 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2011 Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

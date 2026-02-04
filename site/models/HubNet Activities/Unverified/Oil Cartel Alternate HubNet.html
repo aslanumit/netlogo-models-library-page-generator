@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oil Cartel Alternate HubNet</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Oil Cartel Alternate HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/Unverified/Oil%20Cartel%20Alternate%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/HubNet Activities/Unverified/Oil Cartel Alternate HubNet.png" alt="Screenshot of Oil Cartel Alternate HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This activity explores the economics of a market with imperfect competition. As members of a cartel, participants experience how jointly determined price and quantity decisions can be advantageous to suppliers and harmful to consumers, but also why a cartel is so difficult to sustain. In this alternate version of Oil Cartel, members can also explicitly make investments to detect and penalize other members who "cheat" on their agreement, in order to explore the role of accurate information in maintaining a cartel.</p>
+<h2>HOW IT WORKS</h2>
+<p>The basic behavior of the model is controlled by a set of equations defining aggregate consumer demand, the marginal revenue (MR) curve faced by suppliers as a whole, and the marginal cost curve of suppliers.</p>
+<ol>
+<li>Aggregate consumer demand is represented by a demand curve that describes how many units of oil the consumers will purchase at any given price-point.  From the perspective of the cartel, it can be thought of as providing what price consumers will pay given a particular level of total quantity produced by all its members. In this case, market demand is a downward-sloping linear function of price, where "base-demand" is the price of each unit of oil as the total quantity approaches 0 (i.e., the y-intercept of the linear demand function), and "demand-sensitivity" is the slope of the linear demand function:</li>
+</ol>
+<p>DEMAND: Price = base-demand - (demand-sensitivity * Quantity)</p>
+<ol start="2">
+<li>MR is the change in total revenue as a result of producing one more unit of oil:</li>
+</ol>
+<p>MARGINAL REVENUE: MR = base-demand - (2 * demand-sensitivity * Quantity)</p>
+<p>This function is the slope of the Total Revenue curve for the cartel.  The Total Revenue curve can be determined by multiplying price (i.e., the demand function), by quantity.</p>
+<ol start="3">
+<li>Marginal cost (MC) is the cost of producing one more unit of oil, assumed to be constant, and controlled by a slider in the server interface.</li>
+</ol>
+<p>As long as MR is greater than MC, the cartel will be profitable.  Indeed, economic theory predicts that the cartel as a whole will be most profitable if it keeps producing right up to the point where MR = MC. This equilibrium is given displayed on the interface as the "Monopoly Equilibrium".  At the Monopoly Equilibrium, the price available for selling an additional unit of product at the Monopoly Equilibrium is usually much higher than the additional cost of producing that product (MC).  Consequently at the individual supplier level, each cartel member can make a little more profit by "cheating" and selling a more product.  Any change in production by an individual seller changes the total cartel quantity produced, which in turn impacts the overall market price.</p>
+<p>To prevent cheating, there are two components to the enforcement mechanisms available to the cartel. Clients control their anti-cheat investment using a slider, which represents a percentage of their gross revenue what will be invested to catch cheaters. In return for this investment, the seller has the same percentage chance of catching any other sellers who are cheating. If caught cheating, a seller must pay a penalty to every seller that caught them cheating. The amount of the penalty is the gross revenues from the excess supply multiplied by the penalty-severity, which is controlled by a slider in the server interface:</p>
+<p>COST TO INVESTIGATE CHEATERS = cheat-investment-% * gross-revenue
+PENALTY FOR CHEATING = penalty-severity * gross-revenue-from-cheating</p>
+<h2>HOW TO USE IT</h2>
+<p>Quickstart Instructions:</p>
+<p>Teacher: Follow these directions to run the HubNet activity.</p>
+<p>Optional: Zoom In (see Tools in the Menu Bar)</p>
+<p>Teacher: Open 'HubNet Control Center' from 'Tools' menu and check 'Mirror Plots on Clients' and check 'Mirror View on Clients.'"</p>
+<p>Teacher: Press the INITIAL-LOGIN button.</p>
+<p>Everyone: Open up a HubNet Client on your machine and input the IP Address of this computer, press ENTER and type your user name in the box and press ENTER.</p>
+<p>Optional: Change any of the settings.</p>
+<p>Teacher: Once all users are logged in turn off the INITIAL-LOGIN button.</p>
+<p>Teacher: Press the RUN-MARKET button to start.</p>
+<p>Everyone: If you would like to sell extra oil change the value of the AMOUNT-TO-CHEAT slider.</p>
+<p>Everyone: If you would like to catch other sellers cheating change the value of the ANTI-CHEAT-INVESTMENT slider.</p>
+<p>Teacher: To rerun the activity with the same group press the RE-RUN button.</p>
+<p>Buttons:</p>
+<p>INITIAL-LOGIN - Allows sellers to log in to the activity. This forever button should be turned off before beginning the simulation.</p>
+<p>RUN-MARKET - Runs the simulation. Clients will only be selling oil while the market simulation is running. Turning off this forever button will stop all market activity, although it can be resumed from the same point by clicking the button again.</p>
+<p>RE-RUN - Resets the bank-accounts (and other variables) of participants so that another experiment may be run with a clean slate.</p>
+<p>Sliders:</p>
+<p>DEMAND-SENSITIVITY - Adjusts the sensitivity of the simulated buyers' demand curve. A low value makes the market demand less sensitive to changes in price. High values makes market demand more sensitive to price.</p>
+<p>BASE-DEMAND - Adjusts the price where the demand curve crosses the y-axis (when quantity is equal to zero). A high base-demand will yield relatively higher prices when a small amount of oil is supplied.</p>
+<p>MARGINAL-COST - Adjusts the firm's cost to produce one additional unit of oil. This is assumed to be constant regardless of the supplier's current level of production.</p>
+<p>PENALTY-SEVERITY - Adjusts the severity of the penalty for cartel members who are caught cheating. A severity of 0 means that that is no penalty. The higher the severity, the more the penalty will cost the seller that is caught cheating. The penalty is calculated as PENALTY-SEVERITY multiplied by the gross revenue from cheating.</p>
+<p>Switches:</p>
+<p>PERFECT-INFORMATION? - Controls whether the sellers receive the View information depicting the market's efficiency and the supply-and-demand plot.</p>
+<p>Monitors:</p>
+<p>"Price" - The last price for which oil sold at market.</p>
+<p>"Quantity Sold" - The quantity of oil that was most recently sold at market.</p>
+<p>"# Sellers" - The number of sellers participating in the activity.</p>
+<p>"Deadw. Loss" - The deadweight loss is a measure of the inefficiency of the market. More specifically it is the value of goods that could have been produced and consumed by the market at the Perfect Competition Equilibrium minus the value of goods that could have been produced and consumed by the market the Monopoly Equilibrium.</p>
+<p>"Competitive Quantity" - The amount of oil that would be sold in a perfectly competitive market given the aggregate demand and supply schedules.</p>
+<p>"Competitive Price" - The price that oil would be sold for in a perfectly competitive market given the aggregate demand and supply schedules.  Economic theory predicts that this price equals marginal cost under perfect competition.</p>
+<p>"Monopoly Quantity" - The total of all oil produced by suppliers that would maximize profits if the cartel behaved as a unitary monopolist, given the aggregate demand and supply schedules.</p>
+<p>"Monopoly Price" - The price of oil that corresponds to the Monopoly Quantity.</p>
+<p>Plots:</p>
+<p>"Oil Sold at Market" - Plots the quantities of oil sold at market over time. Also on the graph are the amounts that would be supplied under perfect competition and under a monopoly. Anything less than the amount of perfect competiton and above or equal to the monopoly line is an improvement is better for the cartel than a situation with no collusion, and worse for consumers.</p>
+<p>"Supply and Demand" - A plot representation of the supply and demand curves described using the parameters in the server interface.</p>
+<p>View:</p>
+<p>The view illustrates the market conditions by showing turtles, which represent consumers in the market. The view can be turned on and off to simulate the effects on the market of accurate information. The number of turtles on screen represents the number of consumers who would purchase oil in a perfectly competitive market. GREEN turtles are able to buy the oil and are free to drive their cars around the window. RED turtles cannot move because they are unable to buy oil due to the cartel's output restrictions -- they represent the inefficiencies caused by the cartel. YELLOW turtles are able to buy the oil, but are mired in gridlock -- they are being inconvenienced by the unsupplied red turtles (e.g., waiting in lines at the gas station). Yellow turtles are intended solely as a demonstration of the negative effects of collusive or monopolistic behavior. MAGENTA turtles are the beneficiaries of oil supplied beyond the perfectly competitive equilibrium output. Although they would not be able to afford the oil in a competitive market, the cartel is subsidizing the magenta turtles by operating at a loss. They will only appear if there are enough units of oil sold to drive the price of a unit of oil below the cost of producing that unit.</p>
+<p>Client Information</p>
+<p>AMOUNT-TO-CHEAT - A slider that determines how much (if any) oil the seller wants to supply beyond the cartel's agreed-upon monopolistic output.</p>
+<p>ANTI-CHEAT-INVESTMENT - A slider that determines what percentage of the seller's gross revenues should be invested to catch cheaters. Penalties will be given out to cheaters and paid to the seller if any cheaters are caught.</p>
+<p>"Bank Account" - A monitor that displays the balance of the seller's bank account. All profits are placed in the seller's bank account.</p>
+<p>"Rank" - The user's current rank in order of highest bank account balance.</p>
+<p>"Current Profit" - The profit made by the seller last time oil was sold at market.</p>
+<p>"Penalties Paid" - The total amount of penalties the user has paid for cheating.</p>
+<p>"Income From Penalties" - The total amount the user has earned by catching other sellers cheating.</p>
+<p>"# Suppliers" - The number of sellers who are currently in the market.</p>
+<p>"Price of Oil" - The most recent price of a single unit of oil at market.</p>
+<p>"Severity of Penalties" - The server's penalty-severity setting.</p>
+<p>"Market News" - Information of note.</p>
+<p>"Supply and Demand" - A plot representation of the supply and demand curves described using the parameters in the server interface.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>If there is too much cheating going on by the member, the market price of oil will precipitously drop.  In fact, it is even possible that the supply may temporarily move beyond the perfect competition equilibrium output. At this point, the suppliers are actually operating at a loss. Magenta turtles in the View are an indication that this is happening.</p>
+<h2>THINGS TO TRY</h2>
+<p>MODIFY THE SUPPLY AND DEMAND CURVES - The temptation to cheat for a cartel member is in part determined by the demand curve and supply curves. Experiment with these market characteristics using the DEMAND-SENSITIVITY, BASE-DEMAND, and MARGINAL-COST sliders in the server interface. In real life, demand for oil is relatively inelastic. How does demand sensitivity affect the incentive to cheat?</p>
+<p>TURN OFF PERFECT INFORMATION - Perfect information about the market helps sustain a cartel. Does turning of PERFECT-INFORMATION? (preventing clients from seeing the View representation of market inefficiencies) change the behavior of the cartel members?</p>
+<p>EXPERIMENT WITH PENALTY SEVERITY - The more severe the penalty is for cheating, the less incentive there is for a firm to cheat. Penalties can be changed using the PENALTY-SEVERITY slider in the server interface.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Here are some suggestions for ways to extend the model:</p>
+<ul>
+<li>
+<p>Convert from a HubNet model to a NetLogo model. The core mechanics of the HubNet model would also make for an interesting single-user exploration of the theory of monopoly. A similar effect can be gained by running this model with only one client connected.</p>
+</li>
+<li>
+<p>Introduce a notion of "bankruptcy." There are no consequences if a seller's bank account balance goes below zero. If a negative balance led to removal from the market, new competitive strategies would become possible. For example, a seller might flood the market at a loss in order to drive out other sellers and then be more secure reverting to monopoly-like output levels after they are gone.</p>
+</li>
+<li>
+<p>Make demand more "agent-based". In a real market, aggregate demand is not  determined the interaction between buyers and sellers.  This would require replacing the functions that control demand with individual buyers that follow their own rules.</p>
+</li>
+<li>
+<p>Cartel behavior can be model as a prisoner's dilemma situation where the member is always faced with the decision to cooperate or defect in each round.  As such, one could create a model where cartel members select strategies over time, as opposed to instantaneous pricing decisions.</p>
+</li>
+</ul>
+<h2>NETLOGO FEATURES</h2>
+<p>Plotting the Supply and Demand Curves:
+Displaying the supply and demand curves in a plot window is more complicated than a traditional plot. To do so, a while loop iterates through quantity plotting demand, marginal revenue, and marginal cost until the demand curve crosses the x-axis.</p>
+<h2>RELATED MODELS</h2>
+<p>Tragedy of the Commons, Gridlock</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Original implementation: Greg Dunham, for the Center for Connected Learning and Computer-Based Modeling.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2004).  NetLogo Oil Cartel Alternate HubNet model.  http://ccl.northwestern.edu/netlogo/models/OilCartelAlternateHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2004 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This activity and associated models and materials were created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2004 --></div>
+      </div>
+    </main>
+  </body>
+</html>

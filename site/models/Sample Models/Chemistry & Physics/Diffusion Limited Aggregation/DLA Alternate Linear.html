@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DLA Alternate Linear</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>DLA Alternate Linear</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Diffusion%20Limited%20Aggregation/DLA%20Alternate%20Linear.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Diffusion Limited Aggregation/DLA Alternate Linear.png" alt="Screenshot of DLA Alternate Linear" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Like the main DLA model, this model demonstrates diffusion-limited aggregation.  In this variant, instead of particles forming a circular aggregate that grows from a central point, particles form vertical aggregates that grow along an edge.</p>
+<p>In diffusion limited aggregation, particles moving (diffusing) in random trajectories stick together (aggregate) to form beautiful treelike branching fractal structures.  There are many patterns found in nature that resemble the patterns produced by this model: crystals, coral, fungi, lightning, and so on.</p>
+<p>This model has "Alternate" in its name because, like DLA Alternate, it is based on slightly different rules than the main DLA model.  In the main model, the aggregate forms on a grid.  In this version, there is no grid; the particles are circles and we do the necessary calculations to determine exactly when the circles touch each other.  That makes this version more complicated, but arguably more physically accurate.</p>
+<h2>HOW IT WORKS</h2>
+<p>Gray particles fall from the top of the world, straight down.  When a falling particle touches the floor, or a stationary particle, the falling particle stops moving.  Periodically, a new particle is created to keep the process going.</p>
+<p>When a particle touches the floor, it changes color.  When a particle touches another particle, it takes that particle's color.  That makes it easy to see the separate aggregates that form.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP, then press GO.</p>
+<p>SETUP: eliminates all existing particles and starts over</p>
+<p>GO: runs the simulation</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Stuck particles block the passage of falling particles.  We get black areas that do not have any stuck particles, because the falling particles are moving in straight lines, so they cannot work their way in to fill the black areas.</p>
+<p>The simulation runs slower as it goes on.  That's because there are more and more particles in the view that have to be redrawn.  If you freeze the view, the model will always run at the same speed.  You can also use the speed slider to "fast forward" the model.</p>
+<p>The number of "live" aggregates (that can still grow) decreases over time.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try changing the size of the world (by editing the view).  What happens when the world is very tall?  How many live aggregates do you end up with?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Create a plot showing the number of live aggregates over time.  Over several runs, does this graph have a typical shape?</p>
+<p>Introduce a "wiggle" into the path of falling particles.  That means that just before the particle moves forward, it turns a bit, randomly.  How does the affect the aggregate?  Experiment with different amounts of wiggle.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The code is mostly the same as in DLA Alternate.</p>
+<p>In particular, the <code>collision-distance</code> procedure, the one with all the hairy math, is the same.  It would actually be possible to use simpler math in this model, because we know that only the y coordinate of the moving particle is changing, while its x coordinate remains the same.</p>
+<h2>RELATED MODELS</h2>
+<p>DLA and DLA Alternate are the same idea, but with particles all falling towards a central point instead of straight down.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>The mathematical procedures used in calculating the collision paths comes from: Eric W. Weisstein, "Circle-Line Intersection". From MathWorld--A Wolfram Web Resource.  http://mathworld.wolfram.com/Circle-LineIntersection.html</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2005).  NetLogo DLA Alternate Linear model.  http://ccl.northwestern.edu/netlogo/models/DLAAlternateLinear.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>4 Blocks</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>4 Blocks</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/ProbLab/4%20Blocks.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/ProbLab/4 Blocks.png" alt="Screenshot of 4 Blocks" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>4-Blocks simulates an empirical probability experiment in which the randomness generator is a compound of 4 squares that each can independently be either green or blue.  The model helps us conceptualize relations between theoretical and empirical aspects of the binomial function: combinatorial analysis (what we can get) and experimentation (what we actually get).</p>
+<p>This model is a part of the ProbLab curriculum.  The ProbLab Curriculum is currently under development at the CCL.  For more information about the ProbLab Curriculum please refer to http://ccl.northwestern.edu/curriculum/ProbLab/ and https://edrl.berkeley.edu/content/design.</p>
+<h2>HOW IT WORKS</h2>
+<p>The model operates all four squares simultaneously, just like flipping four coins at once. At every Go, each square "flips a coin" to decide whether it should be green or blue at a probability you have set.  The number of green squares in the block is counted up and added to a list that is plotted as a histogram.  Over many runs, the histogram begins to "take shape." When the 'stratified?' switch is set to 'On,' each of the five columns will be parsed into one, four, six, four, or one sub-groups that record the within-column distribution of the five aggregate events.</p>
+<h2>PEDAGOGICAL NOTE</h2>
+<p>In this probability experiment, there are five possible compound events: no-green, one-green, two-green, three-green, or four-green. These aggregate events (combinations) expand into a total of 16 elemental events (permutations) that collectively comprise the sample space: 1 no-green, 4 one-green, 6 two-green, 4 three-green, and 1 four-green. These values, 1-4-6-4-1, are the n-choose-k coefficients of the binomial function, where n is 4 and 'green' is the favorable event. A histogram tracks the accumulation of these compound outcomes. When the probability of getting green is set at 50%, the emergent empirical distribution will dynamically converge on a 1:4:6:4:1 distribution, and when we offset the p value of 50%, the distribution is accordingly offset.</p>
+<p>A "stratification" feature allows us to monitor within-column accumulation corresponding with the 16 unique elemental events. The pedagogical objective of this stratification, which parses the distribution into the 16 chunks of elemental events, is to support learners in teasing out two complementary aspects of the distribution: whereas within-column elemental events all share the same chance, the fact that they are stacked together is an arbitrary decision of the experimenter. For example, we could have, hypothetically, sorted the 16 unique types of experimental outcomes into two groups - those that have a green cell in the bottom left corner and those that do not. In sum, the stratification feature was designed as one step toward demystifying for students the apparent ineluctability of the experiment's convergence on the anticipated distribution.</p>
+<h2>HOW TO USE IT</h2>
+<p>Buttons:
+SETUP initializes the variables and erases the plot.
+GO ONCE activates the procedures just once.  So you will get a single 4-block in the view and the corresponding column in the histogram will rise by one "notch."
+GO activates the procedures repeatedly until you press it again.</p>
+<p>Sliders:
+PROBABILITY-TO-BE-TARGET-COLOR sets the chance for each of the independent squares to be green.</p>
+<p>Switches:
+ONE-BY-ONE-CHOICES? Helps users see the 4-Block as a set of four independent randomness generators (like four flipping coins). When On, each square will settle on its color at a different moment. Also, when Go is pressed, there will be a pause between 4-blocks.  You'll want to set this switch to Off once the nature of the experiment is clear.
+STRATIFIED? Makes the histogram columns be partitioned to reflect accumulation by unique elemental event. As more samples are taken, you will see the 1-4-6-4-1 structure emerge; the within-column blocks will equalize, but the between-column blocks will be equal only for a probability of 50%.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Using the default model settings, press GO ONCE. See how each of the four squares takes time to decide whether it is green or blue.  This is like four coins that are spinning on the table until they each settle either on Head or Tail.</p>
+<h2>THINGS TO TRY</h2>
+<p>Run the model with the probability-to-be-target-color set at 50%.  As the model runs, the histogram grows.  Pretty soon, the central column grows taller than other columns.  This demonstrates that there is a higher chance of getting 4-blocks that have exactly two green squares as compared to 4-blocks that have either zero, one, three, or four green squares.  But  there is more structure to interpret.  The lowest chance is to get a 4-block with no green squares or with four green squares.  The chance of getting a 4-block with either exactly one green or three green squares is in between.</p>
+<p>Now change the value of the probability slider, press Setup, and run again.  What do you see?</p>
+<p>Set the Stratified? switch to On, the model speed to slow, and the probability value to 50%  Run the model. See in the histogram how new blocks pop up.  Eventually, the number of blocks in the columns will be 1, 4, 6, 4, and 1, respectively.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Auto-Plot: Look at the histogram as it grows. What happens when it reaches the top? The simulation is generating more and more samples,  but there is no room to count them. Instead of leaping up out of the box, the number at the top-left corner of the plot -- the value of the y-axis - updates, and the histogram is redrawn to fit.
+Stratification: The partitioning of the histogram columns by unique elemental events was created especially for this model. See the procedures to learn how this was accomplished. Essentially, a nested structure was used to create within each column as many sub-columns as necessary. For example, the one-green columns (second from the left) is comprised of four stacked columns.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>You may want to monitor different aspects of the probabilistic experiment, to answer such questions as:
+- how often do we get the same combinations twice one after the other?
+- is there particular permutations you like?  You could add code to see how long it takes the model to find this permutation.
+- what is the dynamic ratio between the number of one-green and three-green outcomes?</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Abrahamson, D. and Wilensky, U. (2006).  NetLogo 4 Blocks model.  http://ccl.northwestern.edu/netlogo/models/4Blocks.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2006 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2006 Cite: Abrahamson, D. --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hockey</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Hockey</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Hockey.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Social Science/Hockey.png" alt="Screenshot of Hockey" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model depicts a sport resembling ice hockey. All of the players try to put the puck into their opponents' goal while keeping it out of their own goal. The model intends to look at the interactions of different play styles between the teams. You can control how they each play defense, how often they shoot, and their baseline skill level to see what kinds of teams and coaching decisions are effective. Team performance is measured by goals and a few other statistics.</p>
+<p>The home team is red and the away team is blue. The black dot represents the puck. The blue squares on each end of the rink are the goals, while the red outline around the outside represents the border of the playing surface.</p>
+<h2>HOW IT WORKS</h2>
+<p>At the start, the players in the center fight for the puck while the rest of their teams fall back. After that, all players take actions depending on who has the puck. When a given team has the puck, their players without it all move towards predetermined destinations near their opponents' goal in order to help on offense. The player with the puck moves toward the goal, while constantly deciding whether or not to shoot or pass. They will shoot if the probability of scoring a goal is above their shooting threshold, or if they are too close to the goal. The probability of scoring a goal is governed by their shooting skill, how close they are to the goal, whether or not any opponents are between them and the goalie,  and whether they have just received the puck from a pass or rebound. Shooters with higher skill give the puck a higher speed when they shoot. When shots are taken, the goalie may or may not deflect the puck. Their chance to save the puck depends just on the shooter's skill, the distance they shot from, and the speed the puck has when it gets to them. The skater with the puck will pass if there is a player on their team closer to the goal that is open, based on how they consider a player open.</p>
+<p>For the skaters on the team playing defense, they have specific players they want to guard. If the player they are supposed to guard has the puck, they try and stay with them at whatever distance, governed by their on puck defensive aggression. If their person does not have the puck, where they go depends on the defense type. In man-to-man defense, they stay between their person and the goal; in zone defense they stay between them and the puck. How close they are to their person versus the puck or goal is governed by their off puck defensive alignment.</p>
+<p>When no player has the puck after the start, the closest player to the puck on each team chases after it. All of the other players act as they normally would if the single closest player's team had the puck.</p>
+<p>When players are very close together, they turn at random to try to avoid each other. You may see two players stuck for a few time steps, as they jostle for the puck, and try to get around each other.</p>
+<h2>HOW TO USE IT</h2>
+<p>There  are a variety of choosers and sliders to control how each team plays. They are each described in turn below.</p>
+<p><strong><code>home-team-max-speed-mean</code></strong> / <strong><code>away-team-max-speed-mean</code></strong>: the speed for each player is drawn from a normal distribution. These sliders set the mean of the normal distribution for speed for their respective teams.</p>
+<p><strong><code>home-team-max-speed-std-dev</code></strong> / <strong><code>away-team-max-speed-std-dev</code></strong>: these sliders set the standard deviation of the normal distribution for speed for their respective teams.</p>
+<p><strong><code>home-team-shooting-mean</code></strong> / <strong><code>away-team-shooting-mean</code></strong>: the shooting ability for each player is drawn from a normal distribution. A player's shooting ability is their baseline probability to make any shot, before other factors. These sliders set the mean of the normal distribution for shooting ability for their respective teams.</p>
+<p><strong><code>home-team-shooting-std-dev</code></strong> / **<code>away-team-shooting-std-dev**</code>: these sliders set the standard deviation of the normal distribution for shooting ability for their respective teams.</p>
+<p><strong><code>home-team-shooting-aggressiveness</code></strong> / <strong><code>away-team-shooting-aggressiveness</code></strong>: these sliders set the shooting aggressiveness for each player on their respective teams. The shooting aggressiveness defines a player's shooting threshold. When they think the probability of scoring a goal if they took a shot is higher than their shooting threshold, they will shoot. With an aggressiveness of 90, a player's shooting threshold is 10, so they shoot when their goal probability is more than 10%.</p>
+<p><strong><code>home-team-on-puck-defensive-aggression</code></strong> / <strong><code>away-team-on-puck-defensive-aggression</code></strong>: these sliders control how tightly a team plays an opposing player who has the puck. At high levels, they will stay virtually on top of them and try to steal the puck. At lower levels, they keep some distance between them and the player with the puck.</p>
+<p><strong><code>home-team-passing-aggressiveness</code></strong> / <strong><code>away-team-passing-aggressiveness</code></strong>: these sliders control how much area a player on a given team considers when deciding who is open to receive a pass. If there is a player from the other team in a cone between the player with the puck and the player they are considering passing to, they won't pass it. At higher levels, players consider a cone with a smaller radius, as they will try to fit passes in tighter windows. At lower levels, they consider a cone with a larger radius, so they are more cautious with their passing.</p>
+<p><strong><code>home-team-off-puck-defensive-alignment</code></strong> / <strong><code>away-team-off-puck-defensive-alignment</code></strong>: these sliders control how close players on a given team are to their man they are supposed to defend. At high levels, they stay closer to their man. At lower levels, they are closer to either the puck or their own goal, depending on the style of defense their team is playing.</p>
+<p><strong><code>home-steal-%</code></strong> / <strong><code>away-steal-%</code></strong>: these sliders control how likely a player on a given team is to steal the puck when the player with the puck from the other team is in front of them.</p>
+<p><strong><code>home-defense-type</code></strong> / <strong><code>away-defense-type</code></strong>: these choosers can be set to either man-to-man or zone. In man-to-man defense, skaters stay between the player they have to defend and their own goal, while in zone defense, they stay between their mark and the puck.</p>
+<p>Changing these parameters changes how each team plays. You can experiment with the different combinations of play styles and skills for the teams.</p>
+<p>There are are also statistics collected for performance measures. These are briefly summarized below.</p>
+<p><strong><code>home-goals</code></strong> / <strong><code>away-goals</code></strong>: the goals scored by each team.</p>
+<p><strong><code>home-shots</code></strong> / <strong><code>away-shots</code></strong>: the shots taken by each team.</p>
+<p><strong><code>home-sog</code></strong> / <strong><code>away-sog</code></strong>: the shots on goal for each team, or all of the shots that have been directed at the goal.</p>
+<p><strong><code>home-xg</code></strong> / <strong><code>away-xg</code></strong>: the expected goals for each team, computed as the addition of all goal probabilities for each shot taken by a team.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice how, with all parameters equal, the results and performance can swing wildly from run to run. This shows the unpredictability inherent in this system, especially when teams use the same play styles and are evenly-matched.</p>
+<p>Notice how speed can be more important than shooting ability - being faster to the puck can outweigh being able to shoot it better. This effect is magnified by the fact that almost all play in this model occurs in transition.</p>
+<h2>THINGS TO TRY</h2>
+<p>Experiment with varying the parameters together, and see what combinations of play styles might work for teams. Also, see what play styles might be more effective against other play styles. Results can still vary greatly, but with enough trials, there should be some clear interactions (hint: experiment with both defensive aggression sliders, the defense type, and shooting aggressiveness and see if you find anything interesting).</p>
+<p>Experiment with varying the speeds and shooting abilities for teams. See how speed is more important than shooting ability with all else equal.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>You may notice some players set up in front of the goal and take lots of shots before anyone is able to stop them. See if you can mitigate this behavior and make it easier on the defense.</p>
+<p>You could add more complicated goalie behaviors by allowing them to control the puck and pass it to their team.</p>
+<p>You could add more complicated offensive behavior by having off-puck players move from their static positions and do something more interesting. You could potentially implement some sort of screening behavior on the goalie, and have that increase the probability of a goal.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Credit to the Gas Lab Gas in a Box model for some code related to puck movement:</p>
+<ul>
+<li>Wilensky, U. (1997). NetLogo GasLab Gas in a Box model. http://ccl.northwestern.edu/netlogo/models/GasLabGasinaBox. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Credit to the Heroes and Cowards model for some code related to player movement:</p>
+<ul>
+<li>Stonedahl, F., Wilensky, U., Rand, W. (2014). NetLogo Heroes and Cowards model. http://ccl.northwestern.edu/netlogo/models/HeroesandCowards. Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Zamborsky, C., Kelter, J. and Wilensky, U. (2025).  NetLogo Hockey model.  http://ccl.northwestern.edu/netlogo/models/Hockey.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>This model was developed as part of the Spring 2025 Multi-agent Modeling course offered by Dr. Uri Wilensky at Northwestern University. Special thanks to Teaching Assistants Jacob Kelter and Can Gurkan.</p>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2025 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2025 MAM2025 Cite: Zamborsky, C., Kelter, J. --></div>
+      </div>
+    </main>
+  </body>
+</html>

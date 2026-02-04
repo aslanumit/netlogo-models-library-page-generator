@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>N-Bodies</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>N-Bodies</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Mechanics/Unverified/N-Bodies.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Chemistry &amp; Physics/Mechanics/Unverified/N-Bodies.png" alt="Screenshot of N-Bodies" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This project displays the common natural phenomenon expressed by the inverse-square law.  Essentially this displays what happens when the strength of the force between two objects varies inversely with the square of the distance between these two objects.  In this case, the formula used is the standard formula for the Law of Gravitational Attraction:</p>
+<blockquote>
+<p>(m1 * m2 * G) / r<sup>2</sup></p>
+</blockquote>
+<p>This particular model demonstrates the effect of gravity upon a system of interdependent particles. You will see each particle in the collection of small masses (each of the n bodies, n being the total number of particles present in the system) exert gravitational pull upon all others, resulting in unpredictable, chaotic behavior.</p>
+<h2>HOW TO USE IT</h2>
+<p>First select the number of particles with the NUMBER slider.</p>
+<p>The SYMMETRICAL-SETUP? switch determines whether or not the particles' initial velocities will sum to zero.  If On, they will. Their initial positions will also be randomly, but symmetrically, distributed across the world.  If SYMMETRICAL-SETUP? is Off, each particle will have a randomly determined mass, initial velocity, and initial position.</p>
+<p>MAX-INITIAL-MASS and MAX-INITIAL-SPEED determine the maximum initial values of each particle's mass and velocity.  The actual initial values will be randomly distributed in the range from zero to the values specified.</p>
+<p>The FADE-RATE slider controls the percent of color that the paths marked by the particles fade after each cycle.  Thus at 100% there won't be any paths as they fade immediately, and at 0% the paths won't fade at all.  With this you can see the ellipses and parabolas formed by different particles' travels.</p>
+<p>The KEEP-CENTERED? switch controls whether the simulation will re-center itself after each cycle.  When On, the system will shift the positions of the particles so that the center of mass is at the origin (0, 0).</p>
+<p>If you want to design your own custom system, press SETUP to initialize the model, and then use the CREATE-PARTICLE button to create a particle with the settings set with the INITIAL-VELOCITY-X, INITIAL-VELOCITY-Y, INITIAL-MASS, and PARTICLE-COLOR sliders.  Particles are created by clicking in the View where you want to place the particle while the CREATE-PARTICLE button is running.  (Note, if KEEP-CENTERED? is On the particles will always move so that the center of mass is at the origin.)</p>
+<p>After you have set the sliders to the desired levels, press SETUP to initialize all particles, or SETUP TWO-PLANET to setup a predesigned stable two-planet system.  Next, press GO to begin running the simulation. You have two choices: you can either let it run without stopping (the GO forever button), or you can just advance the simulation by one time-step (the GO ONCE button). It may be useful to step through the simulation moment by moment, so that you can carefully watch the interaction of the particles.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The most important thing to observe is the behavior of the particles. Notice how (and to what degree) the initial conditions influence the model.</p>
+<p>Compare the two different modes of the model, with SYMMETRICAL-SETUP? On and Off. Observe the initial symmetry of the zero-summed system, and what happens to it.  Why do you think this is?</p>
+<p>As each particle acts on all the others, the number of particles present directly affects the run of the model. Every additional body changes the center of mass of the system. Watch what happens with 2 bodies, 4 bodies, etc... How is the behavior different?</p>
+<p>It may seem strange to think of n discrete particles exerting small forces on one other particle, determining its behavior. However, you can think of it as just one large force emanating from the center of mass of the system.  Watch as the center of mass changes over time. In the main procedure, <code>go</code>, look at the two lines of code where each body's position (xc, yc) is established- we shift each particle back towards the center of mass. As no other forces are present in the model (the n-bodies represent a closed system), our real positions are relative, defined only in relation to the center of mass itself. Recall Newton's third law, which states that for each internal force acting on a particle, it exerts an equal but opposite force on another particle. Hence the internal forces cancel out, and we have no net force acting on the center of mass. (If particle 1 exerts a force on particle 2, then particle 2 exerts the same force on particle 1. Run the model with just two particles to watch this in action.)</p>
+<h2>THINGS TO TRY</h2>
+<p>Compare this model to the other inverse square model, 'Gravitation'. Look at the paths made by the two different groups of particles. What do you notice about each group? How would you explain the types of paths made by each model?</p>
+<p>The force acting upon each turtle is multiplied by a constant, 'g' (a global variable). In classical Newtonian Mechanics, 'g' is the universal gravitational constant, used in the equation for determining the force of gravitational attraction between any two bodies:</p>
+<blockquote>
+<p>f = (g * (mass1 * mass2)) / distance<sup>2</sup></p>
+</blockquote>
+<p>In real life, g is difficult to calculate, but is approximately 6.67e-11 (or 0.0000000000667). However, in our model, the use of g keeps the forces from growing too high, so that you might better view the simulation. Feel free to play with the value of g to see how changes to the gravitational constant affect the behavior of the system as a whole. g is defined in the 'setup' procedure.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Each time-step, every turtle sums over all other turtles to determine the net acting force upon it. Thus, if we have n turtles, each one doing n operations each step, we're approximately taking what is called 'n-squared time'.  By this, we mean that the time it takes to run the model is proportional to how many particles we're using. 'n-time', also called linear time, means that the speed of the model is directly proportional to how many turtles are present for each turtle added, there is a corresponding slow-down.  But 'n-squared time' (also quadratic time or polynomial time) is worse --- each turtle slows the model down much more.  The speed of the model, compared to linear time, is as the total number of turtles, squared. (So a linear time model with 100 turtles would theoretically be as fast as a quadratic time model with just 10 turtles!)</p>
+<p>For small values of n (very few turtles), speed isn't a problem. However, we can see that the speed of the model decreases quadratically (as n-squared) as the number of turtles (n itself) increases. How could you speed this up?  (It may help you that the center of mass of the system is already being computed each new time-step.)</p>
+<p>As the particles all can have different initial positions, masses, and velocities, it makes sense to think of the model as representational of a planetary system, with suns, moons, planets, and other astronomical bodies. Establish different breeds for these different classes- you could give each kind a separate shape and range of masses. See if you could create a model of a solar system similar to ours, or try to create a binary system (a system that orbits about two close stars instead of one).</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model creates the illusion of a plane of infinite size, to better model the behavior of the particles. Notice that with path marking you can see most of the ellipse a particle draws, even though the particle periodically shoots out of bounds. This is done through a combination of the basic turtle primitives <code>hide-turtle</code> and <code>show-turtle</code>, keeping every turtle's true coordinates as special turtle variables <code>xc</code> and <code>yc</code>, and calculations similar to the <code>distance</code> primitive but using <code>xc</code> and <code>yc</code> instead of <code>xcor</code> and <code>ycor</code>.</p>
+<p>When you examine the procedure window, take note that standard turtle commands like <code>set heading</code> and <code>fd 1</code> aren't used here. Everything is done directly to the x-coordinates and y-coordinates of the turtles.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo N-Bodies model.  http://ccl.northwestern.edu/netlogo/models/N-Bodies.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2002.</p>
+<!-- 1998 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

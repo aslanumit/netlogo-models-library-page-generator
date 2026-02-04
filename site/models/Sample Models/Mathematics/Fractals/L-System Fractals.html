@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>L-System Fractals</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>L-System Fractals</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/Fractals/L-System%20Fractals.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Mathematics/Fractals/L-System Fractals.png" alt="Screenshot of L-System Fractals" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This program draws special types of pictures called fractals.  A fractal is a shape that is self-similar --- that is, it looks the same no matter how closely you zoom in or out  For instance, a tree can be thought of as a fractal since if you look at the tree as a whole, you see a stick, that is to say the trunk, with branches coming out of it.  Then if you look at a smaller portion of it, say a branch, you see a similar thing, namely, a stick with branches coming out of it.</p>
+<p>This model allows you to draw and look at one class of fractals, called L-system fractals.  L-System fractals are made by following a set of rules over and over.  The rules can be few, but a fascinating and complicated fractal can still form. By using different sets of rules, you can create a wide variety of different fractal designs.</p>
+<h2>HOW IT WORKS</h2>
+<p>In the beginning, there will be only one turtle for any fractal.  Rules tell the turtle what to do.  This turtle can do things such as draw a line, or turn to the right or left.  This turtle can also split itself into two turtles. Each new turtle follows the same rules as the original turtle, and draws its own "branch" of the emerging fractal design.</p>
+<h2>HOW TO USE IT</h2>
+<p>Perhaps the best way to start with this program is by looking at examples of some L-system fractals.  In the "Interface" tab, you will find a series of buttons: "Swirl", "Ball", etc.  Each button sets up a different fractal. Some of these examples are famous fractals, such as Sierpinski's tree and Koch's snowflake.  To view these examples, simply click on one of the example buttons and then press the GO ONCE button repeatedly.</p>
+<p>You can also press GO and leave it pressed instead of pressing GO ONCE repeatedly.  Watch the number of turtles though (in the COUNT TURTLES monitor).  If it becomes very large the model may become very slow.</p>
+<p>If you don't like the location of the fractal in the world you can change it by modifying the value of the following sliders:
+- INIT-X sets the initial x coordinate of the first turtle.  It changes the horizontal starting location of  the original turtle.
+- INIT-Y sets the initial y coordinate of the first turtle.  It changes the vertical starting location of  the original turtle.</p>
+<p>If you don't like the color scheme of the fractal you can change it by modifying the value of the following sliders:
+- INIT-COLOR controls the initial color of the first turtle.
+- The value of COLOR-INC is added to the turtles color anytime a new turtle hatches.</p>
+<p>The example buttons and the SETUP button choose the rules for a fractal.  Each of the example buttons sets up the world to draw the fractal of the same name.  The SETUP button sets up the world for drawing the rules found in the applyRules procedure in the Code tab.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice the self-similarity of the fractals at each iteration.  What if one were to perform an infinite number of iterations?  Would looking at any piece up close look any different than looking at the whole?  Also notice how the number of turtles in each of the example is multiplied by some number at each iteration.  Does this make sense?  Try to figure out the number of turtles at some arbitrary step n for one or more of the examples.</p>
+<h2>THINGS TO TRY</h2>
+<p>Now that you have played around with settings for the examples provided, why not try making your own fractals.  You can do this by changing the commands in the <code>apply-rules</code> procedure in the Code tab.  The comments in that procedure list the commands you can use.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try adding switches such as increment-by-random-length or decrement-by-random-degree that could impose a random factor to the movement of the turtles.  Then add to the forward and turning functions, for example, a random value to the number of steps and degrees.  This would increase the realism in a fractal.</p>
+<p>Pick up a book on fractals or search on the internet to find fractals that are interesting and try to create them using the rules of L-system fractals.  You may find some resources below.</p>
+<p>Try extending the set of rules so that there are more than the basic ones included in this model.  Then use these rules to make new fractals.</p>
+<p>Try starting with more than just one turtle, in a different location or heading, and see how that can affect the fractals that you have made.  Does it ruin them or does it make them more interesting and complex?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The <code>hatch</code> command is used to make an exact duplicate of an existing turtle.</p>
+<p>The <code>run</code> command is used to run the current rule set.</p>
+<h2>RELATED MODELS</h2>
+<p>all of the other models in the Fractals section of the Models Library (under Mathematics)</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>You may find more information on L-System fractals in the following locations:</p>
+<p>This site offers some explanation and quite a few classic examples of L-systems.
+http://www.kevs3d.co.uk/dev/lsystems/#</p>
+<p>This site offers an introduction to fractals, including L-system fractals as well as others:
+http://web.cs.wpi.edu/~matt/courses/cs563/talks/cbyrd/pres1.html</p>
+<p><em>The Fractal Geometry of Nature</em> by Benoit Mandelbrot</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2001).  NetLogo L-System Fractals model.  http://ccl.northwestern.edu/netlogo/models/L-SystemFractals.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2001 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

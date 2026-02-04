@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Food Reward Learning</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Food Reward Learning</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Food%20Reward%20Learning.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Food Reward Learning.png" alt="Screenshot of Food Reward Learning" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model explores a possible mechanism through which individuals can form food preferences and the role that food environments may play in shaping these preferences. Agents repeatedly choose between two food options that differ based on where in the environment they are located.  Each agent’s expected reward value of the two food types (i.e., their expectation of how much they would enjoy eating these foods) gradually changes through consumption using a temporal difference learning algorithm.</p>
+<p>This model is based on the original paper by Hammond et al. (2012) and can be used to replicate several of the authors findings.</p>
+<h2>HOW IT WORKS</h2>
+<p>In the base model, there are two food types: low palatability (L) and high palatability (H). Each food type has an associated palatability between zero and one that controls the “true” reward value of the food. The model environment consists of a square lattice where each cell can contain a set of two food types: either HH (colored black), HL (colored gray), or LL (colored green).</p>
+<p>Every agent has a learned reward value for the low and high value food types. These reward values can be thought of as the agent’s expectation of how much they would enjoy eating each food type. At the start of the model, agents have no prior expectations of the reward value of each food type and are initialized with learned reward values of zero. The value of each agent's expected palatability of high value food is represented with color, where darker colored agents have higher learned reward values than lighter colored agents.</p>
+<p>Agents begin on the left side of the lattice and progress to the right, one cell at time, until they have reached the right side of the lattice, at which point the simulation terminates.</p>
+<p>At each time step agents consume one of the food objects in the cell that they are currently occupying. If the cell contains either HH or LL, the agent will select H or L, respectively. However, if the cell contains both food types, the agent will select the food type that they currently perceive as having a higher value—i.e., the food type with the larger corresponding learned reward value. If the agent considers both food types to be exactly equivalent in value, they will select one of food types at random. Subsequently, there is a small probability that an agent will switch to the other food option prior to consumption, changing their mind for some reason exogenous to the model.</p>
+<p>Finally, the agent will consume their selected food type and update one of their learned reward values, corresponding to the food type the just consumed. The learned reward values are updated using an adapted temporal difference learning algorithm as follows:</p>
+<p><em>V<sub>F</sub></em>(<em>t</em> + 1) = <em>V<sub>F</sub></em>(<em>t</em>) + <em>α</em>[<em>β</em> × <em>p<sub>F</sub> -  V<sub>F</sub></em>(<em>t</em>)]</p>
+<p>where:</p>
+<p><em>F</em>: is the food type consumed (either H or L).
+<em>V<sub>F</sub></em>(<em>t</em>): is the agent’s learned reward value of food type <em>F</em> at time <em>t</em>.
+<em>α</em>: is the agent’s learning rate, the speed at which they update their learned reward value.
+<em>β</em>: is the agent’s responsivity to food, a factor that modifies their reward values for each food type.
+<em>p<sub>F</sub></em>: The “true” reward value of food type <em>F</em>.</p>
+<h2>HOW TO USE IT</h2>
+<p>The two buttons, SETUP and GO, control execution of the model. The SETUP button will initialize the food environment, agents, and other variables, preparing the model to be run. The GO button will then run the model until all agents have reached the right side of the world.</p>
+<p>GRID-SIZE controls both the number of agents in the model (equal to the sliders value) and the size of the world (equal to the square of the slider value).</p>
+<p>FOOD-ENVIRONMENT controls the initialization of the food types in the model.</p>
+<ul>
+<li>“random” initializes each cell randomly to HH, HL, or LL with equal probability.</li>
+<li>“gradient” splits the world into two environments starting in a mostly HH or LL environment and transitioning to an environment of mostly HL.</li>
+<li>“uniform” splits the world in half such that one environment is solely HH and the other environment is solely HL.</li>
+</ul>
+<p>The slider ALPHA-1 controls the learning rate that half of all agents will be initialized with (denoted in circles), while ALPHA-2 controls the learning rate of the remaining agents (denoted in squares). If ALPHA-1 is equal to ALPHA-2 all agents will share a single learning rate.</p>
+<p>If the HETEROGENEOUS-RESPONSIVITY? switch is "Off" all agents will share the same responsivity to food. If set to "On" responsivity to food can differ across agents with half of all agents having increased responsivity (beta-1) and the remaining agents having decreased responsivity (beta-2).</p>
+<p>The P-LOW and P-HIGH sliders set the specific "true" reward values of high (H) and low (L) value foods.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Early food environments can create a “lock-in” effect where current and future agent preferences are strongly influenced by initial consumption decisions and food environments. For example, if two agents are currently in identical food environments, their future consumption decisions may differ if their consumption and/or environment option set in the past was different.</p>
+<p>The “gradient” FOOD-ENVIRONMENT demonstrates a good example of “lock-in” effects. Notice that even though agents are in identical environment cells toward the end of the model run, the food options along the paths that they took to the right side are different, resulting in different learned reward values.</p>
+<p>This finding <em>could</em> help provide greater insight into research on eating behaviors because solely studying <em>current</em> food environments and <em>current</em> eating behaviors may not fully account for early “lock-in” effects (Hammond et al. 2012).</p>
+<h2>THINGS TO TRY</h2>
+<p>Start by running the model with ALPHA-1 and ALPHA-2 set to 0.4. Now try running the model with different values of ALPHA-1 and ALPHA-2. What happens to the final learned reward value and how quickly do agents reach equilibrium? What happens as you change the values of the learning rate values?</p>
+<p>Try setting HETEROGENEOUS-RESPONSIVITY? to "On". What happens to the final learned reward value and how quickly do agents reach equilibrium? What happens when HETEROGENEOUS-RESPONSIVITY? is "On" and learning rates ALPHA-1 and ALPHA-2 are not equal?</p>
+<p>Try answering the above questions with different FOOD-ENVIRONMENTS. Are there certain food environments where the spread (or distribution) of learned reward values is greater than others? If so, can you hypothesize why this might be the case?</p>
+<p>Try adjusting the reward values (P-LOW and P-HIGH) of the two food types. How does this change your previous findings?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add other FOOD-ENVIRONMENTs to the model.</p>
+<p>Add a reporter to calculate the time it took each group of agents to learn the reward value of each food type.</p>
+<p>Add another food type to the model.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>World is resized dynamically based on user input.</p>
+<p>The legend in the interface tab was created by using notes with large unicode characters and setting the text color to the desired element color.</p>
+<p>To concisely manage the setup of different food environments, the string name of each environment (e.g., <code>"random"</code>) has a corresponding setup procedure with the suffix <code>"-setup"</code> (e.g., <code>to random-setup</code>). The command <code>word food-environment "-setup"</code> concatenates the selected environment string name with the suffix <code>"-setup"</code> to get the string name of the setup procedure. This procedure is then executed using the <code>run</code> command. This avoids having to use an <code>ifelse</code> statement in the setup to match each environment string name to a corresponding setup procedure.</p>
+<h2>RELATED MODELS</h2>
+<p>Some other NetLogo models that explore algorithms for agent learning are the "El Farol" models and the "Piagel-Vygotsky Game". Any models using a temporal difference learning (TDL) algorithm will also be related to this model.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This NetLogo model was adapted and implemented by Adam B. Sedlak and Matt Kasman, based on the original paper:</p>
+<ul>
+<li>Hammond RA et al. “A model of food reward learning with dynamic reward exposures”. <em>Frontiers in Computational Neuroscience</em>, 6:82 (2012).</li>
+<li>A copy of this paper is avalible at: https://joeornstein.github.io/publications/Hammond-2012.pdf</li>
+</ul>
+<p>Many thanks to Ross Hammond for his helpful comments as we created this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Sendlak, A., Kasman, M. and Wilensky, U. (2023).  NetLogo Food Reward Learning model.  http://ccl.northwestern.edu/netlogo/models/FoodRewardLearning.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2023 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2023 Cite: Sendlak, A., Kasman, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

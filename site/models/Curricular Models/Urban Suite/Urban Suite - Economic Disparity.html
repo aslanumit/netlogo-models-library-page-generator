@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Urban Suite - Economic Disparity</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Urban Suite - Economic Disparity</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Urban%20Suite/Urban%20Suite%20-%20Economic%20Disparity.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Urban Suite/Urban Suite - Economic Disparity.png" alt="Screenshot of Urban Suite - Economic Disparity" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model explores residential land-usage patterns from an economic perspective, using the socio-economic status of the agents to determine their preferences for choosing a location to live.  It models the growth of two populations, one rich and one poor, who settle based on three properties of the landscape: the perceived quality, the cost of living, and the proximity to services (large red dots). These same properties then change based on where the different populations settle.</p>
+<p>The model ultimately shows the segregation of populations based on income, the clustering of services in more affluent areas, and how people's attitude can lead either to a cluster condition (emphasis on proximity), or a condition of sprawl (emphasis on cost or quality).</p>
+<h2>HOW IT WORKS</h2>
+<p>Job sites (shown as red circles on the map) are created and destroyed.  People (shown as small blue and pink squares) move in and move out.  These people want to live near to jobs, but also consider the price (cost of living) and quality of prospective locations.  But let's get more specific.</p>
+<p>When a new place of employment comes into the world, it randomly samples some number of locations (controlled by the NUMBER-OF-TESTS slider), and chooses the one with the highest price (i.e. land-value).  This may seem irrational at first, but the assumption this model makes is that jobs move toward where the wealth is.  If there is more money in a certain area, then there are more affluent people to spend that money on goods and services.</p>
+<p>The validity of this assumption in a real-world setting is worthy of skepticism.  For instance, companies also wish to pay less rent or property tax, and so alternatively one could argue that they would be seeking the least expensive piece of land to occupy.  This seems particularly true for the industrial sector, which has no need for consumers to be nearby.</p>
+<p>In any case, the reader is encouraged to carefully examine all assumptions, challenge them, and perhaps extend the model to incorporate assumptions that are more plausible in his/her view.  A model's predictions are only as good as the assumptions that underlie them.</p>
+<p>Each "tick" of the model, some number of new poor people (controlled by the POOR-PER-STEP slider) and new rich people (controlled by the RICH-PER-STEP slider) enter into the world.  When people enter the world, they randomly sample some number of locations, and choose to inhabit the one that maximizes "utility" for them, which is given by a hedonistic utility function.</p>
+<p>There are two fundamentally different types of people in this model -- "poor" people (shown in blue) and "rich" people (shown in pink), and they have differing priorities.  Both types of people wish to be located close to a place of employment.  However, rich people seek a location that has good quality, heedless of price, whereas poor people seek locations with low price, disregarding quality.</p>
+<p>The last important rule of the model is the effect that agents have on the land they inhabit.  Rich people moving into an area cause the land price and quality to increase, whereas poor people cause the land price and quality to decrease.  Nearby land attributes are affected as well, with the effect diminishing over distance.</p>
+<h2>HOW TO USE IT</h2>
+<p>Click the SETUP button first, to set up the model.  All land in the world has the same price and quality.  One job location is placed in the middle of the world, and several rich and poor people are spread out nearby it, which immediately affect the quality and price of the land they inhabit, as well as nearby land.</p>
+<p>Click the GO button to start the simulation.  To step through the simulation one "tick" at a time, use the GO-ONCE button.</p>
+<p>There are five view modes, which are controlled by the buttons VIEW PRICE, VIEW QUALITY, VIEW DIST., VIEW RICH-UTILITY, and VIEW-POOR-UTILITY</p>
+<p>VIEW PRICE displays the land-price value of each location, with white being a high price, black being a low price, and the various shades of yellow are in between.</p>
+<p>VIEW QUALITY displays the quality value of each location, with white being a high quality, black being a low quality, and the various shades of green are in between.</p>
+<p>VIEW DIST. displays the distance from each location to a place of employment.  Brighter colors demonstrate closeness.</p>
+<p>VIEW RICH-UTILITY displays the utility that rich people assign to each location on the map.  Lighter values designate better utility, and darker values designate worse utility.  Note that the highest utility areas may still be vacant, since each agent only samples a small set of the patches in the world</p>
+<p>VIEW-POOR-UTILITY displays the utility that poor people assign to each location on the map.  Lighter values designate better utility, and darker values designate worse utility.</p>
+<p>The NUMBER-OF-TESTS slider affects how many locations each agent looks at when choosing a location that optimizes the agent's utility.</p>
+<p>The RESIDENTS-PER-JOB slider determines how often a new place of employment is created in the world.  For every RESIDENTS-PER-JOB people, a new place of employment appears.</p>
+<p>There is,  however,  a maximum number of places of employment, which is controlled by the MAX-JOBS slider.</p>
+<p>Some number of poor people enter the world each time step, as determined by the POOR-PER-STEP slider.  Likewise, some number of rich people (determined by the RICH-PER-STEP slider) enter the world.</p>
+<p>Some number of poor people and rich people disappear from the world each turn, as well, which is determined by the DEATH-RATE slider.  Although it is called "death rate", it should not be taken literally -- it merely represents the disappearance of agents from the world that is being considered by the model, which could be caused by a number of factors (such as emigration).  If DEATH-RATE is set to 5, this means that both 5 rich people and 5 poor people disappear each time step.  The agents removed are always those that have been in the world for the longest period of time.</p>
+<p>The priorities of the poor people can be adjusted with the POOR-PRICE-PRIORITY slider.  If this slider is set to -1, this means that poor people do not care about price at all, and are only interested in being close to employment.  If this slider is set to 1, then poor people only care about price, and do not concern themselves with job locations.  Setting the slider at 0 balances these two factors.</p>
+<p>Similarly, the priorities of rich people can be adjusted with the RICH-QUALITY-PRIORITY slider.  On this slider, -1 means that rich people care only about having a short commute to their jobs, and not about the quality of the land, whereas 1 means that they care only about quality, and are not concerned with distance to employment.  Again, 0 represents an equal balance of these priorities.</p>
+<p>The TRAVEL DISTANCE plot shows the average distance that poor and rich people must travel to reach the nearest point of employment.  Apart from the interesting visual patterns that form in the view, this plot is the most important output of the model.</p>
+<p>The # OF JOBS monitor tells how many places of employment are currently in the world.</p>
+<p>The POPULATION monitor tells how many total people there are in the world, and the POOR POP and RICH POP monitors give the poor and rich population sizes respectively.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Do the VIEW PRICE mode and the VIEW QUALITY mode look very similar?  Apart from the fact that one is green, and the other is yellow, they might be showing identical values?  To test this, you can right click (or control-click on a Mac computer) on one of the patches in the view and choose "inspect patch XX YY".  You can do this for several patches, and you will find that the price and quality are always the same.  In this model, whenever quality goes up or down, price changes in direct proportion.</p>
+<p>What if NUMBER-OF-TESTS is small?  Is the population more or less densely centered around the jobs?  What if NUMBER-OF-TESTS is large?</p>
+<p>Change the viewing mode to distance-from-jobs, by clicking the VIEW DIST button.  Watch the model run, and the lines that form where gradients from two different jobs come together and overlap.  These shapes are related to Voronoi polygons.  You can learn more about them by looking at the "Voronoi" model in the NetLogo model library.</p>
+<p>Even if the DEATH-RATE is set such that more people are leaving the world than entering it, the model does not allow the population to die out entirely -- instead, the population will stay small.  If you grow the population for a while, and then raise the DEATH-RATE to balance out rich and poor people entering the world, then you can hold the population constant.  In this case, you might view the scenario as the same people relocating within the model, rather than new people entering and old people leaving.</p>
+<h2>THINGS TO TRY</h2>
+<p>After letting the model run for a while, try switching back and forth between the VIEW POOR-UTILITY and VIEW RICH-UTILITY display modes.  How many places that are dark for rich are bright for poor?  Is there usually an inverse relationship?  Are there places which both rich and poor find desirable, and if so, where are they?  What if you move both priority sliders to the left?</p>
+<p>Try drastically changing the POOR-PRICE-PRIORITY and RICH-QUALITY-PRIORITY sliders.  Do rich people always have the shorter distances to employment, or do poor people sometimes have the shorter distances?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>As noted above in the THINGS TO NOTICE section, in this model price and quality of land are locked together, always holding the same values.  Extend this model so that this isn't always the case.  For example, you might make it so that when new people move into an area of the model, they only affect the quality of nearby locations in a small radius, whereas they affect the price of a broader circle of cells.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model makes use of NetLogo's breeds to differentiate rich agents, poor agents, and job agents.</p>
+<p>Extensive use is also made of the SCALE-COLOR primitive, which allows for the three different view modes of the model.</p>
+<h2>RELATED MODELS</h2>
+<p>This model is related to all of the other models in the "Urban Suite".  In particular, this model shows elements of the concept of positive feedback, which is demonstrated in the "Urban Suite - Positive Feedback" model.</p>
+<p>It might also be interesting to compare it to the models "Wealth Distribution" and "Voronoi".</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model was loosely based on a model originally written by William Rand and Derek Robinson as part of the Sluce Project at the University of Michigan.  For more about the original model (SOME) that was the basis for this model, please see:</p>
+<p>Brown D.G., Robinson D.T., Nassauer J.I., An L., Page S.E., Low B., Rand W., Zellner M., and R. Riolo (In Press) "Exurbia from the Bottom-Up: Agent-Based Modeling and Empirical Requirements." Geoforum.</p>
+<p>This model was developed during the Sprawl/Swarm Class at Illinois Institute of Technology in Fall 2006 under the supervision of Sarah Dunn and Martin Felsen, by the following group of students: Danil Nagy and Bridget Dodd.  See http://www.sprawlcity.us/ for more details.</p>
+<p>Further modifications and refinements were made by members of the Center for Connected Learning and Computer-Based Modeling before releasing it as an Urban Suite model.</p>
+<p>The Urban Suite models were developed as part of the Procedural Modeling of Cities project, under the sponsorship of NSF ITR award 0326542, Electronic Arts &amp; Maxis.</p>
+<p>Please see the project web site (<a href="http://ccl.northwestern.edu/cities/">http://ccl.northwestern.edu/cities/</a>) for more information.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Felsen, M. and Wilensky, U. (2007).  NetLogo Urban Suite - Economic Disparity model.  http://ccl.northwestern.edu/netlogo/models/UrbanSuite-EconomicDisparity.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 Cite: Felsen, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

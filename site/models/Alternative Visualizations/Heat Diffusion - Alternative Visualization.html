@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Heat Diffusion - Alternative Visualization</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Heat Diffusion - Alternative Visualization</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Alternative%20Visualizations/Heat%20Diffusion%20-%20Alternative%20Visualization.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Alternative Visualizations/Heat Diffusion - Alternative Visualization.png" alt="Screenshot of Heat Diffusion - Alternative Visualization" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is an alternate visualization of the Heat Diffusion model from the Chemistry &amp; Physics section of the NetLogo Models Library. It uses visualization techniques as recommended in the paper:</p>
+<ul>
+<li>Kornhauser, D., Wilensky, U., &amp; Rand, W. (2009). Design guidelines for agent based model visualization. Journal of Artificial Societies and Social Simulation (JASSS), 12(2), 1. http://ccl.northwestern.edu/papers/2009/Kornhauser,Wilensky&amp;Rand_DesignGuidelinesABMViz.pdf.</li>
+</ul>
+<h2>WHAT IS IT?</h2>
+<p>This model simulates transient and steady-state temperature distribution of a thin plate. This version of the model uses a more intuitive visualization of the gradient of heat than the original model.</p>
+<p>The View shows a square thin plate as viewed from above.  The plate is thermally isolated on the two faces parallel to the view such that heat can flow only in and out from the perimeter of the plate and not into or out of the world.  Heat is kept constant at the edges.  As the simulation runs, heat is transmitted from warmer parts of the plate to cooler parts of the plate as shown by the varying color of the plate.  Therefore, the temperature of the plate begins to change immediately and possibly differently at different locations, gradually converging to a stable state.  Overall, the temperature distribution over the plate is a function of time and location.  In addition to this simple use of the model, you are encouraged to control various paramaters, such as the temperature of each edge edge of the plate and of the center of the plate before--and even while--the model is running.</p>
+<p>Heat diffuses ("spreads") at different rates through different media.  These rates can be determined and are called the Thermal Diffusivity of the material.  The Greek letter alpha is often associated with this value.  The diffusivity of a material does not change based on how much of the material there is.  It is always the same.  Below is a table containing several different materials with different diffusivity rates.  See that wood (bottom row) has a lower heat diffusivity than, say, iron.  This means that it takes a longer for heat to spread through a wooden object than an iron one.  That is one reason why the handles of iron saucepans are wooden, and not the other way round.  Also, think of a marble table with iron legs that has just been put out in the sun in a street-side cafe.  Which material part of the table do you expect will warm up faster?  The model allows you to change thermal diffusivity of the plate in two ways.  You can directly change the value of ALPHA to any value you like, or you can indirectly change ALPHA by selecting a material.</p>
+<h3>Thermal diffusivity of selected materials</h3>
+<table border>
+<tr><th>Material<th>Thermal diffusivity<br>(alpha cm*cm/s)
+<tr><td>Wood (Maple)<td>0.00128
+<tr><td>Stone (Marble)<td>0.0120
+<tr><td>Iron<td>0.2034
+<tr><td>Aluminum<td>0.8418
+<tr><td>Silver<td>1.7004
+</table>
+
+<h2>HOW IT WORKS</h2>
+<p>Initialize the plate and edges to have temperatures that equal their respective slider values.  Each time through the GO procedure, diffuse the heat on each patch in the following way.  Have each patch set its current temperature to the sum of the 4 neighbors' old temperature times a constant based on alpha plus a weighted version of the patch's old temperature.  (For those interested, the updated temperature is calculated by using a Forward Euler Method.)  Then the edges are set back to the specified values and the old temperature is updated to the current temperature.  Then the plate is redrawn.</p>
+<h2>HOW TO USE IT</h2>
+<p>There are five temperature sliders which enable users to set four fixed edge temperatures and one initial plate temperature:
+-- TOP-TEMP - Top edge temperature
+-- BOTTOM-TEMP - Bottom edge temperature
+-- INITIAL-PLATE-TEMP - Initial plate temperature
+-- LEFT-TEMP - Left edge temperature
+-- RIGHT-TEMP - Right edge temperature</p>
+<p>There is a slider and a chooser that govern the thermal diffusivity of the plate. Selecting a material in the chooser, then pressing the UPDATE ALPHA button will set the value of ALPHA based on the material selected:
+-- ALPHA - The alpha constant of thermal diffusivity
+-- MATERIAL-TYPE - The value of the chooser is a material from the above chart.  You must press UPDATE ALPHA for this to change the value of ALPHA.</p>
+<p>There are four buttons with the following functions:
+-- SETUP - Initializes the model
+-- GO - Runs the simulation indefinitely
+-- GO ONCE - Runs the simulation for 1 time step
+-- UPDATE ALPHA - press this if you want to set ALPHA to a preset value based on the material selected by the MATERIAL-TYPE chooser</p>
+<p>VISUALIZATION
+There is also a chooser, COLOR-SCHEME, which determines what scheme is used for coloring the plate. It has 4 values:
+RED - colors the plate a shade of red based on its temperature, uses NetLogo's SCALE-COLOR primitive (white is coldest, black is hottest)
+RGB - colors the plate from a spectrum of RGB colors based on its temperature, uses the Palette extension
+HSB - colors the plate from a spectrum of HSB colors based on its temperature
+DIVERGENT - colors the plate from a spectrum of colors from a divergent palette based on its temperature, uses the Palette extension</p>
+<h2>THINGS TO NOTICE</h2>
+<p>How does the equilibrium temperature distribution vary for different edge temperature settings?</p>
+<p>Notice how an equilibrium (the steady-state condition) is reached.</p>
+<p>Keep track of the units:</p>
+<table border>
+<tr><th>Variables<th>Units
+<tr><td>time<td>0.1 second
+<tr><td>temperature<td>degrees Celsius
+<tr><td>length<td>centimeters
+<tr><td>diffusivity<td>square centimeters per second
+</table>
+
+<p>How do the different color schemes map to the gradient of heat?
+The palette extension enables us to use divergent color schemes.</p>
+<h2>THINGS TO TRY</h2>
+<p>Set the parameters on the temperature sliders.  Pick a value for ALPHA (or pick MATERIAL-TYPE and press UPDATE ALPHA).  After you have changed all the sliders to values you like, press SETUP followed by GO or GO ONCE.</p>
+<p>Try different materials to observe the heat transfer speed.  How does this compare to physical experiments?</p>
+<p>Try the following sample settings:
+- Top:100, Bottom:0,   Left:0,   Right:0
+- Top:0,   Bottom:100, Left:100, Right:100
+- Top:0,   Bottom:66,  Left:99,  Right:33
+- Top:25,  Bottom:25,  Left:100, Right:0</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>This model simulates a classic partial differential equation problem (that of heat diffusion). The thin square plate is a typical example, and the simplest model of the behavior.  Try changing the shape or thickness of the plate (e.g. a circular or elliptical plate), or adding a hole in the center (the plate would then be a slice of a torus, a doughnut-shaped geometric object).</p>
+<p>Add a slider to alter this thickness.</p>
+<p>Try modeling derivative or combined boundary conditions.</p>
+<h2>NETLOGO  FEATURES</h2>
+<p>The bundled palette extension is used to create color schemes from the widely-used ColorBrewer standard (<a href="https://colorbrewer2.org/">https://colorbrewer2.org/</a>). Here we use a divergent spectral color scheme.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Thanks to Weiguo Yang for his work on this model.</p>
+<p>The visualizations of the plate are described in:
+Kornhauser, D.,  Wilensky, U. &amp; Rand, W. (2009). Design guidelines for agent based model visualization. Journal of Artificial Societies and Social Simulation, JASSS, 12(2), 1.
+http://ccl.northwestern.edu/papers/2009/Kornhauser,Wilensky&amp;Rand_DesignGuidelinesABMViz.pdf .</p>
+<p>The palette extension uses the ColorBrewer color schemes (Harrower &amp; Brewer 2003). It enables convenient selection and mapping of ColorBrewer Schemes in NetLogo.
+The ColorBrewer webpage (https://colorbrewer2.org/) shows the different color schemes.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Heat Diffusion - Alternative Visualization model.  http://ccl.northwestern.edu/netlogo/models/HeatDiffusion-AlternativeVisualization.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 1998 --></div>
+      </div>
+    </main>
+  </body>
+</html>

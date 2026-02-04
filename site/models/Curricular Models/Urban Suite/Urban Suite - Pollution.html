@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Urban Suite - Pollution</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Urban Suite - Pollution</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Urban%20Suite/Urban%20Suite%20-%20Pollution.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Urban Suite/Urban Suite - Pollution.png" alt="Screenshot of Urban Suite - Pollution" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is an examination of the fragile equilibrium of a predator-prey ecosystem. Populations of (1) people, (2) landscape elements and (3) swarms of airborne pollutant-agents compete for resources within an enclosed environment. Using this model, one can explore the behavior of the populations over time as they dynamically interact: the predators (pollution) and prey (people) can be compared over multiple generations as their populations demonstrate regular or irregular reproductive success.</p>
+<p>Regular oscillations (cycles) of population size indicate balance and stability in the eco-system where, despite fluctuations, populations maintain themselves over time. Conversely, irregular oscillations indicate instability leading toward potential extinction of both co-dependant populations. The model establishes a negative feedback loop: predators inhibit the density of prey, and prey stimulates the density of predators.</p>
+<h2>HOW IT WORKS</h2>
+<p>Power plants create pollution, which diffuses into the environment.  The health of people who are exposed to this pollution is adversely affected, reducing their chances of reproduction.  Those who can reproduce will create healthy children at a given birth rate.  People can also take some action to alleviate the pollution problem, which is represented in this model by planting trees.  The presence of trees helps curb the pollution.</p>
+<p>Even without pollution, people's health naturally degrades over time, and they will eventually die of natural causes. To allow the populations of people to endure, people are cloned at a certain rate (see the BIRTH-RATE slider). A stable eco-system is achieved if pollutant-agent levels are held in check, and neither the populations of people nor landscape elements overtake the environment. As in all agent-based modeling, rules define the behavior of each individual agent in each population.</p>
+<p>Rules:</p>
+<p>Power plants are grid cells with a very high fixed pollution value (determined by the POLLUTING-RATE slider).</p>
+<p>All grid cells have some pollution value, although it may be 0.  Pollution diffuses throughout the grid, so each grid shares part of its pollution value with its neighboring cells.  Since the pollution is fixed at a high amount at power plants, this has the effect that pollution emanates out from the power plants.</p>
+<p>Trees, however, clean up pollution in the cell they are planted, and the neighboring cells.  Thus, they block the spread of pollution, by emanating low-pollution values.
+Trees live for a set period of time and cannot reproduce.</p>
+<p>Each time step (tick) of the model, people agents</p>
+<ol>
+<li>
+<p>move randomly to an adjacent cell</p>
+</li>
+<li>
+<p>with some probability, they may plant a landscape element</p>
+</li>
+<li>
+<p>if they are healthy enough, with some probability, they may reproduce (clone)</p>
+</li>
+<li>
+<p>if their health has dropped to 0, they die.</p>
+</li>
+</ol>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP and GO to run the model.  (Note: the model will automatically stop when there are no people left in the world.)</p>
+<p>INITIAL-POPULATION controls the number of people created at the start of the model run.</p>
+<p>BIRTH-RATE controls the chance each person has of producing offspring.  The initial rate of 0.10 means they have a 10% chance each year of having a child, provided they are healthy enough.  People must have 4 health points or greater to reproduce, and they lose 0.1 points each year.  This means they have at most 10 years to reproduce in, and even less if they are hurt by pollution.  The default setting is very near "replacement rate" which means that on average, each person has one offspring.</p>
+<p>PLANTING-RATE controls the change a person has of planting a tree each year.  The default setting of 0.05 means they have a 5% chance.  Trees live for 50 years and never reproduce themselves.  In this sense, they are not literally trees, but represent any pollution treatment mechanism.</p>
+<p>At the start of the model, POWER-PLANTS controls how many power plants are created.</p>
+<p>POLLUTION-RATE is the pollution that each power plant outputs in a year.  This pollution is then spread to the surrounding area.</p>
+<p>The WORLD STATUS plot shows how many trees there are, how many people there are, and how much pollution there is, plotted over time as the model runs.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>What are the relationships between the amount of pollution, the number of people and the number of trees?  If there is an increase in the number of people, the number of trees will increase, but they will lag behind?  Run the model several times until you see that lag.  However, sometimes the number of trees reduces pollution so much that the people increase.  Which is the cause and which is the effect?</p>
+<p>How does the location and grouping of the power plants effect the population over time? Is it better for the power plants to be closer, or further apart?</p>
+<h2>THINGS TO TRY</h2>
+<p>With the default setting, populations will eventually die out, but the length of time they survive varies quite a bit.  Try increasing or decreasing the BIRTH-RATE just a little bit and runt he model several times.  How long does the population survive?</p>
+<p>Reset the BIRTH-RATE to 0.1 and then do several runs while varying POWER-PLANTS and POLLUTION-RATE.</p>
+<p>Set POWER-PLANTS to 0 and PLANTING-RATE to 0.  Run the model several times while varying BIRTH-RATE.  Why is there a spike at 50 ticks?  If you run the model several times you will see that it sometimes peaks at 50 ticks before dying out, but other times it will continue on for hundreds of more ticks and more than double the population at tick 50.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Make the pollution rate dependent upon the number of people.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses the <code>diffuse</code> command to spread pollution.</p>
+<h2>RELATED MODELS</h2>
+<p>This model is related to all of the other models in the "Urban Suite".</p>
+<p>Another slightly related model, which examines environmental issues and the relationship between creatures and their environment, is the DaisyWorld model, found in the NetLogo models library.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>The original version of this model was developed during the Sprawl/Swarm Class at Illinois Institute of Technology in Fall 2006 under the supervision of Sarah Dunn and Martin Felsen, by the following student: Young Jang.  See http://www.sprawlcity.us/ for more information about the course.</p>
+<p>Further modifications and refinements on the model were made by members of the Center for Connected Learning and Computer-Based Modeling before its release as an Urban Suite model.</p>
+<p>The Urban Suite models were developed as part of the Procedural Modeling of Cities project, under the sponsorship of NSF ITR award 0326542, Electronic Arts &amp; Maxis.</p>
+<p>Please see the project web site ( http://ccl.northwestern.edu/cities/  ) for more information.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Felsen, M. and Wilensky, U. (2007).  NetLogo Urban Suite - Pollution model.  http://ccl.northwestern.edu/netlogo/models/UrbanSuite-Pollution.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 Cite: Felsen, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

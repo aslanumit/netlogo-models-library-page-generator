@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Urban Suite - Structure from Randomness 1</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Urban Suite - Structure from Randomness 1</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Urban%20Suite/Urban%20Suite%20-%20Structure%20from%20Randomness%201.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Urban Suite/Urban Suite - Structure from Randomness 1.png" alt="Screenshot of Urban Suite - Structure from Randomness 1" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates the concept of "structure from randomness".  In particular, it is an implementation of the model described in the book "Cities and Complexity" by Michael Batty, on pages 43-45.  For analysis and discussion beyond that provided with this model, the reader is encouraged to refer to this text.</p>
+<p>The basic idea here is demonstrating how structured formations can easily emerge from completely random initial data, through a simple process.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each grid cell is initialized to have an activity value of either 1 or -1, at random.
+Each tick of the model, the cell takes on a new activity value, which is the average of the activity values from its Von Neumann neighborhood (that is, itself and its 4 neighbors) from the previous step.</p>
+<p>If KEEP-ADDING-RANDOMNESS? is switched on, then randomness is continually added to the model.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press the SETUP button to initialize the grid squares.</p>
+<p>Press the GO button to run the model.  Press the GO ONCE button to run the model just a single tick.</p>
+<p>If KEEP-ADDING-RANDOMNESS? is switched on, then at each time step either -1 or 1 is added to the value of each grid cell.</p>
+<p>The ACTIVITY DISTRIBUTION shows the distribution of different activity levels present in the set of all grid cells.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>First, with KEEP-ADDING-RANDOMNESS? switched OFF, notice how structural formations grow and shrink, when starting from the pure random noise.  If you run the model long enough, it will converge to a steady equilibrium state (somewhere quite close to zero).  However, in between the time of random noise and converged uniformity, there are structures that remain stable for considerable time periods.</p>
+<p>When KEEP-ADDING-RANDOMNESS? is switched ON, it is slightly more difficult to discern stable structural patterns, though they are still evident.  Some areas tend to stay darker, and some areas tend to stay lighter.</p>
+<h2>THINGS TO TRY</h2>
+<p>Let the model run for a while with KEEP-ADDING-RANDOMNESS? switched ON, then turn it off and watch the ACTIVITY DISTRIBUTION plot as the model continues to run.  What happens to the left and right tail?  Then turn the KEEP-ADDING-RANDOMNESS? switch back on, and watch the plot.  Can you explain the changes in shape of the distribution?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Extend the model by adding agents that move around on the grid, searching for high activity cells.  Have them leave trails behind them using the PEN-DOWN NetLogo primitive.  How does the structure of their movement patterns relate to the underlying structure of cell activity?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Notice how simple it is to create a distribution plot in NetLogo, using lists.  Look at the UPDATE-PLOT procedure in the Code tab.  It simply resets the plot pen (to clear the plot), and then sorts the activity values of each of the patches from greatest to least, and then plots them each.</p>
+<h2>RELATED MODELS</h2>
+<p>This model is related to all of the other models in the "Urban Suite".</p>
+<p>In particular, it is related to "Urban Suite - Structure from Randomness 2", which is another model demonstrating the same concept.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is based on pages 43-45 of the book "Cities and Complexity" by Michael Batty.</p>
+<p>Thanks to Seth Tisue and Forrest Stonedahl for their work on this model.</p>
+<p>The Urban Suite models were developed as part of the Procedural Modeling of Cities project, under the sponsorship of NSF ITR award 0326542, Electronic Arts &amp; Maxis.</p>
+<p>Please see the project web site ( http://ccl.northwestern.edu/cities/ ) for more information.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2007).  NetLogo Urban Suite - Structure from Randomness 1 model.  http://ccl.northwestern.edu/netlogo/models/UrbanSuite-StructurefromRandomness1.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 --></div>
+      </div>
+    </main>
+  </body>
+</html>

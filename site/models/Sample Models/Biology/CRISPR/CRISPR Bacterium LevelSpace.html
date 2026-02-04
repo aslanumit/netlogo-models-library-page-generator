@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CRISPR Bacterium LevelSpace</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>CRISPR Bacterium LevelSpace</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/CRISPR/CRISPR%20Bacterium%20LevelSpace.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Biology/CRISPR/CRISPR Bacterium LevelSpace.png" alt="Screenshot of CRISPR Bacterium LevelSpace" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model illustrates the role that CRISPR plays in defending bacteria from infection by focusing on a single cell surrounded by an unseen environment. In natural environments bacteria are challenged with infectious viruses very often, so bacteria must have ways to defend themselves in order to survive. This is the LevelSpace version of the model that is meant to be controlled by the <em>CRISPR Ecosystem LevelSpace</em> model.</p>
+<p>There are many ways in which bacteria defend themselves from viruses. Bacterial defense systems can be broadly categorized as innate and adaptive.  Innate systems are generally exploit a feature common to many or all viruses, and do not change based on the bacterium's past. A common example of this would be restriction enzymes, which slice up nucleic acids containing certain base sequences, regardless of where the nucleic acid is from. This is also analogous to our human innate immune system, where white blood cells like macrophages and neutrophils attack foreign material using nonspecific methods like reactive chemicals.</p>
+<p>Bacteria were recently found to also employ adaptive immunity in their constant struggle against viruses. This adaptive system is called CRISPR. With it, bacteria are able keep a heritable genetic record of past infection attempts, which makes them and their descendants much more effective at fending off future infections by the same or similar viruses. This is made possible through a system that specifically recognizes the DNA of past viruses using DNA samples called <strong>spacers</strong> stored in a <strong>CRISPR array</strong> and cleaves it using a targeted protein complex.</p>
+<p>CRISPR is often very effective in protecting bacteria from infection. However, there are many components to the system that must work together to provide this protection. All of the components are coded for in a single locus, often found on a plasmid separated from the main genome. The structure of this locus is shown below:
+<img alt="Diagram of a CRISPR locus showing Cas genes and the CRISPR array." src="crispr-locus.png" />
+The whole locus is transcribed together, moving from left to right in this diagram. After transcription, the Cas genes are translated into various Cas proteins, and the spacers in the CRISPR array are processed into guide RNAs.</p>
+<p>The spacers in the CRISPR array are short fragments of DNA from viruses that the bacterium or its ancestors encountered in the past. When they are processed into guide RNAs, they are critical for the function of one of the protein components, Cas9. Cas9 proteins bind to one of these guides and uses it to recognize when other DNA might come from the same virus as the original spacer in the array. If the guide and the foreign DNA sequences match, indicating it is probably also a virus, the Cas9 protein is able to cut the DNA and destroy it.</p>
+<p>Other Cas proteins are important for maintaining the library of spacers in the CRISPR array. Four Cas1 monomers and two Cas2 monomers can form a protein complex which is capable of taking small sections of DNA from viruses and adding them to the CRISPR array as new spacers. When this happens, the new spacers are added at the 'front' of the array, just after the leader sequence (see the diagram above). This means that the array is roughly ordered so that the most recently encountered viruses are closer to the Cas genes in the locus and are transcribed first. Spacers can also be lost from the array. This tends to be more likely the closer the spacer is to the end of the array, meaning that older spacers tend to be lost first.</p>
+<p>The CRISPR system as a whole only works when each of its components is functioning properly, and each component often only works when in conjunction with other components. This model is meant to help illustrate this complex interdependence.</p>
+<h2>HOW IT WORKS</h2>
+<p>There are several types of dynamic agent in this model: RNA polymerases, viruses, guide RNAs, cas9 proteins, and cas1-cas2 complexes. There are also three types of static agent: the bacterial genome, the CRISPR locus, and the cell wall.</p>
+<p>The static agents are created when the model is set up and then serve only as interaction points for the dynamic agents. The cell wall is the ring of gray around the outer edge of the cell, and simply contains the other agents. The genome is the ring of darker blue near the center of the cell, representing the circular genome typical of bacteria. The CRISPR locus is the small band of light blue at the center of the cell, with a slightly lighter promoter region at one end. This represents a plasmid, which is often where CRISPR loci are found. The role of the genome and CRISPR locus will be discussed below.</p>
+<p>All of the dynamic agents move through the cell at a speed influenced by their relative size. Small molecules like guide RNAs can diffuse very quickly, moderately sized molecules like proteins diffuse slightly more slowly, and very large molecules like viral DNA move very slowly. Viruses diffuse in the general direction of the bacterial genome, while every other dynamic agent moves via a random walk constrained by the cell wall. All of the dynamic agents also have a small chance to degrade on each tick, which is influenced by a variety of factors.</p>
+<p>When RNA polymerases encounter the promoter region of the CRISPR locus, there is a chance that they will transcribe the locus and produce the molecular components of the CRISPR system. They do not typically have perfect processivity, meaning that they may fall off of the DNA before transcribing the entire array. In this case, only the CRISPR components that come before the drop location in the locus will be produced.</p>
+<p>During an infection, viruses enter the cell at the cell wall. If a virus reaches the genome, it is able to incorporate into the DNA. At this point the cell is considered lost to the infection.</p>
+<p>Cas9 proteins move through the cell until they encounter a free guide RNA. If they are not bound to anything, the Cas9 will bind to the guide RNA and begin to carry it around as it continues to move. There is a small chance each tick for the Cas9 to dissociate from the guide. If the Cas9 encounters a virus while it also has a guide RNA, it tries to cut the virus. If the guide matches the virus, the virus will be destroyed, and otherwise the virus is unaffected.</p>
+<p>Cas1-Cas2 complexes move through the cell until they encounter a virus. When this happens, they bind to the virus and cut out a sample of it. They then carry the sample to the CRISPR locus in the center of the cell and add a new spacer to the array that matches the invading virus.</p>
+<h2>HOW TO USE IT</h2>
+<p>This model is primarily intended for use as a child model of the CRISPR Ecosystem LevelSpace model. Despite this, it is possible to investigate many aspects of CRISPR at the cell level using this model, which are described below. However, some questions may be better served by using the CRISPR Bacterium model, also found in the Models Library.</p>
+<p>This model can be used to investigate the effects of different CRISPR expression strategies. These strategies can involve changes to the overall expression of the locus or changes to the persistent expression of spacers from less recent infection attempts.</p>
+<p>This model can also examine how the efficiency of CRISPR is affected by the features of the environment or the invading virus. For example, it is easy to compare how effective CRISPR is at stopping very recently encountered viruses or viruses that are more rare. Similarly, it is possible to see how effective CRISPR becomes when there is an increase or decrease in viral diversity or a change to the array size.</p>
+<h3>Buttons</h3>
+<h4><code>SETUP</code></h4>
+<p>Initializes variables and creates the cell and the CRISPR system's components.</p>
+<h4><code>GO</code></h4>
+<p>Runs the model.</p>
+<h4><code>RANDOM-INFECTION</code></h4>
+<p>Infects the cell with a random virus.</p>
+<h4><code>COMMON-INFECTION</code></h4>
+<p>Infects the cell with a common or recently seen virus, as determined by the cell's CRISPR array.</p>
+<h3>Sliders and Switches</h3>
+<h4><code>LABELS?</code></h4>
+<p>Toggles whether or not guide RNAs and viruses are labeled with their sequence.</p>
+<h4><code>INITIAL-ARRAY-SIZE</code></h4>
+<p>Controls the size of the bacterial CRISPR array when the model is initialized. This only has an effect when the model is initialized from the setup button. It does not limit this model when a parent model is interacting with it through LevelSpace.</p>
+<h4><code>MAX-VIRUS-TYPES</code></h4>
+<p>Controls the diversity of the viruses that the cell encounters. This only has an effect when interacting with the model through the graphical interface. It does not limit this model when a parent model is interacting with it through LevelSpace.</p>
+<h4><code>PROCESSIVITY</code></h4>
+<p>Controls the processivity of the cell's RNA polymerase. The value of the slider is the probability that the polymerase will fall off of the DNA before finishing transcription of the next spacer.</p>
+<h4><code>CRISPR-FUNCTION</code></h4>
+<p>Controls the level of expression of CRISPR in the cell. The value of the slider is the probability that an RNA polymerase will transcribe the CRISPR locus when it encounters its promoter.</p>
+<h3>Plots and Monitors</h3>
+<h4><code>CRISPR ELEMENTS</code></h4>
+<p>Plots the number of each component of the CRISPR system in the cell over time. These components include guide RNAs, Cas9 proteins, and Cas1-Cas2 complexes. The number of Cas9 proteins currently bound to a guide RNA is also plotted.</p>
+<h4><code>GUIDE RNA COUNT</code></h4>
+<p>Displays the current number of guide RNAs in the cell.</p>
+<h4><code>CAS1/2 COUNT</code></h4>
+<p>Displays the current number of Cas1-Cas2 complexes in the cell.</p>
+<h4><code>CAS9 COUNT</code></h4>
+<p>Displays the current number of Cas9 proteins in the cell.</p>
+<h4><code>VIRUS COUNT</code></h4>
+<p>Displays the current number of viruses in the cell.</p>
+<h4><code>GUIDE RNAs</code></h4>
+<p>Plots a histogram comparing the frequency of each guide RNA type currently in the cell (black bars) and the frequency of each viral spacer in the CRISPR array (red bars).</p>
+<h4><code>BACTERIAL CRISPR ARRAY</code></h4>
+<p>Shows the current state of the bacterium's CRISPR array. Viral spacers at the left or front of the list are the most recently added.</p>
+<h4><code>LENGTH</code></h4>
+<p>Displays the current length of the bacterium's CRISPR array.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>When the model is initially set up, all of the guide RNAs and Cas9 proteins are unbound. After starting the model, Cas9s quickly become bound to guide RNAs. Does every Cas9 have a guide RNA? Why is this the case?</p>
+<p>Look at the CRISPR Elements plot or the monitors below it and compare the number of guide RNAs to the number of Cas9 proteins. Why is it advantageous for the cell to have more of one than the other?</p>
+<p>Look at the CRISPR Elements plot or the monitors below it and compare the number of Cas9 proteins to the number of Cas1-Cas2 complexes. Why are there fewer Cas1-Cas2 complexes, even though each gene in the locus is transcribed the same number of times?</p>
+<p>Look at the Guide RNA histogram. The red bars show the frequency of each type of spacer in the CRISPR array, and the black bars show the frequency of the resulting guide RNAs in the cell. If two types of spacer each occur in the array the same number of times, do they always result in the same number of guide RNAs being produced? Similarly, if one type of spacer occurs in the array many times, does it ever result in fewer guide RNAs than a spacer type that only occurs a few times? In each of these cases, what makes some spacers result in more guide RNAs than others? It may help to also look at the Bacterial CRISPR Array monitor below the plot.</p>
+<p>The <code>COMMON-INFECTION</code> and <code>RANDOM-INFECTION</code> buttons allow the user to test how the cell fights off different types of viruses. The <code>RANDOM-INFECTION</code> button introduces a random virus within the level of diversity specified by the <code>MAX-VIRUS-TYPES</code> slider into the cell. The <code>COMMON-INFECTION</code> button introduces a virus that the cell has seen either very recently or very often (suggesting it is common in the environment) into the cell. Is there a difference in how often these two types of infection succeed? Why do you think that is?</p>
+<h2>THINGS TO TRY</h2>
+<p>How does changing the amount of viral diversity in the external environment influence the cell's ability to fight off infections? This can be accomplished using the <code>MAX-VIRUS-TYPES</code> slider. Does it make a difference for both random and common infections, or just one of these infection types?</p>
+<p>Changes to the cell's regulation of CRISPR can have a large influence on its efficacy. This can be seen by manipulating the <code>GUIDE-UNBIND-CHANCE</code>, <code>PROCESSIVITY</code>, and <code>CRISPR-FUNCTION</code> sliders. Try to understand what effect each slider has individually. First, the <code>GUIDE-UNBIND-CHANCE</code> slider sets how likely it is for guide RNAs to unbind from Cas9 proteins on each tick. Why do you think this might make a difference to the cell? How does changing this slider affect the proportion of Cas9s bound to a guide RNA? Secondly, the <code>PROCESSIVITY</code> slider changes how likely it is for RNA polymerases to continue on after finishing transcription of a particular spacer in the array. How does changing this slider affect the number of guide RNAs in the cell? On the Guide RNAs histogram, can you tell why this number changes? Which spacers are most strongly affected by it? Finally, how do the levels of the CRISPR components in the cell change when you increase or decrease the <code>CRISPR-FUNCTION</code> slider?</p>
+<p>After investigating how using these sliders affects the state of the cell, test how these changes affect the effectiveness of the CRISPR defense system. Do any of these changes affect all types of infections equally? Do some have a greater effect on common infections than random infections or vice versa?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>One simple extension to the model involves the way viruses are treated after being inactivated. If an invading virus is cut up either by CRISPR or by an innate defense system, it takes some time for the resulting inactive fragments to be completely disassembled. Cas1-Cas2 complexes are able to add spacers during this period, increasing the likelihood that a virus could be fought off in the future. However, the current model treats these fragments as being fully disassembled almost instantly.</p>
+<p>This model currently focuses on the role of CRISPR in bacterial defense, and only treats the innate defenses abstractly. An updated version of the model could explicitly include different innate bacterial systems. It could also more accurately treat the cell's ability to direct CRISPR components to act non-randomly, for example by recruiting Cas9 or Cas1-Cas2 complexes to the site of an infection.</p>
+<p>Similarly, in this model, viruses are mostly passive invaders, simply diffusing inwards until they reach the genome. In reality, they can be transcribed earlier that that, and this can allow them to actively fight back against bacterial defenses. One interesting extension of this model would be to include more active viruses to showcase the interplay between bacterial defenses and viral evasion tactics.</p>
+<p>The model also focuses on the initial stages of a viral infection, but CRISPR can continue to have interesting effects in the later stages. For example, even if the bacterium succumbs to the infection, CRISPR may be able to destroy newly produced viruses before they can be released. To see these effects, the model could be expanded to a longer infection timeline, including viral inhibition of normal transcription, production of new viruses, and using a different criterion for determining the end of an infection. The number of viruses released or destroyed could then be passed back up to the CRISPR Ecosystem LevelSpace parent model to influence the number of new viruses added to the ecosystem.</p>
+<p>Another interesting effect that follows naturally from a longer infection timeline would be a treatment of <em>lysogenic</em> infections. Currently, all viruses are assumed to be <em>lytic</em>, meaning when they infect a cell they reproduce until the cell dies and releases the new viral particles. While this is true for many viruses, there are also some which are lysogenic. These viruses can insert their DNA into the bacterium's genome. This allows them to 'reproduce' when the bacterium divides, and then revert back to the lytic process described above when their host is in poor health. After the viral DNA is inserted into the bacterial genome, there are several strategies the cell can employ based on its different regulatory machinery. For example, CRISPR may cleave the cell's genome, resulting in the bacterium's death, or simply suppress viral replication when the virus attempts to become lytic again. Modeling these regulatory 'decisions' could be very interesting, and could have interesting effects on the ecosystem if this information was passed up to the CRISPR Ecosystem LevelSpace parent model. This might also require a change to the bacteria in the Ecosystem LevelSpace model.</p>
+<p>This model could also be modified to take input from the CRISPR Ecosystem LevelSpace parent model to influence each bacterium's regulatory strategy. For example, the values associated with the <code>GUIDE-UNBIND-CHANCE</code>, <code>PROCESSIVITY</code>, and <code>CRISPR-FUNCTION</code> sliders could be hereditary in the parent model and passed to each child model when it is set up. The parent model could also pass the energy of the bacterium as input, which could be used to determine deviations from the baseline genetic strategy on a per-infection basis.</p>
+<p>Bacteria in this model currently do not incur any energy cost from producing each component of the CRISPR system. However, in reality this cost may have important effects on the bacterium's regulatory strategy. This model could be used to calculate the aggregate energy cost to a bacterium with a regulatory strategy defined by the input values of the <code>GUIDE-UNBIND-CHANCE</code>, <code>PROCESSIVITY</code>, and <code>CRISPR-FUNCTION</code> sliders, which could then be used by the CRISPR Ecosystem LevelSpace parent model to determine a per-tick energy penalty specific to each bacterium.</p>
+<p>A somewhat more involved modification could be a shift in the nature of the relationship between this model and the CRISPR Ecosystem LevelSpace parent model. This relationship is currently based on an 'event-zoom' paradigm. This means that when a certain event occurs in the parent (like a bacterium meeting a virus), an instance of the child model is initialized, the result of its run is used to determine the outcome of the event in the parent (whether or not the bacteria fights off the virus), and then the child model instance is discarded. An alternative option is a 'persistent child' paradigm. This would mean that each agent in the parent model would have an associated child model instance that persists until the agent is removed from the parent model. This has the potential to be much more detailed and accurate, but comes at the cost of increased computational work and slower runs. Some of the other extensions may be easier to implement in one paradigm or the other, and it is not always clear-cut which paradigm should be used. Are there extensions to the CRISPR LevelSpace model system as a whole that would require a paradigm shift of this type?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model is part of a system of models using the LevelSpace extension, which allows multiple NetLogo models to interact and communicate with each other. In this particular case, the 'parent' model is the CRISPR Ecosystem LevelSpace model. Each potential infection in that model is examined on a smaller scale in a 'child' model, which is an instance of this model. Information about the infection scenario is used to initialize the child model, and then the child model is run until the infection is resolved. The outcome of the infection in the child model is then used to determine the outcome of the infection in this model, the 'parent' model.</p>
+<p>This model has specific turtle shapes that are able to combine with the shapes of other turtles to form new shapes when they are interacting. For example, when proteins bind to nucleic acids (guide RNAs or viruses), their shapes interact so that the proteins appear to be carrying the bound nucleic acid. This functionality relies on using the agent breed declarations to specify the z-ordering of how they are displayed. Specifically, agent breeds that are declared first (closer to the top of the file) will always be displayed 'under' breeds that are declared later (closer to the end of the file).</p>
+<p>This model employs a supplementary function to improve auto scaling behavior for histograms. By default, histograms only autoscale the y-axis. The <code>update-histogram-ranges</code> function used here implements x-axis auto scaling which can increase but never decrease the range, similar to the default y-axis auto scaling. It also implements y-axis scaling which can increase or decrease the plot's range. This makes the histogram always take up most of the plot area while keeping the entire histogram visible and minimizing the number of rescaling events.</p>
+<h2>RELATED MODELS</h2>
+<p>CRISPR Ecosystem
+CRISPR Ecosystem LevelSpace
+CRISPR Bacterium</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>The image of a CRISPR locus was adapted by Merry Youle of the Small Things Considered blog for their article <a href="https://schaechter.asmblog.org/schaechter/2011/04/six-questions-about-crisprs.html">Six Questions About CRISPRs</a> from Sorek, R., Kunin, V. &amp; Hugenholz, P. CRISPR - a widespread system that provides acquired resistance against phages in bacteria and archaea. <em>Nature Reviews Microbiology</em> <strong>6</strong>, 181-186 (2008).</p>
+<p>For general information about CRISPR, visit https://sites.tufts.edu/crispr/ or see the review below:</p>
+<ul>
+<li>Barrangou, R. &amp; Marraffini, L. A. CRISPR-Cas Systems: Prokaryotes Upgrade to Adaptive Immunity. <em>Molecular Cell</em> <strong>54</strong>, 234–244 (2014).</li>
+</ul>
+<p>For information relevant to possible extensions to the model, see the articles below:</p>
+<ul>
+<li>Edgar, R. &amp; Qimron, U. The E_scherichia coli_ CRISPR System Protects from Lysogenization, Lysogens, and Prophage Induction. <em>Journal of Bacteriology</em> <strong>192</strong>, 6291–6294 (2010).</li>
+<li>Labrie, S. J., Samson, J. E. &amp; Moineau, S. Bacteriophage resistance mechanisms. <em>Nature Reviews Microbiology</em> <strong>8</strong>, 317–327 (2010).</li>
+<li>Modell, J. W., Jiang, W. &amp; Marraffini, L. A. CRISPR–Cas systems exploit viral DNA injection to establish and maintain adaptive immunity. <em>Nature</em> <strong>544</strong>, 101–104 (2017).</li>
+<li>Samson, J. E., Magadán, A. H., Sabri, M. &amp; Moineau, S. Revenge of the phages: defeating bacterial defences. <em>Nature Reviews Microbiology</em> <strong>11</strong>, 675–687 (2013).</li>
+<li>Strotskaya, A. et al. The action of <em>Escherichia coli</em> CRISPR–Cas system on lytic bacteriophages with different lifestyles and development strategies. <em>Nucleic Acids Research</em> <strong>gkx042</strong> (2017). doi:10.1093/nar/gkx042</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Woods, P. and Wilensky, U. (2019).  NetLogo CRISPR Bacterium LevelSpace model.  http://ccl.northwestern.edu/netlogo/models/CRISPRBacteriumLevelSpace.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2019 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2019 Cite: Woods, P. --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bug Hunters Camouflage HubNet</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Bug Hunters Camouflage HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/BEAGLE%20Evolution/HubNet%20Activities/Bug%20Hunters%20Camouflage%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Curricular Models/BEAGLE Evolution/HubNet Activities/Bug Hunters Camouflage HubNet.png" alt="Screenshot of Bug Hunters Camouflage HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a HubNet activity of natural/artificial selection that shows how a population hunted by a predator can develop camouflaging.  For example, in a forest with green leaves, green bugs may emerge as the predominant bug color.</p>
+<p>When a predator uses color and shape to identify the location of prey in an environment, then the colors and patterns in the environment provide additional selective pressure on the prey.  If some prey tend to blend into the background better, they tend to survive longer and reproduce more often.  If this continues over many generations, the distribution of colors in a population may shift to become better camouflaged in the surrounding environment.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each HubNet participant or player assumes the role of a predator.  When the HubNet simulation is started after pressing GO, participants should try to click on bugs as fast as they can with the mouse.</p>
+<p>Each participant can monitor his or her relative success compared to other participants by watching the monitors in the client that show the TOP HUNTER (the person with most catches), how many that person caught (TOP HUNTER'S CATCHES) and the RELATIVE % they have caught compared to the best hunter (e.g. if the player has caught 40 and the best hunter has caught 80, then s/he has 50%).</p>
+<p>Over time a small population of bugs will become harder and harder to detect in the environment (the environment is an image file that is loaded into the model).  Camouflaging emerges from: 1) a selective pressure that results from the interaction of predator, prey, and environment, 2) the genetic representation for genes to show color, 3) and small random changes that accumulate in new offspring in the remaining population that tend to be more advantageous.</p>
+<p>Trying to become the best hunter (in number of moth catches) in the HubNet environment helps simulate the competitive pressure for limited food resources that exists between individual predators in a population.  Without this simulated competition, a participant could leisurely hunt for bugs regardless of how easy they are to catch or find.  This would not put any selective pressure on the moth population over time, and so camouflaging would not emerge in the population.</p>
+<p>Bugs have 3 genes that determine their phenotype for color.  One gene is RED-GENE, another is GREEN-GENE, and the last is BLUE-GENE.  The more frequently the gene for a pigment is coded for, the stronger that presence of color is in the overall blend of pigments that results in a single phenotype for coloration (determined by an RGB [Red-Green-Blue] calculation).</p>
+<p>With each bug you eat, an existing bug is randomly chosen to reproduce one offspring.  The offspring's gene-frequency for each of the three pigment genes may be slightly different than the parent (as determined by the MUTATION-STEP slider).</p>
+<h2>HOW TO USE IT</h2>
+<p>To run the activity press the GO button.  To start the activity over with the same group of students stop the GO button by pressing it again, press the SETUP button, and press GO again.  To run the activity with a new group of students press the RESET button in the Control Center.</p>
+<p>Make sure you select Mirror 2D view on clients in the HubNet Control Center after you press SETUP.</p>
+<p>CARRYING-CAPACITY determines the size of the population on SETUP, and how many bugs are in the world at one time when GO is pressed and bugs are being eaten.</p>
+<p>MAX-MUTATION-STEP determines how much the pigment genes can drift from their current values in each new generation.  For example, a MAX-MUTATION-STEP of 1 means that the gene frequency for any of the three pigments could go up 1, down 1, or stay the same in the offspring.</p>
+<p>OFFSPRING-DISTANCE determines how far away (in patches) an offspring could show up from a parent.  For example, a distance of 5 means the offspring could be up to 5 patches away from the parent.</p>
+<p>BUG-SIZE can be changed at any time during GO or before SETUP to modify the size of the shapes for the bugs.</p>
+<p>SHOW-GENOTYPE? reveals the RGB (Red-Green-Blue) gene frequency values for each bug.  The values for Red can range from 0 to 255, and this also true for Green and Blue.  These numbers represent how fully expressed each pigment is (e.g. 102-255-51 would represent genetic information that expresses the red pigment at 40% its maximum value, the green pigment at 100%, and the blue pigment at 20%.</p>
+<p>ENVIRONMENT specifies the file name to load as a background image on SETUP or on CHANGE-ENVIRONMENT.  The image file must be located in the same directory as the model.</p>
+<p>MAKE-SINGLE-GENERATION creates one offspring from the existing bugs, without being limited by the CARRYING-CAPACITY.</p>
+<p>The plots "BUGS CAUGHT BY ALL HUNTERS VS. TIME" keeps track of how many bugs all the participants have caught.</p>
+<p>There are several monitors TOP HUNTER reports the person with most catches and TOP HUNTER'S CATCHES reports how many they caught.</p>
+<h2>THINGS TO TRY</h2>
+<p>Larger numbers of bugs tend to take longer to start camouflaging, but larger numbers of prey (participants) speed up the emergence camouflaging in larger populations.</p>
+<p>A common response from the user (within about 1 minute of interaction with the model) is "where did the bugs all go?"  If you keep playing with the model, the user might get better at finding the bugs, but if s/he keeps trying to catch bugs quickly, even an experienced user will find that the creatures will become very hard to find in certain environments.</p>
+<p>Each new offspring starts at zero size and grows to full size (specified by BUG-SIZE) after a while.  This growth in size is included to make brand new offspring harder to detect.  If newly created offspring were full sized right away, your eyes would more easily detect the sudden appearance of something new.</p>
+<p>Sometimes two or more "near background" colors emerge as a predominant feature in a population of bugs.  An example of this is the appearance of mostly green and red bugs in the poppy field, or dark blue/black and snow blue in the glacier background.  Other times, the saturation of the bugs appears to be selected for.  An example of this is a common outcome of "shell colored" bugs on the seashore background (e.g. light yellow, light tan, and light blue bugs similar to the shells of the seashore).</p>
+<p>Larger numbers of bugs tend to take longer to start camouflaging.</p>
+<p>In environments that have two distinct areas (such as a ground and sky), each with their own patterns and background colors, you might see two distinct populations of different camouflaging outcomes.  Often, while hunting in one area, you will be surprised to look over at the other area (after they hadn't been paying attention to that area in a while) and notice that now there are a bunch of bugs in that background that blend in this new area very well, but whose colors are distinctly different than those that blend into the original area you were hunting in.</p>
+<p>Once you reach a point where you are having trouble finding the bugs, it is useful to either press FLASH to show where they are (and how they are camouflaged), or press CLEAR-BACKGROUND to enable you to study their color distribution and location.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>What if bugs reproduced sexually and recombined gene frequencies in their offspring?</p>
+<p>What if the shape of the bugs changed?</p>
+<p>What if a second population of insects, with slightly different body shape, was poisonous, and lost points for the user when they selected it?  Would the bugs drift to become more like this color (Mimicry), stay more like the environment, or some other outcome?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>IMPORT-DRAWING is the primitive that loads the image into the drawing, which in this case is merely a backdrop.</p>
+<p>IN-RADIUS is the primitive used to check if the mouse is within the graphical "footprint" of a turtle.</p>
+<p>This model uses RGB colors, that is, colors expressed as a three item list of red, green and blue.  This gives a large range of colors than with NetLogo colors.</p>
+<h2>RELATED MODELS</h2>
+<p>Bug Hunt Speeds
+Bug Hunt Camouflage
+Bug Hunter Camouflage Two Regions HubNet
+Peppered Moths
+Guppy Spots</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Inspired by this BugHunt! Macintosh freeware: https://web.archive.org/web/20101213084130/http://bcrc.bio.umass.edu/BugHunt/.</p>
+<p>Thanks to Michael Novak for his work on the design of this model and the BEAGLE Evolution curriculum.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2006).  NetLogo Bug Hunters Camouflage HubNet model.  http://ccl.northwestern.edu/netlogo/models/BugHuntersCamouflageHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2006 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2006 Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

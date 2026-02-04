@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ticket Sales</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Ticket Sales</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/IABM%20Textbook/chapter%208/Ticket%20Sales.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/IABM Textbook/chapter 8/Ticket Sales.png" alt="Screenshot of Ticket Sales" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is from Chapter Eight of the book "Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo", by Uri Wilensky &amp; William Rand.</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<p>This model is in the IABM Textbook folder of the NetLogo Models Library. The model, as well as any updates to the model, can also be found on the textbook website: http://www.intro-to-abm.com/.</p>
+<h2>WHAT IS IT?</h2>
+<p>The general intent of this model is to simulate how individuals within a limited geographic region decide to buy tickets to a live event.</p>
+<h2>HOW IT WORKS</h2>
+<p>During setup, census tract definitions and census tract data are read from external files. The GIS extension is used to read in the tract definitions. The data is read from census files. After this data is read in, households are created in each patch to represent the underlying population present in those location. Finally, a venue is randomly created somewhere in the space.</p>
+<p>Once the model runs, in each time step, agents who have not bought tickets calculate the expected utility of attending the event. Then, based on that probability, they decide whether or not to buy the ticket at that time step. This random draw simulates the fact that the particular period in which they decide or not to buy the ticket is stochastic. To make it more realistic you can elaborate the model so that it determines who buys early and who buys late.</p>
+<h2>HOW TO USE IT</h2>
+<p>To run the model, simply set the parameters and let the model run. If after running the model you want to view a different setup with the same parameters, use the RESET-SALE button. Since the GIS data can take a while to load this is a faster way to examine multiple runs.</p>
+<p>EVENT-WEEK controls how many weeks until the event occurs.</p>
+<p>CONSUMER-UNCERTAINTY controls how uncertain the consumers are in the quality of the event.</p>
+<p>CONSUMER-EXPECTED-VALUE controls what value the consumers expect to get out of attending the event.</p>
+<p>DISTANCE-SENSITIVITY controls how sensitive consumers are about the distance they are from the event.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The basic pattern grows outward from the venue.</p>
+<p>The density of sales decreases as we get further away from the venue.</p>
+<p>The number of sales increases quickly at first, and then slows down.</p>
+<h2>THINGS TO TRY</h2>
+<p>Adjust the CONSUMER-UNCERTAINTY and CONSUMER-EXPECTED-VALUE and see how it affects the results. Number of sales should increase as uncertainty decreases and should decrease as the expected value decreases.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Make the process of when consumers buy less stochastic.</p>
+<p>Add pricing tiers.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model demonstrates the use of the NetLogo GIS extension. It uses the extension to load two GIS datasets for New York City: one for the census tracts and one for the roads. Information about the population in the various census tracts is then loaded from a text file using NetLogo's <code>file-*</code> primitives.</p>
+<h2>RELATED MODELS</h2>
+<p>GIS General Examples</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model was inspired by the work of Peggy Tseng and Wendy Moe. Especially, Peggy's dissertation:</p>
+<p>Tseng, P. (2009) Effects of Performance Schedules on Event Ticket Sales. Dissertation, University of Maryland Robert H. Smith School of Business. Chair: Moe, W.</p>
+<h2>HOW TO CITE</h2>
+<p>This model is part of the textbook, “Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo.”</p>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Rand, W. &amp; Wilensky, U. (2011).  NetLogo Ticket Sales model.  http://ccl.northwestern.edu/netlogo/models/TicketSales.  Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the textbook as:</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2011 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2011 Cite: Rand, W. & Wilensky, U. --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bug Hunt Drift</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Bug Hunt Drift</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/BEAGLE%20Evolution/Bug%20Hunt%20Drift.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/BEAGLE Evolution/Bug Hunt Drift.png" alt="Screenshot of Bug Hunt Drift" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a genetic drift model that shows how gene frequencies change in a population due to purely random events.  The effect of random selection of certain individuals in a population (either through death or through reproduction), results in the loss or gains of an allele.  Over multiple generations this shift in gene distribution leads to alleles becoming more rare or more common (or disappearing completely) in a population. This effect is called genetic drift.</p>
+<p>This mechanism of random selection is different than natural selection (where individual traits and genes are selected for the advantages they confer on the survival and reproduction of individuals).  Random selection, however, is one of the primary mechanisms which drives evolution.  It is also believed to be one of the primary mechanisms which leads to speciation.</p>
+<p>The models supports the ability to contrast the outcome of intentional selection (e.g. selective breeding) vs. unintentional random selection.</p>
+<h2>HOW IT WORKS</h2>
+<p>You assume the role of random selection mechanism (e.g. a predator or a a mate) amongst a population of bugs.  To begin your selection, press SETUP to create a population of bugs, determined by six times the INITIAL-BUGS-EACH-VARIATION slider.  These bugs that are created are randomly distributed around the world, each with one of the 6 possible variation they may be assigned.</p>
+<p>When you press GO the bugs begin to move around.  When the VARIATION-VISUALIZATION is set to "color" or "number" you can see the different variation of the bugs as either a color or number for each bug.</p>
+<p>As they move around, try to click on a bug to select it. When you select the bug one of two things will happen:</p>
+<p>If the SELECTION-MECHANISM chooser is set to "user selects which bug has offspring", then the bug that is clicked on will produce an offspring that has an identical variation to the parent bug you selected.  At the same time, one bug will be randomly removed from the remaining population of bugs, to keep the population of bugs constant.</p>
+<p>If the SELECTION-MECHANISM chooser is set to "user selects which bug to remove", then the bug that is clicked on will be removed from the population. At the same time, one bug will be randomly removed from the remaining population to produce an offspring of the parent bug that is identical to it, to keep the population of bugs constant.</p>
+<p>Initially there are equal distributions of variations in the population (e.g. eight bugs at each of the 6 variations).  Over time, however, as you eat bugs, the distribution of the bugs will change as shown in the "Number of bugs" histogram.  In the histogram, you might see the distribution shift to the left (showing that more slow bugs are surviving) or to the right (showing that more fast bugs are surviving).  Sometimes one sub-population of a single speed of bug will be exterminated.  At this point, no other bugs of this speed can be created in the population.</p>
+<p>To make this effect happen even more dramatically through "random selection", you as the user, can't really know or see what you are selecting.  Therefore, run the model again, with the VARIATION-VISUALIZATION chooser set to "none" to hide the visible color characteristic from you as select the bugs.  In this way, you will be selecting individuals to remove and replace in the population with a particular gene or trait, without you realizing which ones you are selecting.</p>
+<p>Alternatively, you can press the button RANDOMLY REMOVE &amp; REPLACE to have the model do both a random selection of which bug to remove and which bug will reproduce to make an offspring that is identical to it.  Or, if you wish to have this process further automated, you can change the SELECTION-MECHANISM chooser to "keep randomly selecting" and the model will repeat the process of randomly removing and replacing every .25 seconds.</p>
+<h2>HOW TO USE IT</h2>
+<p>INITIAL-BUGS-EACH-COLOR is the number of bugs you start with in each of the six sub-populations.  The overall population of bugs is determined by multiplying this value by 6.</p>
+<p>VARIATION-VISUALIZATION chooser switch help you visualize or hide the variation in the population of the bugs.  When set to "colors", each variation is assigned a color, when set to "number", each variation displays a number as its label, and when set to "none" the variation is not visible.</p>
+<p>OFFSPRING BORN is a monitor showing the number of offspring created.  It should always be equal to the number of bugs removed, since with every selection of a bug removed and new bug is born.</p>
+<p>TOTAL BUGS is a monitor reporting the total number of bugs in the population.  It should remain constant.</p>
+<p>CURRENT BUG POPULATION is a histogram showing the distribution of bugs at different speeds.</p>
+<p>BUGS REMOVED is a histogram showing the historical record of the distribution of bugs caught at different speeds.  A monitor of the same name is also included.</p>
+<p>NUMBER BUGS VS. TIME is a graph showing the total number of each variation of bug vs. time.</p>
+<p>SELECTION MECHANISM (see above)</p>
+<p>If you are having trouble catching any bugs, because they move too fast.  Then try clicking and holding the mouse button down and with the mouse button down, run your cursor into a bug.  This will also select the bug.  But after selecting one you will have to click and hold down the mouse button again to select another bug.  If the bugs still are moving too fast for you to select them, try adjusting the speed slider by moving it to the left at the top of the model to make the model run slightly slower.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>When you the VARIATION-VISUALIZATION chooser is set to "none" and you can't see the trait variations you are selecting, the CURRENT BUG POPULATION histogram shifts over time.  As one trait or gene begins to dominate, it becomes the more likely one to end up as the only trait or gene in the populations.</p>
+<p>Both selecting individuals out of the population and selecting individuals to reproduce result in this loss of diversity in the gene pool of the population, eventually leading to a single gene or trait in the population.</p>
+<p>Sub-populations of bugs of each color fluctuate up and down when they are selected randomly for removal or reproduction.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try intentionally selecting a particular color to remove (or reproduce) and keep selecting to see how many selections it takes to remove all other color variants from the population.  Compare this approach to random selection.  Change the VARIATION-VISUALIZATION to "none" and start the model over.  See how many selections it now takes to remove all but one color variant form the population.</p>
+<p>Alternately, select the bugs by closing your eyes and randomly clicking and holding the mouse button down for a couple seconds.  Then click and hold down again.  Clicking and holding the mouse button down will remove the first bug that runs into your cursor.  But you need to repeat this process to remove another bug.  Alternatively, press the RANDOMLY REMOVE &amp; SELECT ONE.  Or, change the SELECTION-MECHANISM to "keep randomly selecting" and the computer will start selecting the bugs randomly to remove and replace from the population.</p>
+<p>Try changing the number of INITIAL-BUGS-EACH-VARIATION to compare how population size affects how fast genetic drift occurs and how fast variants are removed from the population.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add a second or third trait to add to the population.</p>
+<p>Add a mechanism of sexual reproduction and genetic recombination to the population.</p>
+<p>Add walls to geographically isolate portions of the population from one another.</p>
+<h2>RELATED MODELS</h2>
+<p>GenDrift models in the Genetic Drift folder, under Biology</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the BEAGLE curriculum (http://ccl.northwestern.edu/rp/beagle/index.shtml)</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2009).  NetLogo Bug Hunt Drift model.  http://ccl.northwestern.edu/netlogo/models/BugHuntDrift.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2009 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2009 Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

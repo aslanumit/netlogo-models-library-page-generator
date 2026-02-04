@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Urban Suite - Recycling</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Urban Suite - Recycling</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Urban%20Suite/Urban%20Suite%20-%20Recycling.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Urban Suite/Urban Suite - Recycling.png" alt="Screenshot of Urban Suite - Recycling" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates the relationship of agents (people) trying to sustain their natural resource of land over the course of time.  In this simplified scenario, two types of developers exist: recyclers and wastefuls.</p>
+<p>Recyclers are more conscious of the amount of land they use in order to gain energy (money, utility, etc). Therefore, they use the land but do not destroy it by using part of the resource and recycling everything. On the other hand, wasteful individuals consume the whole patch of land and afterwards dump their waste on it making it unusable to anyone until it has been restored by a recycler.</p>
+<p>While the model is unrealistic in many respects, it brings up very important issues of sustainability in land and natural resource usage.  This model shows the energy and effort it takes to sustain an environment in order to make it continuously habitable for people. To maintain resources, a balance must be maintained between use and recycling/renewal.  While recycling leads to a better environment overall, it comes at an additional cost, since it often means not exploiting resources to their fullest potential, and the effort of recycling/renewing resources can take considerably energy.  Furthermore, it takes effort to clean up the mess left by the wasteful individuals.</p>
+<p>All in all, it should serve as an excellent conversation piece, sparking debate regarding which assumptions are and aren't reasonable, and what the consequences of those assumptions are.</p>
+<h2>HOW IT WORKS</h2>
+<p>The environment consists of a grid of cells, each of which may be in three discrete states: new (shown as green), recycled (shown as lime green), or waste (shown as yellow).  The cells are all initially in the "new" state.</p>
+<p>There are two types of people agents - recyclers and wastefuls.  All agents have a property called "energy", which they collect from the environment.  All agents start with half of the maximum possible stored energy (defined by the MAX-STORED-ENERGY slider).  If an agent runs out of energy, they disappear.  This energy might be loosely construed as money or other economic resources, and when an agent runs out of funds, they are no longer a player in the land development game.</p>
+<p>Each time step (tick) agents first process the cell they are on, and then move to one of the eight neighboring cells.  The movement may be random, or the agent may be more intelligent about seeking resources (if the PEOPLE-SEEK-RESOURCES? switch is turned on).</p>
+<p>Wastefuls always totally exploit the cell they are processing, taking all the energy possible from the resource, and leaving the cell as "waste".  They gain 4 energy from "new" cells, and 2 energy from "recycled" cells, and nothing from "waste" cells.</p>
+<p>Recyclers are conscientious, and only use half of the available resources in the cell, allowing the cell to rejuvenate the resources.  Thus, "new" cells stay "new" after being processed, but the recycler only gains 2 energy.  Recyclers also only take half (1 energy) from "recycled" cells, leaving the cell still in a recycled state.  When a recycler encounters a "waste" cell, they take the effort to recycle it, but this actually costs them energy (controlled by the RECYCLING-WASTE-COST slider), rather than gaining them anything.</p>
+<p>Additionally, resources are randomly regenerated in the environment (at a rate controlled by the RESOURCE-REGENERATION slider).  This process causes cells change back into the "new" state.  Cells in the "recycled" state are five times more likely to change back to the new state than those in the "waste" state.  Although the factor of five is arbitrary, it is logical that squares that have been exploited/wasted are slower to regenerate.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press the SETUP button to initialize the world.  All cells are set to the "new" state, and recyclers and wastefuls are placed on random cells.</p>
+<p>Press the GO button to run the model.  Press GO ONCE to run a single time step (tick).</p>
+<p>Use the NUM-RECYCLERS and NUM-WASTEFULS sliders to control the initial populations of recyclers and wastefuls.</p>
+<p>The MAX-STORED-ENERGY slider determines the maximum amount of energy that an agent can store up.  If processing a cell would cause the agent to have more than this maximum amount of energy, the agent does not process the cell.</p>
+<p>The RECYCLING-WASTE-COST slider determines how much energy a recycler loses when it turns a "waste" cell into a "recycled" cell.</p>
+<p>The RESOURCE-REGENERATION controls the rate at which the environment naturally regenerates resources.  A value of 0 means that the environment does not regenerate, and a value of 100 means that the environment regenerates fairly quickly.</p>
+<p>If the AGENTS-SEEK-RESOURCES? switch is ON, then agents look at the eight neighboring cells, and first try to move to a "new" cell.  If none exists, they try to move to a "recycled" cell.  If none exists, then they move to a random cell.  If AGENTS-SEEK-RESOURCES? is switched OFF, then agents always move to a random neighboring cell.</p>
+<p>If SHOW-ENERGY? is switched ON, then the energy for each individual agent is overlaid on the view.</p>
+<p>The current number of recyclers and number of wastefuls are shown in the "RECYCLERS (BLUE)" and "WASTEFULS (RED)" monitors.</p>
+<p>The populations over time are plotted in the POPULATION plot.</p>
+<p>The "LAND USE" plot records the percentage of the cells that are in each state: new, recycled, and waste.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>In this model there is a notion of carrying-capacity.  That is, how many agents can the environment support in a relatively stable manner?  The answer depends on which type of agent is being discussed.  In this model the environment can support an arbitrarily large number of recyclers without any difficulty.  However, there is a limit on the number of wastefuls that the environment can support.  The carrying-capacity of wastefuls is dependent on several factors, particularly the RESOURCE-REGENERATION parameter, and the number of recycler agents that are in the world.</p>
+<h2>THINGS TO TRY</h2>
+<p>Set MAX-STORED-ENERGY to 50, RECYCLING-WASTE-COST to 0.5, and RESOURCE-REGENERATION to 25.  Run the model with 25 recyclers and 25 wastefuls for 10,000 ticks.  How many of each type survived?  Now run it again for 10,000 ticks, this time with 50 recyclers and 25 wastefuls.  How many of each survived?</p>
+<p>Try running the model with no recyclers, and 50 wastefuls.  Look at the LAND USE plot.  The cells all start as "new", but as time passes, the number of "waste" cells increases and passes the number of "new" cells, rising as high as perhaps 75% of the land use.  After this peak, the number of "waste" cells falls, until it is back down below 25% again.  Look at this plot in comparison to the POPULATION plot above it -- how do the two relate to each other?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The MAX-STORED-ENERGY constraint exists because without a cap on the amount of energy agents can store, it generally gave the wastefuls too strong an advantage in the world.  They would soak up vast quantities of energy (they acquire energy at a rate that is twice that of the recyclers), and then the recyclers would die off before the wastefuls had expended their reserves.  See if you can find another way to keep the model somewhat in balance, instead of having a MAX-STORED-ENERGY cap.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The SHOW-ENERGY? feature of this model takes advantage of the fact that every turtle (and every patch) in NetLogo has a "label" property.  This means that you can assign some text to be displayed next to a turtle.  In this particular case, we show the energy level with the code:  ASK TURTLES [ SET LABEL (ROUND ENERGY) ]</p>
+<p>This first rounds the energy to the nearest whole number (so that we don't get long labels like "48.25"), and then sets each turtle's label to be the result.</p>
+<h2>RELATED MODELS</h2>
+<p>This model is related to all of the other models in the "Urban Suite".</p>
+<p>An early version of this model was inspired and based on the Cooperation model in the NetLogo models library.  The Cooperation model discusses how cooperation might have arisen in the course of biological evolution.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>The original version of this model was developed during the Sprawl/Swarm Class at Illinois Institute of Technology in Fall 2006 under the supervision of Sarah Dunn and Martin Felsen, by the following students: Anita Phetkhamphou and Tidza Causevic .  See http://www.sprawlcity.us/ for more information about this course.</p>
+<p>Further modifications and refinements were made by members of the Center for Connected Learning and Computer-Based Modeling before releasing it as an Urban Suite model.</p>
+<p>The Urban Suite models were developed as part of the Procedural Modeling of Cities project, under the sponsorship of NSF ITR award 0326542, Electronic Arts &amp; Maxis.</p>
+<p>Please see the project web site ( http://ccl.northwestern.edu/cities/ ) for more information.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Felsen, M. and Wilensky, U. (2007).  NetLogo Urban Suite - Recycling model.  http://ccl.northwestern.edu/netlogo/models/UrbanSuite-Recycling.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 Cite: Felsen, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

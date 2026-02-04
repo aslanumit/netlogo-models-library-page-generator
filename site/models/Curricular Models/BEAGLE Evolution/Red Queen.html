@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Red Queen</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Red Queen</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/BEAGLE%20Evolution/Red%20Queen.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/BEAGLE Evolution/Red Queen.png" alt="Screenshot of Red Queen" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates the ideas of competitive co-evolution. In the model there are two species:  frogs and snakes. The snakes are the only predators of the frogs, but the frogs produce a fast acting poison that kills the snakes before they can be eaten. However, the snakes have developed an anti-venom to counter the frog's poison. In this model, we assume that there are no other predators of the frogs, or prey that are consumed by the snakes.  As such the two species enter a biological arms race in order to keep up with each other.</p>
+<p>The name Red Queen comes from Lewis Carroll's "Through the Looking Glass", where the Red Queen says, "...it takes all the running you can do, to keep in the same place."  In this model under the right conditions, the two species evolve as fast as they can, but neither is able to gain an advantage over the other.</p>
+<h2>HOW IT WORKS</h2>
+<p>When SETUP is pressed, INITIAL-NUMBER-SNAKES and INITIAL-NUMBER-FROGS are created.  Each of these have a poison or resistance drawn from a normal distribution with means of INITIAL-RESISTANCE-MEAN and INITIAL-POISON-MEAN with a standard deviation of 1.</p>
+<p>Once GO is pressed, all organisms move with a random walk.  When a snake encounters a frog, the snake will try to eat the frog. If the frog's poison is stronger than snake's resistance the snake will die. If the snake's resistance is higher than the frog's poison the frog will die.  If the poison and resistance are equal then both individuals survive.</p>
+<p>At the end of every tick, each animal get a chance to reproduce.  In order to reproduce the count of its species must be below half of MAX-INDIVIDUALS.  The chance of reproduction is still 5 in 100.  If the animal does reproduce, a new individual is created which has a resistance or poison drawn from a normal distribution with mean equal to the parent's value, and standard deviation of 1.</p>
+<h2>HOW TO USE IT</h2>
+<p>First set the parameters of the model.  INITIAL-NUMBER-SNAKES and INITIAL-NUMBER-FROGS controls the initial number of each species.  INITIAL-RESISTANCE-MEAN and INITIAL-POISON-MEAN control the distributions from which the initial values for the snakes and frogs, respectively.  MAX-INDIVIDUALS controls the total carrying capacity of the environment.  Once these values are set, press SETUP and GO to watch the model run.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>With the initial settings of the model, both of the species will usually persist for a long period of time.  Both of the species persist, but their population levels change over time, what is the relationship between the populations of the frogs and snakes?  What happens to the levels of the poison and resistance during this time?</p>
+<h2>THINGS TO TRY</h2>
+<p>Modify the INITIAL-RESISTANCE-MEAN and INITIAL-POISON-MEAN, do both species continue to persist?  What happens to the resistance and poison values?</p>
+<p>Set the INITIAL-RESISTANCE-MEAN and INITIAL-POISON-MEAN to the same value, but change the INITIAL-NUMBER-FROGS and INITIAL-NUMBER-SNAKES, what happens to the population levels over time?  What happens to the poison and resistance values?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The frogs have their own shape, "frog top" but the snakes use the default turtle shape.  Create a snake shape for the snakes.</p>
+<p>Originally, the reproduction of the individuals in this model is a global mechanism in that random individuals all over the environment are selected to reproduce, and snakes and frogs are selected equally likely.  We have changed this mechanism so that each agent gets a chance to reproduce each turn, making the reproduction rate population dependent, but there are many ways to make this change. Implement another individual-based mechanism. After this, change the model so that individuals that succeed in fights reproduce preferentially.</p>
+<p>Currently the species in this model reproduce asexually.  Change the model so that it uses sexual reproduction.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses the "frog top" shape that was imported from the Shapes Library.</p>
+<h2>RELATED MODELS</h2>
+<p>This model is related to the other BEAGLE models since they all examine evolution.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the BEAGLE curriculum (http://ccl.northwestern.edu/rp/beagle/index.shtml)</p>
+<p>This model is related to a model that was used as the basis for a poster published at the Genetic and Evolutionary Computation Conference.  This model uses a more individual-based reproductive mechanism, whereas the model in the paper used a global one:</p>
+<p>"Coevolution of Predators and Prey in a Spatial Model: An Exploration of the Red Queen Effect" Jules Ottino-Loffler, William Rand, and Uri Wilensky (2007) GECCO 2007, London, UK</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Ottino-Loffler, J., Rand, W. and Wilensky, U. (2007).  NetLogo Red Queen model.  http://ccl.northwestern.edu/netlogo/models/RedQueen.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 Cite: Ottino-Loffler, J., Rand, W. --></div>
+      </div>
+    </main>
+  </body>
+</html>

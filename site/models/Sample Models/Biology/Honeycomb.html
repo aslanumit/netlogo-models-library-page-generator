@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Honeycomb</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Honeycomb</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Honeycomb.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Honeycomb.png" alt="Screenshot of Honeycomb" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>How are groups of bees able to build their honeycombs out of perfect hexagons?  This model illustrates one hypothesis for a possible mechanism.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each bee moves in a clockwise circle, spreading a chemical pheromone behind it.  Over time, the pheromone diffuses and eventually evaporates.  The pheromone affects the behavior of the bees crawling over it as follows: the bees move faster when there is more pheromone, but they also decrease their turn radius.  The effects of these two rules balance each other, leaving the size of the loops roughly constant.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to create some bees, and press GO to start them on their rounds.  If you want the model to run faster, make the bees invisible with the HIDE BEES button.  Turn off the display through the view controls to make the model run even faster.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Initially, the bees draw a big mess of irregular loops.  But over time, the loops sort themselves out into a loose grid.  As more time passes, the grid becomes more and more regular, approaching a perfect hexagonal lattice, which is the optimal arrangement for maximizing the number of circles that fit on a surface.</p>
+<h2>THINGS TO TRY</h2>
+<p>Experiment with the effect of varying the number of bees.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>There are a lot of arbitrarily chosen numbers in the Code tab.  Experiment with the effect of varying them.</p>
+<p>In this version of the models, the bees wrap around the edges of the world.  Try modifying the model so the bees are clustered near the center of the world, to prevent wrapping.  What happens?</p>
+<p>Also, try having the bees all start from a central location.  Does this still produce the hexagonal lattice throughout the entire world?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>It takes time to diffuse and evaporate the chemical across every patch in the world, so instead of doing it every turtle step, we do it every 10 turtle steps.  This speeds up the model a lot without noticeably altering the behavior.</p>
+<h2>RELATED MODELS</h2>
+<p>Slime and Ants are other models that use pheromones to coordinate the behavior of individuals into an interesting overall effect.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>The rules for this model were invented by David Little in 1995.  The NetLogo code is adapted from his original MacStarLogo code.  On the starlogo-users list, he wrote:</p>
+<blockquote>
+<p>During a visit to Tilff, in the Belgian Ardennes this summer, I was amazed to watch live beehives that had been built with glass walls, in the Bee Museum there. You could see into the hive, and observe the bees' activity (safely!). As if by magic, the regular architecture of the hive emerges from the seemingly random motions of the workers: the famous hexagonal array, constructed on both sides of plates hung vertically, and evenly spaced apart. The million-dollar question is, how do they do it? Is the beehive determined by their genes? How is it that different sized bees make cells all exactly the same size?</p>
+<p>That the piling up of round objects easily ends up as a hexagonal array, I already knew: it takes up the least amount of space. Being almost totally ignorant of entomology, nevertheless, I made an amateur hypothesis: maybe the hive is the result of a few simple behavioral rules, and there is no hive 'blueprint' in the bees' genes. The apparent random motion of the bees is perhaps in fact highly organised into feedback loops: a bee's next move must depend on what she and the others have done and built before.</p>
+<p>I don't claim that real bees work with the same rules, but I've proved my hypothesis anyway!</p>
+</blockquote>
+<p>Researchers have extensively studied honeycomb formation.  Here are some references to consult for further information:</p>
+<p>Camazine, S., et al., Self-organization in biological systems. 2001, Princeton, NJ: Princeton University Press. 538. (ch.16)</p>
+<p>Camazine, 1990 -- SO pattern formation in the combs of honey bee colonies.</p>
+<p>Pratt, Stephen. 1998. Condition-dependent timing of comb construction by honey bee colonies, animal behaviour, 56, 603-610</p>
+<p>Theraulaz, G. &amp; Bonabeau, E. (1995) Modelling the collective building of complex architectures in social insects with lattice swarms. Journal of theoretical Biology 177, 381-400.</p>
+<p>Theraulaz and Eric Bonabeau. Coordination in distributed building. Science, 269(4):686--688, 1995.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2003).  NetLogo Honeycomb model.  http://ccl.northwestern.edu/netlogo/models/Honeycomb.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2003 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2003 --></div>
+      </div>
+    </main>
+  </body>
+</html>

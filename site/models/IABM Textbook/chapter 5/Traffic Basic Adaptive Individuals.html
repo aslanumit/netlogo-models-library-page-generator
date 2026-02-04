@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Traffic Basic Adaptive Individuals</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Traffic Basic Adaptive Individuals</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/IABM%20Textbook/chapter%205/Traffic%20Basic%20Adaptive%20Individuals.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/IABM Textbook/chapter 5/Traffic Basic Adaptive Individuals.png" alt="Screenshot of Traffic Basic Adaptive Individuals" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is from Chapter Five of the book "Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo", by Uri Wilensky &amp; William Rand.</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<p>This model is in the IABM Textbook folder of the NetLogo Models Library. The model, as well as any updates to the model, can also be found on the textbook website: http://www.intro-to-abm.com/.</p>
+<h2>WHAT IS IT?</h2>
+<p>This model models the movement of cars on a highway. Each car follows a simple set of rules: it slows down (decelerates) if it sees a car close ahead, and speeds up (accelerates) if it doesn't see a car ahead. The model extends the Traffic Basic model, from the social science section of the NetLogo models library, by having cars adapt their acceleration to try and maintain a smooth flow of traffic. It differs from the Traffic Basic Adaptive model in that this model has each car adapting individually, whereas that model has all cars adapting in unison.</p>
+<p>An agent that can change its strategy based on prior experience is an adaptive agent. In the Traffic Basic Adaptive model, the agents <em>collectively</em> adapted their behavior, using their experience to find a common strategy (i.e., an <code>acceleration</code>) that maximized the average speed of all cars. In this version of the model, the agents <em>individually</em> adapt: each car can choose a different strategy (i.e., a different <code>acceleration</code>) in order to maximize its own speed. Instead of looking at the mean speed of all cars to evaluate the effectiveness of their current strategy, the cars look at their own mean speed since their last evaluation.</p>
+<h2>HOW TO USE IT</h2>
+<p>Click on the SETUP button to set up the cars.</p>
+<p>Set the NUMBER-OF-CARS slider to change the number of cars on the road.</p>
+<p>Click on GO to start the cars moving.  Note that they wrap around the world as they move, so the road is like a continuous loop.</p>
+<p>The INIT-ACCELERATION slider controls the rate at which cars initially accelerate (speed up) when there are no cars ahead.</p>
+<p>When a car sees another car right in front, it matches that car's speed and then slows down a bit more.  How much slower it goes than the car in front of it is controlled by the DECELERATION slider.</p>
+<p>The SPEED-LIMIT slider sets the maximum speed that the cars can go.</p>
+<p>Click on ADAPTIVE-GO to see how the results change when the cars are adapting to the environment around them, by changing their acceleration.</p>
+<p>ADAPTIVE-GO employs the TICKS-BETWEEN-TESTS slider. This slider controls how frequently the model tests to see if it has found a better acceleration.</p>
+<p>There are two monitors:</p>
+<ul>
+<li>
+<p>RED CAR SPEED displays the speed of one randomly selected car, which is colored red.</p>
+</li>
+<li>
+<p>AVG SPEED displays the average speed of the cars.</p>
+</li>
+</ul>
+<p>The CAR SPEEDS plot plots the minimum, maximum and average speed of the cars. If the PLOT-RED-CAR? switch is on, it also plots the speed of the red car.</p>
+<p>The ACCELERATION plot shows the distribution of the cars' accelerations over time. This is only used in ADAPTIVE-GO mode. (In regular GO mode, all cars have the same acceleration.)</p>
+<h2>THINGS TO NOTICE</h2>
+<p>First run the model using the GO button for a few hundred ticks. Then stop the model by pressing GO again and restart it by pressing ADAPTIVE-GO instead. Can you notice the change in behavior?</p>
+<p>Notice how the ACCELERATION plot shows a single line when using GO, but multiple lines when using ADAPTIVE-GO. Do you understand why? If you switch from ADAPTIVE-GO to GO during the same run, you will still have multiple lines, but they won't change anymore. Can you explain what happens?</p>
+<h2>THINGS TO TRY</h2>
+<p>Run the model using ADAPTIVE-GO until all the cars reach a speed of <code>1.0</code>. (You can temporarily uncheck "view updates" in the toolbar to make the model run faster.) All the cars now have the same speed but do they have the same acceleration? How do you explain the range of different accelerations once all the cars have had a chance to adapt?</p>
+<p>When the <code>plot-red-car?</code> switch is turned on, we plot the speed of the red car in the CAR SPEEDS plot, but we don't plot its acceleration in the ACCELERATION plot. Add a (red!) pen to that plot to show the acceleration of the red car. How does the red car's compare to that if its peers? Run the model a few times. Are you getting the same result? What did you expect?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The cars currently adapt by changing their acceleration. What if they could also change their deceleration? You would need to add <code>deceleration</code> and <code>best-deceleration-so-far</code> as turtle variables, rename the <code>deceleration</code> slider to <code>init-deceleration</code> and make a the related changes in the <code>setup-cars</code> and <code>adapt</code> procedures. Try it out! Does it help the cars to maximize their speed?</p>
+<p>The amount by which acceleration varies is currently <code>random-float 0.002 - 0.001</code>. Make a slider called <code>variation-range</code> and have the acceleration vary instead by <code>random-float variation-range - (variation-range / 2)</code>. Now see what happens when you use a higher variation range. Can the model still stabilize? Now try a very low one. Are the cars still able to adapt?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The CAR SPEEDS plot shows both global values and the value for a single car, which helps one watch overall patterns and individual behavior at the same time.</p>
+<p>The UPPER-QUARTILE and LOWER-QUARTILE reporters show how to easily calculate quartiles.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>
+<p>"Traffic Basic": a simple model of the movement of cars on a highway.</p>
+</li>
+<li>
+<p>"Traffic Basic Utility": a version of "Traffic Basic" including a utility function for the cars.</p>
+</li>
+<li>
+<p>"Traffic Basic Adaptive": a version of "Traffic Basic" where cars adapt their acceleration to try and maintain a smooth flow of traffic.</p>
+</li>
+<li>
+<p>"Traffic 2 Lanes": a more sophisticated two-lane version of the "Traffic Basic" model.</p>
+</li>
+<li>
+<p>"Traffic Intersection": a model of cars traveling through a single intersection.</p>
+</li>
+<li>
+<p>"Traffic Grid": a model of traffic moving in a city grid, with stoplights at the intersections.</p>
+</li>
+<li>
+<p>"Traffic Grid Goal": a version of "Traffic Grid" where the cars have goals, namely to drive to and from work.</p>
+</li>
+<li>
+<p>"Gridlock HubNet": a version of "Traffic Grid" where students control traffic lights in real-time.</p>
+</li>
+<li>
+<p>"Gridlock Alternate HubNet": a version of "Gridlock HubNet" where students can enter NetLogo code to plot custom metrics.</p>
+</li>
+</ul>
+<p>The traffic models from chapter 5 of the IABM textbook demonstrate different types of cognitive agents: "Traffic Basic Utility" demonstrates <em>utility-based agents</em>, "Traffic Grid Goal" demonstrates <em>goal-based agents</em>, and "Traffic Basic Adaptive" and "Traffic Basic Adaptive Individuals" demonstrate <em>adaptive agents</em>.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is an extension of the NetLogo Traffic Basic Adaptive model (Rand and Wilensky, 2008). This extension is based on exploration 20 from chapter 5 of the "Introduction to Agent-Based Modeling" textbook.</p>
+<h2>HOW TO CITE</h2>
+<p>This model is part of the textbook, “Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo.”</p>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Head, B., Rand, W., Wilensky, U. (2015).  NetLogo Traffic Basic Adaptive Individuals model.  http://ccl.northwestern.edu/netlogo/models/TrafficBasicAdaptiveIndividuals.  Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the textbook as:</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2015 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2015 Cite: Head, B., Rand, W., Wilensky, U. --></div>
+      </div>
+    </main>
+  </body>
+</html>

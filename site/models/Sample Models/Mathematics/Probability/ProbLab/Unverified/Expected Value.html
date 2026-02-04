@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Expected Value</title>
+    <link rel="stylesheet" href="../../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Expected Value</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/Probability/ProbLab/Unverified/Expected%20Value.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../../models/Sample Models/Mathematics/Probability/ProbLab/Unverified/Expected Value.png" alt="Screenshot of Expected Value" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>In this model you run experiments that demonstrate the mathematical idea "expected value" (sometimes called "expectation value"). There is a set of different possible outcomes, and each of these outcomes has a different value. The model predicts the expected value based on the probabilities of each of these outcomes. The user can then take samples from the population and compare them to the values predicted by the model.</p>
+<p>This model is a part of the ProbLab curriculum. The ProbLab Curriculum is currently under development at the CCL. For more information about the ProbLab Curriculum please refer to http://ccl.northwestern.edu/curriculum/ProbLab/.</p>
+<h2>PEDAGOGICAL NOTE</h2>
+<p>Expected-value analyses look at the 'value' of outcomes in probability experiments in terms of some utilitarian framework, such as money or points. As in life, some events are more significant to us, not just because they happen rarely or often. In that sense, expected-value simulations go beyond looking just at chance -- they introduces a 'worth' factor (weight, coefficient) associated with each type of experimental outcome. That is, these simulations examine not only the issue of what I should expect, but also, what it would be worth for me.  For instance, if I draw 12 coins randomly from a sack containing an equal number of pennies, nickels, dimes, and quarters, we could talk about which 12 'coins' I could expect to get (a nominal classification) -- 3 'pennies,' 3 'nickels,' 3 'dimes,' and 3 'quarters,' on average. But we could extend the discussion to how much money I would get, that is, what would be the 'value' of my draw. To do this, we'd have to multiply the expected frequency of each type of coin by its value:
+3 * 1 + 3 * 5 + 3 * 10 + 3 * 25 = 123 cents.</p>
+<p>A more general way of putting this all together -- the sample size (12), the probabilities of each coin (1/4 for each of them), and the value of each coin (1, 5, 10, and 25) -- is:
+12 * (1 * 1/4 + 5 * 1/4 + 10 * 1/4 + 25 * 1/4) = 123 cents.</p>
+<p>Thus, the term 'expected value' may be defined as the sum of the products of the value of each possible event and the probability of that possible event.</p>
+<h2>HOW IT WORKS</h2>
+<p>The analogy utilized for the model is one of a tiled playground, with a certain number of marbles beneath each tile (0, 1, 2, 3, 4, 5 or 6 marbles).  A wandering kid flips up some tiles at every go and counts up the marbles found beneath the tiles. That's a "sample."  The kid cannot see the color of the tiles -- the colors are for us.</p>
+<p>The idea of 'expected value' is that if we know how many tiles have 0, 1, 2,... or 6 marbles beneath them, then we can formulate an educated guess of how many marbles the wandering kid will find, on average. It's similar to asking, 'How many marbles are there on average under each tile?' We need to somehow take into account the chance of getting each one of the marble sets.</p>
+<p>In the setting-up phase of using this model, you get to set up the relative number of tiles hiding 0 marbles, 1 marble, 2 marbles, ... and 6 marbles. We set the ratio between the number of tiles hiding each set of marbles. The computer program will do much of the calculations for us, but here's the gist of what it does:</p>
+<p>Let's say that we set the sliders to the following ratio units: 0 : 1 : 6 : 5 : 0 : 4 : 0.</p>
+<p>The number '5,' for example, indicates our value setting for marble sets of exactly 3 marbles. You can see immediately that the chance of getting a '2' (6 ratio units) is greater than the chance of getting a '3' (5 ratio units). But in order to determine just how big the chance is of getting each marble set, we need to state the ratio units relative to each other. We need a common denominator. In this particular setting, there is a total of 16 'ratio units': 0 + 1 + 6 + 5 + 0 + 4 + 0 = 16.  Now we can say, for instance, that there is a 4/16 chance of getting a 5-marble set. That is a 25% chance of striking upon a tile that has exactly 5 marbles beneath it. We can also say that these sets of 5 marbles contribute .25 * 5, that is, 1.25 marbles, to the overall average marble-value of a single tile in the playground. Similarly, we can say there is a 5/16 chance of getting a set of 3, a 0/16 chance of getting 6-marble set, etc. If we sum up all pairs of 'value' and 'probability,' we get:
+(0 * 0/16) + (1 * 1/16) + (2 * 6/16) + (3 * 5/16) + (4 * 0/16) + (5 * 4/16) + (6 * 0/16) = 48/16 = 3 marbles per tile.</p>
+<p>This tells us that on any single pick within these settings, you should expect to find, on average, 3 marbles. "3" is our expected value. Thus, if you were to flip over 10 tiles, you should expect to find a total of 30 marbles.</p>
+<h2>HOW TO USE IT</h2>
+<p>Begin by choosing ratios of marble sets (or just use the default settings). Click SETUP, and watch the information updated in the view. Below are more features of the models that will let you change the way it looks and runs.</p>
+<p>Sliders:
+RATIO-0-UNITS, RATIO-1-UNITS, RATIO-2-UNITS, RATIO-3-UNITS, RATIO-4-UNITS, RATIO-5-UNITS, RATIO-6-UNITS -- settings for the distribution of 'marble sets' (= 'points'). Note that the ratios are set in proportion to each other (See 'THINGS TO TRY'). (The labels under the sliders let the user know that the highest value is the lightest tile color, while the lowest value is the darkest tile color.)</p>
+<p>SAMPLE-SIZE -- sets the number of tiles selected by the wandering kid at each run.  Note that the kid can turn over the same tile more than once. This won't be visible in the view.</p>
+<p>Switches:
+SETUP-APART? -- if 'On,' when SETUP is pressed, the display initially separates the population by point value, to illustrate the relative number of patches of different values.  After a 3 second pause, the model scrambles the populations, producing a randomized display.</p>
+<p>DIE-NUMS? -- if 'On,' you will see the marbles and not only colors, when the tiles are flipped over; if 'Off,' you'll see the colors and the numerical value assigned to them.</p>
+<p>BLACK-OUT? -- if 'On,' you will only see the tiles the kid selected in the present sample; if 'Off,' you will always see all the tiles. In any case, the kid does not see the colors. The 'black-out' feature makes this model more coherent with S.A.M.P.L.E.R., a participatory simulation in ProbLab.</p>
+<p>Buttons:
+SETUP -- initializes variables, re-colors the tiles, and resets the monitors and the graphs.</p>
+<p>GO ONCE -- picks a starting point randomly among the tiles in the view, sends the kid for a single run over random tiles, counts up the total number of marbles found, and graphs this total, that is, 'bumps up' the histogram at the corresponding value.</p>
+<p>CLEAR SELECTION -- re-covers the tiles that have been flipped (does not re-initialize variables).</p>
+<p>GO -- does everything that the GO ONCE button does, but over and over, until turned off, that is, until you press on it again.</p>
+<p>Monitors:
+% IN POPULATION -- shows the distribution percentage of each marble-set in the population, including the calculation that illustrates how that percentage was obtained. For instance, if the RATIO-3-UNITS's % IN POPULATION monitor is at 50%, then roughly half of all the tiles will have exactly 3 marbles beneath them.</p>
+<p>EXPECTATION VALUE CALCULATION -- This monitor shows the calculation of the expected number of marbles that the kid will find beneath all the tiles the kid flips in a sample. The calculation first determines the value of the 'average tile' and then multiplies this value by the number of tiles in the kid's sample (how many tiles the kid flips). Thus, 'average value' * 'sample-size' = total expected value of sample. The formula for the expectation calculation is:
+sample-size * (0 * (ratio-0-units / ratios-total) + 1 * (ratio-1-units / ratios-total) + 2 * (ratio-2-units / ratios-total) + 3 * (ratio-3-units / ratios-total) + 4 * (ratio-4-units / ratios-total) + 5 * (ratio-5-units / ratios-total) + 6 * (ratio-6-units / ratios-total))</p>
+<p>EXPECTED VALUE -- shows the result of the EXPECTED VALUE CALCULATION</p>
+<p>MEAN OF SAMPLES-- monitors the cumulative average number of points obtained in a sample (so it keeps updating for each sample).</p>
+<p># OF RUNS -- monitors the number of times the tiles were selected and counted as a sample.</p>
+<p>POINT TOTAL -- monitors the total number of marbles in the current sample. (updates the total as each tile is selected).</p>
+<p>Plots:
+SAMPLE TOTALS -- plots the frequency of each point-total of a run.  The green vertical line represents the average sample total, while the red vertical line represents the expected sample total.</p>
+<p>CUMULATIVE MEAN -- plots the average number of points obtained in a single run in black against the expected value in red.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>If the model is slowed down, using the bar on top of the display, one may see that the sample total is added on every time that the wandering kid selects another tile. Thus, one may monitor the running total for the current run of the kid.</p>
+<p>A feature of this model is that the wandering kid may resample the same tiles during a single run. While the kid cannot go back to a tile it just selected, it can potentially go in a circle and come back to such a tile. This may skew the average away from the expected value, which does not account for such re-sampling (see 'EXTENDING THE MODEL,' below).</p>
+<h2>THINGS TO TRY</h2>
+<p>Run the model under different setting of the three switches.  Why does DIE-NUMS? help
+one visualize the model better in some situations and under some settings, while not
+in others?</p>
+<p>The relative ratios of the various marble sets are determined by relative values of all of the sliders on the left.  In other words, if one sets RATIO-0-UNIT : RATIO-2-UNITS : ..., : RATIO-6-UNITS to 1 : 1 : 1 : 1 : 1 : 1 : 1, it is going to mean the same to the computer as the setting of 2 : 2 : 2 : 2 : 2 : 2 : 2 or 5 : 5 : 5 : 5 : 5 : 5 : 5.  The sliders are designed to allow an exploration of a rich range of proportions of the different marble sets.  Try extending the maximum value of the RATIO sliders, to obtain a richer range of proportions of marble sets.</p>
+<p>Change the target-color to some color other than green. Change the 'little-guy-color,' which alters the color of the wandering kid.</p>
+<p>Set the ratio-0-units to 0. Set all the other ratio sliders to some value, for instance 2. (It doesn't matter which, as long as they are the same.) Press SETUP. The model now simulates the sample space of dice, which do not have a '0,' and for which each 1-thru-6 value is equally likely to occur.</p>
+<p>Set the ratios of the 0 and 1 to some non-zero value. Set the ratios of 2, 3, 4, 5 and 6 to 0. Press SETUP. This produces a sample space of a Boolean type ('true' or 'false'). This sample space would be coherent with the S.A.M.P.L.E.R. model of ProbLab, where tiles are either green (true) or blue (false), without in-between values.</p>
+<p>Set the ratios of 5 and 6 to 0. Set the other ratios to non-zero values. Press SETUP. The model produces a sample space that could be seen as a tessellation of '4-blocks,' which appear in the 9-Block Stalagmite model of ProbLab. In that model, blocks have either 0, 1, 2, 3, or all 4 squares with the target-color.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add and change code so that the wandering kid cannot re-sample within a single sample.</p>
+<p>Add and change code so that the wandering kid cannot re-sample within a single run of many samples.</p>
+<p>Add a monitor that show the % difference between the expected value and the mean of samples.</p>
+<p>Add another unit-value slider. It could for 7, so you'd need to create a die shape with 7 dots on it and integrate that die shape and its name into the lists in the code. You could possibly create a 'negative value,' which could be interpreted as an added expense, like owing marbles.</p>
+<h2>RELATED MODELS</h2>
+<p>This model is closely related to a variety of models in the ProbLab curriculum. As described in the 'THINGS TO TRY' section, one may set the ratios up so that they mirror the sample population of other models in the curriculum, including 9-Block Stalagmite and S.A.M.P.L.E.R. For instance, if one sets BLACK-OUT? to 'On,' this model would produce an effect that is similar to that of S.A.M.P.L.E.R., where one chooses a certain number of tiles and doesn't see any of the other tiles in the population.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the ProbLab curriculum. The ProbLab Curriculum is currently under development at Northwestern's Center for Connected Learning and Computer-Based Modeling. . For more information about the ProbLab Curriculum please refer to http://ccl.northwestern.edu/curriculum/ProbLab/.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Abrahamson, D. and Wilensky, U. (2004).  NetLogo Expected Value model.  http://ccl.northwestern.edu/netlogo/models/ExpectedValue.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2004 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2004 Cite: Abrahamson, D. --></div>
+      </div>
+    </main>
+  </body>
+</html>

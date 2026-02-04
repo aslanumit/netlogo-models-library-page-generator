@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GasLab Maxwells Demon</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>GasLab Maxwells Demon</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/GasLab/GasLab%20Maxwells%20Demon.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/GasLab/GasLab Maxwells Demon.png" alt="Screenshot of GasLab Maxwells Demon" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model illustrates a famous thought experiment, which raised important issues about the nature of entropy.</p>
+<p>In 1871, James Clerk Maxwell imagined a situation where a very small and nimble being could, by opening and closing a valve between two gas-filled chambers, allow only faster particles to go through one way and only slower particles to go through the other.  By doing this, the being (later called a demon) could raise the temperature of one chamber (faster particles) and lower the temperature of the other (slower particles), without the expenditure of work. This was a violation of the Second Law of Thermodynamics, and he asserted that this could not actually occur.  The implications of this puzzle have continued to be central to thermodynamics, entropy, and information theory up to the present time.</p>
+<p>This model is one in a series of GasLab models. They use the same basic rules for simulating the behavior of gases.  Each model integrates different features in order to highlight different aspects of gas behavior.</p>
+<p>The basic principle of the models is that gas particles are assumed to have two elementary actions: they move and they collide --- either with other particles or with any other objects such as walls.</p>
+<h2>HOW IT WORKS</h2>
+<p>The particles are modeled as hard balls with no internal energy except that which is due to their motion.  Collisions between particles are elastic.  Particles are colored according to speed --- blue for slow, green for medium, and red for high speeds.</p>
+<p>Coloring of the particles is with respect to one speed (10).  Particles with a speed less than 5 are blue, ones that are more than 15 are red, while all in those in-between are green.</p>
+<p>Particles behave according to the following rules:
+1. A particle moves in a straight line without changing its speed, unless it collides with another particle or bounces off the wall.
+2. Two particles "collide" if they find themselves on the same patch (NetLogo's View is composed of a grid of small squares called patches).
+3. A random axis is chosen, as if they are two balls that hit each other and this axis is the line connecting their centers.
+4. They exchange momentum and energy along that axis, according to the conservation of momentum and energy.  This calculation is done in the center of mass system.
+5. Each turtle is assigned its new velocity, energy, and heading.
+6. If a turtle finds itself on or very close to a wall of the container, it "bounces" -- that is, reflects its direction and keeps its same speed.</p>
+<p>The setup is the same as that for the "Two-Gas" model.  What is added is a "valve".  It transports fast particles from the left to the right chamber when they arrive at the turquoise strip, and slow particles from the right to the left chamber when they arrive at the violet strip.  When a particle passes through, it becomes larger for a short time and displays its speed.</p>
+<h2>HOW TO USE IT</h2>
+<p>Settings:
+NUMBER-OF-PARTICLES: total number of particles in the two chambers
+INIT-PARTICLE-SPEED: initial speed of all the particles
+PARTICLE-MASS: particles' mass</p>
+<p>Other settings:
+COLLIDE? If this is On, the particles collide.  If it is Off, they do not collide.
+THRESHOLD: The threshold is how much faster or slower than the average speed a particle must be going to be transferred to the other chamber by the "valve".
+DEMON?: If this is On, the valve is operating.  If it is Off, the valve does nothing.
+TIME-DISPLAY-PARTICLES: determines for how long the particles are visually enlarged and their speeds are labeled, before the go back to their original size.</p>
+<p>Initialize the model by pressing SETUP, and press GO to run it.</p>
+<p>Monitors:
+AVERAGE SPEED:  average speed of all the particles.
+AVERAGE SPEED LEFT: average particle speed in the left chamber.
+AVERAGE SPEED RIGHT: average particle speed in the right chamber.</p>
+<p>Plots:
+PARTICLES COUNT: the number of particles in the left (turquoise) and right (violet) chambers.
+AVERAGE ENERGIES: the average energy of the particles in the left and right chambers.  This is calculated as the average of 1/2 mv^2 for the particles.
+AVERAGE SPEEDS:  the average speeds of the particles in both the left and the right chambers.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Watch the "valve" carefully. Can you see fast (red) particles jump right and slow (blue) particles jump left when they run into the valve?  They are enlarged and their speeds are labeled for a short time.</p>
+<p>What happens to the average energies and speeds in the left and right chambers?  Do the values settle down after a long time?</p>
+<p>Notice the particles count in the two chambers.  While the model starts out with more particles going into the right chamber than the left, this changes after a while.  Why does that happen?  Given the Maxwell-Boltzmann distribution, which chamber should have more particles?</p>
+<h2>THINGS TO TRY</h2>
+<p>Change the valve threshold.  Does it change the rate of evolution of the model?  Does it change its eventual result?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>What happens if there are particles of different masses?  (See Two Gas model.)</p>
+<p>How would you calculate the pressure in each box?  (See Piston models.)  Do they remain equal?</p>
+<p>If such a valve were possible, could "free energy" be gotten from the two chambers at different temperatures?</p>
+<p>Another way of increasing order and later extracting energy might be to allow the valve to let through particles in only one direction, so that eventually one chamber is filled with gas, while the other one ends up empty.  Can you create such a system?</p>
+<h2>RELATED MODELS</h2>
+<p>Look at the other GasLab models.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model was developed as part of the GasLab curriculum (http://ccl.northwestern.edu/curriculum/gaslab/) and has also been incorporated into the Connected Chemistry curriculum (http://ccl.northwestern.edu/curriculum/ConnectedChemistry/)</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo GasLab Maxwells Demon model.  http://ccl.northwestern.edu/netlogo/models/GasLabMaxwellsDemon.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2002.</p>
+<!-- 1997 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

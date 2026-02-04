@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Color Reveal</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Color Reveal</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Extensions%20Examples/palette/Color%20Reveal.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Code Examples/Extensions Examples/palette/Color Reveal.png" alt="Screenshot of Color Reveal" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Color Reveal demonstrates commands from version 2.0.0 of the <code>palette</code> extension. Turtles move around the space and raise the saturation or brightness of patches they cross over, revealing a colorful layout. As they move, they lose energy and fade away. This model uses primitives that modify saturation, brightness, and transparency (a number from 0 to 100 that measures the transparency of a color).</p>
+<p>It uses a few primitive groups from the <code>palette</code> extension:</p>
+<h3><code>palette:scheme-colors</code></h3>
+<p>This primitive reports a color scheme from <a href="https://colorbrewer2.org">Color Brewer</a>, an online color suggestion tool. The model uses a color scheme for patches and turtles.</p>
+<h3><code>set-component</code> Primitives</h3>
+<p>The set component primitive group directly changes the component of a <em>color</em> without the list manipulations (which in the previous versions of the extension were required). In this example, we use the primitives to set the components of an agent's color. The model uses these commands to change the color of turtles and patches:</p>
+<ul>
+<li><code>palette:set-hue</code> <em>number</em></li>
+<li><code>palette:set-saturation</code> <em>number</em></li>
+<li><code>palette:set-brightness</code> <em>number</em></li>
+<li><code>palette:set-transparency</code> <em>number</em></li>
+</ul>
+<p>In the GO procedure, the model creates new turtles to keep the turtle count at NUM-TURTLES. When turtles move, they change the brightness or saturation of the patch beneath their path.</p>
+<p>For more information, see the <code>palette</code> extension documentation.</p>
+<!-- 2021 --></div>
+      </div>
+    </main>
+  </body>
+</html>

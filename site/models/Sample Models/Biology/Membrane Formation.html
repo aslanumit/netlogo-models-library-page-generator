@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Membrane Formation</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Membrane Formation</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Membrane%20Formation.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Membrane Formation.png" alt="Screenshot of Membrane Formation" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model simulates the formation of membranes in water. It shows how simple attractive and repulsive forces between different kinds of molecules can result in higher level structure. For more information about natural membranes, see https://en.wikipedia.org/wiki/Lipid_bilayer.</p>
+<h2>HOW IT WORKS</h2>
+<p>The blue circles are water molecules. A purple circle connected to an orange circle is a lipid. The purple end is hydrophilic and the orange end is hydrophobic. The purple hydrophilic molecule is attracted to water, while the orange hydrophobic molecule repels water.</p>
+<p>At each tick, every molecule picks another random molecule within INTERACTION-DISTANCE. If these two molecules are water, one is water and the other is hydrophilic, both are hydrophilic, or both are hydrophobic, the acting molecule moves towards the other molecule by WATER-WATER-FORCE. If one molecule is hydrophobic and the other is water, the molecule moves in the direction of the other by WATER-OIL-FORCE; since this value is negative, they move away from each other.</p>
+<p>After its first move, the acting molecule then picks a random molecule in TOO-CLOSE-DISTANCE and moves in its direction by TOO-CLOSE-FORCE. Since TOO-CLOSE-FORCE is negative, this causes molecules that are too close to repel each other.</p>
+<p>Finally, if the molecule is connected by a link to another molecule, it moves to stay exactly LIPID-LENGTH away from its partner.</p>
+<p>The hydrophobic isolation plot shows the average percentage of each hydrophobic molecule's neighbors that are also hydrophobic . Hence, the higher this is, the more hydrophobic molecules are isolated from water and hydrophilic molecules.</p>
+<h2>HOW TO USE IT</h2>
+<p>First choose how many water molecules and how many lipid pairs to create. Press SETUP to create molecules in random positions. Press GO to begin the simulation.</p>
+<ul>
+<li>NUM-WATER: The number of water molecules</li>
+<li>NUM-LIPIDS: The number of hydrophobic-hydrophilic pairs</li>
+<li>WATER-WATER-FORCE: How much a molecule should move when it is interacting with another molecule of the same type</li>
+<li>WATER-OIL-FORCE: How much a molecule should move when it is interacting with a molecule of a different type</li>
+<li>TOO-CLOSE-FORCE: How much a molecule should move when it's "too close" to another molecule</li>
+<li>RANDOM-FORCE: Each molecule will move in a random direction this amount each tick. Increasing this "heats up" the system.</li>
+</ul>
+<h2>THINGS TO NOTICE</h2>
+<p>Often, the lipids will first form circular structures where their hydrophobic ends all point in towards a collection of water molecules. This is called a "micelle". Then, these micelles will join and extend, becoming a long bilayer surface. Finally, sometimes the two ends of a surface will meet, creating a membrane that separates the water on the inside from water on the outside.</p>
+<p>Notice how the hydrophobic isolation plot generally corresponds to the presence of these structures.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try adjusting the attractive and repulsive forces between the different kinds of molecules. How much can you change the forces and still see higher level structures?</p>
+<p>How does the concentration of lipids change what structures form? What happens when you have only lipids? Do structures still form?</p>
+<p>How do the structures change when you set WATER-WATER-FORCE to 0? How is this reflected in the hydrophobic isolation plot? Try out various combinations of forces.</p>
+<p>What is the neutral hydrophobic isolation? That is, what happens when both WATER-WATER-FORCE and WATER-OIL-FORCE are 0?</p>
+<p>How does RANDOM-FORCE change the rate at which structures form? What happens when you set it really high? Can the structures hold together?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try adding new types of molecules to the model. Can you get any other higher level structures to form?</p>
+<p>Try making positive forces negative and negative forces positive.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>While the lipids act like they are "tied" together, the model doesn't actually use TIE. Since TIE maintains the relative orientation of the turtles, we would see the lipids spinning around in a crazy manner if it was used. Instead, at the end of each ticks, the molecules attached by links move towards or away from each other to make sure their distance stays at LIPID-LENGTH.</p>
+<h2>RELATED MODELS</h2>
+<p>This model is loosely based on dissipative particle dynamics (DPD) models. These kinds of higher level structures can be observed in DPD models as well. DPD models actually take into account conservation of momentum and the fact that molecules are constantly interacting with many other molecules.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Two papers that describe this work are:</p>
+<ul>
+<li>
+<p>Gazzola, G., Buchanan, A., Packard, N. &amp; Bedeau. M. (2007).  Catalysis by Self-Assembled Structures in Emergent Reaction Networks. In M. Capcarrere, A.A. Freitas, P.J. Bentley, Johnson, C.G. Johnson, &amp; J. Timmmis (Eds). Advances in Artificial Life. Lecture Notes in Computer Science. Vol. 4648, pp. 876-885. Springer Verlag. https://link.springer.com/chapter/10.1007/978-3-540-74913-4_88#page-1</p>
+</li>
+<li>
+<p>Bedau M. A., Buchanan A., Gazzola G., Hanczyc M., Maeke T., McCaskill J. S., Poli I. and Packard N. H. (2005). Evolutionary design of a DDPD model of ligation. In Proceedings of the 7th International Conference on Artificial Evolution EA'05. Lecture Notes in Computer Science 3871, 201-212, Springer Verlag.</p>
+</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Head, B. and Wilensky, U. (2013).  NetLogo Membrane Formation model.  http://ccl.northwestern.edu/netlogo/models/MembraneFormation.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2013 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2013 Cite: Head, B. --></div>
+      </div>
+    </main>
+  </body>
+</html>

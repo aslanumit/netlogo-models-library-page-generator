@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Traffic Basic Adaptive</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Traffic Basic Adaptive</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/IABM%20Textbook/chapter%205/Traffic%20Basic%20Adaptive.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/IABM Textbook/chapter 5/Traffic Basic Adaptive.png" alt="Screenshot of Traffic Basic Adaptive" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is from Chapter Five of the book "Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo", by Uri Wilensky &amp; William Rand.</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<p>This model is in the IABM Textbook folder of the NetLogo Models Library. The model, as well as any updates to the model, can also be found on the textbook website: http://www.intro-to-abm.com/.</p>
+<h2>WHAT IS IT?</h2>
+<p>This model models the movement of cars on a highway. Each car follows a simple set of rules: it slows down (decelerates) if it sees a car close ahead, and speeds up (accelerates) if it doesn't see a car ahead. The model extends the Traffic Basic model, from the social science section of the NetLogo models library, by having cars adapt their acceleration to try and maintain a smooth flow of traffic.</p>
+<p>An agent that can change its strategy based on prior experience is an adaptive agent. Unlike conventional agents, which will always do the same thing when presented with the same circumstances, adaptive agents can make different decisions if given the same set of inputs. In the Traffic Basic model, cars do not always take the same action; they operate differently based on the cars around them by either slowing down or speeding up. However, regardless of what has happened to the cars in the past (i.e., whether they got stuck in traffic jams or not) they will continue to take the same actions in the same conditions in the future. To be truly adaptive, agents need to be able to change not only their actions in time, but also their strategies. They must be able to change how they act because they have encountered a similar situation in the past and can react differently this time based on their past experience. In other words, the agents learn from their past experience and change their behavior in the future to account for this learning.</p>
+<p>In this model, cars use the best acceleration they have found so far unless they are in a tick where they are exploring a new acceleration value, as specified by <code>ticks-between-tests</code>. Over time, the cars keep a weighted average of the speed they are able to maintain at the best acceleration; if the new acceleration allows for a faster speed, the cars will then switch to using that new acceleration. This average for the best acceleration weighs the past historical speeds higher (0.9) than the present speed (0.1), accounting for the fact that you can occasionally get spurious results (noise). Thus, it is better to rely on a large amount of data than one particular data point. However, the code still allows the best acceleration to change, which means even if the environment were to change (e.g., more cars on the road, longer road, etc.) the car could adapt to the new situation.</p>
+<h2>HOW TO USE IT</h2>
+<p>Click on the SETUP button to set up the cars.</p>
+<p>Set the NUMBER-OF-CARS slider to change the number of cars on the road.</p>
+<p>Click on GO to start the cars moving.  Note that they wrap around the world as they move, so the road is like a continuous loop.</p>
+<p>The INIT-ACCELERATION slider controls the rate at which cars initially accelerate (speed up) when there are no cars ahead.</p>
+<p>When a car sees another car right in front, it matches that car's speed and then slows down a bit more.  How much slower it goes than the car in front of it is controlled by the DECELERATION slider.</p>
+<p>Click on ADAPTIVE-GO to see how the results change when the cars are adapting to the environment around them, by changing their acceleration.</p>
+<p>ADAPTIVE-GO employs the TICKS-BETWEEN-TESTS slider. This slider controls how frequently the model tests to see if it has found a better acceleration.</p>
+<p>There are five monitors:</p>
+<ul>
+<li>
+<p>BEST ACCELERATION displays the acceleration that the model believes leads to the fastest moving traffic. This is only used in ADAPTIVE-GO mode.</p>
+</li>
+<li>
+<p>CURRENT ACCELERATION displays the current value of the cars' acceleration. This only changes when in ADAPTIVE-GO mode.</p>
+</li>
+<li>
+<p>RED CAR SPEED displays the speed of one randomly selected car, which is colored red.</p>
+</li>
+<li>
+<p>AVG SPEED displays the average speed of the cars.</p>
+</li>
+<li>
+<p>SPEED-TO-BEAT displays the speed that AVG SPEED needs to beat when a test occurs for the model to think its found a better acceleration. This is only used in ADAPTIVE-GO mode.</p>
+</li>
+</ul>
+<p>The CAR SPEEDS plot plots the minimum, maximum and average speed of the cars. If the PLOT-RED-CAR? switch is on, it also plots the speed of the red car.</p>
+<p>The SPEED TO BEAT VS AVG SPEED plot compares the average speed of the cars to the speed to beat over time. This is only used in ADAPTIVE-GO mode.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Traffic Basic explored how traffic jams can start from small disturbances.  The goal of Traffic Basic Adaptive is to examine how this changes when the cars are actively trying to avoid traffic jams.  Does the behavior of the cars and jams visibly change when they are adapting? Is there a difference in the plot of the fastest, slowest, average and red cars, compared to the Traffic Basic model plot?</p>
+<p>In Traffic Basic changing the Acceleration and Deceleration could affect the model dramatically. What role does the INIT-ACCELERATION slider in this model play versus the ACCELERATION slider in the original model?  Does it affect the results as much?  How about the DECELERATION slider?  Has its effect changed?</p>
+<h2>THINGS TO TRY</h2>
+<p>The purpose of the TICKS-BETWEEN-TESTS slider is to allow the speed to stabilize between changes to acceleration. What happens if you set TICKS-BETWEEN-TESTS to <code>1</code>, thereby <em>not</em> giving the speed a chance to stabilize?</p>
+<p>Can you find a better value for TICKS-BETWEEN-TESTS than the default value for the model? A good way to do that would be to design a BehaviorSpace experiment that tries many possible values of TICKS-BETWEEN-TESTS and checks how long it takes (if ever) for the cars to reach an average speed of <code>1.0</code>. You would need to have multiple repetitions for each value, however, because the randomness in the model can lead to different results from one run to another.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>In this version of the model, the <code>acceleration</code> is the same for all agents, and agents are trying to maximize the average speed of all cars. Without looking at the "Traffic Basic Adaptive Individuals" model, can you modify the model so all cars have their own acceleration and are trying to maximize their individual speed?</p>
+<p>In the <code>adaptive-go</code> procedure, we compare the <code>speed-to-beat</code> with the <code>mean [ speed ] of turtles</code>. That gives us the mean speed at the current tick, but what if we looked instead at the mean speed for all ticks since the previous test? Would that help the cars achieve faster speed?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The behavior of the CAR SPEEDS plot is conditional on the value of the PLOT-RED-CAR? switch. This is achieved by using a simple <code>if</code>-condition in the update commands of the <code>"red car"</code> plot pen:</p>
+<pre><code>if plot-red-car? [ plotxy ticks [ speed ] of sample-car ]
+</code></pre>
+<p>Notice the use of <code>plotxy ticks ...</code> instead of just <code>plot ...</code>. Since the plot pen may not be updated right from the start, we need to make sure we plot the right <em>x</em> value, namely <code>ticks</code>.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>
+<p>"Traffic Basic": a simple model of the movement of cars on a highway.</p>
+</li>
+<li>
+<p>"Traffic Basic Utility": a version of "Traffic Basic" including a utility function for the cars.</p>
+</li>
+<li>
+<p>"Traffic Basic Adaptive Individuals": a version of "Traffic Basic Adaptive" where each car adapts individually, instead of all cars adapting in unison.</p>
+</li>
+<li>
+<p>"Traffic 2 Lanes": a more sophisticated two-lane version of the "Traffic Basic" model.</p>
+</li>
+<li>
+<p>"Traffic Intersection": a model of cars traveling through a single intersection.</p>
+</li>
+<li>
+<p>"Traffic Grid": a model of traffic moving in a city grid, with stoplights at the intersections.</p>
+</li>
+<li>
+<p>"Traffic Grid Goal": a version of "Traffic Grid" where the cars have goals, namely to drive to and from work.</p>
+</li>
+<li>
+<p>"Gridlock HubNet": a version of "Traffic Grid" where students control traffic lights in real-time.</p>
+</li>
+<li>
+<p>"Gridlock Alternate HubNet": a version of "Gridlock HubNet" where students can enter NetLogo code to plot custom metrics.</p>
+</li>
+</ul>
+<p>The traffic models from chapter 5 of the IABM textbook demonstrate different types of cognitive agents: "Traffic Basic Utility" demonstrates <em>utility-based agents</em>, "Traffic Grid Goal" demonstrates <em>goal-based agents</em>, and "Traffic Basic Adaptive" and "Traffic Basic Adaptive Individuals" demonstrate <em>adaptive agents</em>.</p>
+<h2>HOW TO CITE</h2>
+<p>This model is part of the textbook, “Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo.”</p>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Rand, W., Wilensky, U. (2008).  NetLogo Traffic Basic Adaptive model.  http://ccl.northwestern.edu/netlogo/models/TrafficBasicAdaptive.  Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the textbook as:</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2008 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2008 Cite: Rand, W., Wilensky, U. --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bacterial Infection</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Bacterial Infection</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Evolution/Bacterial%20Infection.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Biology/Evolution/Bacterial Infection.png" alt="Screenshot of Bacterial Infection" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a natural/artificial selection model that shows how a population of bacteria can become more antibiotic resistant over time.  The model represents an environment in a patient taking a regiment of antibiotics.</p>
+<h2>HOW IT WORKS</h2>
+<p>Bacteria reproduce asexually, after reaching a certain age, and if there is available space (open patches next to them) for them to move into.</p>
+<p>Antibiotics particles kill bacteria when they reach a bacterium and enter through one of its holes in its cell membrane.  Bacteria come in different variations for cell membrane porosity (different variations have different # of holes in their membranes).  The number of holes in the cell membrane affects the odds of an antibiotic entering the bacteria.</p>
+<p>There are two patients in this model (patient A and patient B).  The environment in each patient represents the circulatory system of that patient.  The top red line represents where antibiotics enter the blood stream (e.g. through small intestine or an IV).  The bottom yellow line represents where antibiotics are broken down and removed from the blood stream (e.g. the liver or the kidneys).</p>
+<h2>HOW TO USE IT</h2>
+<p>REPRODUCE? turns on and off bacteria reproduction in both patients.</p>
+<p>REPRODUCE-EVERY determines how often bacteria can reproduce in both patients, when REPRODUCE? is on.</p>
+<p>The INIT#-3PORES-A, INIT#-4PORES-A, INIT#-5PORES-A and INIT#-6PORES-A sliders determine the number of bacteria for each cell membrane variation that patient A will start with.</p>
+<p>The INIT#-3PORES-B, INIT#-4PORES-B, INIT#-5PORES-B and INIT#-6PORES-B sliders do the same thing for patient B.</p>
+<p>The MANUAL DOSE A and MANUAL DOSE B buttons administer a single dose of antibiotic to that patient.</p>
+<p>A-DOSAGE and B-DOSAGE determine the amount of antibiotic administered in a dose to that patient.</p>
+<p>AUTO-DOSE-A? and AUTO-DOSE-B? determine whether an automatically administered dosing regiment is followed for that patient.  Options include:</p>
+<ul>
+<li>"no" = no antibiotics are automatically administered</li>
+<li>"yes, every dose" = a dose is automatically administered at a rate determined by       the AUTO-DOSE-A-EVERY or AUTO-DOSE-B-EVERY slider</li>
+<li>"yes, but skip dose 2" = same as above, but dose 2 is skipped.</li>
+<li>"yes, but skip dose 3" = similar to previous, but dose 3 is skipped.</li>
+</ul>
+<h2>THINGS TO TRY</h2>
+<p>Try growing bacteria without any antibiotics at first (set REPRODUCE? to "on" and set both AUTO-DOSE-A? and AUTO-DOSE-B? to "no, skip all dosing").   If you start with equal numbers of each variation in the population, does one variation do better by the time the entire environment is filled with bacteria?</p>
+<p>Try not growing bacteria (set REPRODUCE to "off"), and apply a single dose of antibiotic (using the MANUAL DOSE buttons).  Does one variation tend to survive a single dose of antibiotics more often than other variations?</p>
+<p>Try growing bacteria with regular antibiotics dosing (set REPRODUCE? to "on" and set both AUTO-DOSE-A? and AUTO-DOSE-B? to "yes, skip no doses").   What levels for A-dosage and B-dosage, seem to be the tipping point for  reliably kill off the bacteria after a few doses?</p>
+<p>Repeat the last experiment, but with slightly lower doses, or faster reproduction (REPRODUCE-EVERY) or by changing the AUTO-DOSE-A? and AUTO-DOSE-B? to skip one of the doses. What happens to the bacteria population in these cases?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The model could be extended so that food resources were scattered through the environment, and bacteria would need to absorb a certain threshold of food from their surroundings in order to reproduce.  And bacteria with more pores in their cell membrane would absorb food more quickly than those that don't.</p>
+<p>Other trait variations (like number of flagella related to speed of movement and metabolism), or cell membrane thickness (related to how fast antiseptics dissolve the cell membrane) could be added to the model.  Additional food expenditure costs could be built in for the building blocks needed from food to make these additional structures during reproduction.</p>
+<p>See the Bacteria Food Hunt model in the models library for additional ideas.</p>
+<h2>RELATED MODELS</h2>
+<p>Bacteria Hunt Speeds and Bacteria Food Hunt.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is part of a high school unit on evolution, "Why Don't Antibiotics Work Like They Used To?"  The unit is freely available on https://www.nextgenstorylines.org</p>
+<p>This model and related curricular materials were developed with funding through a grant from the Gordon and Betty Moore Foundation to Northwestern University and the University of Colorado Boulder.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Quigley, D and Wilensky, U. (2016).  NetLogo Bacterial Infection model.  http://ccl.northwestern.edu/netlogo/models/BacterialInfection.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2016 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2016 Cite: Novak, M. and Quigley, D --></div>
+      </div>
+    </main>
+  </body>
+</html>

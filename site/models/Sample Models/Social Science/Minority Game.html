@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Minority Game</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Minority Game</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Minority%20Game.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Social Science/Minority Game.png" alt="Screenshot of Minority Game" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a simplified model of an economic market.  In each time step, agents choose one of two sides, 0 or 1, and those on the minority side win a point.  This problem is inspired by the "El Farol" bar problem.  Each agent uses a finite set of strategies to make their decision based upon past record; however, the record consists only of which side, 0 or 1, was in the minority, not the actual population count of how many chose each side.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each agent begins with a score of 0 and STRATEGIES-PER-AGENT strategies. Initially, they choose a random one of these strategies to use.  The initial historical record is generated randomly.  If their current strategy correctly predicted whether 0 or 1 would be the minority, they add one point to their score.  Each strategy also earns virtual points according to if it would have been correct or not.  From then on, the agents will then use their strategy with the highest virtual point total to predict whether they should select 0 or 1.</p>
+<p>This strategy consist of a list of 1's and 0's that is 2<sup>MEMORY</sup> long.  The choice the turtle then makes is based off of the history of past choices.  This history is also a list of 1's and 0's that is MEMORY long, but it is encoded into a binary number.  The binary number is then used as an index into the strategy list to determine the choice.</p>
+<p>This means that once the number of agents, the number of strategies, and the length of the historical record are chosen, all parameters are fixed and the behavior of the system is of interest.</p>
+<h2>HOW TO USE IT</h2>
+<p>GO: Starts and stops the model.</p>
+<p>SETUP: Resets the simulation according to the parameters set by the sliders.</p>
+<p>NUMBER: Sets the number of agents to participate.  This is always odd to insure a minority.</p>
+<p>MEMORY: Sets the length of the history which the agents use to predict their behavior.  Most interesting between 3 and 12, though there is some interesting behavior at 1 and 2.  Note that when using a MEMORY of 1, the STRATEGIES-PER-AGENT needs to be 4 or less.</p>
+<p>STRATEGIES-PER-AGENT: Sets the number of strategies each agent has in their toolbox.  Five is typically a good value.  However, this can be changed for investigative purposes using the slider, if desired.</p>
+<p>COLOR-BY: "Choice" represents the agents changing their colors depending on if they have chosen 0 (red) or 1 (blue).  "Success" represents the agents changing their color depending upon their success rate (the number of times they have been in the minority divided by the number of selections).  An agent is green if they are within one standard deviation above or below the mean success rate, red if they are more than one standard deviation above, and blue if they are more than one standard deviation below.</p>
+<p><strong>RECOMMENDED SETTINGS</strong>: NUMBER=501, MEMORY=6, STRATEGIES-PER-AGENT=5 (Should be loaded by default)</p>
+<p><strong>CAUTION</strong>: Beware setting the MEMORY slider to higher values.  It scales exponentially (2<sup>MEMORY</sup>), however this only has an effect when SETUP is run.  This means that for each increased unit of MEMORY, it takes twice as long for SETUP to run.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>There are two extremes possible for each turn: the size of the minority is 1 agent or (NUMBER-1)/2 agents (since NUMBER is always odd).  The former would represent a "wasting of resources", while the latter represents a situation which is more "for the common good."  However, each agent acts in an inherently selfish manner, as they care only if they and they alone are in the minority.  Nevertheless, the latter situation is prevalent.  Does this represent unintended cooperation between agents, or merely coordination and well developed powers of prediction?</p>
+<p>The agents move according to how successful they are relative to the mean success rate.  After running for about 100 time steps (at just about any parameter setting), how do the fastest and slowest agents compare?  What does this imply?</p>
+<h2>THINGS TO TRY</h2>
+<p>Notice how the population of agents choosing 0 stays close to NUMBER/2.  How do the deviations change as you change the value of MEMORY?</p>
+<p>How do things change if you keep everything the same but change the STRATEGIES-PER-AGENT?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>There are a few evolutionary possibilities for this model which could be coded.</p>
+<p>(1) Maybe after some (long) amount of time, the least successful agent is replaced by a clone of the most successful agent, with zeroed scores and possibly mutated strategies.  How would things change then?</p>
+<p>(2) Similar to (1), you could start the agents with a very small memory value, and again replace the least successful agent with a clone of the most successful agent.  But this time instead of just zeroing the scores and giving mutated strategies, you also add or subtract one unit of memory for the new agent.  What would happen here? Would their brains continue to get bigger or find some happy value?  Would people with small memory be altogether eliminated, or would they survive (maybe even still thrive)?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The <code>n-values</code> primitive is used to set up strategies for each player.</p>
+<p>The primitives <code>map</code> and <code>reduce</code> were also used to simplify code.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>any of the Prisoner's Dilemma models</li>
+<li>Altruism</li>
+<li>Cooperation</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Original implementation: Daniel B. Stouffer, for the Center for Connected Learning and Computer-Based Modeling.</p>
+<p>This model was based upon studies by Dr. Damien Challet, et al.
+Information can be found on the web at https://web.archive.org/web/20141010122506/http://www3.unifr.ch/econophysics/minority/papers.html</p>
+<p>Challet, D. and Zhang, Y.-C. Emergence of Cooperation and Organization in an Evolutionary Game. Physica A 246, 407 (1997).</p>
+<p>Zhang, Y.-C. Modeling Market Mechanism with Evolutionary Games. Europhys. News 29, 51 (1998).</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2004).  NetLogo Minority Game model.  http://ccl.northwestern.edu/netlogo/models/MinorityGame.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2004 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2004 --></div>
+      </div>
+    </main>
+  </body>
+</html>

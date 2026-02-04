@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bug Hunters Adaptations HubNet</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Bug Hunters Adaptations HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/BEAGLE%20Evolution/HubNet%20Activities/Bug%20Hunters%20Adaptations%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Curricular Models/BEAGLE Evolution/HubNet Activities/Bug Hunters Adaptations HubNet.png" alt="Screenshot of Bug Hunters Adaptations HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a HubNet activity of natural selection that shows how a population hunted by a predator can develop camouflaging. It can shows how a population can become progressively more garish in appearance, when sexual selection is the prevalent selective pressure on the population.</p>
+<p>For example, in a forest with green leaves, green bugs may emerge as the predominant bug color, when predators are hunting them, while red or yellow bugs may emerge as the predominant bug color in the same green leaved forest, when only mates are seeking them.</p>
+<p>When a predator uses color to identify the location of prey in an environment, then the prey that have heritable trait variations that allow them to blend into the background better, tend to survive longer and reproduce more often.</p>
+<p>If this continues over many generations, the distribution of colors in a population may shift to become better camouflaged in the surrounding environment.</p>
+<p>When a bug uses color to identify the location of mates in an environment, then the mates that have heritable trait variations that allow them to stand out from the background better, tend to reproduce offspring with that bug more often.</p>
+<p>If this continues over many generations, the distribution of colors in a population may shift to become better less camouflaged and more garish in the surrounding environment.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each HubNet participant or player assumes the role of a predator or a mate. When the HubNet simulation is started after pressing GO, participants should try to click on bugs as fast as they can with the mouse.</p>
+<p>If the player is in the role of a predator, then each bug they catch is one that they ate. If the player is in the role of a mate, then each bug they catch is one that they mate with.</p>
+<p>Each participant can monitor his or her relative success compared to other participants by watching the monitors in the client that show the number of bugs found (YOU HAVE FOUND) or if they are the host (HOST FOUND). .</p>
+<p>Over time a population of bugs will either become harder or easier to detect in the environment (the environment is an image file that is loaded into the model), depending on whether mates or predators are exerting a selective pressure on the population.</p>
+<p>Camouflaging emerges from: 1) a selective pressure that results from the interaction of predator, prey, and environment, 2) the genetic representation for genes to show color, 3) and small random changes that accumulate in new offspring in the remaining population that tend to be more advantageous.</p>
+<p>Garishness also emerges from: 1) a selective pressure that results from the interaction of predator, prey, and environment, 2) the genetic representation for genes to show color, 3) and small random changes that accumulate in new offspring in the remaining population that tend to be more advantageous.</p>
+<p>Trying to become the most successful predator or mate (in NUMBER FOUND of bugs) in the HubNet environment helps simulate the competitive pressure for limited food resources that exists between individual predators in a population or the competitive pressure for limited mates available to mate with in a mating season. Without this simulated competition, a participant could leisurely hunt for bugs regardless of how easy they are to catch or find. This sort of interaction would not put any (or as much) selective pressure on the bug population over time, and so camouflaging or garish colors would not emerge as readily in the population in this case.</p>
+<p>3 genes determine the heritable trait of bug color. One gene is RED-GENE, another is GREEN-GENE, and the last is BLUE-GENE. Higher values for each of these genes, represent more copies of the gene/allele. More genes for producing pigmentation, leads to more saturated and brighter colors. So for example, a high values for the red-gene, results in the production of lots of red "substance" by the bug. A value of 0 for the RED-GENE would result in no red substance being expressed by the bug.</p>
+<p>These overall blend of pigments that results in a single phenotype for coloration is determined by an RGB [Red-Green-Blue] calculation of all the gene values.</p>
+<p>With each bug you eat, an existing bug is randomly chosen to reproduce one offspring. The offspring's gene-frequency for each of the three pigment genes may be slightly different than the parent (as determined by the MUTATION-STEP slider).</p>
+<p>With each bug you mate with, two new offspring are produced and the mate is removed from the population. The offspring's gene-frequency for each of the three pigment genes may be slightly different than the mate that was chosen (as determined by the MUTATION-STEP slider).</p>
+<h2>HOW TO USE IT</h2>
+<p>To run the simulation the GO button. To start the simulation over with the same group of players stop the GO button by pressing it again, press the SETUP button, and press GO again. To run the activity with a new group of students press the RESET button in the Control Center.</p>
+<p>Make sure you select Mirror 2D view on clients in the HubNet Control Center after you press SETUP.</p>
+<p>PREDATOR-ROLES specifies the type of role each player is assigned (the players include all the clients as well as the host).</p>
+<ul>
+<li>
+<p>when this value is set to "all mates" each player will eat bugs when they click on them.</p>
+</li>
+<li>
+<p>when this value is set to "all predators" each player will mate with bugs when they click on them</p>
+</li>
+<li>
+<p>when this value is set to "a mix of predator &amp; mates", a player may end up being assigned the role of either a mate or predator, and then they keep that role until SETUP is pressed again. The assigned role for that player will appear in the ROLE OF HOST monitor for the host or in the YOUR ROLE monitor for the clients.</p>
+</li>
+</ul>
+<p>UPLOAD IMAGE 1 is a button that is used to load an image file into memory, for use as a potential background. UPLOAD IMAGE 2 does the same, but for a 2nd image. Both buttons allow you to select an image file from anywhere on your computer hard drive to use as a background image. Once the image is loaded, then changing the LEFT-ENVIRONMENT or RIGHT ENVIRONMENT chooser to "image1" or "image2" will use that loaded image as the new background when SETUP or CHANGE ENVIRONMENTS is pressed.</p>
+<p>CARRYING-CAPACITY-ENVIRONMENT-LEFT determines the size of the population in the left environment on SETUP, and how many bugs are in the world at one time when GO is pressed and bugs are being eaten or mates with. CARRYING-CAPACITY-ENVIRONMENT-RIGHT determines the size of the population in the right environment.</p>
+<p>INITIAL-COLORS-BUGS-LEFT (applies to bugs in the left environment when SETUP is pressed) and INITIAL-COLORS-BUGS-RIGHT (applies to bugs in the right environment when SETUP is pressed):</p>
+<ul>
+<li>
+<p>when this value is set to "random variations", the genotype of each bug's pigment production can range from 0 to 255, for red, and for green, and for blue pigments.</p>
+</li>
+<li>
+<p>when this value is set to "all gray", the genotype of each bug's pigment production will be set to 127.</p>
+</li>
+<li>
+<p>when this value is set to "all black or white", each bug has a 50/50 chance of being black or white ( pigment production will be set to 0 for each pigment or 255 for each pigment)</p>
+</li>
+</ul>
+<p>LEFT ENVIRONMENT is a chooser that specifies the file name to load as a background image in the left environment on SETUP or when the CHANGE ENVIRONMENTS button is pressed. RIGHT ENVIRONMENT is a chooser that specifies the image to use in the right environment. Three default images are provided in the models library folder with the model that can be selected: "seashore", "glacier", and "poppyfield"</p>
+<p>ADULT-BUG-SIZE is a slider that can be changed at any time during GO or before SETUP to modify the size of the shapes for the bugs. When bugs are born they start out at a size of 0, then quickly grow to the value set by ADULT-BUG-SIZE and remain at that value for the remainder of their life. This "growth" in size helps prevent the predators and mates on cueing in on "sudden" bug appearances in the environment, which diminish the survival/reproductive advantage that color variations would offer.</p>
+<p>MAX-COLOR-MUTATION is a slider that determines how much the pigment genes can drift from their current values in each new generation. For example, a MAX-COLOR-MUTATION of 1 means that the gene frequency for any of the three pigments could go up 1, down 1, or any value in between (including 0, which would be no change) in the offspring.</p>
+<p>OFFSPRING-DISTANCE is a slider that determines how far away (in patches) an offspring could show up from a parent. For example, a distance of 5 means the offspring could be between 0 and 5 patches away from the parent.</p>
+<p>HOST FOUND is a monitor showing the number of bugs found by the host</p>
+<p>HOST ATTEMPTS is a monitor showing the number of attempted clicks of the mouse button by the host, as they hunted in the environment.</p>
+<p>CLEAR BOTH BACKGROUNDS is a button that removes the images from both background, and makes the background all black.</p>
+<p>FLASH BUGS is a button that quickly flashes the bugs from white to black and back a few times, to show the players where the camouflaged bugs were hiding.</p>
+<p>SHOW-GENES? is a switch that reveals the RGB (Red-Green-Blue) gene frequency values for each bug. The values for Red can range from 0 to 255, and this also true for Green and Blue. These numbers represent how fully expressed each pigment is (e.g. 102-255-51 would represent genetic information that expresses the red pigment at 40% its maximum value, the green pigment at 100%, and the blue pigment at 20%.</p>
+<h2>THINGS TO TRY</h2>
+<p>Larger numbers of bugs tend to take longer to start camouflaging or becoming garish, but larger numbers of prey or mates (participants) speed up the emergence of these outcomes in larger populations.</p>
+<p>A common response from the players when they are predators (within about 1 minute of interaction with the model) is "where did the bugs all go?" If you keep playing with the model, the user might get better at finding those hard to find bugs, but if s/he keeps trying to catch bugs quickly, even an experienced user will find that the creatures will become very hard to find in certain environments.</p>
+<p>Each new offspring starts at zero size and grows to full size (specified by BUG-SIZE) after a while. This growth in size is included to make brand new offspring harder to detect. If newly created offspring were full sized right away, your eyes would more easily detect the sudden appearance of something new.</p>
+<p>Sometimes two or more "near background" colors emerge as a predominant feature in a population of bugs. An example of this is the appearance of mostly green and red bugs in the poppy field, or dark blue/black and snow blue in the glacier background. Other times, the saturation of the bugs appears to be selected for. An example of this is a common outcome of "shell colored" bugs on the seashore background (e.g. light yellow, light tan, and light blue bugs similar to the shells of the seashore).</p>
+<p>In environments that have two distinct areas (such as a ground and sky), each with their own patterns and background colors, you might see two distinct populations of different camouflaging outcomes. Often, while hunting in one area, you will be surprised to look over at the other area (after they hadn't been paying attention to that area in a while) and notice that now there are a bunch of bugs in that background that blend in this new area very well, but whose colors are distinctly different than those that blend into the original area you were hunting in.</p>
+<p>Once you reach a point where you are having trouble finding the bugs, it is useful to either press FLASH to show where they are (and how they are camouflaged), or press CLEAR-BACKGROUND to enable you to study their color distribution and location.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>What if the body shape of the bugs was heritable and mutated?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The bitmap extension is used to support <code>bitmap:export bitmap:from-view</code> to build a new image file from the file selected for import, for later use by the IMPORT-DRAWING primitive.</p>
+<p>IMPORT-DRAWING is the primitive that loads the image into the drawing, which in this case is merely a backdrop.</p>
+<p>IN-RADIUS is the primitive used to check if the mouse is within the graphical "footprint" of a turtle.</p>
+<p>This model uses RGB colors, that is, colors expressed as a three item list of red, green and blue. This gives a large range of colors than with NetLogo colors.</p>
+<p>The side by side 2 environment interface is a feature that is used in many of the update evolution and population dynamics models in the BEAGLE curriculum. It is built using a breed of turtles called edges that are on a graphics layer above the bugs. When bugs travel under the edges they are relocated so that they are "wrapped" around to the other side of their respective environment, similar to the world wrapping feature in the WORLD VIEW.</p>
+<p>It has proven useful for supporting students in comparing outcomes between different conditions/interactions in different environment, when they can see those environments and outcomes side by side.</p>
+<h2>RELATED MODELS</h2>
+<p>Bacteria Hunt Speeds
+Bug Hunt Camouflage
+Bug Hunter Camouflage HubNet
+Peppered Moths
+Guppy Spots</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Inspired by this BugHunt! Macintosh freeware: https://web.archive.org/web/20101213084130/http://bcrc.bio.umass.edu/BugHunt/.</p>
+<p>Thanks to Michael Novak for his work on the design of this model and the BEAGLE Evolution curriculum.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2006).  NetLogo Bug Hunters Adaptations HubNet model.  http://ccl.northwestern.edu/netlogo/models/BugHuntersAdaptationsHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2006 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2006 Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

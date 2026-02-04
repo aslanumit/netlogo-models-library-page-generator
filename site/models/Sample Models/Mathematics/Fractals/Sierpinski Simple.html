@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sierpinski Simple</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Sierpinski Simple</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/Fractals/Sierpinski%20Simple.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Mathematics/Fractals/Sierpinski Simple.png" alt="Screenshot of Sierpinski Simple" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>The fractal that this model produces was discovered by the great Polish mathematician Waclaw Sierpinski in 1916.  Sierpinski was a professor at Lvov and Warsaw.  He was one of the most influential mathematicians of his time in Poland and had a worldwide reputation.  One of the moon's craters is named after him.</p>
+<h2>HOW IT WORKS</h2>
+<p>The basic geometric construction of the Sierpinski tree goes as follows.  We begin with a single point on the plane and then apply a repetitive scheme of operations to it.  Grow a "spider" centered at this point by drawing three equal line segments directed to the vertices of an equilateral triangle.  Then at each vertex of the triangle repeat the construction --- grow a similar "spider" only scale it down by the factor of two.</p>
+<pre><code class="language-text">         .               Step 0: Start with a point
+
+
+         |
+         |
+         |               Step 1: Grow a spider
+        / \
+       /   \
+      /     \
+
+
+         |
+         |
+        /|\
+       / | \
+         |               Step 2: Repeat step 1
+        / \
+     | /   \ |
+     |/     \|
+    / \     / \
+   /   \   /   \
+</code></pre>
+<p>The Sierpinski tree is closely related to the class of fractals called Sierpinski Carpets which includes the famous Sierpinski Triangle or as it is usually called The Sierpinski Gasket.</p>
+<p>The features that characterize the Sierpinski tree are self-similarity and connectedness.  It is not always easy to determine if a fractal is connected.  It took almost a decade to prove the connectedness of the famous Mandelbrot set.  However connectedness is apparent from the way Sierpinski tree is generated; at each iteration the set is connected.</p>
+<h2>HOW TO USE IT</h2>
+<p>Push the SETUP button to clear the world and initialize globals.  Press repeatedly on the GO ONCE button to perform iterations of the Sierpinski algorithm.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice the use of <code>hatch</code> primitive which makes it so simple to generate fractals like Sierpinski tree.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try to write a program that draws other self-similar shapes.  For instance try the rule below</p>
+<pre><code class="language-text">                .               Step 0
+
+
+
+                |
+                |
+                |
+         ______________         Step 1
+                |
+                |
+                |
+
+
+                |
+              __|__
+                |
+                |
+        __|___________|__       Step 2
+          |     |     |
+                |
+              __|__
+                |
+</code></pre>
+<p>The resulting fractal is known in Algebraic Topology as a Universal Covering of the Figure Eight.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Notice how the curves are formed using several agents following the same rules.  Also, take note of the use of the <code>hatch</code> command.</p>
+<h2>RELATED MODELS</h2>
+<p>L-System Fractals</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Sierpinski Simple model.  http://ccl.northwestern.edu/netlogo/models/SierpinskiSimple.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1998 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

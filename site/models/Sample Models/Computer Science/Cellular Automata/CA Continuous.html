@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CA Continuous</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>CA Continuous</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Computer%20Science/Cellular%20Automata/CA%20Continuous.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Computer Science/Cellular Automata/CA Continuous.png" alt="Screenshot of CA Continuous" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a continuous cellular automaton, otherwise known as a "coupled map lattice."  (See CA 1D Elementary and CA 1D Totalistic if you are unfamiliar with cellular automata.)  It operates just like a standard cellular automaton, except for the fact that its states are not discrete, but continuous values.</p>
+<p>In this particular continuous cellular automaton, the cell's values range from 0.0 to 1.0, 0.0 being black and 1.0 being green.</p>
+<p>Unlike two- or three-state cellular automata, each cell in a continuous cellular automaton can ideally have infinite states, but is limited by the precision of the computer (in this case the maximum is 16 decimal places, which is the most NetLogo can handle). The continuous nature of the CA and its particular rules allow this model to generate a great deal of complex behavior under almost any settings.</p>
+<h2>HOW IT WORKS</h2>
+<p>The rules are a cross between a totalistic cellular automaton and an iterated map.</p>
+<p>An iterated map is a fixed map, or function, that is applied to a number repeatedly.  The iterated map that is used in this model takes in a number, adds a constant (ADD-CONSTANT) between 0 and 1, and then the fractional part of that number is taken.  For example, if the given number is 0.8 and the add-constant is 0.6, the sum would be 1.4, and the fractional part would be 0.4.</p>
+<p>The cellular automaton is totalistic, which means that at every time step, each cell's new state is determined by taking the average of itself and its nearest neighbors, and then passing it through the iterated map.</p>
+<p>The precision of the values in the cells is determined by the PRECISION slider.</p>
+<h2>HOW TO USE IT</h2>
+<p>Set up:
+- SETUP SINGLE initializes the model with a single cell set to 1 in the center.
+- SETUP RANDOM initializes the model with each initial cell being a random value ranging from 0 to MAX-VALUE</p>
+<p>Parameters:
+- ADD-CONSTANT is the constant added to the average value of the nearest cells before the fractional part is taken.
+- PRECISION-LEVEL is the precision of the value of each cell, with a slider value of 1 being an accuracy of 1 decimal place, and 16 being an accuracy of 16 decimal places.</p>
+<p>Running the model:
+- GO begins running the model with the currently set parameters. It continues until it reaches the last row of patches.  If it is clicked again, GO will continue the run from the top.
+- AUTO-CONTINUE? automatically wraps to the top once it reaches the last row when the switch is on</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Like their discrete counterparts, continuous cellular automata exhibit certain classes of behavior:
+Class I - cellular automaton is ordered and always ends up in a uniform state.
+Class II - cellular automaton is ordered and produces repetitive patterns.
+Class III - cellular automaton is "chaotic," or almost completely random.
+Class IV - cellular automaton is neither in class I, II, or III.  It exhibits "complex" behavior, which often lies between order and chaos.</p>
+<p>Can you find any cellular automaton configurations that exhibit these properties?  What does this tell you about the nature of cellular automata?</p>
+<p>Unlike elementary two-state cellular automata, certain configurations grow outwards at a rate that may be faster or slower than others, and less linear than the permitted one-cell per step growth in two-state cellular automata.  Why do you think this is?  What might this tell you about the relationship between the number of states and the growth of cellular automata?</p>
+<p>The growth of continuous cellular automata is closely related to the continuity of space that it can produce.  With certain ADD-VALUES, this model is able to produce very smooth curves.  This is a sharp contrast to the jagged triangular patterns often found in two or three state cellular automata.  Why do you think this happens?  What might this tell you about the relationship between the number of states and spatial continuity in cellular automata?</p>
+<p>Structures might seem to spontaneously occur from parts that seem very regular, especially when the model is run with initial random conditions with a with a very small MAX-VALUE.  It is important to note that this is generally caused by small changes in cell values that cannot be seen due to the color limitations of NetLogo, and ultimately the human eye.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try these with single point initial conditions:</p>
+<p>Run the model with ADD-CONSTANT set to 0.0 and 1.0. Why do they produce the same pattern?</p>
+<p>Why does it make sense that an ADD-CONSTANT of 0.5 produces relatively solid alternating green and black patterns?  Why does the line produced by the rule diffuse faster when the ACCURACY is higher?</p>
+<p>Set the MAX-VALUE slider to a number between 0 and 0.10, and click setup random. Run the model a couple of times with different values for MAX-VALUE:
+- Why do you think there is a delay in the occurrence of complex structures?
+- Is there a relationship between the initial MAX-VALUE and the length of the delay?  If so, Why?</p>
+<p>Change ADD-CONSTANT back to 0.47, and experiment with different values of the ACCURACY slider:
+- How does the accuracy affect the patterns?
+- How come the effect of the accuracy is more noticeable after a large number of steps? - Why might low accuracies create incongruities in the cellular automata?</p>
+<p>Try out different ADD-CONSTANTS under various the ACCURACY slider values.  Now ask yourself, what disadvantages do computer-simulated continuous cellular automata have that discrete cellular automata do not?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>There are many iterated maps that could be used to produce chaotic or complex behavior in a continuous cellular automaton.  Try coming up with your own iterated map function.</p>
+<p>Try increasing the spatial continuity of the model by increasing the number of neighbors each cell has on either side.</p>
+<p>Try making your own number data structure that has a greater accuracy than the normal NetLogo math primitives permit.</p>
+<p>Can you come up with a new coloring function to represent values using a wider array of colors, not just a gradient between green and black?</p>
+<h2>RELATED MODELS</h2>
+<p>CA 1D Elementary- the elementary two-state 1D cellular automaton
+CA 1D Totalistic- a three-state totalistic 1D cellular automaton
+Turbulence (in the Chemistry &amp; Physics section)- a 1D continuous cellular automaton which demonstrates turbulence</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Pattern Dynamics in Spatiotemporal Chaos: Kunihiko Kaneko. 1989 Physics D 34 1-41
+A New Kind of Science. Wolfram, S. 2002. Wolfram Media Inc.  Champaign, IL.</p>
+<p>Thanks to Eytan Bakshy for his work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2003).  NetLogo CA Continuous model.  http://ccl.northwestern.edu/netlogo/models/CAContinuous.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2003 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2003 --></div>
+      </div>
+    </main>
+  </body>
+</html>

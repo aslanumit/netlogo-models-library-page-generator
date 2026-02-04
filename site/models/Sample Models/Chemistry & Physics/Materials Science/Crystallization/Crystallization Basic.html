@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crystallization Basic</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Crystallization Basic</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Materials%20Science/Crystallization/Crystallization%20Basic.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Chemistry &amp; Physics/Materials Science/Crystallization/Crystallization Basic.png" alt="Screenshot of Crystallization Basic" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model shows how grains are formed as a metal crystallizes.</p>
+<p>As a metal cools, it solidifies.  The first atoms to solidify have a random orientation. But when an atom solidifies next to an already solidified atom, the first atom orients itself with the solid atom, thus creating a crystal "grain".  As more atoms solidify, the grains grow.  Within each grain, all the atoms are oriented the same, but different grains have different orientations.</p>
+<p>Two grains next to each other form what is called a grain boundary.  When a metal is stressed, such as when it is pulled from both ends, deformations occur in the crystal structure.  As more stress is applied, these deformations pass through the crystal structure, allowing the metal to bend.  Grain boundaries prevent deformations from flowing through the metal.  Therefore, pieces of metal with fewer grain boundaries tend to be ductile, while pieces of metal with more grain boundaries tend to be brittle.</p>
+<h2>HOW IT WORKS</h2>
+<p>Liquid metal is placed in a room with a constant temperature much lower than that of the metal.  As heat leaves the metal, the metal begins to solidify.  Liquid atoms are free to rotate, but solid atoms (gray) are literally frozen.  If a liquid atom is next to a solid atom, it will orient itself with it, otherwise it will rotate randomly.</p>
+<p>Note that the actual number of atoms is small compared to a real metal sample and the metal is only two-dimensional.</p>
+<h2>HOW TO USE IT</h2>
+<h3>Buttons</h3>
+<p>SETUP: Resets the simulation, and sets the metal to the correct size.
+GO-ONCE: Runs the simulation for one time step.
+GO: Runs the simulation continuously until either the GO button is pressed again, or all of the atoms are frozen.</p>
+<h3>Sliders</h3>
+<p>WIDTH: How many atoms wide the metal is.
+HEIGHT: How many atoms high the metal is.  (Ignored if CIRCLE? switch is on.)
+ROOM-TEMP: Varies the temperature of the room.
+INIT-METAL-TEMP: Varies the initial temperature of the metal.
+MELTING-TEMP: Varies the temperature at which the metal solidifies.</p>
+<h3>Monitors</h3>
+<p>AVE-METAL-TEMP: Monitors the average temperature of all the atoms.
+TIME: Keeps track of the time that has elapsed during each run.</p>
+<h3>Switches</h3>
+<p>CIRCLE?: If on, pressing SETUP produces a circular piece of metal.  Otherwise, you get a square or rectangular piece of metal. (If CIRCLE? is on, the size of the circle is determined by the WIDTH slider, and the HEIGHT slider is ignored.)
+HISTOGRAM?: Turns the histogram plotting on and off.  Turning off the histogram speeds up the model.</p>
+<h3>Graphs</h3>
+<p>AVERAGE METAL TEMPERATURE: Plots the average temperature of all the metal over time.
+NUMBER SOLIDIFIED: Plots how many metal atoms are below the melting temperature over time.
+TEMPERATURES:  Histograms how many atoms are in each temperature range.  (Note that the colors of the histogram match the actual colors of the atoms.)</p>
+<h2>THINGS TO TRY</h2>
+<p>Set HEIGHT to 19.  Try to obtain the largest grains possible by systematically changing the three temperature variables.  Are there multiple settings that achieve this affect?  Now find the settings that result in the smallest grains.  Are there multiple settings that achieve this affect?</p>
+<p>Compare the time it takes for the metal to completely crystallize using each of the settings you found in the above paragraph.  To do this, use the TIME monitor.  How does crystallization time relate to grain size?</p>
+<p>Keeping the HEIGHT 19, what is the fewest number of grains you can make?  Why can you not make only one grain?  From what part of the metal does crystallization always start from?  Does setting CIRCLE? to OFF make any difference?</p>
+<p>Set the ROOM-TEMP to be 20, the INIT-METAL-TEMP to be 1550, and the MELTING-TEMP to be 500.  Set CIRCLE? to OFF.  Now try various settings for HEIGHT and WIDTH.  Which setting achieves the largest size of grains?  Which setting achieves the fewest number of grains?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Some metal applications require that the metal's grains form long strips across the metal.  To achieve this, only one side of the metal is cooled.  This causes all of the crystals to begin on one side of the metal, and consequently grow across its length.  This is called directional solidification.  In the Procedures window, change the code so one side of the room is much cooler than the others.</p>
+<p>Other metal applications require that metal consist of a single grain.  One way to do this is to crystallize the metal in a magnetic field.  This induces polarization in the metal atoms, causing them to line up.  Add a procedure to the code that creates a magnetic field in the room.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>In the setup procedure, a turtle is created on every patch within the requested dimensions.  This is achieved by asking every patch satisfying certain conditions to <code>sprout 1</code>.</p>
+<p>Note how we can draw a multi-colored histogram.  The <code>histogram</code> primitive can only draw in one color at a time, but we work around this by calling it over and over again, plotting only one bar each time, changing the pen color each time.</p>
+<p>With every time step, each atom's temperature changes to the average of everything around it.  To do this, each turtle has a list of all of its neighboring turtles.  In this model, every patch surrounding a given turtle is either occupied by a turtle or considered to be outside the metal.  Therefore, the new temperature is then taken as the average of the temperatures of the neighbor list, plus the room temperature multiplied by the maximum number of neighbors minus the number of neighbors that particular turtle has.  Therefore, turtles completely surrounded by other turtles don't average in the room temperature to their temperature, but turtles on the edge of the metal will.</p>
+<h2>RELATED MODELS</h2>
+<p>Crystallization Directed
+Crystallization Moving</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Original implementation: Carrie Hobbs, for the Center for Connected Learning and Computer-Based Modeling.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2002).  NetLogo Crystallization Basic model.  http://ccl.northwestern.edu/netlogo/models/CrystallizationBasic.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2002 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

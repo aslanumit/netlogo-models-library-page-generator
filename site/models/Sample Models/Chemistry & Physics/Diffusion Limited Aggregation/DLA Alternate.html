@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DLA Alternate</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>DLA Alternate</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Diffusion%20Limited%20Aggregation/DLA%20Alternate.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Diffusion Limited Aggregation/DLA Alternate.png" alt="Screenshot of DLA Alternate" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Like the main DLA model, this model demonstrates diffusion-limited aggregation, in which particles moving (diffusing) in random trajectories stick together (aggregate) to form beautiful treelike branching fractal structures.  There are many patterns found in nature that resemble the patterns produced by this model: crystals, coral, fungi, lightning, and so on.</p>
+<p>This model is called DLA Alternate because it is based on slightly different rules than the main DLA model.  In the main model, the aggregate forms on a grid.  In this version, there is no grid; the particles are circles and we do the necessary calculations to determine exactly when the circles touch each other.  That makes this version more complicated, but arguably more physically accurate.</p>
+<h2>HOW IT WORKS</h2>
+<p>A single green particle is created in the center (patch 0 0).  Red particles move in from the periphery in straight trajectories.  When a moving red particle touches a stationary green particle, the red particle turns green and stops moving.  Periodically, a new red particle is created to keep the process going.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP, then press GO.</p>
+<p>SETUP: eliminates all existing particles, initializes variables, and creates one new green particle in the center.</p>
+<p>GO: creates a particle on the periphery that moves in towards the center.  Because GO is a forever button, you will see many particles moving in.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Green particles block the passage of red particles. We get black areas that do not have any green turtles, because the red particle are moving in straight lines, so they cannot work their way in to fill the black areas.</p>
+<p>The red particles first appear on the perimeter of a large circle around the center of the display window.</p>
+<p>What does the green shape remind you of?  Can you think of any process in nature that could possibly generate an object of this shape?</p>
+<p>Particles move in order, according to their distances from the center -- closer particles move before farther particles, and each particle moves just one step at a time.</p>
+<h2>THINGS TO TRY</h2>
+<p>Run the program slowly (using the speed slider in the top-left corner of the display window).  Watch how the red particles take turns in moving forward.  See that only after each one of the red particles has moved, a new particle is created, which enters from the periphery.</p>
+<p>Run the simulation until it stops.  Now, beginning from the center, choose one of the "branches" and follow along outwards.  At every node (a "fork in the road"), add 1, and then choose randomly between the two branches.  How many nodes did you find along the way? Is it this number the same for any route you choose?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>What happens if you start with more than one "seed" patch?  What happens if the seed is a line instead of a point?</p>
+<p>Create a graph showing the number of green particles over time.  Over several runs, does this graph have a typical shape?</p>
+<p>Let's use the term "envelope" to describe the large "circle" created by all the green particles, with the green particle that is farthest from the center defining the radius of this envelope.  Within this envelope, what is the ratio between patches with green particles and patches that have no particles?  Or, what is the ratio between particles and patches?  Create a graph to track this ratio.  Create a histogram that accumulates the end value of this process over multiple runs.</p>
+<p>How circular is the envelope at the end of a simulation? Is it "smooth" or "bumpy"? How would you define the goodness of this circle?</p>
+<p>Introduce a "wiggle" into the path of red particles.  That means that just before the particle moves forward, it turns a bit, randomly.  Should this affect the aggregation of green particles?  One way to think of this extension is that you are modeling the DLA in different media, for instance in water or some chemical of different viscosity, or that there are currents in the liquid that jostle the particles about.</p>
+<p>Let's use the term "end particles" to describe the green particles at the end of an outward reaching branch (so they are connected only to one other particle).  Create a procedure to calculate and report the average number of nodes along all the possible paths from the center to the end particles).  You can also create a histogram of these values.</p>
+<p>How many "end particles" are there over time?  It seem likely that this number should grow, but how would you expect this number to grow?  Create a graph to track the growth in the number of these "end particles."</p>
+<p>What is the ratio between "end particles" and nodes?  Does this ratio change over time?  Create a graph to track this ratio as the simulation runs.</p>
+<p>Create a procedure that allows you to click on any two green particles and have another moving particle sprout at the first green particle you clicked and then track and color the path between these two green particles. What is the longest path between any two green particles?  Is this number bound above?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of <code>sort</code> to make turtles execute in order by who number (meaning, oldest turtles first).  Because <code>sort</code> reports a list, we must use <code>foreach</code> to iterate over the list in order to <code>ask</code> each agent in it.</p>
+<h2>RELATED MODELS</h2>
+<p>The main DLA model is a simpler implementation of the same idea; it uses grid cells instead of touching circles to form the aggregate.</p>
+<p>DLA Alternate Linear has particles that fall straight down from the top of the world, instead of falling towards a central point.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>The mathematical procedures used in calculating the collision paths comes from:
+Eric W. Weisstein.  "Circle-Line Intersection."
+From MathWorld--A Wolfram Web Resource.
+http://mathworld.wolfram.com/Circle-LineIntersection.html</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2005).  NetLogo DLA Alternate model.  http://ccl.northwestern.edu/netlogo/models/DLAAlternate.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 --></div>
+      </div>
+    </main>
+  </body>
+</html>

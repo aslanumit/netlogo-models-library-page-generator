@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CA 1D-Squaring</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>CA 1D-Squaring</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Computer%20Science/Cellular%20Automata/CA%201D-Squaring.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Computer Science/Cellular Automata/CA 1D-Squaring.png" alt="Screenshot of CA 1D-Squaring" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This program models one particular one-dimensional cellular automaton (CA) -- the one known as the "squaring automaton". This CA takes a natural number as input and outputs its square. It is provided here in the NetLogo models library as an example of how a CA can compute arithmetic functions.</p>
+<p>What is a Cellular automaton?</p>
+<p>A cellular automaton (aka CA) is a computational machine that performs actions based on certain rules.  It can be thought of as a "board" which is divided into cells (such as the square cells of a checkerboard). Each cell has a value for its "state" property, such as 0, 1, 2 ... .  This is called the "state" of the cell. The board is initialized with  cells being assigned a state. A clock is then started and at each "tick" of the clock the rules are "fired" and this results in some cells  changing their state.</p>
+<p>There are many kinds of cellular automata. In this model, we explore a one-dimensional CA -- the simplest type of CA. In this case of one-dimensional cellular automata, each row is a world. The top row is initialized so that all cells in that row have states assigned. Each cell  in the top row checks the state of itself and its neighbors to the left and right, and then sets the cell below itself to a state, one of 8 possible states, depending upon the rule. This process results in a new "world" in the second row, which becomes the focal row. This process continues filling successive rows and continues until the bottom of the board.</p>
+<p>This model is one of a collection of 1D CA models in NetLogo. It is a more advanced CA model than many of the others, so if you are new to CA, we suggest you look at those first.</p>
+<p>In his book, "A New Kind of Science", Stephen Wolfram argues that simple computational devices such as CA lie at the heart of nature's patterns and that CAs are a better tool
+(in the sense of "better" as more closely matched to the physics of the world) than mathematical equations for the purpose of scientifically describing the world.</p>
+<h2>HOW IT WORKS</h2>
+<p>The number of red squares in the initial row equals the input number, and the number of red squares in the final row is the result – the square of the input.</p>
+<p>This CA has 8 states, which are referred to by the integers 0 through 7. These states are represented visually by the NetLogo colors <code>grey</code>, <code>red</code>, <code>orange</code>, <code>brown</code>, <code>yellow</code>, <code>green</code>, <code>lime</code> and <code>white</code>.</p>
+<p>As the CA computes, each patch chooses the rule with input consisting of {state of the patch to the left, its own state, state of the patch to the right} and then sets the state of the patch below to the output value according to the CA rules represented below. Each patch looks for the first rule that matches its state and executes that rule. The notation for the rules shows a triple on the left side, the state of the patch to the left, the state of the patch itself and the state of the patch to the right. If the focal patch's state and its neighbor states match the rule, then the state of the patch directly below it becomes the value after the arrow. States marked with "-" match any state.</p>
+<pre><code class="language-text">
+{ 0, _, 3} → 0
+{ _, 2, 3} → 3
+{ 1, 1, 3} → 4
+{ _, 1, 4} → 4
+{ 1, 3, _} → 5
+{ 2, 3, _} → 5
+{ 0, 4, _} → 7
+{ 1, 4, _} → 6
+{ 7, 2, 6} → 3
+{ 7, _, _} → 7
+{ _, 7, 1} → 1
+{ _, 7, 2} → 2
+{ _, 5, _} → 2
+{ _, 6, _} → 1
+{ 5, 1, _} → 6
+{ 6, 1, _} → 6
+{ 5, 2, _} → 5
+{ 6, 2, _} → 5
+{ 5, 0, 0} → 1
+{ 6, 0, 0} → 1
+{ _, 1, _} → 1
+{ _, 2, _} → 2
+{ _, _, _} → 0
+</code></pre>
+<p>For example, if the current cell is in state 2 and its left neighbor is in state 7 and its right neighbor is in state 6, the cell below it is set to state 3 according to the rule {7, 2, 6} → 3. In the rules above '_' stands for any state. So if the current cell is in state 2 and its left neighbor is in state 6, the cell below it is set to state 5 for all 8 possible right patch states.</p>
+<p>If you think carefully about the model you will realize that strictly speaking the rightmost patches do not have a patch that is literally to the right. What we really are referring to is a patch with an x-coordinate that is one more than its own. Because the model has horizontal wrapping this is the leftmost patch with the same y-coordinate. Similarly the concept of left is implemented by subtracting one from the x-coordinate.</p>
+<h2>HOW TO USE IT</h2>
+<p>Initialization &amp; Running:
+First, set the INPUT input slider to the number you want to square. Press SETUP to initialize the first row which represents the initial state of the CA. Press GO ONCE to compute the next state of the CA and display it in the next row. If you press GO the computation will continue until the result is computed, or it displays the last row of patches in the view. If the last row is reached without getting a result, press SETUP-CONTINUE to clear the display of the current computed lines. You can then continue running the model in "wrapped" (last row becomes the first row in the new display) mode by pressing GO or GO ONCE. For larger inputs, you may not get a result for a while. so you'll have to press SETUP-CONTINUE multiple times.</p>
+<p>Outputs:
+The RESULT monitor displays "none" until the result has been computed, then it shows the result -- the square of the input.
+The ROW monitor displays the number of rows computed in the current view.
+The TOTAL ROWS monitor displays the total number of rows computed so far including rows computed in previous displays. If the computation is complete in a single invocation of GO, then ROW will equal TOTAL ROWS.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Check that the number of red squares in the initial row equals the input number, and the number of red squares in the final row is the result -- the square of the input.</p>
+<p>Look carefully at the pattern of colors down the rows. What do you see? Is there a pattern of the green patches? The brown patches? The white patches?</p>
+<p>How does the number of diagonal white patches relate to the input?</p>
+<p>How does the number or size of the groupings of green diagonals relate to the input?</p>
+<p>How many rules can you match to patterns in output?
+0 = <code>grey</code>, 1 = <code>red</code>, 2 = <code>orange</code>, 3 = <code>brown</code>, 4 = <code>yellow</code>, 5 = <code>green</code>, 6 =<code>lime</code> and 7 =<code>white</code>. For example, which rule can you combine with {6, 1, _} → 1 to explain the regions of alternating <code>red</code> and <code>lime</code>?</p>
+<p>Can you find the rule that causes the line below to extend one red patch further to the right?</p>
+<p>Thinking about these rules may give you some insights into how the CA works. One important thing to keep in mind is that each patch examines the rules sequentially and executes the first applicable rule. The rule { <em>, 2, </em>} → 2 says that the patch below an orange patch should be orange. So why are some patches below orange patches brown? It's because the rule { _, 2, 3} → 3 comes earlier, and that rule says that if an orange patch has a brown patch to the right, the patch below it will be brown. Can you find the rule that explains why some orange patches have green patches below them?</p>
+<p>One difference between this NetLogo model and the corresponding CA in Wolfram's book is that the NetLogo model "wraps" around the horizontal boundaries of the world, whereas Wolfram computes the CA as an infinite grid. This model refuses to carry out the computation if the lines would "wrap" because although interesting patterns might emerge, they would not result in the computation of the square of the input. That is why you need to increase the size of the world if the input is greater than 10. You can increase the size of the world up to the available memory on your computer. However, the larger the world, the longer time it will take NetLogo to compute and display the results.</p>
+<h2>THINGS TO TRY</h2>
+<p>Although the input slider only goes to 10 you can make it go to 11 or further. Just type
+<code>set input 11</code> in the Command Center.</p>
+<p>Notice the slider will display 11. Now press SETUP. You will get an error message.
+Adjust the size of the world and try again.</p>
+<p>Can you figure out how wide the world has to be if your input is twelve? Can you generalize your answer to any input.
+Note: when you are exploring you may want to make the patch size smaller.</p>
+<p>Plot the input versus the total number of rows. Do the points look like they lie on a line or curve? Can you estimate the total number of rows for the next larger input value? Test your answer with a computation.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>What if you wanted to observe the behavior of a CA over many iterations without having to click continue every time the CA reaches the bottom of the view? Simply replace the <code>stop</code> with <code>setup-continue</code> in the go procedure:</p>
+<pre><code>  if (row = min-pycor)
+    [ stop ]
+</code></pre>
+<p>with</p>
+<pre><code>  if (row = min-pycor)
+    [ setup-continue ]
+</code></pre>
+<p>Can you change the model so that it automatically increases the size of the world to allow the computation to succeed? You may also want to decrease the patch size.</p>
+<h2>RELATED MODELS</h2>
+<p>Life - an example of a two-dimensional cellular automaton
+CA 1D Rule 30 Turtle - the basic rule 30 model implemented using turtles
+CA 1D Rule 90 - the basic rule 90 model
+CA 1D Rule 110 - the basic rule 110 model
+CA 1D Rule 250 - the basic rule 250 model
+CA 1D Elementary- a model that shows all 256 possible simple 1D cellular automata
+CA 1D Totalistic - a model that shows all 2,187 possible 1D 3-color totalistic cellular automata.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>The first cellular automaton was conceived by John Von Neumann in the late 1940's for his analysis of machine reproduction under the suggestion of Stanislaw M. Ulam. It was later completed and documented by Arthur W. Burks in the 1960's. Other two-dimensional cellular automata, and particularly the game of "Life," were explored by John Conway in the 1970's. Many others have since researched CA's. In the late 1970's and 1980's Chris Langton, Tom Toffoli and Stephen Wolfram did some notable research. Wolfram classified all 256 one-dimensional two-state single-neighbor cellular automata. In his seminal book, "A New Kind of Science," Wolfram presents many examples of cellular automata and argues for their fundamental importance in doing science.</p>
+<p>See also:</p>
+<p>Von Neumann, J. and Burks, A. W., Eds, 1966. Theory of Self-Reproducing Automata. University of Illinois Press, Champaign, IL.</p>
+<p>Toffoli, T. 1977. Computation and construction universality of reversible cellular automata. J. Comput. Syst. Sci. 15, 213-231.</p>
+<p>Langton, C. 1984. Self-reproduction in cellular automata. Physica D 10, 134-144</p>
+<p>Wolfram, S. 1986. Theory and Applications of Cellular Automata: Including Selected Papers 1983-1986. World Scientific Publishing Co., Inc., River Edge, NJ.
+.</p>
+<p>Wolfram, S. 2002. A New Kind of Science.  Wolfram Media Inc.  Champaign, IL.</p>
+<p>The links below refer to the online version of the book.</p>
+<p>A New Kind of Science [p. 639] (https://www.wolframscience.com/nks/p639--computations-in-cellular-automata/) includes a greyscale image of the computation for n = 2, 3, 4, 5 and has links to other relevant pages, including the squaring rules.
+The squaring rules (presented in a more compact form than used here) are in A New Kind of Science <a href="https://www.wolframscience.com/nks/notes-11-2--rules-for-the-squaring-cellular-automaton/">p. 1109</a></p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U., Brandes, A. (2022).  NetLogo CA 1D-Squaring model.  http://ccl.northwestern.edu/netlogo/models/CA1D-Squaring.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2022 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2022 Cite: Wilensky, U., Brandes, A. --></div>
+      </div>
+    </main>
+  </body>
+</html>

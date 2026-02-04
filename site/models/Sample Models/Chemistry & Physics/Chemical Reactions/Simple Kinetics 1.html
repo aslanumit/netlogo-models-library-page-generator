@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Kinetics 1</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Simple Kinetics 1</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Chemical%20Reactions/Simple%20Kinetics%201.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Chemical Reactions/Simple Kinetics 1.png" alt="Screenshot of Simple Kinetics 1" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates the kinetics of a simple reversible reaction. It demonstrates numerically that the application of the Principle of Stationary Concentrations is valid in this case.</p>
+<p>In this model there are two kinds of molecules, green and red.  Green turtles turn into red turtles bimolecularly whereas red turtles turn back into pairs of green turtles monomolecularly.  You can control the rate at which this changes occur with sliders Kb and Ku.</p>
+<p>The reaction here is a reversible reaction of the type:</p>
+<pre><code class="language-text">                         Kb
+        A + A &lt;=======&gt; B
+                         Ku
+</code></pre>
+<p>An example of such a reaction would be dimerization of acetic acid:</p>
+<pre><code class="language-text">                                  Kb
+        2 H C-COOH &lt;=======&gt; H C-COOH~...~HOOC-C H
+       3           Ku     3                 3
+</code></pre>
+<p>This reaction is an example of a complex reaction which consists of two elementary reactions.  The forward bimolecular reaction</p>
+<pre><code class="language-text">                        Kb
+        A + A --------&gt; B
+</code></pre>
+<p>is characterized by the constant Kb and the reverse unimolecular reaction</p>
+<pre><code class="language-text">             Ku
+        B ---------&gt; A + A
+</code></pre>
+<p>is characterized by the constant Ku.</p>
+<p>The system of ordinary differential equations (ODE) that describes the concentrations of A and B is given below:</p>
+<pre><code class="language-text">        dA           2
+        -- = -2Kb * A  + 2Ku * B        (1)
+        dt
+
+
+        dB         2
+        -- = Kb * A  - Ku * B           (2)
+        dt
+</code></pre>
+<p>The usual initial conditions are A(0) = Ao and B(0) = 0.  While it is possible to solve this system of ODE analytically, chemists usually apply the Principle of Stationary Concentrations when they investigate the kinetics of reactions of this type.  The Principle says that one can assume that the concentrations of the species stop changing from some point on after the system reaches equilibrium.  If concentrations are stationary, the derivatives</p>
+<pre><code class="language-text">        dA               dB
+        --  and  --
+        dt               dt
+</code></pre>
+<p>are zero.  Hence one can replace the system of ODE above with the system of algebraic equations below:</p>
+<pre><code class="language-text">                    2
+        0 = -2Kb * A*   + 2Ku * B*              (1')
+
+                  2
+        0 = Kb * A*  - Ku * B*                  (2')
+</code></pre>
+<p>where concentrations marked with * are stationary concentrations.  The second equation (2') is linearly dependent on the first equation (1').  Luckily we also have another equation coming from the law of the conservation of mass:</p>
+<pre><code class="language-text">        A* + 2 * B* = Ao                        (3)
+</code></pre>
+<p>From equation (2') we can express B<em> in terms of A</em> :</p>
+<pre><code class="language-text">                  Kb    2
+        B*  = --  A*                    (4)
+                  Ku
+</code></pre>
+<p>We can now plug in expression (4) into (3) and then we will have a quadratic equation in terms of A*:</p>
+<pre><code class="language-text">                  Kb   2
+        A*  + -- A*  = Ao               (5)
+          Ku
+</code></pre>
+<p>whose solution is:</p>
+<pre><code class="language-text">             _____________
+             |
+             |             Kb
+             |  1 + 4 * --  - 1
+            \|          Ku
+           --------------------         (6)
+                  Kb
+                         2 * --
+                                 Ku
+</code></pre>
+<p>One can now find the stationary concentration of B using equation (4).</p>
+<h2>HOW TO USE IT</h2>
+<p>Choose the values of Ku and Kb with appropriate sliders:
+- Kb controls the rate of the forward reaction by which two green turtles turn bimolecularly into a single red turtle.
+- Ku controls the rate of the reverse reaction, by which a red turtle turns unimolecularly into two green turtles.</p>
+<p>Having chosen appropriate values of the constants, press SETUP to clear the world and create an initial number of green turtles.  Note: we do not create red turtles initially, although this could be done in principle.</p>
+<p>Press GO to start the simulation.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>You will see turtles wandering around the world and changing color.  Pay more attention to the plot of the concentrations.  Do the plots soon reach stationary concentrations?</p>
+<h2>THINGS TO TRY</h2>
+<p>How do the stationary concentrations depend on the values of Kb and Ku?   You can change Ku and Kb while the model is running.   See if you can predict what the stationary concentrations will be with various combinations of Kb and Ku.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try to implement the following reaction:</p>
+<pre><code class="language-text">                 Kb         K2
+        A + A &lt;======&gt; B -------&gt; C
+                 Ku
+</code></pre>
+<p>This reaction underlines a vast number of microbiological processes (e.g. fermentation).  You can read about its kinetics in any book on Biochemistry.  Look up the so-called Michaeles-Menten equation.  Does it check numerically?</p>
+<p>Try to implement the following reaction:</p>
+<pre><code class="language-text">                 Kb         K2
+        A + B &lt;======&gt; C -------&gt; D
+                 Ku
+</code></pre>
+<h2>RELATED MODELS</h2>
+<p>Enzyme Kinetics
+Chemical Equilibrium
+Simple Kinetics 2
+Simple Kinetics 3</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Thanks to Mike Stieff for his work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo Simple Kinetics 1 model.  http://ccl.northwestern.edu/netlogo/models/SimpleKinetics1.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1998 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Predator Prey Game HubNet</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Predator Prey Game HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/Unverified/Predator%20Prey%20Game%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/HubNet Activities/Unverified/Predator Prey Game HubNet.png" alt="Screenshot of Predator Prey Game HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model simulates a predator-prey relationship.  The population consists of wolf packs (predators) and sheep herds (prey), some controlled by students via HubNet clients and some androids controlled by the computer.  The wolves gain energy from consuming sheep, and the sheep gain energy from consuming grass (a primary producer).  The model allows students to examine simple population dynamics like those modeled through the Lotka-Volterra equations in a participatory way.</p>
+<h2>HOW IT WORKS</h2>
+<p>Predators and prey move around the world, searching for food.  Prey eat plants (green areas), while predators eat prey.  All animals gain energy by finding food and expend energy in the search for food.  Prey also lose energy when predators catch them. Each predator agent can be thought of as a pack of wolves and each prey can be thought of a herd of sheep.  Prey can be caught by predators a few at a time before they ultimately die out.  In other words, a prey agent does not die the very first time they run into a predator.  The grass is also a limited resource; it regrows at a fixed rate.  Android predators and prey can wander around the world at random, while student predators and prey are directed through the HubNet clients.</p>
+<p>If an animal's energy gets too low it dies. If a student controls the animal, that student is given the option to "recreate" as a predator or prey.  Until the student "recreates" they cannot interact with the rest of the system, i.e. they cannot be eaten, they cannot eat, and they cannot move.  By recreating the students have some control over the populations in the world and can dramatically shift the population dynamics.  If the energy of an android goes below zero the android merely dies.  However, androids do have the ability to reproduce, which student agents do not.  Every tick each prey has a PREY-REPRODUCE chance of creating a new prey, and each predator has a PREDATOR-REPRODUCE chance of creating a new predator.</p>
+<h2>HOW TO USE IT</h2>
+<p>To start the game first press the SETUP button then press the GO button and ask the students to log in.  You may also want to create android predators or prey using the ADD-PREDATORS and ADD-PREY buttons.  You can control the movement of the androids using the WANDER? switch (which determines whether they move at all) and the ANDROID-DELAY slider (which determines how many seconds elapse between android movements).</p>
+<p>The total number of PREDATORS and PREY, including both students and androids are displayed in the corresponding monitors.  You can control the amount of energy each animal gains from consuming food by using the PREDATOR-GAIN-FROM-FOOD and the PREY-GAIN-FROM-FOOD sliders.  PLANT-REGROWTH-RATE brown areas regrow grass at every tick in the model.  Thus modifying this slider controls the amount of grass that is available for the sheep to consume.</p>
+<p>If you wish to change all the students to either predators or prey press the MAKE-STUDENTS-PREDATORS or MAKE-STUDENTS-PREY buttons.  These buttons do not affect androids.</p>
+<p>To start the game over press the SETUP button, this will return all students to initial energy levels and place them at a new random position.  It will kill all the androids and clear the plots.</p>
+<p>AVERAGE ENERGY plots the average energy of all predators in red, and all prey in green, this includes androids.  POPULATION plots the total of each type of animal.</p>
+<p>Client Information</p>
+<p>After logging in, the client interface will appear for the students, and if GO is pressed in NetLogo they will be assigned a role as predator or prey at random.  Their character will consist of an animal indicator, a wolf if they are a predator or a sheep if they are prey, and an icon.  The icon is their unique identifier so it's easy to distinguish themselves from other animals.  A description of the icon will appear in the YOU ARE A: monitor.  If the student does not like the shape and/or color of their icon they can hit the CHANGE APPEARANCE button at any time to change to another random icon.</p>
+<p>The student controls the movement of their turtle with the UP, DOWN, LEFT, and RIGHT buttons (they can also use the hot-keys as short cuts) and the STEP-SIZE slider.  Clicking any of the directional buttons (or using the hot-keys) will cause their turtle to move in the respective direction a distance of STEP-SIZE.</p>
+<p>ENERGY for the appropriate animal is displayed in the monitor of same name.  If the energy is zero or less, then the agent dies.  The ROLE monitor will display "dead", the animal indicator shape will appear as a sad face, and the STATUS monitor will indicate that the student should recreate as a predator or prey.  After s/he selects one s/he cannot switch roles until the animal dies again.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Predators may find it better to stay together.  Prey, however, may learn to stay more scattered, so as to not become easy prey to a large group of predators.</p>
+<p>At first students may find it advantageous to be predators but if many students become predators, the balance will shift and it may be more advantageous to "recreate" as a prey.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try changing the amount of energy gained from food for both predators and prey, at what point does it cease to be advantageous to be a predator?</p>
+<p>Try to balance out the system so that no predators or prey go hungry.</p>
+<p>Change the PLANT-REGROWTH-RATE slider.  How does this affect the balance between the predators and prey?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try making the androids move toward food rather than moving randomly.</p>
+<p>There is no cost for changing the step-size for a student agent.  Is there a way a larger step-size could "cost" the agent something?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Because so much information must be conveyed through the appearance of each turtle, each player is actually made up of two turtles; one turtle's shape is either a wolf or a sheep to indicate whether it is a predator or prey.  Behind the first turtle is an icon turtle that helps students distinguish themselves from other players (and androids).  Thus though each student is viewed as one agent, they are actually made up of two turtles.</p>
+<h2>RELATED MODELS</h2>
+<p>The various Wolf-Sheep models are non-HubNet versions of a similar model.  Also see the Bug Hunter model and the Guppy model for other HubNet models that explore population dynamics.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2002).  NetLogo Predator Prey Game HubNet model.  http://ccl.northwestern.edu/netlogo/models/PredatorPreyGameHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2002 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This activity and associated models and materials were created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2002 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sunflower Emergent</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Sunflower Emergent</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Sunflower%20Emergent.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Sunflower Emergent.png" alt="Screenshot of Sunflower Emergent" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model shows the characteristic double spiral formation we see in many plants.  Most plants have leaves that spiral up the stem, appearing as a double spiral when viewed from above. This same double spiral is also seen in flower heads such as sunflowers and pine cones.</p>
+<p>The key idea is that the pattern emerges from simple physics--the minimization of repulsive energy. Neither evolutionary biology nor the geometry of angles are invoked in this model.</p>
+<h2>HOW IT WORKS</h2>
+<p>The model is initialized with one particle in an inner ring around the origin.</p>
+<p>At each tick of the model, a new particle is added and placed in a concentric ring, a fixed distance from the last ring.</p>
+<p>The location of the new particle is determined in the following manner. Place 360 or more temporary particles on the ring, calculate the repulsive energy for each temporary particle by choosing one of two energy approximation methods, and choose the temporary particle has the minimum total repulsive energy. The rest of the temporary particles are then removed.</p>
+<p>This model includes two different methods to approximate the total repulsive energy of a particle. Both methods are based on the assumption that particles that are closest to one another exert much more repulsive energy than particles that are further away. The first method assumes that the relationship between distance and repulsion is inverse, while the second assumes that it is one of exponential decay.</p>
+<h2>HOW TO USE IT</h2>
+<p>The SETUP procedure places one particle at a distance of RING-DIST from the origin.</p>
+<p>ADD-PARTICLE adds one new particle into the next concentric ring.</p>
+<p>RING-DIST is the distance between successive rings.</p>
+<p>The PARTICLE-SIZE is just the visual display size for the particles. It does not affect the growth placement pattern.</p>
+<p>GO adds particles until the spiral reaches the edge of the world.</p>
+<p>The FIXED-TEMPS? switch determines whether to use a fixed or variable number of temporary particles. If on, then 360 temporary particles are used. If off, then the number of particles increases with distance from the origin.</p>
+<p>The SHOW-TEMPS? switch, if on, displays the temporary particles.</p>
+<p>The ENERGY-APPROXIMATION chooser determines which energy approximation method is used. INVERSE DISTANCE uses the repulsive energy approximation 1/distance^ALPHA, and EXPONENTIAL uses the Born and Mayer repulsive energy approximation, e^(-distance/BETA). The ALPHA and BETA sliders determine the constants used in each of these approximations.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice the double spiral pattern that emerges from these simple rules. Is the spiral pattern always the same with the same settings? Why or why not?</p>
+<p>Do you notice any other patterns in the left and right handed spirals?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try varying the RING-DIST to get looser or tighter spirals.</p>
+<p>Play with the various switches to visualize the temporary particles and the effect of different energy approximations.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Can you find a way to generate pleasingly colored spirals?</p>
+<p>What happens if you allow some random perturbations in particle placement?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of the <code>min-one-of</code> primitive to find the temporary particle with the least repulsive energy.</p>
+<h2>RELATED MODELS</h2>
+<p>Sunflower
+Sunflower Biomorphs</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a replication of Victor Stenger's double spiral model in:
+Stenger, V. (2008). God: The Failed Hypothesis.</p>
+<p>The double spiral patterns as seen in nature are described in:
+Ball, P. (1995). The Self-Made Tapestry.</p>
+<p>Douady, S. and Couder, Y. (1992). Phyllotaxis as a Physical Self-Organized Process. Physical Review Letters, 68(13), 2098--2101.</p>
+<p>Dove, M. T. Structure and Dynamics: An Atomic View of Materials. New York: Oxford University Press, 2003.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2009).  NetLogo Sunflower Emergent model.  http://ccl.northwestern.edu/netlogo/models/SunflowerEmergent.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2009 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2009 --></div>
+      </div>
+    </main>
+  </body>
+</html>

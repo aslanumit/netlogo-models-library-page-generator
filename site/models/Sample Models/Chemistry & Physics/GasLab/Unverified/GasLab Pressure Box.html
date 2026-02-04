@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GasLab Pressure Box</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>GasLab Pressure Box</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/GasLab/Unverified/GasLab%20Pressure%20Box.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Chemistry &amp; Physics/GasLab/Unverified/GasLab Pressure Box.png" alt="Screenshot of GasLab Pressure Box" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model simulates the behavior of gas particles trapped in a container with a fixed volume, such as inflating a bike tire.  The number of particles in the box can be changed by adding particles through a valve on the side.</p>
+<p>This model is one in a series of GasLab models. They use the same basic rules for simulating the behavior of gases.  Each model integrates different features in order to highlight different aspects of gas behavior.</p>
+<p>The basic principle of the models is that gas particles are assumed to have two elementary actions: they move and they collide - either with other particles or with any other objects such as walls.</p>
+<p>This model is part of the Connected Chemistry curriculum, which is part of the Modeling Across the Curriculum (MAC) Project.</p>
+<h2>HOW IT WORKS</h2>
+<p>The particles are modeled as hard balls with no internal energy except that which is due to their motion.  Collisions between particles are elastic.  Particles are colored according to speed --- blue for slow, green for medium, and red for high speeds.</p>
+<p>Coloring of the particles is with respect to one speed (10).  Particles with a speed less than 5 are blue, ones that are more than 15 are red, while all in those in-between are green.</p>
+<p>Particles behave according to the following rules:
+1. A particle moves in a straight line without changing its speed, unless it collides with another particle or bounces off the wall.
+2. Two particles "collide" if they find themselves on the same patch (the world is composed of a grid of small squares called patches).
+3. A random axis is chosen, as if they are two balls that hit each other and this axis is the line connecting their centers.
+4. They exchange momentum and energy along that axis, according to the conservation of momentum and energy.  This calculation is done in the center of mass system.
+5. Each turtle is assigned its new velocity, energy, and heading.
+6. If a turtle finds itself on or very close to a wall of the container, it "bounces" -- that is, reflects its direction and keeps its same speed.</p>
+<p>Pressure is defined as the force per unit area (or length in this two-dimensional model).  Pressure is calculated by adding up the momentum transferred to the walls of the box by the particles when they bounce off and divided by the length of the wall, which they hit.</p>
+<p>Initially, the particles are not moving, and cannot hit the wall. Therefore the initial pressure is zero.  As the particles start moving, they all first have the same speed in random directions.  As the particles repeatedly collide, they exchange energy and head off in new directions, and the speeds are dispersed --- some particles get faster, some get slower.</p>
+<h2>HOW TO USE IT</h2>
+<h3>Initial settings</h3>
+<ul>
+<li>BOX-SIZE: The size of the box as a percentage of the world-width</li>
+<li>INITIAL-NUMBER-PARTICLES: the number of gas particles in the box when the simulation starts</li>
+</ul>
+<p>The SETUP button puts in the initial conditions you have set with the sliders.  Be sure to wait until the SETUP button stops before pushing GO.</p>
+<p>The GO button runs the code again and again.  This is a "forever" button.</p>
+<h3>Additional settings</h3>
+<p>COLLIDE?: determines whether or not the particles collide among themselves
+ADD PARTICLES: pressing this button adds particles to the container through a valve, before and while the model is running
+NUMBER-TO-ADD: number of particles that are added to the box with each press of the "ADD PARTICLES" button</p>
+<h3>Monitors</h3>
+<ul>
+<li>NUMBER OF PARTICLES: the number of particles in the box</li>
+<li>PRESSURE: the pressure of the gas particles in the box</li>
+<li>WALL HITS PER PARTICLE:</li>
+<li>AVERAGE SPEED: average speed of the particles.</li>
+<li>AVERAGE ENERGY: average kinetic energy of the particles.</li>
+</ul>
+<h3>Plots</h3>
+<ul>
+<li>PRESSURE: plots the pressure in the box</li>
+<li>PARTICLE COUNT: plots the number of particles in the box</li>
+<li>WALL HITS PER PARTICLE: plots the number of times a particle hits a wall every big tick</li>
+</ul>
+<h2>THINGS TO NOTICE</h2>
+<p>What is happening to the particles in the box as a new group of particles is injected?  How is this related to the way pressure changes over time?</p>
+<p>Can you observe collisions with the walls as they happen (you can pendown a particle or slow down the model)?  For example, do the particles change their color?  Direction?</p>
+<p>Can you relate what you can see happening to the particles in the box with changes in pressure?  The average speed?  The average energy?</p>
+<p>Why does the pressure fluctuate, even though the number of particles is the same?  How long does it take for the pressure to stabilize?  Does the number of particles in the box affect this time?</p>
+<p>In what ways is this model an incorrect idealization of the real world?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try different settings, especially the extremes.   Are the particles behaving in a similar way?  How does this effect the pressure?  The energy?</p>
+<p>How are the number of particles and the pressure in the box related to each other?  Can you quantify this relationship? Does it change if collisions among particles are removed?</p>
+<p>Does the same relationship hold for the number of wall hits per particle and the number of particles?  Why?  How are the two relationships connected?</p>
+<p>Can you make the pressure graph smooth?  Can you do it in more than one way?</p>
+<p>The ideal gas equation shows that when keeping a constant temperature and volume, increasing the number of particles increases the pressure as well.   Keeping a constant temperature means that the average kinetic energy of the particles, does not change, nor does their average speed.  How is this related to the behavior of particles that you have seen so far?  Are there any other observations that could be made to test this relationship between the number of particles and the pressure?</p>
+<p>Notice that the pressure does not go up immediately after particles are added.  What is the reason for this delay?  Try adding particles into the box in different ways to increase or decrease this delay.  Can you think of real-life situations, with a similar delay?</p>
+<p>Sometimes, when going up in an elevator, airplane or up a mountain we feel a 'popping' sensation in our ears.  This is associated with changes in pressure.  Can you relate between this model and these changes in pressure?  Are the temperature and volume constant in this situation?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>What would happen if particles were added continuously rather than instantly?  Add a switch that allows for particles to continuously be added to the box.</p>
+<p>Can you "puncture" the box, so that particles will escape?</p>
+<p>What would happen if the box were heated?  How would the particles behave?  How would this affect the pressure?  Add a slider and code that increases the temperature inside the box.</p>
+<p>If you could change the shape of the box, so that the volume remains the same: Does the shape of the box make a difference in the way the particles behave, or the values of pressure?</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model was developed as part of the GasLab curriculum (http://ccl.northwestern.edu/curriculum/gaslab/) and has also been incorporated into the Connected Chemistry curriculum (http://ccl.northwestern.edu/curriculum/ConnectedChemistry/)</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2002).  NetLogo GasLab Pressure Box model.  http://ccl.northwestern.edu/netlogo/models/GasLabPressureBox.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2002 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model and associated activities and materials were created as part of the project: MODELING ACROSS THE CURRICULUM.  The project gratefully acknowledges the support of the National Science Foundation, the National Institute of Health, and the Department of Education (IERI program) -- grant number REC #0115699. Additional support was provided through the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT -- NSF (REPP &amp; ROLE programs) grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2002 MAC --></div>
+      </div>
+    </main>
+  </body>
+</html>

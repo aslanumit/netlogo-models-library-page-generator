@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSV Example</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>CSV Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Extensions%20Examples/csv/CSV%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Code Examples/Extensions Examples/csv/CSV Example.png" alt="Screenshot of CSV Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model shows how to use NetLogo's <code>csv</code> extension to load data from and write data to data to CSV files. This allows users to easily output data (e.g. value of turtle variables, result of calculations, etc.) to a standard CSV file.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The GENERATE-TURTLES button just creates 100 random turtles. The user can then use the WRITE-TURTLES-TO-CSV button to save the <code>xcor</code>, <code>ycor</code>, <code>size</code>, <code>color</code> and <code>heading</code> of each turtle into a CSV file called <code>turtles.csv</code>.</p>
+<p>If you were interested in generating just one line of this CSV file at a time, you could use the <code>csv:to-string</code> primitive:</p>
+<pre><code>csv:to-string [ (list xcor ycor size color heading) ] of one-of turtles
+</code></pre>
+<p>The READ-TURTLES-FROM-CSV button does just the opposite: reads this data from <code>turtles.csv</code> and creates turtles with those properties.</p>
+<p>Pressing ASK TURTLES [ DIE ] before READ-TURTLES-FROM-CSV will allow to remove the originally generated turtles and see that they are re-created with their original attributes.</p>
+<!-- 2016 --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Movie Recording Example</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Movie Recording Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Extensions%20Examples/vid/Movie%20Recording%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Code Examples/Extensions Examples/vid/Movie Recording Example.png" alt="Screenshot of Movie Recording Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This shows how to capture a movie of your model with the <code>vid</code> extension.</p>
+<p>The model is of a population of birds.  Once a bird is 10 ticks old, it can hatch two offspring and die.  The number of birds, of course, increases exponentially.</p>
+<p>The model provides buttons to start the movie recorder and then save your recording or reset the movie recorder if you don't like what you have recorded so far. The code for these buttons can easily be copied to any user model.</p>
+<h2>HOW TO USE IT</h2>
+<p>The model can be used like most NetLogo models: click SETUP to initialize the model and then GO to run it.</p>
+<p>If you want to make a movie of the model, click START RECORDER at any time. You will notice that the VID:RECORDER-STATUS monitor changes from "inactive" to "recording". Once recording is active, the recorder will capture a frame of the model each time SETUP or GO is executed.</p>
+<p>Once you have a movie that you think you will like, you can use the SAVE RECORDING button to save it. NetLogo will prompt you for a file name and automatically add the <code>.mp4</code> extension to it if you don't add it yourself.</p>
+<p>If you don't want to save your movie and prefer to start over, click RESET RECORDING. The recorder will "forget" everything that it has recorded so far.</p>
+<p>If you want to add recording capabilities to your own model, copy the code for <code>start-recorder</code>, <code>reset-recorder</code> and <code>save-recording</code> to the code tab of your model and create the corresponding buttons in your interface tab. You can also add a <code>vid:recorder-status</code> monitor if you like.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Like any model with exponential population growth, this model slows down after each iteration.  As it takes longer for NetLogo to compute each iteration, actual time gets slower and slower relative to "model time" (the number of iterations).  Thus, the gray spinner in the upper right corner of the view visibly slows down.</p>
+<p>Creating a movie of the model solves the problem.  The movie allows us to observe the model while real time and model time progress at a consistent rate.  When we replay the movie, the spinner spins at a constant rate.</p>
+<p>Note that the model only shows what's happening in the view; it doesn't show monitors updating, and if the model had any plots in it, they wouldn't be shown either. That's because the code uses the <code>vid:record-view</code> command, which only includes the view in the model.  You can substitute <code>vid:record-interface</code>; then the whole interface tab is grabbed.</p>
+<h2>THINGS TO TRY</h2>
+<p>A different way of making a movie is to use BehaviorSpace.  BehaviorSpace is a tool built into NetLogo that lets you set up automated model runs.  Usually BehaviorSpace is used to do many model runs in which you experiment with different settings in a model, but it's also possible to use it to set up a single run in order to make a movie.</p>
+<p>This model includes a sample BehaviorSpace "experiment setup" which makes a movie.  To try it, choose BehaviorSpace on the Tools menu.  In the dialog that opens you'll see an experiment called "make movies".  Select that experiment and hit the "Run" button. The model will run three times and a movie files will be generated each time. The <code>behaviorspace-run-number</code> primitive is used to give each movie a different name.</p>
+<p>If you want to see how the experiment was set up, select the experiment in the BehaviorSpace dialog and press the "Edit" button.  You'll notice that:</p>
+<ul>
+<li>the "Setup commands" include <code>vid:start-recorder</code></li>
+<li>the "Final commands" include <code>vid:save-recording (word behaviorspace-run-number)</code></li>
+</ul>
+<p>The current <code>setup</code> and <code>go</code> procedures in the model already include <code>if vid:recorder-status = "recording" [ vid:record-view ]</code>. If you were trying to record a movie for a model that didn't already have them, you could include calls to <code>vid:record-view</code> in the "Setup commands" and "Go commands" of the BehaviorSpace experiment.</p>
+<p>Together, those commands make a complete movie.</p>
+<p>Since it isn't a real experiment, the setup does not vary any variables, and it does not use any reporters to measure the run.</p>
+<!-- 2016 --></div>
+      </div>
+    </main>
+  </body>
+</html>

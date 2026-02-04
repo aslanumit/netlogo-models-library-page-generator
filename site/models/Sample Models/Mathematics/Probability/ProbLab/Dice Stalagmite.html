@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dice Stalagmite</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Dice Stalagmite</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/Probability/ProbLab/Dice%20Stalagmite.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Mathematics/Probability/ProbLab/Dice Stalagmite.png" alt="Screenshot of Dice Stalagmite" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Dice Stalagmite is a model for thinking about the relations between independent and dependent random events.  Pairs of dice are rolled, then the dice fall into columns in two bar charts.  One of these charts records the dice as two independent outcomes, and the other, as a single compound event (sum) of these two outcomes.  Because the columns grow from the bottom up, we call this a "stalagmite."</p>
+<p>Different distributions emerge: the independent-event bar chart is flat (equally distributed) whereas the dependent-event bar chart is peaked.  (It does not quite approach a normal distribution, because there are only two compound outcomes.)</p>
+<p>This model is a part of the ProbLab curriculum.  The ProbLab curriculum is currently under development at the CCL.  For more information about the ProbLab curriculum please refer to http://ccl.northwestern.edu/curriculum/ProbLab/.</p>
+<h2>HOW IT WORKS</h2>
+<p>The outcomes from rolling the two dice are represented in two different ways.</p>
+<p>On the left, they are plotted as individual events.  This representation treats the dice individually, not as pairs.  Each die is stacked in its respective column, one through six, in the resulting histogram.</p>
+<p>On the right, you see a second histogram with the same dice stacked in pairs according to their sum.  There are eleven columns, 2 through 12, since those are the possible sums of two dice.</p>
+<p>When the model is run, the right chart never reaches the top before the left chart.  (Why?)  The left bar chart is "bumped" down by one row so as to leave more room for the bars to grow.  This allows for the bar chart on the right to grow further and take on its typical (peaked) shape.</p>
+<h2>HOW TO USE IT</h2>
+<p>Switches:
+STOP-AT-TOP? -- if 'On', stops the model when the right side of the display bar chart (the dice totals) has reached the top.  If 'Off', then both stacks "bump" down one row when a column hits the top.  (The plots on either side of the view are always scaled to show all of the data, even if the view is only showing the top portion.)</p>
+<p>Buttons:
+SETUP -- prepares the model for running.</p>
+<p>GO -- runs the model.  In a single run of GO, a random pair of dice appears, is copied, and then the copies fall into their stacks.  Also, the plots are updated.</p>
+<p>Plots:
+SINGLE DICE -- plots the number of occurrences of each die-number (1-6).
+PAIR SUMS -- plots the number of occurrences of each die-total (2-12).
+The plots show the same information as the view, except that the plots always show all of the data, while if the STOP-AT-TOP? switch is off, the view only shows the tops of the stacks.</p>
+<h2>PEDAGOGICAL NOTE</h2>
+<p>As in other ProbLab activities, here we are interested in exploring relations between the anticipated frequency distribution (the relative probabilities), which we determine through combinatorial analysis, and the outcome distribution we receive in computer-based simulations of probability experiments.  To facilitate the exploration of the relationship between such theoretical and empirical work, we build tools that bridge between them.  These bridging tools have characteristics of both the theoretical and empirical work.  Specifically, we structure our combinatorial spaces in formats that resemble outcome distributions, and structure our experiments so as to sustain the raw data (not just graphs representing the data).  The "picture bar chart" of the combinatorial space of dice-pair totals can be found with the ProbLab materials.</p>
+<p>Beside each bar chart -- the 'dependent' and the 'independent' -- there is a histogram that represents the data correspondingly.  Whereas the bar charts stack the outcomes so as to sustain the images of the discrete events (the "raw data" themselves), the histograms grow in continuous columns (without partition lines).  Twinning each picture bar chart with its respective histogram may help students both to understand the histograms and to shift from additive interpretation of the columns in the picture bar chart (focusing on differences between heights of columns) to a multiplicative interpretation of the bar chart (focusing on the proportions of the column heights).</p>
+<p>In a classroom, students should work with the triangular combinatorial space they created (not the one from the model, but one with all 36 different possible outcomes of a dice pair that are arranged in a bar chart).  Discussion should focus on the relation between the theoretical and empirical distribution, that is, between the combinatorial space and the distribution of random outcomes.  Why is it that they are similar?</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Note the shape of the outcomes in the right-hand bar chart.  The top is triangular.  What does this mean? Specifically, if each event is random and independent, why are we getting a shape that is not random (always the same shape)?  How can randomness and determinism coexist like this?  The bar chart on the left hones this discussion, because, from run to run, it is basically a "flat" distribution -- for instance, you can never predict, with certainty, which die column will be first to reach the top.</p>
+<p>If the model runs long enough and if STOP-AT-TOP? is set to 'Off,' you will notice that some columns in the picture bar chart on the left vanish.  That is, you will see a die descending to the bottom of its column and "going below sea level" so it is no longer visible.  What happens is that this die's column is now too short to appear in the display.  It might grow tall enough later to come back in, or it might not.  Meanwhile, the histogram in the plot keeps all of its columns, so you can keep comparing between them.</p>
+<h2>THINGS TO TRY</h2>
+<p>How many pairs are needed until the dice-pair bar chart reaches the top?  Is this number constant?  How much does it vary?</p>
+<p>What is the biggest vertical gap between columns in the single-die bar chart?  Does the gap get larger or smaller the more you run the model?  Does any particular column win more often than others?</p>
+<p>Which column in the dice-pair bar chart gets to the top first most often?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Currently, the model sums two dice.  An interesting idea would be to extend this model to have a sum of three or more dice.  There would be more columns for the different dice-totals.  How many?  How would this change affect the dice-total distribution?</p>
+<p>Currently the model puts all pairs of dice that sum to the same number in the same column.  What would happen if you added additional columns so that different combinations were in different columns, for example, so that 2+5 and 5+2 were considered different?  Would this change the shape of the dice-total distribution?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>In this model, the origin (patch 0,0) is placed between the single and pair bar charts rather than in the center, which makes computations simpler and extending the model easier.</p>
+<h2>RELATED MODELS</h2>
+<p>Dice Stalagmite uses the same basic metaphor as the ProbLab model 9-Block Stalagmite.  In that model, a random 9-block or 4-block is selected from a sample space.  Then, the block finds is correct column, according to the number of green squares in the block, and stacks up in that column.</p>
+<p>The idea of juxtaposing two or more different representations of the same running data is used in several ProbLab models, such as Prob Graphs Basic or Random Combinations and Permutations.</p>
+<p>Dice are also used in the ProbLab model Dice for generating a distribution of random outcomes.</p>
+<p>The Galton Box model also features raw data that descend and stack up in columns.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the ProbLab curriculum.  The ProbLab curriculum is currently under development at Northwestern's Center for Connected Learning and Computer-Based Modeling.  For more information about the ProbLab curriculum please refer to http://ccl.northwestern.edu/curriculum/ProbLab/.</p>
+<p>Thanks to Josh Unterman for building the original version of this model.  Thanks to Steve Gorodetskiy for his contribution to the design of this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Abrahamson, D. and Wilensky, U. (2005).  NetLogo Dice Stalagmite model.  http://ccl.northwestern.edu/netlogo/models/DiceStalagmite.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 Cite: Abrahamson, D. --></div>
+      </div>
+    </main>
+  </body>
+</html>

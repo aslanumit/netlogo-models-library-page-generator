@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sand</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Sand</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Sand.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Chemistry &amp; Physics/Sand.png" alt="Screenshot of Sand" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model of how sand particles interact with each other.  In this environment, all sand particles try to move down if any of the following four rules apply.  The four rules are:</p>
+<ol>
+<li>If there is nothing directly beneath you, move down.</li>
+<li>If there is something beneath you and to the lower right, move down and to the left.</li>
+<li>if there is something beneath you and to your lower left, move down and to the right.</li>
+<li>If there is only something directly beneath you, move down and either left or right at random.</li>
+</ol>
+<h2>HOW TO USE IT</h2>
+<p>GO: Starts and stops the simulation.</p>
+<p>SETUP: Sets up the model.</p>
+<p>RELEASE-CHANCE: Determines the percent chance that a particle of sand will fall from a spout each turn (default value of 100%).</p>
+<p>SPACING: Determines how long a spout waits before releasing the next particle of sand.</p>
+<p>DUMP SAND: Dumps sand on all of the model according to the density leve.  Use this only after you have pressed SETUP.</p>
+<p>DENSITY: Sets the density of sand particles dumped in DUMP SAND (default value of 25%).  For example setting the density to 40 will, at random fill 40 percent of the patches with sand.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Observe how sand will roll down a "mountain" of sand particles.  Consider how this phenomenon is supported by the rules.  Notice the patterns that form when two "mountains" of sand grow into each other.</p>
+<h2>THINGS TO TRY</h2>
+<p>Observe how the spouts will form uniform pyramids of sand.  Try DUMP SAND at a low density once you have a relatively large pyramid shape.  How does this effect the shape of the pyramid?  Does the pyramid ever return to its original shape?</p>
+<p>Try decreasing RELEASE-CHANCE.  What effect does this have on the growth rate of sand "mountains"?</p>
+<p>Set the SPACING to 1.  (You'll have to edit the slider, since the normal minimum is 2.)  What happens?  Is this just a limitation of the model rules, or does it have some plausible physical interpretation?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>In the Code tab, notice the variable <code>spout-space</code>.  Try changing the number of spouts at the top of the view by changing <code>spout-space</code>.</p>
+<p>Does this model accurately reflect how sand behaves?  If not what rules could you devise to more accurately model sand's behavior?  How could they be incorporated into the model?</p>
+<p>What effect does weight have on sand particles?  Should particles with lots of particles above them behave differently?  If so, how would this change the rules?</p>
+<p>Try simulating erosion with this model.  How could you simulate wind?  What effect would this have on the shape of the piles?  How could you simulate rain?  What effect would this have on the shape of the piles?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Notice how the model stores an agentset in a variable, <code>spout-patches</code>.  It is initialized with the agentset of the patches where the spouts are located.  Subsequently this variable can be used in an <code>ask</code> command just like the default agentsets of <code>turtles</code> and <code>patches</code>.  Since the agentset is built once, ahead of time, the models runs faster than if the agentset were rebuilt at every step.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1996).  NetLogo Sand model.  http://ccl.northwestern.edu/netlogo/models/Sand.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1996 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1996 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

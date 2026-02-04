@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hex Turtles Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Hex Turtles Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Hex%20Turtles%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Hex Turtles Example.png" alt="Screenshot of Hex Turtles Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This demonstrates how to have turtles move on a hexagonal lattice instead of NetLogo's usual square lattice.</p>
+<p>Note that this technique only works as long as the turtles always stay on the vertices of the lattice.</p>
+<h2>HOW IT WORKS</h2>
+<p>We treat the square lattice of patches as if it were a hex lattice, as follows:</p>
+<ul>
+<li>
+<p>A turtle's heading must always be a multiple of 60.</p>
+</li>
+<li>
+<p>Turtles on even patch columns are offset down by half a patch.  (Since the south boundary of a patch is part of the patch, this does not move the turtle to a different patch.)</p>
+</li>
+<li>
+<p>The world must be an even size grid otherwise a bit of extra math in the <code>hex-fd</code> procedure is needed to deal with two even or two odd columns in a row around the edges (if wrapping is turned on).</p>
+</li>
+</ul>
+<p>The resulting lattice has the correct structure, but distances and angles are distorted. So the hexagons aren't actually regular, but it doesn't matter as long as the turtles move not using the built in <code>fd</code> command but using the <code>hex-fd</code> procedure, and as long as you don't try to use primitives such as <code>distance</code> and <code>towards</code>.</p>
+<h2>RELATED MODELS</h2>
+<p>This example is for moving turtles.  Hex Cells Example shows how to make stationary hexagonal cells, such as for a cellular automaton.  (It would also be possible to combine both techniques in a single model.)</p>
+<!-- 2004 --></div>
+      </div>
+    </main>
+  </body>
+</html>

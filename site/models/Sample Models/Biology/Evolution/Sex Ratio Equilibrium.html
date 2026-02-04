@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sex Ratio Equilibrium</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Sex Ratio Equilibrium</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Evolution/Sex%20Ratio%20Equilibrium.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Biology/Evolution/Sex Ratio Equilibrium.png" alt="Screenshot of Sex Ratio Equilibrium" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model investigates emergent patterns in a demographic property of a population: the adult sex ratio (ASR). ASR is defined as the ratio of males to females in the adult population. Most sexually reproducing organisms have an ASR of 1:1. Fisher (1930) explains a rationale for this phenomenon based on natural selection, irrespective of a particular mechanism of sex-determination, which is now known as Fisher’s principle (Hamilton, 1967).</p>
+<p>This model is based on Fisher's assumptions of biparentism and <a href="https://en.wikipedia.org/wiki/Mendelian_inheritance">Mendelian inheritance</a>.
+It allows user to explore the emergence of the Fisherian Sex Ratio (1:1) across a wide range of initial sex-ratios and life-history traits.</p>
+<h2>HOW IT WORKS</h2>
+<p>This is a population dynamics model of sexually reproducing organisms. The demographic changes in the population as well as the adult sex ratio are plotted as the time progresses.</p>
+<p>There are two types of individuals in the model:
+- <em>Males</em> (Indicated by green color)
+- <em>Females</em> (Indicated by blue color if not carrying a child and indicated by orange color if carrying a child)</p>
+<p>At every time-step the individuals:
+- Age and check if dead – a random value of longevity is assigned at birth if an agent’s age is more than that value it dies
+- Move randomly
+- Search for an adult partner if <em>male</em>. This procedure involves mating, which is dependent on the assigned value of the mating chance. If agents mate, the <em>female</em> carries. (For simplicity, the mating chance in this model incorporates conception-chance as well.)
+- Reproduce if <em>female</em></p>
+<p>The genetic mechanism of influencing the proportion of <em>male</em> children in the litter is abstracted as a parameter, called MALE-CHILD-CHANCE. Each <em>male</em> and <em>female</em> carry a trait called MALE-CHILD-CHANCE. This determines the probability of a child being <em>male</em>. In this basic model, the sex of the child is equally influenced by the MALE-CHILD-CHANCE values of both the parents.</p>
+<p>A child inherits this trait from its parents with a mutation. The inherited value for the trait is drawn from a random normal distribution with a mean equal to the average of MALE-CHILD-CHANCE of the parents.</p>
+<h2>HOW TO USE IT</h2>
+<p>Using the sliders, set your desired initial population and individual values (see the <strong>Sliders</strong> section below for more details). Click the SETUP button to setup the population. To run the model, click the GO button.</p>
+<p>The plots and monitors allow users to observe population-level changes and see the emergence of the Fisherian sex-ratio equilibrium.</p>
+<h3>Sliders</h3>
+<p>INITIAL-POPULATION-SIZE: the initial number of individuals in the population
+INITIAL-ADULT-SEX-RATIO: the initial adult-sex-ratio (number of males/number individual * 100) in the population
+INITIAL-AVERAGE-MALE-CHILD-CHANCE: the initial average male-child-chance of all the individuals in the population
+MEAN-LONGEVITY: the average longevity (number of ‘ticks’ an individual lives)
+GESTATION-PERIOD: the number of 'ticks' a female is going to carry a child
+MAXIMUM-LITTER-SIZE: the maximum number of children a female would give birth to after she completes gestation
+MATING-CHANCE: the probability that a female mates with a male when a male finds a female partner</p>
+<h3>Plots</h3>
+<p>ADULT SEX RATIO: shows the percentage of male agents
+POPULATION AVERAGE MALE-CHILD-CHANCE: shows how the population's male-child-chance changes over time
+GENDER DISTRIBUTION: shows numbers of agents of both sexes
+MATING SUCCESS RATIO (MALE TO FEMALE): shows how the ratio of male mating success to female mating success changes over time</p>
+<h3>Monitors</h3>
+<p>ADULT SEX RATIO (ASR): the proportion of male agents, at the moment
+RUNNING MEAN OF ASR: the average of adult sex ratio in the past 1000 ticks
+RUNNING STD DEV OF ASR: standard deviation of adult sex ratio in the past 1000 ticks</p>
+<h2>THINGS TO NOTICE</h2>
+<p>When you run the model, notice how the number of males and females vary in the GENDER DISTRIBUTION plot. Also, notice that for a wide range of parameter values, if you run the simulation long enough (4000 to 5000 ticks), the ASR converges to 50% as seen in the ADULT-SEX-RATIO plot.</p>
+<p>Notice that the average value of the trait male-child-chance across all agents in the AVERAGE MALE-CHILD-CHANCE plot also converges to 0.5 for a wide range of parameters.</p>
+<p>Also notice that once the ASR reaches 50%, it is stable around the 50% point. The AVERAGE MALE-CHILD-CHANCE is also stable around the value of 0.5.</p>
+<p>Vary the INITIAL-SEX-RATIO and INITIAL-AVERAGE-MALE-CHILD-CHANCE, which are the two variables that affect the sex ratio the most in this model. How do these variables relate to the mating success of each sex?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try setting different values of INITIAL-ADULT-SEX-RATIO and INITIAL-AVERAGE-MALE-CHILD-CHANCE to see how that affects the emergence of the adult sex ratio equilibrium.</p>
+<p>See if you can change the parameters and see if you can get to a different stable ASR.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>This model implements <code>search-for-a-partner</code> by a male. See if you can change it and make it a female action.</p>
+<p>You can also add a variety of features related to evolutionary population genetics and sex ratio equilibrium studies, such as different mortality rates for males and females, sexual selection by females.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Red Queen</li>
+<li>Fish Tank Genetic Drift</li>
+<li>Plant Speciation</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Fisher, R. A. (1930). The genetical theory of natural selection: a complete variorum edition. Oxford University Press.</p>
+<p>Hamilton, W. D. (1967). Extraordinary sex ratios. Science, 156(3774), 477-488</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Dabholkar, S., Lee, J.S. and Wilensky, U. (2020).  NetLogo Sex Ratio Equilibrium model.  http://ccl.northwestern.edu/netlogo/models/SexRatioEquilibrium.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2020 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2020 Cite: Dabholkar, S., Lee, J.S. --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lightning</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Lightning</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Earth%20Science/Unverified/Lightning.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Earth Science/Unverified/Lightning.png" alt="Screenshot of Lightning" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model shows how lightning is generated. The process consists of two phases: the production of the electric field, and the air ionization to create the bolt. This model represents the latter phase.</p>
+<p>Lightning is one of the most visually impressive and frequently occurring natural phenomena on Earth. However, very few people actually have a solid understanding of what causes lightning, how it works, and why it occurs. This model attempts to illustrate lightning strikes from beginning to end at the level of individual charges. The user will observe how the behavior and interaction of extremely small charges can lead to very powerful and visually impressive action of a lightning strike.</p>
+<p>In order to thoroughly understand the phenomenon of lightning one must have a strong understanding of electrical physics and thermodynamics. In order to be accessible this model avoids such complicated topics and instead provides a more general basis for charge and particle behavior. The emphasis in this model is to understand lightning as it relates to individual charges, not the underlying forces behind the charges themselves.</p>
+<h2>HOW IT WORKS</h2>
+<h3>How does lightning work?</h3>
+<p>The Earth (green squares) and sky (black squares) serve as the layout for the world. The cloud appears as a gray cloud-shape at the top of the skyline. Among these are three main attributes that influence the production of lightning: step leaders at the bottom of the clouds (blue negative circles), dust particles in the air (dark gray squares), and positive streamers on the surface of the Earth (red positive circles).</p>
+<p>The initial cause of a lightning strike is a separation of charge within a cloud.  Positively charged particles accumulate at the top of the cloud while negatively charged particles concentrate themselves at the bottom of the cloud.  Within the cloud the charges move in a random manner; however, they are constrained to their charge regions. The negative charges in the bottom of the cloud have such a high concentration that they force the electrons on the Earth's surface deep into the ground.  This also has the effect of pulling the positive charges in the Earth's surface.</p>
+<p>As the strength of the electric field increases the air around the cloud breaks down and converts into plasma, or ionized air.  The positive and negative components of the air itself are pulled apart and separated from each other.  This separation allows the electrons to flow through the plasma much more easily than they could through normal air.  As electrons flow through the plasma they force the air around them to become plasma in turn.  In this way electrons in the cloud "burn out" paths towards the Earth.  The paths are known as step leaders, and grow from cloud to ground in a tentacle-like manner.</p>
+<p>Impurities in the air may cause some patches of air to turn into plasma more easily than others.  Rather than direct lines from cloud to ground, lightning takes the path of least resistance.  In this model this is illustrated by distribution of dust particles throughout the sky.</p>
+<p>Streamers are the positive equivalent of the negative step leaders created by clouds.  However, streamers are not self-sufficient and thus do not grow indefinitely towards the cloud.  All objects on the Earth's surface will emit a streamer, though depending on the size and material of the object the streamer's length may vary. Streamers are released much more quickly than a step leader since they are much smaller and only extend a very limited distance.</p>
+<p>Step leaders progress towards the ground until they encounter either the ground or a streamer.  In both cases the "circuit" is completed and charge may flow freely between cloud and ground. The large concentration of positive charges on the Earth's surface flow very quickly through the plasma stream towards the sky and neutralize the electrons in the cloud.  The flash of light that is seen is the rapid movement of charge through the air, exactly the same as the light you see during a spark of static electricity.</p>
+<p>Once the massive negative charge in the cloud has been neutralized the flow of charge through the air comes to a stop.  The plasma becomes de-ionized and once again becomes air as the step leaders are destroyed. The environment is now ready to begin the process anew.</p>
+<h3>How does the model work?</h3>
+<p>There are a series of breeds that live in the world that simulate lightning.</p>
+<p>Trees -  These are the trees on the Earth's surface. They stand above the Earth's surface and release positive streamers.</p>
+<p>Positive Cloud Ions -  These are the positive ions that bounce around the top of the cloud. As molecules of water evaporate, they collide into one another and exchange charges. Those with positive charges move to the top of the cloud.</p>
+<p>Negative Cloud Ions - These are negatively charged ions at the bottom part of the cloud. They move around the cloud and become step leaders.</p>
+<p>Positive Ground Ions - These are the positive ions on the Earth's surface. As the electric field forms around the cloud it pulls the positive charges to the top of the Earth's surface.</p>
+<p>Step Leaders - These are the negative ions that branch out from the bottom of the cloud. The ions are drawn to the positive charge on the Earth's surface, particularly the positive streamers. These particles leave a path of ionized air as they travel; they tend to move towards the Earth's surface or impurities, such as dust, in the air. When the step leaders reach the Earth's surface, a positive streamer, or a tree, the path is closed and lightning strikes. There is a chance that the step leader will die and the path will fade.</p>
+<p>Positive Streamers - These are the positive ions that branch upwards from the Earth's surface. They tend to move towards the electric field formed by the cloud or step leaders. If the positive streamer reaches the path of ionized air or connects with a step leader then lightning strikes.</p>
+<p>These breeds live together following specific rules elaborated below:
+At every time step, each step leader moves towards the Earth ionizing a blue path of air along the way. This path is found using the following criteria:
+- if one of the immediate neighbors is a dust particle, there is a chance that it will move to that patch
+- if there is no dust, then if one of the patches in front of it is a positiveStreamer, it moves one step towards it
+- otherwise, the leader will move in a random direction towards the Earth's surface with the highest probably being directly downwards</p>
+<p>After the step leaders have made one move we check their new position. If they have moved of the edge of the world, then their path fades. Some paths also fade by chance.</p>
+<p>If the path does not fade we check to see if they have closed a connection by hitting any of a tree, a positive streamer, a positive streamer's path, or the Earth's surface. If so, then lightning strikes.</p>
+<p>When lightning strikes, the patch at which the connection took place will turn yellow to indicate a connection. From there each patch will ask its neighbors to check if they've been ionized (or are a blue or violet color). If they have been ionized, they too will turn yellow and ask their neighbors about their color. If the neighboring patches have not been ionized they will turn white to highlight the glow of the lightning bolt. This cycle continues until the the surface of the Earth and the top of the cloud are reached. This indicates that the charge has been released, and the paths are removed from the world.</p>
+<p>Since the positive streamers (from the ground) grow at a slower rate than the step leaders, after 40 ticks have passed the streamers begin to grow up by one step for every tick. The direction of their growth is random, but most likely in the upward direction.</p>
+<p>The ions in the clouds shift their location to indicate the motion of the particles in the cloud.</p>
+<h2>HOW TO USE IT</h2>
+<p>SETUP button - sets up the step leaders, dust particles and positive streamers in the world</p>
+<p>GO button - runs the model</p>
+<p>STRENGTH-OF-FIELD slider - changes the strength of the electric field produced within the cloud</p>
+<p>SIZE-OF-CLOUD slider - changes the size of the cloud</p>
+<p>NUMBER-OF-TREES slider - changes the number of trees on the Earth's surface</p>
+<p>DUST slider - changes the number of dust particles in the sky between the cloud and the Earth's surface</p>
+<p>The model runs until all paths have died or a bolt of lightning has been produced.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice the charges on the earth's surface and how they relate to the cloud's field and position.</p>
+<p>Notice how the trees and dust particles change the path taken from the cloud. The location and size of the trees influence the pull on the ionized air.</p>
+<p>The positive streamers and the step-leaders have similar behavior as they grow; however, the speed, distance, and strategy in which they do so is quite different. Can you tell how these paths differ?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try different settings for the strength of field.  What do you notice about the amount of lightning that is formed?</p>
+<p>How are the strength of field and size of the cloud related?</p>
+<p>Does the cloud size have any effect on the lightning formed?</p>
+<p>Does varying the amount of dust or impurities in the air have influence on the path taken by the step leaders?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Consider other features that influence lightning paths, such as lightning rods. How do these influence the path or amount of lightning produced?</p>
+<p>The positive streamers have potential to grow towards the electric field of the cloud. How does their growth influence the paths?</p>
+<p>Currently, the shape of the cloud does not affect the direction that
+a step leader starts out traveling. Modify the code to allow a user
+to change the shape of the cloud, and cause step leaders to progress
+perpendicularly from its surface.</p>
+<h2>RELATED MODELS</h2>
+<p>"Climate Change" has some similarities.  In both cases, there is a relationship to cloud behavior.</p>
+<p>"Percolation" also has similar features to the way elements move through their world.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Wikipedia on Lightning:
+https://en.wikipedia.org/wiki/Lightning</p>
+<p>How Stuff Works on Lightning:
+https://science.howstuffworks.com/nature/natural-disasters/lightning.htm</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Atrash, Z. and Wilensky, U. (2011).  NetLogo Lightning model.  http://ccl.northwestern.edu/netlogo/models/Lightning.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2011 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2011 Cite: Atrash, Z. --></div>
+      </div>
+    </main>
+  </body>
+</html>

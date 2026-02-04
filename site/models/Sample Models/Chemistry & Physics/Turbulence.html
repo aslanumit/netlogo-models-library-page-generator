@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Turbulence</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Turbulence</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Turbulence.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Chemistry &amp; Physics/Turbulence.png" alt="Screenshot of Turbulence" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates the transition from order, or "laminarity", to disorder, or "turbulence" in fluids.  Using a one-dimensional continuous cellular automaton, this model allows you to explore the relationship between turbulence, laminarity, and the viscosity of a fluid flowing through a "pipe." It also shows you how the roughness of pipes in which the fluid travels through affects the fluid's behavior.</p>
+<h2>HOW IT WORKS</h2>
+<p>This model is based on a "coupled map lattice," otherwise known as a continuous cellular automaton.  See CA 1D Elementary for an introduction to one-dimension cellular automata, and see CA 1D Continuous for an introduction to continuous CA's.</p>
+<p>Each cell has a value ranging continuously from 0 to 1.5, where 0 is the greatest degree of turbulence, and 1.5 is the greatest degree of laminarity.  Cells are considered laminar when their value is greater than 1, and turbulent when their value is less than or equal to 1.</p>
+<p>To draw each subsequent row, each cell in the previous row is updated in three steps:</p>
+<p>1) The first step is coupling, where the cell's value "diffuses," or is averaged with its nearest neighbors on each side. The degree of influence that the cells have on one another is determined by the COUPLING-STRENGTH slider.  The higher the value of the coupling strength, the more the cells will influence one another.  COUPLING-STRENGTH is a rough analog of viscosity.</p>
+<p>2) In the second step, another function is applied in order to properly scale the result of the coupling function.</p>
+<p>3) The third and last step is the application of friction, which is the analog of roughness (on, for instance, the inside of a pipe or the surface of a sheet of glass).  The ROUGHNESS parameter controls the amount of friction imposed upon the fluid, increasing the cell's turbulence. This may seem a bit strange, but it is important to remember turbulence is measured in terms of disorder; when the fluid's velocity is changed, these fluctuations cause more disorder.</p>
+<p>These steps are then repeated for the next row, and so on.</p>
+<h2>HOW TO USE IT</h2>
+<p>Setup:</p>
+<ul>
+<li>SETUP initializes the model with a mix of turbulent and non-turbulent initial conditions.</li>
+<li>INITIAL-TURBULENCE controls the degree of initial turbulence.</li>
+</ul>
+<p>Parameters:</p>
+<ul>
+<li>COUPLING-STRENGTH is the amount of "diffusion," or the influence that cells have on one another.</li>
+<li>ROUGHNESS is the amount of turbulence that is added to each cell at every time step.</li>
+</ul>
+<p>Running the model:</p>
+<ul>
+<li>If AUTO-CONTINUE? is off, GO runs the model until it reaches the bottom (<code>min-pycor</code>).  If pressed again, GO will continue the same run at the top row of patches. If AUTO-CONTINUE? is on, upon reaching the bottom row of patches, GO will immediately continue the run from the top.</li>
+<li>AUTO-CONTINUE? will cause GO to automatically wrap back to the top and continue when switched on. If the model has reached a completely laminar state, and cannot produce any more turbulence, it will not run again.</li>
+</ul>
+<h2>THINGS TO NOTICE</h2>
+<p>Under what circumstances do darker, more "laminar" patches occur?  How is this dependent on the turbulence?</p>
+<p>Why do straight, non-budding turbulent streams eventually die out when ROUGHNESS is set to 0?  How come this doesn't occur so much when ROUGHNESS is greater than 0?</p>
+<h2>THINGS TO TRY</h2>
+<p>Set ROUGHNESS to 0:</p>
+<p>Change the COUPLING STRENGTH until you find the "critical value" that the COUPLING-STRENGTH must be above in order to produce long-lived turbulence.  This transition is very fast, and occurs within a very small range of the COUPLING-STRENGTH parameter.</p>
+<p>When the COUPLING-STRENGTH is above the critical value, what change do you see that might explain why the turbulence is able to perpetuate itself so well?</p>
+<p>With a COUPLING-STRENGTH above the critical value, about how much INITIAL-TURBULENCE is required for the turbulence to continue indefinitely?</p>
+<p>What happens when the COUPLING-STRENGTH is too high?  Can you give a physical interpretation of this?</p>
+<p>Think about these questions while experimenting with ROUGHNESS values above 0:</p>
+<p>How does ROUGHNESS affect turbulence in the fluid?</p>
+<p>How does ROUGHNESS affect the critical value required for long-lived turbulence?</p>
+<p>With higher ROUGHNESS values, is it necessary for there to be a certain amount of INITIAL-TURBULENCE in order to produce long-lived turbulence?  Why or why not?</p>
+<p>Is there a difference between turbulence caused by large COUPLING-STRENGTHs and the turbulence caused by friction?  If so, how do they differ?</p>
+<p>Can you give a physical interpretation of a ROUGHNESS of 0?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Although this is a continuous-valued CA, in a sense the system is discrete in that there is a sharp distinction between "turbulent" and "laminar" cells.  If you modify the COLOR-PATCH procedure to color the cells only as black or white depending on which of these two discrete states they are in, you will see a discrete "view" of this continuous model.</p>
+<p>In physical systems, "coupling strength" is a product of various factors, such as temperature, pressure, and viscosity.  Can you come up with a way to take these factors into account in this model?</p>
+<p>Surface tension is a subject common to fluid dynamics and turbulence.  Can you figure out a way to integrate it into the model?</p>
+<p>There are many ways to quantitatively analyze turbulence.  Try coming up with a plot of the entropy (see 'CA Stochastic' for an example), or the average size of the laminar regions.</p>
+<p>Can you create a turbulence model in two dimensions?</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>CA 1D Elementary - the elementary two-state 1D cellular automata</li>
+<li>CA Continuous - an elementary continuous 1D cellular automaton</li>
+<li>CA Stochastic - a probabilistic cellular automaton that exhibits critical phase transitions similar to this model</li>
+<li>Lattice Gas Automaton - two-dimensional wave propagation through a lattice gas</li>
+<li>Wave Machine - wave motion in a two-dimensional membrane</li>
+<li>Percolation - the percolation of oil through soil</li>
+</ul>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Criticality in cellular automata: H. Chate and P. Manneville. 1990 Physica D 45 122-135
+Pattern Dynamics in Spatiotemporal Chaos: Kunihiko Kaneko. 1989 Physica D 34 1-41
+Supertransients, spatiotemporal intermittency and stability of fully developed spatiotemporal chaos: Kunihiko Kaneko. 1990 Physics Letters A Vol 149, Number 2,3
+Shepherd, Dennis G. 1965. Elements of Fluid Mechanics.  Harcourt, Brace, &amp; World, Inc., New York, NY.</p>
+<p>Thanks to Eytan Bakshy for his work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2003).  NetLogo Turbulence model.  http://ccl.northwestern.edu/netlogo/models/Turbulence.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2003 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2003 --></div>
+      </div>
+    </main>
+  </body>
+</html>

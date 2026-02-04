@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Invasive Plants</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Invasive Plants</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Invasive%20Plants.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Invasive Plants.png" alt="Screenshot of Invasive Plants" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model showing how invasive plants spread. The simulation works at a timescale of 1 year per tick. Each patch represents a farm. When one becomes too infested, it may be subjected to treatment with weed killer, which will kill some percentage of invasive plants in the farm. To simulate the effect of runoff, a smaller portion of invasive plants in neighboring farms will also be killed.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each patch is assigned a number representing the level of infestation. The number is capped at 100, which represents the highest possible level of infestation.</p>
+<p>For each patch that has a positive level of infestation, there is a probability that it generates some seeds at each tick. The amount of seeds generated is controlled by the variable <code>seed-production-rate</code> and the level of infestation of the patch. Each seed in the model is meant to represent multiple seeds in the real world, which is why the numbers of generated seeds are relatively small. These seeds are moved away from the patch by a random distance between 0 and <code>spread-distance</code>.</p>
+<p>If a seed lands on a patch, the model generates a random number between 0 and 100. If the generated number is larger than the resistance, then the seed germinates, increasing the level of infestation on that patch. Seeds are consumed even if they fail to germinate. The level of resistance is visualized as a gray square laid on top of the patch. The bigger the size of the square, the higher the level of resistance.</p>
+<p>If a patch has a level of infestation greater than <code>weed-killer-threshold</code>, it becomes eligible for treatment with weed killer. At each tick, a number of eligible patches are selected for treatment. If a patch is selected, its infestation level will be reduced by <code>weed-killer-effectiveness</code>. The neighboring patches will also have their infestation level reduced by half of <code>weed-killer-effectiveness</code>. This is meant to simulate the effect of weed killer runoff.</p>
+<p>The level of infestation in each patch does not decrease on its own. This is because each patch represents a farm, which is an environment that is very supportive of plant growth. Because of this, invasive plants, which tend to be hardier than crops, would generally not die off without outside interventions.</p>
+<h2>HOW TO USE IT</h2>
+<p>Use the <code>initial-density</code> slider to choose the initial amount of infested patches. It could be a good idea to set this to 0 if you plan to manually draw a custom pattern of infested patch. Use the <code>initial-resistance-shape</code> chooser to pick a resistance pattern to use. If you prefer to draw a custom pattern, set this to none. Press <code>setup</code> to initialize the model.</p>
+<p>To draw a custom pattern of initial infestation, set <code>draw-mode</code> to <code>infestation</code> and press <code>draw</code>. Use the <code>draw-value</code> slider to set the desired infestation level. Click and drag on the view to set the infestation level of the patch under your cursor. If you need to clear the view, press the <code>clear</code> button. You can also draw a custom resistance pattern by setting <code>draw-mode</code> to <code>resistance</code> and following the same process.</p>
+<p>Press the <code>go</code> button to start the simulation. Alternatively, you can step through the simulation on a tick-by-tick basis by ensuring that the <code>go</code> button is <em>not</em> depressed and clicking <code>go-once</code>.</p>
+<p>Look at the <code>aggregate infestation</code> plot to see how the aggregate level of infestation changes over time. Look at the <code>infestation levels</code> plot to see the distribution of infestation levels across the patches.</p>
+<p>The following are descriptions of what the control widgets do:</p>
+<ul>
+<li>The <code>initial-density</code> slider controls what proportion of the patches are initially made infested.</li>
+<li>The <code>initial-resistance-shape</code> chooser can be used to put a pattern of resistant patches on the screen.</li>
+<li>The <code>draw-mode</code> chooser can be used to put the model into drawing modes in which the level of infestation or resistance can be set by drawing on the view.</li>
+<li>The <code>draw-value</code> slider controls the value the patch under the cursor is set to in drawing modes.</li>
+<li>The <code>show-seeds?</code> switch controls whether the seeds are displayed.</li>
+<li>The <code>weed-killer-rate</code> slider controls how many patches are treated with weed killer at each tick.</li>
+<li>The <code>weed-killer-threshold</code> slider controls the level of infestation at which a patch becomes eligible to be selected for treatment with weed killer.</li>
+<li>The <code>weed-killer-effectiveness</code> controls how much infestation is reduced when the weed killer is applied.</li>
+<li>The <code>seed-production-rate</code> controls how many seeds can be generated from an infested patch. The actual number of seeds is also influenced by the level of infestation and the amount of randomness.</li>
+<li>The <code>spread-distance</code> controls the maximum distance away from the parent patch that seeds can travel to.</li>
+</ul>
+<h2>THINGS TO NOTICE</h2>
+<p>Look at the overall shape of infested patches. How does it change over time?</p>
+<p>The plot widget on the right shows the aggregate level of infestation. How does the shape of the plot change as you adjust different parameters?</p>
+<p>In the initial configuration, the aggregate level of infestation oscillates at the beginning of the simulation. Why does this happen?</p>
+<h2>THINGS TO TRY</h2>
+<p>Disable weed killer applications by setting <code>weed-killer-rate</code> and try setting <code>seed-production-rate</code> to a very low value and <code>spread-distance</code> to a very high value. Take note of how the shape of infected patches changes over time. After that, set <code>seed-production-rate</code> to a very high value and <code>spread-distance</code> to a very low value. How do the resulting shapes compare?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try adding other factors that can affect how seeds spread. For example, you can simulate winds by making it more likely for seeds to move further in the direction of the wind.</p>
+<p>You can also try making it possible to choose a different strategy for targeting infested patches. For example, selecting a patch and then picking a number of closest patches that have a level of infestation over a threshold.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The <code>draw-plants</code> and <code>draw-resistance</code> procedures in this model use the primitive <code>mouse-down?</code> to check if the mouse button is pressed. It uses the <code>mouse-xcor</code> and <code>mouse-ycor</code> to figure out where the cursor is on the view.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is loosely based on ideas in the following paper:
+Auld, B. A., &amp; Coote, B. G. (1980). <em>A model of a spreading plant population</em>. Oikos, 287-292.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Mongkhonvanit, K. and Wilensky, U. (2025).  NetLogo Invasive Plants model.  http://ccl.northwestern.edu/netlogo/models/InvasivePlants.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2025 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2025 Cite: Mongkhonvanit, K. --></div>
+      </div>
+    </main>
+  </body>
+</html>

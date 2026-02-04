@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Merge Sort</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Merge Sort</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Computer%20Science/Unverified/Merge%20Sort.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Computer Science/Unverified/Merge Sort.png" alt="Screenshot of Merge Sort" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is a visual demonstration of a standard sort algorithm called merge sort.  The algorithm reorders, or permutes, n numbers into ascending order.  This is accomplished by dividing the numbers into groups and then merging smaller groups to form larger groups. Order is maintained as the lists are merged so when the algorithm finishes there is only one sorted list containing all n items.</p>
+<p>Note that it is possible to express merge sort in NetLogo much more concisely than is done in this model.  Since this model aims to demonstrate the sort algorithm visually, the code is more complex than would be needed if the model only needed to sort the numbers.</p>
+<h2>HOW IT WORKS</h2>
+<p>We start out with as many independent groups as we have elements.  As the algorithm progresses through the list, it merges each adjacent pair of groups; thus, after each pass, the number of groups is halved.</p>
+<p>To merge two groups:
+1. Compare the first elements of the two groups to each other
+2. Place the smallest/largest element (depending on the increasing-order? switch) of the two in a third group
+3. Remove that element from its source group
+4. Repeat until one of the source groups is empty
+5. Place all of the remaining elements from the non-empty source group onto the end of the third group
+6. Substitute, in place, the third group for the two source groups</p>
+<p>We do this merge repeatedly for each set of two groups until there is only one group left.  This final group is the original set of numbers in sorted order.</p>
+<p>The number of steps required to sort n items using this algorithm is the ceiling of logarithm (base 2) of n.  Each step requires at most n comparisons between the numbers.  Therefore, the time it takes for the algorithm to run is about n log n.  Computer scientists often write this as O(n log n) where n is how many numbers are to be sorted.</p>
+<h2>HOW TO USE IT</h2>
+<p>Change the value of the NUMBER-OF-ELEMENTS slider to modify how many numbers to sort.</p>
+<p>Pressing SETUP creates NUMBER-OF-ELEMENTS random values to be sorted.</p>
+<p>STEP (1 ITEM) merges one number into its new group.</p>
+<p>STEP (1 ROW) does one full round of group merges.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Groups are represented by color.  Numbers in the same group have the same color.  When two groups merge, the numbers take the color of the smallest/largest element in the new group.  Can you predict what would be the final color of all elements before starting?</p>
+<p>Would merging more than two groups at a time lead to the elements getting sorted in fewer steps?  Would this change make the algorithm any faster?</p>
+<h2>THINGS TO TRY</h2>
+<p>We stated above that the algorithm will take at most a constant factor times n log n time to execute.  Can you figure out why the constant factor is needed to make this statement accurate?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Can you make the elements draw their paths across the view?</p>
+<p>There are many different sorting algorithms. You can find a few described at https://en.wikipedia.org/wiki/Sorting_algorithm.  Try implementing the different sorts in NetLogo and use BehaviorSpace to compare them.  Do different sorts perform better with different input sets (uniformly random, nearly sorted, reverse sorted, etc.)?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses lists extensively.</p>
+<p>Note that NetLogo includes SORT and SORT-BY primitives; normally, you would just use one of these, rather than implementing a sort algorithm yourself.  SORT arranges items in ascending order; SORT-BY lets you specify how items are to be ordered.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2005).  NetLogo Merge Sort model.  http://ccl.northwestern.edu/netlogo/models/MergeSort.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 --></div>
+      </div>
+    </main>
+  </body>
+</html>

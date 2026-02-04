@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Color Fractions</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Color Fractions</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/Color%20Fractions.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Mathematics/Color Fractions.png" alt="Screenshot of Color Fractions" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>Color Fractions displays the decimal form of a fraction as a pattern of colors.  This lets you investigate how the resulting patterns relate to the original fraction.</p>
+<h2>HOW IT WORKS</h2>
+<p>The program computes the digits of the decimal the same way you would do it using long division on paper.</p>
+<p>It takes the numerator and divides it by the denominator; the result is a digit.  The remainder of the division, we multiply by 10 and take as the new numerator, then repeat.</p>
+<p>For example these would be the steps for computing 1/7:</p>
+<ul>
+<li>7 goes into 1  0 times; 10 times remainder is 10</li>
+<li>7 goes into 10 1 time ; 10 times remainder is 30</li>
+<li>7 goes into 30 4 times; 10 times remainder is 20</li>
+<li>7 goes into 20 2 times; 10 times remainder is 60</li>
+<li>7 goes into 60 8 times; 10 times remainder is 40</li>
+</ul>
+<p>And so on forever.  Thus the result is 0.1428...</p>
+<p>To make the pattern of colors, each digit, 0 through 9, is shown in its own color.  For example 0 is gray, 1 is light red, 2 is orange, etc.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press the SETUP button, then press GO.</p>
+<p>Now adjust the numerator and denominator sliders to make any fraction.</p>
+<p>You can also use the WIDTH slider to change the total number of digits per row.  Changing the width can make patterns easier or harder to see.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The same fraction always gives the same pattern.</p>
+<p>Some patterns stop after a few digits, while others repeat forever.  (Do all fractions repeat?)</p>
+<p>Do two fractions ever give the same pattern?</p>
+<h2>THINGS TO TRY</h2>
+<p>What kinds of patterns can you generate with fractions? Can you create a checkerboard?  Can you make vertical stripes?</p>
+<p>What happens if you try different numerators with the same denominator?  What do the patterns you get have in common?  Try this experiment with several different denominators.</p>
+<p>The "period" of a fraction is how many digits repeat to make the pattern.  For example, 1/3 is 0.33333... which repeats the same single digit over and over again, so the period is 1.  Look at the pattern for the fraction 1/7; the period is 6.  And so on.</p>
+<p>How is the period of a fraction 1/n related to n?  How are the periods of the fractions family 1/7, 2/7, ... related?</p>
+<p>How many fractions can you find that have the same number of repeating digits?</p>
+<p>What fraction best approximates pi (3.141592...)?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Change the colors so odd numbers are all one color and even numbers are another color.</p>
+<p>Change the colors so you only use one color, but vary the lightness/darkness.</p>
+<p>Modify the program so you can visualize square roots and pi.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Patch labels are used to show the digits.</p>
+<p>You can use the <code>sort</code> primitive to created a list of patches sorted left-to-right, top-to-bottom.  That is necessary in this model because we need the patches to execute in the same order at every tick, rather than a different random order every tick as would happen if we just said <code>ask patches</code>.</p>
+<h2>RELATED MODELS</h2>
+<p>Division</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is adapted from a few resources that are no longer available: <a href="http://tapor.ca/home">Color Calculator Information for teachers and Color Calculator</a>.</p>
+<p>This model implements activities originally published in:
+Nathalie Sinclair, Rina Zazkis and Peter Liljedahl.  Number Worlds: Visual and Experimental Access to Elementary Number Theory Concepts.  International Journal of Computers for Mathematical Learning, Volume 8, Number 3, pages 235 - 263, January 2003.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2005).  NetLogo Color Fractions model.  http://ccl.northwestern.edu/netlogo/models/ColorFractions.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 --></div>
+      </div>
+    </main>
+  </body>
+</html>

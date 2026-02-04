@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GenDrift T reproduce</title>
+    <link rel="stylesheet" href="../../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>GenDrift T reproduce</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Evolution/Genetic%20Drift/GenDrift%20T%20reproduce.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../../models/Sample Models/Biology/Evolution/Genetic Drift/GenDrift T reproduce.png" alt="Screenshot of GenDrift T reproduce" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is an example of genetic drift.  It shows that competing breeds of turtles, each reproducing with equal likelihood on each turn, will ultimately converge on one breed without any selection pressure forcing this convergence.  The idea, explained in more detail in Dennett's "Darwin's Dangerous Idea", is that trait drifts can occur without any particular purpose or 'selecting pressure'.</p>
+<h2>HOW IT WORKS</h2>
+<p>The model starts with a random distribution of colored turtles.  They move by wiggling randomly across the world. Each turn, a turtle produces between 0 and 4 offspring.  If the total number of turtles is greater than the original number, then turtles are randomly killed until the original number is restored. After enough turns, a color will gain a slight dominance. By statistical advantage, a dominant color becomes more likely to win the entire grid.   However, because the process is random, there will usually be a series of dominant colors before one color finally wins.   Equally important is the fact that a color can never come back once it dies out.</p>
+<h2>HOW TO USE IT</h2>
+<p>The "setup" button initializes the model.
+The "go" button runs the model.
+Use the "colors" slider to select the number of competing colors.
+The "number" slider sets the initial number of turtles.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice that often colors can get to quite a high population but still fail to win the race.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The grim reaper in the procedure <code>death</code> does a random harvesting of the population to keep it roughly constant.  This might be somewhat like a natural environment with a limited food supply.  Can you think of other ways to write this procedure?  Are the results affected?</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>GenDrift P global</li>
+<li>GenDrift P local</li>
+<li>GenDrift T interact</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo GenDrift T reproduce model.  http://ccl.northwestern.edu/netlogo/models/GenDriftTreproduce.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1997 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

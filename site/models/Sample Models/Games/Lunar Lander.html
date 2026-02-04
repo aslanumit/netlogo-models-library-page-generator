@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lunar Lander</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Lunar Lander</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Games/Lunar%20Lander.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Games/Lunar Lander.png" alt="Screenshot of Lunar Lander" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model is based on the arcade game, Lunar Lander.  The object of the game is to land the red lunar module on the blue landing pad on the surface of the moon without crashing or breaking the module.</p>
+<p>The lunar module is fragile, so you have to be moving extremely slowly to prevent damage when you touch down. You have one thruster that exerts a force depending on the tilt of the module.  You have the ability to tilt right and left.</p>
+<h2>HOW TO USE IT</h2>
+<p>Buttons:
+SETUP starts the game over by creating a new surface for you to navigate and poising your module above that surface, ready for descent.
+GO starts the game.  Be ready; the module will start descending fairly quickly.
+LEFT and RIGHT tilt the module back and forth
+THRUST fires your rockets according to your current tilt.</p>
+<p>Sliders:
+PLATFORM-WIDTH controls the width of the blue landing pad created at setup, a wider landing pad makes an easier target.
+TERRAIN-BUMPINESS controls the variation in the elevation of the lunar surface.  More bumpiness may mean you will have large obstacles to maneuver around.
+THRUST-AMOUNT controls the magnitude of the force of your rockets.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>When terrain-bumpiness is very high some of the randomly generated surfaces are not navigable.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try to land the module with the fewest adjustments.</p>
+<p>Increase the THRUST-AMOUNT to make the game harder.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add one or more plots to the model. For example, you might plot the position, velocity, and/or acceleration of the module, in the plane or just on the Y axis.</p>
+<p>Currently, collisions with the edges of the module are not detected, so you can graze the side of a peak with the edge of the module without crashing.  It would be more realistic if these crashes were detected.</p>
+<p>Add levels to the game by continually making the terrain bumpier, the platform smaller, or by some other method of making the game more difficult, perhaps alien spaceships.</p>
+<p>Try to write a robot pilot that will automatically land the module safely.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses the <code>random-poisson</code> reporter to create the terrain.  See its entry in the NetLogo Dictionary, and also http://mathworld.wolfram.com/PoissonDistribution.html.</p>
+<p>The frame rate setting is used to control the speed of the game.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>Projectile Attack</li>
+<li>Gravitation</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2005).  NetLogo Lunar Lander model.  http://ccl.northwestern.edu/netlogo/models/LunarLander.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 --></div>
+      </div>
+    </main>
+  </body>
+</html>

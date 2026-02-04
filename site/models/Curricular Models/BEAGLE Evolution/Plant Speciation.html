@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plant Speciation</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Plant Speciation</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/BEAGLE%20Evolution/Plant%20Speciation.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/BEAGLE Evolution/Plant Speciation.png" alt="Screenshot of Plant Speciation" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model of parapatric speciation, where two subpopulations of a species split into two non-interbreeding species while still remaining in contact with each other. This is in contrast to allopatric speciation, where two geographically separated subpopulations of a species diverge into two separate species. The specific situation modeled is that of the speciation of a metal-tolerant variety of plant on the boundary between clean and contaminated ground.</p>
+<p>The model is inspired by a paper by Antonovics (2006) which describes a real-life example of a subpopulation of a species of grass on the boundary of a contaminated region that has developed an offset flowering time from the surrounding grass.</p>
+<p>For a short relevant background reading try https://en.wikipedia.org/wiki/Speciation</p>
+<h2>HOW IT WORKS</h2>
+<p>The model simulates individual plant organisms that inhabit a rectangular grid of patches. Each tick, the model simulates either one day in a year of a plant or one year (a complete generation of plant life): the currently existing plants fertilize each other, produce offspring, and may die (depending if the plants are set to be annual or perennial plants).</p>
+<p>The environment the plants inhabited has two zones: the left zone (green) is normal earth, but the right zone (blue) is contaminated with metals from a nearby mine. The initial population can live there but has little tolerance for metals and prefers the clean zone on the left. Tolerance for metals is a heritable attribute that can change via mutation and recombination over the generations. Plants with a low tolerance for metals are best suited to live on the left side of the environment, and those with a high tolerance are best suited to live on the right side.</p>
+<p>Plants also have a flowering time, which determines which other plants the plant can fertilize and be fertilized by. Plants that do not flower during any of the same days of the year cannot fertilize each other.  Plants that flower on more of the same days have a better chance of fertilizing each other than plants that flower on less of the same days.  While plants can fertilize themselves, only plants within a certain radius can fertilize each other.</p>
+<p>Metal tolerance and flowering time are represented as real numbers; metal tolerance is always between 0.0 (very low tolerance) and 1.0 (very high tolerance).</p>
+<p>The key mechanism that drives speciation to emerge in this model is a fitness function. This fitness function (f) is dependent on metal in the ground (m) and tolerance of the plant to metal (t).  Metal tolerance slows plant growth down in healthy soil, but allows it to survive and grow in soil with heavy metal concentrations.</p>
+<p>Fitness is a hyperbolic paraboloid function that can be visualized as a linear function dependent on tolerance whose slope and y-intercept also vary linearly with respect to increases in metal in the soil.  This linear function would have the following slopes in various metal levels:</p>
+<ul>
+<li>negative slope in clean ground -&gt; high tolerance is bad</li>
+<li>positive slope in dirty ground -&gt; high tolerance is good</li>
+<li>slope of zero: in between -&gt; no benefit or disadvantage to any tolerance level</li>
+</ul>
+<p>This is a model of a "tradeoff", where specializing in one variation of a trait is advantageous in one environmental extreme, but specializing in another variation of the trait is advantageous in a different environmental extreme. Intermediate "hybridization," or averaging between both variations, is disadvantageous in both environments or at least not advantageous in any.  Such tradeoff models can lead to speciation when other traits permit a population to reproductively fragment and isolate itself into non-interbreeding sub populations.</p>
+<p>The hyperbolic paraboloid or saddle shaped function that is used in the model is dependent on metal amount and tolerance.  A general form of this fitness function would be the following:
+  fitness =  (1 +  (A * t * m + B * t * m - C * t * m) - ( A * t + B * m) )</p>
+<ul>
+<li>where fitness is 1 at clean ground and no tolerance</li>
+<li>A is the penalty (0 to 1) for having tolerance in clean ground: so fitness is (1 - A)</li>
+<li>B is the penalty (0 to 1) for having the highest level of metal in the ground and no tolerance, so  fitness is (1 - B)</li>
+<li>C is the penalty (0 to 1) for having the highest tolerance in the highest level of metal, so fitness is (1 - C)</li>
+</ul>
+<p>As long as C is less than both B and A, then you will have a fitness function that may drive the emergence of speciation. The fitness function has been hard coded in the model to use A = .4 and B = .4 and C = 0 :</p>
+<pre><code>   set fitness (1 - m) * (1 - .4 * t) + m * (1 - .4 * (1 - t))
+</code></pre>
+<h2>HOW TO USE IT</h2>
+<p>PLANT-TYPE: When set to "annual", all old plants die at the end of the year. "Perennial" allows some old plants to remain behind to re-flower the next year.</p>
+<p>VISUALIZE-TIME-STEPS: This can be set to "days" so that the flowering of the plants can be visualized during the year and the growth of seedlings and death of old plants can be visualized at the end of the year.  When set to "years" the model skips these visualizations and runs much quicker.</p>
+<p>GENETICS-MODEL: Allows you to change the recombination rules for sexual reproduction.  If set to "avg. genotype", the parent genotypes are averaged in the offspring.  This is a simplification of hybridization outcomes. Speciation should be more difficult to achieve at this setting since variation is removed more readily than using Mendelian genetics models (that retain variation in genotype over many generations through recessive alleles).  However, speciation can still emerge at this setting.  If set to "sex linked genes" the genotype is inherited from the male (pollen) only.</p>
+<p>SHOW-LABELS-AS: Shows the value for "metal in soil" for each patch, the "metal tolerance" for each plants", or the "flowering time" for each plant.</p>
+<p>FRONTIER-SHARPNESS: Controls the width of the gradient between the clean and contaminated sides of the environment.</p>
+<p>FLOWER-DURATION: This slider determines how long a flower is open--two plants whose flowering times are separated by more than this margin cannot fertilize each other. Even when two plants flower close enough together to fertilize each other, fertilization is less likely the larger the difference in flowering time.</p>
+<p>PLANTS-PER-PATCH: The maximum number of plants that can live on the same patch. If there are too many plants in a patch those least fitted to the local metal concentrations will die.</p>
+<p>CHANCE-TOLERANCE-MUTATION, CHANCE-FLOWER-TIME-MUTATION, FLOWER-TIME-MUTATION-STDEV, AND TOLERANCE-MUTATION-STDEV:  These sliders control the probability and magnitude of mutations in metal tolerance and flowering time.</p>
+<p>There are a variety of plots. The histograms show the distribution of metal tolerance and flowering time for plants on the left and right side of the environment. Graphs on the right show the mean tolerance and flowering time for the left and right sides of the environment over time. The "simultaneous flowering" graph shows the probability that a randomly chosen plant from the left flowers at the same time as a randomly chosen plant from the right--that is, the probability that they can fertilize each other. If this nears 0 speciation has occurred--the left and right sides are no longer interbreeding. Though the model only rarely reaches this value as 0, it does often achieve stable states very close to 0, showing that the first step in speciation has been achieved -- that a population has split into two sub-populations that are co-evolving behavior to reinforce sexual isolation from one another.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The simplest case is to turn off all recombination and run the model with the default settings.  Notice that metal tolerance mutations will accumulate in a few individuals before simultaneous flower time begins to drop.  Speciation (sexual isolation) emerges after specialization of the population into two groups, to decrease gene flow between the groups and further increase odds of survival for offspring.</p>
+<p>When the whole population interbreeds there is a homogenizing force that keeps the plants on the right from becoming too metal tolerant--their genes are constantly diluted by genes from the intolerant left-side plants. Eventually, there will be a runaway effect where the left and right sides develop somewhat different flowering times (due to genetic drift), which decreases the flow of genes between the sides allowing the right to develop higher metal tolerance. This makes it increasingly disadvantageous to breed with left-side plants, creating selection pressure to increase the difference in flowering times further until the left and right are completely non-interbreeding and thus might be called separate species--this is called "reproductive isolation", the last step of speciation.</p>
+<h2>THINGS TO TRY</h2>
+<p>If you decide to run the model with plants as annuals, decrease the DEATH-PER-YEAR (to around 10%) so that enough plants (including seedlings) are alive for the next generation, and increase the DEATH-PER-YEAR value if running with plants as perennials (so that old plants die off more readily and don't remain in ground blocking out new arrivals).</p>
+<p>If you change the FRONTIER-SHARPNESS to make a more gradual shift in metal concentrations between the left and right sides of the environment, speciation will still emerge.</p>
+<p>Sometimes flower-times for one population become isolated between two sub-groups in the other population, making for 3 effectively non-interbreeding sub-populations.  This shows how one speciation event can fragment the reproductive compatibility of the other population leading to even more possible species.</p>
+<p>Because of what is described above, parapatric speciation (in which two budding species continue to exchange genes as they diverge) is a rare form of speciation. More commonly accepted is the idea of allopatric speciation, which avoids these difficulties by positing that species arise when two subpopulations are separated completely, so that they cannot exchange genes and there is no homogenizing force preventing them from developing reproductive isolation. However, the process observed in the model where partial reproductive isolation allows increased differentiation due to selection, which in turn encourages more complete reproductive isolation, is often held to "reinforce" allopatric speciation when the two separated subpopulations come back into contact with each other.</p>
+<p>Playing with the other parameters of the model can alter the details of what happens; in particular the flow of genes between the sides is affected by fertilization-radius and flower-duration in proportion to the world size.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Allopatric speciation could be modeled by introducing physical barriers into the environment.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Complex plotting procedures:  The histograms plot the populations of two regions each with a different color pen.</p>
+<h2>RELATED MODELS</h2>
+<p>All the models from the BEAGLE curriculum.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the BEAGLE curriculum (http://ccl.northwestern.edu/rp/beagle/index.shtml)</p>
+<p>Antonovics, J. (2006). "Evolution in closely adjacent plant populations X: long-term persistence of reproductive isolation at a mine boundary". Heredity, 97(1), p33-37.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M., McGlynn, G. and Wilensky, U. (2012).  NetLogo Plant Speciation model.  http://ccl.northwestern.edu/netlogo/models/PlantSpeciation.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2012 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2012 Cite: Novak, M., McGlynn, G. --></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Random Network</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Random Network</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/IABM%20Textbook/chapter%205/Random%20Network.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/IABM Textbook/chapter 5/Random Network.png" alt="Screenshot of Random Network" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is from Chapter Five of the book "Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo", by Uri Wilensky &amp; William Rand.</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<p>This model is in the IABM Textbook folder of the NetLogo Models Library. The model, as well as any updates to the model, can also be found on the textbook website: http://www.intro-to-abm.com/.</p>
+<h2>WHAT IS IT?</h2>
+<p>The theory of random networks was first introduced by mathematicians Paul Erdős and Alfréd Rényi in 1959. There are several different models for random networks. The most well known are two variants called Erdős–Rényi networks. This model shows four different ways to create random networks, 2 of which create the variants of the classic Erdős–Rényi networks.</p>
+<h2>HOW IT WORKS</h2>
+<p>SETUP creates NUM-NODES turtles and gives them a random location in the world.
+There are four different wiring methods illustrated:</p>
+<ol>
+<li>
+<p>WIRE1: Each turtle asks one other turtle to link to it.</p>
+</li>
+<li>
+<p>WIRE2: Pick a random turtle and ask it to try to link to another random turtle. This is done NUM-NODES times.</p>
+</li>
+<li>
+<p>WIRE3: The classic Erdős–Rényi random network. Creates exactly NUM-LINKS links.</p>
+</li>
+<li>
+<p>WIRE4: A variant of the classic Erdős–Rényi random network. For each pair of turtles, creates a link between them wth probability WIRING-PROB.</p>
+</li>
+</ol>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to create the nodes.</p>
+<p>Pressing any of the WIRE buttons will create random networks using the different algorithms.</p>
+<p>For a classic Erdős–Rényi random network, set the NUM-LINKS slider and then press WIRE3 to create that number of links in your network. For a variant of the Erdős–Rényi random network that has a fixed probability for each pair of nodes to have a link, you can set the WIRING-PROB slider and then press WIRE4.</p>
+<p>There are three monitors:</p>
+<ol>
+<li>
+<p>MAX-DEG shows the degree of the node with the most links.</p>
+</li>
+<li>
+<p>MIN-DEG shows the degree of the node with the least links.</p>
+</li>
+<li>
+<p>The #LINKS monitor shows the total number of links in the network.</p>
+</li>
+</ol>
+<h2>THINGS TO NOTICE</h2>
+<p>For each of the four wiring methods, what kind of structure does the resulting network have?</p>
+<p>Does each method produce the same number of links each time? How do the MIN-DEGREE and MAX-DEGREE vary across the wiring methods?</p>
+<h2>THINGS TO TRY</h2>
+<p>For the two variants of the Erdős–Rényi random network, do the min and max degrees follow the number of links proportionally? Can you think of why or why not?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Use the bundled <a href="http://ccl.northwestern.edu/netlogo/docs/nw.html">NetLogo network extension</a> and run some basic network metrics on the various random networks. Are they structurally similar? If not, how are they different?</p>
+<h2>RELATED MODELS</h2>
+<p>See other models in the Networks section of the Models Library, such as Preferential Attachment.</p>
+<p>See also Network Example, in the Code Examples section of the Models Library.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Nodes are turtle agents and edges are link agents.</p>
+<p>The maximum value for the NUM-LINKS slider is dynamic. This is done in order to prevent the model from ending up in an infinite while-loop in the WIRE3 procedure. The maximum value is either 1000, or the (number of nodes * the number of nodes / 2), whichever is smaller.</p>
+<p>Though it is not used in this model, there exists a <a href="http://ccl.northwestern.edu/netlogo/docs/nw.html">network extension for NetLogo</a> (bundled with NetLogo) that has many more network primitives.</p>
+<p>Finally, in the WIRE4 procedure, we use the following code to loop through each pair of turtles:</p>
+<pre><code>ask turtles [
+  ask turtles with [ who &gt; [ who ] of myself ] [
+    ;; do something for that pair of turtles
+  ]
+]
+</code></pre>
+<p>This is of the few situations where using the WHO number (which uniquely identifies a turtle) can be handy: by having each turtle from the outer loop asking only turtles with a greater WHO number than itself in the inner loop, we make sure that each possible pair of turtles if considered only once.</p>
+<h2>HOW TO CITE</h2>
+<p>This model is part of the textbook, “Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo.”</p>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U., Rand, W. (2008).  NetLogo Random Network model.  http://ccl.northwestern.edu/netlogo/models/RandomNetwork.  Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the textbook as:</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2008 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2008 Cite: Wilensky, U., Rand, W. --></div>
+      </div>
+    </main>
+  </body>
+</html>

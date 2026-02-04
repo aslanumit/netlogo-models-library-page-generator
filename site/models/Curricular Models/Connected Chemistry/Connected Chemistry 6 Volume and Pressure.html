@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Connected Chemistry 6 Volume and Pressure</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Connected Chemistry 6 Volume and Pressure</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Connected%20Chemistry/Connected%20Chemistry%206%20Volume%20and%20Pressure.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Connected Chemistry/Connected Chemistry 6 Volume and Pressure.png" alt="Screenshot of Connected Chemistry 6 Volume and Pressure" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model explores the relationship between the volume of a gas container and the pressure of a gas in that container.  This model is part of the "Connected Chemistry" curriculum http://ccl.northwestern.edu/curriculum/ConnectedChemistry/ which explore the behavior of gases.</p>
+<p>Most of the models in the Connected Chemistry curriculum use the same basic rules for simulating the behavior of gases.  Each model highlights different features of how gas behavior is related to gas particle behavior.</p>
+<p>In all of the models, gas particles are assumed to move and to collide, both with each other and with objects such as walls.</p>
+<p>In this model, the gas container has an adjustable volume.  The number of particles can also be changed.  Temperature is held constant throughout the model.  In this model, students can also look at the relationship between the number of particles and pressure, as well as the volume of the gas container and pressure.  Alternatively, they can change both the number of particles and the volume of the gas container, and see how these combined changes affect pressure.  These models have been adapted from the model GasLab Pressure Box.</p>
+<h2>HOW IT WORKS</h2>
+<p>Particles are modeled as perfectly elastic with no energy except their kinetic energy, due to their motion.  Collisions between particles are elastic.  Particles can be color-coded by speed with the SHOW-SPEED-AS-COLOR? chooser.  For example, selecting red-green-blue makes colors slow particles in blue, medium-speed particles in green, and fast particles in red.</p>
+<p>The exact way two particles collide is as follows:
+1. Two turtles "collide" when they find themselves on the same patch.
+2. A random axis is chosen, as if they are two balls that hit each other and this axis is the line connecting their centers.
+3. They exchange momentum and energy along that axis, according to the conservation of momentum and energy.  This calculation is done in the center of mass system.
+4. Each turtle is assigned its new velocity, energy, and heading.
+5. If a turtle finds itself on or very close to a wall of the container, it "bounces," reflecting its direction but keeping its speed.</p>
+<h2>HOW TO USE IT</h2>
+<p>Buttons:
+SETUP - sets up the initial conditions set on the sliders.
+GO/STOP - runs and stops the model.
+MOVE WALL - allows the user to move the orange wall to the right of its current location (so as to permit adiabatic free expansion of the gas), by clicking with the mouse in the view.  If the model is currently running (i.e., if GO/STOP is depressed), clicking on MOVE WALL will stop it.  To continue running the model after moving the wall, press GO/STOP again.</p>
+<p>Sliders:
+NUMBER - sets the number of gas particles in the box when the simulation starts.
+INITIAL-WALL-POSITION helps adjust the initial volume by setting the location of the orange box wall.</p>
+<p>Switches:
+LABELS? turn particle id labels on or off</p>
+<p>Choosers:
+SHOW-SPEED-AS-COLOR? allows you to visualize particle speed using a color palette.
+- The "blue-green-red" setting shows the lower half of the speeds of the starting population as blue, and the upper half as red.
+- The "violet shades" setting shows a gradient from dark violet (slow) to light violet (fast).
+- The "all green" setting shows all particles in green, regardless of speed.
+- The "custom color" setting, referenced in the Pedagogica version of this model, allows the user to modify the color of one or more particles, without having to worry that the particles will be recolored with each tick of the clock (as is the case for the other color options).</p>
+<p>Monitors:
+CLOCK - number of clock cycles that GO has run.
+VOLUME - the volume of the box.
+    Volume is computed based on what it would be using the 3D view.  The can be visualized as the inner gas volume (yellow walls and orange wall) that is 1 patch width deep in the z direction.</p>
+<p>PRESSURE - the total pressure in the box.
+WALL HITS PER PARTICLE - the average number of wall hits in one clock tick</p>
+<p>Plots:
+- VOLUME VS. TIME: plots the volume of the gas container over time.  Volume is computed based on what it would be using the 3D view.  The can be visualized as the inner gas volume (yellow walls and orange wall) that is 1 patch width deep in the z direction.
+- PRESSURE VS. TIME: plots the average gas pressure inside of the box over time.</p>
+<ol>
+<li>Adjust the INITIAL-NUMBER and/or the INITIAL-WALL-POSITION slider.</li>
+<li>Press the SETUP button</li>
+<li>Press GO/STOP and observe what happens.</li>
+<li>Press MOVE WALL.  The particle motion will pause momentarily.</li>
+<li>Then move your cursor to a spot inside the WORLD &amp; VIEW, to the right of the current position of the orange wall.  Click on this spot and the wall will move and the particle motion will resume.</li>
+<li>Observe the relationship between the Volume vs. Time graph and Pressure vs. Time graph.</li>
+</ol>
+<h2>THINGS TO NOTICE</h2>
+<p>When you move the wall, the faster particles move toward it first.  Does this type of diffusion occur in reality?</p>
+<p>There are combinations of NUMBER of particles and volumes for the container that yield the same pressure.  What do you notice about the density of the gas particles in these situations:  e.g. double the number of particles and double the volume?</p>
+<h2>THINGS TO TRY</h2>
+<p>Find a mathematical model that related volume to pressure by recording and graphing various volume and pressure values in the model.</p>
+<p>What combination of volume and number of particles gives the highest pressure?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add an external force on the orange wall and a mass for the wall.  Allow it to move related to the forces that are on it from particle hits and the external force.</p>
+<p>Model two gas chambers side both filled with gases side by side, with a movable wall in between.</p>
+<p>Add a heated/cooled wall on the left side of the model.  If you combine this with an external force on the orange wall, what happens to the motion of the wall if you alternatively heat and cool the left wall?</p>
+<h2>RELATED MODELS</h2>
+<p>See GasLab Models
+See other Connected Chemistry models.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is part of the Connected Chemistry curriculum.  See http://ccl.northwestern.edu/curriculum/chemistry/.</p>
+<p>We would like to thank Sharona Levy and Michael Novak for their substantial contributions to this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2005).  NetLogo Connected Chemistry 6 Volume and Pressure model.  http://ccl.northwestern.edu/netlogo/models/ConnectedChemistry6VolumeandPressure.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>To cite the Connected Chemistry curriculum as a whole, please use:</p>
+<ul>
+<li>Wilensky, U., Levy, S. T., &amp; Novak, M. (2004). Connected Chemistry curriculum. http://ccl.northwestern.edu/curriculum/chemistry/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 ConChem --></div>
+      </div>
+    </main>
+  </body>
+</html>

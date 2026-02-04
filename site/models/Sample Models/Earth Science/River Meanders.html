@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>River Meanders</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>River Meanders</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Earth%20Science/River%20Meanders.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Earth Science/River Meanders.png" alt="Screenshot of River Meanders" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates the meandering of a river along its "middle course", where the gradient of the landscape is gradual and the river runs within a U-shaped river valley. The evolution of the shape of the river is governed by the path of its highest-velocity flow, as well as erosion and deposition.</p>
+<h2>HOW IT WORKS</h2>
+<p>There are three main agents: Land patches, Water turtles and Flow turtles.</p>
+<p>Land patches are green, and simply represent land where the river does not run through.</p>
+<p>Water turtles, or "water tiles", are blue, and represent a segment of water, containing properties that describe the physical characteristics of this segment, such as depth, the amount of sediment deposited, and whether it is a source or drain. When a connected path of "water tiles" is made between a source and a drain, a "flow gradient" is formed to represent the direction of water flow.</p>
+<p>Flow turtles are white, and represent the highest-velocity flow of the water. They move along the "flow gradient" from source to drain, as well as along the center of the river channel, as this is where water flows the fastest in real-life streams. These flow turtles are the main driving force for erosion and deposition along the river.</p>
+<h3>Deposition</h3>
+<p>Each tick, sediment is deposited on all water tiles, increasing their "sediment-amount" by 1%. When this amount reaches 100%, the water-tile is converted to a Land patch.</p>
+<p>When a Flow passes over a water tile, it "washes away" part of the deposited sediment, decreasing the "sediment-amount" by 15%. Thus, water tiles that experience little flow will eventually accumulate too much sediment and turn into Land patches.</p>
+<h3>Erosion</h3>
+<p>When a Flow turtle collides with a Land patch, it "erodes" the Land, converting it into a water tile.</p>
+<h2>HOW TO USE IT</h2>
+<p>When starting the model, simply press SETUP to initialize the land patches with a vertical line of water tiles along the center, representing a straight river. Pressing GO will commence the flow of flow turtles whose movements represent the path of fastest flow.</p>
+<p>The two key switches labeled DEPOSITION? and EROSION? serve to enable or disable their respective mechanic, allowing you to observe how each mechanic affects the behavior of the river individually.</p>
+<p>The four sliders are parameters that affect the flowing mechanics of the flow turtles. MAX-FLOW-SPEED determines the maximum speed flows will move at. FLOW-ACCELERATION determines how fast flow turtles will be accelerated down the flow gradient. RIVER-CENTER-ACCELERATION determines how fast flow turtles will be accelerated towards the center (i.e., deepest) part of the river. DOWNWARDS-INCLINE-FORCE determines the magnitude of the constant downwards force, essentially representing how steep the land gradient is.</p>
+<p>The graph plots the sinuosity of the river over time. Sinuosity is the ratio of the path length of the river and the Euclidean distance between the two endpoints of the river. It is a measure of how much a river meanders; a sinuosity of 1 correlates to a completely straight river, and this value increases the more the path of the river deviates from the shortest path.</p>
+<p>The monitor displays the exact sinuosity, The river would be categorized according to  conventional classes of sinuosity, where sinuosities between 1 and 1.05 are “almost straight”, between 1.05 and 1.25 “winding”, between 1.25 and 1.50 “twisty”, and above 1.50 “meandering”.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Closely observe how erosion and deposition affect the depth of the river, and how that in turn affects the movement of the flow turtles, which leads to more erosion and deposition. This is the key positive feedback loop that drives the emergence of meanders along rivers.</p>
+<p>Observe what causes the initially straight river to begin winding.</p>
+<p>Observe how meanders are eventually cut-off once the main flow of the stream diverts itself, resulting in the formation of oxbows.</p>
+<p>Keep an eye on the sinuosity graph as the river begins to meander, specifically on the rate at which sinuosity increases. Also, notice how once meander cut-offs become frequent, the sinuosity is impeded from getting too high, and remains mostly below 2.</p>
+<h2>THINGS TO TRY</h2>
+<p>Try disabling erosion and deposition and running the model to observe how/whether the initial straight river changes. Then, enable just erosion and observe how erosion affects the shape of the river and the movement of the fastest flow. Finally, enable deposition as well as erosion, and observe how they interact with each other in order to produce full meanders.</p>
+<p>Changing the MAX-FLOW-SPEED also affects the behavior of meanders a lot - try various speeds to see how the behavior of the river changes.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Improve the flow mechanics of the model to prevent the occasional unintended and unintentional behavior that detracts from the realism of the model.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The model makes use of <code>dx</code> and <code>dy</code> to help replicate vector addition while still using the turtles' own "heading" property. This allows for modification of a turtle's motion with both NetLogo heading-related commands as well as with vector addition.</p>
+<h2>RELATED MODELS</h2>
+<p>Erosion, Grand Canyon</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Credit to MrWeebl for the inspiration to create a model for river meanders and oxbow lakes.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Caldeira, F. and Wilensky, U. (2021).  NetLogo River Meanders model.  http://ccl.northwestern.edu/netlogo/models/RiverMeanders.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>This model was developed as part of the Spring 2021 Multi-agent Modeling course offered by Dr. Uri Wilensky at Northwestern University. For more info, visit http://ccl.northwestern.edu/courses/mam/. Special thanks to Teaching Assistants Jacob Kelter, Leif Rasmussen, and Connor Bain.</p>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2021 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2021 MAM2021 Cite: Caldeira, F. --></div>
+      </div>
+    </main>
+  </body>
+</html>

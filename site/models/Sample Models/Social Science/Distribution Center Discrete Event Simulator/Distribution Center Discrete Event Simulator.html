@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Distribution Center Discrete Event Simulator</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Distribution Center Discrete Event Simulator</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Distribution%20Center%20Discrete%20Event%20Simulator/Distribution%20Center%20Discrete%20Event%20Simulator.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Social Science/Distribution Center Discrete Event Simulator/Distribution Center Discrete Event Simulator.png" alt="Screenshot of Distribution Center Discrete Event Simulator" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model illustrates how to use the time extension for three of its purposes:</p>
+<ul>
+<li>Representing simulated time as actual dates and times, and making time calculations such as determining the difference in time between two date-time variables;</li>
+<li>Discrete event simulation: scheduling model actions (specific agents executing specific procedures) at future times that are not integer ticks; and</li>
+<li>Logging events and the time they occurred to a file.</li>
+</ul>
+<p>The model represents an internet retailer's distribution center, which receives and fills orders from customers. It is similar to classic discrete event simulation examples such as bank queue models.</p>
+<p>Discrete event simulation is an alternative to NetLogo's normal "time step" scheduling method. Instead of assuming all model events happen once per tick, the time extension lets us schedule each event at its own unique time that is not necessarily on an integer tick. Discrete event simulation has the advantages of (a) not requiring all events to occur concurrently at ticks, but instead letting us represent the exact order in which individual events occur; and (b) often executing much faster because agents execute only when they need to, not each tick.</p>
+<h2>HOW IT WORKS</h2>
+<p>The distribution center initially has 20 workers that are evenly divided among three shifts per day: day (8 am to 4 pm), swing (4 pm to midnight), and night (midnight to 8 am). At the start of each shift, its workers start work and schedule themselves to quit 8 hours later. When their quitting time arrives, they finish the order they are working on, stop work, and schedule their return to work the next day.</p>
+<p>Orders from customers arrive at random intervals, with the mean time between arrivals set by the slider <code>mean-order-interval</code>. Each order increments the global variable representing the queue of orders waiting to be filled and shipped. Like many discrete event simulators, this model uses the random exponential distribution to represent the time between order arrivals.</p>
+<p>Each worker starts their shift by checking whether the order queue is empty. If so, the worker schedules itself to check the queue again in one minute. If the queue is not empty, the worker "picks" the order. Each order must be picked from a bin of products; bins are chosen randomly. The time required to pick each order is equal to a constant processing time (global variable <code>order-fill-time</code>) plus the time required to walk from the order desk to the bin and back. The worker schedules itself to check the queue again when done picking the order.</p>
+<p>At the end of each shift, the model represents how a shift manager could add or remove workers from the shift, depending on how well the shift performed. If the number of orders in the queue at the end of the shift exceeds a tolerance level set by the slider <code>backlog-tolerance</code>, then one more worker is added to the shift. That new worker starts when the same shift begins work the next day. If, instead, the fraction of time workers spent waiting for orders instead of picking them exceeds the value of the slider <code>waiting-tolerance</code>, one of the shift's workers is removed from the shift.</p>
+<p>The management of course tracks all the workers continually. The button <code>Save worker performance to file</code> writes the worker tracking data to a file that users can analyze.</p>
+<p>Each tick is one minute, but most events do not happen exactly at a tick. (The time extension has a precision of one millisecond, so events can be as little as 1/1000th of a second apart from each other.)</p>
+<h2>HOW TO USE IT</h2>
+<p>Use SETUP to initialize the model, and GO to start it. Hitting GO again will pause the simulation at the end of the current minute. The STEP button executes one tick (minute) at a time.</p>
+<p>The View shows the order desk (where orders are received) as a red patch on the left, and the bins of products as the colored bins on the right.</p>
+<p>To slow execution down enough to see what happens from minute to minute, change "View updates" on the Interface from "continuous" to "on ticks". (The model can execute many ticks between the "continuous" view updates.)</p>
+<p>The plots show the number of orders in the queue, and the number of workers that are picking orders and waiting for orders.</p>
+<p>The SAVE WORKER PERFORMANCE TO FILE button writes a file (<code>WorkerPerformanceLog.csv</code>) containing the log of worker activity: the time at which each worker starts an activity (waiting, picking an order, quitting for the day) and the duration of that activity. The button can be used at any time and overwrites the file. (Remember that this log is cleared and re-started at the beginning of each month.)</p>
+<p>The monitors WORKERS ADDED and WORKERS REMOVED report the total number of workers added and removed from shifts during the simulation. The monitor CURRENT SIMULATION TIME reports the date and time of the action being executed at the moment the monitor was updated.</p>
+<p>By default the model runs from 1 May to 31 May 2020. These dates can be changed by editing the values of <code>sim-start-date</code> and <code>sim-end-date</code> in the <code>setup</code> procedure.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Can you explain the very short spikes (they just look like vertical blue lines) in the "Worker Status" plot of how many workers are picking orders? (Hint: look at how workers decide when they can can quit at the end of a shift, in the procedure <code>pick-an-order</code>.)</p>
+<p>Can you explain why there are cycles in the number of orders waiting to be picked? (Hint: look at the rules for how shift managers respond to worker performance--the order queue size and time spent waiting.)</p>
+<p>Notice that the model executes very rapidly, because workers only execute their actions (procedures <code>pick-an-order</code>, <code>quit-work</code>, and <code>go-to-work</code>) when each individual is scheduled, instead of every turtle checking what to do every tick. Execution speed appears to be limited by the time used to show the current date and time in the Command Center (showing the time every tick instead of every hour slows the model dramatically), logging worker activity (if the code did not clear the log periodically, execution would become extremely slow), and updating the interface.</p>
+<p>The execution speed benefit of discrete event simulation can be explored by considering the alternative of using NetLogo's standard tick-based (time step) simulation. A time step approach could coarsely approximate this model by using ticks that represent 10 seconds. With the standard parameter and slider values, there are an average of 10.4 workers over the one-month simulation. A time step model would therefore have to ask an average of 10.4 turtles to update on each of 267,840 ticks, for a total of 2,790,720 turtle updates. The discrete event simulation executes only 111,450 turtle updates (the number of lines in the worker performance log file).</p>
+<h2>THINGS TO TRY</h2>
+<p>Vary the slider <code>mean-order-interval</code> (the average time, in seconds, between the arrival of new orders) and see how the number and activity of workers changes.</p>
+<p>(For these explorations, you might want longer simulations. In <code>setup</code>, you can change <code>sim-end-time</code> from <code>"2020-05-31 08:00"</code> to (for example) <code>"2022-04-30 08:00"</code>.</p>
+<p>Vary the two sliders that control management decisions about adding or removing workers (<code>waiting-tolerance</code> and <code>backlog-tolerance</code>) and try to reduce the rate at which the number of workers changes. Can you find values of these parameters that keep the number of workers steady and keep the number of orders waiting from cycling? (Consider running a BehaviorSpace experiment.) Do you think management would be happy with your solution?</p>
+<p>Try changing ticks from representing one minute to one hour. This requires only (a) simple changes to the two time anchoring statements in <code>setup</code>, and (b) changing the conversion from seconds to ticks in one statement in <code>receive-an-order</code>. One-hour ticks have no effect on the simulation (events happen at fractions of an hour instead of fractions of a minute) but make the model execute even faster by reducing the number of ticks and outputs to the Command Center; but the plots are updated only hourly instead of each minute.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Users should be able to add many complexities of a real distribution center, such as variation in the time needed to fill orders. New details of how orders are filled can be added simply by having workers, when they finish one action, schedule the next one they do. For example, output on how much time is spent walking vs. packing orders could be obtained by scheduling separate events for walking to bins, packing the order, and walking back to the order desk.</p>
+<p>The most interesting and important part of the model to extend and improve is how managers decide when to add and remove employees. Can they do a better job by looking back further and thinking ahead more, instead of only looking at what happened during the most recent shift? Or by moving more than one worker at a time?</p>
+<p>The model's assumption that orders arrive at the same average rate around the clock is probably unrealistic. Can you think of a way to make the arrival rate change with the time of day (and, perhaps, day of the week)? The time extension's <code>show</code> primitive can report the current hour, or day of the week. How would adding daily cycles in the order arrival rate affect the best way to model how shift managers' decide to add or remove workers?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Time extension features illustrated in this model are:</p>
+<ul>
+<li>
+<p>Using real dates and times to determine when a simulation starts and stops, and to represent the current simulation time: global variables <code>sim-start-time</code>, <code>sim-end-time</code>, and <code>sim-time</code>; <code>setup</code> procedure at lines 45, 46, and 69; <code>go</code> procedure at line 127.</p>
+</li>
+<li>
+<p>Converting the time extension's "LogoTime" variable type (which represents a date and time) into text: Lines 122-124, 223.</p>
+</li>
+<li>
+<p>Using primitives such as <code>difference-between</code> <code>is-before?</code>, and <code>is-after?</code> to make calculations and decisions based on times: Lines 127, 134, 187.</p>
+</li>
+<li>
+<p>Setting ticks so each tick represents one specific unit of time (here, minutes, but the time extension supports units from milliseconds to years): <code>setup</code> procedure line 67.</p>
+</li>
+<li>
+<p>Scheduling actions: telling specific agents or agentsets to execute specific procedures at a specific future time: the <code>time:schedule-event</code> statements throughout the code.</p>
+</li>
+<li>
+<p>In the <code>go</code> procedure, combining traditional NetLogo ticks with discrete events executed at times between ticks. At lines 115-116, the <code>tick</code> statement advances the simulation clock to the next whole minute, and the <code>time:go-until</code> statement executes all discrete events scheduled between the previous tick and the new one.</p>
+</li>
+<li>
+<p>Using the time-series input and output primitives associated with the time extension to write a log of events and the times they occurred: Global variable <code>performance-log</code> and lines 63, 189, 199, 211, 275.</p>
+</li>
+</ul>
+<h2>RELATED MODELS</h2>
+<p>The Discrete Event Mousetrap model (in the NetLogo Models Library &gt; Code Examples &gt; Extension Examples &gt; time) also demonstrates use of the time extension for discrete event simulation. That model differs from this one in not using ticks at all: it has no <code>go</code> procedure; instead, <em>all</em> events in the Mousetrap model are scheduled ("triggered") by other events. It illustrates how to set up and start such a model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Railsback, S. and Wilensky, U. (2022).  NetLogo Distribution Center Discrete Event Simulator model.  http://ccl.northwestern.edu/netlogo/models/DistributionCenterDiscreteEventSimulator.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2022 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2022 Cite: Railsback, S. --></div>
+      </div>
+    </main>
+  </body>
+</html>

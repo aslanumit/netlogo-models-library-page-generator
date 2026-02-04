@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Connected Chemistry 7 Ideal Gas Law</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Connected Chemistry 7 Ideal Gas Law</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Connected%20Chemistry/Connected%20Chemistry%207%20Ideal%20Gas%20Law.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Connected Chemistry/Connected Chemistry 7 Ideal Gas Law.png" alt="Screenshot of Connected Chemistry 7 Ideal Gas Law" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model explores the relationship between the variables in the ideal gas law (number of particles, container volume, gas pressure, and gas temperature).  This model is part of the "Connected Chemistry" curriculum http://ccl.northwestern.edu/curriculum/ConnectedChemistry/ which explore the behavior of gases.</p>
+<p>Most of the models in the Connected Chemistry curriculum use the same basic rules for simulating the behavior of gases.  Each model highlights different features of how gas behavior is related to gas particle behavior.</p>
+<p>In all of the models, gas particles are assumed to move and to collide, both with each other and with objects such as walls.</p>
+<p>In this model, the gas container has an adjustable volume, adjustable number of particles, and adjustable temperature of the gas.</p>
+<p>This model helps students study the representations of gas pressure in the model and the dynamics of the gas particles that lead to increases and decreases in pressure.
+In this model, students can also look at all the relationships in the ideal gas law.</p>
+<h2>HOW IT WORKS</h2>
+<p>The particles are modeled as hard balls with no internal energy except that which is due to their motion.  Collisions between particles are elastic.  Collisions with the wall are not.</p>
+<p>Particles can be color-coded by speed with the SHOW-SPEED-AS-COLOR? chooser.  For example, selecting red-green-blue makes colors slow particles in blue, medium-speed particles in green, and fast particles in red.</p>
+<p>The exact way two particles collide is as follows:
+1. A particle moves in a straight line without changing its speed, unless it collides with another particle or bounces off the wall.
+2. Two particles "collide" if they find themselves on the same patch.In this model, two turtles are aimed so that they will collide at the origin.
+3. An angle of collision for the particles is chosen, as if they were two solid balls that hit, and this angle describes the direction of the line connecting their centers.
+4. The particles exchange momentum and energy only along this line, conforming to the conservation of momentum and energy for elastic collisions.
+5. Each particle is assigned its new speed, heading and energy.</p>
+<p>As the walls of the box are heated, the sides of the walls will change color from a deep red (cool) to a bright red, to pink to a pale pink white (hot).  The walls contain a constant heat value throughout the simulation.</p>
+<p>The exact way particles gain energy from the walls of the box is as follows:
+1. Particles check their state of energy (kinetic).
+2. They hit or bounce off the wall.
+3. They find wall energy and set their new energy to be the average of their old kinetic energy and the wall energy.
+4. They change their speed and direction after the wall hit.</p>
+<h2>HOW TO USE IT</h2>
+<p>Buttons:
+SETUP - sets up the initial conditions set on the sliders.
+GO/STOP - runs and stops the model.
+MOVE WALL -will temporarily "pause" the model when GO/STOP is running and wait until the user clicks in a new location in the World &amp; View for the orange wall of the gas container.  The new location must be to the right of the current orange wall location (so as to permit adiabatic free expansion of the gas)
+ADD-PARTICLES - when pressed releases particles into the box while the simulation is running.
+WARM WALLS - incrementally warms the box walls each time it is pressed.
+COOL WALLS - incrementally cools the box walls each time it is pressed.</p>
+<p>Sliders:
+INITIAL-NUMBER - sets the number of gas particles in the box when the simulation starts.
+NUMBER-TO-ADD - the number of gas particles released into the box when the ADD-PARTICLES button is pressed.
+INITIAL-WALL-POSITION helps adjust the initial volume by setting the location of the orange box wall.</p>
+<p>Switches:
+COLLIDE? turn particle collisions on or off
+LABELS? turn particle id labels on or off</p>
+<p>Choosers:
+SHOW-SPEED-AS-COLOR? allows you to visualize particle speed using a color palette.
+- The "blue-green-red" setting shows the lower half of the speeds of the starting population as blue, and the upper half as red.
+- The "violet shades" setting shows a gradient from dark violet (slow) to light violet (fast).
+- The "all green" setting shows all particles in green, regardless of speed.
+- The "custom color" setting, referenced in the Pedagogica version of this model, allows the user to modify the color of one or more particles, without having to worry that the particles will be recolored with each tick of the clock (as is the case for the other color options).</p>
+<p>Monitors:
+CLOCK - number of clock cycles that GO has run.
+PRESSURE - the total pressure in the box.
+TEMPERATURE. - the temperature of gas.
+VOLUME - the volume of the gas container.  Volume is computed based on what it would be using the 3D view.  The can be visualized as the inner gas volume (yellow walls and orange wall) that is 1 patch width deep in the z direction.
+NUMBER - the number of gas particles in the container.
+AVERAGE SPEED - the average speed of the gas particles.
+TOTAL ENERGY - the total kinetic energy of the gas.
+AVERAGE ENERGY - the average kinetic energy of the gas particles.</p>
+<p>Plots:
+- 1: TEMPERATURE VS. TIME: plots particle temperature inside the box over time.
+- 1: NUMBER VS. TIME: plots the number of gas particles inside the box over time.
+- 1: PRESSURE VS. TIME: plots the average gas pressure inside of the box over time.
+- 1: VOLUME VS. TIME: plots the volume of the gas container over time.  Volume is computed based on what it would be using the 3D view.  The can be visualized as the inner gas volume (yellow walls and orange wall) that is 1 patch width deep in the z direction.</p>
+<ol>
+<li>Adjust the INITIAL-NUMBER slider.</li>
+<li>Press the SETUP button</li>
+<li>Press GO/STOP and observe what happens.</li>
+<li>Wait until the gas temperature stabilizes.</li>
+<li>Press WARM WALLS or COOL WALLS a few times.</li>
+<li>Wait until the gas temperature stabilizes</li>
+<li>Press MOVE WALL.  The particle motion will pause momentarily.</li>
+<li>Then move your cursor to a spot inside the WORLD &amp; VIEW, to the right of the current position of the orange wall.  Click on this spot and the wall will move and the particle motion will resume.</li>
+<li>Adjust the NUMBER-TO-ADD slider and press ADD PARTICLES.</li>
+</ol>
+<h2>THINGS TO NOTICE</h2>
+<p>The ideal gas law relationships can be established in this model, with careful data gathering and mathematical modeling.</p>
+<p>Why are there multiple combinations of volume, number of particles, and temperature of the gas that give the same pressure?</p>
+<h2>THINGS TO TRY</h2>
+<p>What combination of variables gives the highest pressure?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The Connected Chemistry models include invisible dark particles (the "dark-particles" breed), which only interact with each other and the walls of the yellow box. The inclusion of dark particles ensures that the speed of simulation remains constant, regardless of the number of particles visible in the simulation.</p>
+<p>For example, if a model is limited to a maximum of 400 particles, then when there are 10 visible particles, there are 390 dark particles and when there are 400 visible particles, there are 0 dark particles.  The total number of particles in both cases remains 400, and the computational load of calculating what each of these particles does (collides, bounces, etc...) is close to the same.  Without dark particles, it would seem that small numbers of particles are faster than large numbers of particles -- when in reality, it is simply a reflection of the computational load.  Such behavior would encourage student misconceptions related to particle behavior.</p>
+<h2>RELATED MODELS</h2>
+<p>See GasLab Models
+See other Connected Chemistry models.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is part of the Connected Chemistry curriculum.  See http://ccl.northwestern.edu/curriculum/chemistry/.</p>
+<p>We would like to thank Sharona Levy and Michael Novak for their substantial contributions to this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2005).  NetLogo Connected Chemistry 7 Ideal Gas Law model.  http://ccl.northwestern.edu/netlogo/models/ConnectedChemistry7IdealGasLaw.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>To cite the Connected Chemistry curriculum as a whole, please use:</p>
+<ul>
+<li>Wilensky, U., Levy, S. T., &amp; Novak, M. (2004). Connected Chemistry curriculum. http://ccl.northwestern.edu/curriculum/chemistry/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2005 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2005 ConChem --></div>
+      </div>
+    </main>
+  </body>
+</html>

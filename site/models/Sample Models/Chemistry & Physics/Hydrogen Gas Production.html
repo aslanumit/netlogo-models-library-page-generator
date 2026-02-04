@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hydrogen Gas Production</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Hydrogen Gas Production</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Hydrogen%20Gas%20Production.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Chemistry &amp; Physics/Hydrogen Gas Production.png" alt="Screenshot of Hydrogen Gas Production" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model simulates the production of hydrogen gas through the reaction of zinc metal with hydrochloric acid.</p>
+<h2>HOW IT WORKS</h2>
+<p>Zinc metal (non-moving gray circles) sits at the bottom of a flask (outlined in white) filled with an aqueous solution of hydrochloric acid (HCl). Since HCl is a relatively strong acid, in solution it dissociates into Chloride Cl<sup>-</sup> ions (not shown) and hydrogen ions which each join a water molecule to form a hydronium H<sub>3</sub>O<sup>+</sup> ion (green circles). When two of these ions encounter a zinc atom, they react to produce a ZnCl<sub>2</sub> molecule and a hydrogen H<sub>2</sub> molecule (yellow circles). The ZnCl<sub>2</sub> in solution breaks down into zinc ions (small moving gray circles) and Chloride ions (not shown). The hydrogen molecules escape the solution and begin to exert pressure on a balloon attached to the flask’s top (outlined in orange). Based on the pressure in the balloon, its size will increase or decrease.</p>
+<p>The full reaction is normally written as follows:</p>
+<blockquote>
+<p>Zn(s) + 2HCl(aq) → ZnCl<sub>2</sub>(aq) + H<sub>2</sub>(g)</p>
+</blockquote>
+<p>We can also write it with HCl and ZnCl<sub>2</sub> split into the ions they form in solution:</p>
+<blockquote>
+<p>Zn(s) + 2H<sub>3</sub>O<sup>+</sup>(aq) + 2Cl<sup>-</sup>(aq) → Zn<sup>2+</sup>(aq) + 2Cl<sup>-</sup>(aq) + H<sub>2</sub>(g)</p>
+</blockquote>
+<p>Note that the Cl<sup>-</sup> ions don't change, which is why they aren't visualized in the model.</p>
+<p><strong>Note</strong>: the balloon size fluctuates a lot in the model. This is due to the very small number of hydrogen molecules in the model. Due to the small number, random fluctuations can change the instantaneous pressure on the balloon by a lot. In a real balloon, the number of hydrogen molecules is so huge that the fluctuations in pressure are negligible.</p>
+<h2>HOW TO USE IT</h2>
+<h3>BUTTONS</h3>
+<p><code>SETUP</code>: Creates the flask, balloon, and all of the molecules in them.
+<code>GO</code>: Starts the simulation, allowing the molecules to move and react.</p>
+<h3>INPUTS</h3>
+<p><code>NUM-ZN</code>: Determines the number of zinc metal atoms in the flask at the start of the simulation.
+<code>NUM-HCL</code>: Determines the number of hydrochloric acid molecules in the flask at the start of the simulation.</p>
+<h3>OUTPUTS</h3>
+<p><code>H2 MOLECULES</code>: Displays the number of hydrogen gas molecules that have been produced.
+<code>GAS PRODUCED</code>: Plots the amount of hydrogen gas in the balloon over time.
+<code>BALLOON SIZE</code>: Plots the height of the balloon over time.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Pay attention to how the different molecules move.  Do some molecules move faster than others?  Do all of the molecules move in straight lines?  Try to explain each of these observations and how they relate to reality.</p>
+<h2>THINGS TO TRY</h2>
+<p>Adjust the sliders for <code>NUM-ZN</code> and <code>NUM-HCL</code>. Pay attention to the amount of hydrogen gas produced. Can you work out how the values for <code>NUM-ZN</code> and <code>NUM-HCL</code> affect the amount of gas?</p>
+<p>Observe the model to see where the reaction is taking place. Why isn’t it happening in other places?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The current implementation of the balloon is not very mechanistically realistic.  Try to improve this by adding a gas surrounding the balloon to balance the pressure from the gas inside of it.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model uses partial ticks and the <code>tick-advance</code> primitive to ensure that molecules never move more than one patch per update.  This makes sure they can't skip through the walls of the flask or balloon.</p>
+<p>This model also uses a global variable as a slider parameter, in this case using <code>zn-increment</code> as the slider increment for the <code>MOLS-ZN</code> slider.  The model uses the <code>startup</code> procedure to ensure that this is properly initialized as soon as the model loads.</p>
+<h2>RELATED MODELS</h2>
+<p>This model is similar to several of the <strong>GasLab</strong> and <strong>Connected Chemistry</strong> models in the Models Library, particularly the <strong>GasLab Adiabatic Piston</strong> model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Levy, S., Kelter, J. and Wilensky, U. (2022).  NetLogo Hydrogen Gas Production model.  http://ccl.northwestern.edu/netlogo/models/HydrogenGasProduction.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2022 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2022 Cite: Levy, S., Kelter, J. --></div>
+      </div>
+    </main>
+  </body>
+</html>

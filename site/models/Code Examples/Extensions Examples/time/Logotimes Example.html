@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Logotimes Example</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Logotimes Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Extensions%20Examples/time/Logotimes%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Code Examples/Extensions Examples/time/Logotimes Example.png" alt="Screenshot of Logotimes Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a simple demonstration of how to use NetLogo's time extension to represent real dates and times in a model. It shows how to create, manipulate, and output the "Logotime" variable type provided by the time extension.</p>
+<p>Users should be able to copy code directly from this example into their own models. However, normally the time units and length of a tick are not parameters as they are here (explained below), but "hardwired" -- the <code>anchor-to-ticks</code> statement in <code>setup</code> normally looks like this:</p>
+<pre><code>  set sim-time time:anchor-to-ticks sim-start-time 1 day
+</code></pre>
+<p>The NetLogo User Manual's section on the time extension provides much more detail and more examples.</p>
+<p>A Logotime variable can hold one of three kinds of time values: a DATETIME--a date and time, with precision down to milliseconds; a DATE--a day specified by year, month, and date, but with no sub-daily information; and a DAY--a day of the year without specifying which year (e.g., April 15). This model uses only the DATETIME type.</p>
+<p>This "model" simply ticks through a specified amount of time and reports the time at each tick in a variety of units.</p>
+<h2>HOW IT WORKS</h2>
+<p>Comments in the Code tab explain how the model works.</p>
+<h2>HOW TO USE IT</h2>
+<p>Users can explore how the time extension represents time by:</p>
+<ul>
+<li>Setting the dates and times at which the simulation starts and ends by editing the <code>sim-start-time</code> and <code>sim-end-time</code> inputs on the Interface. These are text strings that must be in the format: <code>yyyy/M/d HH:mm:ss</code> (year, month, day, hour, minute, seconds).</li>
+<li>Selecting the time step units from the Interface chooser. The chooser offers most but not all of the time periods supported by the time extension, from years down to seconds.</li>
+<li>Using the slider to set the time step length. If the units are chosen as "days" and time step length is set to 1.5, then each tick will represent 1.5 days.</li>
+<li>Clicking <code>setup</code>.</li>
+<li>Clicking <code>step</code> to update the time one tick, or <code>go</code> for repeated updates.</li>
+<li>Observe the simulation time in various units, in the monitors on the Interface.</li>
+</ul>
+<p>Note that changes in the time step units and length only take effect in the <code>setup</code> procedure. Changing them during a simulation has no effect--you must set up again for changes in start time, end time, or the time step to take effect.</p>
+<p>Setting the Interface to view updates on ticks (instead of "Continuous") may make the model run slow enough to observe; if not, turn down the speed slider.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Non-integer time step lengths are not supported for units of "months" or "years"; for months and years, the time step length will be rounded to the nearest whole number. (Try it!)</p>
+<p>Month time units are also different because the <code>time:difference-between</code> primitive used to update <code>time-simulated</code> and <code>time-remaining</code> ignores the year when calculating time differences in months. Hence, the difference between a date in April and a date in May is always 1 month, even if those dates are in different years. Consequently, <code>time-simulated</code> and <code>time-remaining</code> are not calculated correctly when <code>time-step-units</code> is chosen to be <code>months</code>.</p>
+<h2>THINGS TO TRY</h2>
+<p>Change the time step units in the chooser and the time step length in the slider, hit <code>setup</code> and <code>step</code> to see exactly how the time extension works. For example:</p>
+<ul>
+<li>What happens to the date and day of year when leap day arrives?</li>
+<li>How do days and hours advance if the time step is 1.4 weeks? Or 6 minutes?</li>
+<li>How does time advance if the start date is June 17 and the time step is 1 month? Or 1 year?</li>
+</ul>
+<p>If you prefer a different format for date and time input (<code>sim-start-time</code> and <code>sim-end-time</code>), try changing the two <code>time:create-with-format</code> statements in <code>setup</code> to use your preferred format.</p>
+<h2>RELATED MODELS</h2>
+<p>The NetLogo models library contains other example uses of the time extension, in its Code Examples &gt; Extension Examples section.</p>
+<h2>CREDITS</h2>
+<p>Prepared by Steve Railsback January 2022.</p>
+<!-- 2022 --></div>
+      </div>
+    </main>
+  </body>
+</html>

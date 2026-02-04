@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Urban Suite - Cells</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Urban Suite - Cells</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Urban%20Suite/Urban%20Suite%20-%20Cells.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Urban Suite/Urban Suite - Cells.png" alt="Screenshot of Urban Suite - Cells" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model of 2d cellular automata.  It uses very simple rules to grow a form.  These forms may be very complex, or highly regular.</p>
+<h2>HOW IT WORKS</h2>
+<p>At each step, each patch looks to see if it satisfies the rules defined for being turned on.  The rule is defined by the NEIGHBORHOOD chooser and the N-COUNT chooser.  If the number of currently turned on patches in the NEIGHBORHOOD around the patch is non-zero and also satisfies N-COUNT, then that patch has a chance to turn.  The change to turn on is defined by the PROBABILITY slider. If AGE-LIMIT is non-zero, then any patches that have been turned on for more ticks than AGE-LIMIT will be turned off.</p>
+<p>The patches color shows their age, with darker patches being older than lighter patches.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP to clear the board and create the initial seed patch.  Optionally, you may also press the RANDOM SEED button to create another seed in a random location.</p>
+<p>Press the GO * 80 button and the model will run thru 80 ticks.  You may also press the STEP button to advance the model a single tick.  Lastly, the GO button will run the model an unlimited number of ticks, until it is pressed again.</p>
+<p>The NEIGHBORS and N-COUNT choosers define the rule used to determine if a patch turns on or not, see the HOW IT WORKS section for details.</p>
+<p>PROBABILITY is the chance a patch has of turning on if it satisfies the current rule.</p>
+<p>AGE-LIMIT is the number of ticks a patch will stay turned on.  If AGE-LIMIT is 0, then there is no AGE-LIMIT defined and turned on patches stay that way forever.</p>
+<p>The CYCLE COLORS button will make all turned on patches to cycle their colors.</p>
+<p>The LIVE CELLS plot is a plot of the patches that are turned on at each tick.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Which rules produce the most complex shape?</p>
+<p>How many ticks does it take for the rules to fill up the world?</p>
+<h2>THINGS TO TRY</h2>
+<p>Some rules will result in a form that grows and fills the whole space, while others will have empty spots in them.</p>
+<p>If you play with the PROBABILITY slider you can get asymmetrical forms, and also cause "mutations" in the growth of a form that would otherwise stop growing after a set number of ticks.  Such mutations can grow to fill in more patches because of the irregularity.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Add new neighborhoods to the NEIGHBORHOODS chooser.  You can do this by writing a reporter with the same name as your new neighborhood and adding the name to the chooser.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>The scale-color primitive is used to set the color of patches according to their age.</p>
+<h2>RELATED MODELS</h2>
+<p>This model is related to all of the other models in the "Urban Suite".</p>
+<p>This model is also similar to the models in the Computer Science/Cellular Automata section of the NetLogo models library.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is based from the models described in chapter 2 of the book "Cities and Complexity" by Michael Batty.</p>
+<p>Thanks to Craig Brozefsky for his work on this model.</p>
+<p>The Urban Suite models were developed as part of the Procedural Modeling of Cities project, under the sponsorship of NSF ITR award 0326542, Electronic Arts &amp; Maxis.</p>
+<p>Please see the project web site ( http://ccl.northwestern.edu/cities/ ) for more information.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2007).  NetLogo Urban Suite - Cells model.  http://ccl.northwestern.edu/netlogo/models/UrbanSuite-Cells.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 --></div>
+      </div>
+    </main>
+  </body>
+</html>

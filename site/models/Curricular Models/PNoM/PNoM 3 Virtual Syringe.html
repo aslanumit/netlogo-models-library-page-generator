@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PNoM 3 Virtual Syringe</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>PNoM 3 Virtual Syringe</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/PNoM/PNoM%203%20Virtual%20Syringe.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/PNoM/PNoM 3 Virtual Syringe.png" alt="Screenshot of PNoM 3 Virtual Syringe" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model enables students to draw a model to "sketch" representations of syringe-like systems to explore concepts related to gas particles and gas behavior.</p>
+<p>This model is part of the Particulate Nature of Matter (PNoM) Curricular Unit. Most of the models in PNoM use the same basic rules for simulating the behavior of gases. Each model highlights different features of how gas behavior is related to gas particle behavior and adds to new features to the model.</p>
+<p>In all of the models, gas particles are assumed to move and collide, both with each other and with other objects such as walls.</p>
+<p>In this model, particles can be added, color coded, and sped up or slowed down, by drawing with the mouse cursor in the WORLD &amp; VIEW.  Also, additional types of removable and replaceable walls can be added to either end of the syringe. The plunger in the middle moves according to the forces applied on it by the gas molecules.</p>
+<h2>HOW IT WORKS</h2>
+<p>The particles are modeled as hard balls with no internal energy except that which is due to their motion. Collisions between particles are elastic. The total kinetic energy of the two particles after the encounter is equal to their total kinetic energy before the encounter. Collisions with the wall are not. When a particle hits the wall, it bounces off the wall but does not loose any energy to the wall. It does not gain any energy from the wall, either. The plunger moves according to the total force applied on it by the particles at an instance.</p>
+<p>The exact way two particles collide is as follows:
+1. A particle moves in a straight line without changing its speed, unless it collides with another particle or bounces off the wall.
+2. Two particles "collide" if they find themselves on the same patch. In this model, two turtles are aimed so that they will collide at the origin.
+3. An angle of collision for the particles is chosen, as if they were two solid balls that hit, and this angle describes the direction of the line connecting their centers.
+4. The particles exchange momentum and energy only along this line, conforming to the conservation of momentum and energy for elastic collisions.
+5. Each particle is assigned its new speed, heading and energy.</p>
+<h2>HOW TO USE IT</h2>
+<h3>Buttons</h3>
+<p>SETUP - sets up the initial conditions set on the sliders.
+GO/STOP/ADD ELEMENTS - runs and stops the model.
+REMOVE/REPLACE RED WALL - toggles the red walls on and off.
+REMOVE/REPLACE BLUE WALL - toggles the blue walls on and off.
+WATCH-AND-TRACE-A-PARTICLE - highlights a particle and puts its pen down.
+RESET-PERSPECTIVE used for re-centering the WORLD &amp; VIEW after riding or watching a particle.
+RIDE-A-PARTICLE - attaches the viewpoint of the observer to a particle
+RESTART PLOTTING - clean the plots and restart drawing the plots from then on.
+SAVE - saves the current state of the model to an external file. You will need to provide a model name after clicking this button.
+LOAD - loads a previously saved model state file from the computer. You will need to choose a file after clicking this button.</p>
+<h3>Switches:</h3>
+<p>SHOW-WALL-HITS? turn visualization of when particles hits the walls (as flashes) on or off</p>
+<h3>Choosers</h3>
+<p>VISUALIZE-PARTICLE-SPEED? allows you to visualize particle speeds. For example, selecting "arrows" creates a representation of each particle velocity using a scalar arrow.  Selecting "shades" creates representation of each particle speed using a brighter (faster) or darker (slower) shade of the particle's color.</p>
+<p>MOUSE-INTERACTION  sets the type interaction the user can do with the mouse in the WORLD &amp; VIEW.  Possible settings include:
+"none - let the particles interact" - particles move about.
+"draw basic wall" - adds a gray wall under the mouse cursor.
+"draw red removable wall" - adds a red wall under the mouse cursor which can be. alternatively removed and replaced (like a valve) using the REMOVE/REPLACE RED WALL.
+"draw green removable wall" - adds a green wall under the mouse cursor which can be alternatively removed and replaced (like a valve) using the REMOVE/REPLACE GREEN WALL.
+"big eraser" - erases all objects (except the yellow box boundary walls) under the mouse cursor.
+"slow down particles" - increase the current speed of the particles by 10%.
+"speed up particles" - reduces the current speed of the particles by 10%.
+"paint particles green" - recolors the particles under the mouse cursor green (other settings include orange and purple).
+"add green particles" - adds a couple of new particles under the mouse cursor (other settings include orange and purple).</p>
+<h3>Running a timed experiment</h3>
+<p>These controls allow you to run a timed experiment for a given number of ticks and record the data.
+START EXPERIMENTS - starts the timed experiment and runs it over the pre-determined number of ticks. After clicking this button, you need to run the model by clicking the GO/STOP/ADD ELEMENTS button and choosing the "none - let the particles interact" from the MOUSE-INTERACTION chooser.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The mouse interaction can be used while the model is running as well as when it is stopped.</p>
+<p>Transparency is used to model flashes of where pressure was transferred to the wall by fading away the color of the flash at locations where a particle hit the wall.</p>
+<h2>THINGS TO TRY</h2>
+<p>Create a model of hot and cold gasses on two sides of the plunger with walls. Explore the effects of temperature on the behavior of the plunger.</p>
+<p>Create a model of how the plunger position changes after one of the walls of the plunger is removed.</p>
+<p>Simulate the effects of pulling the plunger by putting a lot of particles on both sides of the plunger, closing one side of the syringe with a wall, waiting for the plunger position to stabilize, and finally removing some particles from the closed side of the syringe.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>GasLab Models</li>
+<li>Connected Chemistry models.</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M., Brady, C., Holbert, N., Soylu, F. and Wilensky, U. (2010).  NetLogo PNoM 3 Virtual Syringe model.  http://ccl.northwestern.edu/netlogo/models/PNoM3VirtualSyringe.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>To cite the Particulate Nature of Matter curriculum as a whole, please use:</p>
+<ul>
+<li>Novak, M., Brady, C., Holbert, N., Soylu, F. and Wilensky, U. (2010). Particulate Nature of Matter curriculum.  http://ccl.northwestern.edu/curriculum/pnom/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.
+Thanks to Umit Aslan and Mitchell Estberg for updating these models for inclusion the in Models Library.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2010 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2010 PNoM Cite: Novak, M., Brady, C., Holbert, N., Soylu, F. --></div>
+      </div>
+    </main>
+  </body>
+</html>

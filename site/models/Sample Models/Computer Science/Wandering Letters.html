@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wandering Letters</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Wandering Letters</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Computer%20Science/Wandering%20Letters.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Computer Science/Wandering Letters.png" alt="Screenshot of Wandering Letters" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model illustrates how to build a word processor where each of the letters acts independently.  Each letter knows only which letter comes before it and how long its word is.  When the letters or margins are moved, the letters find their own ways back to their proper locations.</p>
+<h2>HOW IT WORKS</h2>
+<p>Each letter looks both for changes in the margins and for being out of sync with its "leader", which is the letter before it in the text.  If it is not in its proper place relative to its leader, it takes a step in its leader's direction.</p>
+<h2>HOW TO USE IT</h2>
+<p>SETUP initializes the margins and some sample sentences for the text.</p>
+<p>GO starts and stops the simulation.</p>
+<p>The LEFT-MARGIN and RIGHT-MARGIN sliders let you move the sliders.  You can move these sliders while GO is running and the letters will adjust on the fly.</p>
+<p>SCATTER LETTERS scatters the letters randomly about the View.  You can press this even while GO is running.</p>
+<p>LINE-SPACING controls how much space there is between lines.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>How do the letters find their way home?  In what ways is this different from the behavior of letters in a standard word processor?</p>
+<h2>THINGS TO TRY</h2>
+<p>While GO is pressed try:</p>
+<ul>
+<li>Moving the margin sliders</li>
+<li>Changing the spacing</li>
+<li>Pushing the scatter button</li>
+<li>Combinations of all three</li>
+</ul>
+<h2>EXTENDING THE MODEL</h2>
+<p>Can you extend the model so the user can type his/her own message?  You might want to use the user-input primitive for this.</p>
+<p>Sometimes a space will end up at the beginning of a new line.  Try to fix it so that spaces are ignored at the ends of lines.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of a blank shape to make a turtle that is invisible except for its label.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is based on a Smalltalk program of the same name developed by Ted Kaehler of Disney Interactive.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1997).  NetLogo Wandering Letters model.  http://ccl.northwestern.edu/netlogo/models/WanderingLetters.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1997 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was developed at the MIT Media Lab using CM StarLogo.  See Wilensky, U. (1993). Thesis - Connected Mathematics: Building Concrete Relationships with Mathematical Knowledge. Adapted to StarLogoT, 1997, as part of the Connected Mathematics Project.  Adapted to NetLogo, 2001, as part of the Participatory Simulations Project.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1997 2001 Wilensky --></div>
+      </div>
+    </main>
+  </body>
+</html>

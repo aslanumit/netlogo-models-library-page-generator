@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Star Fractal</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Star Fractal</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/Fractals/Star%20Fractal.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Mathematics/Fractals/Star Fractal.png" alt="Screenshot of Star Fractal" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model creates a fractal-like structure consisting of stars drawn at various scales, the number of which is specified by the user.  The structure is drawn by generations of turtles that draw stars at a given scale and hatch successive generations to draw new ones at smaller scales.</p>
+<h2>HOW TO USE IT</h2>
+<p>The FRACTAL-LEVEL slider controls the number of levels the structure is drawn in.  For instance, a fractal level of 0 results in a single star, while a fractal level of 1 draws a star with smaller stars that begin at each of its 5 corners.  This pattern is repeated as the level increases.</p>
+<p>Click the SETUP button to initialize the structure and GO to begin drawing it.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>The figure drawn embodies the most important fractal quality: self-similar structure at smaller scales.  This means that no matter how far you "zoom in" to it, you will still see the same shape (namely, a star).  The fractal level determines to how small a scale this property holds, so the greater the level the more you can "zoom in" and still see stars.</p>
+<p>Notice that at a fractal level greater than 1, the model begins with one turtle, which hatches new turtles at each corner, and these turtles similarly hatch new ones at each of their corners as well. This behavior is made possible by a powerful mathematical technique called recursion.  A process is called recursive when its workings involve "performing itself".  In this case, the process performed by each turtle at each step is to draw a new side of its star and then create new turtles to perform the very same process.  A helpful property of recursive processes is that the instructions are often short, because each performer is executing the same instructions. Hence the brevity of Star Fractal's procedures.</p>
+<p>The ideas behind fractal scaling (the property of self-similar structures at different scales) and recursion are essentially the same.  This is suggested by the fact that a recursive process is able to generate a fractal-like structure, as in this model.  One way to think about it is that recursion applies these ideas to processes (like NetLogo models), and fractal scaling applies them to physical or mathematical structures (like the figure drawn by Star Fractal).</p>
+<h2>THINGS TO TRY</h2>
+<p>Edit GO so that it's not a forever button, and/or use the speed slider to slow the model down, and note what happens during each tick.  Notice that what begins as a single drawing multiplies into many drawings, each of which is at a smaller scale but proceeds exactly like the larger one that spawned it.  Thus, recursion begets self-sameness at different scales.</p>
+<p>Try the model initially with small fractal levels and work your way up to higher ones.  Try to figure out how many more stars are incorporated into the figure each time the level increases by one.  What kind of general rule you can come up with? That is, given a generation of turtles g, how many turtles will be in the generation g + 1?  Start from g = 0.  (This is a recursive rule.)</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>In increasing order of difficulty:</p>
+<p>Change the color scaling so that the smaller stars are brighter than the larger ones.</p>
+<p>Change the model so that it draws shapes other than stars.  Will any shape work?</p>
+<p>The structure that this model draws is only "fractal-like", because even when you "zoom in" and look at smaller scales, the smaller stars aren't actually part of the larger ones; they're just connected to them at a vertex. An important property of fractals is that the larger structures are composed of the smaller ones, something which clearly doesn't hold here.  For a tougher exercise, try changing the model so that the smaller stars (or whatever shapes are being drawn) are actually part of the larger ones, for instance by drawing them in the middle of their sides.  Such a figure will be a lot less "noisy" than this one, in terms of how difficult it is to discern individual stars, and it will have different properties when you zoom in.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model makes use of an important NetLogo command: <code>hatch</code>.  <code>hatch</code> allows one turtle to create a new one on the same patch and give it some initial instructions.  In this case, the parent turtle sets the length of the star its offspring will draw, its initial heading, and several other variables.  Notice that the new turtle uses the values of its parent turtle's variables in the body of the hatch procedure.</p>
+<p>Another useful primitive this model uses is <code>scale-color</code>.  It is used to make the brightness of the color the turtles are drawing inversely proportional to the turtle's generation, so that larger stars are brighter than smaller ones (this was done to make the larger ones more visible).  This code:</p>
+<pre><code>scale-color red (fractal-level - generation) -1 (fractal-level + 1)
+</code></pre>
+<p>works as follows: Subtract the value of <code>generation</code> from that of <code>fractal-level</code>.  The higher that resulting value is on the scale from -1 to <code>(fractal-level + 1)</code>, the darker the shade of red the turtle will draw with.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1999).  NetLogo Star Fractal model.  http://ccl.northwestern.edu/netlogo/models/StarFractal.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1999 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1999 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

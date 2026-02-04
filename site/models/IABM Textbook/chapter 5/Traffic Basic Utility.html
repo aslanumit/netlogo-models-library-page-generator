@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Traffic Basic Utility</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Traffic Basic Utility</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/IABM%20Textbook/chapter%205/Traffic%20Basic%20Utility.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/IABM Textbook/chapter 5/Traffic Basic Utility.png" alt="Screenshot of Traffic Basic Utility" />
+        <div class="model-info"><h2>ACKNOWLEDGMENT</h2>
+<p>This model is from Chapter Five of the book "Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo", by Uri Wilensky &amp; William Rand.</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<p>This model is in the IABM Textbook folder of the NetLogo Models Library. The model, as well as any updates to the model, can also be found on the textbook website: http://www.intro-to-abm.com/.</p>
+<h2>WHAT IS IT?</h2>
+<p>This model models the movement of cars on a highway. Each car follows a simple set of rules: it slows down (decelerates) if it sees a car close ahead, and speeds up (accelerates) if it doesn't see a car ahead. Cars start at a random speed between 0.1 and 1. This model extends the Traffic Basic model, from the social science section of the NetLogo models library, to include a utility function for the cars.</p>
+<p>In this version of the model, we have the cars change their speeds in order to improve their fuel efficiencies. As a result, the agents have to speed up and slow down at different times than they do in the Traffic Basic model in order to minimize their gas usage while still not causing accidents. Giving the agents this type of decision-making process gives them a utility-based form of agent cognition in which they attempt to maximize a utility function—namely, their fuel efficiency.</p>
+<p>In the language of utility functions, each car agent is minimizing a function <em>f</em>, defined by:</p>
+<p><em>f</em>(<em>v</em>) = |<em>v</em> − <em>v</em>*|</p>
+<p>where <em>v</em> is the current velocity of the car and <em>v</em>* is the most efficient velocity.</p>
+<p>The model sets the optimal speed for the cars (best fuel efficiency) to be 0.45. If the acceleration rule speeds the car past the optimal speed, the car decelerates instead of accelerating.</p>
+<h2>HOW TO USE IT</h2>
+<p>Click on the SETUP button to set up the cars.</p>
+<p>Set the NUMBER slider to change the number of cars on the road.</p>
+<p>Click on GO to start the cars moving.  Note that they wrap around the world as they move, so the road is like a continuous loop.</p>
+<p>The ACCELERATION slider controls the rate at which cars accelerate (speed up) when there are no cars ahead.</p>
+<p>When a car sees another car right in front, it matches that car's speed and then slows down a bit more.  How much slower it goes than the car in front of it is controlled by the DECELERATION slider.</p>
+<p>The EFFICIENT-SPEED slider is the basis of the utility function for the cars. Cars slow down if they are exceeding it.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>How are the results different from the Traffic Basic model? Are traffic jams more or less likely than in the Traffic Basic model? If so, why? If not, why not?</p>
+<p>How does the model's behavior change with different values of EFFICIENT-SPEED?</p>
+<h2>THINGS TO TRY</h2>
+<p>Try very low and very high values of EFFICIENT-SPEED. Are there values where the model behavior changes qualitatively?</p>
+<p>Can you think of a strategy for finding the EFFICIENT-SPEED that leads to the highest overall average speed for cars?</p>
+<p>What happens when you start with a very low EFFICIENT-SPEED and gradually increase it?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The value of EFFICIENT-SPEED is currently the same for every car. What if each car had a different efficient speed? Use <a href="http://ccl.northwestern.edu/netlogo/docs/dictionary.html#random-reporters"><code>random-normal</code></a> to give each car a different efficient speed while keeping the average close to the value of the EFFICIENT-SPEED slider. But be careful, as <code>random-normal</code> is unbounded: it has a small probability of giving very high or very low values. Make sure that you also set a minimum and a maximum for efficient speed.</p>
+<h2>RELATED MODELS</h2>
+<ul>
+<li>
+<p>"Traffic Basic": a simple model of the movement of cars on a highway.</p>
+</li>
+<li>
+<p>"Traffic Basic Adaptive": a version of "Traffic Basic" where cars adapt their acceleration to try and maintain a smooth flow of traffic.</p>
+</li>
+<li>
+<p>"Traffic Basic Adaptive Individuals": a version of "Traffic Basic Adaptive" where each car adapts individually, instead of all cars adapting in unison.</p>
+</li>
+<li>
+<p>"Traffic 2 Lanes": a more sophisticated two-lane version of the "Traffic Basic" model.</p>
+</li>
+<li>
+<p>"Traffic Intersection": a model of cars traveling through a single intersection.</p>
+</li>
+<li>
+<p>"Traffic Grid": a model of traffic moving in a city grid, with stoplights at the intersections.</p>
+</li>
+<li>
+<p>"Traffic Grid Goal": a version of "Traffic Grid" where the cars have goals, namely to drive to and from work.</p>
+</li>
+<li>
+<p>"Gridlock HubNet": a version of "Traffic Grid" where students control traffic lights in real-time.</p>
+</li>
+<li>
+<p>"Gridlock Alternate HubNet": a version of "Gridlock HubNet" where students can enter NetLogo code to plot custom metrics.</p>
+</li>
+</ul>
+<p>The traffic models from chapter 5 of the IABM textbook demonstrate different types of cognitive agents: "Traffic Basic Utility" demonstrates <em>utility-based agents</em>, "Traffic Grid Goal" demonstrates <em>goal-based agents</em>, and "Traffic Basic Adaptive" and "Traffic Basic Adaptive Individuals" demonstrate <em>adaptive agents</em>.</p>
+<h2>HOW TO CITE</h2>
+<p>This model is part of the textbook, “Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo.”</p>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Rand, W., Wilensky, U. (2008).  NetLogo Traffic Basic Utility model.  http://ccl.northwestern.edu/netlogo/models/TrafficBasicUtility.  Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the textbook as:</p>
+<ul>
+<li>Wilensky, U. &amp; Rand, W. (2015). Introduction to Agent-Based Modeling: Modeling Natural, Social and Engineered Complex Systems with NetLogo. Cambridge, MA. MIT Press.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2008 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2008 Cite: Rand, W., Wilensky, U. --></div>
+      </div>
+    </main>
+  </body>
+</html>

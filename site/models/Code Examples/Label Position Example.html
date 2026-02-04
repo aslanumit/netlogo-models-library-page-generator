@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Label Position Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Label Position Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Label%20Position%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Label Position Example.png" alt="Screenshot of Label Position Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This example demonstrates a means of using the TIE command to make turtle labels you can position how you want them.</p>
+<p>NetLogo always positions turtle labels the same way, in the lower right corner of the turtle's bounding box, and right justified.</p>
+<p>You can sometimes adjust horizontal positioning of labels to your liking by using labels with space characters in them, e.g.:</p>
+<pre><code>  set label "     foo"
+  set label "foo     "
+</code></pre>
+<p>This example demonstrates a technique that gives you even more control.</p>
+<h2>HOW IT WORKS</h2>
+<p>Instead of setting the label on our turtle directly, we make a second turtle, attach a label to it, position it how we want, and use the TIE command to attach the second turtle so when the first turtle moves, the second turtle comes with it.</p>
+<p>We use a directed link from the first turtle to the second turtle, so the "tie" relationship is one-way, so we're free to move the label around without affecting the main turtle.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP, then GO.  You can adjust the BANNER-ANGLE and BANNER-DISTANCE sliders as the model runs.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note the use of the TIE primitive.</p>
+<h2>RELATED MODELS</h2>
+<p>Halo Example</p>
+<!-- 2011 --></div>
+      </div>
+    </main>
+  </body>
+</html>

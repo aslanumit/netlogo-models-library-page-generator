@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Urban Suite - Positive Feedback</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Urban Suite - Positive Feedback</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/Urban%20Suite/Urban%20Suite%20-%20Positive%20Feedback.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/Urban Suite/Urban Suite - Positive Feedback.png" alt="Screenshot of Urban Suite - Positive Feedback" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates the effect of "positive feedback".  In particular, it is an implementation of the model described in the book "Cities and Complexity" by Michael Batty, on pages 38-42.  For analysis and discussion beyond that provided with this model, the reader is encouraged to refer to this text.</p>
+<p>Positive feedback is, colloquially speaking, a situation where the rich get richer and the poor get poorer.  More technically, positive feedback describes the situation where the rate of growth of a quantity is positively correlated with the magnitude of that quantity.  With positive feedback, growth leads to size which leads to increased rate of growth.  Positive feedback is sometimes called "increasing returns to scale".  There can also be "decreasing returns to scale".  In this case, all quantities are reduced over time until they eventually equalize - which is beneficial for the poor and harmful for the rich.  With "constant returns", there is no growth or decay, so the ratios between rich and poor players stay fixed.  This model lets the user explore the realms of increasing, constant, and decreasing returns.</p>
+<h2>HOW IT WORKS</h2>
+<p>In this model, we have a 21 by 21 grid of squares, each of which is assigned an initial random "activity" value.  These squares could represent cities, and the activity value could express populations.  Or the squares could represent corporations, with the activity values being market share or profits.  This model is merely demonstrating the basic mathematical concept, so the particular analogy to real-world phenomena is not important.</p>
+<p>The initial activity values being chosen randomly are suggestive of historical accident.  Perhaps two railroad lines happened to meet here, or gold was found in nearby hills, so a large city sprang up.  The question this model answers is this: starting with a random distribution of activity levels, what happens to the distribution over time, as a result of the following growth process.</p>
+<p>If MOORE-NEIGHBORHOOD? is switched off, these are the rules:</p>
+<p>In each time step (or tick), the grid square takes its current activity value to the power of ALPHA (adjustable by a slider), and sets its activity equal to that result.  Basically each square is experiencing exponential growth (or decay, if ALPHA &lt; 1).  For instance, if ALPHA=2, then the activity value in each location is squared.  In the next time step, each activity value is squared again.  When ALPHA &gt; 1, the situation is one of positive returns.  A location that has a high activity value to begin with has the greatest advantage and will eventually overshadow all the others.  When ALPHA = 1, it is a "constant returns" situation, and when ALPHA &lt; 1, it is "decreasing returns".</p>
+<p>If MOORE-NEIGHBORHOOD? is switched on, then the rules are only slightly different:</p>
+<p>Instead of taking the current activity value to the power ALPHA, each location first averages its own activity value with the activity values of the eight neighboring locations, then takes the resulting average to the power ALPHA.</p>
+<p>After each tick, all the activity values are normalized to lie between 0 and 1, with the maximum activity value being scaled to 1.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press the SETUP button to initialize the grid with random activity values.</p>
+<p>Press the GO button to run the model.  You will see the view quickly converges to a steady state.</p>
+<p>Press the "GO ONCE" button to move forward one tick in model time.  This is particularly useful because the model runs very quickly, so the user may miss seeing the process if they just push GO.</p>
+<p>The MOORE-NEIGHBORHOOD? switch determines whether grid locations use the average of their neighbors' activity values (ON) or just use their own activity values (OFF), to be raised to the ALPHA power each tick.</p>
+<p>The ACTIVITY DISTRIBUTION plot shows the distribution of the activity levels in each of the 441 cells, normalized such that the maximum activity level equals 1.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>If MOORE-NEIGHBORHOOD? is switched ON and ALPHA is barely in the positive returns regime (e.g. ALPHA = 1.02), then the whole screen turns white, rather than having a white spot in the midst of black (which occurs with high values of ALPHA).  Why is this?</p>
+<h2>THINGS TO TRY</h2>
+<p>Turn MOORE-NEIGHBORHOOD? to ON.  Compare the visual results when you use ALPHA = 1.1 and ALPHA = 2.  Both of these are in the increasing returns regime, but the ALPHA = 2 shows a much more concentrated white spot.  Can you explain this?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Change the mathematical update function so that some constant amount (determined by a slider) is added to the activity level of each patch each time.  Would this be more beneficial for those who are initially poor, or those who are initially rich?  Or would it matter at all?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>To color the patches appropriately, the activity value (which has been normalized to lie between 0 and 1) is simply multiplied by 9.9.  This is because in the NetLogo default color scheme, 0.0 is black and 9.9 is white.  See the colors documentation in the NetLogo help for more information about how the color scheme works.</p>
+<h2>RELATED MODELS</h2>
+<p>This model is related to all of the other models in the "Urban Suite".  In particular, it is demonstrating the same concept as the "Urban Suite - Path Dependence" model, although the focus is slightly different.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is based on pages 38-42 of the book "Cities and Complexity" by Michael Batty.</p>
+<p>Thanks to Seth Tisue for his work on this model.</p>
+<p>The Urban Suite models were developed as part of the Procedural Modeling of Cities project, under the sponsorship of NSF ITR award 0326542, Electronic Arts &amp; Maxis.</p>
+<p>Please see the project web site (http://ccl.northwestern.edu/cities/ ) for more information.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2007).  NetLogo Urban Suite - Positive Feedback model.  http://ccl.northwestern.edu/netlogo/models/UrbanSuite-PositiveFeedback.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2007 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2007 --></div>
+      </div>
+    </main>
+  </body>
+</html>

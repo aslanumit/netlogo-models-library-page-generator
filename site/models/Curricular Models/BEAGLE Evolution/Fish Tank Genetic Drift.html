@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fish Tank Genetic Drift</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Fish Tank Genetic Drift</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Curricular%20Models/BEAGLE%20Evolution/Fish%20Tank%20Genetic%20Drift.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Curricular Models/BEAGLE Evolution/Fish Tank Genetic Drift.png" alt="Screenshot of Fish Tank Genetic Drift" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a genetic drift model that shows how gene frequencies change in a population due to purely random events.  The effect of random selection of certain individuals in a population (either through death or through reproduction) and/or the effect of random selection as to which chromosome (from every chromosome pair) end up being sorted into each gamete (sex cells), results in the loss or gains of alleles in the population.</p>
+<p>Over multiple generations this shift in gene distribution leads to alleles becoming progressively more rare or more common (or disappearing completely) in a population. This effect is called genetic drift.</p>
+<p>The underlying mechanism of random selection generates different outcomes than in  natural selection (where individual traits and genes are selected for the advantages they confer on the survival and reproduction of individuals).  In addition to natural selection, however, this random selection and resulting effects of genetic drift is one of the primary mechanisms, which drive evolution.  It is also believed to be one of the mechanisms, which contributes to speciation.</p>
+<h2>HOW IT WORKS</h2>
+<p>The fish have a simple genetic representation for five traits: sex (and corresponding body color), spotting, dorsal fin color, tail shape, and tail color.</p>
+<p>These traits are represented with genes that have one of two possible alleles each (X or Y, B or b, G or g, F or f, and T or f, for the traits listed above). Upper case letters represent dominant alleles and lower case represent recessive alleles.  Therefore the three combinations BB, Bb, and bB result in expression of the trait for B (e.g. black spots), and only bb results in the expression of the trait for b (e.g. no black spots). Males and Females are determined by whether the bird has XY (male) or XX (female).  Body color is trait determined by what sex the fish is.  Females are salmon colored and males are blue colored.</p>
+<p>Here is the genotype to phenotype mapping:
+Spotting: (BB, Bb, bB) yes or (bb) no
+Dorsal Fin Color: (GG, Gg, gG) green or (bb) non-green (gray)
+Tail Fin Shape: (FF, Ff, fF) forked or (ff) no fork
+Tail color: (TT, Tt, tT) yellow or (tt) non-yellow (gray)</p>
+<p>A male fish can interbreed with a female fish in the same region of the tank.  By default the tank is all one large region.  But dividers can be added to the tank to split the tank up into separate regions.</p>
+<p>The genotype for each fish is represented as a karyotype of a body cell.  A visualization of the chromosome pairs (one pair for each gene) and the corresponding band showing the location of the gene on the chromosome can be seen in the model.</p>
+<p>The arrows and hearts in the model represent the movement and recombination of alleles through sexual reproduction.  Arrows represent the movement of the male sex cell to the female sex cell.  The heart represents a fertilization event that will occur when that male sex cell reaches the randomly selected female sex cell.  A karyotype of the alleles in both the body cells (somatic cells) and/or the sex cells (gametes) for all the fish involved in reproduction can also be visualized as this process is occurring.</p>
+<p>The model has two random selection mechanisms used for driving the effects of genetic drift.  One of these is the AUTO-REPLACE switch.  It is used to continually remove a randomly selected individual from the population and replace it with an offspring from a randomly selected pair of parents.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press SETUP and you will see the resulting phenotypes in the fish based on the random distribution of the % of each type of allele you have set initially.  Make sure the SEE-FISH? switch is set to "on".</p>
+<p>When you run the model the fish in the fish tank begin to move around.  If you click on a fish, that fish will die and be removed.  If AUTO-REPLACE is set to the "On", then one male fish and one female fish will be randomly chosen from the remaining population to reproduce a replacement offspring.  This process will be visible by an arrow from the male, moving toward a heart on the female (if the SEE-SEX-CELLS? is set to "on").  When the arrow collapses down into the heart, the heart will turn into a new fish.</p>
+<p>CARRYING-CAPACITY: of the population sets the carrying capacity of the tank. Whatever this is set to, the population will automatically reproduce (if AUTO-REPLACE? is "on") or die off to reach this level.</p>
+<p>INITIAL-FEMALES: sets the % of initial females put in the tank.  The initial number of females is the % of the carrying-capacity.</p>
+<p>INITIAL-ALLELES-BIG-B: sets the % of alleles related to the gene for black spots in the population that will have the recessive "b" allele.  The % of alleles that will have the dominant "B" (large B) allele will be = (100% - INITIAL-ALLELES-BIG-B).</p>
+<p>INITIAL-ALLELES-BIG-G: sets the % of alleles related to the gene for green dorsal fin in the population that will have the "G" allele.  The % of alleles that will have the "G" (large G) allele will be = (100% - INITIAL-ALLELES-BIG-G).</p>
+<p>INITIAL-ALLELES-BIG-F: sets the % of alleles related to the gene for forked tail in the population that will have the "f" allele.  The % of alleles that will have the "F" (large F) allele will be = (100% - INITIAL-ALLELES-BIG-F).</p>
+<p>INITIAL-ALLELES-BIG-T: sets the % of alleles related to the gene for yellow tail in the population that will have the "t" allele.  The % of alleles that will have the "T" (large T) allele will be = (100% - INITIAL-ALLELES-BIG-T).</p>
+<p>SEE-FISH?: when turned "on" allows you to see the fish and their phenotypes.  It may be useful to turn it "off" though when looking at the genotypes (SEE-BODY-CELLS? or SEE-SEX-CELLS) as there may be too much visual information with everything on.</p>
+<p>SEE-BODY-CELLS?: when it is set to "on" a karyotype of all the chromosomes in the body cells for this fish will be shown.  Each chromosome has a band on it that is either black or light gray.  If it is black it represents the dominant version of the allele for a given gene and if it is light gray it represents the recessive version.  Letters (Capital for dominant and lower case for recessive) are also shown below the chromosome.  Chromosome pairs for each gene have matching lengths.  And, all but the chromosomes for sex also have matching colors.</p>
+<p>SEE-SEX-CELLS?: when it is set to "on", a karyotype of all the chromosomes in each sex cell will be shown.  When reproduction occurs, a sex cell from the male (sperm) must travel to the sex cell from the female (egg).  Sex cells contain half the genetic information of a body cell, and 1 allele for each gene (which is shown as 1 chromosome from each chromosome pair).  The male sex cell is shown as a triangle whose upper left corner makes a right angle.  The female sex cell is shown as a triangle whose lower right corner makes a right angle.  When both triangles meet, they form a whole rectangle and a whole karyotype for a fish.  At this point the heart disappears, the sex cells disappears, and a new body cells of a new fish (and the corresponding new fish) appears.  This entire process is shown as occurring outside the fish, to allow the user to watch the flow of alleles from somatic cells into gametes and back into the new offspring's somatic cells.  This process of "gene flow" is referred to in other mechanisms and phenomena related to evolution.  Here that flow can actually be visualized.  In the model the reproductive process is visualized outside the fish.  In reality, insemination occurs when a sperm cell and an egg cell merge inside a female fish.</p>
+<p>RANDOMLY-REPLACE-A-FISH: is a button that when pressed will have the computer select a fish at random to remove and replace it with a new one through reproduction between two randomly selected fish remaining in the population (a male and female). If there are no males or females in the tank, then no fish can be born to replace the fish (there aren't two parents available), and only a fish will be removed but not replaced when that is the case.</p>
+<p>You can add dividers to break the tank up into smaller regions, by clicking on the bottom of the tank using your mouse cursor.  The mouse cursor will turn to an up arrow when you are able to do this.  To remove the divider that you put up, hover your mouse cursor over the same spot on the bottom of the tank and the it will turn to a down arrow.  Click the mouse button when you see this down arrow to remove the divider.  When dividers are added, the carrying capacity of each region of the tank is calculated to be the fraction of the water in that portion of the tank out of the whole tank's water times the CARRYING-CAPACITY slider value.</p>
+<p>AUTO-REPLACE?: when turned "on" will cause the computer select a fish at random to remove and replace it with a new one every .25 seconds.  The new fish will be an offspring of two randomly selected fish remaining in the population (one male and one female parent).  This can only occur if there is at least one male and at least one female available in that section of the fish tank.  For example, if a tank is divided into two regions, and the right region has only males, and the left region has both males and females, auto-replace will replace fish on the right side only.   If no region has both males and females, then no fish will be replaced in any part of the tank, even when AUTO-REPLACE? is set to "On".</p>
+<h2>THINGS TO NOTICE</h2>
+<p>When fish are randomly replaced fluctuation in the proportion of each allele in the population will occur  This is because only 1 of every two alleles for a gene is passed on to an offspring, and the process of separating out which allele is passed on through a gamete (via. meiosis) is fundamentally a random outcome.  When fluctuations bring the number of alleles down to zero, that allele is gone from the fish population and can't return.</p>
+<p>Randomly selecting individuals out of the population and/or randomly producing new offspring will eventually result in this loss of diversity in the gene pool of the population, eventually leading to a single gene or trait in the population.  This process and resulting outcome is referred to as genetic drift.</p>
+<p>Larger populations take longer to lose diversity than smaller ones.</p>
+<p>Likewise, alleles that are less frequent in a population are more likely to disappear from the population more quickly than those that are more frequent.</p>
+<p>Bottle neck affects can be simulated by sweeping the population size down to very low levels and then allowing it to return to higher population sizes.  This can be done by reducing the size of the fish tank and the allowing it to become big again.  Each time the population is reduced to only a few fish, that even increases the chances that one or more alleles have removed from the population and that the remaining population now has less diversity in its traits than its ancestors.</p>
+<p>Bottle necks can also be created by adding dividers in the fish tank to separate the main population into smaller sub populations.</p>
+<p>One limiting bottleneck factor to notice is related to the proportion of males and females.  A population can be very large overall, but if it only has one or two males than the males end up being a potential bottle neck for what type of genes can be passed on. This is also true if the population has only one or two females.</p>
+<p>When pressing SETUP for the same initial conditions for the % of each allele observer will notice that fluctuations occur in the phenotypes of the fish, even as no fluctuations have occurred in frequency of each allele in the gene pool of the population.  This is because of the rules of Mendelian genetics.  Imagine that we have two fish in a population that contains 50% of the alleles as "g" (no instructions for producing the protein for making the green pigmentation of the tail) and 50% of the alleles as "G" (instructions for producing the protein for making the green pigmentation of the tail.  A population where one fish has a GG genotype and the other has a gg genotype would have phenotypes of one fish with a green tail and one without.  But a population where one fish has a Gg genotype and the other has a Gg genotype would have both fish with green tails.  In both populations, however, the number of each type of allele in the gene pool is the same.  This type of fluctuation occurs from generation to generation in the fish.</p>
+<h2>THINGS TO TRY</h2>
+<p>You can watch random selection occur by "random selection" by turning on an auto replace process (which will steadily remove four fish from the population and replace them with new offspring fish from the population every second).</p>
+<p>You can set the % of each type of allele you wish to start off with in the gene pool of the population, as well as the % of males and females. If you don't include at least 1 male and 1 female the population will not be able to reproduce.</p>
+<p>Try intentionally selecting a particular phenotype to remove from the fish and keep selecting to see how many selections it takes to remove all that variants from the population.  If the trait variation you are trying to remove is apparent only when two recessive alleles are present, you may see the trait resurface in future generations (due to the recombination of the recessive alleles in offspring). Watch the graphs to see if you have removed the corresponding alleles completely.</p>
+<p>Try predicting the resulting phenotype of an offspring fish, by turning SEE-FISH? and SEE-BODY-CELLS to "off" and SEE-SEX-CELLS? "on".  As the sex cells are moving toward each other, pause the model (by pressing GO/STOP).  Look at the rules for genotype ---&gt; phenotype mapping and write your prediction down for the phenotype of the offspring.  Switch the SEE-FISH? back to "on" and resume the model, to see if your prediction was correct.</p>
+<p>Vary the size of the initial fish tank to explore how fast genetic drift occurs in different population sizes.</p>
+<p>Simulate the reduction the effects of a disease, temporary loss of habitat, temporary loss of food, etc.. by reducing the carrying capacity of the ecosystem for a brief time.  Do this by reducing the size of the fish tank to sweep away some portion of the fish (e.g. over half of them).  Then simulate the ecosystem returning to it previous stable state, by increasing the fish tank size to it previous level.</p>
+<p>Try adding barriers in the fish tank (by clicking on the black bottom of the fish tank) to geographically isolate portions of the population from one another.  You can cause the isolated sub population to lose diversity of traits and alleles, but the overall population to keep the allele diversity needed for any variation.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Transparency is used to visualize the death of fish.  When a fish dies, the fish shape is removed and a bone shape appears and then gradually fades to transparent when a fish is removed from the population.</p>
+<p>Directional links are used to visualize the transmission of a gamete to a "fertilization event" (shown as a heart)</p>
+<p>Tie is used to build hierarchies of shapes that belong to parent shapes.  For example, sex cells and body cells have parent shapes (karyotypes) thank have other shapes linked to them (chromosomes - which represent the alleles).  And the fish shape has fish parts that are linked to it, each part a phenotype determined by the genetic information of the body cell of the parent.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>It might be useful to add the code that allows you to drag agents (fish) around using a mouse cursor.  That way you could move a fish from one region to another to explore what happens when a pioneer brings in new genes into a gene pool from a previously isolated population.</p>
+<h2>RELATED MODELS</h2>
+<p>GenDrift models in the Genetic Drift folder, under Biology
+Bug Hunt Drift, under BEAGLE Evolution folder, under Curricular Resources</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This model is a part of the BEAGLE curriculum (http://ccl.northwestern.edu/rp/beagle/index.shtml)</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Novak, M. and Wilensky, U. (2011).  NetLogo Fish Tank Genetic Drift model.  http://ccl.northwestern.edu/netlogo/models/FishTankGeneticDrift.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2011 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<!-- 2011 Cite: Novak, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>

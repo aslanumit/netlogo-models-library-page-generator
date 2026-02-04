@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3D Surface</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>3D Surface</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Mathematics/3D%20Surface.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Mathematics/3D Surface.png" alt="Screenshot of 3D Surface" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model maps turtles between Cartesian and spherical 3-dimensional coordinates.  To create the appearance of a curved 3D surface, the program generates turtles with random x- and z-coordinates, then computes each turtle's y-coordinate based on x and z, and time.  The cosine function is used in the formula to produce a curved surface.  Varying the y coordinate based on time produces motion.</p>
+<h2>HOW IT WORKS</h2>
+<p>To render the surface in the NetLogo view, it maps from 3D to 2D coordinates as follows:</p>
+<blockquote>
+<p>view x = turtle x + (turtle z) / 2
+view y = turtle y + (turtle z) / 2</p>
+</blockquote>
+<p>In other words, increasing z causes the turtle's apparent position to move both up and to the right.</p>
+<h2>HOW TO USE IT</h2>
+<p>Click the SETUP button to generate the turtles and place them on the surface.  Click the GO (forever) button to run the model, which continuously varies the turtles' y-coordinates to generate a wavelike motion.</p>
+<p>The NUM-TURTLES slider determines the number of turtles that make up the surface.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Notice that as the turtles move down (y-coordinate decreases) they become darker in color, and when they move up (y-coordinate increases) they become lighter.</p>
+<h2>THINGS TO TRY</h2>
+<p>Experiment with the NUM-TURTLES slider.  How many turtles are needed to produce a realistic effect?  Why doesn't it keep getting better-looking indefinitely as you add more turtles?</p>
+<p>In the <code>move</code> procedure, try other numbers besides 5 in front of and inside the cosine function.  Explain the new behavior!</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Try changing the formula used to compute the y-coordinate to produce differently shaped surfaces.</p>
+<p>See if you can draw not just a surface, but a three dimensional shape such as a cone or a sphere.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Notice the use of <code>scale-color</code> to change a turtle's color based on its y-coordinate. Also see the model "Wave Machine" for a version that uses patches rather than turtles to make a 3-D membrane.</p>
+<h2>RELATED MODELS</h2>
+<p>3D Solids
+Wave Machine</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (1998).  NetLogo 3D Surface model.  http://ccl.northwestern.edu/netlogo/models/3DSurface.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 1998 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the project: CONNECTED MATHEMATICS: MAKING SENSE OF COMPLEX PHENOMENA THROUGH BUILDING OBJECT-BASED PARALLEL MODELS (OBPML).  The project gratefully acknowledges the support of the National Science Foundation (Applications of Advanced Technologies Program) -- grant numbers RED #9552950 and REC #9632612.</p>
+<p>This model was converted to NetLogo as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227. Converted from StarLogoT to NetLogo, 2001.</p>
+<!-- 1998 2001 --></div>
+      </div>
+    </main>
+  </body>
+</html>

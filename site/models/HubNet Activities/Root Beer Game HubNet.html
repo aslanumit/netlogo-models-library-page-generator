@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Root Beer Game HubNet</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Root Beer Game HubNet</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/HubNet%20Activities/Root%20Beer%20Game%20HubNet.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/HubNet Activities/Root Beer Game HubNet.png" alt="Screenshot of Root Beer Game HubNet" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is an adaptation of a popular game created at MIT in the early 1960s that shows how small delays in a distribution system can create big problems.  The participants take on one of four roles in a distribution network for root beer -- the factory, the distributor, the wholesaler, or the retailer.  Each participant places and ships orders while trying to keep their costs to minimum. Costs include the holding inventory as well as missing out on sales because you produced too little root beer.</p>
+<h2>HOW IT WORKS</h2>
+<p>The game is played in one-week rounds and the players are dividing into teams of four.  Each team is a supply chain that consists of a retailer, a wholesaler, a distributor, and a factory.  At the beginning of each week, every player on a team faces a demand for root beer that comes from the person downstream from him or her in the supply chain. The demand originates from the (invisible) root beer drinkers who create demand for the retailer every week.</p>
+<p>At the end of each week, if you have enough inventory to meet your demand, then the demanded quantity is automatically shipped out of your inventory to the player downstream from you. If you don't have enough cases in inventory to meet demand from the player upstream from you (or from the public if you are the retailer), then a backorder is created.  Each backordered case costs the player $1.00 in lost sales opportunity.  Each case in inventory costs the player $0.50 to store.  The goal of the game is to minimize cost.</p>
+<p>As a player, each week you must decide how many cases to order from the person upstream from you. Placing orders creates additional demand for your upstream supplier the next week, but it does not immediately replenish your inventory. There is time lag because of a shipping delay between you and your upstream supplier. (If you are the factory, placing an order is equivalent to producing the root beer, and the lag is due to the time to produce the product.) Once all players have placed orders for the week, time advances to the next week and the product you are shipping goes out the door.  Your cost for the week is also calculated and reported.</p>
+<h2>HOW TO USE IT</h2>
+<p>Press the SETUP button and then the GO button and have all the participants login. Explain that each week, each role needs to ship cases of root beer based on the demand they face, as well as place orders to replenish their inventory to the desired level.  Explain also how costs are accrued and that the goal is to minimize costs.  It is a good idea to play a few weeks together until the participants get acquainted with the client interface and the actions needed in each round.</p>
+<p>Buttons and Sliders:
+SETUP - Resets the simulation to the initial conditions and the clock to zero.</p>
+<p>GO - Listens for input from clients. Should be pressed to run the simulation.</p>
+<p>WEEKS-OF-SIMULATION - Sets the number of rounds in the game.</p>
+<p>PERIODS-OF-DELAY - Set the number of weeks between when one player sends an order and the next player in the line receives the order</p>
+<p>Plots:
+COST - Plots the instantaneous cost of each team where cost equals $0.50 per case in inventory plus $1.00 per back-ordered case.
+ORDERS SHIPPED - Plots the number of orders shipped from the retailer each week.
+ORDERS TO FACTORY - Plots the number of order produced by the factory each week.</p>
+<p>Client Interface:
+Each client is a member of a TEAM identified by a color; all teams have four members. Each client is assigned a ROLE in that team which is determined by his or her position in the supply chain, the first player to login is the retailer and the last is the factory.  Players start out with an initial INVENTORY of 12 and an initial order of 4.</p>
+<p>To change the amount of the order you want to place, move the ORDERS-TO-PLACE slider and press the PLACE-ORDER button.  The amount of your last order placed appears in the ORDER-PLACED monitor.  You can only place one order per week, once you have done so the ORDER-PLACED? monitor will display true, and it will not let you place another order until everyone on your team as placed an order, which ends the week. When the week ends everyone ships and you will receive goods from your supplier the amount you receive will be displayed in the LAST-AMOUNT-RECEIVED monitor, and it will be added to your inventory. The amount you ship is displayed in the LAST-AMOUNT-SHIPPED monitor. At the end of the week if your inventory does not meet the demand the extra orders will become BACK-ORDERS. Finally, the order placed by the player that you supply in the previous week will become your new DEMAND, unless you are the retailer, then you will see the true demand of the public.</p>
+<p>Your instantaneous cost is displayed in the MY-COST monitor, this includes all goods that you have shipped but have not yet arrived at their intended destination.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Look at the resulting orders shipped and orders to factory plots.  Are the levels fairly constant or fluctuating?  Have the retailer record the demand he or she faces each week. Are the changes in the orders shipped and orders to the factory plots map similar to the fluctuations in demand?</p>
+<h2>THINGS TO TRY</h2>
+<p>As a team, can you create a strategy that keeps your inventory from fluctuating more than the customer demand? Does it get easier or harder if you increase the PERIODS-OF-DELAY?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Create a supply chain that is not linear and has multiple players for each role, perhaps introducing competition within roles.</p>
+<p>Create a non-HubNet version of this game using the System Dynamics Modeler.</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This activity uses NetLogo's network support to move the goods from stage to stage.  Each player as a supply link from the player below them in the chain and a demand link from the play above them in the chain.  Orders are placed on the demand links and received on the supply links.</p>
+<h2>RELATED MODELS</h2>
+<p>Investments
+Public Good</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>For a discussion of the original MIT Beer Game and additional suggestions for discussion points, see http://web.mit.edu/jsterman/www/SDG/beergame.html</p>
+<p>For a bibliography of the beer game in academic publications (last revised July 1992), see http://www.solonline.org/?page=Beer_Game_Biblio</p>
+<p>For instructions and materials for running the original board game version, see http://www.solonline.org?item_id=456354</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. and Stroup, W. (2003).  NetLogo Root Beer Game HubNet model.  http://ccl.northwestern.edu/netlogo/models/RootBeerGameHubNet.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the HubNet software as:</p>
+<ul>
+<li>Wilensky, U. &amp; Stroup, W. (1999). HubNet. http://ccl.northwestern.edu/netlogo/hubnet.html. Center for Connected Learning and Computer-Based Modeling, Northwestern University. Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2003 Uri Wilensky and Walter Stroup.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This activity and associated models and materials were created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2003 Stroup --></div>
+      </div>
+    </main>
+  </body>
+</html>

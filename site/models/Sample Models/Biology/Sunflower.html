@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sunflower</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Sunflower</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Sunflower.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Biology/Sunflower.png" alt="Screenshot of Sunflower" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>The interlocking spirals found in the seeds, petals and even branches of many plants occur naturally through the growth of the flower.  This model attempts to demonstrate the growth of these naturally occurring spirals.</p>
+<p>When a new seed emerges, the older ones grow slightly and move further from the center--the source--and the youngest seed finds the largest gap between existing seeds, in which it can grow.  This gap can be found by turning counter clockwise.  The angle made by this turn is a multiple of the golden ratio (1.618).  The golden ratio, based on the Fibonacci series (1, 1, 2, 3, 5, 8, 13...), equals the limit of F(n)/F(n-1).  Thus, these spirals can be mathematically generated, using the golden ratio.</p>
+<h2>HOW IT WORKS</h2>
+<p>For each clock-tick, a new turtle (can be seen as a seed or a petal) is created.  As in nature, the turtle finds the appropriate position and begins growing.  The 'appropriate position' is defined as the number of clock-ticks times the 'turn increment'.  All of the other existing turtles move forward and grow slightly, with each clock-tick.  If a turtle gets too close to the edge of the world, it dies.</p>
+<h2>HOW TO USE IT</h2>
+<p>The NUM-COLORS slider controls how many colors the turtles can be.  (Using this will make some of the spirals stand out more, other stand out less.)</p>
+<p>The STEP-SIZE slider controls how far away the turtle moves from the center, for each clock-tick.</p>
+<p>The TURN-INCREMENT slider dictates the degree that each new turtle will turn to set its position in the spiral.</p>
+<p>The SET TURN-INCREMENT buttons help to set the TURN-INCREMENT slider to specific values at and around the golden ratio.  They are simply there to help achieve precision that can be difficult with the slider.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Think about the spirals that you see.  How many different ways can you make a pattern of spirals?</p>
+<h2>THINGS TO TRY</h2>
+<p>How does adding colors change the spirals you see?  Does this change the phenomena, or only what you see?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>Make the spirals go counter-clockwise.</p>
+<p>Make the model draw your favorite flower's petal or seed pattern.  For example, a buttercup or columbine could be made by creating 5 large petals of the appropriate colors.</p>
+<p>In nature, real plants don't have the golden ratio "programmed" into them.  Rather, the spirals form as the result of an emergent process, described in Conway and Guy's book (see below) and other sources.  Can you extend this model to capture this emergent process?</p>
+<h2>NETLOGO FEATURES</h2>
+<p>Note in the code that the turtles "die" when they get too far from the center of the world, so they make a circular pattern.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>This is based on pp. 113-24 of John H. Conway and Richard K. Guy's "The Book of Numbers".</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2003).  NetLogo Sunflower model.  http://ccl.northwestern.edu/netlogo/models/Sunflower.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2003 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2003 --></div>
+      </div>
+    </main>
+  </body>
+</html>

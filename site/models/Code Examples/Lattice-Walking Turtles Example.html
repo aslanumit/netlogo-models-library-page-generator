@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lattice-Walking Turtles Example</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Lattice-Walking Turtles Example</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Code%20Examples/Lattice-Walking%20Turtles%20Example.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../models/Code Examples/Lattice-Walking Turtles Example.png" alt="Screenshot of Lattice-Walking Turtles Example" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This example demonstrates how to create a hexagonal grid for turtles to walk around on using links.</p>
+<h2>HOW IT WORKS</h2>
+<p>In order for the hexagons along the edges of the world to connect up with the hexagons on the opposite edges in the expected way, the size of the grid must be even in both dimensions.  Therefore we use a world where the origin patch (0,0) is located in the corner rather in the center, since even-dimensioned worlds have no center patch.</p>
+<h2>THINGS TO TRY</h2>
+<p>If you do:</p>
+<pre><code>  ask walkers [ pen-down ]
+</code></pre>
+<p>Notice that the lines the walkers draw appear behind the hexagons, because the hexagons are turtles. If you want the lines to be drawn on top of the hexagons, you need to transfer the hexagons to the drawing layer and hide the hexagon turtles, like this:</p>
+<pre><code>  ask nodes [ stamp  hide-turtle ]
+</code></pre>
+<p>On the computers we tested, this also makes the model run faster since the hexagons don't need to be redrawn individually every time the view is updated.  Later, if you want to clear the drawing and redraw the hexagons, do:</p>
+<pre><code>  clear-drawing  ask nodes [ stamp ]
+</code></pre>
+<h2>RELATED MODELS</h2>
+<p>Link-Walking Turtles Example</p>
+<!-- 2007 --></div>
+      </div>
+    </main>
+  </body>
+</html>

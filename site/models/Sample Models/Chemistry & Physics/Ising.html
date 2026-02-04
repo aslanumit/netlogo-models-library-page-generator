@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ising</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Ising</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Ising.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../models/Sample Models/Chemistry &amp; Physics/Ising.png" alt="Screenshot of Ising" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This is a model of a magnet at the microscopic level. It is a classic model of condensed matter physics. A crystalline material is conceived of as a set of lattice points with spins. The spins (magnetic moments) of the atoms in the magnet can either be up or down. Spins can change as a result of being influenced by neighboring spins and by the ambient temperature. Spins prefer to align with their neighbors. The overall behavior of the system will vary depending on the temperature.</p>
+<p>The first version of the model worked on by the physicist Ising was on a 1D lattice. Twenty years later, the physicist Onsager analytically solved the 2D Ising model (the model presented here) and showed that at low temperatures, the spins will tend to align, causing the material to spontaneously magnetize.</p>
+<p>In the 2D Ising model, when the temperature is low, there is spontaneous magnetization, and we say that the system is in the ferromagnetic phase. When the temperature is high, there is no spontaneous magnetization, and we say that the system is in the paramagnetic phase. (At room temperature, a refrigerator magnet is ferromagnetic, but an ordinary piece of iron is paramagnetic.)</p>
+<p>This very abstract model can be interpreted in other ways as well, for example as a model of liquid/gas phase transitions where the two states are liquid and gas instead of two magnetic spin states. It has also been used as a basis for simulating phenomena in the social sciences that involve phase-transition-like behavior.</p>
+<h2>HOW IT WORKS</h2>
+<p>We represent the two possible spin states with the numbers +1 or -1. Spins of +1 are shown in light blue, spins of -1 in dark blue.</p>
+<p>The energy at each spin is defined as the negative of the sum of the products of the spin with each of its neighboring four spins. So for example if a spin is surrounded by four opposing spins, then the energy is 4, the maximum possible. But if a spin is surrounded by four like spins, then the energy is -4, the minimum possible. Basically, the energy measures how many like or opposite neighbors the spin has.</p>
+<p>A spin decides whether to "flip" to its opposite as follows. The spins are seeking a low energy state, so a spin will always flip if flipping would decrease its energy. But the spins sometimes also flip into a higher energy state. We calculate the exact probability of flipping using the Metropolis algorithm, which works as follows. Call the potential gain in energy Ediff. Then the probability of flipping is:</p>
+<p>e<sup>-Ediff / temperature</sup>.</p>
+<p>The gist of this formula is that as the temperature increases, flipping to a higher energy state becomes increasingly likely, but as the energy to be gained by flipping increases, the likelihood of flipping decreases. You could use a different formula with the same gist, but the Metropolis algorithm is most commonly used.</p>
+<p>To run the model, we repeatedly pick a single random spin and give it the chance to flip.</p>
+<p>In real world materials, many flips can happen at once. In our idealized model, each step in the algorithm corresponds to an attempted flip, not to the passage of time as it would occur in the physical world.</p>
+<h2>HOW TO USE IT</h2>
+<p>Choose an initial temperature with the TEMPERATURE slider, then press SETUP to set up the grid and give each spin a random initial state.</p>
+<p>You can control the proportion of spins that start at +1 using the PROBABILITY-OF-SPIN-UP slider. If you want all spins to be +1, set that slider to 100%. If you want all spins to be -1, set it at 0%.</p>
+<p>Then press GO to watch the model run.</p>
+<p>You can move the TEMPERATURE slider as the model runs if you want.</p>
+<p>The magnetization of the system is the average (mean) of all the spins. The MAGNETIZATION monitor and plot show you the current magnetization and how it has varied so far over time.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>In the default settings for the model, the temperature is set fairly low.  What happens to the system?</p>
+<h2>THINGS TO TRY</h2>
+<p>What happens when the temperature slider is very high? (This is called the "paramagnetic" state.) Try this with different PROBABILITY-OF-SPIN-UP values.</p>
+<p>What happens when the temperature slider is set very low?  (This is called the "ferromagnetic" state.)  Again, try this with different PROBABILITY-OF-SPIN-UP values.</p>
+<p>Between these two very different behaviors is a transition point. On an infinite grid, the transition point can be proved to be 2 / ln (1 + sqrt 2), which is about 2.27.  On a large enough finite toroidal grid, the transition point is near this number.</p>
+<p>Change the size of the NetLogo patch grid. How does this affect the magnetization?</p>
+<p>What happens when the temperature is near, but above the transition point?  What happens when the temperature is near, but below the transition point?  Note that the nearer you are to the transition point, the longer the system takes to exhibit its characteristic behavior -- in such cases, we say that the system has a long "correlation length". So near the transition point, you'll need to do more and longer runs in order to be sure you understand what the typical behavior of the system is.</p>
+<p>When the temperature is low, the system should quickly reach a fully magnetized state.  Note that if you set the temperature very low, sometimes fairly stable thick "stripes" of opposite colors can form, preventing the system from reaching full magnetization.  This is an effect of the finite size of the grid.</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>The formula for Ediff given above can be modified by multiplying the result by a "coupling constant" (if we don't do this, effectively we are using a coupling constant of 1).  Using a negative coupling constant changes the model into its "antiferromagnetic" variant. Experiment with the effect of varying the coupling constant.</p>
+<p>Can you eliminate the exponential formula for the probability of flipping and replace it with a simple discrete rule that gives similar behavior?</p>
+<p>How could you relate TEMPERATURE in this model to temperature in Fahrenheit, Celsius or Kelvin?</p>
+<p>If you think of the two grid states as "present" and "absent", then this model can be changed slightly to be a model of the motion of particles if you add a rule that states can only flip in pairs, so that the total number of particles is conserved. Add this rule and see what behaviors result.</p>
+<p>At each iteration, we give a fixed number of spins a chance to flip.  There are other possible methods, for example, the "checkerboard" update rule: if you imagine the rectangular lattice as being made of alternating white and black squares like a checkerboard, then at each iteration first all the white squares update simultaneously, then all the black squares update simultaneously.  On a parallel computer with many processors, and a programming language which takes advantage of them, the checkerboard rule would run much much faster. Since NetLogo only simulates parallelism using a single processor, the checkerboard rule does not run dramatically faster. (Note that if you use the checkerboard rule, the grid of spins must have even dimensions.)</p>
+<h2>NETLOGO FEATURES</h2>
+<p>This model makes 1000 attempted flips in every iteration of the <code>GO</code> loop. It codes this as:</p>
+<pre><code>repeat 1000 [
+  ask one-of patches [ update ]
+]
+</code></pre>
+<p>Note that this does not change the core Ising algorithm that does one attempted patch flip at a time.</p>
+<p>However, this approach does necessitate a departure from the usual NetLogo practice of calling <code>tick</code> at the end of the <code>GO</code> procedure. If we called <code>tick</code> at the end, then the tick counter would advance only once for every 1000 attempted flips and the Ising model measures the magnetization at every attempted flip. We therefore use <code>tick-advance</code> primitive to advance the NetLogo clock and sync it up with the traditional Ising model. Because the <code>tick-advance</code> primitive doesn't update the NetLogo plots, we have to explicitly call <code>update-plots</code>.</p>
+<p>This last change also leads to one more departure from conventional NetLogo practice. In the Magnetization plot, we would usually have the code <code>plot magnetization</code>. But that code would plot the magnetization every time the <code>update-plots</code> code was called, which would be only once in every 1000 attempted flips of the Ising model and the x-axis of the plot would not reflect true Ising time steps. To sync up the plot with the usual measure of time in the Ising model, we use the code <code>plotxy ticks magnetization</code>.</p>
+<p>A more direct translation of the core Ising algorithm to NetLogo would be as follows:</p>
+<pre><code>to go
+  ask one-of patches [ update ]
+  tick
+end
+</code></pre>
+<p>However, this more direct version would update the NetLogo view at every tick, which would be at every potential patch flip. Because the view updates happen much more slowly than the calculations, the direct approach would dramatically slow down the model in its normal speed slider state. To significantly speed up the direct version, one would need to set the speed slider to its maximum value, so that NetLogo would not update the view at every tick.</p>
+<p>Another "natural" way to write the <code>GO</code> procedure in NetLogo would be as follows:</p>
+<pre><code>to go
+  ask patches [ update ]
+  tick-advance count patches
+  update-plots
+end
+</code></pre>
+<p>This version uses the <code>patches</code> agentset to control the updating. At every tick, all the patches would update. Note that this does change the core Ising algorithm, as it eliminates the chance that the same patch would be picked more than once in the <code>GO</code> loop. However, in practice, we have not seen any changes in the aggregate behavior of the model using this changed algorithm.</p>
+<h2>RELATED MODELS</h2>
+<p>Voting (a social science model, but the update rules are very similar, except that there is no concept of "temperature").</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Thanks to Seth Tisue and Bryan Head for their work on this model and to Sara Solla and Kan Chen, for their assistance.</p>
+<p>The Ising model was first proposed by Wilhelm Lenz in 1920.  It is named after his student Ernst Ising, who also studied it. This NetLogo model implements the Monte Carlo simulation of the Metropolis algorithm for the two dimensional Ising model. The Metropolis algorithm comes from a 1953 paper by Nicholas Metropolis et al.</p>
+<p>There are many web pages which explore the Ising model in greater detail than attempted here. Here are a few:</p>
+<ul>
+<li>https://web.archive.org/web/20210601224436/http://pages.physics.cornell.edu/~sethna/teaching/sss/ising/intro.htm</li>
+<li>http://demonstrations.wolfram.com/IsingModel/</li>
+</ul>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Wilensky, U. (2003).  NetLogo Ising model.  http://ccl.northwestern.edu/netlogo/models/Ising.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2003 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2003 --></div>
+      </div>
+    </main>
+  </body>
+</html>

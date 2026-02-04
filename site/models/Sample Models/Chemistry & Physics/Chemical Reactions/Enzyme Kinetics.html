@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enzyme Kinetics</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
+  </head>
+  <body>
+    <main class="model-page">
+      <a class="back-link" href="../../../../index.html">← Back to list</a>
+      <div class="model-card">
+        <div class="model-header">
+          <h1>Enzyme Kinetics</h1>
+          <a class="run-button" href="https://netlogoweb.org/launch#https://netlogoweb.org/assets/modelslib/Sample%20Models/Chemistry%20&amp;%20Physics/Chemical%20Reactions/Enzyme%20Kinetics.nlogox" target="_blank" rel="noopener">Run on NetLogoWeb</a>
+        </div>
+        <img src="../../../../../models/Sample Models/Chemistry &amp; Physics/Chemical Reactions/Enzyme Kinetics.png" alt="Screenshot of Enzyme Kinetics" />
+        <div class="model-info"><h2>WHAT IS IT?</h2>
+<p>This model demonstrates the kinetics of single-substrate enzyme-catalysis. The interactions between enzymes and substrates are often difficult to understand and the model allows users to visualize the complex reaction.</p>
+<p>The standard equation for this reaction is shown below.</p>
+<pre><code class="language-text">                  Kc          Kr
+        E + S &lt;=======&gt; E-S ------&gt; E + P
+                  Kd
+</code></pre>
+<p>Here E represents Enzyme, S Substrate, E-S Enzyme-Substrate complex, and P product.  The rate constants are Kc for complex formation, Kd for complex dissociation, Kr for catalysis.  The first step in catalysis is the formation of the E-S complex.  This can consist of either covalent or non-covalent bonding.  The rates of complex formation and dissociation are very fast because they are determined by collision and separation of the molecules.  The next step is for the enzyme to catalyze the conversion of substrate to product.  This rate is much slower because the energy required for catalysis is much higher than that required for collision or separation.</p>
+<p>The model demonstrates several important properties of enzyme kinetics.  Enzyme catalysis is often assumed to be controlled by the rate of complex formation and dissociation, because it occurs much faster than the rate of catalysis. Thus, the reaction becomes dependent on the ratio of Kc / Kd.  The efficiency of catalysis can be studied by observing catalytic behavior at different substrate concentrations.</p>
+<p>By measuring the rate of complex formation at different substrate concentrations, a Michaelis-Menten Curve can be plotted.  Analysis of the plot provides biochemists with the maximum rate (Vmax) at which the reaction can proceed. As can be seen from the model, this plot is linear at low levels of substrate, and non-linear at higher levels of substrate.  By examining the model, the reasons for this relationship can be seen easily.</p>
+<p>Enzyme catalysis can also be controlled using inhibitors. Inhibitors are molecules that are structurally similar to substrate molecules that can complex with the enzyme and interfere with the E-S complex formation.  Subsequently, the shape of the Michaelis-Menten Curve will be altered. The model demonstrates the effects of inhibitors on catalysis.</p>
+<h2>HOW TO USE IT</h2>
+<p>Choose the values of Kc, Kd, and Kr with appropriate sliders:
+- Kc controls the rate at which substrates (green) and enzymes (red) stick together so that catalysis can occur
+- Kd controls the rate at which they come unstuck
+- Kr controls the rate of the forward reaction by which an enzyme (red) converts a substrate (green) to a product (blue)</p>
+<p>Having chosen appropriate values of the constants, press SETUP to clear the world and create a constant initial number of enzyme (red) molecules. Play with several different values to observe variable effects on complex formation and catalysis.</p>
+<p>Press GO to start the simulation.  A constant amount of enzyme (red) will be generated.  The concentrations of substrate, complex, and product are plotted in the CONCENTRATIONS window.</p>
+<p>Experiment with using the ADD-SUBSTRATE and ADD-INHIBITOR buttons to observe the effects of adding more molecules to the system manually as it runs.  The default setting for Kr is 0, which means that no product (blue) will be generated unless you change Kr to a non-zero value.</p>
+<p>Note that when complexes form they stop moving.  This isn't intended to be physically realistic; it just makes the formation of complexes easier to see.  (This shouldn't affect the overall behavior of the model.)</p>
+<p>To plot the Michaelis-Menten Curve for your reaction conditions, you will have to perform several runs at different concentrations in order to measure the velocity for each run. To do this, set the PAUSE? switch ON.  When this switch is on, the model automatically stops after 30 time ticks.  Begin your assay by setting the substrate volume to zero and running the simulation.  When it stops, press RECORD V and a point will be plotted on the Michaelis-Menten Curve. Run another simulation with a higher concentration of substrate by changing the VOLUME slider, then hitting SETUP followed by GO, followed by RECORD V once the model stops.  Continue for several values of substrate concentrations until a curve is generated. If you wish to start over hit CLEAR MM to reset the plot.</p>
+<h2>THINGS TO NOTICE</h2>
+<p>Watch the rate at which the enzyme and substrate stick together. How does this affect the conversion of substrate into product? What would happen if Kd is very high and Kc is very low? If Kr were the same order of magnitude as Kd and Kc?</p>
+<p>Watch the Michaelis-Menten Curve. Does it match up with the discussion of enzyme kinetics discussed above? Why does the plot initially slope upward, then flatten out?</p>
+<p>Which variables can alter the magnitude of v?</p>
+<p>How does the magnitude of Kd and Kr affect the smoothness of the Michaelis-Menten Curve?</p>
+<h2>THINGS TO TRY</h2>
+<p>Run the simulation with VOLUME set to various amounts. How does this affect the curve?</p>
+<p>If Kr is MUCH greater than Kd, what affect does this have on the reaction?  How important does complex formation become in this situation?</p>
+<p>If Kc is MUCH less than Kd, what does this mean in the real-world? How are the enzyme and substrate related under these conditions?</p>
+<p>What effect does adding inhibitor to the model have on the plot? Is Vmax affected?</p>
+<h2>EXTENDING THE MODEL</h2>
+<p>What would happen if yellow inhibitor molecules could react to form a product? How would this affect the plot?</p>
+<p>Inhibitors can be irreversible or reversible. That is, they can bind to an enzyme and never let go, or they can stick and fall off. Currently, the model simulates irreversible inhibitors. Modify the code so that the yellow molecules reversibly bind to the enzyme. How does this affect catalysis?</p>
+<p>Often, the product of catalysis is an inhibitor of the enzyme. This is called a feedback mechanism. In this model, product cannot complex with enzyme. Modify the procedures so that the product is a reversible inhibitor. How does this affect catalysis with and without yellow inhibitor?</p>
+<p>Include a slider that allows you to change the concentration of enzyme.  What affect does this have on the plot?  Vmax?  Look closely!</p>
+<h2>NETLOGO FEATURES</h2>
+<p>It is a little difficult to ensure that a reactant never participates in two reactions simultaneously.  In the future, a primitive called GRAB may be added to NetLogo; then the code in the FORM-COMPLEX procedure wouldn't need to be quite so tricky.</p>
+<h2>CREDITS AND REFERENCES</h2>
+<p>Thanks to Mike Stieff for his work on this model.</p>
+<h2>HOW TO CITE</h2>
+<p>If you mention this model or the NetLogo software in a publication, we ask that you include the citations below.</p>
+<p>For the model itself:</p>
+<ul>
+<li>Stieff, M. and Wilensky, U. (2001).  NetLogo Enzyme Kinetics model.  http://ccl.northwestern.edu/netlogo/models/EnzymeKinetics.  Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<p>Please cite the NetLogo software as:</p>
+<ul>
+<li>Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.</li>
+</ul>
+<h2>COPYRIGHT AND LICENSE</h2>
+<p>Copyright 2001 Uri Wilensky.</p>
+<p><img alt="CC BY-NC-SA 3.0" src="http://ccl.northwestern.edu/images/creativecommons/byncsa.png" /></p>
+<p>This model is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.</p>
+<p>NetLogo itself is free software for non-commercial use under the terms of the GNU General Public License (<a href="https://ccl.northwestern.edu/netlogo/docs/copyright.html">see full license information here</a>).</p>
+<p>To inquire about commercial licenses for either NetLogo or specific models from the models library, please contact netlogo-commercial-admin@ccl.northwestern.edu.</p>
+<p>This model was created as part of the projects: PARTICIPATORY SIMULATIONS: NETWORK-BASED DESIGN FOR SYSTEMS LEARNING IN CLASSROOMS and/or INTEGRATED SIMULATION AND MODELING ENVIRONMENT. The project gratefully acknowledges the support of the National Science Foundation (REPP &amp; ROLE programs) -- grant numbers REC #9814682 and REC-0126227.</p>
+<!-- 2001 Cite: Stieff, M. --></div>
+      </div>
+    </main>
+  </body>
+</html>
