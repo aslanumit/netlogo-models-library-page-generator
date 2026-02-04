@@ -15,20 +15,21 @@ Generates a fully static website that lists all NetLogo .nlogox models and provi
 
 ## Setup
 Create and activate a virtual environment (macOS/Linux):
-- python3 -m venv .venv
-- source .venv/bin/activate
+- `python3 -m venv .venv`
+- `source .venv/bin/activate`
 
 Install dependencies using the venv:
-- .venv/bin/pip install -r requirements.txt
+- `.venv/bin/pip install -r requirements.txt`
 
 ## Build
 Generate the site:
-- .venv/bin/python build_static.py
+- `.venv/bin/python build_static.py`
 
-The output is written to the `site` folder. You can deploy the site folder as-is.
+The output is written to the `public` folder. You can deploy the site folder as-is.
 
 ## Assets
-- Model icons are stored in `site/assets/model.png`.
+- Model icon is stored in `public/assets/model.png`.
+- Model images are stored alongside the html files in the `public/models` folder.
 
 ## Notes
 - Screenshots are resolved from the models folder and must be .png files with matching names.
